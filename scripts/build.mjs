@@ -1,6 +1,7 @@
 import { mkdir, copyFile, writeFile, readFile } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const dist = resolve(root, 'dist');
@@ -18,6 +19,15 @@ if (apiBase) {
 }
 if (apiBase) await writeFile(resolve(dist, 'config.js'), `window.ORNGLOCK_CONFIG = Object.freeze(${JSON.stringify({ apiBase })});\n`);
 else await copyFile(resolve(root, 'config.js'), resolve(dist, 'config.js'));
+const revision = async file => createHash('sha256').update(await readFile(resolve(dist, file))).digest('hex').slice(0, 12);
+// Version imported modules before their entry point, so browser caches follow each release.
+const appPath = resolve(dist, 'app.js');
+const app = await readFile(appPath, 'utf8');
+await writeFile(appPath, app.replace("'./sections.mjs'", `'./sections.mjs?v=${await revision('sections.mjs')}'`));
+const indexPath = resolve(dist, 'index.html');
+let html = await readFile(indexPath, 'utf8');
+for (const file of ['styles.css', 'config.js', 'app.js']) html = html.replace(`"${file}"`, `"${file}?v=${await revision(file)}"`);
+await writeFile(indexPath, html);
 await writeFile(resolve(dist, '.nojekyll'), '');
 // Public output is deliberately allowlisted: master prompts and backend source stay private.
 for (const file of [...files.filter(file => !file.endsWith('.png')), 'config.js']) {
