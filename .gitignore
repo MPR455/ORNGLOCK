@@ -1,0 +1,13 @@
+# Private master instructions must never enter the public repository or Pages output.
+/master prompt/
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+node_modules/
+.wrangler/
+dist/
+build/
+qa/
+*.log

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="ORNGLOCK — turn clinical source notes into structured documentation.">
+  <meta name="referrer" content="no-referrer">
+  <title>ORNGLOCK · Clinical notes</title>
+  <link rel="icon" href="assets/ornglock-symbol.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="config.js" defer></script>
+  <script src="app.js" type="module"></script>
+</head>
+<body>
+  <header>
+    <div id="menu-wrap">
+      <button class="brand" id="site-menu-trigger" type="button" aria-label="Open ORNGLOCK menu" aria-controls="menu-dd" aria-expanded="false">
+        <span class="logo-chip"><img src="assets/ornglock.png" alt="ORNGLOCK" width="2085" height="514" decoding="async"></span>
+      </button>
+    </div>
+    <nav id="primary-nav" aria-label="Primary navigation"></nav>
+    <div class="mobile-header-current" aria-live="polite"><span>Current section</span><strong id="mobile-current-title">Clinical notes</strong></div>
+    <span class="header-model">Gemini Flash-Lite</span>
+    <button class="mobile-tabs-trigger" id="mobile-tabs-trigger" type="button" aria-controls="mobile-tabs-layer" aria-expanded="false"><span class="grid-icon" aria-hidden="true">▦</span><span>All tabs</span></button>
+  </header>
+  <div id="menu-dd" class="menu-dd"></div>
+  <nav class="mobile-bottom-nav" id="mobile-bottom-nav" aria-label="Main sections"></nav>
+  <div class="mobile-tabs-layer" id="mobile-tabs-layer" hidden>
+    <button class="mobile-tabs-backdrop" type="button" aria-label="Close all tabs" tabindex="-1"></button>
+    <section class="mobile-tabs-sheet" role="dialog" aria-modal="true" aria-labelledby="mobile-tabs-title">
+      <div class="mobile-sheet-handle" aria-hidden="true"></div>
+      <div class="mobile-sheet-head"><div><h2 id="mobile-tabs-title">All sections</h2><p>Choose where you want to go</p></div><button class="mobile-sheet-close" type="button" aria-label="Close">×</button></div>
+      <div class="mobile-tab-grid" id="mobile-tab-grid"></div>
+    </section>
+  </div>
+
+  <main>
+    <section class="tab active" id="tab-notes" tabindex="-1" aria-labelledby="notes-title">
+      <div class="page-heading">
+        <div><h1 id="notes-title">Clinical notes</h1><p>Paste once. Choose the document you need.</p></div>
+        <button class="connection-pill" id="connection-pill" type="button" aria-label="Open API key settings"><span class="status-dot" aria-hidden="true"></span><span id="connection-label">Connecting…</span><span aria-hidden="true">›</span></button>
+      </div>
+      <div class="workspace">
+        <section class="card editor-card source-card" aria-labelledby="source-title">
+          <div class="panel-heading"><div><span class="step-label">01 / SOURCE</span><h2 id="source-title">Your notes</h2></div><button class="btn sec sm" id="clear-source" type="button" disabled>Clear</button></div>
+          <p class="panel-description" id="source-help">Paste de-identified notes, results, or progress entries. For a consult, include the specialty and question.</p>
+          <label class="sr-only" for="source-notes">Source clinical notes</label>
+          <textarea id="source-notes" spellcheck="false" maxlength="100000" aria-describedby="source-help" placeholder="Paste your source notes here…&#10;&#10;Include dates, relevant findings, treatment, and the latest documented status."></textarea>
+          <div class="editor-footer"><span>Kept in this tab only</span><span id="source-count">0 / 100,000</span></div>
+        </section>
+
+        <section class="card actions-card" aria-labelledby="actions-title">
+          <div class="panel-heading"><div><span class="step-label">02 / GENERATE</span><h2 id="actions-title">Choose a document</h2></div></div>
+          <p class="panel-description">Each button runs its own master instructions.</p>
+          <div class="action-grid" id="action-grid">
+            <button class="action-button" type="button" data-action="admission" disabled>
+              <span class="action-top"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M9 6H6v23h20V6h-3M12 3h8v6h-8zM11 17h10M11 22h7"/></svg><span class="action-number">01</span></span>
+              <span class="action-title">Admission<br>note</span><span class="action-detail">ER → inpatient</span>
+            </button>
+            <button class="action-button" type="button" data-action="consult" disabled>
+              <span class="action-top"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 6h22v16H14l-7 6v-6H5zM11 12h10M11 17h6"/></svg><span class="action-number">02</span></span>
+              <span class="action-title">Consult<br>request</span><span class="action-detail">Focused specialty request</span>
+            </button>
+            <button class="action-button" type="button" data-action="summary" disabled>
+              <span class="action-top"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 3h13l6 6v20H7zM19 3v8h7M12 17h9M12 22h9"/></svg><span class="action-number">03</span></span>
+              <span class="action-title">Treatment<br>summary</span><span class="action-detail">Course / weekly summary</span>
+            </button>
+            <button class="action-button" type="button" data-action="support" disabled>
+              <span class="action-top"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 17h6l4-10 6 18 4-8h6M6 6h2M25 26h2"/></svg><span class="action-number">04</span></span>
+              <span class="action-title">Treatment<br>&amp; devices</span><span class="action-detail">Antibiotics · O₂ · lines · tubes</span>
+            </button>
+          </div>
+          <div class="run-status" id="run-status" role="status" aria-live="polite"><span class="run-status-icon" aria-hidden="true">↗</span><span id="run-message">Add notes to get started.</span></div>
+          <button class="btn sec cancel-button" id="cancel-generation" type="button" hidden>Stop generation</button>
+        </section>
+
+        <section class="card editor-card output-card" aria-labelledby="output-title">
+          <div class="panel-heading"><div><span class="step-label">03 / REVIEW &amp; COPY</span><h2 id="output-title">Your document</h2></div><button class="btn sm" id="copy-output" type="button" disabled>Copy</button></div>
+          <p class="panel-description" id="output-help">Editable plain text. Check the source facts before adding it to the chart.</p>
+          <label class="sr-only" for="output-notes">Generated clinical document</label>
+          <textarea id="output-notes" spellcheck="false" aria-describedby="output-help" placeholder="Your generated document will appear here.&#10;&#10;You can edit it before copying."></textarea>
+          <div class="editor-footer"><span id="output-meta">Ready for your first document</span><button class="text-button" id="download-output" type="button" disabled>Download .txt</button></div>
+        </section>
+      </div>
+      <div class="notice" id="error-notice" role="alert" hidden><div><strong id="error-title">Could not generate the document</strong><p id="error-message"></p></div><button class="btn sec sm" id="error-key-button" type="button" hidden>Use my API key</button></div>
+      <p class="workspace-footnote">Only the notes you submit are sent to Gemini through this service. Source notes, output, and personal keys are not saved by this app.</p>
+    </section>
+
+    <section class="tab" id="tab-key" tabindex="-1" aria-labelledby="key-title">
+      <div class="page-heading"><div><h1 id="key-title">API key</h1><p>Use the shared allowance, or bring your own Gemini key.</p></div></div>
+      <div class="settings-grid">
+        <section class="card settings-card">
+          <span class="step-label">CONNECTION</span><h2>Your Gemini API key</h2>
+          <p class="settings-copy">The shared key is used by default. If its allowance is exhausted, enter your own key here and return to your notes.</p>
+          <div class="key-state" id="key-state" role="status">Checking the shared connection…</div>
+          <form id="key-form" autocomplete="off">
+            <label for="personal-key">Google AI Studio API key</label>
+            <div class="key-input-row"><input id="personal-key" name="ornglock-personal-key" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="512" placeholder="Paste your Gemini API key" aria-describedby="key-privacy"><button class="btn sec" id="toggle-key" type="button" aria-pressed="false" aria-label="Show API key">Show</button></div>
+            <p class="small" id="key-privacy">Used only for requests from this tab. It is sent securely to the backend and Google, and is never saved by this app.</p>
+            <div class="btnrow"><button class="btn" type="submit">Use my key</button><button class="btn sec" id="use-shared-key" type="button" disabled>Use shared key</button></div>
+            <p class="form-message" id="key-form-message" role="status"></p>
+          </form>
+          <div class="settings-links"><a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer">Get a key in Google AI Studio ↗</a><button class="text-button" id="return-to-notes" type="button">← Back to notes</button></div>
+        </section>
+        <aside class="card settings-card connection-info"><span class="step-label">CURRENT SETUP</span><h2>Gemini Flash-Lite</h2><dl><div><dt>Model</dt><dd id="model-name">Checking…</dd></div><div><dt>Key in use</dt><dd id="key-mode">Shared key</dd></div><div><dt>Source &amp; output</dt><dd>This tab only</dd></div></dl><p class="small">Your key uses your own Google project’s quota. Selecting it does not increase the shared allowance.</p><p class="small">Google’s free API tier may use submitted content for product improvement. Use de-identified source material.</p></aside>
+      </div>
+    </section>
+
+    <section class="tab" id="tab-information" tabindex="-1" aria-labelledby="information-title">
+      <div class="page-heading"><div><h1 id="information-title">Information</h1><p>Four tools. One source of clinical information.</p></div></div>
+      <article class="card information-card"><h2>From source notes to a usable document</h2><p>Paste your de-identified source notes, then select the document you need. Each tool uses its own master instructions to preserve the supplied facts and produce a consistent structure.</p><div class="tool-information"><div><strong>01 · Admission note</strong><p>Organizes the presenting illness, assessment, and documented plans.</p></div><div><strong>02 · Consult request</strong><p>Creates a focused request for the specialty and question in your notes.</p></div><div><strong>03 · Treatment summary</strong><p>Synthesizes the hospital course or the period you specify, with the latest documented status.</p></div><div><strong>04 · Treatment &amp; devices</strong><p>Extracts current antibiotics, oxygen support, vascular access, and other lines, tubes, and drains.</p></div></div><h2>Review before copying</h2><p>The output is an editable draft. Confirm names, dates, doses, diagnostic uncertainty, and current versus previous treatment against your source. Missing information should stay missing.</p><h2>Privacy &amp; connection</h2><p>This app keeps notes, output, and personal keys in the current browser tab. Generation sends your source to this service and Google’s Gemini API. The app does not save or log note content or API keys. Google’s own data handling depends on the API tier being used.</p><p>Your shared key and master instructions are held by the backend. A visitor’s personal key is used only after they choose “Use my key.”</p></article>
+    </section>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <noscript><p class="card">Please enable JavaScript to use ORNGLOCK.</p></noscript>
+</body>
+</html>

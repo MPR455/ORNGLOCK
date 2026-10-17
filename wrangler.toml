@@ -1,0 +1,26 @@
+name = "ornglock-api"
+main = "server/worker.mjs"
+compatibility_date = "2026-10-01"
+workers_dev = true
+
+[observability]
+enabled = false
+
+[vars]
+GEMINI_MODEL = "gemini-3.5-flash-lite"
+ALLOWED_ORIGINS = "https://mpr455.github.io,http://127.0.0.1:8787,http://localhost:8787"
+SHARED_DAILY_LIMIT = "100"
+REQUESTS_PER_MINUTE = "6"
+
+[[rules]]
+type = "Text"
+globs = ["**/*.txt"]
+fallthrough = true
+
+[[durable_objects.bindings]]
+name = "USAGE_GUARD"
+class_name = "UsageGuard"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["UsageGuard"]
