@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const dist = resolve(root, 'dist');
-const files = ['index.html', 'styles.css', 'app.js', 'assets/ornglock.png', 'assets/ornglock-symbol.png'];
+const files = ['index.html', 'styles.css', 'app.js', 'sections.mjs', 'assets/ornglock.png', 'assets/ornglock-symbol.png'];
 for (const file of files) {
   const target = resolve(dist, file);
   await mkdir(dirname(target), { recursive: true });

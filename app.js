@@ -1,12 +1,13 @@
+import { extractAdmissionSections } from './sections.mjs';
+
 const $ = id => document.getElementById(id);
 const TABS = [
   { id: 'notes', icon: '▤', label: 'Clinical notes', short: 'Notes' },
-  { id: 'key', icon: '⚿', label: 'API key', short: 'API key' },
-  { id: 'information', icon: 'ⓘ', label: 'Information', short: 'Information', mobilePrimary: false }
+  { id: 'key', icon: '⚿', label: 'API key', short: 'API key' }
 ];
 const TITLES = { admission: 'Admission note', consult: 'Consult request', summary: 'Treatment summary', support: 'Treatment & devices' };
 const state = { tab: 'notes', apiKey: '', ready: false, sharedAvailable: false, active: null, lastAction: null, model: '', maxChars: 100000, generatedAction: null, startedAt: 0 };
-let sheetOpener, elapsedTimer, toastTimer, copyTimer;
+let sheetOpener, elapsedTimer, toastTimer;
 
 function tabButton(tab, className = '', iconClass = '') {
   const button = document.createElement('button');
@@ -43,6 +44,7 @@ function setTheme(theme) {
   if (!['default', 'macaroon', 'dark', 'black'].includes(theme)) theme = 'default';
   document.body.classList.remove('theme-macaroon', 'theme-dark', 'theme-black');
   if (theme !== 'default') document.body.classList.add(`theme-${theme}`);
+  $('color-mode').value = theme;
   try { localStorage.setItem('ornglock_theme', theme); } catch {}
   document.querySelectorAll('.theme-dot').forEach(dot => { const selected = dot.dataset.theme === theme; dot.classList.toggle('sel', selected); dot.setAttribute('aria-pressed', String(selected)); });
 }
@@ -116,14 +118,13 @@ function updateInputs() {
   $('clear-source').disabled = !text || Boolean(state.active);
   document.querySelectorAll('[data-action]').forEach(button => { button.disabled = !text.trim() || !state.ready || Boolean(state.active); });
   $('copy-output').disabled = !$('output-notes').value.trim(); $('download-output').disabled = !$('output-notes').value.trim();
+  const sections = extractAdmissionSections($('output-notes').value);
+  $('section-copy-controls').hidden = state.generatedAction !== 'admission' && !(sections.chief && sections.illness);
+  document.querySelectorAll('[data-copy-section]').forEach(button => { button.disabled = !sections[button.dataset.copySection]?.text; });
   $('key-form').querySelectorAll('input,button').forEach(control => { control.disabled = Boolean(state.active); });
   $('use-shared-key').disabled = Boolean(state.active) || !state.apiKey;
-  if (!state.active) {
-    $('run-status').classList.remove('working');
-    if (!text.trim()) $('run-message').textContent = 'Add notes to get started.';
-    else if (!state.ready) $('run-message').textContent = 'Waiting for the service connection.';
-    else $('run-message').textContent = state.generatedAction ? 'Ready to generate another document.' : 'Choose a button to generate.';
-  }
+  $('run-status').hidden = !state.active;
+  if (!state.active) { $('run-status').classList.remove('working'); $('run-message').textContent = ''; }
 }
 
 function clearError() { $('error-notice').hidden = true; }
@@ -168,6 +169,7 @@ async function generate(action) {
   }
 }
 
+$('color-mode').addEventListener('change', event => setTheme(event.target.value));
 $('site-menu-trigger').addEventListener('click', event => { event.stopPropagation(); const open = $('menu-dd').classList.toggle('open'); $('site-menu-trigger').setAttribute('aria-expanded', String(open)); });
 $('mobile-tabs-trigger').addEventListener('click', openSheet);
 document.querySelector('.mobile-tabs-backdrop').addEventListener('click', () => closeSheet());
@@ -197,9 +199,16 @@ $('key-form').addEventListener('submit', event => {
 });
 $('use-shared-key').addEventListener('click', () => { state.apiKey = ''; $('personal-key').value = ''; $('key-form-message').textContent = 'Your personal key has been cleared from this tab.'; updateConnection(); updateInputs(); });
 $('toggle-key').addEventListener('click', () => { const reveal = $('personal-key').type === 'password'; $('personal-key').type = reveal ? 'text' : 'password'; $('toggle-key').textContent = reveal ? 'Hide' : 'Show'; $('toggle-key').setAttribute('aria-pressed', String(reveal)); $('toggle-key').setAttribute('aria-label', reveal ? 'Hide API key' : 'Show API key'); });
-$('copy-output').addEventListener('click', async () => {
-  try { await navigator.clipboard.writeText($('output-notes').value); $('copy-output').textContent = 'Copied'; clearTimeout(copyTimer); copyTimer = setTimeout(() => { $('copy-output').textContent = 'Copy'; }, 2000); }
-  catch { $('output-notes').focus(); $('output-notes').select(); toast('Select the text and use your device’s Copy command.'); }
+async function copyText(text, start = 0, end = text.length) {
+  try { await navigator.clipboard.writeText(text); toast('Copied.'); }
+  catch { $('output-notes').focus(); $('output-notes').setSelectionRange(start, end); toast('Text selected. Use your device’s Copy command.'); }
+}
+$('copy-output').addEventListener('click', () => copyText($('output-notes').value));
+$('section-copy-controls').addEventListener('click', event => {
+  const button = event.target.closest('[data-copy-section]');
+  if (!button || button.disabled) return;
+  const section = extractAdmissionSections($('output-notes').value)[button.dataset.copySection];
+  if (section?.text) copyText(section.text, section.start, section.end);
 });
 $('download-output').addEventListener('click', () => {
   const url = URL.createObjectURL(new Blob([$('output-notes').value], { type: 'text/plain;charset=utf-8' })); const anchor = document.createElement('a'); anchor.href = url; anchor.download = `ORNGLOCK-${state.generatedAction || 'document'}-${new Date().toISOString().slice(0, 10)}.txt`; document.body.append(anchor); anchor.click(); anchor.remove(); setTimeout(() => URL.revokeObjectURL(url), 1000);
