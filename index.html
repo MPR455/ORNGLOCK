@@ -8,6 +8,7 @@
   <title>ORNGLOCK</title>
   <link rel="icon" href="assets/ornglock-symbol.png" type="image/png">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="directory.css">
   <script src="config.js" defer></script>
   <script src="app.js" type="module"></script>
 </head>
@@ -36,6 +37,32 @@
   </div>
 
   <main>
+  <section class="tab" id="tab-directory" tabindex="-1" aria-labelledby="directory-title" lang="zh-Hant">
+    <div class="directory-toolbar" id="directory-toolbar" role="search" aria-label="電話簿搜尋">
+      <div class="directory-search-field">
+        <span class="directory-search-icon" aria-hidden="true">⌕</span>
+        <input id="directory-search" type="search" aria-label="搜尋姓名、單位或電話" autocomplete="off" spellcheck="false">
+        <button class="directory-clear" id="directory-clear" type="button" aria-label="清除搜尋" hidden>×</button>
+      </div>
+      <button class="directory-quick-trigger" id="directory-quick-trigger" type="button" aria-controls="directory-jump-dialog" aria-haspopup="dialog" aria-expanded="false"><span aria-hidden="true">▦</span><span>快速轉跳</span></button>
+    </div>
+    <div class="directory-sections">
+      <div class="directory-intro"><h1 class="directory-title" id="directory-title">☎️ Directory</h1></div>
+      <div class="directory-history" id="directory-history">
+        <section class="directory-history-panel" aria-labelledby="directory-recent-search-title">
+          <div class="directory-history-head"><h2 id="directory-recent-search-title">最近搜尋</h2><button type="button" class="directory-history-clear" data-directory-history-clear="searches" aria-label="清除最近搜尋" hidden>清除</button></div>
+          <div class="directory-recent-searches" id="directory-recent-searches"></div>
+        </section>
+        <section class="directory-history-panel" aria-labelledby="directory-recent-call-title">
+          <div class="directory-history-head"><h2 id="directory-recent-call-title">最近點選</h2><button type="button" class="directory-history-clear" data-directory-history-clear="calls" aria-label="清除最近點選" hidden>清除</button></div>
+          <div class="directory-recent-calls" id="directory-recent-calls"></div>
+        </section>
+      </div>
+      <div id="directory-sections"></div>
+      <p class="directory-empty" id="directory-empty" role="status" aria-live="polite" hidden>找不到符合的聯絡資料，請試試其他姓名或電話片段。</p>
+    </div>
+  </section>
+
     <section class="tab" id="tab-handoff" tabindex="-1" aria-labelledby="handoff-title" lang="zh-Hant">
       <div class="page-heading"><h1 id="handoff-title">交班單</h1></div>
     </section>
@@ -114,6 +141,10 @@
     </section>
 
   </main>
+  <dialog class="directory-jump-dialog" id="directory-jump-dialog" aria-labelledby="directory-jump-title" lang="zh-Hant">
+  <div class="directory-jump-head"><button class="directory-jump-back" id="directory-jump-back" type="button" aria-label="返回所有分類" hidden>‹ 分類</button><div><h2 id="directory-jump-title">快速轉跳</h2></div><button class="directory-jump-close" type="button" aria-label="關閉">×</button></div>
+  <div class="directory-jump-grid" id="directory-jump-grid"></div>
+</dialog>
   <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
   <noscript><p class="card">Please enable JavaScript to use ORNGLOCK.</p></noscript>
 </body>

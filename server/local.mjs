@@ -8,6 +8,7 @@ import { createMemoryGuard, handleApi, positiveInteger } from './api.mjs';
 const ROOT = fileURLToPath(new URL('../', import.meta.url));
 const STATIC = new Map([
   ['/', 'index.html'], ['/index.html', 'index.html'], ['/styles.css', 'styles.css'], ['/app.js', 'app.js'], ['/sections.mjs', 'sections.mjs'], ['/config.js', 'config.js'],
+  ['/directory.css', 'directory.css'], ['/directory.mjs', 'directory.mjs'], ['/directory-data.mjs', 'directory-data.mjs'],
   ['/assets/ornglock.png', 'assets/ornglock.png'], ['/assets/ornglock-symbol.png', 'assets/ornglock-symbol.png'],
   ['/assets/cgmh-oph.svg', 'assets/cgmh-oph.svg'], ['/assets/cgmh-em.svg', 'assets/cgmh-em.svg']
 ]);

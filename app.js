@@ -1,7 +1,9 @@
 import { extractAdmissionSections } from './sections.mjs';
+import { initDirectory, refreshDirectoryLayout } from './directory.mjs';
 
 const $ = id => document.getElementById(id);
 const TABS = [
+  { id: 'directory', icon: '☎️', label: 'Directory', short: 'Directory' },
   { id: 'handoff', icon: '📝', label: '交班單', short: '交班單' },
   { id: 'notes', icon: '🤖', label: '病歷', short: '病歷' },
   { id: 'faq', icon: '❓', label: 'FAQ 腫麼用', short: 'FAQ 腫麼用' },
@@ -60,6 +62,7 @@ function showTab(id, focus = false) {
   $('mobile-more-tab').classList.toggle('active', tab.mobilePrimary === false);
   if (tab.mobilePrimary === false) $('mobile-more-tab').setAttribute('aria-current', 'page'); else $('mobile-more-tab').removeAttribute('aria-current');
   closeMenu(); closeSheet(false);
+  if (id === 'directory') refreshDirectoryLayout();
   if (focus) $(`tab-${id}`).focus({ preventScroll: true });
 }
 
@@ -215,4 +218,4 @@ $('section-copy-controls').addEventListener('click', event => {
 $('download-output').addEventListener('click', () => {
   const url = URL.createObjectURL(new Blob([$('output-notes').value], { type: 'text/plain;charset=utf-8' })); const anchor = document.createElement('a'); anchor.href = url; anchor.download = `ORNGLOCK-${state.generatedAction || 'document'}-${new Date().toISOString().slice(0, 10)}.txt`; document.body.append(anchor); anchor.click(); anchor.remove(); setTimeout(() => URL.revokeObjectURL(url), 1000);
 });
-buildNavigation(); updateInputs(); connect();
+buildNavigation(); initDirectory({ closeMenu }); updateInputs(); connect();
