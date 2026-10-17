@@ -4,6 +4,7 @@ const $ = id => document.getElementById(id);
 const TABS = [
   { id: 'handoff', icon: '📝', label: '交班單', short: '交班單' },
   { id: 'notes', icon: '🤖', label: '病歷', short: '病歷' },
+  { id: 'faq', icon: '❓', label: 'FAQ 腫麼用', short: 'FAQ 腫麼用' },
   { id: 'key', icon: '⚿', label: 'API key', short: 'API key' }
 ];
 const TITLES = { admission: 'Admission note', consult: 'Consult request', summary: 'Treatment summary', support: 'Anti/O2/IV' };
@@ -24,14 +25,6 @@ function buildNavigation() {
     $('primary-nav').append(tabButton(tab));
     $('menu-dd').append(tabButton(tab, 'menu-item'));
     $('mobile-tab-grid').append(tabButton(tab, 'mobile-tab-card', 'mobile-tab-icon'));
-  }
-  for (const source of document.querySelectorAll('.header-links a')) {
-    for (const [target, className] of [['menu-dd', 'menu-item menu-link'], ['mobile-tab-grid', 'mobile-tab-card mobile-site-link']]) {
-      const link = source.cloneNode(true);
-      link.className = className;
-      link.addEventListener('click', () => { closeMenu(); closeSheet(false); });
-      $(target).append(link);
-    }
   }
   $('mobile-bottom-nav').style.setProperty('--mobile-nav-count', String(primary.length + 1));
   for (const tab of primary) $('mobile-bottom-nav').append(tabButton(tab, 'mobile-nav-item', 'mobile-nav-icon'));
