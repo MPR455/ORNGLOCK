@@ -25,6 +25,14 @@ function buildNavigation() {
     $('menu-dd').append(tabButton(tab, 'menu-item'));
     $('mobile-tab-grid').append(tabButton(tab, 'mobile-tab-card', 'mobile-tab-icon'));
   }
+  for (const source of document.querySelectorAll('.header-links a')) {
+    for (const [target, className] of [['menu-dd', 'menu-item menu-link'], ['mobile-tab-grid', 'mobile-tab-card mobile-site-link']]) {
+      const link = source.cloneNode(true);
+      link.className = className;
+      link.addEventListener('click', () => { closeMenu(); closeSheet(false); });
+      $(target).append(link);
+    }
+  }
   $('mobile-bottom-nav').style.setProperty('--mobile-nav-count', String(primary.length + 1));
   for (const tab of primary) $('mobile-bottom-nav').append(tabButton(tab, 'mobile-nav-item', 'mobile-nav-icon'));
   const more = document.createElement('button'); more.type = 'button'; more.className = 'mobile-nav-item'; more.id = 'mobile-more-tab'; more.setAttribute('aria-controls', 'mobile-tabs-layer'); more.setAttribute('aria-expanded', 'false');
@@ -179,7 +187,7 @@ document.addEventListener('click', event => { const tab = event.target.closest('
 document.addEventListener('keydown', event => {
   if (event.key === 'Escape') { if (!$('mobile-tabs-layer').hidden) closeSheet(); else { closeMenu(); } }
   if (event.key === 'Tab' && !$('mobile-tabs-layer').hidden) {
-    const buttons = [...document.querySelectorAll('.mobile-tabs-sheet button')]; const first = buttons[0], last = buttons.at(-1);
+    const controls = [...document.querySelectorAll('.mobile-tabs-sheet button, .mobile-tabs-sheet a[href]')]; const first = controls[0], last = controls.at(-1);
     if (event.shiftKey && document.activeElement === first) { last.focus(); event.preventDefault(); }
     else if (!event.shiftKey && document.activeElement === last) { first.focus(); event.preventDefault(); }
   }
