@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="ORNGLOCK — turn clinical source notes into structured documentation.">
   <meta name="referrer" content="no-referrer">
-  <title>ORNGLOCK · Clinical notes</title>
+  <title>ORNGLOCK · 病歷</title>
   <link rel="icon" href="assets/ornglock-symbol.png" type="image/png">
   <link rel="stylesheet" href="styles.css">
   <script src="config.js" defer></script>
@@ -19,7 +19,7 @@
       </button>
     </div>
     <nav id="primary-nav" aria-label="Primary navigation"></nav>
-    <div class="mobile-header-current" aria-live="polite"><span>Current section</span><strong id="mobile-current-title">Clinical notes</strong></div>
+    <div class="mobile-header-current" aria-live="polite"><span>Current section</span><strong id="mobile-current-title">病歷</strong></div>
     <span class="header-model">Gemini Flash-Lite</span>
     <label class="theme-control"><span>Color mode</span><select id="color-mode" aria-label="Color mode"><option value="default">Default</option><option value="macaroon">Macaroon</option><option value="dark">Dark</option><option value="black">Black</option></select></label>
     <button class="mobile-tabs-trigger" id="mobile-tabs-trigger" type="button" aria-label="All tabs" aria-controls="mobile-tabs-layer" aria-expanded="false"><span class="grid-icon" aria-hidden="true">▦</span><span>All tabs</span></button>
@@ -36,7 +36,11 @@
   </div>
 
   <main>
-    <section class="tab active" id="tab-notes" tabindex="-1" aria-label="Clinical notes">
+    <section class="tab" id="tab-handoff" tabindex="-1" aria-labelledby="handoff-title" lang="zh-Hant">
+      <div class="page-heading"><h1 id="handoff-title">交班單</h1></div>
+    </section>
+
+    <section class="tab active" id="tab-notes" tabindex="-1" aria-label="病歷">
       <div class="workspace">
         <section class="card editor-card source-card" aria-labelledby="source-title">
           <div class="panel-heading"><h2 id="source-title">Input</h2><button class="btn sec sm" id="clear-source" type="button" disabled>Clear</button></div>
@@ -86,7 +90,7 @@
     </section>
 
     <section class="tab" id="tab-key" tabindex="-1" aria-labelledby="key-title">
-      <div class="page-heading"><div><h1 id="key-title">API key</h1><p>Use the shared allowance, or bring your own Gemini key.</p></div></div>
+      <div class="page-heading"><div><h1 id="key-title">API key</h1><p lang="zh-Hant">現在是用我的API key 如果太多人使用會超額 :3 可以用你自己的或請我喝飲料謝謝</p></div></div>
       <div class="settings-grid">
         <section class="card settings-card">
           <span class="step-label">CONNECTION</span><h2>Your Gemini API key</h2>
@@ -101,7 +105,7 @@
           </form>
           <div class="settings-links"><a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer">Get a key in Google AI Studio ↗</a><button class="text-button" id="return-to-notes" type="button">← Back to notes</button></div>
         </section>
-        <aside class="card settings-card connection-info"><span class="step-label">CURRENT SETUP</span><h2>Gemini Flash-Lite</h2><dl><div><dt>Model</dt><dd id="model-name">Checking…</dd></div><div><dt>Key in use</dt><dd id="key-mode">Shared key</dd></div><div><dt>Source &amp; output</dt><dd>This tab only</dd></div></dl><p class="small">Your key uses your own Google project’s quota. Selecting it does not increase the shared allowance.</p><p class="small">Google’s free API tier may use submitted content for product improvement. Use de-identified source material.</p></aside>
+        <aside class="card settings-card connection-info"><span class="step-label">CURRENT SETUP</span><h2>Gemini Flash-Lite</h2><dl><div><dt>Model</dt><dd id="model-name">Checking…</dd></div><div><dt>Key in use</dt><dd id="key-mode">Shared key</dd></div><div><dt>Source &amp; output</dt><dd>This tab only</dd></div></dl></aside>
       </div>
     </section>
 

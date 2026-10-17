@@ -2,7 +2,8 @@ import { extractAdmissionSections } from './sections.mjs';
 
 const $ = id => document.getElementById(id);
 const TABS = [
-  { id: 'notes', icon: '▤', label: 'Clinical notes', short: 'Notes' },
+  { id: 'handoff', icon: '📝', label: '交班單', short: '交班單' },
+  { id: 'notes', icon: '🤖', label: '病歷', short: '病歷' },
   { id: 'key', icon: '⚿', label: 'API key', short: 'API key' }
 ];
 const TITLES = { admission: 'Admission note', consult: 'Consult request', summary: 'Treatment summary', support: 'Anti/O2/IV' };
