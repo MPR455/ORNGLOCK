@@ -2,6 +2,10 @@
 
 A clinical documentation workspace using the shell, colors, themes, cards, and mobile navigation from the supplied CGMH_ER reference page, with ORNGLOCK branding.
 
+Public page: https://mpr455.github.io/ORNGLOCK/
+
+Backend: https://ornglock-api.ornglock.workers.dev
+
 One source input connects to four private master prompts:
 
 1. Admission note
@@ -58,13 +62,13 @@ The local preview counters are in memory and reset when it restarts. The deploye
 
 ## Backend deployment: Cloudflare Worker
 
-Deployment requires your Cloudflare account and the Wrangler CLI. No Cloudflare deployment has been made merely by creating these files.
+Deployment requires your Cloudflare account. Wrangler is included as a development dependency; install dependencies with `pnpm install` (or `npm install`) before deploying.
 
-1. Install Wrangler with your preferred package manager and authenticate with `wrangler login`.
+1. Authenticate with `npx wrangler login`.
 2. Keep the original `master prompt/` directory beside `index.html`. Wrangler bundles its text files into the backend only.
 3. Review `wrangler.toml`: set the actual frontend origin and desired request limits. The supplied origin is `https://mpr455.github.io`.
-4. Run `wrangler secret put GEMINI_API_KEY`, then paste a fresh key at its hidden prompt.
-5. Run `wrangler deploy` from this directory.
+4. Run `npx wrangler deploy` from this directory to create the Worker and its usage counter.
+5. Run `npx wrangler secret put GEMINI_API_KEY`, then paste a fresh key at its hidden prompt.
 6. Copy the returned HTTPS Worker origin, for example `https://ornglock-api.YOUR-SUBDOMAIN.workers.dev`.
 
 The Worker uses a SQLite Durable Object; ensure that feature is available on your Cloudflare plan. The application does not enable Worker observability or request-body logging. Your hosting account's separate platform configuration still applies.

@@ -11,5 +11,10 @@
     "build": "node scripts/build.mjs",
     "deploy:backend": "wrangler deploy"
   },
-  "engines": { "node": ">=22" }
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "wrangler": "^4.151.1"
+  }
 }
