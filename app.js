@@ -5,7 +5,7 @@ const TABS = [
   { id: 'notes', icon: '▤', label: 'Clinical notes', short: 'Notes' },
   { id: 'key', icon: '⚿', label: 'API key', short: 'API key' }
 ];
-const TITLES = { admission: 'Admission note', consult: 'Consult request', summary: 'Treatment summary', support: 'Treatment & devices' };
+const TITLES = { admission: 'Admission note', consult: 'Consult request', summary: 'Treatment summary', support: 'Anti/O2/IV' };
 const state = { tab: 'notes', apiKey: '', ready: false, sharedAvailable: false, active: null, lastAction: null, model: '', maxChars: 100000, generatedAction: null, startedAt: 0 };
 let sheetOpener, elapsedTimer, toastTimer;
 

@@ -37,9 +37,6 @@
 
   <main>
     <section class="tab active" id="tab-notes" tabindex="-1" aria-label="Clinical notes">
-      <div class="workspace-toolbar">
-        <button class="connection-pill" id="connection-pill" type="button" aria-label="Open API key settings"><span class="status-dot" aria-hidden="true"></span><span id="connection-label">Connecting…</span><span aria-hidden="true">›</span></button>
-      </div>
       <div class="workspace">
         <section class="card editor-card source-card" aria-labelledby="source-title">
           <div class="panel-heading"><h2 id="source-title">Input</h2><button class="btn sec sm" id="clear-source" type="button" disabled>Clear</button></div>
@@ -64,9 +61,10 @@
             </button>
             <button class="action-button" type="button" data-action="support" disabled>
               <span class="action-top"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 17h6l4-10 6 18 4-8h6M6 6h2M25 26h2"/></svg></span>
-              <span class="action-title">Treatment<br>&amp; devices</span>
+              <span class="action-title">Anti/O2/IV</span>
             </button>
           </div>
+          <button class="connection-pill" id="connection-pill" type="button" aria-label="Open API key settings"><span class="status-dot" aria-hidden="true"></span><span id="connection-label">Connecting…</span><span aria-hidden="true">›</span></button>
           <div class="run-status" id="run-status" role="status" aria-live="polite" hidden><span class="run-status-icon" aria-hidden="true">↗</span><span id="run-message"></span></div>
           <button class="btn sec cancel-button" id="cancel-generation" type="button" hidden>Stop generation</button>
         </section>
@@ -85,7 +83,6 @@
         </section>
       </div>
       <div class="notice" id="error-notice" role="alert" hidden><div><strong id="error-title">Could not generate the document</strong><p id="error-message"></p></div><button class="btn sec sm" id="error-key-button" type="button" hidden>Use my API key</button></div>
-      <p class="workspace-footnote">Only the notes you submit are sent to Gemini through this service. Source notes, output, and personal keys are not saved by this app.</p>
     </section>
 
     <section class="tab" id="tab-key" tabindex="-1" aria-labelledby="key-title">
