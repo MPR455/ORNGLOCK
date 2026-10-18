@@ -6,6 +6,7 @@ import { createHash } from 'node:crypto';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const dist = resolve(root, 'dist');
 const files = ['index.html', 'styles.css', 'directory.css', 'app.js', 'sections.mjs', 'directory.mjs', 'directory-data.mjs', 'assets/ornglock.png', 'assets/ornglock-symbol.png', 'assets/cgmh-oph.svg', 'assets/cgmh-em.svg'];
+files.push('PE example/Admission normal PE.txt', 'PE example/Admission ROS.txt', 'PE example/Progress normal PE.txt');
 for (const file of files) {
   const target = resolve(dist, file);
   await mkdir(dirname(target), { recursive: true });

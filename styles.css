@@ -139,6 +139,12 @@ main{padding-top:18px}
 .text-button:hover{text-decoration:underline}
 .actions-card{padding:0;display:flex;flex-direction:column;justify-content:center;min-width:0}
 .actions-card>.connection-pill{justify-content:center;align-self:center;margin:14px auto 0;width:100%;max-width:280px}
+.template-copy-controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;width:100%;max-width:280px;margin:10px auto 0}
+.template-copy-button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-width:0;min-height:70px;padding:8px 4px;border:1px solid var(--line);border-radius:6px;background:var(--chip);color:var(--chipink);font-size:11px;line-height:1.35;text-align:center;cursor:pointer}
+.template-copy-button:hover:not(:disabled){border-color:var(--acc)}
+.template-copy-button:disabled{opacity:.6;cursor:wait}
+.template-copy-button>span:last-child{font-size:16px;line-height:1}
+.clipboard-fallback{position:fixed;top:0;left:0;width:1px;height:1px;opacity:0;pointer-events:none}
 .action-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .action-button{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;aspect-ratio:1;min-width:0;width:100%;padding:12px 10px;text-align:center;background:var(--card);color:var(--ink);border:1px solid var(--line);border-top:3px solid var(--acc);border-radius:8px;cursor:pointer;transition:background .15s,border-color .15s,box-shadow .15s}
 .action-button:hover:not(:disabled){background:var(--chip);border-color:var(--acc);box-shadow:0 2px 8px rgba(15,107,178,.08)}

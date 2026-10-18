@@ -96,6 +96,11 @@
             </button>
           </div>
           <button class="connection-pill" id="connection-pill" type="button" aria-label="Open API key settings"><span class="status-dot" aria-hidden="true"></span><span id="connection-label">Connecting…</span><span aria-hidden="true">›</span></button>
+          <div class="template-copy-controls" id="template-copy-controls" role="group" aria-label="Copy a clinical template">
+            <button class="template-copy-button" type="button" data-copy-template="PE example/Admission normal PE.txt" aria-label="Copy Admission normal PE" disabled><span>Admission<br>normal PE</span><span aria-hidden="true">⧉</span></button>
+            <button class="template-copy-button" type="button" data-copy-template="PE example/Admission ROS.txt" aria-label="Copy Admission ROS" disabled><span>Admission<br>ROS</span><span aria-hidden="true">⧉</span></button>
+            <button class="template-copy-button" type="button" data-copy-template="PE example/Progress normal PE.txt" aria-label="Copy Progress normal PE" disabled><span>Progress<br>normal PE</span><span aria-hidden="true">⧉</span></button>
+          </div>
           <div class="run-status" id="run-status" role="status" aria-live="polite" hidden><span class="run-status-icon" aria-hidden="true">↗</span><span id="run-message"></span></div>
           <button class="btn sec cancel-button" id="cancel-generation" type="button" hidden>Stop generation</button>
         </section>

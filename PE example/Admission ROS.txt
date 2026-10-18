@@ -1,0 +1,19 @@
+1. General：
+  weakness:(no), fatigue:(no), anorexia:(no), fever:(no), insomnia:(no)
+2. Integument (skin, hair and nails)：
+  changes in color:(no), pruritus:(no), rash:(no), hair loss:(no)
+3. HEENT：
+a. Head - headache:(no), dizziness:(no), vertigo:(no)
+b. Eyes - visual acuity:(normal), color vision:(normal), photophobia:(no), diplopia:(no), pain:(no)
+c. Ears - pain:(no), discharge:(no), hearing loss:(no), tinnitus:(no)
+d. Nose - epistaxis:(no), discharge:(no), stuffiness:(no), sense of smell:(normal)
+e. Throat - status of teeth:(normal), gums:(normal), dentures:(no), taste:(normal), soreness:(no), hoarseness:(no), lump:(no)
+4. Respiratory：cough:(no), sputum:(no), hemoptysis:(no), wheezing:(no), dyspnea:(no)
+5. CV：edema:(no), chest distress:(no), chest pain:(no), palpitation:(no)
+     intermittent claudication:(no), cold limbs:(no), cyanosis:(no)
+6. GI：dysphagia:(no), nausea:(no), vomiting:(no), abdominal distress/pain:(no), change in bowel habit:(no), hematemesis:(no), melena:(no), bloody stool:(no)
+7. GU：urinary frequency:(no), hesitancy:(no), urgency:(no), dribbling:(no), incontinence:(no), dysuria:(no), hematuria:(no), nocturia:(no), polyuria:(no), impotence:(no);
+8. Metabolic and endocrine：growth:(fair), development:(normal), weight change:(no), heat/cold intolerance:(no), nervousness:(no), sweating:(no), polydipsia:(no)
+9. Hematologic: anemia:(no), easy brusity or bleeding:(no), lymphadenopathy:(no), transfusions:(no)
+10. Neuropsychiatry：dizziness:(no), syncope:(no), seizure:(no), speech disturbance:(no), loss of sensation:(no), paresthesia:(no), ataxia:(no), weakness or paralysis:(no), tremor:(no), anxiety:(no), depression:(no), irritablility:(no)
+11. Musculoskeletal：joint pain:(no), stiffness:(no), limitation of motion:(no), muscular weakenss:(no), muscle wasting:(no)

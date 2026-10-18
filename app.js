@@ -11,6 +11,7 @@ const TABS = [
 ];
 const TITLES = { admission: 'Admission note', consult: 'Consult request', summary: 'Treatment summary', support: 'Anti/O2/IV' };
 const state = { tab: 'notes', apiKey: '', ready: false, sharedAvailable: false, active: null, lastAction: null, model: '', maxChars: 100000, generatedAction: null, startedAt: 0 };
+const noteTemplates = new Map();
 let sheetOpener, elapsedTimer, toastTimer;
 
 function tabButton(tab, className = '', iconClass = '') {
@@ -137,6 +138,20 @@ function showError(title, message, canUseOwnKey) { $('error-title').textContent 
 function openKeySettings() { showTab('key', true); $('personal-key').focus(); }
 function toast(message) { clearTimeout(toastTimer); $('toast').textContent = message; $('toast').hidden = false; toastTimer = setTimeout(() => { $('toast').hidden = true; }, 3500); }
 
+async function loadNoteTemplates() {
+  await Promise.all([...document.querySelectorAll('[data-copy-template]')].map(async button => {
+    try {
+      const response = await fetch(button.dataset.copyTemplate, { cache: 'no-cache' });
+      if (!response.ok) throw new Error('Template unavailable');
+      noteTemplates.set(button.dataset.copyTemplate, await response.text());
+    } catch {
+      button.title = 'Template unavailable. Reload the page to try again.';
+    } finally {
+      button.disabled = false;
+    }
+  }));
+}
+
 async function generate(action) {
   if (state.active || !state.ready || !$('source-notes').value.trim()) return;
   if (!state.apiKey && !state.sharedAvailable) { showError('An API key is needed', 'The shared key is unavailable. Add your own Gemini key to generate this document.', true); openKeySettings(); return; }
@@ -206,8 +221,24 @@ $('use-shared-key').addEventListener('click', () => { state.apiKey = ''; $('pers
 $('toggle-key').addEventListener('click', () => { const reveal = $('personal-key').type === 'password'; $('personal-key').type = reveal ? 'text' : 'password'; $('toggle-key').textContent = reveal ? 'Hide' : 'Show'; $('toggle-key').setAttribute('aria-pressed', String(reveal)); $('toggle-key').setAttribute('aria-label', reveal ? 'Hide API key' : 'Show API key'); });
 async function copyText(text, start = 0, end = text.length) {
   try { await navigator.clipboard.writeText(text); toast('Copied.'); }
-  catch { $('output-notes').focus(); $('output-notes').setSelectionRange(start, end); toast('Text selected. Use your device’s Copy command.'); }
+  catch {
+    const previousFocus = document.activeElement;
+    const field = document.createElement('textarea'); field.value = text; field.readOnly = true; field.className = 'clipboard-fallback'; field.setAttribute('aria-label', 'Text to copy'); document.body.append(field); field.select();
+    let copied = false;
+    try { copied = document.execCommand('copy'); } catch {}
+    field.remove(); previousFocus?.focus({ preventScroll: true });
+    if (copied) toast('Copied.');
+    else if ($('output-notes').value.slice(start, end) === text) { $('output-notes').focus(); $('output-notes').setSelectionRange(start, end); toast('Text selected. Use your device’s Copy command.'); }
+    else toast('Could not copy. Allow clipboard access and try again.');
+  }
 }
+$('template-copy-controls').addEventListener('click', event => {
+  const button = event.target.closest('[data-copy-template]');
+  if (!button || button.disabled) return;
+  const text = noteTemplates.get(button.dataset.copyTemplate);
+  if (text === undefined) { toast('Template could not be loaded. Reload the page and try again.'); return; }
+  copyText(text);
+});
 $('copy-output').addEventListener('click', () => copyText($('output-notes').value));
 $('section-copy-controls').addEventListener('click', event => {
   const button = event.target.closest('[data-copy-section]');
@@ -218,4 +249,4 @@ $('section-copy-controls').addEventListener('click', event => {
 $('download-output').addEventListener('click', () => {
   const url = URL.createObjectURL(new Blob([$('output-notes').value], { type: 'text/plain;charset=utf-8' })); const anchor = document.createElement('a'); anchor.href = url; anchor.download = `ORNGLOCK-${state.generatedAction || 'document'}-${new Date().toISOString().slice(0, 10)}.txt`; document.body.append(anchor); anchor.click(); anchor.remove(); setTimeout(() => URL.revokeObjectURL(url), 1000);
 });
-buildNavigation(); initDirectory({ closeMenu }); updateInputs(); connect();
+buildNavigation(); initDirectory({ closeMenu }); updateInputs(); loadNoteTemplates(); connect();
