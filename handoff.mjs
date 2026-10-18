@@ -23,7 +23,7 @@ export function initHandoff({ endpoint, getKey, openKeySettings, copyText, toast
   root.innerHTML = `<div class="handoff-workspace"><aside class="handoff-left" aria-label="病人名單"><div class="handoff-list-top"><div id="handoff-import-actions"></div><label class="sr-only" for="handoff-search">搜尋床號、姓名或病歷號</label><input id="handoff-search" type="search" placeholder="搜尋床號 / 姓名 / 病歷號" autocomplete="off"></div><div id="handoff-list" class="handoff-list"></div><div class="handoff-list-bottom"><div id="handoff-sorts" class="handoff-segmented"></div><div id="handoff-views" class="handoff-view-controls"></div></div></aside>
   <section class="handoff-right" aria-label="交班筆記"><div id="handoff-tools" class="handoff-tools"></div><div id="handoff-editor" class="handoff-editor-scroll"></div><div class="handoff-editor-footer"><span id="handoff-editor-status">資料僅保留在此分頁</span><span>! 標註重要 · -/# 文字區塊 · @ 插入日期</span></div></section></div><div id="handoff-message" role="status" aria-live="polite" class="handoff-message" hidden></div>`;
   const find = id => root.querySelector(`#${id}`);
-  const ui = { sort: 'bed', view: 'cards', expanded: false, minimized: false, search: '', aiAction: 'handoff_convert' };
+  const ui = { sort: 'bed', view: 'cards', expanded: false, minimized: false, editorBeforeExpand: false, search: '', aiAction: 'handoff_convert' };
   let messageTimer, request = null, draft = null, ai;
   const notice = text => { const message = find('handoff-message'); message.textContent = text; message.hidden = false; clearTimeout(messageTimer); messageTimer = setTimeout(() => { message.hidden = true; }, 6000); };
   const store = new HandoffStore(() => { renderCards(); renderToolbar(); editor.render(); refreshAIPatients(); });
@@ -34,19 +34,18 @@ export function initHandoff({ endpoint, getKey, openKeySettings, copyText, toast
   const importButton = button('↑ 匯入病人', openImport, 'handoff-primary'); importButton.id = 'handoff-import';
   const addButton = button('＋ 新增病人', () => openPatient()); addButton.id = 'handoff-add';
   const count = node('span', '', '0 位病人'); count.id = 'handoff-count'; count.setAttribute('aria-live', 'polite');
-  const shrink = button('↙ 縮小', () => setExpanded(false), 'handoff-square'); shrink.id = 'handoff-shrink'; shrink.hidden = true;
-  find('handoff-import-actions').append(importButton, addButton, count, shrink);
+  find('handoff-import-actions').append(importButton, addButton, count);
   for (const [mode, title] of [['bed', '床號'], ['important', '重要 !'], ['pending', '待辦']]) { const item = button(title, () => { ui.sort = mode; renderCards(); }); item.dataset.sort = mode; find('handoff-sorts').append(item); }
-  const expand = button('⛶ 展開', () => setExpanded(true)); expand.id = 'handoff-expand'; expand.setAttribute('aria-expanded', 'false');
+  const expand = button('⛶ 展開', () => setExpanded(!ui.expanded)); expand.id = 'handoff-expand'; expand.setAttribute('aria-expanded', 'false');
+  find('handoff-sorts').querySelector('[data-sort="bed"]').after(expand);
   const minimize = button('⇤ 縮小', () => setMinimized(true)); minimize.id = 'handoff-minimize'; minimize.setAttribute('aria-label', '縮小病人欄');
-  const restore = button('⇥ 還原', () => setMinimized(false)); restore.id = 'handoff-restore'; restore.hidden = true; restore.setAttribute('aria-label', '還原病人欄');
-  const sizes = node('div', 'handoff-size-controls'); sizes.append(expand, minimize, restore);
+  const restore = button('⇥ 還原', () => setMinimized(false), 'handoff-restore-button'); restore.id = 'handoff-restore'; restore.hidden = true; restore.setAttribute('aria-label', '還原病人欄');
+  const sizes = node('div', 'handoff-size-controls'); sizes.append(minimize, restore);
   const view = button('☑ 待辦事項', () => { ui.view = ui.view === 'cards' ? 'tasks' : 'cards'; view.textContent = ui.view === 'cards' ? '☑ 待辦事項' : '▣ 病人卡'; view.setAttribute('aria-pressed', String(ui.view === 'tasks')); root.classList.toggle('handoff-tasks-active', ui.view === 'tasks'); renderCards(); }, 'handoff-task-toggle'); view.id = 'handoff-task-toggle'; view.setAttribute('aria-pressed', 'false'); find('handoff-views').append(sizes, view);
   const tools = find('handoff-tools');
   const aiButton = button('🤖', openAI, 'handoff-ai-trigger handoff-square'); aiButton.id = 'handoff-ai'; aiButton.setAttribute('aria-label', '開啟 AI 工具'); aiButton.title = 'AI 工具';
   const mode = button('連續模式', () => { editor.mode = editor.mode === 'individual' ? 'continuous' : 'individual'; editor.bookmark = null; editor.render(); mode.textContent = editor.mode === 'individual' ? '個別模式' : '連續模式'; mode.setAttribute('aria-pressed', String(editor.mode === 'continuous')); if (store.activeId) editor.select(store.activeId); }, 'handoff-square'); mode.id = 'handoff-mode'; mode.setAttribute('aria-pressed', 'true');
-  const returnList = button('← 病人', () => setExpanded(true), 'handoff-square'); returnList.id = 'handoff-return-list';
-  tools.append(returnList, aiButton, mode);
+  tools.append(aiButton, mode);
   for (const [color, title] of [['red', '紅色'], ['yellow', '黃色'], ['green', '綠色']]) {
     const item = button('▰', () => editor.applyColor(color), `handoff-highlight handoff-color-${color}`); item.id = `handoff-highlight-${color}`; item.dataset.highlight = color; item.title = `${title}螢光筆`; item.setAttribute('aria-label', `${title}螢光筆`); item.setAttribute('aria-pressed', 'false'); item.addEventListener('pointerdown', event => { editor.bookmark = editor.selection() || editor.bookmark; event.preventDefault(); }); tools.append(item);
   }
@@ -56,31 +55,49 @@ export function initHandoff({ endpoint, getKey, openKeySettings, copyText, toast
   const dnrButton = button('DNR', () => openMetadata('codeStatus', 'DNR', [['DNR1', 'DNR1'], ['DNR2', 'DNR2'], ['DNR3', 'DNR3']])); dnrButton.id = 'handoff-dnr'; dnrButton.setAttribute('aria-haspopup', 'dialog'); tools.append(sexButton, dnrButton);
   const undo = button('↶ 復原', () => { if (!store.undo()) notice('目前沒有可復原的操作。'); }); undo.id = 'handoff-undo';
   const redo = button('↷', () => store.undo(true)); redo.id = 'handoff-redo'; redo.setAttribute('aria-label', '重做');
-  const download = button('↓ 下載交班單', downloadAll, 'handoff-download'); download.id = 'handoff-download'; tools.append(undo, redo, download);
+  const bannerToggle = button('', () => setBannerHidden(!document.body.classList.contains('handoff-banner-hidden')), 'handoff-square handoff-banner-toggle'); bannerToggle.id = 'handoff-banner-toggle'; bannerToggle.setAttribute('aria-pressed', 'false'); bannerToggle.setAttribute('aria-controls', 'site-header'); bannerToggle.setAttribute('aria-label', '隱藏頂端橫幅'); bannerToggle.title = '隱藏頂端橫幅';
+  document.querySelector('body > header').id = 'site-header';
+  const fullscreenIcon = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5"/></svg>';
+  const restoreBannerIcon = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 8h5V3M21 8h-5V3M8 21v-5H3M16 21v-5h5"/></svg>';
+  bannerToggle.innerHTML = fullscreenIcon;
+  const download = button('', downloadAll, 'handoff-download'); download.id = 'handoff-download'; download.setAttribute('aria-label', '下載交班單'); download.append(node('span', 'handoff-download-full', '↓ 下載交班單'), node('span', 'handoff-download-compact', '↓ 下載')); tools.append(undo, redo, bannerToggle, download);
   editor.onPaint = color => tools.querySelectorAll('[data-highlight]').forEach(item => item.setAttribute('aria-pressed', String(item.dataset.highlight === color)));
   find('handoff-search').addEventListener('input', event => { ui.search = event.target.value.trim().toLowerCase(); renderCards(); });
   window.addEventListener('beforeunload', event => { if (store.patients.length) { event.preventDefault(); event.returnValue = ''; } });
+  window.addEventListener('resize', syncPanelControls);
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && document.body.classList.contains('handoff-banner-hidden') && !document.querySelector('dialog[open]')) setBannerHidden(false); });
+  function setBannerHidden(hidden) {
+    document.body.classList.toggle('handoff-banner-hidden', hidden);
+    bannerToggle.innerHTML = hidden ? restoreBannerIcon : fullscreenIcon;
+    bannerToggle.setAttribute('aria-pressed', String(hidden)); bannerToggle.setAttribute('aria-label', hidden ? '顯示頂端橫幅' : '隱藏頂端橫幅'); bannerToggle.title = hidden ? '顯示頂端橫幅' : '隱藏頂端橫幅';
+    requestAnimationFrame(() => editor.positionHandles());
+  }
   function updateActive(id) {
     for (const card of find('handoff-list').querySelectorAll('[data-card-patient]')) { const active = card.dataset.cardPatient === id; card.classList.toggle('active', active); card.querySelector('[data-open-patient]')?.setAttribute('aria-pressed', String(active)); }
     find('handoff-editor-status').textContent = store.active ? `${store.active.bed || '床號待補'} ${store.active.name} · ${pendingCount(store.active)} 項待辦` : '資料僅保留在此分頁';
     sexButton.textContent = store.active?.sex ? `性別：${store.active.sex}` : '性別'; dnrButton.textContent = store.active?.codeStatus ? `DNR：${store.active.codeStatus}` : 'DNR';
   }
   function setExpanded(expanded) {
-    if (expanded && ui.minimized) setMinimized(false);
+    if (expanded) { ui.editorBeforeExpand = root.classList.contains('handoff-mobile-editor'); if (ui.minimized) setMinimized(false); }
     ui.expanded = expanded; root.classList.toggle('handoff-expanded', expanded);
-    expand.hidden = expanded; minimize.hidden = expanded; expand.setAttribute('aria-expanded', String(expanded)); shrink.hidden = !expanded;
-    if (expanded) root.classList.remove('handoff-mobile-editor');
+    expand.textContent = expanded ? '↙ 還原' : '⛶ 展開'; expand.classList.toggle('handoff-restore-button', expanded); expand.setAttribute('aria-expanded', String(expanded));
+    root.classList.toggle('handoff-mobile-editor', !expanded && ui.editorBeforeExpand);
+    syncPanelControls();
     renderCards(); requestAnimationFrame(() => editor.positionHandles());
   }
   function setMinimized(minimized) {
     ui.minimized = minimized; root.classList.toggle('handoff-minimized', minimized);
-    minimize.hidden = minimized; restore.hidden = !minimized;
     if (minimized) root.classList.add('handoff-mobile-editor');
     else root.classList.remove('handoff-mobile-editor');
+    syncPanelControls();
     renderCards(); requestAnimationFrame(() => editor.positionHandles());
     if (!minimized) minimize.focus({ preventScroll: true });
   }
-  function selectPatient(id) { if (ui.expanded) setExpanded(false); editor.select(id); root.classList.add('handoff-mobile-editor'); renderToolbar(); }
+  function syncPanelControls() {
+    const narrowEditor = matchMedia('(max-width:760px)').matches && root.classList.contains('handoff-mobile-editor') && !ui.expanded;
+    minimize.hidden = ui.expanded || ui.minimized || narrowEditor; restore.hidden = !(ui.minimized || narrowEditor);
+  }
+  function selectPatient(id) { if (ui.expanded) setExpanded(false); editor.select(id); root.classList.add('handoff-mobile-editor'); syncPanelControls(); renderToolbar(); }
   function renderToolbar() {
     const has = Boolean(store.active); for (const item of [aiButton, mode, pendingButton, clearHighlight, sexButton, dnrButton, ...tools.querySelectorAll('[data-highlight]')]) item.disabled = !has;
     download.disabled = !store.patients.length; undo.disabled = !store.history.length; redo.disabled = !store.future.length;
