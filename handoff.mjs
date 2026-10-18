@@ -23,7 +23,7 @@ export function initHandoff({ endpoint, getKey, openKeySettings, copyText, toast
   root.innerHTML = `<div class="handoff-workspace"><aside class="handoff-left" aria-label="病人名單"><div class="handoff-list-top"><div id="handoff-import-actions"></div><label class="sr-only" for="handoff-search">搜尋床號、姓名或病歷號</label><input id="handoff-search" type="search" placeholder="搜尋床號 / 姓名 / 病歷號" autocomplete="off"></div><div id="handoff-list" class="handoff-list"></div><div class="handoff-list-bottom"><div id="handoff-sorts" class="handoff-segmented"></div><div id="handoff-views" class="handoff-view-controls"></div></div></aside>
   <section class="handoff-right" aria-label="交班筆記"><div id="handoff-tools" class="handoff-tools"></div><div id="handoff-editor" class="handoff-editor-scroll"></div><div class="handoff-editor-footer"><span id="handoff-editor-status">資料僅保留在此分頁</span><span>拖曳 ⠿ 調整 -/# 區塊 · @ 插入日期</span></div></section></div><div id="handoff-message" role="status" aria-live="polite" class="handoff-message" hidden></div>`;
   const find = id => root.querySelector(`#${id}`);
-  const ui = { sort: 'bed', view: 'cards', expanded: false, search: '', aiAction: 'handoff_convert' };
+  const ui = { sort: 'bed', view: 'cards', expanded: false, minimized: false, search: '', aiAction: 'handoff_convert' };
   let messageTimer, request = null, draft = null, ai;
   const notice = text => { const message = find('handoff-message'); message.textContent = text; message.hidden = false; clearTimeout(messageTimer); messageTimer = setTimeout(() => { message.hidden = true; }, 6000); };
   const store = new HandoffStore(() => { renderCards(); renderToolbar(); editor.render(); });
@@ -38,7 +38,10 @@ export function initHandoff({ endpoint, getKey, openKeySettings, copyText, toast
   find('handoff-import-actions').append(importButton, addButton, count, shrink);
   for (const [mode, title] of [['bed', '床號'], ['important', '重要 !'], ['pending', '待辦']]) { const item = button(title, () => { ui.sort = mode; renderCards(); }); item.dataset.sort = mode; find('handoff-sorts').append(item); }
   const expand = button('⛶ 展開', () => setExpanded(true)); expand.id = 'handoff-expand'; expand.setAttribute('aria-expanded', 'false');
-  const view = button('☑ 待辦清單', () => { ui.view = ui.view === 'cards' ? 'tasks' : 'cards'; view.textContent = ui.view === 'cards' ? '☑ 待辦清單' : '▣ 病人卡'; renderCards(); }); find('handoff-views').append(expand, view);
+  const minimize = button('⇤ 縮小', () => setMinimized(true)); minimize.id = 'handoff-minimize'; minimize.setAttribute('aria-label', '縮小病人欄');
+  const restore = button('⇥ 還原', () => setMinimized(false)); restore.id = 'handoff-restore'; restore.hidden = true; restore.setAttribute('aria-label', '還原病人欄');
+  const sizes = node('div', 'handoff-size-controls'); sizes.append(expand, minimize, restore);
+  const view = button('☑ 待辦清單', () => { ui.view = ui.view === 'cards' ? 'tasks' : 'cards'; view.textContent = ui.view === 'cards' ? '☑ 待辦清單' : '▣ 病人卡'; renderCards(); }); find('handoff-views').append(sizes, view);
   const tools = find('handoff-tools');
   const aiButton = button('🤖', openAI, 'handoff-ai-trigger handoff-square'); aiButton.id = 'handoff-ai'; aiButton.setAttribute('aria-label', '開啟 AI 工具'); aiButton.title = 'AI 工具';
   const mode = button('個別模式', () => { editor.mode = editor.mode === 'individual' ? 'continuous' : 'individual'; editor.bookmark = null; editor.render(); mode.textContent = editor.mode === 'individual' ? '個別模式' : '連續模式'; mode.setAttribute('aria-pressed', String(editor.mode === 'continuous')); if (store.activeId) editor.select(store.activeId); }, 'handoff-square'); mode.id = 'handoff-mode'; mode.setAttribute('aria-pressed', 'false');
@@ -60,10 +63,19 @@ export function initHandoff({ endpoint, getKey, openKeySettings, copyText, toast
     find('handoff-editor-status').textContent = store.active ? `${store.active.bed || '床號待補'} ${store.active.name} · ${pendingCount(store.active)} 項待辦` : '資料僅保留在此分頁';
   }
   function setExpanded(expanded) {
+    if (expanded && ui.minimized) setMinimized(false);
     ui.expanded = expanded; root.classList.toggle('handoff-expanded', expanded);
-    expand.hidden = expanded; expand.setAttribute('aria-expanded', String(expanded)); shrink.hidden = !expanded;
+    expand.hidden = expanded; minimize.hidden = expanded; expand.setAttribute('aria-expanded', String(expanded)); shrink.hidden = !expanded;
     if (expanded) root.classList.remove('handoff-mobile-editor');
     renderCards(); requestAnimationFrame(() => editor.positionHandles());
+  }
+  function setMinimized(minimized) {
+    ui.minimized = minimized; root.classList.toggle('handoff-minimized', minimized);
+    minimize.hidden = minimized; restore.hidden = !minimized;
+    if (minimized) root.classList.add('handoff-mobile-editor');
+    else root.classList.remove('handoff-mobile-editor');
+    renderCards(); requestAnimationFrame(() => editor.positionHandles());
+    if (!minimized) minimize.focus({ preventScroll: true });
   }
   function selectPatient(id) { if (ui.expanded) setExpanded(false); editor.select(id); root.classList.add('handoff-mobile-editor'); renderToolbar(); }
   function renderToolbar() {
@@ -89,7 +101,7 @@ export function initHandoff({ endpoint, getKey, openKeySettings, copyText, toast
     const patients = sortPatients(store.patients, ui.sort).filter(patient => !ui.search || [patient.bed, patient.name, patient.mrn].join(' ').toLowerCase().includes(ui.search));
     let shown = 0;
     for (const patient of patients) {
-      const tasks = tasksOf(patient); if (ui.view === 'tasks' && !tasks.length) continue; shown++;
+      const tasks = tasksOf(patient); if (ui.view === 'tasks' && !ui.minimized && !tasks.length) continue; shown++;
       const card = node('article', `handoff-patient${patient.id === store.activeId ? ' active' : ''}`); card.dataset.cardPatient = patient.id;
       const top = node('div', 'handoff-card-top'), open = button('', () => selectPatient(patient.id), 'handoff-patient-open'); open.dataset.openPatient = ''; open.append(node('strong', 'handoff-bed', patient.bed || '床號待補'), node('span', 'handoff-name', patient.name || '姓名待補')); open.setAttribute('aria-pressed', String(patient.id === store.activeId));
       const edit = button('編輯', () => openPatient(patient), 'handoff-mini'); edit.setAttribute('aria-label', `編輯 ${patient.name} 病人資料`);

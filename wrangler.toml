@@ -8,7 +8,7 @@ enabled = false
 
 [vars]
 GEMINI_MODEL = "gemini-3.5-flash-lite"
-ALLOWED_ORIGINS = "https://mpr455.github.io,http://127.0.0.1:8787,http://localhost:8787"
+ALLOWED_ORIGINS = "https://mpr455.github.io,http://127.0.0.1:8787,http://localhost:8787,chrome-extension://mfggjpedjnfoeohehcklcdhahjkgiagg"
 SHARED_DAILY_LIMIT = "100"
 REQUESTS_PER_MINUTE = "6"
 

@@ -171,6 +171,20 @@ main:has(>.handoff-tab.active.handoff-expanded){max-width:none}
 .handoff-expanded .handoff-list-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px}
 .handoff-expanded .handoff-view-controls{margin:0}
 .handoff-expanded .handoff-list-empty{grid-column:1/-1}
+.handoff-size-controls{display:flex;gap:5px}
+.handoff-minimized .handoff-workspace{grid-template-columns:104px minmax(0,1fr)}
+.handoff-minimized .handoff-list-top,.handoff-minimized #handoff-sorts,.handoff-minimized #handoff-views>button{display:none}
+.handoff-minimized .handoff-list{padding:6px}
+.handoff-minimized .handoff-patient{padding:5px;margin-bottom:6px}
+.handoff-minimized .handoff-card-top{display:block}
+.handoff-minimized .handoff-card-top>.handoff-mini,.handoff-minimized .handoff-delete,.handoff-minimized .handoff-demographics,.handoff-minimized .handoff-remark,.handoff-minimized .handoff-badges,.handoff-minimized .handoff-task-row{display:none}
+.handoff-minimized .handoff-patient-open{flex-direction:column;align-items:flex-start;gap:2px;width:100%;padding:2px}
+.handoff-minimized .handoff-bed{font-size:14px}
+.handoff-minimized .handoff-name{font-size:11px;line-height:1.3}
+.handoff-minimized .handoff-list-bottom{padding:6px}
+.handoff-minimized .handoff-view-controls{margin:0}
+.handoff-minimized .handoff-size-controls{flex-direction:column;width:100%}
+.handoff-minimized .handoff-list-empty{padding:16px 2px;font-size:11px}
 @media(max-width:860px) and (any-hover:none) and (any-pointer:coarse){
   .handoff-tab{--handoff-bottom-space:calc(var(--site-header-height,54px) + 12px + env(safe-area-inset-bottom))}
 }

@@ -108,6 +108,8 @@ The 交班單 tab supports manual patient entry, CSV/TSV and ward-text import, a
 
 Patient cards include bed, chart number, name, age, and a quick remark synchronized with the note header. The left pane supports bed/important/pending sorting and patient-grouped task editing. Expansion fills the page with larger cards showing history, current issues, assessment, plan, and pending/important lines; the shrink button returns to the editor layout. Checking a pending item moves that edited line and its continuation into the same patient's [O]: section without inventing a result. Individual and continuous views share one document model. Continuous notes and whole-list TXT downloads always follow floor/ward/bed order.
 
+The 縮小 button beside 展開 minimizes the left pane to a narrow bed/name strip, keeping patient selection available and giving the editor more room. 還原 returns to normal width. On small windows, minimizing opens the editor and ← 病人 returns to the patient view.
+
 Drag the visible **⠿** handle beside a `-` or `#` block to move the entire block, including continuation lines and highlights. Drop indicators snap before/after blocks; moving between sections is supported within the same patient. Handle clicks offer a keyboard-accessible section move, and Alt+Up/Down moves blocks. Cross-patient drops are blocked.
 
 The three highlighters apply **background color to selected text**, like Word. With a collapsed caret, a color activates repeated-selection paint mode; Escape stops painting. No color removes only the selected background. `@` opens an editable Taiwan-date picker with Left/Right day stepping.
@@ -115,6 +117,8 @@ The three highlighters apply **background color to selected text**, like Word. W
 Deleting first opens a confirmation naming the patient's bed, name, and chart number, with Cancel focused. Confirming removes the complete patient record: card, note, tasks, continuous-view content, download content, and that patient's AI scratchpad. Late AI responses cannot recreate it. Undo restores the record. Notes remain in page memory; export TXT before closing/reloading.
 
 ### Handoff AI configuration
+
+GitHub Pages and the API are deployed separately. Pushing frontend changes does not update the Worker. When adding or changing AI actions/private prompts, deploy the Worker from the local checkout and verify `/api/status` lists all three ready handoff actions before publishing the corresponding UI.
 
 The robot button opens a floating panel with a blank source input, Note convert, Data cleaning, and Order with Current-only copying. Note conversion always preserves existing facts and unresolved tasks; factual fidelity is required by all three private master prompts. Drafts are bound to their original patient and require a comparison before note replacement/data insertion. The three private master prompts are loaded only by the backend. Handoff availability is independent of the original four tools.
 
