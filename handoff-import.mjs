@@ -1,0 +1,144 @@
+import { DIVIDER, HEADINGS, createPatient, fromPortable, sameName, serializeBody } from './handoff-model.mjs';
+export const MAX_IMPORT_BYTES = 5_000_000;
+export function decodeFile(bytes, encoding = 'auto') {
+  if (bytes.byteLength > MAX_IMPORT_BYTES) throw new Error('檔案上限為 5 MB。請分批匯入。');
+  const data = bytes instanceof Uint8Array ? bytes : new Uint8Array(bytes);
+  const decode = name => new TextDecoder(name, { fatal: true }).decode(data).replace(/^\uFEFF/, '');
+  let text;
+  if (encoding !== 'auto') text = decode(encoding);
+  else if (data[0] === 0xff && data[1] === 0xfe) text = decode('utf-16le');
+  else if (data[0] === 0xfe && data[1] === 0xff) text = decode('utf-16be');
+  else { try { text = decode('utf-8'); } catch { try { text = decode('big5'); } catch { throw new Error('無法解碼檔案，請選擇 UTF-8 或 Big5 編碼。'); } } }
+  if (text.includes('\uFFFD') || /\x00/.test(text)) throw new Error('檔案包含無法辨識的字元，請檢查編碼。');
+  return text;
+}
+export function parseDelimited(source, delimiter = ',') {
+  const rows = []; let row = [], field = '', quoted = false, closed = false;
+  for (let i = 0; i < source.length; i++) {
+    const char = source[i];
+    if (quoted) {
+      if (char === '"') { if (source[i + 1] === '"') { field += '"'; i++; } else { quoted = false; closed = true; } }
+      else field += char;
+    } else if (char === '"' && !field && !closed) quoted = true;
+    else if (char === delimiter) { row.push(field); field = ''; closed = false; }
+    else if (char === '\n' || char === '\r') {
+      if (char === '\r' && source[i + 1] === '\n') i++;
+      row.push(field); if (row.some(value => value.trim())) rows.push(row); row = []; field = ''; closed = false;
+    } else if (closed && !/\s/.test(char)) throw new Error('CSV 引號後有非分隔文字，請檢查格式。');
+    else if (!closed) field += char;
+  }
+  if (quoted) throw new Error('CSV 有未結束的引號。');
+  row.push(field); if (row.some(value => value.trim())) rows.push(row);
+  return rows;
+}
+const headerKey = text => text.replace(/^\uFEFF/, '').normalize('NFKC').replace(/[\s:：_-]/g, '').toLowerCase();
+const aliases = {
+  bed: ['床號', '床位', 'bed', 'bedno'], mrn: ['病歷號', '病歷號碼', 'mrn', 'chartno'], name: ['姓名', '中文姓名', 'name', 'patientname'],
+  age: ['年齡', 'age'], sex: ['性別', 'sex', 'gender'], codeStatus: ['dnr', 'codestatus', 'dnrstatus'], quickRemark: ['備註', '快速註記', 'remark', 'quickremark'], diagnosis: ['入觀診斷', '診斷', 'diagnosis'], admissionDate: ['入院日期', 'admissiondate']
+};
+function csvPatients(text, delimiter, mapping) {
+  const rows = parseDelimited(text, delimiter); if (rows.length < 2) throw new Error('需要欄位標題和至少一筆病人資料。');
+  const headers = rows.shift(); const fields = {};
+  for (const [field, names] of Object.entries(aliases)) {
+    const selected = mapping?.[field];
+    const index = selected !== undefined && selected !== '' ? Number(selected) : headers.findIndex(h => names.includes(headerKey(h)));
+    if (Number.isInteger(index) && index >= 0 && index < headers.length) fields[field] = index;
+  }
+  if (fields.name === undefined && fields.mrn === undefined) { const error = new Error('找不到姓名或病歷號欄位，請指定欄位對應。'); error.headers = headers; throw error; }
+  const sourceKind = headers.some(h => ['檢傷級數', '入觀診斷'].includes(h.trim())) ? 'ER' : 'ward';
+  const warnings = []; const patients = [];
+  rows.forEach((row, index) => {
+    const data = { sourceKind }; for (const [field, column] of Object.entries(fields)) data[field] = (row[column] || '').trim();
+    if (!data.name && !data.mrn) { warnings.push(`第 ${index + 2} 列缺少姓名與病歷號，略過。`); return; }
+    if (row.length > headers.length && row.slice(headers.length).some(value => value.trim())) { warnings.push(`第 ${index + 2} 列欄位數過多，略過以免錯置。`); return; }
+    if (data.diagnosis) data.body = HEADINGS.map(h => h === '[A]:' ? `${h}\n# 入觀診斷: ${data.diagnosis}` : h).join('\n\n');
+    patients.push(createPatient(data));
+  });
+  return { patients, warnings, format: sourceKind === 'ER' ? '急診 CSV' : '病人表格', headers };
+}
+function wardPatients(source) {
+  const header = /^\s*病歷號[:：]\s*(\S+)\s+姓名[:：]\s*(.*?)\s+年齡[:：]\s*(\S+)\s+(\S+)\s+入院日期[:：]\s*(\S+)[ \t]*$/gm;
+  const matches = [...source.matchAll(header)]; const patients = [];
+  for (let i = 0; i < matches.length; i++) {
+    const match = matches[i], medication = source.slice(match.index + match[0].length, matches[i + 1]?.index ?? source.length).trim();
+    const body = HEADINGS.map(h => h === '[Medication]' && medication ? `${h}\n${medication.split('\n').filter(s => s.trim()).map(s => `- ${s.trim()} (listed; active use unconfirmed)`).join('\n')}` : h).join('\n\n');
+    patients.push(createPatient({ mrn: match[1], name: match[2], age: match[3], bed: match[4], admissionDate: match[5], sourceKind: 'ward', body }));
+  }
+  if (!patients.length) throw new Error('病房標頭無法辨識。請確認病歷號、姓名、年齡、床號及入院日期。');
+  const headerCount = (source.match(/^\s*病歷號[:：]/gm) || []).length;
+  if (headerCount !== patients.length) throw new Error('部分病房標頭無法辨識，請修正後再匯入，避免藥物接到錯誤病人。');
+  return { patients, warnings: [], format: '病房文字' };
+}
+export function parsePatientHeader(text) {
+  const [identity, ...remark] = text.split(/[｜|]/);
+  const match = /^(\S+)\s+(\S+)\s+(.+?)\s+(年齡待補|\d+(?:\.\d+)?(?:\s*(?:歲|[YyMmDd]|月|天|years?|months?|days?))?|>\d+)(?:\s+(.*))?$/.exec(identity.trim());
+  if (!match) throw new Error('交班單身分列無法辨識。格式需為：床號 病歷號 姓名 年齡。');
+  const clean = (value, unknown) => value === unknown ? '' : value;
+  let sex = '', codeStatus = match[5]?.trim() || '';
+  const sexMatch = /^(男|女|M|F|male|female)(?:\s+|$)/i.exec(codeStatus);
+  if (sexMatch) { sex = sexMatch[1]; codeStatus = codeStatus.slice(sexMatch[0].length); }
+  return { bed: clean(match[1], '床號待補'), mrn: clean(match[2], '病歷號待補'), name: clean(match[3], '姓名待補'), age: clean(match[4], '年齡待補'), sex, codeStatus, quickRemark: remark.join('｜').trim(), sourceKind: /^LO\d/i.test(match[1]) ? 'ER' : 'ward' };
+}
+export function parseFullNote(text) {
+  const cleaned = text.replace(/^\uFEFF/, '').replace(/\r\n?/g, '\n').replace(new RegExp(`^${DIVIDER}\\n`), '');
+  const firstBreak = cleaned.indexOf('\n'); if (firstBreak < 0) throw new Error('交班單缺少內文。');
+  const data = parsePatientHeader(cleaned.slice(0, firstBreak));
+  return createPatient({ ...data, body: cleaned.slice(firstBreak + 1).replace(/^\n/, ''), fullNote: true });
+}
+export function parsePatients(text, { format = 'auto', mapping } = {}) {
+  text = text.replace(/^\uFEFF/, '').replace(/\r\n?/g, '\n');
+  if (!text.trim()) throw new Error('請先上傳檔案或貼上病人名單。');
+  if (text.length > MAX_IMPORT_BYTES) throw new Error('文字過長，請分批匯入。');
+  if (format === 'txt' || (format === 'auto' && text.startsWith(DIVIDER + '\n'))) {
+    const parts = text.split(new RegExp(`^${DIVIDER}$`, 'm')).filter(part => part.trim());
+    const patients = parts.map(part => parseFullNote(part.replace(/^\n/, '').replace(/\n+$/, '')));
+    return { patients, warnings: [], format: '交班單 TXT' };
+  }
+  if (format === 'ward' || (format === 'auto' && /^\s*病歷號[:：]/m.test(text))) return wardPatients(text);
+  if (format === 'csv' || format === 'tsv' || (format === 'auto' && /[,\t]/.test(text.split('\n')[0]))) return csvPatients(text, format === 'tsv' || (format === 'auto' && text.split('\n')[0].includes('\t')) ? '\t' : ',', mapping);
+  throw new Error('無法辨識名單。請選擇格式；單一病人可用「新增病人」輸入，再貼上筆記。');
+}
+export function reconcile(existing, incoming) {
+  const staged = [...existing]; const plans = [];
+  for (const candidate of incoming) {
+    const mrnMatches = candidate.mrn ? staged.filter(p => p.mrn === candidate.mrn) : [];
+    const nameMatches = candidate.name ? staged.filter(p => p.name && sameName(p.name, candidate.name)) : [];
+    let match = null, reason = '', conflict = false;
+    if (mrnMatches.length > 1) { conflict = true; reason = '病歷號有多筆既存資料'; }
+    else if (mrnMatches.length === 1) {
+      match = mrnMatches[0];
+      if (candidate.name && match.name && !sameName(candidate.name, match.name)) { conflict = true; reason = '病歷號相同但姓名不同'; }
+      if (candidate.admissionDate && match.admissionDate && candidate.admissionDate !== match.admissionDate) { conflict = true; reason = '可能是不同住院事件'; }
+    } else if (nameMatches.length > 1) { conflict = true; reason = '姓名重複，無法安全配對'; }
+    else if (nameMatches.length === 1) {
+      match = nameMatches[0];
+      if (candidate.mrn && match.mrn && candidate.mrn !== match.mrn) { conflict = true; reason = '姓名相同但病歷號不同'; }
+    }
+    if (match && plans.some(plan => plan.targetId === match.id || plan.incoming.id === match.id)) { conflict = true; reason = '同批匯入重複病人，請只保留一列'; }
+    let kind = conflict ? 'conflict' : match ? 'update' : 'add';
+    const changed = match && ['bed', 'mrn', 'name', 'age', 'sex', 'codeStatus', 'admissionDate'].some(key => candidate[key] && candidate[key] !== match[key]);
+    const differentNote = match && candidate.fullNote && (serializeBody(candidate) !== serializeBody(match) || candidate.quickRemark !== match.quickRemark);
+    if (match && !changed && !differentNote && !conflict) kind = 'same';
+    if (!match && staged.some(p => candidate.bed && p.bed === candidate.bed)) reason = '床號與既存病人重複，請確認占床狀況';
+    plans.push({ incoming: candidate, targetId: match?.id, kind, reason, differentNote, choice: conflict ? 'skip' : kind === 'same' ? 'skip' : 'apply', replaceNote: false });
+    if (!match && !conflict) staged.push(candidate);
+  }
+  return plans;
+}
+export function applyPlans(store, plans) {
+  store.transaction('匯入病人', () => {
+    for (const plan of plans) {
+      if (plan.choice === 'skip' || plan.kind === 'same') continue;
+      if (plan.kind === 'conflict') {
+        if (plan.choice === 'add' && !store.patients.some(p => plan.incoming.mrn && p.mrn === plan.incoming.mrn)) store.patients.push(structuredClone(plan.incoming));
+        continue;
+      }
+      const existing = store.patients.find(p => p.id === plan.targetId);
+      if (!existing) { if (plan.kind === 'add') store.patients.push(structuredClone(plan.incoming)); continue; }
+      for (const field of ['bed', 'mrn', 'name', 'age', 'sex', 'codeStatus', 'admissionDate']) if (plan.incoming[field]) existing[field] = plan.incoming[field];
+      if (plan.incoming.sourceKind !== 'manual') existing.sourceKind = plan.incoming.sourceKind;
+      if (plan.replaceNote && plan.incoming.fullNote) { existing.lines = structuredClone(plan.incoming.lines); existing.quickRemark = plan.incoming.quickRemark; }
+    }
+    if (!store.activeId) store.activeId = store.patients[0]?.id || null;
+  });
+}

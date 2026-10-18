@@ -1,5 +1,6 @@
 # Private master instructions must never enter the public repository or Pages output.
 /master prompt/
+/data example/
 .env
 .env.*
 !.env.example

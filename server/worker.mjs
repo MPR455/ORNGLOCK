@@ -2,6 +2,9 @@ import admission from '../master prompt/01_MASTER_PROMPT_WRITE_ADMISSION_NOTE.tx
 import consult from '../master prompt/02_MASTER_PROMPT_WRITE_CONSULT_REQUEST.txt';
 import summary from '../master prompt/03_MASTER_PROMPT_TREATMENT_SUMMARY_WEEKLY_SUMMARY.txt';
 import support from '../master prompt/04_MASTER_PROMPT_CURRENT_ANTIBIOTICS_OXYGEN_LINES_TUBES.txt';
+import handoffConvert from '../master prompt/05_MASTER_PROMPT_HANDOFF_NOTE_CONVERT.txt';
+import handoffClean from '../master prompt/06_MASTER_PROMPT_HANDOFF_DATA_CLEANING.txt';
+import handoffOrder from '../master prompt/07_MASTER_PROMPT_HANDOFF_ORDER_REVIEW.txt';
 import { handleApi, positiveInteger } from './api.mjs';
 
 export class UsageGuard {
@@ -35,6 +38,6 @@ export default {
       if (!response.ok) throw new Error('Usage guard unavailable');
       return response.json();
     } };
-    return handleApi(request, { prompts: { admission, consult, summary, support }, sharedKey: env.GEMINI_API_KEY, model: env.GEMINI_MODEL, allowedOrigins: (env.ALLOWED_ORIGINS || '').split(',').map(value => value.trim()).filter(Boolean), guard, ip: ipHash });
+    return handleApi(request, { prompts: { admission, consult, summary, support, handoff_convert: handoffConvert, handoff_clean: handoffClean, handoff_order: handoffOrder }, sharedKey: env.GEMINI_API_KEY, handoffSharedKey: env.HANDOFF_GEMINI_API_KEY, model: env.GEMINI_MODEL, allowedOrigins: (env.ALLOWED_ORIGINS || '').split(',').map(value => value.trim()).filter(Boolean), guard, ip: ipHash });
   }
 };

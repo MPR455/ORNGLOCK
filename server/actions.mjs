@@ -6,5 +6,10 @@ export const ACTIONS = Object.freeze([
 ]);
 
 export const DEFAULT_MODEL = 'gemini-3.5-flash-lite';
+export const HANDOFF_ACTIONS = Object.freeze([
+  { id: 'handoff_convert', title: 'Handoff note convert', command: 'Convert this patient source into the canonical handoff note:', file: '05_MASTER_PROMPT_HANDOFF_NOTE_CONVERT.txt' },
+  { id: 'handoff_clean', title: 'Handoff data cleaning', command: 'Organize and clean this patient data:', file: '06_MASTER_PROMPT_HANDOFF_DATA_CLEANING.txt' },
+  { id: 'handoff_order', title: 'Handoff order review', command: 'Extract current IV, oxygen, and medication orders with history:', file: '07_MASTER_PROMPT_HANDOFF_ORDER_REVIEW.txt' }
+]);
 export const MAX_NOTE_CHARS = 100_000;
 export const MAX_BODY_BYTES = 650_000;

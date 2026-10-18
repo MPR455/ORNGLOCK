@@ -1,5 +1,6 @@
 import { extractAdmissionSections } from './sections.mjs';
 import { initDirectory, refreshDirectoryLayout } from './directory.mjs';
+import { initHandoff } from './handoff.mjs';
 
 const $ = id => document.getElementById(id);
 const TABS = [
@@ -12,6 +13,7 @@ const TABS = [
 const TITLES = { admission: 'Admission note', consult: 'Consult request', summary: 'Treatment summary', support: 'Anti/O2/IV' };
 const state = { tab: 'notes', apiKey: '', ready: false, sharedAvailable: false, active: null, lastAction: null, model: '', maxChars: 100000, generatedAction: null, startedAt: 0 };
 const noteTemplates = new Map();
+let handoff;
 let sheetOpener, elapsedTimer, toastTimer;
 
 function tabButton(tab, className = '', iconClass = '') {
@@ -64,6 +66,7 @@ function showTab(id, focus = false) {
   if (tab.mobilePrimary === false) $('mobile-more-tab').setAttribute('aria-current', 'page'); else $('mobile-more-tab').removeAttribute('aria-current');
   closeMenu(); closeSheet(false);
   if (id === 'directory') refreshDirectoryLayout();
+  if (id === 'handoff') handoff?.refresh();
   if (focus) $(`tab-${id}`).focus({ preventScroll: true });
 }
 
@@ -135,7 +138,7 @@ function updateInputs() {
 
 function clearError() { $('error-notice').hidden = true; }
 function showError(title, message, canUseOwnKey) { $('error-title').textContent = title; $('error-message').textContent = message; $('error-key-button').hidden = !canUseOwnKey; $('error-notice').hidden = false; }
-function openKeySettings() { showTab('key', true); $('personal-key').focus(); }
+function openKeySettings() { state.keyReturnTab = state.tab === 'key' ? (state.keyReturnTab || 'notes') : state.tab; showTab('key', true); $('personal-key').focus(); }
 function toast(message) { clearTimeout(toastTimer); $('toast').textContent = message; $('toast').hidden = false; toastTimer = setTimeout(() => { $('toast').hidden = true; }, 3500); }
 
 async function loadNoteTemplates() {
@@ -210,7 +213,7 @@ $('clear-source').addEventListener('click', () => { $('source-notes').value = ''
 $('action-grid').addEventListener('click', event => { const button = event.target.closest('[data-action]'); if (button) generate(button.dataset.action); });
 $('cancel-generation').addEventListener('click', () => state.active?.abort('user'));
 $('connection-pill').addEventListener('click', openKeySettings); $('error-key-button').addEventListener('click', openKeySettings);
-$('return-to-notes').addEventListener('click', () => showTab('notes', true));
+$('return-to-notes').addEventListener('click', () => showTab(state.keyReturnTab || 'notes', true));
 $('key-form').addEventListener('submit', event => {
   event.preventDefault(); const key = $('personal-key').value.trim();
   if (!key || /[\r\n\x00]/.test(key)) { $('key-form-message').textContent = 'Paste a valid Gemini API key first.'; $('personal-key').focus(); return; }
@@ -249,4 +252,5 @@ $('section-copy-controls').addEventListener('click', event => {
 $('download-output').addEventListener('click', () => {
   const url = URL.createObjectURL(new Blob([$('output-notes').value], { type: 'text/plain;charset=utf-8' })); const anchor = document.createElement('a'); anchor.href = url; anchor.download = `ORNGLOCK-${state.generatedAction || 'document'}-${new Date().toISOString().slice(0, 10)}.txt`; document.body.append(anchor); anchor.click(); anchor.remove(); setTimeout(() => URL.revokeObjectURL(url), 1000);
 });
+handoff = initHandoff({ endpoint, getKey: () => state.apiKey, openKeySettings, copyText, toast });
 buildNavigation(); initDirectory({ closeMenu }); updateInputs(); loadNoteTemplates(); connect();

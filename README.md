@@ -101,3 +101,33 @@ npm run build
 ```
 
 Tests cover the four prompt mappings, shared-to-personal fallback, key and prompt exposure, request limits, CORS, invalid input, provider errors, blocked/truncated output, timeouts, and real local HTTP routing. Live model quality needs checking with representative de-identified cases. The tests do not claim clinical validation.
+
+## 交班單 workspace
+
+The 交班單 tab supports manual patient entry, CSV/TSV and ward-text import, and reimport of downloaded TXT files. Import previews reconcile by chart number or a safe unique name match; bed updates preserve existing note bodies. Conflicting identities are shown for review. The observed ER sample requires Big5 decoding. Real local samples are ignored by Git and excluded from the public build.
+
+Patient cards include bed, chart number, name, age, and a quick remark synchronized with the note header. The left pane supports bed/important/pending sorting, expansion, and patient-grouped task editing. Checking a pending item moves that edited line and its continuation into the same patient's [O]: section without inventing a result. Individual and continuous views share one document model. Continuous notes and whole-list TXT downloads always follow floor/ward/bed order.
+
+Drag the visible **⠿** handle beside a `-` or `#` block to move the entire block, including continuation lines and highlights. Drop indicators snap before/after blocks; moving between sections is supported within the same patient. Handle clicks offer a keyboard-accessible section move, and Alt+Up/Down moves blocks. Cross-patient drops are blocked.
+
+The three highlighters apply **background color to selected text**, like Word. With a collapsed caret, a color activates repeated-selection paint mode; Escape stops painting. No color removes only the selected background. `@` opens an editable Taiwan-date picker with Left/Right day stepping. `<Exam>` normalizes identifiable examination-label lines to angle-bracket notation.
+
+Deleting first opens a confirmation naming the patient's bed, name, and chart number, with Cancel focused. Confirming removes the complete patient record: card, note, tasks, continuous-view content, download content, and that patient's AI scratchpad. Late AI responses cannot recreate it. Undo restores the record. Notes remain in page memory; export TXT before closing/reloading.
+
+### Handoff AI configuration
+
+The floating AI panel offers Note convert, Data cleaning, and Order with Current-only copying. Drafts are bound to their original patient and require a comparison before note replacement/data insertion. The three private master prompts are loaded only by the backend. Handoff availability is independent of the original four tools.
+
+Set the separate backend secret `HANDOFF_GEMINI_API_KEY` for handoff calls. An explicitly applied personal key from the existing API key tab takes precedence. The original four tools continue using `GEMINI_API_KEY`. No credential is included in source, public files, TXT exports, or tests.
+
+For local startup, provide the handoff secret in the server environment and run `pnpm start`. The existing `--key-stdin` startup option also accepts a JSON line with `handoffApiKey` and/or `apiKey`; input is not echoed. `.env.example` documents variable names but is not automatically loaded by the Node local server.
+
+For the deployed Worker, use `pnpm exec wrangler secret put HANDOFF_GEMINI_API_KEY` with its hidden prompt. See [Cloudflare's secrets documentation](https://developers.cloudflare.com/workers/configuration/secrets/). Keep the seven private prompt text files available locally when bundling/deploying the backend. GitHub Pages never includes them. Local implementation does not publish a new Pages/Worker deployment.
+
+### Portable TXT highlighting
+
+Ordinary spans serialize as `/red/`, `%yellow%`, and `\green\`. Dates, units, percentages, and URLs remain literal. Ambiguous literal delimiters use a small, single-decoded entity escape set. Partial-word or adjacent Word selections that cannot be represented unambiguously use the lossless extension `{{mark:red}}text{{/mark}}` (also yellow/green). Import restores those backgrounds. This is text syntax, never executable HTML. The exact `{pending}` marker remains readable in exported notes.
+
+### Handoff verification
+
+Run `pnpm test` and `pnpm build`. Behavioral tests cover private sample decoding locally (skipped when absent in CI), synthetic CSV/ward/TXT formats, identity conflicts, bed/header preservation, task movement, block movement, background-mark round trips, deletion/undo, continuous ordering, date arithmetic, separate shared-key routing, context validation, and optional readiness. Browser checks exercise actual mouse block dragging, caret continuity, Word-style highlighting, confirmation defaults, AI draft targeting, and downloads after deletion. Live model smoke tests use synthetic data only; they do not establish clinical validation.
