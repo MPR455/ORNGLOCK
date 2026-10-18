@@ -216,7 +216,19 @@ export function completeTask(patient, lineId) {
   if (patient.lines[index + 1]?.text === '未提供') { patient.lines.splice(index + 1, 1); end--; }
   patient.lines.splice(Math.max(index + 1, end), 0, ...completed); return true;
 }
-export const exportPatients = patients => [...patients].sort(bedCompare).map(patient => `${DIVIDER}\n${patientHeader(patient)}\n\n${serializeBody(patient)}`).join('\n\n') + (patients.length ? '\n' : '');
+export function insertObjective(patient, text) {
+  if (!text.trim()) return false;
+  let index = patient.lines.findIndex(item => sectionOf(item.text) === 'O');
+  if (index < 0) {
+    index = patient.lines.findIndex(item => ['A', 'P', 'Medication'].includes(sectionOf(item.text)));
+    if (index < 0) index = patient.lines.length;
+    patient.lines.splice(index, 0, ...fromPortable('[O]:'));
+  }
+  let end = index + 1; while (end < patient.lines.length && !sectionOf(patient.lines[end].text)) end++;
+  patient.lines.splice(end, 0, ...fromPortable(text), ...fromPortable(''));
+  return true;
+}
+export const exportPatients = patients => [...patients].sort(bedCompare).map(patient => `${DIVIDER}\n${patientHeader({ ...patient, quickRemark: parsePortable(patient.quickRemark).text })}\n\n${bodyText(patient)}`).join('\n\n') + (patients.length ? '\n' : '');
 export function currentOnly(text) {
   const matches = [...text.matchAll(/^\[(Current|History|Unclear)\]\s*$/gm)];
   if (matches.length !== 3 || matches.map(m => m[1]).join(',') !== 'Current,History,Unclear') return null;

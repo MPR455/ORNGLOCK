@@ -1,4 +1,4 @@
-import { HandoffStore, createPatient, patientHeader, bodyText, fromPortable, parsePortable, replaceText, sortPatients, tasksOf, pendingCount, completeTask, exportPatients, currentOnly, taiwanDate, shiftDate, displayDate, sectionOf, moveBlock, sameName } from './handoff-model.mjs';
+import { HandoffStore, createPatient, patientHeader, bodyText, fromPortable, parsePortable, replaceText, sortPatients, tasksOf, pendingCount, completeTask, exportPatients, insertObjective, currentOnly, taiwanDate, shiftDate, displayDate, sectionOf, moveBlock, sameName } from './handoff-model.mjs';
 import { decodeFile, parsePatients, parseFullNote, reconcile, applyPlans } from './handoff-import.mjs';
 import { HandoffEditor, appendMarked } from './handoff-editor.mjs';
 const node = (tag, className, text) => { const element = document.createElement(tag); if (className) element.className = className; if (text !== undefined) element.textContent = text; return element; };
@@ -21,12 +21,12 @@ export function initHandoff({ endpoint, getKey, openKeySettings, copyText, toast
   const root = document.getElementById('tab-handoff');
   root.classList.add('handoff-tab');
   root.innerHTML = `<div class="handoff-workspace"><aside class="handoff-left" aria-label="病人名單"><div class="handoff-list-top"><div id="handoff-import-actions"></div><label class="sr-only" for="handoff-search">搜尋床號、姓名或病歷號</label><input id="handoff-search" type="search" placeholder="搜尋床號 / 姓名 / 病歷號" autocomplete="off"></div><div id="handoff-list" class="handoff-list"></div><div class="handoff-list-bottom"><div id="handoff-sorts" class="handoff-segmented"></div><div id="handoff-views" class="handoff-view-controls"></div></div></aside>
-  <section class="handoff-right" aria-label="交班筆記"><div id="handoff-tools" class="handoff-tools"></div><div id="handoff-editor" class="handoff-editor-scroll"></div><div class="handoff-editor-footer"><span id="handoff-editor-status">資料僅保留在此分頁</span><span>拖曳 ⠿ 調整 -/# 區塊 · @ 插入日期</span></div></section></div><div id="handoff-message" role="status" aria-live="polite" class="handoff-message" hidden></div>`;
+  <section class="handoff-right" aria-label="交班筆記"><div id="handoff-tools" class="handoff-tools"></div><div id="handoff-editor" class="handoff-editor-scroll"></div><div class="handoff-editor-footer"><span id="handoff-editor-status">資料僅保留在此分頁</span><span>! 標註重要 · -/# 文字區塊 · @ 插入日期</span></div></section></div><div id="handoff-message" role="status" aria-live="polite" class="handoff-message" hidden></div>`;
   const find = id => root.querySelector(`#${id}`);
   const ui = { sort: 'bed', view: 'cards', expanded: false, minimized: false, search: '', aiAction: 'handoff_convert' };
   let messageTimer, request = null, draft = null, ai;
   const notice = text => { const message = find('handoff-message'); message.textContent = text; message.hidden = false; clearTimeout(messageTimer); messageTimer = setTimeout(() => { message.hidden = true; }, 6000); };
-  const store = new HandoffStore(() => { renderCards(); renderToolbar(); editor.render(); });
+  const store = new HandoffStore(() => { renderCards(); renderToolbar(); editor.render(); refreshAIPatients(); });
   const editor = new HandoffEditor(find('handoff-editor'), store, { onActive: updateActive, onDate: openDate, onMove: openMove, onNotice: notice });
   let listComposing = false;
   find('handoff-list').addEventListener('compositionstart', () => { listComposing = true; });
@@ -41,10 +41,10 @@ export function initHandoff({ endpoint, getKey, openKeySettings, copyText, toast
   const minimize = button('⇤ 縮小', () => setMinimized(true)); minimize.id = 'handoff-minimize'; minimize.setAttribute('aria-label', '縮小病人欄');
   const restore = button('⇥ 還原', () => setMinimized(false)); restore.id = 'handoff-restore'; restore.hidden = true; restore.setAttribute('aria-label', '還原病人欄');
   const sizes = node('div', 'handoff-size-controls'); sizes.append(expand, minimize, restore);
-  const view = button('☑ 待辦清單', () => { ui.view = ui.view === 'cards' ? 'tasks' : 'cards'; view.textContent = ui.view === 'cards' ? '☑ 待辦清單' : '▣ 病人卡'; renderCards(); }); find('handoff-views').append(sizes, view);
+  const view = button('☑ 待辦事項', () => { ui.view = ui.view === 'cards' ? 'tasks' : 'cards'; view.textContent = ui.view === 'cards' ? '☑ 待辦事項' : '▣ 病人卡'; view.setAttribute('aria-pressed', String(ui.view === 'tasks')); root.classList.toggle('handoff-tasks-active', ui.view === 'tasks'); renderCards(); }, 'handoff-task-toggle'); view.id = 'handoff-task-toggle'; view.setAttribute('aria-pressed', 'false'); find('handoff-views').append(sizes, view);
   const tools = find('handoff-tools');
   const aiButton = button('🤖', openAI, 'handoff-ai-trigger handoff-square'); aiButton.id = 'handoff-ai'; aiButton.setAttribute('aria-label', '開啟 AI 工具'); aiButton.title = 'AI 工具';
-  const mode = button('個別模式', () => { editor.mode = editor.mode === 'individual' ? 'continuous' : 'individual'; editor.bookmark = null; editor.render(); mode.textContent = editor.mode === 'individual' ? '個別模式' : '連續模式'; mode.setAttribute('aria-pressed', String(editor.mode === 'continuous')); if (store.activeId) editor.select(store.activeId); }, 'handoff-square'); mode.id = 'handoff-mode'; mode.setAttribute('aria-pressed', 'false');
+  const mode = button('連續模式', () => { editor.mode = editor.mode === 'individual' ? 'continuous' : 'individual'; editor.bookmark = null; editor.render(); mode.textContent = editor.mode === 'individual' ? '個別模式' : '連續模式'; mode.setAttribute('aria-pressed', String(editor.mode === 'continuous')); if (store.activeId) editor.select(store.activeId); }, 'handoff-square'); mode.id = 'handoff-mode'; mode.setAttribute('aria-pressed', 'true');
   const returnList = button('← 病人', () => setExpanded(true), 'handoff-square'); returnList.id = 'handoff-return-list';
   tools.append(returnList, aiButton, mode);
   for (const [color, title] of [['red', '紅色'], ['yellow', '黃色'], ['green', '綠色']]) {
@@ -52,6 +52,8 @@ export function initHandoff({ endpoint, getKey, openKeySettings, copyText, toast
   }
   const clearHighlight = button('無色', () => editor.applyColor(null)); clearHighlight.id = 'handoff-highlight-clear'; clearHighlight.addEventListener('pointerdown', event => { editor.bookmark = editor.selection() || editor.bookmark; event.preventDefault(); }); tools.append(clearHighlight);
   const pendingButton = button('{pending}', () => editor.insertPending()); pendingButton.id = 'handoff-pending'; pendingButton.addEventListener('pointerdown', event => { editor.bookmark = editor.selection() || editor.bookmark; event.preventDefault(); }); tools.append(pendingButton);
+  const sexButton = button('性別', () => openMetadata('sex', '性別', [['男', '男 Male'], ['女', '女 Female']])); sexButton.id = 'handoff-sex'; sexButton.setAttribute('aria-haspopup', 'dialog');
+  const dnrButton = button('DNR', () => openMetadata('codeStatus', 'DNR', [['DNR1', 'DNR1'], ['DNR2', 'DNR2'], ['DNR3', 'DNR3']])); dnrButton.id = 'handoff-dnr'; dnrButton.setAttribute('aria-haspopup', 'dialog'); tools.append(sexButton, dnrButton);
   const undo = button('↶ 復原', () => { if (!store.undo()) notice('目前沒有可復原的操作。'); }); undo.id = 'handoff-undo';
   const redo = button('↷', () => store.undo(true)); redo.id = 'handoff-redo'; redo.setAttribute('aria-label', '重做');
   const download = button('↓ 下載交班單', downloadAll, 'handoff-download'); download.id = 'handoff-download'; tools.append(undo, redo, download);
@@ -61,6 +63,7 @@ export function initHandoff({ endpoint, getKey, openKeySettings, copyText, toast
   function updateActive(id) {
     for (const card of find('handoff-list').querySelectorAll('[data-card-patient]')) { const active = card.dataset.cardPatient === id; card.classList.toggle('active', active); card.querySelector('[data-open-patient]')?.setAttribute('aria-pressed', String(active)); }
     find('handoff-editor-status').textContent = store.active ? `${store.active.bed || '床號待補'} ${store.active.name} · ${pendingCount(store.active)} 項待辦` : '資料僅保留在此分頁';
+    sexButton.textContent = store.active?.sex ? `性別：${store.active.sex}` : '性別'; dnrButton.textContent = store.active?.codeStatus ? `DNR：${store.active.codeStatus}` : 'DNR';
   }
   function setExpanded(expanded) {
     if (expanded && ui.minimized) setMinimized(false);
@@ -79,7 +82,7 @@ export function initHandoff({ endpoint, getKey, openKeySettings, copyText, toast
   }
   function selectPatient(id) { if (ui.expanded) setExpanded(false); editor.select(id); root.classList.add('handoff-mobile-editor'); renderToolbar(); }
   function renderToolbar() {
-    const has = Boolean(store.active); for (const item of [aiButton, mode, pendingButton, clearHighlight, ...tools.querySelectorAll('[data-highlight]')]) item.disabled = !has;
+    const has = Boolean(store.active); for (const item of [aiButton, mode, pendingButton, clearHighlight, sexButton, dnrButton, ...tools.querySelectorAll('[data-highlight]')]) item.disabled = !has;
     download.disabled = !store.patients.length; undo.disabled = !store.history.length; redo.disabled = !store.future.length;
     undo.title = store.history.length ? `復原：${store.history.at(-1).label}` : '目前沒有可復原的操作'; updateActive(store.activeId);
   }
@@ -108,7 +111,7 @@ export function initHandoff({ endpoint, getKey, openKeySettings, copyText, toast
       const remove = button('×', () => confirmDelete(patient.id), 'handoff-delete'); remove.setAttribute('aria-label', `刪除病人 ${patient.bed} ${patient.name}`); remove.title = '刪除病人'; top.append(open, edit, remove); card.append(top);
       card.append(node('div', 'handoff-demographics', `病歷號 ${patient.mrn || '待補'} · ${patient.age || '年齡待補'}${patient.sex ? ' · ' + patient.sex : ''}${patient.codeStatus ? ' · ' + patient.codeStatus : ''}`));
       if (ui.view === 'cards') {
-        const remark = focus?.patientId === patient.id && focus.field === 'remark' ? focused : node('input', 'handoff-remark'); remark.type = 'text'; remark.value = patient.quickRemark; remark.placeholder = '快速註記（同步至筆記首行）'; remark.maxLength = 1000; remark.dataset.patientId = patient.id; remark.dataset.editField = 'remark'; remark.setAttribute('aria-label', `${patient.name} 快速註記`);
+        const remark = focus?.patientId === patient.id && focus.field === 'remark' ? focused : node('input', 'handoff-remark'); remark.type = 'text'; remark.value = patient.quickRemark; remark.removeAttribute('placeholder'); remark.maxLength = 1000; remark.dataset.patientId = patient.id; remark.dataset.editField = 'remark'; remark.setAttribute('aria-label', `${patient.name} 快速註記`);
         remark.oninput = event => { const value = event.target.value; store.transaction('編輯快速註記', () => { patient.quickRemark = value; }); }; card.append(remark);
         const badges = node('div', 'handoff-badges'); if (tasks.some(task => task.important)) badges.append(node('span', 'handoff-important-badge', '! 重要')); if (pendingCount(patient)) badges.append(node('span', 'handoff-pending-badge', `${pendingCount(patient)} 項待辦`)); if (badges.childElementCount) card.append(badges);
         if (ui.expanded) {
@@ -142,6 +145,18 @@ export function initHandoff({ endpoint, getKey, openKeySettings, copyText, toast
     if (!shown) list.append(node('p', 'handoff-list-empty', !store.patients.length ? '尚無病人。匯入名單或手動新增。' : ui.view === 'tasks' ? '沒有符合的待辦或重要註記。' : '沒有符合的病人。'));
     if (focus) { const field = [...list.querySelectorAll('[data-edit-field]')].find(item => item.dataset.patientId === focus.patientId && item.dataset.editField === focus.field); if (field) { field.focus({ preventScroll: true }); field.setSelectionRange(Math.min(focus.start, field.value.length), Math.min(focus.end, field.value.length)); } }
   }
+  function openMetadata(field, title, options) {
+    const patient = store.active; if (!patient) return;
+    const modal = dialog(title); modal.content.append(node('strong', 'handoff-confirm-identity', patientHeader(patient)));
+    const choices = node('div', 'handoff-metadata-choices');
+    for (const [value, text] of [...options, ['', '清除']]) {
+      const choice = button(text, () => {
+        const current = store.patients.find(p => p.id === patient.id); if (!current) { modal.close(); return; }
+        store.transaction(`設定${title}`, () => { current[field] = value; }); modal.close();
+      }); choice.setAttribute('aria-pressed', String(patient[field] === value)); choices.append(choice);
+    }
+    modal.content.append(choices);
+  }
   function openPatient(patient) {
     const modal = dialog(patient ? '編輯病人資料' : '新增病人'); const form = node('form', 'handoff-form');
     const fields = {};
@@ -170,9 +185,7 @@ export function initHandoff({ endpoint, getKey, openKeySettings, copyText, toast
     const confirm = button('確認刪除', () => {
       const current = store.patients.find(p => p.id === id); if (!current) { modal.close(); return; }
       if (patientHeader(current) !== identity) { identity = patientHeader(current); banner.textContent = identity; message.textContent = '病人資料剛剛已更新，請再次核對後確認刪除。'; modal.cancel.focus(); return; }
-      if (request?.patientId === id) request.controller.abort();
-      if (ai?.patientId === id) { ai.source.value = ''; ai.patientId = null; ai.banner.textContent = '病人已刪除，請選擇病人後重新開啟 AI。'; }
-      if (draft?.patientId === id) { draft = null; ai.output.value = ''; renderDraft(); }
+      if (ai?.patientId === id) resetAI(null);
       store.remove(id); modal.close(); notice('病人已刪除。按工具列「復原」可還原完整筆記及待辦。');
     }, 'handoff-danger'); modal.footer.append(confirm); modal.cancel.focus();
   }
@@ -279,45 +292,66 @@ export function initHandoff({ endpoint, getKey, openKeySettings, copyText, toast
   function openAI() {
     if (!store.active) return;
     editor.bookmark = editor.selection() || editor.bookmark;
-    if (!ai) buildAI(); ai.panel.hidden = false;
-    if (!request) {
-      const patient = store.active;
-      if (ai.patientId !== patient.id) ai.source.value = '';
-      ai.patientId = patient.id; ai.banner.textContent = `${patient.bed || '床號待補'} ${patient.name} · ${patient.mrn || '病歷號待補'}`;
-    }
+    if (!ai) buildAI();
+    if (ai.patientId !== store.activeId) switchAIPatient(store.activeId);
+    refreshAIPatients(); if (!ai.panel.open) ai.panel.showModal();
     ai.source.focus();
   }
+  function resetAI(patientId) {
+    if (!ai) return;
+    if (request) { request.controller.abort('patient-change'); request = null; }
+    ai.patientId = patientId; draft = null;
+    ai.source.value = ''; ai.output.value = ''; ai.status.textContent = '';
+    ai.source.readOnly = false; ai.run.disabled = !patientId; ai.cancel.disabled = true;
+    ai.tabs.querySelectorAll('button').forEach(item => { item.disabled = false; }); renderDraft();
+  }
+  function switchAIPatient(id) {
+    if (!store.patients.some(patient => patient.id === id)) return;
+    resetAI(id); selectPatient(id); refreshAIPatients(); ai.source.focus();
+  }
+  function refreshAIPatients() {
+    if (!ai) return;
+    const patients = sortPatients(store.patients);
+    if (ai.patientId && !patients.some(patient => patient.id === ai.patientId)) resetAI(null);
+    ai.select.replaceChildren();
+    if (!ai.patientId) { const option = node('option', '', '選擇病人'); option.value = ''; ai.select.append(option); }
+    for (const patient of patients) { const option = node('option', '', patientHeader(patient)); option.value = patient.id; ai.select.append(option); }
+    ai.select.value = ai.patientId || ''; ai.select.disabled = !patients.length;
+    const index = patients.findIndex(patient => patient.id === ai.patientId);
+    ai.previous.disabled = index <= 0; ai.next.disabled = index < 0 || index >= patients.length - 1;
+    ai.run.disabled = Boolean(request) || index < 0;
+    renderDraft();
+  }
   function buildAI() {
-    const panel = node('aside', 'handoff-ai-panel'); panel.setAttribute('aria-label', '交班單 AI 工具'); panel.hidden = true;
-    const head = node('div', 'handoff-ai-head'), title = node('strong', '', '✦ 交班單 AI'), close = button('×', () => { panel.hidden = true; }); close.setAttribute('aria-label', '最小化 AI 面板'); head.append(title, close);
-    const banner = node('div', 'handoff-ai-patient'), tabs = node('div', 'handoff-ai-tabs'), sourceField = labelInput('', '', 'textarea'); sourceField.input.rows = 7; sourceField.input.maxLength = 100000; sourceField.input.setAttribute('aria-label', '來源資料');
-    const key = button('API key 設定', openKeySettings);
+    const panel = node('dialog', 'handoff-ai-panel'); panel.setAttribute('aria-labelledby', 'handoff-ai-title');
+    const head = node('div', 'handoff-ai-head'), title = node('h2', '', '🤖 交班單 AI'), close = button('← 交班筆記', () => panel.close(), 'handoff-square'); title.id = 'handoff-ai-title'; close.setAttribute('aria-label', '返回交班筆記'); head.append(title, close);
+    const navigation = node('div', 'handoff-ai-patient'), select = node('select'); select.id = 'handoff-ai-patient'; select.setAttribute('aria-label', 'AI 病人'); select.addEventListener('change', () => switchAIPatient(select.value));
+    const stepPatient = step => { const patients = sortPatients(store.patients), index = patients.findIndex(p => p.id === ai.patientId), target = patients[index + step]; if (target) switchAIPatient(target.id); };
+    const previous = button('← 上一位', () => stepPatient(-1)), next = button('下一位 →', () => stepPatient(1)); previous.id = 'handoff-ai-previous'; next.id = 'handoff-ai-next'; navigation.append(select, previous, next);
+    const tabs = node('div', 'handoff-ai-tabs'), sourceField = labelInput('來源資料', '', 'textarea'); sourceField.input.rows = 12; sourceField.input.maxLength = 100000; sourceField.input.setAttribute('aria-label', '來源資料');
+    const key = button('API key 設定', () => { panel.close(); openKeySettings(); });
     const run = button('整理', runAI, 'handoff-primary'), cancel = button('停止', () => request?.controller.abort()); cancel.disabled = true;
     const actions = node('div', 'handoff-ai-actions'); actions.append(run, cancel, key);
     const status = node('p', 'handoff-ai-status'); status.setAttribute('role', 'status');
-    const outputField = labelInput('草稿（可修改後再套用）', '', 'textarea'); outputField.input.rows = 8; outputField.input.maxLength = 100000; const preview = node('pre', 'handoff-ai-preview');
+    const outputField = labelInput('整理結果（可編輯）', '', 'textarea'); outputField.input.rows = 12; outputField.input.maxLength = 100000; const preview = node('pre', 'handoff-ai-preview');
     const copyAll = button('複製全部', () => { if (draft) copyText(draft.text); }), copyCurrent = button('Copy current', () => { const value = draft && currentOnly(draft.text); if (value !== null && value !== false) copyText(value); }), apply = button('檢視並套用', applyDraft, 'handoff-primary');
     const outputActions = node('div', 'handoff-ai-actions'); outputActions.append(copyAll, copyCurrent, apply);
     for (const [action, text] of [['handoff_convert', 'Note convert'], ['handoff_order', 'Order'], ['handoff_clean', 'Data cleaning']]) {
       const tab = button(text, () => { if (request) return; ui.aiAction = action; tabs.querySelectorAll('button').forEach(item => item.setAttribute('aria-pressed', String(item.dataset.aiAction === action))); }); tab.dataset.aiAction = action; tab.setAttribute('aria-pressed', String(action === ui.aiAction)); tabs.append(tab);
     }
-    panel.append(head, banner, tabs, sourceField.wrap, actions, status, outputField.wrap, preview, outputActions); root.append(panel);
-    ai = { panel, banner, source: sourceField.input, run, cancel, status, output: outputField.input, preview, copyAll, copyCurrent, apply, tabs };
+    const columns = node('div', 'handoff-ai-columns'), inputColumn = node('section', 'handoff-ai-column'), outputColumn = node('section', 'handoff-ai-column'); inputColumn.setAttribute('aria-label', 'AI 來源'); outputColumn.setAttribute('aria-label', 'AI 結果');
+    inputColumn.append(sourceField.wrap, actions); outputColumn.append(outputField.wrap, preview, outputActions); columns.append(inputColumn, outputColumn);
+    panel.append(head, navigation, tabs, status, columns); root.append(panel);
+    ai = { panel, select, previous, next, source: sourceField.input, run, cancel, status, output: outputField.input, preview, copyAll, copyCurrent, apply, tabs, patientId: null };
     outputField.input.addEventListener('input', () => { if (draft) { draft.text = outputField.input.value; renderDraft(); } });
-    let drag;
-    head.addEventListener('pointerdown', event => {
-      if (event.target.closest('button') || matchMedia('(max-width: 700px)').matches) return;
-      const bounds = panel.getBoundingClientRect(); drag = { x: event.clientX, y: event.clientY, left: bounds.left, top: bounds.top }; head.setPointerCapture(event.pointerId);
-    });
-    head.addEventListener('pointermove', event => { if (!drag) return; panel.style.right = 'auto'; panel.style.bottom = 'auto'; panel.style.left = `${Math.max(0, Math.min(innerWidth - panel.offsetWidth, drag.left + event.clientX - drag.x))}px`; panel.style.top = `${Math.max(0, Math.min(innerHeight - 80, drag.top + event.clientY - drag.y))}px`; });
-    head.addEventListener('pointerup', () => { drag = null; });
-    panel.addEventListener('keydown', event => { if (event.key === 'Escape') { panel.hidden = true; aiButton.focus(); } }); renderDraft();
+    panel.addEventListener('close', () => { if (aiButton.getClientRects().length) aiButton.focus({ preventScroll: true }); requestAnimationFrame(() => editor.positionHandles()); }); renderDraft();
   }
   async function runAI() {
     if (request || !ai.source.value.trim()) { if (!request) ai.status.textContent = '請先貼上來源資料。'; return; }
     const patient = store.patients.find(p => p.id === ai.patientId); if (!patient) { ai.status.textContent = '請選擇病人後重新開啟 AI。'; return; }
     const key = getKey(), controller = new AbortController();
     const captured = { patientId: patient.id, revision: patient.noteRevision, action: ui.aiAction, controller, identity: patientHeader(patient) }; request = captured;
+    draft = null; ai.output.value = ''; renderDraft();
     ai.run.disabled = true; ai.cancel.disabled = false; ai.source.readOnly = true; ai.tabs.querySelectorAll('button').forEach(item => { item.disabled = true; }); ai.status.textContent = '正在整理…';
     const timeout = setTimeout(() => controller.abort('timeout'), 100000);
     const context = {
@@ -327,24 +361,34 @@ export function initHandoff({ endpoint, getKey, openKeySettings, copyText, toast
     };
     try {
       const response = await fetch(endpoint('/api/generate'), { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action: captured.action, notes: ai.source.value, handoffContext: context, ...(key ? { apiKey: key } : {}) }), signal: controller.signal, cache: 'no-store' });
-      const result = await response.json(); if (!response.ok) throw new Error(result.error?.message || '無法產生草稿。'); if (typeof result.text !== 'string' || !result.text.trim()) throw new Error('AI 未傳回內容。');
+      const result = await response.json(); if (request !== captured || ai.patientId !== captured.patientId) return;
+      if (!response.ok) throw new Error(result.error?.message || '無法產生草稿。'); if (typeof result.text !== 'string' || !result.text.trim()) throw new Error('AI 未傳回內容。');
       if (controller.signal.aborted || !store.patients.some(p => p.id === captured.patientId)) { ai.status.textContent = '病人已刪除，回應未套用。'; return; }
       draft = { ...captured, text: result.text, controller: undefined }; ai.output.value = result.text;
-      ai.status.textContent = store.patients.some(p => p.id === captured.patientId) ? `草稿完成，所屬病人：${captured.identity}。請檢視後再套用。` : '草稿所屬病人已刪除，僅可複製，無法套用。'; renderDraft();
-    } catch (cause) { ai.status.textContent = !store.patients.some(p => p.id === captured.patientId) ? '病人已刪除，已停止生成並清除來源與草稿。' : controller.signal.aborted ? (controller.signal.reason === 'timeout' ? '請求逾時，來源及既有筆記已保留。' : '已停止，來源及既有筆記已保留。') : (cause.message || '無法連線至 AI 服務。'); }
-    finally { clearTimeout(timeout); request = null; ai.run.disabled = false; ai.cancel.disabled = true; ai.source.readOnly = false; ai.tabs.querySelectorAll('button').forEach(item => { item.disabled = false; }); }
+      ai.status.textContent = `整理完成：${captured.identity}`; renderDraft();
+    } catch (cause) {
+      if (request === captured) ai.status.textContent = !store.patients.some(p => p.id === captured.patientId) ? '病人已刪除，已停止生成並清除來源與草稿。' : controller.signal.aborted ? (controller.signal.reason === 'timeout' ? '請求逾時，來源及既有筆記已保留。' : '已停止，來源及既有筆記已保留。') : (cause.message || '無法連線至 AI 服務。');
+    } finally {
+      clearTimeout(timeout);
+      if (request === captured) { request = null; ai.cancel.disabled = true; ai.source.readOnly = false; ai.tabs.querySelectorAll('button').forEach(item => { item.disabled = false; }); refreshAIPatients(); }
+    }
   }
   function renderDraft() {
     if (!ai) return;
     ai.preview.replaceChildren(); const text = draft?.text || '';
-    for (const item of fromPortable(text)) { const row = node('div'); appendMarked(row, item); ai.preview.append(row); }
+    if (text) for (const item of fromPortable(text)) { const row = node('div'); appendMarked(row, item); ai.preview.append(row); }
     ai.copyAll.disabled = !text; ai.copyCurrent.hidden = draft?.action !== 'handoff_order'; ai.copyCurrent.disabled = !text || currentOnly(text) === null;
     ai.copyCurrent.title = text && currentOnly(text) === null ? '需要依序且各一次出現 [Current]、[History]、[Unclear]。' : '僅複製 Current 內容';
-    ai.apply.hidden = !draft || draft.action === 'handoff_order'; ai.apply.disabled = !draft || !store.patients.some(p => p.id === draft.patientId) || /^(Conversion|Cleaning|Order review) stopped:/.test(text);
-    ai.apply.textContent = draft?.action === 'handoff_clean' ? '檢視並插入 [O]' : '檢視並套用';
+    ai.apply.hidden = !draft || draft.action === 'handoff_order'; ai.apply.disabled = !draft || draft.applied || draft.patientId !== ai.patientId || !store.patients.some(p => p.id === draft.patientId) || /^(Conversion|Cleaning|Order review) stopped:/.test(text);
+    ai.apply.textContent = draft?.action === 'handoff_clean' ? (draft.applied ? '已插入 [O]' : '插入 [O]') : '檢視並套用';
   }
   function applyDraft() {
-    if (!draft) return; const captured = draft, patient = store.patients.find(p => p.id === captured.patientId); if (!patient) { ai.status.textContent = '病人已被刪除，無法套用。'; renderDraft(); return; }
+    if (!draft || draft.applied || draft.patientId !== ai.patientId) return; const captured = draft, patient = store.patients.find(p => p.id === captured.patientId); if (!patient) { ai.status.textContent = '病人已被刪除，無法套用。'; renderDraft(); return; }
+    if (captured.action === 'handoff_clean') {
+      if (!captured.text.trim() || /^Cleaning stopped:/.test(captured.text)) return;
+      store.transaction('插入清理資料', () => insertObjective(patient, captured.text)); captured.applied = true;
+      ai.status.textContent = `已插入 ${patient.bed} ${patient.name} 的 [O]，可在筆記使用「復原」。`; renderDraft(); return;
+    }
     let converted;
     try {
       if (captured.action === 'handoff_convert') {
@@ -353,24 +397,17 @@ export function initHandoff({ endpoint, getKey, openKeySettings, copyText, toast
         if (!['HX', 'CC', 'O', 'A', 'P', 'Medication'].every(section => converted.lines.some(item => sectionOf(item.text) === section))) throw new Error('草稿缺少必要的交班章節，請修正後重試。');
       }
     } catch (cause) { ai.status.textContent = cause.message; return; }
-    const modal = dialog(captured.action === 'handoff_clean' ? '確認插入資料至 [O]:' : '比較並套用筆記'); modal.element.classList.add('handoff-dialog-wide');
+    const modal = dialog('比較並套用筆記'); modal.element.classList.add('handoff-dialog-wide');
     const revision = patient.noteRevision;
     modal.content.append(node('strong', '', patientHeader(patient)));
     if (revision !== captured.revision) modal.content.append(node('p', 'handoff-error', '草稿產生後，筆記已變更。以下顯示最新筆記，請核對差異後再確認。'));
-    modal.content.append(node('h3', '', '目前筆記'), node('pre', 'handoff-comparison', bodyText(patient)), node('h3', '', captured.action === 'handoff_clean' ? '要加入的資料' : '新筆記'), node('pre', 'handoff-comparison', captured.action === 'handoff_clean' ? captured.text : bodyText(converted)));
+    modal.content.append(node('h3', '', '目前筆記'), node('pre', 'handoff-comparison', bodyText(patient)), node('h3', '', '新筆記'), node('pre', 'handoff-comparison', bodyText(converted)));
     const error = node('p', 'handoff-error'); modal.content.append(error);
-    modal.footer.append(button(captured.action === 'handoff_clean' ? '確認插入 [O]' : '確認套用至這位病人', () => {
+    modal.footer.append(button('確認套用至這位病人', () => {
       const current = store.patients.find(p => p.id === captured.patientId);
       if (!current || current.noteRevision !== revision) { error.textContent = '筆記在比較期間又有變更，請關閉後重新比較。'; return; }
-      store.transaction(captured.action === 'handoff_clean' ? '插入清理資料' : '套用 AI 筆記', () => {
-        if (captured.action === 'handoff_convert') current.lines = structuredClone(converted.lines);
-        else {
-          let index = current.lines.findIndex(item => sectionOf(item.text) === 'O');
-          if (index < 0) { index = current.lines.findIndex(item => ['A', 'P', 'Medication'].includes(sectionOf(item.text))); if (index < 0) index = current.lines.length; current.lines.splice(index, 0, ...fromPortable('[O]:')); }
-          let end = index + 1; while (end < current.lines.length && !sectionOf(current.lines[end].text)) end++;
-          current.lines.splice(end, 0, ...fromPortable(captured.text), ...fromPortable(''));
-        }
-      }); modal.close(); selectPatient(current.id); notice('草稿已套用，可按「復原」還原。');
+      store.transaction('套用 AI 筆記', () => { current.lines = structuredClone(converted.lines); }); captured.applied = true;
+      modal.close(); selectPatient(current.id); ai.status.textContent = '筆記已套用，可在筆記使用「復原」。'; renderDraft();
     }, 'handoff-primary'));
   }
   renderCards(); renderToolbar(); editor.render();

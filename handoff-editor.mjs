@@ -10,7 +10,7 @@ export function appendMarked(node, item) {
 }
 export class HandoffEditor {
   constructor(container, store, { onActive, onDate, onMove, onNotice }) {
-    Object.assign(this, { container, store, onActive, onDate, onMove, onNotice }); this.mode = 'individual'; this.paint = null; this.bookmark = null; this.composing = false;
+    Object.assign(this, { container, store, onActive, onDate, onMove, onNotice }); this.mode = 'continuous'; this.paint = null; this.bookmark = null; this.composing = false;
     container.addEventListener('beforeinput', event => this.beforeInput(event));
     container.addEventListener('compositionstart', () => { this.composing = true; });
     container.addEventListener('compositionend', event => { this.composing = false; this.captureDom(event.target.closest('[data-editor]')); });

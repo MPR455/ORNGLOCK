@@ -110,6 +110,8 @@ Patient cards include bed, chart number, name, age, and a quick remark synchroni
 
 The 縮小 button beside 展開 minimizes the left pane to a narrow bed/name strip, keeping patient selection available and giving the editor more room. 還原 returns to normal width. On small windows, minimizing opens the editor and ← 病人 returns to the patient view.
 
+Continuous mode is the default. 性別 and DNR beside `{pending}` update the selected patient's header and card with an explicit male/female or DNR1/DNR2/DNR3 selection; neither is inferred. 待辦事項 uses a red button and a red outline around the active task pane.
+
 Drag the visible **⠿** handle beside a `-` or `#` block to move the entire block, including continuation lines and highlights. Drop indicators snap before/after blocks; moving between sections is supported within the same patient. Handle clicks offer a keyboard-accessible section move, and Alt+Up/Down moves blocks. Cross-patient drops are blocked.
 
 The three highlighters apply **background color to selected text**, like Word. With a collapsed caret, a color activates repeated-selection paint mode; Escape stops painting. No color removes only the selected background. `@` opens an editable Taiwan-date picker with Left/Right day stepping.
@@ -120,7 +122,7 @@ Deleting first opens a confirmation naming the patient's bed, name, and chart nu
 
 GitHub Pages and the API are deployed separately. Pushing frontend changes does not update the Worker. When adding or changing AI actions/private prompts, deploy the Worker from the local checkout and verify `/api/status` lists all three ready handoff actions before publishing the corresponding UI.
 
-The robot button opens a floating panel with a blank source input, Note convert, Data cleaning, and Order with Current-only copying. Note conversion always preserves existing facts and unresolved tasks; factual fidelity is required by all three private master prompts. Drafts are bound to their original patient and require a comparison before note replacement/data insertion. The three private master prompts are loaded only by the backend. Handoff availability is independent of the original four tools.
+The robot button opens a full-page AI workspace with a blank source input, Note convert, Data cleaning, and Order with Current-only copying. The patient dropdown and previous/next buttons follow bed order. Switching patients cancels the previous request and clears its source, result, preview, and status. Note conversion always preserves existing facts and unresolved tasks; factual fidelity is required by all three private master prompts. Note replacement still has a comparison; Data cleaning's 插入 [O] inserts directly into the selected patient's latest objective section and supports undo. The three private master prompts are loaded only by the backend. Handoff availability is independent of the original four tools.
 
 Set the separate backend secret `HANDOFF_GEMINI_API_KEY` for handoff calls. An explicitly applied personal key from the existing API key tab takes precedence. The original four tools continue using `GEMINI_API_KEY`. No credential is included in source, public files, TXT exports, or tests.
 
@@ -130,7 +132,7 @@ For the deployed Worker, use `pnpm exec wrangler secret put HANDOFF_GEMINI_API_K
 
 ### Portable TXT highlighting
 
-Ordinary spans serialize as `/red/`, `%yellow%`, and `\green\`. Dates, units, percentages, and URLs remain literal. Ambiguous literal delimiters use a small, single-decoded entity escape set. Partial-word or adjacent Word selections that cannot be represented unambiguously use the lossless extension `{{mark:red}}text{{/mark}}` (also yellow/green). Import restores those backgrounds. This is text syntax, never executable HTML. The exact `{pending}` marker remains readable in exported notes.
+The editor and imports understand `/red/`, `%yellow%`, and `\green\`, plus the lossless extension `{{mark:red}}text{{/mark}}` (also yellow/green) for partial-word/adjacent spans. Dates, units, percentages, and URLs remain literal. These forms are text syntax, never executable HTML. Downloaded handoffs contain plain note text without highlight delimiters or escape entities added for formatting. Highlighting stays in the current editor; plain exports retain `{pending}`, `!`, exam labels, and all patient content.
 
 ### Handoff verification
 

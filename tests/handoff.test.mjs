@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
-import { createPatient, HandoffStore, fromPortable, cellsOf, linesFromCells, parsePortable, serializeBody, highlight, replaceText, bodyText, completeTask, tasksOf, pendingCount, blocksOf, moveBlock, exportPatients, DIVIDER, sortPatients, patientHeader, currentOnly, shiftDate, taiwanDate, locationOf } from '../handoff-model.mjs';
+import { createPatient, HandoffStore, fromPortable, cellsOf, linesFromCells, parsePortable, serializeBody, highlight, replaceText, bodyText, completeTask, tasksOf, pendingCount, blocksOf, moveBlock, exportPatients, insertObjective, DIVIDER, sortPatients, patientHeader, currentOnly, shiftDate, taiwanDate, locationOf } from '../handoff-model.mjs';
 import { parsePatients, parseDelimited, decodeFile, reconcile, applyPlans, parseFullNote } from '../handoff-import.mjs';
 import { handleApi, createMemoryGuard } from '../server/api.mjs';
 import { ACTIONS, HANDOFF_ACTIONS } from '../server/actions.mjs';
@@ -113,6 +113,27 @@ test('continuous floor/bed export ignores left sort and round-trips all patient 
 test('Current-only copy validates unique, ordered headings and retains qualifiers', () => {
   assert.equal(currentOnly('[Current]\nO2: NC 3 L/min (ordered)\n[History]\nold\n[Unclear]\nunknown'), 'O2: NC 3 L/min (ordered)');
   assert.equal(currentOnly('[Current]\na\n[Current]\nb\n[History]\nc\n[Unclear]\nd'), null); assert.equal(currentOnly('[History]\na\n[Current]\nb\n[Unclear]\nc'), null);
+});
+
+test('TXT export omits background syntax without changing dates, units, literal punctuation or pending items', () => {
+  const patient = make({ quickRemark: '/important/ {pending}', body: '[O]:\n/K 6.1 [H]/; \\Na 128 [L]\\; %review%\n10/18 40% mg/dL r/o C:\\notes\\file\n[P]:\n# ! echo {pending}' });
+  const original = serializeBody(patient); highlight(patient, bodyText(patient).indexOf('review') + 1, bodyText(patient).indexOf('review') + 3, 'red');
+  const exported = exportPatients([patient]);
+  assert.match(exported, /K 6\.1 \[H\]; Na 128 \[L\]; review/);
+  assert.match(exported, /10\/18 40% mg\/dL r\/o C:\\notes\\file/);
+  assert.match(exported, /# ! echo \{pending\}/); assert.match(exported, /｜ important \{pending\}/);
+  assert.doesNotMatch(exported, /\{\{mark:|\{\{\/mark\}\}|\/K 6\.1|\\Na 128|%review%|\/important\//);
+  assert.equal(patient.quickRemark, '/important/ {pending}'); assert.ok(patient.lines.some(item => item.marks.length)); assert.match(original, /\/K 6\.1/);
+});
+
+test('direct objective insertion preserves existing findings, later sections, colors and undo', () => {
+  const store = new HandoffStore(), patient = make({ body: '[HX]: HTN\n[O]:\nold finding\n\n[A]:\n# problem\n[P]:\n- task {pending}' }); store.patients = [patient]; store.activeId = patient.id;
+  store.transaction('插入清理資料', () => insertObjective(patient, 'Lab:\n/K 6.1 [H]/; \\Na 128 [L]\\'));
+  assert.match(bodyText(patient), /old finding\n\nLab:\nK 6\.1 \[H\]; Na 128 \[L\]\n\n\[A\]:/);
+  assert.deepEqual(patient.lines.find(item => item.text.startsWith('K 6.1')).marks.map(mark => mark.color), ['red', 'green']);
+  assert.match(bodyText(patient), /\[P\]:\n- task \{pending\}/); store.undo(); assert.doesNotMatch(bodyText(store.active), /K 6\.1/);
+  const missing = make({ body: '[HX]: HTN\n[A]:\n# problem\n[P]:\n- task' }); insertObjective(missing, 'supplied data');
+  assert.match(bodyText(missing), /\[HX\]: HTN\n\[O\]:\nsupplied data\n\n\[A\]:/);
 });
 test('Taiwan date and calendar stepping cross month/year boundaries', () => {
   assert.equal(taiwanDate(new Date('2026-10-17T20:00:00Z')), '2026-10-18'); assert.equal(shiftDate('2026-12-31', 1), '2027-01-01'); assert.equal(shiftDate('2026-03-01', -1), '2026-02-28');
