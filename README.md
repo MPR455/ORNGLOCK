@@ -106,17 +106,17 @@ Tests cover the four prompt mappings, shared-to-personal fallback, key and promp
 
 The 交班單 tab supports manual patient entry, CSV/TSV and ward-text import, and reimport of downloaded TXT files. Import previews reconcile by chart number or a safe unique name match; bed updates preserve existing note bodies. Conflicting identities are shown for review. The observed ER sample requires Big5 decoding. Real local samples are ignored by Git and excluded from the public build.
 
-Patient cards include bed, chart number, name, age, and a quick remark synchronized with the note header. The left pane supports bed/important/pending sorting, expansion, and patient-grouped task editing. Checking a pending item moves that edited line and its continuation into the same patient's [O]: section without inventing a result. Individual and continuous views share one document model. Continuous notes and whole-list TXT downloads always follow floor/ward/bed order.
+Patient cards include bed, chart number, name, age, and a quick remark synchronized with the note header. The left pane supports bed/important/pending sorting and patient-grouped task editing. Expansion fills the page with larger cards showing history, current issues, assessment, plan, and pending/important lines; the shrink button returns to the editor layout. Checking a pending item moves that edited line and its continuation into the same patient's [O]: section without inventing a result. Individual and continuous views share one document model. Continuous notes and whole-list TXT downloads always follow floor/ward/bed order.
 
 Drag the visible **⠿** handle beside a `-` or `#` block to move the entire block, including continuation lines and highlights. Drop indicators snap before/after blocks; moving between sections is supported within the same patient. Handle clicks offer a keyboard-accessible section move, and Alt+Up/Down moves blocks. Cross-patient drops are blocked.
 
-The three highlighters apply **background color to selected text**, like Word. With a collapsed caret, a color activates repeated-selection paint mode; Escape stops painting. No color removes only the selected background. `@` opens an editable Taiwan-date picker with Left/Right day stepping. `<Exam>` normalizes identifiable examination-label lines to angle-bracket notation.
+The three highlighters apply **background color to selected text**, like Word. With a collapsed caret, a color activates repeated-selection paint mode; Escape stops painting. No color removes only the selected background. `@` opens an editable Taiwan-date picker with Left/Right day stepping.
 
 Deleting first opens a confirmation naming the patient's bed, name, and chart number, with Cancel focused. Confirming removes the complete patient record: card, note, tasks, continuous-view content, download content, and that patient's AI scratchpad. Late AI responses cannot recreate it. Undo restores the record. Notes remain in page memory; export TXT before closing/reloading.
 
 ### Handoff AI configuration
 
-The floating AI panel offers Note convert, Data cleaning, and Order with Current-only copying. Drafts are bound to their original patient and require a comparison before note replacement/data insertion. The three private master prompts are loaded only by the backend. Handoff availability is independent of the original four tools.
+The robot button opens a floating panel with a blank source input, Note convert, Data cleaning, and Order with Current-only copying. Note conversion always preserves existing facts and unresolved tasks; factual fidelity is required by all three private master prompts. Drafts are bound to their original patient and require a comparison before note replacement/data insertion. The three private master prompts are loaded only by the backend. Handoff availability is independent of the original four tools.
 
 Set the separate backend secret `HANDOFF_GEMINI_API_KEY` for handoff calls. An explicitly applied personal key from the existing API key tab takes precedence. The original four tools continue using `GEMINI_API_KEY`. No credential is included in source, public files, TXT exports, or tests.
 

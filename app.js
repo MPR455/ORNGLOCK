@@ -51,7 +51,6 @@ function setTheme(theme) {
   if (!['default', 'macaroon', 'dark', 'black'].includes(theme)) theme = 'default';
   document.body.classList.remove('theme-macaroon', 'theme-dark', 'theme-black');
   if (theme !== 'default') document.body.classList.add(`theme-${theme}`);
-  $('color-mode').value = theme;
   try { localStorage.setItem('ornglock_theme', theme); } catch {}
   document.querySelectorAll('.theme-dot').forEach(dot => { const selected = dot.dataset.theme === theme; dot.classList.toggle('sel', selected); dot.setAttribute('aria-pressed', String(selected)); });
 }
@@ -192,7 +191,6 @@ async function generate(action) {
   }
 }
 
-$('color-mode').addEventListener('change', event => setTheme(event.target.value));
 $('site-menu-trigger').addEventListener('click', event => { event.stopPropagation(); const open = $('menu-dd').classList.toggle('open'); $('site-menu-trigger').setAttribute('aria-expanded', String(open)); });
 $('mobile-tabs-trigger').addEventListener('click', openSheet);
 document.querySelector('.mobile-tabs-backdrop').addEventListener('click', () => closeSheet());
