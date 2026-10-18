@@ -110,7 +110,7 @@ Patient cards include bed, chart number, name, age, and a quick remark synchroni
 
 縮小 minimizes the left pane to a narrow bed/name strip, keeping patient selection available and giving the editor more room. 還原 returns to normal width. Narrow editor layouts keep that strip visible with 展開 and 還原 controls; there is no ← 病人 toolbar button.
 
-When the note pane is narrow, its toolbar stays on one row with only the robot, fullscreen icon, and 下載. The fullscreen icon immediately left of 下載 toggles the top site banner for the handoff workspace and expands the usable editor height; clicking again or pressing Escape restores it.
+Every editor-toolbar button is 44px high. Desktop layouts keep the mode, highlighters, pending, sex, DNR, and undo/redo controls available in a single row; the editing group can scroll horizontally if space is tight, while the robot, fullscreen icon, and download remain visible. Only small windows (760px or less) hide the editing group and show the robot, fullscreen icon, and 下載. The fullscreen icon immediately left of 下載 toggles the top site banner for the handoff workspace and expands the usable editor height; clicking again or pressing Escape restores it.
 
 Continuous mode is the default. 性別 and DNR beside `{pending}` update the selected patient's header and card with an explicit male/female or DNR1/DNR2/DNR3 selection; neither is inferred. 待辦事項 uses a red button and a red outline around the active task pane.
 

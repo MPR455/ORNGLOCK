@@ -38,7 +38,8 @@ body.handoff-banner-hidden #tab-handoff.active{--handoff-header-height:0px}
 .handoff-task-input{width:100%;resize:vertical;min-width:0;min-height:50px;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:5px;padding:6px;font-size:12px;line-height:1.6}
 .handoff-task-important{color:#be3e2b;font-weight:bold;padding:8px 4px}
 .handoff-list-empty{font-size:13px;color:var(--sub);text-align:center;padding:40px 16px;line-height:1.8}
-.handoff-tools{padding:10px;display:flex;gap:6px;align-items:center;flex-wrap:wrap;border-bottom:1px solid var(--line);background:var(--card);z-index:4}
+.handoff-tools{padding:10px;display:flex;gap:6px;align-items:flex-start;flex-wrap:nowrap;border-bottom:1px solid var(--line);background:var(--card);z-index:4}
+.handoff-edit-tools{display:flex;align-items:center;gap:6px;flex:1;min-width:0;overflow-x:auto;scrollbar-width:thin;overscroll-behavior-x:contain;padding:4px;margin:-4px 0;scroll-padding-inline:4px}
 .handoff-highlight{width:34px;min-width:34px;padding:3px;font-size:24px}
 .handoff-color-red{background:#ffd2d2;color:#8f2525;border-color:#c55b5b}
 .handoff-color-yellow{background:#fff1a8;color:#6d5600;border-color:#c8aa33}
@@ -219,9 +220,8 @@ main:has(>.handoff-tab.active.handoff-expanded){max-width:none}
   .handoff-tab{--handoff-bottom-space:calc(var(--site-header-height,54px) + 12px + env(safe-area-inset-bottom))}
 }
 @media(max-width:760px){
-  .handoff-tools .handoff-square{padding:7px 9px;height:42px;min-height:42px;min-width:60px;font-size:12px}
-  .handoff-tools .handoff-ai-trigger{min-width:42px;min-height:42px;width:42px;height:42px;font-size:24px}
-  .handoff-tools .handoff-banner-toggle{width:42px;min-width:42px;padding:8px}
+  .handoff-tools .handoff-square{padding:7px 9px;min-width:60px;font-size:12px}
+  .handoff-tools .handoff-ai-trigger{font-size:24px}
   .handoff-expanded .handoff-list-top{padding:10px;gap:10px}
   .handoff-expanded .handoff-list{padding:10px;gap:10px}
   .handoff-expanded .handoff-list-bottom{padding:10px}
@@ -241,10 +241,22 @@ main:has(>.handoff-tab.active.handoff-expanded){max-width:none}
   .handoff-mobile-editor .handoff-size-controls{width:100%}
   .handoff-mobile-editor .handoff-size-controls>.handoff-button{width:100%}
 }
-@container handoff-note-pane (max-width:850px){
-  .handoff-tools{flex-wrap:nowrap;gap:6px;padding:8px}
-  .handoff-tools>.handoff-button:not(#handoff-ai):not(#handoff-banner-toggle):not(#handoff-download){display:none}
-  .handoff-tools #handoff-download{flex:0 0 auto;margin-left:0;min-height:42px;padding:7px 9px}
+/* Desktop tools stay available even when the patient pane makes the editor narrower. */
+@container handoff-note-pane (max-width:950px){
+  .handoff-tools{gap:4px;padding:8px}
+  .handoff-edit-tools{gap:4px}
+  .handoff-tools .handoff-button{font-size:11px;padding:6px}
+  .handoff-tools .handoff-highlight{width:32px;min-width:32px;font-size:22px;padding:2px}
+  .handoff-tools .handoff-square{font-size:11px;padding:7px}
+  .handoff-tools .handoff-ai-trigger{font-size:24px}
+  .handoff-download-full{display:none}
+  .handoff-download-compact{display:inline}
+}
+.handoff-tools .handoff-button{height:44px;min-height:44px;max-height:44px;flex:0 0 auto;box-sizing:border-box}
+.handoff-tools .handoff-ai-trigger,.handoff-tools .handoff-banner-toggle{width:44px;min-width:44px;padding:6px}
+@media(max-width:760px){
+  .handoff-tools{gap:4px;padding:6px}
+  .handoff-edit-tools{display:none}
   .handoff-download-full{display:none}
   .handoff-download-compact{display:inline}
 }
