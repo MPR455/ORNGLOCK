@@ -25,15 +25,44 @@ test('AI conversion accepts exact downloaded format for multiple patients and pr
   assert.match(bodyText(parsed.patients[0]), /Drug A stopped 10\/17/);
 });
 
-test('AI conversion rejects stopped, fenced, incomplete, repeated or disordered sections and unknown identities', () => {
-  for (const text of [
-    'Conversion stopped: unclear identity', '```text\n' + converted + '```',
-    converted.replace('[CC]:', '[Subjective]:'), converted.replace('[CC]:', '[O]:'),
-    converted.replace('[HX]:', '[CC]:').replace('[CC]:\nfever', '[HX]:\nfever'),
-    converted.replace('00001234', '1234-new'), converted.replace('00001234', '1234'), converted.replace('示範甲', '另一個人'),
-    converted.replace('LO601 00001234 示範甲 71 男 DNR2', '床號待補 病歷號待補 姓名待補 年齡待補')
-  ]) assert.throws(() => parseAIList(text, source));
+test('AI import repairs fenced, incomplete, repeated and disordered sections without rejecting the draft', () => {
+  for (const text of ['```text\n' + converted + '```', converted.replace('[CC]:', '[Subjective]:'), converted.replace('[CC]:', '[O]:'), converted.replace('[HX]:', '[CC]:').replace('[CC]:\nfever', '[HX]:\nfever')]) {
+    const parsed = parseAIList(text, source);
+    assert.equal(parsed.patients.length, 2);
+    assert.match(bodyText(parsed.patients[0]), /HTN/); assert.match(bodyText(parsed.patients[0]), /fever/);
+    assert.deepEqual(bodyText(parsed.patients[0]).split('\n').filter(row => HEADINGS.includes(row)), HEADINGS);
+  }
+  assert.throws(() => parseAIList(''), /沒有/);
   assert.throws(() => parseAIList(Array.from({ length: 1001 }, () => exportPatients([patients[1]])).join('\n')), /1,000/);
+});
+
+test('identity differences and missing identities are review notes, not import blockers', () => {
+  for (const text of [converted.replace('00001234', '1234'), converted.replace('示範甲', '另一個人'), converted.replace('LO601 00001234 示範甲 71 男 DNR2', '床號待補 病歷號待補 姓名待補 年齡待補')]) {
+    const parsed = parseAIList(text, source); assert.equal(parsed.patients.length, 2); assert.ok(parsed.warnings.length);
+    const store = new HandoffStore(); applyPlans(store, reconcile([], parsed.patients)); assert.equal(store.patients.length, 2);
+    assert.match(bodyText(store.patients[0]), /fever/);
+  }
+});
+
+test('messy roster accepts bracketed identities, compact age/sex, bed suffixes, empty beds and mixed section labels', () => {
+  const messy = '30E\n================================\n30F\n==================================\n329 00000001 示範甲 64F DNR1 **Hb**\nPhx: HTN\nCC: supplied symptom\nO:\nHb 8.2->7.4**\nA:\n# source assessment\nPlan:\n- stopped Drug A\n# lab ___\n=========================\n331\n=========================\n501+ 【00000002 示範乙 52 歲 男】\nHX: supplied history\nA:\n1. Acute source diagnosis, score 91\n2. Another source problem\nP:\n# echo on call';
+  const parsed = parseAIList(messy, messy); assert.equal(parsed.patients.length, 2);
+  assert.equal(parsed.patients[0].age, '64'); assert.equal(parsed.patients[0].sex, 'F');
+  assert.equal(parsed.patients[0].codeStatus, 'DNR1'); assert.equal(parsed.patients[0].quickRemark, 'Hb');
+  assert.equal(parsed.patients[1].bed, '501+'); assert.equal(parsed.patients[1].sex, '男');
+  assert.match(bodyText(parsed.patients[0]), /Hb 8.2->7.4\*\*/); assert.match(bodyText(parsed.patients[0]), /# lab ___/);
+  assert.match(bodyText(parsed.patients[1]), /1\. Acute source diagnosis, score 91/);
+  assert.ok(parsed.warnings.some(value => value.includes('3 個')));
+});
+
+test('missing ages, headerless fragments and notes without dividers remain importable without combining patients', () => {
+  const withoutDividers = 'LO601 00001234 示範甲 71\nHX: HTN\nLO602 00005678 示範乙\nPlan: review ___';
+  const parsed = parseAIList(withoutDividers); assert.equal(parsed.patients.length, 2);
+  assert.equal(parsed.patients[1].age, ''); assert.equal(parsed.patients[1].name, '示範乙');
+  const fragment = parseAIList('O: original finding\nPlan: original task ___');
+  assert.equal(fragment.patients[0].mrn, ''); assert.equal(fragment.patients[0].name, '');
+  assert.match(bodyText(fragment.patients[0]), /original finding/); assert.match(bodyText(fragment.patients[0]), /original task ___/);
+  const store = new HandoffStore(); applyPlans(store, reconcile([], fragment.patients)); assert.equal(store.patients.length, 1);
 });
 
 test('AI conversion allows a missing MRN or missing name when the other identity is documented', () => {
@@ -49,6 +78,8 @@ test('whole-list action works without a selected patient using the handoff key a
     const response = await handleApi(request({ ...(apiKey ? { apiKey } : {}) }), options({ fetch: async (_, init) => { captured = init; return success(); } }));
     assert.equal(response.status, 200); assert.equal(captured.headers['x-goog-api-key'], apiKey || 'handoff-key');
     const payload = JSON.parse(captured.body), system = payload.system_instruction.parts[0].text, user = payload.contents[0].parts[0].text;
+    assert.equal(payload.generationConfig.maxOutputTokens, 32768);
+    assert.ok(system.includes('best-effort whole-list import')); assert.ok(system.includes('A patient with only a bed number plus clinical notes is still a valid entry'));
     assert.ok(system.includes(DIVIDER)); assert.ok(system.includes('Never interpret a bed number as an MRN'));
     assert.ok(!system.includes(source)); assert.ok(user.includes(source)); assert.ok(!user.includes('application_context'));
     const result = await response.json(); assert.equal(result.text, converted.trim()); assert.equal(result.action, 'handoff_import');
@@ -56,10 +87,12 @@ test('whole-list action works without a selected patient using the handoff key a
   }
 });
 
-test('invalid or truncated provider lists never become successful partial imports', async () => {
-  for (const [text, finish, code] of [['Conversion stopped: unclear', 'STOP', 'INVALID_LIST_OUTPUT'], [converted.replace('[P]:', '[Missing]:'), 'STOP', 'INVALID_LIST_OUTPUT'], [converted, 'MAX_TOKENS', 'OUTPUT_TOO_LONG']]) {
+test('provider drafts remain editable and importable despite imperfect formatting or truncation', async () => {
+  for (const [text, finish] of [[converted.replace('[P]:', '[Missing]:'), 'STOP'], [converted, 'MAX_TOKENS'], ['O: unassigned source detail', 'STOP']]) {
     const response = await handleApi(request(), options({ fetch: async () => success(text, finish) }));
-    assert.equal(response.status, 422); const result = await response.json(); assert.equal(result.error.code, code); assert.equal(result.text, undefined);
+    assert.equal(response.status, 200); const result = await response.json(); assert.equal(result.text, text.trim());
+    assert.ok(parseAIList(result.text).patients.length > 0);
+    if (finish === 'MAX_TOKENS') assert.ok(result.warnings[0].includes('長度上限'));
   }
 });
 

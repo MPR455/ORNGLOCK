@@ -25,7 +25,7 @@ export function initHandoff({ endpoint, getKey, openKeySettings, copyText, toast
   const find = id => root.querySelector(`#${id}`);
   const ui = { sort: 'bed', view: 'cards', expanded: false, minimized: false, editorBeforeExpand: false, search: '', aiAction: 'handoff_convert' };
   let messageTimer, request = null, draft = null, ai;
-  let listImportDraft = { source: '', output: '', encoding: 'auto' };
+  let listImportDraft = { source: '', output: '', encoding: 'auto', warnings: [] };
   const notice = text => { const message = find('handoff-message'); message.textContent = text; message.hidden = false; clearTimeout(messageTimer); messageTimer = setTimeout(() => { message.hidden = true; }, 6000); };
   const store = new HandoffStore(() => { renderCards(); renderToolbar(); editor.render(); refreshAIPatients(); });
   const editor = new HandoffEditor(find('handoff-editor'), store, { onActive: updateActive, onDate: openDate, onNotice: notice });
@@ -252,18 +252,19 @@ export function initHandoff({ endpoint, getKey, openKeySettings, copyText, toast
   }
   function openAIImport(initialSource, previewImport, keySettings) {
     const modal = dialog('AI 轉換病人名單'); modal.element.classList.add('handoff-dialog-wide');
-    if (initialSource.trim() && initialSource !== listImportDraft.source) listImportDraft = { source: initialSource, output: '', encoding: 'auto' };
+    if (initialSource.trim() && initialSource !== listImportDraft.source) listImportDraft = { source: initialSource, output: '', encoding: 'auto', warnings: [] };
     const upload = labelInput('上傳其他人的交班筆記（TXT）', '', 'file'); upload.input.accept = '.txt,text/plain'; upload.input.id = 'handoff-import-ai-file';
     const source = labelInput('或貼上其他人的交班筆記', listImportDraft.source, 'textarea'); source.input.rows = 9; source.input.maxLength = 100000; source.input.id = 'handoff-import-ai-source'; source.input.spellcheck = false;
-    source.input.placeholder = '貼上原始交班筆記，可包含多位病人。請保留每位病人的姓名或病歷號及分界。';
+    source.input.placeholder = '直接貼上原始交班筆記，可包含多位病人、空白床位及不一致的格式，AI 會盡量整理。';
     const encodingField = node('label', 'handoff-field', 'TXT 檔案編碼'), encoding = node('select');
     for (const [value, title] of [['auto', '自動（UTF-8 → Big5）'], ['utf-8', 'UTF-8'], ['big5', 'Big5 / CP950'], ['utf-16le', 'UTF-16 LE']]) { const option = node('option', '', title); option.value = value; encoding.append(option); }
     encoding.value = listImportDraft.encoding; encodingField.append(encoding);
     const status = node('p', 'handoff-ai-status'); status.setAttribute('role', 'status'); status.setAttribute('aria-live', 'polite');
+    status.textContent = listImportDraft.warnings.join('\n');
     const error = node('p', 'handoff-error'); error.setAttribute('role', 'alert');
     const output = labelInput('ORNGLOCK 交班單（可編輯，請逐位核對）', listImportDraft.output, 'textarea'); output.input.rows = 12; output.input.spellcheck = false; output.input.id = 'handoff-import-ai-output'; output.wrap.hidden = !listImportDraft.output;
     let pending = null, fileBytes = null, readVersion = 0, decoding = false;
-    const saveSource = () => { listImportDraft.source = source.input.value; listImportDraft.output = ''; output.input.value = ''; output.wrap.hidden = true; preview.disabled = true; error.textContent = ''; status.textContent = ''; };
+    const saveSource = () => { listImportDraft.source = source.input.value; listImportDraft.output = ''; listImportDraft.warnings = []; output.input.value = ''; output.wrap.hidden = true; preview.disabled = true; error.textContent = ''; status.textContent = ''; };
     const updateBusy = () => {
       const busy = Boolean(pending) || decoding;
       run.disabled = busy; stop.hidden = !pending; upload.input.disabled = busy; source.input.readOnly = busy; encoding.disabled = busy;
@@ -295,7 +296,7 @@ export function initHandoff({ endpoint, getKey, openKeySettings, copyText, toast
       if (notes.length > 100000) { error.textContent = 'AI 來源上限為 100,000 字元，請分批轉換。'; return; }
       const controller = new AbortController(), key = getKey(); pending = controller;
       error.textContent = ''; status.textContent = '正在逐位整理病人名單…'; updateBusy();
-      const timeout = setTimeout(() => controller.abort('timeout'), 100000);
+      const timeout = setTimeout(() => controller.abort('timeout'), 190000);
       try {
         const response = await fetch(endpoint('/api/generate'), { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action: 'handoff_import', notes, ...(key ? { apiKey: key } : {}) }), signal: controller.signal, cache: 'no-store' });
         const result = await response.json();
@@ -303,9 +304,12 @@ export function initHandoff({ endpoint, getKey, openKeySettings, copyText, toast
         if (controller.signal.aborted) throw new DOMException('Aborted', 'AbortError');
         if (!response.ok) { useKey.hidden = !result.error?.canUseOwnKey; throw new Error(result.error?.message || '無法轉換名單，請稍後重試。'); }
         if (typeof result.text !== 'string' || !result.text.trim()) throw new Error('AI 未傳回內容，來源已保留。');
-        const parsed = parseAIList(result.text, notes);
         listImportDraft.output = result.text; output.input.value = result.text; output.wrap.hidden = false;
-        status.textContent = `已轉換 ${parsed.patients.length} 位病人。請核對下方內容，再按「預覽 AI 匯入」。`;
+        listImportDraft.warnings = Array.isArray(result.warnings) ? result.warnings.filter(value => typeof value === 'string') : [];
+        try {
+          const parsed = parseAIList(result.text, notes);
+          status.textContent = [`已整理 ${parsed.patients.length} 筆。可編輯下方草稿，再按「套入」選擇病人。`, ...listImportDraft.warnings, ...parsed.warnings].join('\n');
+        } catch (cause) { status.textContent = ['草稿已保留，可直接編輯後套入。', ...listImportDraft.warnings, cause.message].join('\n'); }
       } catch (cause) {
         if (modal.element.open) { status.textContent = ''; error.textContent = controller.signal.aborted ? (controller.signal.reason === 'timeout' ? '轉換逾時，來源已保留。請分批轉換或重試。' : '已停止轉換，來源與上次結果已保留。') : (cause.message || '無法連線至 AI 服務，來源已保留。'); }
       } finally { clearTimeout(timeout); if (pending === controller) { pending = null; updateBusy(); } }
@@ -313,12 +317,12 @@ export function initHandoff({ endpoint, getKey, openKeySettings, copyText, toast
     const stop = button('停止轉換', () => pending?.abort()); stop.hidden = true;
     const useKey = button('使用自己的 API key', () => { modal.close(); keySettings(); }); useKey.hidden = true;
     const actions = node('div', 'handoff-ai-actions'); actions.append(run, stop, useKey);
-    const preview = button('預覽 AI 匯入', () => {
+    const preview = button('套入', () => {
       if (pending || decoding) return;
-      try { const parsed = parseAIList(output.input.value, source.input.value); checkImportCapacity(parsed); modal.close(); previewImport(parsed); }
+      try { const parsed = parseAIList(output.input.value, source.input.value); parsed.warnings.unshift(...listImportDraft.warnings); checkImportCapacity(parsed); modal.close(); previewImport(parsed); }
       catch (cause) { error.textContent = cause.message; }
     }, 'handoff-primary'); preview.id = 'handoff-import-ai-preview'; preview.disabled = !listImportDraft.output;
-    modal.content.append(node('p', 'small', 'AI 會整理成與「下載交班單」相同的身分列及 [HX]、[CC]、[O]、[A]、[P]、[Medication] 章節。缺少的欄位留白或待補。'), upload.wrap, encodingField, source.wrap,
+    modal.content.append(node('p', 'small', '不用先整理格式。AI 會盡量轉成 ORNGLOCK 交班單，略過空白床位，缺少的欄位標示待補。草稿可編輯，格式不完整仍可套入。'), upload.wrap, encodingField, source.wrap,
       node('p', 'small', '轉換會將來源傳送至 ORNGLOCK 後端與 Google Gemini，使用目前的交班單 API key。來源與草稿僅保留在此分頁。'), actions, status, error, output.wrap);
     modal.footer.append(preview);
     modal.element.addEventListener('close', () => { ++readVersion; pending?.abort(); }, { once: true });
@@ -350,7 +354,7 @@ export function initHandoff({ endpoint, getKey, openKeySettings, copyText, toast
       preview.append(row);
     }
     const error = node('p', 'handoff-error'); modal.content.append(preview, error);
-    modal.footer.append(button('套用勾選的匯入', () => {
+    modal.footer.append(button(parsed.aiConverted ? '套入交班單' : '套用勾選的匯入', () => {
       if (store.clock !== revision) { error.textContent = '名單在預覽後已變更，請關閉後重新匯入預覽。'; return; }
       applyPlans(store, plans); modal.close(); notice(`匯入完成，目前 ${store.patients.length} 位病人。既有筆記已保留。`);
     }, 'handoff-primary'));

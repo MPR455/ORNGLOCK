@@ -98,22 +98,81 @@ export function parsePatients(text, { format = 'auto', mapping } = {}) {
   if (format === 'csv' || format === 'tsv' || (format === 'auto' && /[,\t]/.test(text.split('\n')[0]))) return csvPatients(text, format === 'tsv' || (format === 'auto' && text.split('\n')[0].includes('\t')) ? '\t' : ',', mapping);
   throw new Error('無法辨識名單。請選擇格式；單一病人可用「新增病人」輸入，再貼上筆記。');
 }
-// AI drafts must be complete canonical exports before entering the normal import preview.
+const aiBed = value => /^(?:床號待補|[A-Za-z]*[-.]?\d[\w+.-]*)$/.test(value);
+function aiHeader(raw) {
+  const text = raw.normalize('NFKC').replace(/^\s*#{1,6}\s+/, '').replace(/[【】]/g, ' ').replace(/\*\*/g, '').replace(/(\s\d{1,3})([MF])(?=\s|$)/gi, '$1 $2').replace(/\s+/g, ' ').trim();
+  const [bed, mrn] = text.split(' ');
+  if (!aiBed(bed) || !/^(?:病歷號待補|\d{4,}|[A-Za-z]+[\w-]*\d[\w-]*)$/.test(mrn || '')) return null;
+  let data;
+  try { data = parsePatientHeader(text); }
+  catch {
+    const match = /^(\S+)\s+(病歷號待補|[A-Za-z]*\d{4,}[\w-]*)(?:\s+(.+))?$/.exec(text);
+    if (!match) return null;
+    data = { bed: match[1] === '床號待補' ? '' : match[1], mrn: match[2] === '病歷號待補' ? '' : match[2], name: match[3] === '姓名待補' ? '' : (match[3] || ''), age: '', quickRemark: '', codeStatus: '' };
+  }
+  // Unstructured reminders in a header belong in the remark, not the DNR field.
+  const dnr = /^DNR\s*\d+(?:\s*[,/+&]\s*\d+)*/i.exec(data.codeStatus || '');
+  const reminder = (data.codeStatus || '').slice(dnr?.[0].length || 0).trim();
+  data.codeStatus = dnr?.[0] || '';
+  data.quickRemark = [data.quickRemark, reminder].filter(Boolean).join(' · ');
+  return data;
+}
+const aiSectionAliases = { hx: 'HX', phx: 'HX', pmh: 'HX', history: 'HX', cc: 'CC', 'chief complaint': 'CC', o: 'O', objective: 'O', a: 'A', assessment: 'A', p: 'P', plan: 'P', medication: 'Medication', medications: 'Medication', meds: 'Medication' };
+function aiSection(raw) {
+  const text = raw.replace(/^\s*#{1,6}\s+/, '').trim();
+  const match = /^(?:\[([^\]]+)\]\s*[:：]?\s*(.*)|([\w ]+)\s*[:：]\s*(.*))$/.exec(text);
+  const key = (match?.[1] || match?.[3] || text).toLowerCase().trim();
+  const section = aiSectionAliases[key];
+  return section ? { section, inline: (match?.[2] ?? match?.[4] ?? '').trim() } : null;
+}
+// Best-effort normalization is limited to the AI import flow; ordinary TXT import stays exact.
 export function parseAIList(text, source) {
-  const cleaned = text.replace(/^\uFEFF/, '').replace(/\r\n?/g, '\n').trim();
-  if (!cleaned.startsWith(DIVIDER + '\n') || cleaned.includes('```')) throw new Error('AI 結果不是完整的 ORNGLOCK 交班單，請修正格式或重新轉換。');
-  const parsed = parsePatients(cleaned, { format: 'txt' });
-  if (!parsed.patients.length || parsed.patients.length > 1000) throw new Error('每次需有 1 至 1,000 位病人，請分批轉換。');
+  if (typeof text !== 'string' || !text.trim()) throw new Error('目前沒有可套入的內容。');
+  if (text.length > MAX_IMPORT_BYTES) throw new Error('文字過長，請分批套入。');
+  const cleaned = text.replace(/^\uFEFF/, '').replace(/\r\n?/g, '\n').replace(/^\s*```[^\n]*$/gm, '').trim();
+  const chunks = []; let rows = [];
+  const flush = () => { if (rows.some(row => row.trim())) chunks.push(rows); rows = []; };
+  for (const row of cleaned.split('\n')) {
+    if (/^\s*[█=─━_\-]{5,}\s*$/.test(row)) { flush(); continue; }
+    if (aiHeader(row) && rows.some(value => value.trim())) flush();
+    rows.push(row);
+  }
+  flush();
+  const patients = [], warnings = [];
   const compact = value => value.normalize('NFKC').replace(/\s/g, '');
   const compactSource = source === undefined ? '' : compact(source);
-  for (const patient of parsed.patients) {
-    if (!patient.name && !patient.mrn) throw new Error('每位病人至少需要姓名或病歷號，請核對來源。');
-    const headings = patient.lines.map(item => item.text.trim()).filter(value => HEADINGS.includes(value));
-    if (JSON.stringify(headings) !== JSON.stringify(HEADINGS)) throw new Error('每位病人需依序包含且各一次出現 [HX]:、[CC]:、[O]:、[A]:、[P]:、[Medication]。');
+  let emptyBeds = 0, normalized = 0;
+  for (const chunk of chunks) {
+    const lines = [...chunk]; while (lines.length && !lines[0].trim()) lines.shift();
+    while (lines.length && !lines.at(-1).trim()) lines.pop();
+    if (lines.length === 1 && aiBed(lines[0].trim())) { emptyBeds++; continue; }
+    const header = aiHeader(lines[0]);
+    const data = header || { bed: aiBed(lines[0].trim()) ? lines[0].trim() : '', quickRemark: '待核對' };
+    // Preserve an unrecognized identity line in the note rather than discarding its text.
+    if (header) lines.shift();
+    const sections = Object.fromEntries(['HX', 'CC', 'O', 'A', 'P', 'Medication'].map(key => [key, []]));
+    const found = []; let current = 'O';
+    for (const row of lines) {
+      const heading = aiSection(row);
+      if (heading) { current = heading.section; found.push(row.trim()); if (heading.inline) sections[current].push(heading.inline); }
+      else sections[current].push(row);
+    }
+    if (JSON.stringify(found) !== JSON.stringify(HEADINGS)) normalized++;
+    const body = HEADINGS.map((heading, index) => {
+      const content = sections[['HX', 'CC', 'O', 'A', 'P', 'Medication'][index]].join('\n').trim();
+      return content ? `${heading}\n${content}` : heading;
+    }).join('\n\n');
+    const patient = createPatient({ ...data, body, fullNote: true });
+    if (!patient.name && !patient.mrn) warnings.push(`第 ${patients.length + 1} 筆身分待補，筆記已保留，可套入後編輯。`);
     const sourceHasMRN = !patient.mrn || (source !== undefined && (/^\d+$/.test(patient.mrn) ? new RegExp(`(?<!\\d)${patient.mrn}(?!\\d)`).test(source) : source.includes(patient.mrn)));
-    if (source !== undefined && (!sourceHasMRN || (patient.name && !compactSource.includes(compact(patient.name))))) throw new Error('AI 結果含有來源中找不到的姓名或病歷號，請核對後重新轉換。');
+    if (source !== undefined && (!sourceHasMRN || (patient.name && !compactSource.includes(compact(patient.name))))) warnings.push(`第 ${patients.length + 1} 筆姓名或病歷號與來源文字不同，請核對；仍可套入。`);
+    patients.push(patient);
+    if (patients.length > 1000) throw new Error('每次最多套入 1,000 位病人，請分批處理。');
   }
-  return { ...parsed, format: 'AI 轉換交班單', aiConverted: true };
+  if (!patients.length) throw new Error('沒有病人筆記可套入，請貼上或編輯轉換結果。');
+  if (emptyBeds) warnings.unshift(`已略過 ${emptyBeds} 個只有床號、沒有筆記的空白床位。`);
+  if (normalized) warnings.unshift(`已自動整理 ${normalized} 筆章節格式並補上缺少的章節。`);
+  return { patients, warnings, format: 'AI 轉換交班單', aiConverted: true };
 }
 export function reconcile(existing, incoming) {
   const staged = [...existing]; const plans = [];
