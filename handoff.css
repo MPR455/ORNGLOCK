@@ -124,8 +124,6 @@ body:has(.handoff-ai-panel[open]){overflow:hidden}
 .handoff-ai-column{display:flex;flex-direction:column;min-width:0;min-height:0}
 .handoff-ai-column>.handoff-field{display:flex;flex:1;min-height:0;margin:0;gap:8px}
 .handoff-ai-column textarea{flex:1;min-height:160px;resize:none;padding:12px;font-size:14px;line-height:1.5}
-.handoff-ai-preview{font:12px/1.5 var(--mono);white-space:pre-wrap;overflow-wrap:anywhere;max-height:180px;overflow:auto;background:var(--bg);padding:10px;border-radius:6px;margin:10px 0 0;flex:0 1 auto}
-.handoff-ai-preview:empty{display:none}
 @media(max-width:1100px) and (min-width:761px){.handoff-workspace{grid-template-columns:285px minmax(0,1fr)}
 .handoff-tools{gap:4px;padding:7px}
 .handoff-tools .handoff-button{font-size:11px;padding:5px 7px}
@@ -189,6 +187,7 @@ main:has(>.handoff-tab.active.handoff-expanded){max-width:none}
 .handoff-expanded .handoff-task-preview{border-top:1px solid var(--line);padding-top:10px;line-height:1.5;max-height:210px;overflow:auto}
 .handoff-task-preview div+div{margin-top:5px}
 .handoff-expanded .handoff-list-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;flex-wrap:wrap}
+.handoff-expanded #handoff-expand{order:-1}
 .handoff-expanded .handoff-view-controls{margin:0}
 .handoff-expanded .handoff-list-empty{grid-column:1/-1}
 .handoff-task-toggle{border:2px solid #bc363d;color:#b51f29;font-weight:650}

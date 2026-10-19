@@ -1,4 +1,4 @@
-import { HandoffStore, createPatient, patientHeader, bodyText, fromPortable, parsePortable, replaceText, sortPatients, tasksOf, pendingCount, completeTask, exportPatients, insertObjective, currentOnly, taiwanDate, shiftDate, displayDate, sectionOf, moveBlock, sameName } from './handoff-model.mjs';
+import { HandoffStore, createPatient, patientHeader, bodyText, parsePortable, replaceText, sortPatients, tasksOf, pendingCount, completeTask, exportPatients, insertObjective, currentOnly, taiwanDate, shiftDate, displayDate, sectionOf, moveBlock, sameName } from './handoff-model.mjs';
 import { decodeFile, parsePatients, parseFullNote, reconcile, applyPlans } from './handoff-import.mjs';
 import { HandoffEditor, appendMarked } from './handoff-editor.mjs';
 const node = (tag, className, text) => { const element = document.createElement(tag); if (className) element.className = className; if (text !== undefined) element.textContent = text; return element; };
@@ -351,16 +351,16 @@ export function initHandoff({ endpoint, getKey, openKeySettings, copyText, toast
     const run = button('整理', runAI, 'handoff-primary'), cancel = button('停止', () => request?.controller.abort()); cancel.disabled = true;
     const actions = node('div', 'handoff-ai-actions'); actions.append(run, cancel, key);
     const status = node('p', 'handoff-ai-status'); status.setAttribute('role', 'status');
-    const outputField = labelInput('整理結果（可編輯）', '', 'textarea'); outputField.input.rows = 12; outputField.input.maxLength = 100000; const preview = node('pre', 'handoff-ai-preview');
-    const copyAll = button('複製全部', () => { if (draft) copyText(draft.text); }), copyCurrent = button('Copy current', () => { const value = draft && currentOnly(draft.text); if (value !== null && value !== false) copyText(value); }), apply = button('檢視並套用', applyDraft, 'handoff-primary');
+    const outputField = labelInput('整理結果（可編輯）', '', 'textarea'); outputField.input.rows = 12; outputField.input.maxLength = 100000;
+    const copyAll = button('複製全部', () => { if (draft) copyText(draft.text); }), copyCurrent = button('Copy current', () => { const value = draft && currentOnly(draft.text); if (value !== null && value !== false) copyText(value); }), apply = button('套用', applyDraft, 'handoff-primary');
     const outputActions = node('div', 'handoff-ai-actions'); outputActions.append(copyAll, copyCurrent, apply);
     for (const [action, text] of [['handoff_convert', 'Note convert'], ['handoff_order', 'Order'], ['handoff_clean', 'Data cleaning']]) {
       const tab = button(text, () => { if (request) return; ui.aiAction = action; tabs.querySelectorAll('button').forEach(item => item.setAttribute('aria-pressed', String(item.dataset.aiAction === action))); }); tab.dataset.aiAction = action; tab.setAttribute('aria-pressed', String(action === ui.aiAction)); tabs.append(tab);
     }
     const columns = node('div', 'handoff-ai-columns'), inputColumn = node('section', 'handoff-ai-column'), outputColumn = node('section', 'handoff-ai-column'); inputColumn.setAttribute('aria-label', 'AI 來源'); outputColumn.setAttribute('aria-label', 'AI 結果');
-    inputColumn.append(sourceField.wrap, actions); outputColumn.append(outputField.wrap, preview, outputActions); columns.append(inputColumn, outputColumn);
+    inputColumn.append(sourceField.wrap, actions); outputColumn.append(outputField.wrap, outputActions); columns.append(inputColumn, outputColumn);
     panel.append(head, navigation, tabs, status, columns); root.append(panel);
-    ai = { panel, select, previous, next, source: sourceField.input, run, cancel, status, output: outputField.input, preview, copyAll, copyCurrent, apply, tabs, patientId: null };
+    ai = { panel, select, previous, next, source: sourceField.input, run, cancel, status, output: outputField.input, copyAll, copyCurrent, apply, tabs, patientId: null };
     outputField.input.addEventListener('input', () => { if (draft) { draft.text = outputField.input.value; renderDraft(); } });
     panel.addEventListener('close', () => { if (aiButton.getClientRects().length) aiButton.focus({ preventScroll: true }); requestAnimationFrame(() => editor.positionHandles()); }); renderDraft();
   }
@@ -393,12 +393,11 @@ export function initHandoff({ endpoint, getKey, openKeySettings, copyText, toast
   }
   function renderDraft() {
     if (!ai) return;
-    ai.preview.replaceChildren(); const text = draft?.text || '';
-    if (text) for (const item of fromPortable(text)) { const row = node('div'); appendMarked(row, item); ai.preview.append(row); }
+    const text = draft?.text || '';
     ai.copyAll.disabled = !text; ai.copyCurrent.hidden = draft?.action !== 'handoff_order'; ai.copyCurrent.disabled = !text || currentOnly(text) === null;
     ai.copyCurrent.title = text && currentOnly(text) === null ? '需要依序且各一次出現 [Current]、[History]、[Unclear]。' : '僅複製 Current 內容';
     ai.apply.hidden = !draft || draft.action === 'handoff_order'; ai.apply.disabled = !draft || draft.applied || draft.patientId !== ai.patientId || !store.patients.some(p => p.id === draft.patientId) || /^(Conversion|Cleaning|Order review) stopped:/.test(text);
-    ai.apply.textContent = draft?.action === 'handoff_clean' ? (draft.applied ? '已插入 [O]' : '插入 [O]') : '檢視並套用';
+    ai.apply.textContent = draft?.action === 'handoff_clean' ? (draft.applied ? '已插入 [O]' : '插入 [O]') : (draft?.applied ? '已套用' : '套用');
   }
   function applyDraft() {
     if (!draft || draft.applied || draft.patientId !== ai.patientId) return; const captured = draft, patient = store.patients.find(p => p.id === captured.patientId); if (!patient) { ai.status.textContent = '病人已被刪除，無法套用。'; renderDraft(); return; }
@@ -407,26 +406,16 @@ export function initHandoff({ endpoint, getKey, openKeySettings, copyText, toast
       store.transaction('插入清理資料', () => insertObjective(patient, captured.text)); captured.applied = true;
       ai.status.textContent = `已插入 ${patient.bed} ${patient.name} 的 [O]，可在筆記使用「復原」。`; renderDraft(); return;
     }
+    if (captured.action !== 'handoff_convert') return;
+    if (patient.noteRevision !== captured.revision) { ai.status.textContent = '整理後筆記已變更，請重新整理後再套用。既有筆記已保留。'; return; }
     let converted;
     try {
-      if (captured.action === 'handoff_convert') {
-        converted = parseFullNote(captured.text);
-        if ((patient.mrn && patient.mrn !== converted.mrn) || (patient.name && !sameName(patient.name, converted.name)) || (patient.bed && patient.bed !== converted.bed)) throw new Error('草稿病人身分與目前病人不符，請核對來源。');
-        if (!['HX', 'CC', 'O', 'A', 'P', 'Medication'].every(section => converted.lines.some(item => sectionOf(item.text) === section))) throw new Error('草稿缺少必要的交班章節，請修正後重試。');
-      }
+      converted = parseFullNote(captured.text);
+      if ((patient.mrn && patient.mrn !== converted.mrn) || (patient.name && !sameName(patient.name, converted.name)) || (patient.bed && patient.bed !== converted.bed)) throw new Error('草稿病人身分與目前病人不符，請核對來源。');
+      if (!['HX', 'CC', 'O', 'A', 'P', 'Medication'].every(section => converted.lines.some(item => sectionOf(item.text) === section))) throw new Error('草稿缺少必要的交班章節，請修正後重試。');
     } catch (cause) { ai.status.textContent = cause.message; return; }
-    const modal = dialog('比較並套用筆記'); modal.element.classList.add('handoff-dialog-wide');
-    const revision = patient.noteRevision;
-    modal.content.append(node('strong', '', patientHeader(patient)));
-    if (revision !== captured.revision) modal.content.append(node('p', 'handoff-error', '草稿產生後，筆記已變更。以下顯示最新筆記，請核對差異後再確認。'));
-    modal.content.append(node('h3', '', '目前筆記'), node('pre', 'handoff-comparison', bodyText(patient)), node('h3', '', '新筆記'), node('pre', 'handoff-comparison', bodyText(converted)));
-    const error = node('p', 'handoff-error'); modal.content.append(error);
-    modal.footer.append(button('確認套用至這位病人', () => {
-      const current = store.patients.find(p => p.id === captured.patientId);
-      if (!current || current.noteRevision !== revision) { error.textContent = '筆記在比較期間又有變更，請關閉後重新比較。'; return; }
-      store.transaction('套用 AI 筆記', () => { current.lines = structuredClone(converted.lines); }); captured.applied = true;
-      modal.close(); selectPatient(current.id); ai.status.textContent = '筆記已套用，可在筆記使用「復原」。'; renderDraft();
-    }, 'handoff-primary'));
+    store.transaction('套用 AI 筆記', () => { patient.lines = structuredClone(converted.lines); }); captured.applied = true;
+    selectPatient(patient.id); ai.status.textContent = '筆記已套用，可在筆記使用「復原」。'; renderDraft();
   }
   renderCards(); renderToolbar(); editor.render();
   return { refresh() { editor.positionHandles(); }, hasPatients: () => store.patients.length > 0 };

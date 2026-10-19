@@ -8,6 +8,32 @@ export function appendMarked(node, item) {
   }
   node.append(document.createTextNode(item.text.slice(at))); if (!item.text) node.append(document.createElement('br'));
 }
+export function readEditableCells(host) {
+  const cells = []; let lastBreakFromBR = false;
+  const isBlock = node => node.nodeType === 1 && ['DIV', 'P'].includes(node.tagName);
+  const add = (char, color = null, fromBR = false) => { cells.push({ char, color }); lastBreakFromBR = fromBR; };
+  const children = (parent, color, block) => {
+    const start = cells.length; let previous = null;
+    for (const node of parent.childNodes) {
+      if ((node.nodeType !== 1 && node.nodeType !== 3) || (node.nodeType === 3 && !node.data)) continue;
+      if (previous && (isBlock(previous) || isBlock(node))) {
+        // A BR already separates inline content from the following paragraph.
+        if (lastBreakFromBR) lastBreakFromBR = false;
+        else add('\n');
+      }
+      visit(node, color); previous = node;
+    }
+    // Browsers can leave a filler BR at the end of each editable paragraph.
+    // Paragraph boundaries supply that break; explicit empty paragraphs still count.
+    if (block && cells.length > start && lastBreakFromBR) { cells.pop(); lastBreakFromBR = false; }
+  };
+  const visit = (node, color) => {
+    if (node.nodeType === 3) { for (const char of node.data.split('')) add(char, color); return; }
+    if (node.tagName === 'BR') { add('\n', null, true); return; }
+    children(node, node.dataset.color || color, isBlock(node));
+  };
+  children(host, null, true); return cells;
+}
 export class HandoffEditor {
   constructor(container, store, { onActive, onDate, onMove, onNotice }) {
     Object.assign(this, { container, store, onActive, onDate, onMove, onNotice }); this.mode = 'continuous'; this.paint = null; this.bookmark = null; this.composing = false;
@@ -230,19 +256,7 @@ export class HandoffEditor {
   captureDom(host) {
     if (!host) return;
     const patient = this.patient(host.dataset.patientId); if (!patient) return;
-    const cells = [];
-    const visit = (node, color = null) => {
-      if (node.nodeType === Node.TEXT_NODE) { for (const char of node.data.split('')) cells.push({ char, color }); return; }
-      if (node.nodeType !== Node.ELEMENT_NODE) return;
-      if (node.tagName === 'BR') { if (node.parentNode.childNodes.length > 1) cells.push({ char: '\n', color: null }); return; }
-      const block = ['DIV', 'P'].includes(node.tagName);
-      if (block && cells.length && cells.at(-1).char !== '\n') cells.push({ char: '\n', color: null });
-      for (const child of node.childNodes) visit(child, node.dataset.color || color);
-    };
-    for (const [index, node] of [...host.childNodes].entries()) {
-      if (index) cells.push({ char: '\n', color: null });
-      visit(node);
-    }
+    const cells = readEditableCells(host);
     const lines = linesFromCells(cells, patient.lines);
     if (JSON.stringify(lines.map(({ text, marks }) => ({ text, marks }))) === JSON.stringify(patient.lines.map(({ text, marks }) => ({ text, marks })))) return;
     if (cells.length > 100000) { this.onNotice('筆記上限為 100,000 字元。'); this.render(); return; }
