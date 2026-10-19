@@ -102,10 +102,6 @@ npm run build
 
 Tests cover the four prompt mappings, shared-to-personal fallback, key and prompt exposure, request limits, CORS, invalid input, provider errors, blocked/truncated output, timeouts, and real local HTTP routing. Live model quality needs checking with representative de-identified cases. The tests do not claim clinical validation.
 
-## Version snapshots
-
-The frozen [ORNGLOCK_Ver26.10-beta1.html](versions/ORNGLOCK_Ver26.10-beta1.html) snapshot bundles the current frontend, styles, directory data, and PE templates into one file, using S1B.png for its header logo and favicon. It can be opened by itself for directory and patient-list editing. AI still uses the existing backend and works when the snapshot is hosted on an approved origin, including [the archived GitHub Pages version](https://mpr455.github.io/ORNGLOCK/versions/ORNGLOCK_Ver26.10-beta1.html); no API keys or private master prompts are embedded. Later frontend edits do not change this archived version.
-
 ## 交班單 workspace
 
 The 交班單 tab supports manual patient entry, CSV/TSV and ward-text import, and reimport of downloaded TXT files. Import previews reconcile by chart number or a safe unique name match; bed updates preserve existing note bodies. Conflicting identities are shown for review. The observed ER sample requires Big5 decoding. Real local samples are ignored by Git and excluded from the public build.
