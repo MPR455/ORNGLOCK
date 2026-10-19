@@ -95,6 +95,8 @@ The shared key is the default. A shared quota, invalid-key, or permissions error
 
 ## Verification
 
+In **交班單 → 匯入病人名單**, the option below **或貼上名單** opens **AI 轉換其他人的交班筆記**. Upload a TXT file (UTF-8, Big5 or UTF-16) or paste another author's notes, then convert the entire list into the same divider, identity row and six sections used by **下載交班單**. The editable result goes through the usual per-patient import preview; existing notes are replaced only when explicitly selected, and importing can be undone. Closing and reopening the converter retains its source and draft in tab memory. Conversion uses the handoff key, personal-key selection, and existing request limits; source is sent to the backend and Google. The source limit is 100,000 characters. Split large lists if model output is truncated. Incomplete sections, unidentified patients and names or MRNs absent from the source are rejected rather than partially imported. Review all patients before applying; automated format checks do not establish clinical accuracy.
+
 ```powershell
 npm test
 npm run build

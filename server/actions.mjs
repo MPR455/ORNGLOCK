@@ -11,5 +11,6 @@ export const HANDOFF_ACTIONS = Object.freeze([
   { id: 'handoff_clean', title: 'Handoff data cleaning', command: 'Organize and clean this patient data:', file: '06_MASTER_PROMPT_HANDOFF_DATA_CLEANING.txt' },
   { id: 'handoff_order', title: 'Handoff order review', command: 'Extract current IV, oxygen, and medication orders with history:', file: '07_MASTER_PROMPT_HANDOFF_ORDER_REVIEW.txt' }
 ]);
+export const HANDOFF_IMPORT_ACTION = Object.freeze({ id: 'handoff_import', title: 'Patient list convert', command: 'Convert the entire supplied patient list into ORNGLOCK handoff TXT:' });
 export const MAX_NOTE_CHARS = 100_000;
 export const MAX_BODY_BYTES = 650_000;

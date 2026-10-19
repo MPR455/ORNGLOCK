@@ -1,4 +1,6 @@
 #handoff-count{color:var(--sub);font-size:11px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.handoff-ai-import-option{padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--chip)}
+.handoff-ai-import-option .small{margin:8px 0 0}
 .handoff-workspace{display:grid;grid-template-columns:320px minmax(0,1fr);gap:14px;height:calc(100dvh - var(--handoff-header-height,var(--site-header-height,44px)) - 36px - var(--handoff-bottom-space,0px));min-height:360px}
 .handoff-left,.handoff-right{min-width:0;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
 .handoff-right{container:handoff-note-pane/inline-size}

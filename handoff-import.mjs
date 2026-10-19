@@ -98,6 +98,23 @@ export function parsePatients(text, { format = 'auto', mapping } = {}) {
   if (format === 'csv' || format === 'tsv' || (format === 'auto' && /[,\t]/.test(text.split('\n')[0]))) return csvPatients(text, format === 'tsv' || (format === 'auto' && text.split('\n')[0].includes('\t')) ? '\t' : ',', mapping);
   throw new Error('無法辨識名單。請選擇格式；單一病人可用「新增病人」輸入，再貼上筆記。');
 }
+// AI drafts must be complete canonical exports before entering the normal import preview.
+export function parseAIList(text, source) {
+  const cleaned = text.replace(/^\uFEFF/, '').replace(/\r\n?/g, '\n').trim();
+  if (!cleaned.startsWith(DIVIDER + '\n') || cleaned.includes('```')) throw new Error('AI 結果不是完整的 ORNGLOCK 交班單，請修正格式或重新轉換。');
+  const parsed = parsePatients(cleaned, { format: 'txt' });
+  if (!parsed.patients.length || parsed.patients.length > 1000) throw new Error('每次需有 1 至 1,000 位病人，請分批轉換。');
+  const compact = value => value.normalize('NFKC').replace(/\s/g, '');
+  const compactSource = source === undefined ? '' : compact(source);
+  for (const patient of parsed.patients) {
+    if (!patient.name && !patient.mrn) throw new Error('每位病人至少需要姓名或病歷號，請核對來源。');
+    const headings = patient.lines.map(item => item.text.trim()).filter(value => HEADINGS.includes(value));
+    if (JSON.stringify(headings) !== JSON.stringify(HEADINGS)) throw new Error('每位病人需依序包含且各一次出現 [HX]:、[CC]:、[O]:、[A]:、[P]:、[Medication]。');
+    const sourceHasMRN = !patient.mrn || (source !== undefined && (/^\d+$/.test(patient.mrn) ? new RegExp(`(?<!\\d)${patient.mrn}(?!\\d)`).test(source) : source.includes(patient.mrn)));
+    if (source !== undefined && (!sourceHasMRN || (patient.name && !compactSource.includes(compact(patient.name))))) throw new Error('AI 結果含有來源中找不到的姓名或病歷號，請核對後重新轉換。');
+  }
+  return { ...parsed, format: 'AI 轉換交班單', aiConverted: true };
+}
 export function reconcile(existing, incoming) {
   const staged = [...existing]; const plans = [];
   for (const candidate of incoming) {
