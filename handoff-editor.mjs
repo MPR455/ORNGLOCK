@@ -35,8 +35,8 @@ export function readEditableCells(host) {
   children(host, null, true); return cells;
 }
 export class HandoffEditor {
-  constructor(container, store, { onActive, onDate, onMove, onNotice }) {
-    Object.assign(this, { container, store, onActive, onDate, onMove, onNotice }); this.mode = 'continuous'; this.paint = null; this.bookmark = null; this.composing = false;
+  constructor(container, store, { onActive, onDate, onNotice }) {
+    Object.assign(this, { container, store, onActive, onDate, onNotice }); this.mode = 'continuous'; this.paint = null; this.bookmark = null; this.composing = false;
     container.addEventListener('beforeinput', event => this.beforeInput(event));
     container.addEventListener('compositionstart', () => { this.composing = true; });
     container.addEventListener('compositionend', event => { this.composing = false; this.captureDom(event.target.closest('[data-editor]')); });
@@ -60,18 +60,20 @@ export class HandoffEditor {
     document.addEventListener('selectionchange', () => { const selection = this.selection(); if (selection) this.bookmark = selection; });
     container.addEventListener('pointerup', () => { if (this.drag) return; const selection = this.selection(); if (this.paint && selection && selection.start !== selection.end && !this.composing) this.applyColor(this.paint, selection); });
     container.addEventListener('focusin', event => { const host = event.target.closest('[data-editor]'); if (host && this.store.activeId !== host.dataset.patientId) { this.store.activeId = host.dataset.patientId; this.onActive(host.dataset.patientId); } });
-    container.addEventListener('dragover', event => {
-      const host = event.target.closest('[data-editor]');
-      if (this.drag) { event.preventDefault(); const allowed = host?.dataset.patientId === this.drag.patientId; event.dataTransfer.dropEffect = allowed ? 'move' : 'none'; this.clearDrop(); if (allowed) { const target = this.dropPosition(event); target?.row.classList.add(target.after ? 'handoff-drop-after' : 'handoff-drop'); } }
-    });
+    const showDrop = event => {
+      if (!this.drag) return;
+      event.preventDefault(); this.clearDrop(); const target = this.dropPosition(event);
+      event.dataTransfer.dropEffect = target ? 'move' : 'none';
+      target?.row.classList.add(target.after ? 'handoff-drop-after' : 'handoff-drop');
+      target?.handle?.classList.add(target.after ? 'handoff-handle-drop-after' : 'handoff-handle-drop-before');
+    };
+    for (const type of ['dragenter', 'dragover']) container.addEventListener(type, showDrop);
     container.addEventListener('drop', event => {
-      const target = event.target.closest('[data-line-id]'), host = event.target.closest('[data-editor]');
       // Block native HTML drops and UUID text insertion into a different patient's note.
       event.preventDefault();
-      if (!this.drag || !host || host.dataset.patientId !== this.drag.patientId) { this.clearDrop(); return; }
-      event.preventDefault(); const patient = this.patient(this.drag.patientId); const position = this.dropPosition(event); const index = position?.index ?? -1;
-      const drag = this.drag; this.drag = null; this.clearDrop();
-      if (index >= 0) this.store.transaction('移動區塊', () => moveBlock(patient, drag.blockId, index));
+      const position = this.dropPosition(event), drag = this.drag; this.drag = null; this.clearDrop();
+      const patient = drag && this.patient(drag.patientId);
+      if (patient && position) this.store.transaction('移動區塊', () => moveBlock(patient, drag.blockId, position.index));
     });
     container.addEventListener('dragend', () => { this.drag = null; this.clearDrop(); });
     this.resize = new ResizeObserver(() => this.positionHandles()); this.resize.observe(container);
@@ -87,16 +89,34 @@ export class HandoffEditor {
     });
   }
   patient(id) { return this.store.patients.find(patient => patient.id === id); }
-  clearDrop() { this.container.querySelectorAll('.handoff-drop,.handoff-drop-after').forEach(node => node.classList.remove('handoff-drop', 'handoff-drop-after')); }
+  clearDrop() { this.container.querySelectorAll('.handoff-drop,.handoff-drop-after,.handoff-handle-drop-before,.handoff-handle-drop-after').forEach(node => node.classList.remove('handoff-drop', 'handoff-drop-after', 'handoff-handle-drop-before', 'handoff-handle-drop-after')); }
   dropPosition(event) {
-    const row = event.target.closest('[data-line-id]'), host = event.target.closest('[data-editor]');
+    const wrap = event.target.closest('.handoff-body-wrap'), host = wrap?.querySelector('[data-editor]');
     const patient = this.drag && this.patient(this.drag.patientId);
-    if (!row || !patient || host?.dataset.patientId !== patient.id) return null;
+    if (!patient || host?.dataset.patientId !== patient.id) return null;
+    const blocks = blocksOf(patient), gutter = event.target.closest('.handoff-gutter');
+    let handle = event.target.closest('[data-block-id]'), block, after;
+    if (gutter) {
+      if (handle) {
+        block = blocks.find(item => item.id === handle.dataset.blockId);
+        const rect = handle.getBoundingClientRect(); after = event.clientY > (rect.top + rect.bottom) / 2;
+      } else {
+        const handles = [...gutter.querySelectorAll('[data-block-id]')];
+        handle = handles.find(item => { const rect = item.getBoundingClientRect(); return event.clientY < (rect.top + rect.bottom) / 2; });
+        after = !handle; handle ||= handles.at(-1);
+        block = handle && blocks.find(item => item.id === handle.dataset.blockId);
+      }
+      if (!block || block.id === this.drag.blockId) return null;
+      return { index: after ? block.end : block.start, row: host.children[after ? block.end - 1 : block.start], after, handle };
+    }
+    const row = event.target.closest('[data-line-id]');
+    if (!row) return null;
     const index = patient.lines.findIndex(item => item.id === row.dataset.lineId);
     if (index < 0) return null;
-    const block = blocksOf(patient).find(block => index >= block.start && index < block.end);
+    block = blocks.find(item => index >= item.start && index < item.end);
+    if (block?.id === this.drag.blockId) return null;
     const first = block ? host.children[block.start] : row, last = block ? host.children[block.end - 1] : row;
-    const after = event.clientY > (first.getBoundingClientRect().top + last.getBoundingClientRect().bottom) / 2;
+    after = event.clientY > (first.getBoundingClientRect().top + last.getBoundingClientRect().bottom) / 2;
     return { index: block ? (after ? block.end : block.start) : index + (after ? 1 : 0), row: after ? last : first, after };
   }
   host(id) { return [...this.container.querySelectorAll('[data-editor]')].find(node => node.dataset.patientId === id); }
@@ -182,9 +202,8 @@ export class HandoffEditor {
       gutter.replaceChildren();
       for (const block of blocksOf(patient)) {
         const handle = el('button', 'handoff-drag', '⠿'); handle.type = 'button'; handle.draggable = true; handle.dataset.blockId = block.id; handle.dataset.patientId = patient.id;
-        handle.title = '拖曳區塊；Alt+↑/↓移動；點擊選擇章節'; handle.setAttribute('aria-label', `移動區塊：${patient.lines[block.start].text.slice(0, 40)}`);
+        handle.title = '拖曳至其他 ⠿ 上方或下方；Alt+↑/↓移動'; handle.setAttribute('aria-label', `移動區塊：${patient.lines[block.start].text.slice(0, 40)}`); handle.setAttribute('aria-keyshortcuts', 'Alt+ArrowUp Alt+ArrowDown');
         handle.addEventListener('dragstart', event => { this.drag = { patientId: patient.id, blockId: block.id }; event.dataTransfer.effectAllowed = 'move'; event.dataTransfer.setData('text/plain', block.id); });
-        handle.addEventListener('click', () => this.onMove(patient.id, block.id));
         handle.addEventListener('keydown', event => {
           if (event.altKey && ['ArrowUp', 'ArrowDown'].includes(event.key)) { event.preventDefault(); const blocks = blocksOf(patient), index = blocks.findIndex(b => b.id === block.id); const target = event.key === 'ArrowUp' ? blocks[index - 1]?.start : blocks[index + 1]?.end; if (target !== undefined) this.store.transaction('移動區塊', () => moveBlock(patient, block.id, target)); }
         }); gutter.append(handle);

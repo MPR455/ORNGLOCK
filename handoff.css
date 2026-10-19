@@ -60,6 +60,9 @@ body.handoff-banner-hidden #tab-handoff.active{--handoff-header-height:0px}
 .handoff-gutter{width:27px;flex:0 0 27px;position:relative;user-select:none}
 .handoff-drag{position:absolute;left:0;border:0;background:transparent;color:var(--sub);font-size:20px;cursor:grab;height:20px;width:25px;line-height:20px;padding:0}
 .handoff-drag:hover{background:var(--chip);border-radius:4px}
+.handoff-handle-drop-before::before,.handoff-handle-drop-after::after{content:"";position:absolute;left:0;right:0;height:3px;background:var(--acc);border-radius:2px;pointer-events:none}
+.handoff-handle-drop-before::before{top:-4px}
+.handoff-handle-drop-after::after{bottom:-4px}
 .handoff-editable{position:relative;min-width:0;flex:1;min-height:350px;font:14px/1.35 var(--mono);outline:none;tab-size:4;white-space:pre-wrap;overflow-wrap:anywhere;caret-color:var(--ink)}
 .handoff-line{min-height:1.35em;border-left:3px solid transparent;padding:0 7px;white-space:pre-wrap;overflow-wrap:anywhere}
 .handoff-section-HX{border-left-color:#9d83b9}

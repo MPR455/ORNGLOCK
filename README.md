@@ -106,7 +106,7 @@ Tests cover the four prompt mappings, shared-to-personal fallback, key and promp
 
 The 交班單 tab supports manual patient entry, CSV/TSV and ward-text import, and reimport of downloaded TXT files. Import previews reconcile by chart number or a safe unique name match; bed updates preserve existing note bodies. Conflicting identities are shown for review. The observed ER sample requires Big5 decoding. Real local samples are ignored by Git and excluded from the public build.
 
-Patient cards include bed, chart number, name, age, and a quick remark synchronized with the note header. The left pane supports bed/important/pending sorting and patient-grouped task editing. Expansion fills the page with larger cards showing history, current issues, assessment, plan, and pending/important lines; 展開 becomes a red 還原 immediately left of 床號. Checking a pending item moves that edited line and its continuation into the same patient's [O]: section without inventing a result. Individual and continuous views share one document model. Continuous notes and whole-list TXT downloads always follow floor/ward/bed order.
+Patient cards include bed, chart number, name, age, and a quick remark synchronized with the note header. The left pane supports bed/important/pending sorting and patient-grouped task editing. Expansion fills the page with larger cards showing history, current issues, assessment, plan, and pending/important lines; 展開 becomes a red 還原 immediately left of 床號, and Escape activates 還原 when no modal is open. Checking a pending item moves that edited line and its continuation into the same patient's [O]: section without inventing a result. Individual and continuous views share one document model. Continuous notes and whole-list TXT downloads always follow floor/ward/bed order.
 
 縮小 minimizes the left pane to a narrow bed/name strip, keeping patient selection available and giving the editor more room. 還原 returns to normal width. Narrow editor layouts keep that strip visible with 展開 and 還原 controls; there is no ← 病人 toolbar button.
 
@@ -114,7 +114,7 @@ Every editor-toolbar button is 44px high. Desktop layouts keep the mode, highlig
 
 Continuous mode is the default. 性別 and DNR beside `{pending}` update the selected patient's header and card with an explicit male/female or DNR1/DNR2/DNR3 selection; neither is inferred. 待辦事項 uses a red button and a red outline around the active task pane.
 
-Drag the visible **⠿** handle beside a `-` or `#` block to move the entire block, including continuation lines and highlights. Drop indicators snap before/after blocks; moving between sections is supported within the same patient. Handle clicks offer a keyboard-accessible section move, and Alt+Up/Down moves blocks. Cross-patient drops are blocked.
+Drag the visible **⠿** handle beside a `-` or `#` block above or below another handle to move the entire block, including continuation lines, highlights, and pending markers. The empty gutter between handles and text rows also accepts drops; insertion indicators appear beside the target handle and text block. Moving between sections is supported within the same patient. Clicking a handle opens no popup; Alt+Up/Down moves blocks by keyboard. Cross-patient drops are blocked.
 
 The three highlighters apply **background color to selected text**, like Word. With a collapsed caret, a color activates repeated-selection paint mode; Escape stops painting. No color removes only the selected background. `@` opens an editable Taiwan-date picker with Left/Right day stepping.
 

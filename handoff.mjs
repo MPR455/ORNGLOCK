@@ -1,4 +1,4 @@
-import { HandoffStore, createPatient, patientHeader, bodyText, parsePortable, replaceText, sortPatients, tasksOf, pendingCount, completeTask, exportPatients, insertObjective, currentOnly, taiwanDate, shiftDate, displayDate, sectionOf, moveBlock, sameName } from './handoff-model.mjs';
+import { HandoffStore, createPatient, patientHeader, bodyText, parsePortable, replaceText, sortPatients, tasksOf, pendingCount, completeTask, exportPatients, insertObjective, currentOnly, taiwanDate, shiftDate, displayDate, sectionOf, sameName } from './handoff-model.mjs';
 import { decodeFile, parsePatients, parseFullNote, reconcile, applyPlans } from './handoff-import.mjs';
 import { HandoffEditor, appendMarked } from './handoff-editor.mjs';
 const node = (tag, className, text) => { const element = document.createElement(tag); if (className) element.className = className; if (text !== undefined) element.textContent = text; return element; };
@@ -27,7 +27,7 @@ export function initHandoff({ endpoint, getKey, openKeySettings, copyText, toast
   let messageTimer, request = null, draft = null, ai;
   const notice = text => { const message = find('handoff-message'); message.textContent = text; message.hidden = false; clearTimeout(messageTimer); messageTimer = setTimeout(() => { message.hidden = true; }, 6000); };
   const store = new HandoffStore(() => { renderCards(); renderToolbar(); editor.render(); refreshAIPatients(); });
-  const editor = new HandoffEditor(find('handoff-editor'), store, { onActive: updateActive, onDate: openDate, onMove: openMove, onNotice: notice });
+  const editor = new HandoffEditor(find('handoff-editor'), store, { onActive: updateActive, onDate: openDate, onNotice: notice });
   let listComposing = false;
   find('handoff-list').addEventListener('compositionstart', () => { listComposing = true; });
   find('handoff-list').addEventListener('compositionend', () => { listComposing = false; renderCards(); });
@@ -66,7 +66,11 @@ export function initHandoff({ endpoint, getKey, openKeySettings, copyText, toast
   find('handoff-search').addEventListener('input', event => { ui.search = event.target.value.trim().toLowerCase(); renderCards(); });
   window.addEventListener('beforeunload', event => { if (store.patients.length) { event.preventDefault(); event.returnValue = ''; } });
   window.addEventListener('resize', syncPanelControls);
-  document.addEventListener('keydown', event => { if (event.key === 'Escape' && document.body.classList.contains('handoff-banner-hidden') && !document.querySelector('dialog[open]')) setBannerHidden(false); });
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Escape' || event.isComposing || !root.classList.contains('active') || document.querySelector('dialog[open]')) return;
+    if (ui.expanded) { event.preventDefault(); setExpanded(false); expand.focus({ preventScroll: true }); }
+    else if (document.body.classList.contains('handoff-banner-hidden')) setBannerHidden(false);
+  });
   function setBannerHidden(hidden) {
     document.body.classList.toggle('handoff-banner-hidden', hidden);
     bannerToggle.innerHTML = hidden ? restoreBannerIcon : fullscreenIcon;
@@ -292,15 +296,6 @@ export function initHandoff({ endpoint, getKey, openKeySettings, copyText, toast
     modal.element.addEventListener('close', () => { if (!committed && store.patients.some(p => p.id === selection.patientId)) editor.restore(selection); }, { once: true });
   }
   function validDate(value) { const date = new Date(`${value}T12:00:00Z`); return !Number.isNaN(date.getTime()) && date.toISOString().slice(0, 10) === value; }
-  function openMove(patientId, blockId) {
-    const patient = store.patients.find(p => p.id === patientId); if (!patient) return;
-    const modal = dialog('移動區塊至章節'), select = node('select'); select.setAttribute('aria-label', '目的章節');
-    patient.lines.forEach(item => { if (sectionOf(item.text)) { const option = node('option', '', item.text); option.value = item.id; select.append(option); } }); modal.content.append(select);
-    modal.footer.append(button('移至這個章節', () => {
-      const current = store.patients.find(p => p.id === patientId); if (!current) { modal.close(); return; }
-      const index = current.lines.findIndex(item => item.id === select.value); if (index >= 0) store.transaction('移動區塊', () => moveBlock(current, blockId, index + 1)); modal.close();
-    }, 'handoff-primary'));
-  }
   function downloadAll() {
     if (!store.patients.length) return;
     const text = exportPatients(store.patients), url = URL.createObjectURL(new Blob(['\uFEFF', text], { type: 'text/plain;charset=utf-8' }));
