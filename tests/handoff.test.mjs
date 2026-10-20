@@ -25,6 +25,15 @@ test('CSV aliases preserve identifiers, suffixes and uncertainty without adding 
 test('ward medication blocks attach to correct patient and admission date is separate', () => {
   const result = parsePatients('病歷號:00001234 姓名:示範甲 年齡:71   L13A1302A 入院日期:2026/10/06\nDrug A (自備藥) 1PC QD\n\n[到期]Drug B 1PC ONCE\n\n病歷號:00005678 姓名:示範乙 年齡:48   L13A1319 入院日期:2026/10/15\nDrug C 1PC Q8H');
   assert.equal(result.patients.length, 2); assert.match(bodyText(result.patients[0]), /Drug B/); assert.doesNotMatch(bodyText(result.patients[0]), /Drug C/); assert.equal(result.patients[0].sourceAsOf, ''); assert.equal(result.patients[0].admissionDate, '2026/10/06');
+  assert.ok(bodyText(result.patients[0]).endsWith('[Medication]\n- Drug A (自備藥) 1PC QD\n- [到期]Drug B 1PC ONCE'));
+  assert.ok(bodyText(result.patients[1]).endsWith('[Medication]\n- Drug C 1PC Q8H'));
+  assert.doesNotMatch(exportPatients(result.patients), /listed; active use unconfirmed/);
+});
+
+test('ward imports preserve medication uncertainty when it is actually supplied', () => {
+  const result = parsePatients('病歷號:00001234 姓名:示範甲 年齡:71 L13A1302A 入院日期:2026/10/20\nDrug A 1PC QD (listed; active use unconfirmed)\nDrug B 1PC Q8H PRN pain; DC 10/19');
+  assert.ok(bodyText(result.patients[0]).endsWith('[Medication]\n- Drug A 1PC QD (listed; active use unconfirmed)\n- Drug B 1PC Q8H PRN pain; DC 10/19'));
+  assert.equal(bodyText(result.patients[0]).match(/listed; active use unconfirmed/g).length, 1);
 });
 test('file decoder supports UTF8 BOM, UTF16 BOM, rejects NUL and oversize input', () => {
   assert.equal(decodeFile(new TextEncoder().encode('\uFEFF床號')), '床號');

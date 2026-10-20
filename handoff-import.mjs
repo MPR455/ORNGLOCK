@@ -61,7 +61,7 @@ function wardPatients(source) {
   const matches = [...source.matchAll(header)]; const patients = [];
   for (let i = 0; i < matches.length; i++) {
     const match = matches[i], medication = source.slice(match.index + match[0].length, matches[i + 1]?.index ?? source.length).trim();
-    const body = HEADINGS.map(h => h === '[Medication]' && medication ? `${h}\n${medication.split('\n').filter(s => s.trim()).map(s => `- ${s.trim()} (listed; active use unconfirmed)`).join('\n')}` : h).join('\n\n');
+    const body = HEADINGS.map(h => h === '[Medication]' && medication ? `${h}\n${medication.split('\n').filter(s => s.trim()).map(s => `- ${s.trim()}`).join('\n')}` : h).join('\n\n');
     patients.push(createPatient({ mrn: match[1], name: match[2], age: match[3], bed: match[4], admissionDate: match[5], sourceKind: 'ward', body }));
   }
   if (!patients.length) throw new Error('病房標頭無法辨識。請確認病歷號、姓名、年齡、床號及入院日期。');
