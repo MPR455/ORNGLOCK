@@ -12,6 +12,7 @@ const STATIC = new Map([
   ...['handoff.css', 'handoff.mjs', 'handoff-model.mjs', 'handoff-import.mjs', 'handoff-editor.mjs'].map(file => [`/${file}`, file]),
   ['/assets/ornglock.png', 'assets/ornglock.png'], ['/assets/ornglock-symbol.png', 'assets/ornglock-symbol.png'],
   ['/assets/cgmh-oph.svg', 'assets/cgmh-oph.svg'], ['/assets/cgmh-em.svg', 'assets/cgmh-em.svg'],
+  ...['assets/faq-first-time.png', 'assets/faq-logo.png', 'assets/faq-vpn.png', 'assets/faq-google-api.png', 'assets/faq-shortcut.png', 'assets/faq-mobile-shortcut.png'].map(file => [`/${file}`, file]),
   ...['PE example/Admission normal PE.txt', 'PE example/Admission ROS.txt', 'PE example/Progress normal PE.txt'].map(file => [`/${encodeURI(file)}`, file])
 ]);
 const MIME = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.mjs': 'text/javascript; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png', '.txt': 'text/plain; charset=utf-8' };

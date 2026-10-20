@@ -6,6 +6,7 @@ import { createHash } from 'node:crypto';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const dist = resolve(root, 'dist');
 const files = ['index.html', 'styles.css', 'directory.css', 'app.js', 'sections.mjs', 'directory.mjs', 'directory-data.mjs', 'assets/ornglock.png', 'assets/ornglock-symbol.png', 'assets/cgmh-oph.svg', 'assets/cgmh-em.svg'];
+files.push('assets/faq-first-time.png', 'assets/faq-logo.png', 'assets/faq-vpn.png', 'assets/faq-google-api.png', 'assets/faq-shortcut.png', 'assets/faq-mobile-shortcut.png');
 files.push('PE example/Admission normal PE.txt', 'PE example/Admission ROS.txt', 'PE example/Progress normal PE.txt');
 files.push('handoff.css', 'handoff-model.mjs', 'handoff-import.mjs', 'handoff-editor.mjs', 'handoff.mjs');
 for (const file of files) {

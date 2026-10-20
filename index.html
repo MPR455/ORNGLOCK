@@ -120,7 +120,144 @@
     </section>
 
     <section class="tab" id="tab-faq" tabindex="-1" aria-labelledby="faq-title" lang="zh-Hant">
-      <div class="page-heading"><h1 id="faq-title">FAQ 腫麼用</h1></div>
+      <article class="faq-page">
+        <div class="faq-intro">
+          <img class="faq-first-time" src="assets/faq-first-time.png" alt="First time?" width="790" height="428" decoding="async">
+          <img class="faq-logo" src="assets/faq-logo.png" alt="Project ORNGLOCK" width="2262" height="737" decoding="async">
+          <div class="faq-welcome">
+            <div class="faq-welcome-content">
+              <h1 id="faq-title" lang="en">Welcome to Project ORNGLOCK VER 26.11-beta 2</h1>
+              <p lang="en">Contact: <a href="mailto:cubeetor@gmail.com">cubeetor@gmail.com</a></p>
+            </div>
+          </div>
+        </div>
+
+        <p class="faq-disclaimer">首先聲明這是研發中的工具 不建議在任何情況下使用這個工具 使用產出都請自行承擔責任</p>
+
+        <nav class="faq-toc" aria-labelledby="faq-toc-title">
+          <h2 id="faq-toc-title">目錄</h2>
+          <ol>
+            <li><a href="#faq-access-title">如何在橘色監獄使用該網站</a></li>
+            <li><a href="#faq-handoff-title">怎麼用交班單系統</a></li>
+            <li><a href="#faq-notes-title">怎麼用病歷系統</a></li>
+            <li><a href="#faq-api-title">怎麼用自己的API Key</a></li>
+            <li><a href="#faq-directory-title">電話簿怎麼用</a></li>
+            <li><a href="#faq-shortcut-title">怎麼把這個網站存到桌面呢</a></li>
+            <li><a href="#faq-future-title">合作與後續發展</a></li>
+            <li><a href="#faq-vpn-blocked-title">如果VPN被封了怎麼辦</a></li>
+          </ol>
+        </nav>
+
+        <section class="faq-section" aria-labelledby="faq-access-title">
+          <h2 id="faq-access-title">1. 如何在橘色監獄使用該網站:</h2>
+          <p><a href="https://chromewebstore.google.com/category/extensions" target="_blank" rel="noopener noreferrer">https://chromewebstore.google.com/category/extensions</a><br>
+            在Chrome extension 上裝個VPN後啟用 即可連結外部網站<br>
+            如果有更好的VPN 請告訴我</p>
+          <figure class="faq-figure">
+            <a href="assets/faq-vpn.png" target="_blank" rel="noopener noreferrer" aria-label="開啟 VPN 設定教學圖片"><img src="assets/faq-vpn.png" alt="在 Chrome 安裝及啟用 VPN 的操作教學" width="879" height="745" loading="lazy" decoding="async"></a>
+          </figure>
+          <p>我也試過在別的web hosting上跑這個網站但都被橘色監獄擋住了<br>
+            我會努力讓醫院whitelist這個小工具 但感覺有點玄 畢竟用了Gemini<br>
+            如果用本地跑 最小的LLM model也要500MB-1.2GB 有點麻煩<br>
+            謝醫師的實驗用文字整合工具模型基本院內電腦載不出來<br>
+            下面會有一個本地版的(無AI工具)檔案供載<br>
+            如果只是單純在首次生成完交班單後 想拿來當編輯器使用</p>
+          <p>由於目前經營這個網站都是用零成本的資源 所以有些用起來會有磕絆 (EX: VPN掉線時/太多人同時使用default API key時)<br>
+            如果投入些錢錢可以做到本地化AI模型或買好一點的網域，但我的錢要拿去玩耍搜蕊</p>
+        </section>
+
+        <section class="faq-section" aria-labelledby="faq-handoff-title">
+          <h2 id="faq-handoff-title">2.怎麼用交班單系統</h2>
+          <p>我盡量讓使用介面極度友善 但首次使用可能對於如何載入Patient List會有點困惑，以下進行說明:</p>
+          <p>有四種方式可載入LIST</p>
+          <ol class="faq-import-methods">
+            <li>急診專用: 急診系統 &gt; 病患滯留時間(查"滯留") &gt; 點選觀察室或治療區 &gt; 按查詢 &gt; 按下載 就會獲得一個CSV檔 從匯入病人那邊可上傳CSV</li>
+            <li>住院系統: 住院系統 &gt; 查你的老師 &gt; 印List 那邊最下面會有一個用藥 (按下去可以選全部病人那個 會顯示全部病人名單跟現狀用藥) &gt; 複製起來 貼進來</li>
+            <li>AI 轉換其他人的交班筆記: 這個就是丟其他人的交班單上來就可以了 恩... 因為字元數比較多 可能會跑比較久 (15-30秒?)</li>
+            <li>手動新增病人</li>
+          </ol>
+          <p>如果已經有一個active載入的交班單 但病人換床位/要更新名單 也可以直接把新的名單貼上來 他會辨識患者姓名自動更新床位/藥物 並保留原本的note<br>
+            (現在想一想或許該用PID做標定而不是姓名..以後有空再改)</p>
+          <p>AI轉化note時如果患者姓名不對 他會跳一個資訊不對 這是防止不小心載錯資料的情況。如果自己手key加入病人懶得打名字 就會比較容易遇到這個問題。這個時候只要把生成的note 第一行患者資料的部分刪掉就可套入 或直接複製起來貼上也可。</p>
+
+          <h3>一些不這麼明顯的小功能:</h3>
+          <ul>
+            <li>用驚嘆號 <code>!</code> 可標記重要需交班事情 左方"重要!"按鈕則可根據此sort</li>
+            <li>用 <code>{pending}</code> (按鈕或用打的) 可標記待辦事項 左方"待辦事項" 可根據此sort 可以在那邊修改更新資料 打勾則會刪除<code>{pending}</code> 並將該text block轉移到 <code>[O]</code> 底下</li>
+            <li>用 <code>@</code> 會跳一個日期系統 標記Anti或手術日期用的, 這個好像有時候會有點卡 空格再<code>@</code> 好像是比較穩定的方法 我猜應該是因為中文輸入法的@跟英文的有點出入</li>
+            <li>用 <code>#</code> 或 <code>-</code> 前面會有六個點點 那個是有點像notion 有的textblock功能 可以拖跩他把整行字 跟其他做調整...恩...應該要再加個快速刪除整行的功能 有空再來加</li>
+            <li>鍵盤左上角的<kbd>ESC</kbd> Key 可跳出大部分的彈框 EX: 展開病人列表/AI note想縮小但又懶得摸到滑鼠 按ESC就好</li>
+          </ul>
+          <p>有很多其他想法跟快捷想加入 但又怕做得太複雜反而只有我自己知道怎麼用 使用者各位如果有什麼想法 歡迎許願</p>
+
+          <h3>AI tab:</h3>
+          <p>Note convert 啥都可丟 ER note/ admission/ lab/ 檢查結果 之類的 都可以一起丟</p>
+          <p>Order: 可以整理告訴前面到底用什麼氧 run 什麼line之類的, 急診系統可以直接複製左下開醫囑那個欄位的資料丟上來</p>
+          <p>Data cleaning: 可丟data上來 怎麼丟應該都可以 複製門診格式應該比較方便 最快捷的方式應該是選取一個禮拜/一個月 之類的 從彙總那邊直接複製全部<br>
+            貼上就會把比較重要的整理出來 如果是ㄧ些rhuema 或是血液科 有些比較專的檢驗項目 我只能說sorry 這個功能還在Beta 我還在調教他<br>
+            如果有貴科常監測的檢驗項目 請再整理出來跟我說 會再進行更新</p>
+        </section>
+
+        <section class="faq-section" aria-labelledby="faq-notes-title">
+          <h2 id="faq-notes-title">3.怎麼用病歷系統</h2>
+          <p>PGY的好朋友 懂得都懂 你值得擁有<br>
+            一般貼急診病歷不會帶有性別年齡 就自己整理前Key一下 EX: 89 Male/ 33 F 之類的<br>
+            橘監的AI小助手應該也挺不錯了 (我不知道我沒用過 只是商業吹一下)</p>
+          <p>有鑑於Gemini這個模型比較小 我想避免錯誤診斷的部分 所以我沒有加上重新判讀/重新DD的功能<br>
+            如果後續許多人反饋希望他更智能一點 會再加上DD 或 建議抽LAB/藥物review/檢查 的功能</p>
+        </section>
+
+        <section class="faq-section" aria-labelledby="faq-api-title">
+          <h2 id="faq-api-title">4.怎麼用自己的API Key</h2>
+          <p>我不知道有多少人會用這個工具 但如果整理功能真的比較卡了 可能是太多人同時使用的問題<br>
+            可以用自己的API Key</p>
+          <figure class="faq-figure">
+            <a href="assets/faq-google-api.png" target="_blank" rel="noopener noreferrer" aria-label="開啟 Google API Key 設定教學圖片"><img src="assets/faq-google-api.png" alt="取得及設定自己的 Google API Key 操作教學" width="1036" height="816" loading="lazy" decoding="async"></a>
+          </figure>
+        </section>
+
+        <section class="faq-section" aria-labelledby="faq-directory-title">
+          <h2 id="faq-directory-title">5.電話簿怎麼用</h2>
+          <p>用手機打開該網站，可快速檢索電話簿。點選號碼即可快速撥打電話，並會自動跳分機。</p>
+          <p>手機瀏覽器可將此網站釘選至桌面</p>
+          <figure class="faq-figure">
+            <a href="assets/faq-mobile-shortcut.png" target="_blank" rel="noopener noreferrer" aria-label="開啟手機桌面捷徑教學圖片"><img src="assets/faq-mobile-shortcut.png" alt="在手機瀏覽器選擇新增頁面至主螢幕，將網站釘選至桌面的操作教學" width="1831" height="1718" loading="lazy" decoding="async"></a>
+          </figure>
+        </section>
+
+        <section class="faq-section" aria-labelledby="faq-shortcut-title">
+          <h2 id="faq-shortcut-title">6.怎麼把這個網站存到桌面呢</h2>
+          <p>最好是先開一個新的chrome profile &gt; 裝上VPN &gt; 開啟本網頁 &gt; 再建立捷徑<br>
+            這樣每次打該都VPN都是ready to go</p>
+          <figure class="faq-figure">
+            <a href="assets/faq-shortcut.png" target="_blank" rel="noopener noreferrer" aria-label="開啟 Chrome 桌面捷徑教學圖片"><img src="assets/faq-shortcut.png" alt="使用 Chrome 建立網站桌面捷徑的操作教學" width="850" height="850" loading="lazy" decoding="async"></a>
+          </figure>
+          <p>醫院的chrome應該是中文的 但我相信各位沒問題</p>
+        </section>
+
+        <section class="faq-section" aria-labelledby="faq-future-title">
+          <h2 id="faq-future-title">7. 合作與後續發展</h2>
+          <p>我原本是希望能再延伸做更多協助PGY/R 實際應用上可以自動化的工具<br>
+            幫助老人節省時間 減少新人陣痛期<br>
+            一些情慶該有的處置/survey/如何開單 等等一個綜合工作手冊/引導系統</p>
+          <p>遇到下列問題:</p>
+          <ol class="faq-development-list">
+            <li><p>資料很多 清理要花時間 蒐集了很多工作手冊/上百份教學檔案，轉化成能快速指引PGY怎麼開order/處理所有常見臨床狀況的database跟UI 需要點時間消化資料。甚至很多工作手冊都過期了、有些功能也因系統更新改變了、以及各科各station的習慣我沒能很精細的紀載掌握</p></li>
+            <li><p>但我不敢說自己內科有多好 也沒僱過ICU經驗 所以實戰上怕提供錯誤指引 如果有想走各科或有自製筆記的朋友 如果能提供各科的topic教學處理原則/flowchart (臨床困境/PE/Survey/Treatment) 或許可以造福學弟妹 或賣錢分成，有想法歡迎聯絡我，後續應該會再開拓一個交流版供大家丟上自己的疑問。 沒有問題是蠢問題，只要能從中學習進步才是重要的!</p></li>
+            <li><p>行政上的很所瑣事 如排班/數據整理/研究data收案/圖表呈現..etc 等也都是可以自動化。當你有一個"啊每次都要做這個好麻煩 我在做這個是因為我太窮被壓榨嗎"的時候 理論上就是需要自動化的。由於我不是資工專業+院內電腦諸多限制，即便有AI降低了門檻還需再慢慢學習。</p></li>
+            <li><p>分享給大家只是希望大家方便，沒有特別考慮過用他來賺錢。<br>
+              如果發現使用率上升且反響極佳，可能會做出發行版的、並考慮架設完善一點的資訊保護架構。如果成為日常使用的好幫手，一個月請我喝幾杯飲料不過分吧?<br>
+              或是拿去賣? 感覺現在逆向工程這麼強，一下就會被抄走，可憐。或是看看有沒有經費買單繼續做小工具改善大家的工作跟照護品質吧。</p></li>
+          </ol>
+        </section>
+
+        <section class="faq-section" aria-labelledby="faq-vpn-blocked-title">
+          <h2 id="faq-vpn-blocked-title">8. 如果VPN被封了怎麼辦</h2>
+          <p>涼拌 我目前的能力也沒什麼辦法<br>
+            頂多做出個本地版 不用AI的<br>
+            如果我有權限有錢應該可以不用這樣當資安老鼠 可我沒有 :(</p>
+        </section>
+      </article>
     </section>
 
     <section class="tab" id="tab-key" tabindex="-1" aria-labelledby="key-title">
