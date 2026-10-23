@@ -7,7 +7,7 @@ const $ = id => document.getElementById(id);
 const TABS = [
   { id: 'directory', icon: '☎️', label: 'Directory', short: 'Directory' },
   { id: 'handoff', icon: '📝', label: '交班單', short: '交班單' },
-  { id: 'oncall', icon: '🍟', label: '值班', short: '值班' },
+  { id: 'oncall', icon: '🍟', label: 'order', short: 'order' },
   { id: 'notes', icon: '🤖', label: '病歷', short: '病歷' },
   { id: 'faq', icon: '❓', label: 'FAQ 腫麼用', short: 'FAQ 腫麼用' },
   { id: 'key', icon: '⚿', label: 'API key', short: 'API key' }
