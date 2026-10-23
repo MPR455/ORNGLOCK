@@ -12,15 +12,15 @@
       "orders": [
         ["l", "CK、K、P、Ca、Cr、ABG、PT", "CK >1000"],
         ["x", "ECG", "高血鉀"],
-        ["m", "IV fluid 1.5 L/hr，尿量 200–300 mL/hr", "不要只用 NS"],
+        ["m", "Lactated Ringer / NS 1.5 L/hr，尿量 200–300 mL/hr", "不要只用 NS"],
         ["p", "Foley 監測尿量", ""],
-        ["m", "Calcium gluconate", "只在高血鉀合併心臟不穩時", "高 K + 心臟"],
+        ["m", "10% Calcium gluconate 10 mL ×3 IV over 10 min", "只在高血鉀合併心臟不穩時", "高 K + 心臟"],
         ["p", "避免 mannitol 與 loop diuretic", ""]
       ] },
     { "name": "肉眼血尿", "hint": "",
       "orders": [
         ["l", "CBC、PT/INR、aPTT、BUN/Cr", ""],
-        ["m", "Crystalloid 500 mL over 15 min", "需要復甦時", "低血壓"],
+        ["m", "NS / Lactated Ringer 500 mL over 15 min", "需要復甦時", "低血壓"],
         ["m", "pRBC：Hb <7（冠心病 <8）", ""],
         ["p", "3-way Foley + continuous bladder irrigation", "血塊阻塞，依院內流程與泌尿科討論", "血塊"],
         ["x", "CT urography", "肉眼血尿 30–40% 是惡性"]
@@ -32,16 +32,16 @@
         ["x", "Renal echo（膿腎 6 hr 內）", "第一線"],
         ["x", "Non-contrast CT", "確認結石"],
         ["m", "Ceftriaxone 2 g IV QD", "第一線"],
-        ["m", "Ciprofloxacin 400 mg IV BID", "第一線替代；過去 12 個月用過 FQ 不用", "替代"],
-        ["m", "Piperacillin-tazobactam 4.5 g TID / Meropenem 1 g TID", "敗血症或多重抗藥菌", "敗血症"],
+        ["m", "Ciprofloxacin 200 mg/100 mL ×2（400 mg）IV q12h", "第一線替代；過去 12 個月用過 FQ 不用", "替代"],
+        ["m", "Piperacillin-tazobactam 4.5 g q8h / Meropenem 1 g q8h", "敗血症或多重抗藥菌", "敗血症"],
         ["p", "緊急減壓（PCN 或 DJ stent）", "阻塞合併感染"],
         ["p", "療程：FQ 5–7 天或其他 7 天", ""]
       ] },
     { "name": "腎絞痛止痛", "hint": "",
       "orders": [
-        ["m", "NSAID（如 Ketorolac / Diclofenac）", "第一線，止痛優於 opioid；腎差小心"],
-        ["m", "Acetaminophen", ""],
-        ["m", "Tramadol / Hydromorphone", "第二線；不用 pethidine", "第二線"]
+        ["m", "Ketorolac 30 mg IV/IM 或 Diclofenac 25 mg ×2 PO", "第一線，止痛優於 opioid；腎差小心"],
+        ["m", "Acetaminophen 500 mg PO q6h", ""],
+        ["m", "Tramadol 50 mg PO / 100 mg IV q6h；Morphine 2–4 mg IV", "院內無 IV hydromorphone", "第二線"]
       ] },
     { "name": "導尿管相關感染 (CAUTI)", "hint": "",
       "orders": [
@@ -60,10 +60,10 @@
       "orders": [
         ["l", "CBC、PT/INR、aPTT（dabigatran 加 TT）", ""],
         ["p", "非重大出血：可考慮繼續抗凝", "已止血支持繼續"],
-        ["m", "Vitamin K 2–5 mg PO/IV", "Warfarin，需住院或輸血", "Warfarin"],
-        ["m", "4F-PCC 依 INR + Vitamin K 5–10 mg IV", "重大出血", "重大出血"],
-        ["m", "Idarucizumab 5 g IV", "Dabigatran 重大出血", "Dabigatran"],
-        ["m", "4F-PCC 2000 U", "Apixaban/Rivaroxaban 重大出血", "Xa 抑制劑"]
+        ["m", "Vitamin K1 10 mg/amp：2–5 mg PO/IV", "Warfarin，需住院或輸血", "Warfarin"],
+        ["m", "PCC（Human prothrombin complex 500 IU/vial） 依 INR + Vitamin K1 10 mg IV", "重大出血", "重大出血"],
+        ["m", "Idarucizumab（Praxbind）5 g IV", "Dabigatran 重大出血", "Dabigatran"],
+        ["m", "PCC（Human prothrombin complex 500 IU/vial） 2000 U（500 IU ×4）", "Apixaban/Rivaroxaban 重大出血", "Xa 抑制劑"]
       ] },
     { "name": "疑腎絲球腎炎", "hint": "蛋白尿 + 變形 RBC + 腎功能下降",
       "orders": [

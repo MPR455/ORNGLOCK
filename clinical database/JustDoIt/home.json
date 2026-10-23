@@ -11,6 +11,8 @@
     { "label": "疑中風", "icon": "🧠", "chapter": "altered-consciousness", "item": "疑急性中風：溶栓" },
     { "label": "鴉片過量", "icon": "😪", "chapter": "altered-consciousness", "item": "疑鴉片類過量" },
     { "label": "張力性氣胸", "icon": "🫁", "chapter": "dyspnea", "item": "張力性氣胸" },
+    { "label": "有機磷中毒", "icon": "☠️", "chapter": "poisoning", "item": "有機磷 / 氨基甲酸鹽（農藥）" },
+    { "label": "化學眼灼傷", "icon": "👁️", "chapter": "eye", "item": "化學性眼灼傷" },
     { "label": "大量出血", "icon": "🩸", "chapter": "gi-bleeding", "item": "消化道出血：第一輪" }
   ],
   "sections": [
@@ -38,7 +40,9 @@
       { "label": "皮疹 / 過敏", "chapter": "rash-allergy" },
       { "label": "傷口", "chapter": "wounds" },
       { "label": "肢體痛 / 腫", "chapter": "limb-pain" },
-      { "label": "喉嚨 / 鼻 / 咳嗽", "chapter": "uri-symptoms" }
+      { "label": "喉嚨 / 鼻 / 咳嗽", "chapter": "uri-symptoms" },
+      { "label": "眼睛紅 / 痛 / 看不清", "chapter": "eye" },
+      { "label": "中毒 / 蛇咬", "chapter": "poisoning" }
     ] },
     { "title": "🧪 檢驗異常", "tiles": [
       { "label": "血糖", "chapter": "glucose" },

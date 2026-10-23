@@ -21,14 +21,14 @@
       ] },
     { "name": "Anaphylaxis", "hint": "突發呼吸/循環問題 ± 皮膚",
       "orders": [
-        ["m", "Epinephrine 0.5 mg IM（1 mg/mL 0.5 mL）大腿前外側", "第一線，有 IV 也一樣；5 min 無改善重複"],
+        ["m", "Epinephrine 1 mg/mL：0.5 mL（0.5 mg）IM 大腿前外側", "第一線，有 IV 也一樣；5 min 無改善重複"],
         ["p", "停可疑藥物或血品", ""],
         ["p", "O2 NRM 15 L/min", ""],
         ["m", "NS 500–1000 mL IV bolus", "低血壓；不含糖晶體液", "低血壓"],
-        ["m", "Salbutamol ± Ipratropium neb", "持續喘鳴的輔助；不能取代 epinephrine", "喘鳴"],
+        ["m", "Combivent UDV（Ipratropium 0.5 mg + Salbutamol 2.5 mg）neb", "持續喘鳴的輔助；不能取代 epinephrine", "喘鳴"],
         ["l", "Tryptase（2 hr 內）", "診斷不確定時；不延誤治療"],
         ["p", "平躺抬腿（低血壓）/ 半坐臥（呼吸困難）", "不要突然站起"],
-        ["m", "Epinephrine IV infusion（ICU）", "2 劑 IM 後仍有症狀", "難治"],
+        ["m", "Epinephrine 1 mg in NS 100 mL（10 mcg/mL）：0.05–0.5 mcg/kg/min", "2 劑 IM 後仍有症狀", "難治"],
         ["p", "觀察 ≥6–12 hr", "雙相反應約 5%，中位 12 hr"]
       ] },
     { "name": "異物哽塞", "hint": "進食中突然無法說話咳嗽",
@@ -39,23 +39,23 @@
       ] },
     { "name": "急性失代償性心衰竭", "hint": "肺水腫、鬱血",
       "orders": [
-        ["m", "Furosemide 40 mg IV", "未用過利尿劑的起始；已在用者給口服劑量兩倍 IV"],
+        ["m", "Furosemide 20 mg/amp ×2（40 mg）IV", "未用過利尿劑的起始；已在用者給口服劑量兩倍 IV"],
         ["l", "Spot urine Na（2 hr）+ 尿量（6 hr）", "尿鈉 ≥70 或尿量 ≥100 mL/hr 為反應良好"],
-        ["m", "Furosemide 劑量加倍 ± Acetazolamide 500 mg IV", "反應不足", "反應差"],
-        ["m", "NTG IV", "SBP >110 時", "SBP >110"],
+        ["m", "Furosemide 劑量加倍 ± Acetazolamide 250 mg ×2 PO", "反應不足", "反應差"],
+        ["m", "NTG premix 0.2 mg/mL：10–20 mcg/min 起", "SBP >110 時", "SBP >110"],
         ["p", "CPAP / BiPAP", "RR >25、SpO2 <90%", "呼吸窘迫"],
         ["l", "Cr、K、Mg q24h；I/O、體重", ""],
         ["x", "Echo", ""],
         ["l", "Lactate", "疑低灌流", "低灌流"],
-        ["m", "Norepinephrine", "心因性休克", "休克"]
+        ["m", "Norepinephrine 4 mg/4 mL：8 mg in D5W 250 mL，0.05–0.5 mcg/kg/min", "心因性休克", "休克"]
       ] },
     { "name": "氣喘急性發作", "hint": "",
       "orders": [
-        ["m", "Salbutamol 4–10 puffs MDI q20min ×1 hr", "第一線"],
-        ["m", "Ipratropium + Salbutamol neb", "中至重度；1–2 hr 後再用沒好處"],
-        ["m", "Prednisolone 50 mg PO QAM × 5–7 天", "1 hr 內給；口服與靜脈同效"],
-        ["m", "Hydrocortisone 200 mg IV（分次）", "無法口服", "無法口服"],
-        ["m", "MgSO4 2 g IV over 20 min", "初始治療無效且持續低血氧", "無效"],
+        ["m", "Salbutamol MDI 100 mcg × 4–10 puffs（spacer）q20min ×1 hr", "第一線"],
+        ["m", "Combivent UDV（Ipratropium 0.5 mg + Salbutamol 2.5 mg）neb q20min ×3", "中至重度；1–2 hr 後再用沒好處"],
+        ["m", "Prednisolone 5 mg ×10（50 mg）PO QAM × 5–7 天", "1 hr 內給；口服與靜脈同效"],
+        ["m", "Methylprednisolone 40 mg IV q12h（或 Hydrocortisone 100 mg IV q6h）", "無法口服", "無法口服"],
+        ["m", "MgSO4 10% 20 mL（2 g）IV over 20 min", "初始治療無效且持續低血氧", "無效"],
         ["p", "O2 → SpO2 92–96%", "成人不宜 >96%"],
         ["l", "PEF / FEV1", "治療前與第 1 hr"],
         ["l", "ABG", "PEF <50% 或無反應", "嚴重"]
@@ -64,9 +64,9 @@
       "orders": [
         ["p", "O2 Venturi 24–28% → SpO2 88–92%", "過量給氧會 CO2 上升"],
         ["l", "ABG，30–60 min 後重驗", ""],
-        ["m", "Salbutamol + Ipratropium neb（空氣驅動）q1h ×2–3 → q2–4h", ""],
-        ["m", "Prednisolone 40 mg PO QD × 5 天", "更長療程增加肺炎與死亡"],
-        ["m", "Amoxicillin-clavulanate 或 Doxycycline × 5–7 天", "喘加劇、痰量增、痰變膿至少兩項（含痰變膿）", "痰變膿"],
+        ["m", "Combivent UDV（Ipratropium 0.5 mg + Salbutamol 2.5 mg）neb（空氣驅動）q1h ×2–3 → q4–6h", ""],
+        ["m", "Prednisolone 5 mg ×8（40 mg）PO QD × 5 天", "更長療程增加肺炎與死亡"],
+        ["m", "Curam 1 g（Amox-clav 875/125）PO BID 或 Doxycycline 100 mg BID × 5 天", "喘加劇、痰量增、痰變膿至少兩項（含痰變膿）", "痰變膿"],
         ["l", "Sputum culture", "頻繁惡化或需呼吸器", "頻繁惡化"],
         ["p", "BiPAP", "pH ≤7.35 且 PaCO2 >45", "酸中毒"],
         ["p", "不用 aminophylline、呼吸興奮劑", "副作用多"]
@@ -75,31 +75,31 @@
       "orders": [
         ["x", "CTPA", "高機率或 D-dimer 升高"],
         ["l", "D-dimer（年齡 ×10）", "低/中機率", "低中機率"],
-        ["m", "Enoxaparin 1 mg/kg SC q12h", "中高機率檢查中就開始；CrCl <30 改 UFH"],
-        ["m", "Heparin IV bolus + infusion", "不穩定、預期溶栓", "不穩定"],
-        ["m", "Alteplase 100 mg IV over 2 hr", "高風險（休克）且無禁忌", "休克"]
+        ["m", "Enoxaparin 60 mg/0.6 mL：1 mg/kg SC q12h", "中高機率檢查中就開始；CrCl <30 改 UFH"],
+        ["m", "Heparin 80 U/kg IV bolus → 18 U/kg/hr", "不穩定、預期溶栓", "不穩定"],
+        ["m", "Alteplase（Actilyse 50 mg ×2）100 mg IV over 2 hr", "高風險（休克）且無禁忌", "休克"]
       ] },
     { "name": "社區型肺炎 (CAP)", "hint": "非重症住院",
       "orders": [
-        ["m", "Ceftriaxone 1–2 g IV QD + Azithromycin 500 mg QD", "標準住院 CAP"],
-        ["m", "Levofloxacin 750 mg QD", "替代；疑結核避免", "替代"],
+        ["m", "Ceftriaxone 2 g IV QD + Azithromycin 500 mg（250 mg ×2）PO QD", "標準住院 CAP"],
+        ["m", "Moxifloxacin 400 mg IV/PO QD（Avelox）", "替代；疑結核避免", "替代"],
         ["l", "Sputum Gram stain & culture、Blood culture ×2", "重症、要蓋 MRSA/綠膿、90 天內住院用過 IV 抗生素", "重症/風險"],
         ["l", "Influenza rapid PCR", "流感季"],
-        ["m", "Oseltamivir", "流感陽性", "流感"],
+        ["m", "Oseltamivir 75 mg PO BID × 5 天", "流感陽性", "流感"],
         ["l", "CURB-65 / PSI", "決定照護層級"],
         ["p", "總療程 ≥5 天且臨床穩定", ""]
       ] },
     { "name": "重症肺炎 / 需涵蓋抗藥菌", "hint": "",
       "orders": [
-        ["m", "β-lactam + Azithromycin 或 + Levofloxacin", "重症 CAP"],
-        ["m", "Vancomycin（依濃度）或 Linezolid 600 mg q12h", "MRSA 風險", "MRSA"],
-        ["m", "Piperacillin-tazobactam 4.5 g q6h / Cefepime 2 g q8h / Meropenem 1 g q8h", "綠膿桿菌風險", "綠膿"],
-        ["m", "Hydrocortisone 200 mg/day IV infusion", "重症 CAP 可考慮；流感、麴菌不用", "重症"]
+        ["m", "Ceftriaxone 2 g IV QD + Clarithromycin 500 mg IV q12h（或 + Moxifloxacin 400 mg IV QD）", "重症 CAP"],
+        ["m", "Vancomycin 25 mg/kg IV 負荷 → 15–20 mg/kg q12h（依 CrCl、濃度） 或 Linezolid 600 mg IV q12h", "MRSA 風險", "MRSA"],
+        ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h / Cefepime 2 g q8h / Meropenem 1 g q8h", "綠膿桿菌風險", "綠膿"],
+        ["m", "Hydrocortisone 50 mg IV q6h（200 mg/day）", "重症 CAP 可考慮；流感、麴菌不用", "重症"]
       ] },
     { "name": "院內肺炎 HAP / VAP", "hint": "住院 48 hr 後",
       "orders": [
-        ["m", "Piperacillin-tazobactam 4.5 g IV q6h", "或 cefepime 2 g q8h / meropenem 1 g q8h"],
-        ["m", "加 Vancomycin", "MRSA 病史或單位比例高", "MRSA"],
+        ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h（或 Cefepime 2 g q8h）", "或 cefepime 2 g q8h / meropenem 1 g q8h"],
+        ["m", "加 Vancomycin 15–20 mg/kg IV q8–12h（或 Linezolid 600 mg q12h）", "MRSA 病史或單位比例高", "MRSA"],
         ["l", "Endotracheal aspirate culture", "VAP", "插管"],
         ["p", "療程 7 天", ""]
       ] },
@@ -119,16 +119,16 @@
     { "name": "插管 / RSI", "hint": "NIV 失敗、無法矯正低血氧",
       "orders": [
         ["p", "Preoxygenation 100% O2 3 min（或 CPAP / HFNO）", ""],
-        ["m", "Ketamine 誘導", "血行動力較穩定"],
-        ["m", "Rocuronium 1.2 mg/kg IV", "比 succinylcholine 少高血鉀"],
-        ["m", "NS 500 mL bolus + 升壓劑備用", "插管後低血壓可達 25%"],
+        ["m", "Ketamine 50 mg/mL：1–2 mg/kg IV（或 Etomidate 0.3 mg/kg）", "血行動力較穩定"],
+        ["m", "Rocuronium 50 mg/5 mL：1.2 mg/kg IV", "比 succinylcholine 少高血鉀"],
+        ["m", "NS 500 mL bolus + Norepinephrine 備用", "插管後低血壓可達 25%"],
         ["x", "Waveform capnography", "確認管位的唯一標準"],
         ["x", "CXR", "看深度"]
       ] },
     { "name": "藥物呼吸抑制", "hint": "呼吸慢、針尖瞳孔",
       "orders": [
         ["p", "BVM 通氣", ""],
-        ["m", "Naloxone 0.2–2 mg IV q2–3min", ""],
+        ["m", "Naloxone 0.4 mg/amp：0.2–2 mg IV q2–3min", ""],
         ["l", "ABG", "排除高碳酸血症"],
         ["m", "Naloxone infusion", "再抑制（長效 opioid）", "再抑制"]
       ] },

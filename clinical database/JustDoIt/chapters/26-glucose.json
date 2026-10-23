@@ -3,33 +3,32 @@
   "items": [
     { "name": "低血糖（清醒能吞）", "hint": "BS <72",
       "orders": [
-        ["m", "速效糖 15–20 g PO（葡萄糖錠 5–7 顆或果汁 150–200 mL）", "acarbose 使用者只能用純葡萄糖"],
+        ["m", "Dextrose powder 15–20 g 溶水 PO（或果汁 150–200 mL）", "acarbose 使用者只能用純葡萄糖"],
         ["l", "10–15 min 後重測，最多 3 次", ""],
-        ["m", "長效碳水 20 g", "恢復後（用過 glucagon 給 40 g）"],
+        ["m", "長效碳水 20 g（餅乾、麵包）", "恢復後（用過 glucagon 給 40 g）"],
         ["p", "停 IV insulin", "處理完再重啟並檢視劑量", "IV insulin 中"]
       ] },
     { "name": "低血糖（意識不清 / NPO）", "hint": "",
       "orders": [
-        ["m", "20% Glucose 100 mL（或 10% 200 mL）IV over 15 min", "不建議 IV push；腎心衰用最小容量"],
-        ["m", "Glucagon 1 mg IM（只給一次）", "沒有 IV；sulfonylurea、酗酒、肝病效果差", "無 IV"],
-        ["m", "40% glucose gel 2 管塗牙齦", "混亂不合作但能吞", "不合作"],
+        ["m", "50% Glucose 20 mL ×2 amp IV push（或 10% Glucose 250 mL IV over 15 min）", "不建議 IV push；腎心衰用最小容量"],
+        ["m", "Glucagon 1 mg/kit IM（只給一次）", "沒有 IV；sulfonylurea、酗酒、肝病效果差", "無 IV"],
         ["l", "10 min 後重測", "仍低重複"],
-        ["m", "10% Glucose 100 mL/hr", "恢復後仍 NPO", "NPO"],
+        ["m", "10% Glucose 500 mL：100 mL/hr", "恢復後仍 NPO", "NPO"],
         ["l", "BS 監測 24–48 hr", "sulfonylurea 或長效 insulin 引起"],
         ["p", "下一劑 insulin 不要省略，但要減量", ""]
       ] },
     { "name": "住院高血糖", "hint": "持續 ≥180",
       "orders": [
         ["l", "POCT glucose AC/HS（NPO q4–6h）", ""],
-        ["m", "Basal insulin + 餐前 + 矯正（TDD 0.3–0.6 U/kg/day，半 basal 半 bolus）", "不要只用 sliding scale"],
-        ["m", "矯正劑量：BS >140–150 起，依 TDD 選低/中/高劑量表", ""],
+        ["m", "Insulin glargine（Lantus）+ 餐前 Insulin aspart（NovoRapid）+ 矯正（TDD 0.3–0.6 U/kg/day，半 basal 半 bolus）", "不要只用 sliding scale"],
+        ["m", "矯正：NovoRapid / Actrapid SC，BS >150 起依量表（低/中/高）", ""],
         ["p", "目標：非 ICU 100–180；ICU 140–180", ""],
         ["l", "HbA1c", ""],
         ["p", "第一型糖尿病 basal 永不停（NPO 也要）", ""]
       ] },
     { "name": "類固醇高血糖", "hint": "",
       "orders": [
-        ["m", "NPH 10 U SC QAM，每天依血糖 +10–20%", "早上單次 prednisolone"],
+        ["m", "NPH（Insulatard）10 U SC QAM，每天依血糖 +10–20%", "早上單次 prednisolone"],
         ["l", "POCT glucose QID", "CBG >216 時"],
         ["p", "類固醇減量時 insulin 也減", "避免夜間低血糖"]
       ] },
@@ -38,35 +37,35 @@
         ["l", "β-hydroxybutyrate、glucose、Na/K/Cl、P、BUN/Cr、VBG、CBC", "用血酮不用尿酮"],
         ["l", "Blood culture、UA、ECG、CXR、β-hCG", "找誘因"],
         ["m", "NS 1 L over 1 hr → 1 L/2 hr → 1 L/2 hr → 1 L/4 hr", "SBP <90：NS 500 mL over 10–15 min 可重複"],
-        ["m", "KCl 40 mmol/L 加入輸液", "K 3.5–5.5 且有尿；>5.5 不加"],
+        ["m", "KCl 15% 20 mEq ×2 加入每 L 輸液（K 3.5–5.0）", "K 3.5–5.5 且有尿；>5.5 不加"],
         ["p", "K <3.5：先補 K（10 mmol/hr），延後 insulin", "", "K <3.5"],
-        ["m", "Regular insulin IV 0.1 U/kg/hr（50 U in NS 50 mL）", "fixed-rate；不用 bolus"],
-        ["m", "繼續原本 basal insulin SC", ""],
-        ["m", "加 10% Dextrose 125 mL/hr，insulin 減至 0.05 U/kg/hr", "BS <250", "BS <250"],
+        ["m", "Actrapid 0.1 U/kg/hr IV（50 U in NS 50 mL）", "fixed-rate；不用 bolus"],
+        ["m", "繼續 Lantus（glargine）SC", ""],
+        ["m", "加 10% Glucose 125 mL/hr 或改 D5S，Actrapid 減至 0.05 U/kg/hr", "BS <250", "BS <250"],
         ["l", "POCT BS q1h；K、ketone、VBG q2h", "酮體每小時降 ≥0.5"],
-        ["m", "Enoxaparin 預防劑量", "血栓預防"],
+        ["m", "Fraxiparine 0.4 mL（3800 IU）SC QD（或 Heparin 5000 U SC q12h）", "血栓預防"],
         ["p", "緩解：ketone <0.6 且 pH ≥7.3", "basal SC 給後 1–2 hr 再停 IV"]
       ] },
     { "name": "Euglycemic DKA (SGLT2i)", "hint": "BS <200 但酮酸中毒",
       "orders": [
         ["p", "停 SGLT2 inhibitor", ""],
-        ["m", "10% Dextrose 125 mL/hr + insulin 0.1 U/kg/hr 同時開始", "血糖不高也要給糖才能打 insulin"],
+        ["m", "10% Glucose 125 mL/hr + Actrapid 0.1 U/kg/hr 同時開始", "血糖不高也要給糖才能打 insulin"],
         ["l", "VBG、ketone", "看 pH 與酮體，不看血糖"]
       ] },
     { "name": "HHS", "hint": "BS ≥600、滲透壓 >320、無酮酸",
       "orders": [
         ["m", "NS 1 L over 1 hr → 0.5–1 L/hr", "目標 6 hr 正平衡 2–3 L"],
         ["l", "Glucose、Na、K、BUN、滲透壓 q1h × 6 hr", "滲透壓每小時降 3–8"],
-        ["m", "Insulin 0.05 U/kg/hr", "補液後血糖不再降才開；有酮體 0.1", "補液後"],
-        ["m", "0.45% NaCl", "正平衡足夠但滲透壓不降", "滲透壓不降"],
+        ["m", "Actrapid 0.05 U/kg/hr IV", "補液後血糖不再降才開；有酮體 0.1", "補液後"],
+        ["m", "Half-saline 0.45%", "正平衡足夠但滲透壓不降", "滲透壓不降"],
         ["p", "Na 24 hr 降 ≤10", "Na 上升是預期的"],
-        ["m", "Enoxaparin 預防劑量", ""]
+        ["m", "Fraxiparine 0.4 mL SC QD", ""]
       ] },
     { "name": "NPO / 術前調藥", "hint": "",
       "orders": [
         ["p", "停口服降血糖藥（含 metformin）", ""],
         ["p", "SGLT2i 術前停 3 天", ""],
-        ["m", "前晚 basal 減 25%（NPH 減半）", ""],
+        ["m", "前晚 Lantus 減 25%（Insulatard 減半）", ""],
         ["l", "POCT q2–4h", ""]
       ] }
   ]

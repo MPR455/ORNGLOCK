@@ -4,7 +4,7 @@
     { "name": "急性肢體缺血", "hint": "冰冷、蒼白、無脈搏、麻",
       "orders": [
         ["p", "手持 Doppler 聽動脈/靜脈訊號（雙腳）", "觸診脈搏不準"],
-        ["m", "Heparin 5000 IU（或 70–100 IU/kg）IV bolus → infusion", "確診後立刻給；HIT 改非 heparin"],
+        ["m", "Heparin 25,000 U/5 mL：5000 U（或 80 U/kg）IV bolus → 18 U/kg/hr", "確診後立刻給；HIT 改非 heparin"],
         ["l", "aPTT、CBC、Cr、K、CK、Type & screen", ""],
         ["x", "CTA", "IIA/IIB 規劃血管重建；不可延誤治療"],
         ["p", "緊急血管外科", "IIB（運動缺損）需緊急重建"],
@@ -24,21 +24,21 @@
         ["l", "Wells DVT score", "≤1 unlikely、≥2 likely"],
         ["l", "D-dimer", "DVT unlikely 時；陰性可排除", "unlikely"],
         ["x", "Duplex ultrasound（全腿）", "likely 或 D-dimer 陽性"],
-        ["m", "Enoxaparin 1 mg/kg SC q12h", "中高度懷疑且超音波要等", "等超音波"],
+        ["m", "Enoxaparin 60 mg/0.6 mL：1 mg/kg SC q12h", "中高度懷疑且超音波要等", "等超音波"],
         ["l", "CBC、PT/aPTT、Cr、肝功能", "抗凝前基準"]
       ] },
     { "name": "DVT 確診：抗凝", "hint": "",
       "orders": [
         ["m", "Rivaroxaban 15 mg PO BID × 3 週 → 20 mg QD（隨餐）", "DOAC 優於 warfarin"],
         ["m", "Apixaban 10 mg PO BID × 7 天 → 5 mg BID", "", "替代"],
-        ["m", "Heparin IV 80 IU/kg bolus + 18 IU/kg/hr", "CrCl <30、透析、即將處置、不穩定", "腎差"],
-        ["m", "Enoxaparin 治療劑量", "癌症相關或懷孕", "癌症/懷孕"],
+        ["m", "Heparin 80 IU/kg IV bolus + 18 IU/kg/hr", "CrCl <30、透析、即將處置、不穩定", "腎差"],
+        ["m", "Enoxaparin 1 mg/kg SC q12h", "癌症相關或懷孕", "癌症/懷孕"],
         ["p", "停 aspirin（心血管預防用）", "減少出血"],
         ["l", "Platelet（HIT 篩檢）", "UFH 使用者 Day 4–14"]
       ] },
     { "name": "Phlegmasia cerulea dolens", "hint": "整腿腫脹發紺 + 休克",
       "orders": [
-        ["m", "Heparin IV（依體重）", "立刻"],
+        ["m", "Heparin 80 U/kg IV bolus → 18 U/kg/hr", "立刻"],
         ["p", "抬高患肢 + 輸液", ""],
         ["p", "緊急血管/介入：導管溶栓或取栓", "只抗凝截肢率 50%"]
       ] },
@@ -46,7 +46,7 @@
       "orders": [
         ["x", "雙側全腿超音波", "25% 已延伸到深靜脈"],
         ["m", "Fondaparinux 2.5 mg SC QD × 45 天", "長度 ≥5 cm 且距交界 ≥3 cm"],
-        ["m", "NSAID + 彈性襪", "症狀緩解"]
+        ["m", "Naproxen 250 mg ×2 BID（或 Diclofenac 25 mg TID）+ 彈性襪", "症狀緩解"]
       ] },
     { "name": "蜂窩性組織炎", "hint": "",
       "orders": [
@@ -59,8 +59,8 @@
     { "name": "壞死性筋膜炎", "hint": "痛不成比例、木頭硬",
       "orders": [
         ["p", "緊急外科清創", "影像可能延誤"],
-        ["m", "Piperacillin-tazobactam 3.375 g IV q6–8h + Vancomycin 15 mg/kg q12h", ""],
-        ["m", "Penicillin G 2–4 MU q4–6h + Clindamycin 600–900 mg q8h", "確認 A 群鏈球菌", "GAS"],
+        ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h + Vancomycin 15 mg/kg q12h", ""],
+        ["m", "Penicillin G 3 MU/vial：4 MU IV q4h + Clindamycin 900 mg q8h", "確認 A 群鏈球菌", "GAS"],
         ["l", "Blood culture、Lactate、CBC、CK", ""]
       ] },
     { "name": "急性單關節炎（疑感染）", "hint": "紅腫熱痛關節",
@@ -68,23 +68,23 @@
         ["x", "Arthrocentesis：Gram/culture、WBC/DC、crystal", "抗生素前；>50,000 提示感染"],
         ["l", "Blood culture ×2、CBC、CRP、ESR", ""],
         ["x", "Joint X-ray", "基準"],
-        ["m", "Cefazolin + Ceftriaxone 2 g QD", "無抗藥風險"],
-        ["m", "Vancomycin + Cefepime", "院內或關節手術後", "院內"],
+        ["m", "Cefazolin 2 g q8h（GPC）或 Ceftriaxone 2 g QD（GNB / 淋病）", "無抗藥風險"],
+        ["m", "Vancomycin 15–20 mg/kg q12h + Cefepime 2 g q8h", "院內或關節手術後", "院內"],
         ["p", "骨科：關節引流（24 hr 內）", ""]
       ] },
     { "name": "急性痛風", "hint": "已排除感染",
       "orders": [
-        ["m", "Colchicine 1 mg PO，1 hr 後 0.5 mg", "12 hr 內最有效；腎差、CYP3A4 抑制劑避免"],
-        ["m", "NSAID（如 Naproxen）+ PPI", "腎差、消化性潰瘍小心", "替代"],
-        ["m", "Prednisolone 30–35 mg PO QD × 3–5 天", "腎差或不能用 NSAID", "腎差"],
-        ["m", "Methylprednisolone 100–150 mg IV × 1–2 天", "NPO", "NPO"],
+        ["m", "Colchicine 0.5 mg ×2（1 mg）PO，1 hr 後 0.5 mg", "12 hr 內最有效；腎差、CYP3A4 抑制劑避免"],
+        ["m", "Naproxen 250 mg ×2 BID + Pantoprazole 40 mg QD", "腎差、消化性潰瘍小心", "替代"],
+        ["m", "Prednisolone 5 mg ×6（30 mg）PO QD × 5 天", "腎差或不能用 NSAID", "腎差"],
+        ["m", "Methylprednisolone 40 mg/vial：80–120 mg IV × 1–2 天", "NPO", "NPO"],
         ["p", "冰敷", ""]
       ] },
     { "name": "疑脊髓壓迫 (MSCC)", "hint": "癌症 + 背痛 + 無力/大小便",
       "orders": [
         ["x", "Whole spine MRI（24 hr 內）", "MRI 禁忌改 CT"],
-        ["m", "Dexamethasone 16 mg PO/IV，之後 16 mg/day", "有神經症狀"],
-        ["m", "PPI", "類固醇期間"],
+        ["m", "Dexamethasone 5 mg/amp ×3 IV（或 4 mg ×4 PO），之後 16 mg/day", "有神經症狀"],
+        ["m", "Pantoprazole 40 mg PO QD", "類固醇期間"],
         ["l", "Glucose 監測", ""],
         ["p", "平躺，疑不穩定時脊椎固定", ""],
         ["p", "照會腫瘤/放療/神經外科", ""]

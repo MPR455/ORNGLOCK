@@ -11,17 +11,17 @@
         ["x", "ECG", "上腹痛、老人或心臟風險：排除 MI"],
         ["x", "CT abdomen/pelvis with IV contrast", "廣泛腹痛 + 發燒、右下腹痛；eGFR ≥30 顯影劑安全"],
         ["x", "Abdominal echo", "右上腹痛（膽道）", "右上腹"],
-        ["m", "Opioid 止痛（分次 IV 或 PO）", "不會遮蔽腹部檢查"],
-        ["m", "Acetaminophen", "多模式止痛"]
+        ["m", "Morphine 2–4 mg IV q4h PRN（或 Tramadol 50 mg PO q6h）", "不會遮蔽腹部檢查"],
+        ["m", "Acetaminophen 500 mg PO q6h（NPO：Propacetamol 1 g ×2 IV q6h）", "多模式止痛"]
       ] },
     { "name": "腹痛合併休克", "hint": "SBP <90、心搏快、乳酸高",
       "orders": [
-        ["m", "Crystalloid 500 mL IV over 15 min，重評", "主動脈瘤破裂例外：容許低血壓"],
+        ["m", "NS / Lactated Ringer 500 mL IV over 15 min，重評", "主動脈瘤破裂例外：容許低血壓"],
         ["l", "Lactate q2h（前 8 hr）", "休克時 >2"],
         ["l", "Type & screen、Hb、PT/INR", "疑出血"],
         ["x", "Bedside echo", "找休克類型、主動脈瘤"],
         ["p", "目標 MAP ≥65、尿量 ≥0.5 mL/kg/hr", ""],
-        ["m", "Broad-spectrum antibiotics（1 hr 內）", "敗血性休克", "敗血症"]
+        ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h（1 hr 內）", "先抽血培養；ESBL 風險改 Meropenem 1 g q8h", "敗血症"]
       ] },
     { "name": "疑腹主動脈瘤破裂", "hint": "背/腰痛 + 低血壓",
       "orders": [
@@ -34,8 +34,8 @@
       "orders": [
         ["x", "CTA abdomen（STAT）", "每延遲 6 hr 死亡率加倍；AKI 也要做，不要口服顯影劑"],
         ["l", "Lactate、CBC、D-dimer", "輔助；D-dimer 不能排除"],
-        ["m", "Heparin IV infusion（全劑量）", "術前就開始；腎衰也適合"],
-        ["m", "Broad-spectrum antibiotics", ""],
+        ["m", "Heparin 80 U/kg IV bolus → 18 U/kg/hr（全劑量）", "術前就開始；腎衰也適合"],
+        ["m", "Ceftriaxone 2 g IV QD + Metronidazole 500 mg IV q8h（或 Pip-tazo 4.5 g q6h）", ""],
         ["p", "NG decompression、IV fluid、矯正電解質", ""],
         ["p", "避免 vasopressin、digoxin；升壓劑謹慎", "會加重腸缺血"]
       ] },
@@ -44,10 +44,10 @@
         ["x", "CT abdomen", "首選；無法取得改直立 CXR"],
         ["x", "Erect CXR", "CT 不可得", "無 CT"],
         ["p", "NPO", ""],
-        ["m", "Ceftriaxone 2 g QD + Metronidazole 500 mg q6–8h", "社區型非重症"],
-        ["m", "Piperacillin-tazobactam 4.5 g q6h", "重症", "重症"],
+        ["m", "Ceftriaxone 2 g IV QD + Metronidazole 500 mg IV q8h", "社區型非重症"],
+        ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h", "重症", "重症"],
         ["m", "Meropenem 1 g q8h", "ESBL 風險", "ESBL"],
-        ["m", "PPI IV", "潰瘍穿孔"]
+        ["m", "Pantoprazole 40 mg IV q12h", "潰瘍穿孔"]
       ] },
     { "name": "急性胰臟炎", "hint": "上腹痛穿背 + lipase >3x",
       "orders": [
@@ -66,15 +66,15 @@
         ["l", "CBC、CRP、Bil T/D、ALP、GGT、AST/ALT、PT/INR、Cr", "Tokyo 分級"],
         ["l", "Blood culture ×2", ""],
         ["x", "Abdominal echo", "首選"],
-        ["m", "Ceftriaxone 2 g QD + Metronidazole", "低風險社區型"],
-        ["m", "Piperacillin-tazobactam 4.5 g q6h", "高風險（敗血症、APACHE ≥10）", "高風險"],
+        ["m", "Ceftriaxone 2 g IV QD + Metronidazole 500 mg IV q8h", "低風險社區型"],
+        ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h", "高風險（敗血症、APACHE ≥10）", "高風險"],
         ["p", "膽道引流（ERCP / PTCD）", "對初始治療無效或 Grade II–III"]
       ] },
     { "name": "急性膽囊炎", "hint": "右上腹痛 + Murphy sign",
       "orders": [
         ["x", "Abdominal echo", "初始影像"],
         ["l", "CBC、CRP、肝功能、Bil", "評估總膽管結石"],
-        ["m", "Ceftriaxone + Metronidazole", ""],
+        ["m", "Ceftriaxone 2 g IV QD + Metronidazole 500 mg IV q8h", ""],
         ["p", "照會外科：腹腔鏡膽囊切除（入院 7 天內）", "第一線；老人、Child A/B 也可"],
         ["p", "PTGBD", "敗血性休克或不能手術", "不能開刀"]
       ] },
@@ -83,22 +83,22 @@
         ["x", "CT abdomen（低劑量或 IV contrast）", "非懷孕成人"],
         ["x", "Echo → MRI", "孕婦", "孕婦"],
         ["p", "照會外科：腹腔鏡闌尾切除（24 hr 內）", "術前單劑抗生素"],
-        ["m", "Ceftriaxone + Metronidazole", "非手術治療或複雜性", "非手術"]
+        ["m", "Ceftriaxone 2 g IV QD + Metronidazole 500 mg IV q8h", "非手術治療或複雜性", "非手術"]
       ] },
     { "name": "憩室炎", "hint": "左下腹痛",
       "orders": [
         ["x", "CT abdomen", "初始影像"],
-        ["m", "Amoxicillin-clavulanate 875/125 mg PO q12h", "需要抗生素時（衰弱、免疫低、無法進食）"],
-        ["m", "Ciprofloxacin 500 mg q12h + Metronidazole 500 mg q8h", "替代", "過敏"],
+        ["m", "Curam 1 g（Amox-clav 875/125）PO q12h", "需要抗生素時（衰弱、免疫低、無法進食）"],
+        ["m", "Ciprofloxacin 500 mg PO q12h + Metronidazole 250 mg ×2 PO q8h", "替代", "過敏"],
         ["p", "膿瘍：經皮引流", "引流後抗生素限 4 天", "膿瘍"]
       ] },
     { "name": "小腸阻塞", "hint": "腹痛、嘔吐、腹脹、無排氣",
       "orders": [
         ["p", "NPO + NG decompression", "非手術治療核心，70–90% 有效"],
-        ["m", "IV fluid + 補 K", "常脫水、低鉀"],
+        ["m", "NS + KCl 20 mEq/500 mL（premix）", "常脫水、低鉀"],
         ["l", "CBC、Lactate、電解質、CRP、BUN/Cr", ""],
         ["x", "CT abdomen", "排除絞扼、closed loop"],
-        ["m", "Gastrografin 口服（水溶性顯影）", "24 hr X 光沒到大腸則非手術會失敗"],
+        ["m", "Gastrografin（Diatrizoate meglumine 65%）100 mL PO/NG", "24 hr X 光沒到大腸則非手術會失敗"],
         ["x", "KUB 24 hr after contrast", ""],
         ["p", "照會外科", "腹膜炎、絞扼、缺血或 72 hr 未緩解"]
       ] },
@@ -107,17 +107,17 @@
         ["x", "Diagnostic paracentesis（12 hr 內）", "凝血異常不是禁忌，不用預防輸血"],
         ["l", "Ascites PMN、protein、albumin、血培養瓶各 10 mL", "同時驗血清 albumin 算 SAAG"],
         ["l", "Blood culture ×2", ""],
-        ["m", "Cefotaxime 2 g IV q12h（或 Ceftriaxone）", "社區型首選"],
-        ["m", "Piperacillin-tazobactam", "院內或醫療照護相關", "院內"],
-        ["m", "Albumin 1.5 g/kg IV（Day 1）、1 g/kg（Day 3）", "預防 AKI"],
+        ["m", "Ceftriaxone 2 g IV QD（或 Cefotaxime 2 g q8h）", "社區型首選"],
+        ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h（或 Meropenem 1 g q8h）", "院內或醫療照護相關", "院內"],
+        ["m", "20% Albumin 100 mL（20 g）：1.5 g/kg（Day 1）、1 g/kg（Day 3）", "預防 AKI"],
         ["p", "48 hr 後重抽腹水", "PMN 降 <25% 表示無效"],
         ["p", "停利尿劑、NSAID；低血壓停 NSBB", "AKI 是主要死因"]
       ] },
     { "name": "大量腹水放液", "hint": "緊繃腹水",
       "orders": [
         ["p", "Large-volume paracentesis", ""],
-        ["m", "Albumin 6–8 g / 每放 1 L", "放 >5 L 時"],
-        ["m", "Spironolactone 100 mg + Furosemide 40 mg QD", "放液後預防再累積"]
+        ["m", "20% Albumin 100 mL（20 g）：每放 1 L 給 6–8 g（>5 L 時）", "放 >5 L 時"],
+        ["m", "Spironolactone 25 mg ×4（100 mg）+ Furosemide 40 mg PO QD", "放液後預防再累積"]
       ] },
     { "name": "異位妊娠", "hint": "育齡女性 + 腹痛/陰道出血",
       "orders": [
@@ -133,17 +133,17 @@
       ] },
     { "name": "腎絞痛 / 結石", "hint": "腰脅痛",
       "orders": [
-        ["m", "NSAID（如 Ketorolac）", "第一線；opioid 第二線（避免 pethidine）"],
+        ["m", "Ketorolac 30 mg IV/IM（或 Diclofenac 25 mg ×2 PO）", "第一線；opioid 第二線（避免 pethidine）"],
         ["l", "UA、Urine culture", ""],
         ["x", "Renal echo → Non-contrast CT", ""],
-        ["m", "Tamsulosin", "遠端 5–10 mm 結石", "遠端結石"],
+        ["m", "Tamsulosin 0.4 mg PO QD（Harnalidge PR）", "遠端 5–10 mm 結石", "遠端結石"],
         ["p", "緊急減壓（PCN 或 DJ stent）", "阻塞 + 感染是泌尿科急症", "感染+阻塞"]
       ] },
     { "name": "腎盂腎炎", "hint": "發燒 + 腰痛 + CVA 壓痛",
       "orders": [
         ["l", "UA、Urine culture、Blood culture", ""],
         ["m", "Ceftriaxone 2 g IV QD", "住院先 IV"],
-        ["m", "Piperacillin-tazobactam / Carbapenem", "有 sepsis 或多重抗藥菌", "sepsis"],
+        ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h / Meropenem 1 g q8h", "有 sepsis 或多重抗藥菌", "sepsis"],
         ["x", "Renal echo", "排除阻塞"]
       ] },
     { "name": "睪丸扭轉", "hint": "突發單側陰囊痛",
@@ -152,7 +152,7 @@
       ] },
     { "name": "上消化道潰瘍 / 上腹痛", "hint": "",
       "orders": [
-        ["m", "PPI", "餐前 30–60 min"],
+        ["m", "Pantoprazole 40 mg PO QD（或 Esomeprazole 40 mg）", "餐前 30–60 min"],
         ["l", "H. pylori test", "潰瘍、NSAID、低劑量 aspirin"],
         ["x", "Upper endoscopy", "有警示症狀（出血、體重減輕、貧血）", "警示症狀"]
       ] },
@@ -166,7 +166,7 @@
       "orders": [
         ["p", "看傷口", "48 hr 內少有 SSI，若有多為鏈球菌或梭菌"],
         ["p", "拆線 + 切開引流", "SSI 的主要處置"],
-        ["m", "Piperacillin-tazobactam 4.5 g q8h", "全身反應明顯（紅腫 >5 cm、>38.5°C、HR >110）", "全身反應"],
+        ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2）IV q8h", "全身反應明顯（紅腫 >5 cm、>38.5°C、HR >110）", "全身反應"],
         ["x", "CT abdomen", "疑深部或腹內感染", "深部"]
       ] }
   ]

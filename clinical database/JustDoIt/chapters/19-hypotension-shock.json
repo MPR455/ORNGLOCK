@@ -5,7 +5,7 @@
       "orders": [
         ["p", "O2 NRM 15 L/min → SpO2 94–98%", ""],
         ["p", "2 條大號 IV", ""],
-        ["m", "Crystalloid 500 mL over 15 min，重評", "敗血症 250 mL × 最多 1000 mL"],
+        ["m", "NS 或 Lactated Ringer 500 mL over 15 min，重評", "敗血症 250 mL × 最多 1000 mL"],
         ["l", "ABG（動脈）、Lactate", "乳酸 >2 提示休克"],
         ["l", "CBC、BUN/Cr、電解質、肝功能、PT、Type & screen", ""],
         ["l", "Blood culture ×2", "疑感染", "疑感染"],
@@ -16,24 +16,24 @@
       ] },
     { "name": "敗血性休克", "hint": "",
       "orders": [
-        ["m", "Broad-spectrum antibiotics（1 hr 內）", "培養後但不延誤"],
-        ["m", "Balanced crystalloid 30 mL/kg", "TBI 用 NS；不用澱粉、gelatin"],
-        ["m", "Norepinephrine（可周邊）", "MAP 65；≥65 歲 60–65"],
-        ["m", "Vasopressin", "NE 劑量持續上升", "NE 上升"],
-        ["m", "Epinephrine", "NE + vasopressin 仍不足", "仍不足"],
-        ["m", "Dobutamine（加在 NE 上）", "心功能差 + 灌流仍不足", "心功能差"],
-        ["m", "Hydrocortisone 200 mg/day IV", "建議使用；>260 mg 無額外益處"],
-        ["m", "Sodium bicarbonate", "pH ≤7.2 + AKI 2–3 期", "嚴重酸中毒"],
+        ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h（1 hr 內）", "先抽血培養；ESBL 風險 Meropenem 1 g q8h；MRSA 風險加 Vancomycin"],
+        ["m", "Lactated Ringer 30 mL/kg", "TBI 用 NS；不用澱粉、gelatin"],
+        ["m", "Norepinephrine 4 mg/4 mL：8 mg in D5W 250 mL，0.05–0.5 mcg/kg/min", "MAP 65；≥65 歲 60–65"],
+        ["m", "Vasopressin 20 U/mL：0.03 U/min", "NE 劑量持續上升", "NE 上升"],
+        ["m", "Epinephrine 1 mg/mL：0.05–0.5 mcg/kg/min", "NE + vasopressin 仍不足", "仍不足"],
+        ["m", "Dobutamine 250 mg/20 mL：2.5–10 mcg/kg/min", "心功能差 + 灌流仍不足", "心功能差"],
+        ["m", "Hydrocortisone 50 mg IV q6h（200 mg/day）", "建議使用；>260 mg 無額外益處"],
+        ["m", "Sodium bicarbonate 7% 20 mL（16.7 mEq/amp）×3–5 IV", "pH ≤7.2 + AKI 2–3 期", "嚴重酸中毒"],
         ["p", "A-line", "中高劑量或多種升壓劑"],
         ["p", "Source control（6 hr 內）", ""]
       ] },
     { "name": "過敏性休克", "hint": "",
       "orders": [
-        ["m", "Epinephrine 0.5 mg IM（大腿前外側），q5min", "第一線"],
-        ["m", "Crystalloid 500–1000 mL IV", ""],
+        ["m", "Epinephrine 1 mg/mL：0.5 mg IM（大腿前外側），q5min", "第一線"],
+        ["m", "NS / Lactated Ringer 500–1000 mL IV", ""],
         ["p", "平躺（呼吸困難可坐）", ""],
         ["m", "Epinephrine infusion 1 mg/100 mL NS，0.5–1 mL/kg/hr", "2 劑 IM 後仍休克", "難治"],
-        ["m", "Glucagon", "β-blocker 使用者", "β-blocker"]
+        ["m", "Glucagon 1 mg/kit：1–5 mg IV over 5 min", "β-blocker 使用者", "β-blocker"]
       ] },
     { "name": "出血性休克", "hint": "HR >110 及/或 SBP <90 + 出血",
       "orders": [
@@ -42,8 +42,8 @@
         ["m", "pRBC + FFP ≥1:2", "沒有凝血結果時"],
         ["m", "Cryoprecipitate：Fibrinogen <1.5", ""],
         ["m", "Platelet：維持 >50K", ""],
-        ["m", "Tranexamic acid 1 g IV over 10 min → 1 g over 8 hr", "創傷 3 hr 內；消化道出血不用", "創傷"],
-        ["m", "PCC + Vitamin K 5–10 mg IV", "Warfarin", "Warfarin"],
+        ["m", "Tranexamic acid 500 mg ×2（1 g）IV over 10 min → 1 g over 8 hr", "創傷 3 hr 內；消化道出血不用", "創傷"],
+        ["m", "PCC（Human prothrombin complex 500 IU/vial） 25–50 U/kg + Vitamin K1 10 mg IV", "Warfarin", "Warfarin"],
         ["p", "創傷：SBP 80–90 直到止血", "腦傷維持 MAP ≥80"],
         ["p", "血品加溫", ""],
         ["p", "照會外科/介入止血", ""]
@@ -57,15 +57,15 @@
       ] },
     { "name": "神經性休克", "hint": "脊髓損傷：低血壓但心跳不快",
       "orders": [
-        ["m", "IV fluid", "先當低血容處理"],
-        ["m", "Norepinephrine", "MAP 75–80（不高於 90–95）× 3–7 天"]
+        ["m", "NS / Lactated Ringer 1–2 L", "先當低血容處理"],
+        ["m", "Norepinephrine 4 mg/4 mL：8 mg in D5W 250 mL，0.05–0.5 mcg/kg/min", "MAP 75–80（不高於 90–95）× 3–7 天"]
       ] },
     { "name": "心因性休克", "hint": "",
       "orders": [
         ["x", "12-lead ECG、Troponin", ""],
         ["x", "Emergent echo", ""],
-        ["m", "Norepinephrine", "首選升壓劑"],
-        ["m", "Dobutamine", "SBP <90 + 灌流不足且標準治療無效", "仍灌流差"],
+        ["m", "Norepinephrine 4 mg/4 mL：8 mg in D5W 250 mL，0.05–0.5 mcg/kg/min", "首選升壓劑"],
+        ["m", "Dobutamine 250 mg/20 mL：2.5–10 mcg/kg/min", "SBP <90 + 灌流不足且標準治療無效", "仍灌流差"],
         ["p", "不大量輸液", "肺水腫風險高"],
         ["p", "緊急冠狀動脈攝影 / PCI", "ACS 引起", "ACS"],
         ["m", "DC cardioversion", "不穩定持續性 VT", "VT"]
@@ -73,31 +73,31 @@
     { "name": "休克 + 心搏過緩", "hint": "",
       "orders": [
         ["m", "Atropine 0.5–1 mg IV q3–5min（max 3 mg）", "心臟移植、寬 QRS 高度阻斷不用"],
-        ["m", "Epinephrine 2–10 mcg/min", "atropine 無效", "無效"],
-        ["m", "Dopamine 5–20 mcg/kg/min", "", "無效"],
+        ["m", "Epinephrine 1 mg in NS 250 mL：2–10 mcg/min", "atropine 無效", "無效"],
+        ["m", "Dopamine premix 400 mg/250 mL：5–20 mcg/kg/min", "", "無效"],
         ["p", "經皮 / 經靜脈節律器", "藥物無效", "藥物無效"],
-        ["m", "Glucagon / High-dose insulin / Calcium", "β-blocker 或 CCB 中毒", "中毒"]
+        ["m", "Glucagon 3–5 mg IV / Actrapid 1 U/kg / 5% Calcium chloride 20 mL", "β-blocker 或 CCB 中毒", "中毒"]
       ] },
     { "name": "阻塞性休克", "hint": "",
       "orders": [
         ["p", "Needle decompression 5th ICS 腋中線 → chest tube", "張力性氣胸：不等影像", "氣胸"],
         ["p", "Pericardiocentesis（影像導引）", "心包填塞；避免正壓通氣與利尿劑", "填塞"],
-        ["m", "Heparin IV bolus", "高風險 PE，不延遲", "PE"],
-        ["m", "Alteplase 100 mg IV over 2 hr", "高風險 PE 確認", "PE"],
+        ["m", "Heparin 80 U/kg IV bolus", "高風險 PE，不延遲", "PE"],
+        ["m", "Alteplase（Actilyse 50 mg ×2）100 mg IV over 2 hr", "高風險 PE 確認", "PE"],
         ["m", "NS ≤500 mL", "PE 且 CVP 低", "PE"],
-        ["m", "Norepinephrine（>15 mcg/min 加第二種）", "PE 低血壓", "PE"]
+        ["m", "Norepinephrine 4 mg/4 mL：8 mg in D5W 250 mL，0.05–0.5 mcg/kg/min", "PE 低血壓", "PE"]
       ] },
     { "name": "β-blocker / CCB 中毒", "hint": "",
       "orders": [
-        ["m", "Regular insulin 1 U/kg bolus → 1–10 U/kg/hr + dextrose", "監測血糖與 K"],
-        ["m", "Calcium chloride 2 g IV（中心靜脈）→ 20–40 mg/kg/hr", "CCB 中毒", "CCB"],
-        ["m", "Glucagon 2–10 mg IV → 1–15 mg/hr", "β-blocker；會嘔吐", "β-blocker"],
-        ["m", "Vasopressor", ""],
+        ["m", "Actrapid 1 U/kg IV bolus → 1–10 U/kg/hr + 10% Glucose", "監測血糖與 K"],
+        ["m", "5% Calcium chloride 20 mL（1 g）×2–3 IV（中心靜脈）→ 20–40 mg/kg/hr", "CCB 中毒", "CCB"],
+        ["m", "Glucagon 1 mg/kit：3–10 mg IV → 1–5 mg/hr", "β-blocker；會嘔吐", "β-blocker"],
+        ["m", "Norepinephrine 4 mg/4 mL：8 mg in D5W 250 mL，0.05–0.5 mcg/kg/min（或 Epinephrine）", ""],
         ["p", "諮詢毒物中心", ""]
       ] },
     { "name": "藥物呼吸抑制 + 低血壓", "hint": "",
       "orders": [
-        ["m", "Naloxone 0.2–2 mg IV q2–3min", "opioid"],
+        ["m", "Naloxone 0.4 mg/amp：0.2–2 mg IV q2–3min", "opioid"],
         ["m", "Flumazenil 0.2 mg IV（max 1 mg）", "單純 BZD；長期使用者避免", "BZD"]
       ] }
   ]

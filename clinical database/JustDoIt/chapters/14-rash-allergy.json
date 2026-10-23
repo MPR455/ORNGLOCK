@@ -3,24 +3,24 @@
   "items": [
     { "name": "Anaphylaxis", "hint": "氣道/呼吸/循環問題 ± 皮疹",
       "orders": [
-        ["m", "Epinephrine 0.5 mg IM（1 mg/mL 0.5 mL）大腿前外側", "第一線；有 IV 也一樣；5 min 無改善重複"],
+        ["m", "Epinephrine 1 mg/mL：0.5 mL（0.5 mg）IM 大腿前外側", "第一線；有 IV 也一樣；5 min 無改善重複"],
         ["p", "停疑似藥物或血品", ""],
         ["p", "O2 NRM 15 L/min → SpO2 94–98%", ""],
-        ["m", "Crystalloid 500–1000 mL IV bolus", "低血壓；不用膠體", "低血壓"],
+        ["m", "NS / Lactated Ringer 500–1000 mL IV bolus", "低血壓；不用膠體", "低血壓"],
         ["p", "低血壓平躺抬腿；呼吸問題半坐臥", "不要站立走動"],
         ["x", "SpO2、BP、ECG monitor", "不延誤 epinephrine"],
-        ["m", "Salbutamol 5 mg + Ipratropium 500 mcg neb", "喘鳴的輔助", "喘鳴"],
-        ["m", "Epinephrine infusion：1 mg in NS 100 mL，0.5–1 mL/kg/hr", "2 劑 IM 仍有症狀（難治）", "難治"],
-        ["m", "Glucagon 1 mg IV（可重複）", "β-blocker 使用者難治", "β-blocker"],
-        ["m", "Cetirizine 10–20 mg PO", "穩定後處理皮膚症狀；不屬初始急救", "穩定後"],
-        ["m", "Hydrocortisone 200 mg IV", "難治性，復甦後考慮", "難治"],
+        ["m", "Combivent UDV（Ipratropium 0.5 mg + Salbutamol 2.5 mg）neb", "喘鳴的輔助", "喘鳴"],
+        ["m", "Epinephrine 1 mg in NS 100 mL：0.5–1 mL/kg/hr", "2 劑 IM 仍有症狀（難治）", "難治"],
+        ["m", "Glucagon 1 mg/kit：1–5 mg IV over 5 min（可重複）", "β-blocker 使用者難治", "β-blocker"],
+        ["m", "Levocetirizine 5 mg PO QD（或 Fexofenadine 180 mg）", "穩定後處理皮膚症狀；不屬初始急救", "穩定後"],
+        ["m", "Hydrocortisone 100 mg/vial ×2（200 mg）IV", "難治性，復甦後考慮", "難治"],
         ["l", "Tryptase（2 hr 內，最晚 4 hr）", "診斷不確定時"],
         ["p", "觀察 ≥6–12 hr", "雙相反應約 5%"]
       ] },
     { "name": "ACEI 血管性水腫", "hint": "臉唇舌腫、無蕁麻疹",
       "orders": [
         ["p", "停 ACE inhibitor", "對 epinephrine 常無反應"],
-        ["m", "Epinephrine 0.5 mg IM", "診斷不確定時仍給"],
+        ["m", "Epinephrine 1 mg/mL：0.5 mg IM", "診斷不確定時仍給"],
         ["p", "評估氣道、準備困難插管", ""]
       ] },
     { "name": "輸血反應", "hint": "輸血中新症狀",
@@ -33,14 +33,14 @@
       ] },
     { "name": "蕁麻疹", "hint": "風團 ± 血管性水腫",
       "orders": [
-        ["m", "Cetirizine 10 mg PO QD（或其他第二代 H1）", "第一線；老人避免第一代"],
-        ["m", "Prednisolone 20–50 mg PO QD ≤10 天", "急性嚴重或慢性急性惡化", "嚴重"],
+        ["m", "Levocetirizine 5 mg / Fexofenadine 180 mg / Bilastine 20 mg PO QD（可加到 4 倍）", "第一線；老人避免第一代"],
+        ["m", "Prednisolone 5 mg/tab：20–40 mg PO QD ≤5–10 天", "急性嚴重或慢性急性惡化", "嚴重"],
         ["p", "有呼吸或循環症狀 → 當 anaphylaxis", ""]
       ] },
     { "name": "Vancomycin 輸注反應", "hint": "潮紅、搔癢",
       "orders": [
         ["p", "減慢輸注速度", ""],
-        ["m", "H1 抗組織胺前置", "輕症"],
+        ["m", "Diphenhydramine 30 mg IV（或 Chlorpheniramine 5 mg IV）前置", "輕症"],
         ["p", "合併低血壓或喘 → 評估 anaphylaxis", ""]
       ] },
     { "name": "疑 SJS / TEN", "hint": "疼痛性紫斑、水皰、黏膜受累",
@@ -59,7 +59,7 @@
         ["l", "CBC/DC（eosinophil、atypical lymph）、肝腎功能、UA", ""],
         ["x", "ECG", "心肌炎"],
         ["l", "EBV、CMV、HHV-6 PCR", ""],
-        ["m", "全身性類固醇（重度）", "3–6 個月緩慢減量", "重度"],
+        ["m", "Methylprednisolone 1 mg/kg/day IV（或 Prednisolone 0.5–1 mg/kg）", "3–6 個月緩慢減量", "重度"],
         ["p", "避免經驗性 NSAID 與抗生素（尤其 amoxicillin）", ""]
       ] },
     { "name": "不褪色紫斑（疑腦膜炎雙球菌）", "hint": "紫斑 >2 mm 或快速擴散瘀點",
@@ -69,34 +69,34 @@
         ["p", "飛沫隔離 24 hr", ""],
         ["p", "不做 LP", "紫斑廣泛"],
         ["p", "24 hr 內通報衛生局", ""],
-        ["m", "接觸者：Rifampin 600 mg q12h × 2 天 或 Ceftriaxone 250 mg IM", "密切接觸者預防", "接觸者"]
+        ["m", "Rifampicin 300 mg ×2（600 mg）PO q12h × 2 天 或 Ceftriaxone 250 mg IM ×1", "密切接觸者預防", "接觸者"]
       ] },
     { "name": "疑 HIT", "hint": "肝素使用中血小板下降",
       "orders": [
         ["l", "4Ts score", "低可能性不驗不治療"],
         ["p", "停所有 heparin（含沖管）", "中/高可能性"],
-        ["m", "Argatroban / Bivalirudin IV", "重症或出血風險高"],
-        ["m", "Fondaparinux 或 DOAC", "穩定者", "穩定"],
+        ["m", "Fondaparinux 2.5 mg ×3（7.5 mg）SC QD（<50 kg 5 mg）", "院內無 argatroban / bivalirudin；CrCl <30 不用"],
+        ["m", "Rivaroxaban 15 mg BID × 3 週 → 20 mg QD", "穩定者", "穩定"],
         ["l", "HIT antibody（ELISA）", ""],
         ["p", "血小板 >150 前不開 warfarin", ""]
       ] },
     { "name": "帶狀皰疹", "hint": "單側皮節水泡",
       "orders": [
-        ["m", "Valacyclovir 1 g PO TID × 7 天", "72 hr 內最有效"],
-        ["m", "Acyclovir 10 mg/kg IV q8h", "播散、內臟侵犯或免疫低下", "播散"],
+        ["m", "Valaciclovir 500 mg ×2（1 g）PO TID × 7 天", "72 hr 內最有效"],
+        ["m", "Acyclovir 250 mg/vial：10 mg/kg IV q8h", "播散、內臟侵犯或免疫低下", "播散"],
         ["p", "接觸隔離、覆蓋病灶", ""],
         ["p", "照會眼科", "V1 或鼻尖水泡", "V1"]
       ] },
     { "name": "蜂窩性組織炎", "hint": "",
       "orders": [
-        ["m", "Cephalexin / Cefazolin", ""],
-        ["m", "Doxycycline / Clindamycin / TMP-SMX", "疑 MRSA", "MRSA"],
+        ["m", "Cefazolin 1 g IV q8h 或 Cephalexin 500 mg PO QID", ""],
+        ["m", "Doxycycline 100 mg BID / Clindamycin 300 mg TID / Cotrimoxazole 2 tab BID", "疑 MRSA", "MRSA"],
         ["p", "膿瘍：切開引流", "", "膿瘍"]
       ] },
     { "name": "壞死性筋膜炎", "hint": "痛到不成比例、皮下硬、毒性",
       "orders": [
         ["p", "緊急外科會診清創", ""],
-        ["m", "Piperacillin-tazobactam 3.375 g IV q6–8h + Vancomycin 15 mg/kg q12h", "廣效涵蓋"],
+        ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h + Vancomycin 15 mg/kg q12h + Clindamycin 900 mg q8h", "廣效涵蓋"],
         ["l", "CBC、CRP、Na、glucose、Cr、CK、Lactate、Blood culture", ""],
         ["x", "CT", "看皮下氣體；不可延誤手術"]
       ] }

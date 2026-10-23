@@ -25,30 +25,30 @@
       ] },
     { "name": "低血容低血鈉", "hint": "嘔吐、腹瀉、利尿劑",
       "orders": [
-        ["m", "NS 或 balanced crystalloid 0.5–1 mL/kg/hr", ""],
+        ["m", "NS 或 Lactated Ringer 0.5–1 mL/kg/hr", ""],
         ["p", "尿量突然 >100 mL/hr：q2h 測 Na", "即將矯正過快的警訊"]
       ] },
     { "name": "SIAD", "hint": "",
       "orders": [
         ["p", "限水", "第一線"],
-        ["m", "Oral urea 或 Low-dose loop diuretic + NaCl PO", "第二線", "限水無效"],
-        ["m", "Tolvaptan", "健保：Na <125、傳統治療 48 hr 無效、≤4 天；Na ≥125 停", "難治"]
+        ["m", "Furosemide 20 mg PO/IV + 增加鹽分攝取", "院內無口服 urea；loop 讓尿變稀", "限水無效"],
+        ["m", "Tolvaptan 15 mg PO QD（住院、q6h 驗 Na）", "健保：Na <125、傳統治療 48 hr 無效、≤4 天；Na ≥125 停", "難治"]
       ] },
     { "name": "高容積低血鈉", "hint": "心衰、肝硬化",
       "orders": [
         ["p", "限水（肝硬化 Na 120–125：1000 mL/day）", ""],
-        ["m", "Albumin", "肝硬化 Na <120", "肝硬化"]
+        ["m", "20% Albumin 100 mL", "肝硬化 Na <120", "肝硬化"]
       ] },
     { "name": "矯正過快", "hint": "24 hr >10 或之後 >8",
       "orders": [
         ["p", "停止主動治療", ""],
         ["m", "D5W 10 mL/kg over 1 hr", "讓 Na 回降；嚴密看尿量"],
-        ["m", "Desmopressin 2 mcg IV（≥8 hr 才能重複）", ""],
+        ["m", "Desmopressin 4 mcg/mL：2 mcg IV（≥8 hr 才能重複）", ""],
         ["l", "Na q2h", ""]
       ] },
     { "name": "疑腎上腺危象 + 低鈉", "hint": "低血壓、長期類固醇",
       "orders": [
-        ["m", "Hydrocortisone 100 mg IV → 200 mg/24 hr", "不等檢驗"],
+        ["m", "Hydrocortisone 100 mg/vial IV → 50 mg q6h", "不等檢驗"],
         ["m", "NS 1000 mL 第 1 hr", ""],
         ["l", "Cortisol、ACTH", "給藥前抽"]
       ] },
@@ -56,11 +56,11 @@
       "orders": [
         ["l", "Na、K、BUN/Cr、glucose、Urine osmolality", ""],
         ["m", "NS", "容積不足先補", "容積不足"],
-        ["m", "D5W 或 0.45% NaCl（每日需要量 + 部分缺水量）", ""],
+        ["m", "D5W 或 Half-saline 0.45%（每日需要量 + 部分缺水量）", ""],
         ["p", "PO / NG 給水", "安全時儘早"],
         ["p", "≤0.5 mmol/L/hr、24 hr ≤10", "急性有症狀：第 1 hr 可降 5"],
         ["l", "Na q4h", ""],
-        ["m", "Desmopressin 1–2 mcg IV/IM", "已知中樞性尿崩症 + 大量稀釋尿", "CDI"],
+        ["m", "Desmopressin 4 mcg/mL：1–2 mcg IV/SC", "已知中樞性尿崩症 + 大量稀釋尿", "CDI"],
         ["p", "床邊備水", "清醒能喝"]
       ] }
   ]

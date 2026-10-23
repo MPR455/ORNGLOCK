@@ -1,7 +1,7 @@
 # Clinical database · JustDoIt
 
 Order data behind the **值班** tab on <https://mpr455.github.io/ORNGLOCK/>.
-Each of the 35 chapters becomes a short menu of conditions, and each
+Each of the 37 chapters becomes a short menu of conditions, and each
 condition lists what to order: 💊 medications, 🧪 labs, 📷 exams/imaging and
 ⚙️ bedside procedures, each with a one-line reason.
 

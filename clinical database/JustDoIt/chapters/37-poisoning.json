@@ -1,0 +1,109 @@
+{
+  "no": "37", "slug": "poisoning", "title": "中毒 / 解毒劑", "icon": "☠️",
+  "items": [
+    { "name": "中毒：第一輪", "hint": "不知道吃了什麼",
+      "orders": [
+        ["l", "Acetaminophen + Salicylate level", "常見、可治、早期無症狀"],
+        ["l", "ABG + AG + Osmolal gap、BS、Lytes、Cr、LFT、CK", ""],
+        ["x", "ECG（QRS、QTc）", ""],
+        ["m", "Activated charcoal 50 g PO/NG", "1 hr 內、氣道安全；不吸附金屬、酒精、鋰", "1 hr 內"],
+        ["m", "50% Glucose 20 mL ×2 amp IV", "意識不清先測 BS", "低血糖"],
+        ["m", "Naloxone 0.4 mg IV", "呼吸慢、瞳孔小", "疑鴉片"],
+        ["p", "去污：脫衣、清洗皮膚", ""]
+      ] },
+    { "name": "有機磷 / 氨基甲酸鹽（農藥）", "hint": "流涎、流淚、尿便失禁、瞳孔小、肺水",
+      "orders": [
+        ["m", "Atropine 1 mg/mL：1–2 mg IV，每 5 min 加倍至肺部乾、HR >80、SBP >80", "目標是肺乾，不是瞳孔"],
+        ["m", "Atropine infusion：負荷總量 10–20%/hr", "維持肺乾"],
+        ["m", "Pralidoxime（PAM 500 mg/20 mL）30 mg/kg IV over 30 min → 8 mg/kg/hr", "有機磷；越早越好"],
+        ["m", "Diazepam 10 mg IV", "抽搐、躁動", "抽搐"],
+        ["p", "脫衣、肥皂清洗皮膚（穿防護）", ""],
+        ["l", "Plasma / RBC cholinesterase", ""],
+        ["p", "避免 succinylcholine 插管", ""]
+      ] },
+    { "name": "巴拉刈 (Paraquat)", "hint": "口腔潰瘍、喝除草劑",
+      "orders": [
+        ["l", "Urine dithionite test、Plasma paraquat level", ""],
+        ["m", "Fuller's earth 60 g 或 Activated charcoal 50 g PO/NG", "越早越好"],
+        ["p", "血液灌流（4 hr 內）", ""],
+        ["m", "Methylprednisolone 1 g IV QD × 3 天 + Cyclophosphamide 15 mg/kg/day × 2 天", "中重度（台灣常用方案）", "中重度"],
+        ["p", "不給氧，除非 SpO2 <88%", "氧氣加重肺纖維化"]
+      ] },
+    { "name": "抗膽鹼中毒", "hint": "熱、乾、紅、瞳孔大、躁動、尿滯留",
+      "orders": [
+        ["x", "ECG：QRS 寬先排除 TCA", ""],
+        ["m", "Physostigmine 2 mg/5 mL：0.5–2 mg IV slow over 5 min", "純抗膽鹼譫妄；QRS 寬、TCA 禁用"],
+        ["m", "Lorazepam 2 mg IV 或 Diazepam 10 mg IV", "躁動"],
+        ["p", "導尿、降溫", ""]
+      ] },
+    { "name": "氰化物 / 火災煙霧", "hint": "火災 + 意識改變 + 乳酸 >8",
+      "orders": [
+        ["m", "Hydroxocobalamin 5 g IV over 15 min（可再 5 g）", "首選；不影響帶氧"],
+        ["m", "Sodium thiosulfate 12.5 g IV over 10 min", "無 hydroxocobalamin 時", "替代"],
+        ["m", "Sodium nitrite 300 mg IV（Cyanide antidote kit）", "非火災；合併 CO 時禁用", "非火災"],
+        ["p", "100% O2 NRM", ""],
+        ["l", "Lactate、COHb、ABG", ""]
+      ] },
+    { "name": "一氧化碳中毒", "hint": "頭痛、噁心、群聚、燒炭",
+      "orders": [
+        ["p", "100% O2 NRM（或插管）", "COHb 半衰期 5 hr → 1 hr"],
+        ["l", "COHb、Lactate、Troponin", ""],
+        ["x", "ECG", ""],
+        ["p", "高壓氧：昏迷、COHb >25%（孕婦 >15%）、心肌缺血、神經學異常", ""]
+      ] },
+    { "name": "變性血紅素血症", "hint": "SpO2 ~85% 不升、血呈巧克力色",
+      "orders": [
+        ["l", "MetHb level（co-oximetry）", ""],
+        ["m", "Methylene blue 10 mg/mL：1–2 mg/kg IV over 5 min，1 hr 可重複", "MetHb >20% 或有症狀；G6PD 缺乏禁用"],
+        ["p", "停誘發藥（dapsone、benzocaine、nitrite）", ""]
+      ] },
+    { "name": "鐵中毒", "hint": "吃 >60 mg/kg 元素鐵、嘔吐、休克",
+      "orders": [
+        ["l", "Serum iron（4–6 hr）", ""],
+        ["x", "KUB", "看藥錠"],
+        ["m", "Deferoxamine 500 mg/vial：15 mg/kg/hr IV", "Fe >500 mcg/dL、休克、酸中毒"],
+        ["p", "Activated charcoal 無效", ""]
+      ] },
+    { "name": "Sulfonylurea 低血糖", "hint": "反覆低血糖",
+      "orders": [
+        ["m", "50% Glucose 20 mL ×2 amp IV", ""],
+        ["m", "Octreotide 100 mcg/amp：50 mcg SC/IV q6h", "抑制 insulin 分泌、防反覆低血糖"],
+        ["m", "10% Glucose 100 mL/hr", ""],
+        ["l", "BS q1h × 24 hr", ""]
+      ] },
+    { "name": "Digoxin 中毒", "hint": "噁心、視覺變黃、心律不整、高鉀",
+      "orders": [
+        ["l", "Digoxin level（服藥 6 hr 後）、K、Mg、Cr", ""],
+        ["m", "Atropine 0.5–1 mg IV", "心搏過緩", "心搏過緩"],
+        ["m", "Lidocaine 2% 5 mL：1 mg/kg IV", "心室性心律不整", "心室性"],
+        ["m", "MgSO4 2 g IV", ""],
+        ["p", "院內無 Digoxin Fab：停藥、補 K/Mg、必要時起搏", ""]
+      ] },
+    { "name": "毒蛇咬傷：出血性", "hint": "龜殼花、赤尾青竹絲：腫痛、瘀斑、凝血異常",
+      "orders": [
+        ["m", "抗出血性蛇毒血清（Antivenin polyvalent hemorrhagic）2–4 vials in NS 250 mL IV over 1 hr", "赤尾青竹絲 1–2、龜殼花 2–4 vials 起始"],
+        ["m", "Epinephrine 0.5 mg IM（備用）", "血清過敏", "過敏"],
+        ["l", "CBC、PT/aPTT、Fibrinogen、D-dimer q4–6h", "惡化再加血清"],
+        ["m", "Td 0.5 mL IM", ""],
+        ["p", "肢體制動、抬高；不用止血帶、不切開", ""],
+        ["x", "每小時量腫脹範圍（筆畫線）", ""]
+      ] },
+    { "name": "毒蛇咬傷：神經性", "hint": "雨傘節、眼鏡蛇：眼瞼下垂、吞嚥困難、呼吸衰竭",
+      "orders": [
+        ["m", "抗神經性蛇毒血清（Antivenin polyvalent neurotropic）4–6 vials IV over 1 hr", "雨傘節症狀晚出現；眼鏡蛇常需更多"],
+        ["m", "Neostigmine 0.5 mg/amp：1.5–2 mg IV（先 Atropine 0.6 mg）", "眼鏡蛇神經症狀輔助", "眼鏡蛇"],
+        ["l", "ABG、SpO2、NIF", ""],
+        ["p", "觀察 ≥24 hr，備插管", ""],
+        ["m", "Td 0.5 mL IM", ""],
+        ["m", "Curam 1 g PO BID", "眼鏡蛇組織壞死", "壞死"]
+      ] },
+    { "name": "毒蛇咬傷：百步蛇 / 鎖鏈蛇", "hint": "百步蛇：嚴重出血；鎖鏈蛇：DIC、橫紋肌溶解、AKI",
+      "orders": [
+        ["m", "抗百步蛇蛇毒血清（Antivenin of D. acutus）2–4 vials IV", "百步蛇", "百步蛇"],
+        ["m", "抗鎖鏈蛇蛇毒血清（Antivenin of D. siamensis）2–4 vials IV", "鎖鏈蛇（罕藥）", "鎖鏈蛇"],
+        ["l", "CBC、PT/aPTT、Fibrinogen、CK、Cr、UA", ""],
+        ["m", "Lactated Ringer 尿量 >1 mL/kg/hr", "橫紋肌溶解、AKI"],
+        ["m", "Td 0.5 mL IM", ""]
+      ] }
+  ]
+}

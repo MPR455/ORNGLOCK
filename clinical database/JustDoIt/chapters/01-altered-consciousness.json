@@ -16,41 +16,40 @@
       ] },
     { "name": "低血糖", "hint": "BS < 72 mg/dL",
       "orders": [
-        ["m", "20% Dextrose 100 mL IV over 15 min", "無意識/抽搐/NPO 且有 IV；或 10% 200 mL；心腎衰用最小量", "無意識"],
+        ["m", "50% Glucose 20 mL ×2 amp IV push（或 10% Glucose 250 mL IV over 15 min）", "無意識/抽搐/NPO 且有 IV；或 10% 200 mL；心腎衰用最小量", "無意識"],
         ["m", "Glucagon 1 mg IM ×1", "沒有 IV 時；酗酒、肝病、營養不良、sulfonylurea 效果差", "無 IV"],
-        ["m", "速效糖 15–20 g PO", "清醒能吞嚥時首選", "能吞"],
-        ["m", "40% glucose gel 2 支塗牙齦", "混亂不合作但能吞", "不合作"],
+        ["m", "Dextrose powder 15–20 g 溶水 PO（或果汁 150–200 mL）", "清醒能吞嚥時首選", "能吞"],
         ["p", "停 insulin 輸注", "低血糖處理完再重啟"],
         ["l", "重測血糖：PO 後 10–15 min；IV/glucagon 後 10 min", "仍低就重複，最多 3 次"],
         ["m", "長效碳水點心 20 g（glucagon 後 40 g）", "血糖 >72 且恢復後，防再掉"],
-        ["m", "10% Dextrose 100 mL/hr IV", "NPO 病人恢復後維持", "NPO"],
+        ["m", "10% Glucose 500 mL IV 100 mL/hr", "NPO 病人恢復後維持", "NPO"],
         ["l", "血糖監測 24–48 hr", "sulfonylurea 或長效 insulin 引起，風險持續 24–36 hr"]
       ] },
     { "name": "疑 Wernicke / 營養不良", "hint": "酒精、減重手術、吸收不良",
       "orders": [
-        ["m", "Thiamine 200 mg IV TID", "疑似或確診 Wernicke，別延遲；三聯徵常不完整"],
-        ["m", "Thiamine 100 mg IV/IM QD × 3–5 天", "酒精戒斷的預防劑量", "預防"]
+        ["m", "Vitamin B complex amp（B1 60 mg/amp） ×3 in NS 100 mL IV TID（B1 ≈180 mg）", "院內無單方 thiamine 針，以 B 群針 B1 含量換算；給糖前先打"],
+        ["m", "Vitamin B complex amp（B1 60 mg/amp） ×2 IV/IM QD × 3–5 天（或 Dicethiamine 50 mg PO TID）", "酒精戒斷的預防劑量", "預防"]
       ] },
     { "name": "疑鴉片類過量", "hint": "昏迷 + 呼吸慢 + 針尖瞳孔",
       "orders": [
         ["p", "Bag-valve-mask 通氣 每 6 秒 1 次", "有脈搏但呼吸抑制，先給氣再給藥"],
-        ["m", "Naloxone 0.2–2 mg IV/IM q2–3 min", "滴定到恢復呼吸與氣道反射，不是要完全清醒"],
-        ["m", "Naloxone 2–4 mg intranasal", "沒有 IV 時", "無 IV"],
-        ["m", "Naloxone continuous IV infusion", "長效鴉片類，反應後又再抑制", "再抑制"],
+        ["m", "Naloxone 0.4 mg/amp：0.2–0.4 mg IV q2–3 min（呼吸停止 2 mg）", "滴定到恢復呼吸與氣道反射，不是要完全清醒"],
+        ["m", "Naloxone 0.4–0.8 mg IM/SC", "沒有 IV 時肌注或皮下", "無 IV"],
+        ["m", "Naloxone infusion：有效劑量 ×2/3 per hr（2 mg in NS 100 mL）", "長效鴉片類，反應後又再抑制", "再抑制"],
         ["p", "持續監測 SpO2/RR 至風險低", "原藥作用常比 naloxone 長"]
       ] },
     { "name": "疑 Benzodiazepine 過量", "hint": "單純 BZD 中毒 + 呼吸抑制",
       "orders": [
-        ["m", "Flumazenil 0.2 mg IV，滴定至最多 1 mg", "只用於選定的單純 BZD 中毒；長期使用者、癲癇或心律不整風險者避免"],
-        ["m", "合併鴉片類：先給 Naloxone", "混合中毒先拮抗鴉片類較合理", "合併鴉片"]
+        ["m", "Flumazenil 0.5 mg/5 mL：0.2 mg IV，q1 min 滴定至最多 1 mg", "只用於選定的單純 BZD 中毒；長期使用者、癲癇或心律不整風險者避免"],
+        ["m", "Naloxone 0.4 mg IV 先給", "混合中毒先拮抗鴉片類較合理", "合併鴉片"]
       ] },
     { "name": "疑細菌性腦膜炎", "hint": "發燒 + 頭痛 + 意識改變",
       "orders": [
         ["l", "Blood culture ×2（抗生素前）", "不能延誤抗生素"],
         ["m", "Ceftriaxone 2 g IV q12h", "病原未明首選；不可和含鈣溶液混；抵院 1 hr 內給"],
-        ["m", "Ampicillin 2 g IV q4h", "加上 Listeria 覆蓋：老人、免疫低下", "Listeria 風險"],
-        ["m", "Dexamethasone 10 mg IV QID × 4 天", "與第一劑抗生素同時；最晚第一劑後 4 hr 內"],
-        ["m", "Acyclovir IV", "疑 HSV 腦炎時，結果出來前就開始", "疑腦炎"],
+        ["m", "Ampicillin 500 mg/vial ×4（2 g）IV q4h", "加上 Listeria 覆蓋：老人、免疫低下", "Listeria 風險"],
+        ["m", "Dexamethasone 5 mg/amp ×2（10 mg）IV q6h × 4 天（抗生素前或同時）", "與第一劑抗生素同時；最晚第一劑後 4 hr 內"],
+        ["m", "Acyclovir 250 mg/vial：10 mg/kg IV q8h", "疑 HSV 腦炎時，結果出來前就開始", "疑腦炎"],
         ["x", "Brain CT before LP", "局部神經缺損、新發癲癇、GCS 低、瞳孔異常、免疫低下", "先影像"],
         ["x", "Lumbar puncture：CSF cell/glucose/protein/Gram stain/culture", "安全且不延誤抗生素時；紫斑廣泛或穿刺處感染不做"],
         ["l", "Serum cryptococcal antigen", "HIV 病人原因不明的中樞神經疾病", "HIV"],
@@ -59,20 +58,21 @@
     { "name": "非痙攣性癲癇重積 (NCSE)", "hint": "原因不明持續昏迷",
       "orders": [
         ["x", "Continuous EEG（1 hr 內，至少 48 hr）", "可能只表現為昏迷或細微抽動"],
-        ["m", "Lorazepam 0.1 mg/kg IV（最多 4 mg），5–10 min 可重複", "確定癲癇重積後首選；推速 ≤2 mg/min"],
-        ["m", "Fosphenytoin / Phenytoin IV + 心臟監測", "BZD 之後的第二線控制藥"],
-        ["p", "氣道不穩：10 min 內插管", "目標發作後 60 min 內控制"]
+        ["m", "Lorazepam 2 mg/amp：0.1 mg/kg IV（max 4 mg），5–10 min 可重複", "確定癲癇重積後首選；推速 ≤2 mg/min"],
+        ["m", "Levetiracetam 60 mg/kg IV（max 4,500 mg）over 10 min", "院內無 fosphenytoin；LEV 不需心臟監測"],
+        ["p", "氣道不穩：10 min 內插管", "目標發作後 60 min 內控制"],
+        ["m", "Phenytoin 250 mg/5 mL：20 mg/kg IV（≤50 mg/min，配 NS）+ 心臟監測", "替代第二線；低血壓、心律不整", "替代"]
       ] },
     { "name": "顱內壓上升 / 腦疝", "hint": "頭痛嘔吐、瞳孔不等、意識降",
       "orders": [
         ["p", "床頭抬高 >30°，頭部置中", "改善靜脈回流的基本措施"],
         ["p", "SpO2 >94%，維持正常體溫", "缺氧與發燒都會讓顱內壓更高"],
         ["m", "Mannitol 0.5–1 g/kg IV over 5–15 min，q4–6h 可重複", "周邊 IV 可給；依滲透壓間隙決定是否重複"],
-        ["m", "高張食鹽水 (2–23.4%)", "每 4–6 hr 驗 Na，維持 <160"],
+        ["m", "3% NaCl 250 mL IV over 15–30 min", "每 4–6 hr 驗 Na，維持 <160"],
         ["l", "Serum Na、Osmolality q4–6h", "滲透壓治療追蹤；避免 Na <135"],
         ["x", "Brain CT without contrast", "尚未影像者，能安全擺位就做"],
         ["p", "急性阻塞性水腦：緊急 EVD", "影像確認後"],
-        ["m", "Dexamethasone", "只用於腦瘤、膿瘍、細菌/結核腦膜炎的水腫；TBI 與腦出血不用", "腫瘤水腫"]
+        ["m", "Dexamethasone 10 mg IV → 4 mg IV q6h", "只用於腦瘤、膿瘍、細菌/結核腦膜炎的水腫；TBI 與腦出血不用", "腫瘤水腫"]
       ] },
     { "name": "疑急性中風：溶栓", "hint": "4.5 hr 內、明顯失能",
       "orders": [
@@ -81,9 +81,8 @@
         ["x", "CTA head & neck", "疑大血管阻塞且 24 hr 內；不用等 Cr"],
         ["l", "CBC、PT/INR、aPTT、Cr、肝功能", "沒理由懷疑凝血異常時，不必等結果才溶栓"],
         ["x", "ECG、CXR", "要做，但不能延誤溶栓"],
-        ["m", "降壓至 <185/110 再溶栓", "溶栓前血壓門檻"],
-        ["m", "Tenecteplase 0.25 mg/kg IV bolus（最多 25 mg）", "單次 5–10 秒推注"],
-        ["m", "Alteplase 0.9 mg/kg（最多 90 mg）：10% bolus，其餘 60 min", "健保給付為 rt-PA，限 4.5 hr 內"],
+        ["m", "Labetalol 10–20 mg IV 或 Nicardipine 5 mg/hr → <185/110 再溶栓", "溶栓前血壓門檻"],
+        ["m", "Alteplase（Actilyse 50 mg/vial）0.9 mg/kg（max 90 mg）：10% bolus，其餘 60 min", "健保給付為 rt-PA，限 4.5 hr 內"],
         ["p", "溶栓後 BP <180/105 × 24 hr", "神經與血壓 q15min×2h → q30min×6h → q1h 到 24h"],
         ["p", "24 hr 內延後 NG、Foley、A-line", "減少出血；24 hr 追蹤影像後才開抗栓"]
       ] },
@@ -92,38 +91,38 @@
         ["p", "停止 alteplase 輸注", "第一步"],
         ["l", "CBC、PT/INR、aPTT、Fibrinogen、備血", "評估凝血與輸血"],
         ["x", "Brain CT without contrast STAT", "確認出血"],
-        ["m", "Tranexamic acid 1000 mg IV over 10 min", "確認症狀性顱內出血後"],
+        ["m", "Tranexamic acid 500 mg/5 mL ×2（1 g）IV over 10 min", "確認症狀性顱內出血後"],
         ["m", "Cryoprecipitate 10–12 U over 10–30 min", "Fibrinogen 仍 <200（或 150）可再給"]
       ] },
     { "name": "溶栓後血管性水腫", "hint": "嘴唇、舌頭腫",
       "orders": [
         ["p", "停 alteplase 與 ACE inhibitor", "兩者都會加重"],
-        ["m", "Methylprednisolone 125 mg IV", ""],
-        ["m", "Diphenhydramine 50 mg IV", ""],
-        ["m", "Famotidine 20 mg IV", ""],
+        ["m", "Methylprednisolone 125 mg IV（40 mg/vial ×3）", ""],
+        ["m", "Diphenhydramine 30 mg/amp IV", ""],
+        ["m", "Famotidine 20 mg/amp IV", ""],
         ["p", "喉部/軟顎/口底受影響：準備清醒內視鏡插管", "30 min 內快速進展的插管風險高", "喉部受累"]
       ] },
     { "name": "中風抗血小板", "hint": "缺血性中風、未溶栓",
       "orders": [
-        ["m", "Aspirin（48 hr 內開始）", "溶栓開始後 90 min 內不給 IV aspirin"],
-        ["m", "Aspirin + Clopidogrel × 21 天", "NIHSS ≤3 的輕微中風或高風險 TIA (ABCD2 ≥4)，24 hr 內開始", "輕微中風"]
+        ["m", "Aspirin 100 mg ×3（300 mg）嚼碎 → 100 mg QD（48 hr 內開始）", "溶栓開始後 90 min 內不給 IV aspirin"],
+        ["m", "Aspirin 100 mg + Clopidogrel 300 mg 負荷 → 75 mg QD × 21 天", "NIHSS ≤3 的輕微中風或高風險 TIA (ABCD2 ≥4)，24 hr 內開始", "輕微中風"]
       ] },
     { "name": "酒精戒斷", "hint": "停酒 6–24 hr、手抖、冒汗、心搏快",
       "orders": [
         ["l", "CIWA-Ar 評分", "<10 輕、10–18 中、≥19 重；已譫妄改用 CAM-ICU/RASS"],
         ["l", "電解質、Mg、P、肝腎功能、CBC、血糖", "不要等結果才治療"],
-        ["m", "Chlordiazepoxide 25–100 mg PO q4–6h PRN CIWA ≥10", "中度：症狀觸發給藥，長效 BZD 較好", "中度"],
-        ["m", "Diazepam 20 mg q1h 直到 CIWA <10", "重度：front loading", "重度"],
-        ["m", "Lorazepam IV", "肝病明顯時用較少肝代謝的 BZD；戒斷癲癇首選", "肝病/癲癇"],
-        ["m", "Thiamine 100 mg IV/IM QD × 3–5 天", "預防 Wernicke"],
-        ["m", "補 Mg / 補 P", "低 Mg、心律不整或曾戒斷癲癇；P <1 mg/dL 要補"],
-        ["m", "Phenobarbital 10 mg/kg IV over 30 min", "難治型，限 ICU 等高度監測", "難治"],
+        ["m", "Diazepam 5–10 mg PO q6h PRN CIWA ≥10", "院內 chlordiazepoxide 只有 5 mg 錠；diazepam 長效、同樣 symptom-triggered", "中度"],
+        ["m", "Diazepam 10 mg/2 mL：10–20 mg IV q1h 直到 CIWA <10", "重度：front loading", "重度"],
+        ["m", "Lorazepam 1–2 mg PO/IV q4–6h PRN", "肝病明顯時用較少肝代謝的 BZD；戒斷癲癇首選", "肝病/癲癇"],
+        ["m", "Vitamin B complex amp（B1 60 mg/amp） ×2 IV/IM QD × 3–5 天", "院內無單方 thiamine 針，以 B 群針 B1 含量換算；給糖前先打"],
+        ["m", "MgSO4 10% 20 mL（2 g）IV over 1 hr；P 低：Potassium phosphate 15 mmol IV over 4 hr", "低 Mg、心律不整或曾戒斷癲癇；P <1 mg/dL 要補"],
+        ["m", "Phenobarbital 100 mg/amp：10 mg/kg IV over 30 min", "難治型，限 ICU 等高度監測", "難治"],
         ["p", "重評：前 24 hr 每 1–4 hr", "戒斷癲癇後每 1–2 hr，持續 6–24 hr"]
       ] },
     { "name": "肝性腦病變", "hint": "肝硬化 + 嗜睡、撲翼震顫",
       "orders": [
-        ["m", "Lactulose 25 mL PO/NG q1–2h 直到解軟便，再調至每日 2–3 次", "第一線；過量會脫水、高血鈉、吸入"],
-        ["m", "Lactulose enema", "無法口服或合併消化道出血要清腸", "不能口服"],
+        ["m", "Lactulose 30 mL PO/NG q1–2h 直到解軟便，再調至每日 2–3 次", "第一線；過量會脫水、高血鈉、吸入"],
+        ["m", "Lactulose 300 mL + 水 700 mL 保留灌腸 q4–6h", "無法口服或合併消化道出血要清腸", "不能口服"],
         ["l", "CBC、電解質、腎功能、血液與尿液培養", "找誘發因素：感染、出血、電解質、利尿劑、便秘"],
         ["l", "NH3", "單獨升高沒有分期價值，但正常要重新想診斷"],
         ["x", "Brain CT", "首次發作或懷疑他因；此族群顱內出血風險高"]
@@ -142,7 +141,7 @@
       ] },
     { "name": "嚴重低血鈣", "hint": "Ca <1.9 mmol/L 或有症狀",
       "orders": [
-        ["m", "10% Calcium gluconate 10–20 mL + D5W 50–100 mL IV over 10 min", "醫療急症"],
+        ["m", "10% Calcium gluconate 10 mL ×1–2 amp + D5W 100 mL IV over 10 min", "醫療急症"],
         ["x", "ECG monitor", "長 QT；用 digoxin 要持續監測"]
       ] }
   ]

@@ -3,29 +3,29 @@
   "items": [
     { "name": "低血鎂（重度 / 有症狀）", "hint": "顫抖、抽搐、心律不整",
       "orders": [
-        ["m", "MgSO4 2 g（8 mmol）IV over 15 min", "台灣品項 100 mg/mL"],
-        ["m", "MgSO4 2 g IV over 10 min", "合併癲癇", "癲癇"],
+        ["m", "MgSO4 10% 20 mL（2 g，8 mmol）IV over 15 min", "台灣品項 100 mg/mL"],
+        ["m", "MgSO4 10% 20 mL（2 g）IV over 10 min", "合併癲癇", "癲癇"],
         ["x", "ECG", "PR/QT 延長、TdP"],
         ["l", "K、Ca、Cr", "低 K 要同時補；腎差血鎂會快速上升"],
         ["p", "監測反射、呼吸、尿量", "防高血鎂"]
       ] },
     { "name": "低血鎂（輕度）", "hint": "",
       "orders": [
-        ["m", "Magnesium oxide 250 mg PO", "腎差避免；腸胃不耐換鎂鹽"],
+        ["m", "Magnesium oxide 250 mg ×1–2 PO TID", "腎差避免；腸胃不耐換鎂鹽"],
         ["p", "檢視 PPI、利尿劑、腹瀉、引流", "PPI 相關可能要停藥才會好"]
       ] },
     { "name": "低鎂合併低鈣", "hint": "",
       "orders": [
-        ["m", "MgSO4 6 g in NS/D5W 500 mL over 24 hr", "輕度無症狀低鈣"],
+        ["m", "MgSO4 10% 20 mL ×3（6 g）in NS 500 mL over 24 hr", "輕度無症狀低鈣"],
         ["l", "Mg、Ca 追到正常", ""]
       ] },
     { "name": "Torsades de pointes", "hint": "",
       "orders": [
         ["p", "非同步電擊", "持續或不穩定"],
-        ["m", "MgSO4 2 g IV over 1–10 min（可重複）", "血鎂正常也有效"],
-        ["m", "KCl → K ≥4.0（4.5–5）", ""],
+        ["m", "MgSO4 10% 20 mL（2 g）IV over 1–10 min（可重複）", "血鎂正常也有效"],
+        ["m", "KCl premix → K ≥4.0（4.5–5）", ""],
         ["p", "停 QT 延長藥", ""],
-        ["m", "Isoproterenol / 起搏", "補鎂後仍反覆", "反覆"]
+        ["m", "Isoproterenol 0.2 mg/amp：2–10 mcg/min / 起搏", "補鎂後仍反覆", "反覆"]
       ] },
     { "name": "高血鎂", "hint": "Mg >1.75 mmol/L 或有症狀",
       "orders": [

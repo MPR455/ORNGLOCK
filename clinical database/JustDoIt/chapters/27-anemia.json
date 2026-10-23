@@ -8,7 +8,7 @@
         ["p", "看黑便、血便、傷口、引流管、後腹腔痛", ""],
         ["x", "CT abdomen/pelvis", "疑後腹腔出血（處置後背/腰痛）", "疑後腹腔"],
         ["x", "CTA", "持續血便", "血便"],
-        ["m", "Crystalloid", "不穩定先補液", "不穩"]
+        ["m", "NS / Lactated Ringer", "不穩定先補液", "不穩"]
       ] },
     { "name": "輸血門檻", "hint": "",
       "orders": [
@@ -20,10 +20,10 @@
     { "name": "抗凝劑使用者出血", "hint": "",
       "orders": [
         ["p", "停抗凝；非大出血不常規逆轉", ""],
-        ["m", "4F-PCC 依 INR + Vitamin K 5–10 mg IV", "Warfarin 大出血", "Warfarin"],
-        ["m", "Idarucizumab 5 g IV", "Dabigatran", "Dabigatran"],
-        ["m", "PCC / aPCC", "Xa 抑制劑", "Xa 抑制劑"],
-        ["m", "Desmopressin", "尿毒血小板功能異常", "尿毒"]
+        ["m", "PCC（Human prothrombin complex 500 IU/vial） 依 INR + Vitamin K1 10 mg IV", "Warfarin 大出血", "Warfarin"],
+        ["m", "Idarucizumab（Praxbind）5 g IV", "Dabigatran", "Dabigatran"],
+        ["m", "PCC（Human prothrombin complex 500 IU/vial） 50 U/kg", "Xa 抑制劑", "Xa 抑制劑"],
+        ["m", "Desmopressin 4 mcg/mL：0.3 mcg/kg IV", "尿毒血小板功能異常", "尿毒"]
       ] },
     { "name": "穩定貧血：分型", "hint": "",
       "orders": [
@@ -36,15 +36,15 @@
       ] },
     { "name": "缺鐵性貧血", "hint": "Ferritin <30（發炎時 <100）",
       "orders": [
-        ["m", "Ferrous sulfate 1 錠 PO QD（空腹）", "不要因等內視鏡延後補鐵"],
+        ["m", "Ferrous sulfate 324 mg（Fe 64 mg）1 錠 PO QD（空腹）", "不要因等內視鏡延後補鐵"],
         ["m", "隔日一錠", "不耐受", "不耐受"],
-        ["m", "IV iron（Ferric carboxymaltose ≤20 mg/kg 或 1000 mg）", "口服無效、吸收不良、持續出血、CKD；菌血症暫緩", "口服不行"],
+        ["m", "Iron sucrose 20 mg/mL：200 mg IV over 30 min，每週 2–3 次至補足", "院內無 ferric carboxymaltose", "口服不行"],
         ["l", "2–4 週後 Hb", "升 ≥1 g/dL 表示有效"],
         ["l", "Phosphate", "IV ferric carboxymaltose 低磷常見", "IV 鐵"]
       ] },
     { "name": "B12 / 葉酸缺乏", "hint": "",
       "orders": [
-        ["m", "Hydroxocobalamin 1000 mcg IM 每週 3 次 × 2 週", "無神經症狀；B12 和葉酸都低先給 B12"],
+        ["m", "Hydroxocobalamin 1000 mcg/amp IM 每週 3 次 × 2 週", "無神經症狀；B12 和葉酸都低先給 B12"],
         ["m", "Hydroxocobalamin 1000 mcg IM 隔日", "有神經症狀，不要延遲", "神經症狀"],
         ["m", "Folic acid 5 mg PO QD × 4 個月", "先補 B12 再補葉酸"],
         ["l", "Intrinsic factor antibody", ""],
@@ -61,7 +61,7 @@
     { "name": "CKD 貧血", "hint": "",
       "orders": [
         ["l", "Ferritin、TSAT", "先補鐵"],
-        ["m", "ESA", "透析者 Hb ≤9–10 開始；目標 <11.5"],
+        ["m", "Epoetin beta（Recormon）2000–5000 IU SC 每週 1–3 次（Hb 目標 10–11.5）", "透析者 Hb ≤9–10 開始；目標 <11.5"],
         ["l", "Hb q2–4 週", "每月上升 ≤1 g/dL"]
       ] }
   ]

@@ -4,7 +4,7 @@
     { "name": "消化道出血：第一輪", "hint": "吐血、黑便、咖啡渣、血便",
       "orders": [
         ["p", "2 條大號 IV", "肝硬化至少兩條"],
-        ["m", "Crystalloid 500 mL IV over 15 min", "血行動力不穩；不用膠體"],
+        ["m", "NS / Lactated Ringer 500 mL IV over 15 min", "血行動力不穩；不用膠體"],
         ["l", "CBC、BUN/Cr、PT/INR、aPTT、Fibrinogen", "BUN 用來算 GBS"],
         ["l", "Type & screen（輸血前）", ""],
         ["l", "Lactate", ""],
@@ -24,8 +24,8 @@
     { "name": "上消化道出血（非靜脈曲張）", "hint": "",
       "orders": [
         ["x", "EGD 24 hr 內", "不穩定者復甦後隨即做"],
-        ["m", "Pantoprazole 80 mg IV bolus", "內視鏡前可考慮，但不延後內視鏡"],
-        ["m", "PPI 80 mg bolus → 8 mg/hr × 72 hr", "高風險病灶止血後", "止血後"],
+        ["m", "Pantoprazole 40 mg/vial ×2（80 mg）IV bolus", "內視鏡前可考慮，但不延後內視鏡"],
+        ["m", "Pantoprazole 80 mg bolus → 8 mg/hr × 72 hr", "高風險病灶止血後", "止血後"],
         ["l", "H. pylori test", "首次內視鏡時驗"],
         ["p", "Aspirin（次級預防）不停", "若停 3–5 天內恢復"],
         ["p", "不用 Tranexamic acid", "沒降死亡，血栓與癲癇反而增加"],
@@ -33,13 +33,13 @@
       ] },
     { "name": "靜脈曲張出血", "hint": "肝硬化病人出血",
       "orders": [
-        ["m", "Octreotide 50 mcg IV bolus → 50 mcg/hr × 2–5 天", "不必等內視鏡"],
-        ["m", "Terlipressin 2 mg IV q4h × 48 hr → 1 mg q4h", "缺血性心臟病小心；監測 Na", "替代"],
+        ["m", "Octreotide 100 mcg/amp：50 mcg IV bolus → 25–50 mcg/hr × 2–5 天", "不必等內視鏡"],
+        ["m", "Terlipressin 1 mg/vial：2 mg IV q4h × 48 hr → 1 mg q4h", "缺血性心臟病小心；監測 Na", "替代"],
         ["m", "Ceftriaxone 1 g IV q24h（≤7 天）", "預防感染，就診時就給"],
         ["m", "pRBC 目標 Hb 7–8", "過度輸血會升門脈壓"],
         ["x", "EGD + EVL 12 hr 內", ""],
-        ["m", "Erythromycin IV（內視鏡前）", "清胃，視野較好"],
-        ["m", "Lactulose", "預防肝性腦病變"],
+        ["m", "Erythromycin 500 mg/vial：250 mg IV over 30 min（內視鏡前 30–120 min）", "清胃，視野較好"],
+        ["m", "Lactulose 30 mL PO/NG q6h", "預防肝性腦病變"],
         ["p", "Early TIPS 72 hr 內", "Child C 10–13 或 Child B >7 + 活動性出血", "高風險"],
         ["p", "Balloon tamponade（≤24 hr）或食道支架", "內視鏡止血失敗的橋接", "止血失敗"],
         ["p", "不輸 FFP", "無法矯正凝血、加重門脈高壓"]
@@ -49,20 +49,20 @@
         ["p", "先排除上消化道來源（EGD）", "血便 + 不穩定可能是上消化道"],
         ["x", "CTA abdomen", "持續且血行動力顯著的出血"],
         ["p", "Angiography + embolization", "CTA 見外滲", "CTA 陽性"],
-        ["m", "PEG 4–6 L bowel prep", "非緊急住院大腸鏡前"],
+        ["m", "Klean-prep（PEG 3350）4 包泡 4 L", "非緊急住院大腸鏡前"],
         ["x", "Colonoscopy（非緊急住院）", ""]
       ] },
     { "name": "Warfarin + 嚴重出血", "hint": "主要出血",
       "orders": [
-        ["m", "4F-PCC：INR 2–4 → 25 U/kg；4–6 → 35 U/kg；>6 → 50 U/kg（max 5000）", ""],
-        ["m", "Vitamin K 5–10 mg IV", "與 PCC 一起給"],
+        ["m", "PCC（Human prothrombin complex 500 IU/vial）：INR 2–4 → 25 U/kg；4–6 → 35 U/kg；>6 → 50 U/kg（max 5000）", ""],
+        ["m", "Vitamin K1 10 mg/amp：10 mg slow IV", "與 PCC 一起給"],
         ["m", "FFP 10–15 mL/kg", "沒有 PCC 時", "無 PCC"]
       ] },
     { "name": "DOAC + 嚴重出血", "hint": "主要出血",
       "orders": [
-        ["m", "Idarucizumab 5 g IV（2.5 g ×2）", "Dabigatran", "Dabigatran"],
-        ["m", "PCC 50 U/kg IV（max 4000）", "Xa 抑制劑或無 idarucizumab", "Xa 抑制劑"],
-        ["m", "Activated charcoal", "2–4 hr 內服藥", "剛吃藥"],
+        ["m", "Idarucizumab（Praxbind）5 g IV（2.5 g ×2）", "Dabigatran", "Dabigatran"],
+        ["m", "PCC（Human prothrombin complex 500 IU/vial） 50 U/kg IV（max 4000）", "Xa 抑制劑或無 idarucizumab", "Xa 抑制劑"],
+        ["m", "Activated charcoal 50 g PO", "2–4 hr 內服藥", "剛吃藥"],
         ["l", "Anti-Xa / TT", "PT、aPTT 正常不能排除藥效"]
       ] }
   ]

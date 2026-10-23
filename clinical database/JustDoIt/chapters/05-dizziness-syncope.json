@@ -16,12 +16,12 @@
     { "name": "有症狀的心搏過緩", "hint": "HR 慢 + 低血壓/意識變",
       "orders": [
         ["m", "Atropine 0.5–1 mg IV q3–5min（max 3 mg）", "AV node 層級較有效；寬 QRS/結下阻滯可能加重"],
-        ["m", "Dopamine 5–20 mcg/kg/min IV", "atropine 無效且冠心缺血機率低", "atropine 無效"],
-        ["m", "Epinephrine 2–10 mcg/min IV", "依效果調", "atropine 無效"],
-        ["m", "Isoproterenol 1–20 mcg/min IV", "監測缺血性胸痛", "atropine 無效"],
+        ["m", "Dopamine premix 400 mg/250 mL：5–20 mcg/kg/min", "atropine 無效且冠心缺血機率低", "atropine 無效"],
+        ["m", "Epinephrine 1 mg in NS 250 mL：2–10 mcg/min", "依效果調", "atropine 無效"],
+        ["m", "Isoproterenol 0.2 mg/amp：1–20 mcg/min", "監測缺血性胸痛", "atropine 無效"],
         ["p", "Transcutaneous pacing", "藥物無效、血行動力不穩的過渡", "藥物無效"],
-        ["m", "Calcium IV / Glucagon / High-dose insulin", "CCB 或 β-blocker 過量", "藥物中毒"],
-        ["m", "Digoxin Fab", "Digoxin 中毒", "Digoxin"]
+        ["m", "5% Calcium chloride 20 mL（1 g）/ Glucagon 3–5 mg IV / Actrapid 1 U/kg", "CCB 或 β-blocker 過量", "藥物中毒"],
+        ["m", "Atropine 0.5–1 mg IV + MgSO4 2 g IV", "院內無 Digoxin Fab；補 K/Mg、必要時起搏", "Digoxin"]
       ] },
     { "name": "急性持續頭暈 (AVS)", "hint": "持續眩暈 + 自發眼震",
       "orders": [
@@ -29,26 +29,26 @@
         ["x", "MRI-DWI + MRA（stroke protocol）", "HINTS 中樞或不確定；CT 對缺血敏感度低"],
         ["x", "Brain CT", "劇烈頭痛、嗜睡、無法坐站，疑出血", "疑出血"],
         ["x", "CT/CTA", "4.5 hr 內可能再灌流", "再灌流候選"],
-        ["m", "Tenecteplase 0.25 mg/kg（max 25 mg）", "4.5 hr 內符合溶栓條件", "溶栓"]
+        ["m", "Alteplase（Actilyse）0.9 mg/kg（max 90 mg）", "4.5 hr 內符合溶栓條件", "溶栓"]
       ] },
     { "name": "BPPV", "hint": "轉頭誘發、數秒到數分",
       "orders": [
         ["p", "Dix-Hallpike", "陽性：扭轉上跳眼震，潛伏 5–20 秒、60 秒內消"],
         ["p", "Epley maneuver", "後半規管；可診斷當下做"],
         ["p", "Supine roll test → BBQ roll / Gufoni", "水平半規管", "水平型"],
-        ["m", "止吐藥（手法前 30–60 min）", "曾嚴重噁心者", "嚴重噁心"],
+        ["m", "Meclizine 25 mg PO 或 Diphenidol 25 mg PO（手法前 30–60 min）", "曾嚴重噁心者", "嚴重噁心"],
         ["p", "不用 meclizine 等前庭抑制劑", "會干擾代償"]
       ] },
     { "name": "前庭神經炎", "hint": "持續眩暈 >24 hr，HINTS 全周邊",
       "orders": [
-        ["m", "前庭抑制劑 ≤3–5 天", "只短期；老人避免第一代抗組織胺與 BZD"],
-        ["m", "短期類固醇", "3 天內就醫，與病人共同決策", "3 天內"],
+        ["m", "Meclizine 25 mg PO TID 或 Dimenhydrinate 50 mg PO q6h，≤3 天", "只短期；老人避免第一代抗組織胺與 BZD"],
+        ["m", "Prednisolone 5 mg/tab：50 mg PO QD × 5 天 → 5 天減量", "3 天內就醫，與病人共同決策", "3 天內"],
         ["p", "轉介前庭復健", ""]
       ] },
     { "name": "姿勢性低血壓", "hint": "站起來暈",
       "orders": [
         ["p", "檢視並減停降壓藥、利尿劑、α-blocker、TCA", "藥物是最常見原因"],
-        ["m", "IV 或 PO 含鈉補液", "急性脫水所致"],
+        ["m", "NS 500 mL IV over 1 hr（或口服水 + 鹽）", "急性脫水所致"],
         ["l", "CBC、BUN/Cr", "找出血、脫水"],
         ["m", "Midodrine 2.5–10 mg PO TID", "非藥物無效時", "持續"],
         ["m", "Fludrocortisone 0.1–0.3 mg PO QD", "高血壓、心衰不用；監測 K", "持續"]
@@ -64,13 +64,13 @@
         ["l", "四肢血壓", ""],
         ["l", "D-dimer", "只用於低機率者", "低機率"],
         ["x", "CT aortography", "第一線影像"],
-        ["m", "IV β-blocker（如 esmolol / labetalol）", "目標 SBP <120、HR ≤60"],
+        ["m", "Esmolol 100 mg/10 mL：500 mcg/kg → 50–300 mcg/kg/min（或 Labetalol 20 mg IV）", "目標 SBP <120、HR ≤60"],
         ["p", "A-line、ICU", ""]
       ] },
     { "name": "昏厥 + 喘（疑 PE）", "hint": "",
       "orders": [
         ["x", "CTPA", "穩定者；不穩定改床邊心超"],
-        ["m", "Heparin IV（UFH）", "高/中機率，檢查中就開始"],
+        ["m", "Heparin 25,000 U/5 mL：80 U/kg IV bolus → 18 U/kg/hr", "高/中機率，檢查中就開始"],
         ["x", "Bedside echo", "低血壓、疑高風險", "不穩定"]
       ] },
     { "name": "昏厥後跌倒受傷", "hint": "",

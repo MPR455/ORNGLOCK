@@ -20,42 +20,42 @@
     { "name": "乳酸升高", "hint": ">2 mmol/L",
       "orders": [
         ["l", "Lactate q2h × 8 hr → q8–12h", "每 2 hr 降 ≥10% 較好"],
-        ["m", "Crystalloid 30 mL/kg（敗血症）", "不要為了乳酸正常持續輸液"],
+        ["m", "Lactated Ringer 30 mL/kg（敗血症）", "不要為了乳酸正常持續輸液"],
         ["p", "停 metformin（AKI 時）", ""],
         ["l", "Blood culture", "疑敗血症"]
       ] },
     { "name": "毒性醇類（甲醇 / 乙二醇）", "hint": "",
       "orders": [
         ["l", "AG、osmolal gap、methanol / ethylene glycol level、UA（草酸結晶）、ECG", "OG <30 也不能排除"],
-        ["m", "Fomepizole 15 mg/kg IV", "高度懷疑就給，不等檢驗"],
-        ["m", "Folic / folinic acid", "甲醇", "甲醇"],
+        ["m", "Fomepizole 1.5 g/1.5 mL：15 mg/kg IV over 30 min → 10 mg/kg q12h", "高度懷疑就給，不等檢驗"],
+        ["m", "Calcium folinate 50 mg IV q6h（甲醇）", "甲醇", "甲醇"],
         ["p", "透析：甲醇 pH ≤7.15 或 AG >24", "轉可透析醫院"],
         ["p", "聯絡毒物中心", ""]
       ] },
     { "name": "水楊酸中毒", "hint": "",
       "orders": [
-        ["m", "IV fluid 補足容積", ""],
-        ["m", "Sodium bicarbonate IV（尿 pH 7.5–8.7）", "鹼化尿液"],
+        ["m", "NS / Lactated Ringer 補足容積", ""],
+        ["m", "Sodium bicarbonate 7% 20 mL ×5（≈84 mEq）in D5W 1 L，150 mL/hr（尿 pH 7.5–8）", "鹼化尿液"],
         ["l", "Salicylate level 重複、K", ""],
         ["p", "緊急透析", "意識改變、ARDS、>100 mg/dL（腎差 >90）", "嚴重"]
       ] },
     { "name": "要不要補鹼", "hint": "",
       "orders": [
-        ["m", "Sodium bicarbonate", "敗血症 pH ≤7.2 + AKI 2–3 期", "pH ≤7.2 + AKI"],
-        ["m", "8.4% NaHCO3 100 mmol + 無菌水 400 mL q2h 到 pH >7", "DKA pH <7.0 可考慮", "DKA pH <7"],
+        ["m", "Sodium bicarbonate 7% 20 mL（16.7 mEq/amp）：目標 pH >7.3", "敗血症 pH ≤7.2 + AKI 2–3 期", "pH ≤7.2 + AKI"],
+        ["m", "Sodium bicarbonate 7% 20 mL ×6（100 mEq）+ 無菌水 400 mL over 2 hr", "DKA pH <7.0 可考慮", "DKA pH <7"],
         ["p", "單純乳酸酸中毒不給", "會低 K、腦水腫"]
       ] },
     { "name": "正常 AG 酸中毒", "hint": "高氯性",
       "orders": [
         ["p", "想：腹瀉、大量 NS、DKA 恢復期、RTA", ""],
-        ["m", "改用 Balanced crystalloid", "大量 NS 所致"],
+        ["m", "改用 Lactated Ringer", "大量 NS 所致"],
         ["l", "Cl 每日", "用 NS 時"]
       ] },
     { "name": "呼吸性酸中毒", "hint": "PaCO2 >45 + pH <7.35",
       "orders": [
         ["p", "O2 目標 88–92%（Venturi 24–28%）", "過度給氧會加重"],
         ["p", "BiPAP", "COPD pH ≤7.35；1–4 hr 看改善"],
-        ["m", "Naloxone", "opioid", "opioid"],
+        ["m", "Naloxone 0.4 mg IV", "opioid", "opioid"],
         ["l", "FVC", "神經肌肉病", "神經肌肉"],
         ["p", "插管", "NIV 失敗或快速惡化", "NIV 失敗"]
       ] },
@@ -63,9 +63,9 @@
       "orders": [
         ["l", "Urine Na、Cl、K", "嘔吐：尿 Cl 低"],
         ["m", "NS", "低氯、容積不足"],
-        ["m", "KCl + 補 Mg", ""],
+        ["m", "KCl（premix 20 mEq/500 mL 或 PO）+ MgSO4 2 g", ""],
         ["p", "停利尿劑或改 spironolactone", ""],
-        ["m", "Acetazolamide", "嚴重鹼中毒合併水腫", "水腫"]
+        ["m", "Acetazolamide 250 mg ×1–2 PO QD", "嚴重鹼中毒合併水腫", "水腫"]
       ] },
     { "name": "呼吸性鹼中毒", "hint": "過度換氣",
       "orders": [

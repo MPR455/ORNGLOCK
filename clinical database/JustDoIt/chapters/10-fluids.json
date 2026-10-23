@@ -3,7 +3,7 @@
   "items": [
     { "name": "維持輸液", "hint": "不能吃喝、無需復甦",
       "orders": [
-        ["m", "水 25–30 mL/kg/day（如 0.18% NaCl / D4W + KCl 27 mmol/L）", "Na/K/Cl 各 ~1 mmol/kg/day、糖 50–100 g/day"],
+        ["m", "NaCl 0.225% + 5% Glucose（1/4 S）+ KCl 20 mEq/L：水 25–30 mL/kg/day", "Na/K/Cl 各 ~1 mmol/kg/day、糖 50–100 g/day"],
         ["m", "20–25 mL/kg/day", "老人、衰弱、腎差、心衰、再餵食風險", "低耐受"],
         ["l", "BUN/Cr、電解質每日；體重每週 2 次", ""],
         ["l", "Cl 每日", "用 NS 等 Cl >120 的輸液時"],
@@ -11,25 +11,25 @@
       ] },
     { "name": "低血壓：首輪輸液", "hint": "SBP <100、HR >90、CRT >2 s",
       "orders": [
-        ["m", "Crystalloid（Na 130–154）500 mL over 15 min", "一般住院成人；每次後重評"],
-        ["m", "Balanced crystalloid 250 mL over 10–15 min，最多 1000 mL", "疑敗血症高風險，1 hr 內", "敗血症"],
+        ["m", "NS 或 Lactated Ringer 500 mL over 15 min", "一般住院成人；每次後重評"],
+        ["m", "Lactated Ringer 250 mL over 10–15 min，最多 1000 mL", "疑敗血症高風險，1 hr 內", "敗血症"],
         ["p", "被動抬腿 (PLR)", "30–90 秒內改善 = 有輸液反應"],
         ["l", "Lactate、Blood culture", "疑敗血症"],
         ["x", "Bedside echo", "釐清休克類型"],
-        ["m", "Norepinephrine（可先周邊）", "輸液後仍低；MAP 目標 65", "持續低血壓"]
+        ["m", "Norepinephrine 4 mg/4 mL：8 mg in D5W 250 mL，0.05–0.5 mcg/kg/min", "輸液後仍低；MAP 目標 65", "持續低血壓"]
       ] },
     { "name": "體液過多：利尿", "hint": "穩定、不需復甦",
       "orders": [
-        ["m", "Furosemide 40 mg IV", "未用過者；已在用者給口服劑量兩倍"],
+        ["m", "Furosemide 20 mg/amp ×2（40 mg）IV", "未用過者；已在用者給口服劑量兩倍"],
         ["l", "Spot urine Na 2 hr / 尿量 6 hr", "尿鈉 ≥70 或尿量 ≥100 mL/hr 算有效"],
-        ["m", "Furosemide 加倍 或 + Acetazolamide 500 mg IV QD", "反應不足", "反應差"],
-        ["m", "Metolazone 2.5–5 mg", "利尿劑抗性；監測電解質", "抗性"],
+        ["m", "Furosemide 加倍 或 + Acetazolamide 250 mg ×2 PO QD", "反應不足", "反應差"],
+        ["m", "Indapamide 1.5 mg PO QD 或 Benzyl hydrochlorothiazide 4 mg PO", "院內無 metolazone；thiazide 序列阻斷", "抗性"],
         ["l", "Cr、電解質 q24h", ""]
       ] },
     { "name": "Albumin 適應症", "hint": "",
       "orders": [
-        ["m", "Albumin 6–8 g / 每放 1 L 腹水", "放腹水 >5 L"],
-        ["m", "Albumin 1.5 g/kg（D1）、1 g/kg（D3）", "SBP", "SBP"],
+        ["m", "20% Albumin 100 mL（20 g）：每放 1 L 腹水 6–8 g", "放腹水 >5 L"],
+        ["m", "20% Albumin：1.5 g/kg（D1）、1 g/kg（D3）", "SBP", "SBP"],
         ["m", "20% Albumin 1 g/kg（max 100 g）× 2 天", "肝硬化 AKI", "肝硬化 AKI"],
         ["p", "不因白蛋白低就輸", "一般復甦用晶體液"]
       ] },
@@ -37,13 +37,13 @@
       "orders": [
         ["m", "NS 500 mL over 10–15 min（可重複）", "SBP <90", "SBP <90"],
         ["m", "NS 1 L over 1 hr → 1 L/2 hr → 1 L/2 hr → 1 L/4 hr", "SBP ≥90"],
-        ["m", "每 L 加 KCl 40 mmol", "K 3.5–5.5；>5.5 不加；<3.5 先補鉀再 insulin"],
-        ["m", "加 10% Dextrose 125 mL/hr", "血糖 <252 mg/dL", "BS <252"],
+        ["m", "每 L 加 KCl 40 mEq（15% KCl 20 mEq/10 mL ×2）", "K 3.5–5.5；>5.5 不加；<3.5 先補鉀再 insulin"],
+        ["m", "改 D5S（5% Glucose + 0.9% NaCl）或加 10% Glucose 125 mL/hr", "血糖 <252 mg/dL", "BS <252"],
         ["p", "尿量 ≥0.5 mL/kg/hr", "補鉀前確認有尿"]
       ] },
     { "name": "橫紋肌溶解 / TLS 補液", "hint": "",
       "orders": [
-        ["m", "IV fluid 1.5 L/hr，尿量 200–300 mL/hr", "橫紋肌溶解；避免只用 NS"],
+        ["m", "Lactated Ringer / NS 1.5 L/hr，尿量 200–300 mL/hr", "橫紋肌溶解；避免只用 NS"],
         ["m", "PO 2–3 L/day ± IV", "TLS；不補 K 與 P", "TLS"]
       ] },
     { "name": "輸血門檻", "hint": "穩定的住院成人",
@@ -55,7 +55,7 @@
     { "name": "輸液外滲 / 靜脈炎", "hint": "",
       "orders": [
         ["p", "停止輸注、用小針筒抽吸後拔管", "不要沖管、不加壓"],
-        ["m", "Phentolamine 局部注射", "升壓劑外滲首選", "升壓劑"],
+        ["m", "NTG tts 25 mg patch 貼外滲處", "院內無 phentolamine；局部硝酸鹽擴張血管", "升壓劑"],
         ["p", "靜脈炎：拔管，疑感染送培養", ""]
       ] }
   ]

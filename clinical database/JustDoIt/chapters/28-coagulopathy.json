@@ -10,34 +10,34 @@
       ] },
     { "name": "Warfarin 大出血", "hint": "",
       "orders": [
-        ["m", "4F-PCC：INR 2–4 → 25 U/kg；4–6 → 35；>6 → 50（max 5000 U）", "或固定劑量：非顱內 1000 U、顱內 1500 U"],
-        ["m", "Vitamin K 5–10 mg slow IV（in NS 25–50 mL，15–30 min）", "一定要和 PCC 一起給"],
+        ["m", "PCC（Human prothrombin complex 500 IU/vial）：INR 2–4 → 25 U/kg；4–6 → 35；>6 → 50（max 5000 U）", "或固定劑量：非顱內 1000 U、顱內 1500 U"],
+        ["m", "Vitamin K1 10 mg slow IV（in NS 50 mL，15–30 min）", "一定要和 PCC 一起給"],
         ["l", "INR（PCC 後）", "不足可追加"],
         ["m", "FFP 10–15 mL/kg", "沒有 PCC 時", "無 PCC"]
       ] },
     { "name": "Warfarin 非大出血", "hint": "",
       "orders": [
-        ["m", "Vitamin K 2–5 mg PO/IV", "需住院、處置或輸血"],
+        ["m", "Vitamin K1 10 mg/amp：2–5 mg PO/IV", "需住院、處置或輸血"],
         ["p", "暫停 warfarin", ""]
       ] },
     { "name": "Dabigatran 出血", "hint": "",
       "orders": [
-        ["m", "Idarucizumab 5 g IV（2.5 g ×2）", "大出血；不等檢驗"],
-        ["m", "PCC / aPCC 50 U/kg（max 4000）", "沒有 idarucizumab", "無 idarucizumab"],
-        ["m", "Activated charcoal", "2–4 hr 內服藥", "剛吃"],
+        ["m", "Idarucizumab（Praxbind）5 g IV（2.5 g ×2）", "大出血；不等檢驗"],
+        ["m", "PCC（Human prothrombin complex 500 IU/vial） 50 U/kg（max 4000）", "沒有 idarucizumab", "無 idarucizumab"],
+        ["m", "Activated charcoal 50 g PO", "2–4 hr 內服藥", "剛吃"],
         ["p", "可透析移除", "", "腎差"],
         ["l", "TT", "正常可排除有效濃度"]
       ] },
     { "name": "Xa 抑制劑出血", "hint": "Apixaban / Rivaroxaban / Edoxaban",
       "orders": [
-        ["m", "4F-PCC 2000 U（或 25–50 U/kg）", "關鍵部位或危及生命"],
-        ["m", "Activated charcoal", "2–4 hr 內服藥", "剛吃"],
+        ["m", "PCC（Human prothrombin complex 500 IU/vial） 2000 U（500 IU ×4）或 25–50 U/kg", "關鍵部位或危及生命"],
+        ["m", "Activated charcoal 50 g PO", "2–4 hr 內服藥", "剛吃"],
         ["l", "Anti-Xa（藥物校正）", "PT/aPTT 正常不能排除"],
         ["p", "Andexanet 台灣無藥證", ""]
       ] },
     { "name": "Heparin / LMWH 出血", "hint": "",
       "orders": [
-        ["m", "Protamine 10 mg / 1000 U heparin（≤50 mg/10 min）", "UFH；依距上次給藥時間計算"],
+        ["m", "Protamine 50 mg/5 mL：1 mg / 100 U heparin（≤50 mg/10 min）", "UFH；依距上次給藥時間計算"],
         ["m", "Protamine 0.5–1 mg / mg enoxaparin", "LMWH 只中和 30–40%（<8 hr 用 1 mg）", "LMWH"],
         ["p", "Fondaparinux 無解毒劑", ""]
       ] },
@@ -46,7 +46,7 @@
         ["p", "停止溶栓劑", ""],
         ["l", "CBC、PT、aPTT、Fibrinogen、備血", ""],
         ["m", "Cryoprecipitate 10 U over 10–30 min", "Fibrinogen ≥150–200"],
-        ["m", "Tranexamic acid 1000 mg IV over 10 min", ""],
+        ["m", "Tranexamic acid 500 mg ×2（1 g）IV over 10 min", ""],
         ["x", "Brain CT", ""]
       ] },
     { "name": "疑 TTP", "hint": "血小板低 + MAHA",
@@ -54,17 +54,16 @@
         ["l", "Smear、LDH、Haptoglobin、Cr、DAT、Coag、Troponin", ""],
         ["l", "ADAMTS-13（TPE 前抽）", ""],
         ["p", "緊急血漿置換（TPE）", ""],
-        ["m", "Prednisone 1 mg/kg/day 或 Methylprednisolone 125 mg IV BID–QID", ""],
-        ["m", "Caplacizumab + Rituximab", "免疫性 TTP", "iTTP"],
+        ["m", "Methylprednisolone 500 mg/vial：1 g IV QD × 3 天 或 Prednisolone 1 mg/kg/day", ""],
+        ["m", "Caplacizumab 10 mg IV → 10 mg SC QD + Rituximab 375 mg/m² 每週", "免疫性 TTP", "iTTP"],
         ["p", "不預防性輸血小板、不給抗血小板", ""]
       ] },
     { "name": "疑 HIT", "hint": "Heparin 5–14 天後血小板降",
       "orders": [
         ["l", "4Ts score", "≤3 低機率不驗不治療"],
         ["p", "停所有 heparin（UFH、LMWH、封管）", "≥4 分"],
-        ["m", "Argatroban 2 mcg/kg/min IV（aPTT 1.5–3x）", "肝功能差、心衰減量 0.5–1.2"],
-        ["m", "Bivalirudin 0.15 mg/kg/hr（aPTT 1.5–2.5x）", "", "替代"],
-        ["m", "Fondaparinux 7.5 mg SC QD（<50 kg 5 mg、>100 kg 10 mg）", "穩定者", "穩定"],
+        ["m", "Fondaparinux 2.5 mg ×3（7.5 mg）SC QD（<50 kg 5 mg、>100 kg 10 mg）", "院內無 argatroban / bivalirudin；CrCl <30 不用"],
+        ["m", "Rivaroxaban 15 mg BID × 3 週 → 20 mg QD", "穩定、無嚴重腎差；或 Apixaban 10 mg BID ×7 天", "穩定"],
         ["l", "HIT antibody（ELISA）", ""],
         ["p", "血小板 ≥150 前不開 warfarin", ""]
       ] },
@@ -78,11 +77,11 @@
       ] },
     { "name": "維生素 K 缺乏", "hint": "長期抗生素、營養差",
       "orders": [
-        ["m", "Vitamin K 10 mg PO 或 IV", ">12 hr 才開始矯正"]
+        ["m", "Vitamin K1 10 mg PO 或 slow IV", ">12 hr 才開始矯正"]
       ] },
     { "name": "尿毒出血", "hint": "",
       "orders": [
-        ["m", "Desmopressin 0.3 mcg/kg IV（in NS 50 mL，15–30 min）", "1 hr 內起效，維持 6–8 hr"],
+        ["m", "Desmopressin 4 mcg/mL：0.3 mcg/kg IV（in NS 50 mL，15–30 min）", "1 hr 內起效，維持 6–8 hr"],
         ["m", "pRBC：Hct ≥25%", "改善止血"],
         ["p", "透析", ""],
         ["p", "避免輸血小板", ""]

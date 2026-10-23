@@ -11,10 +11,10 @@
     { "name": "喉嚨痛（細菌性）", "hint": "Centor ≥3",
       "orders": [
         ["l", "Rapid strep test", "Centor 0–1 不需"],
-        ["m", "Penicillin V 500 mg PO QID × 5–10 天", ""],
-        ["m", "Cephalexin × 10 天", "PCN 過敏（非過敏性休克）", "PCN 過敏"],
-        ["m", "Clarithromycin 250–500 mg BID × 5 天", "過敏性休克史", "嚴重過敏"],
-        ["m", "Acetaminophen / Ibuprofen", "症狀治療"]
+        ["m", "Penicillin V 400,000 U（250 mg）×2 PO QID × 10 天", ""],
+        ["m", "Cefadroxil 500 mg PO BID × 10 天（或 Cephalexin 500 mg BID）", "PCN 過敏（非過敏性休克）", "PCN 過敏"],
+        ["m", "Azithromycin 250 mg ×2 D1 → 250 mg QD × 4 天", "嚴重 β-lactam 過敏", "嚴重過敏"],
+        ["m", "Acetaminophen 500 mg / Ibuprofen 400 mg PO q6–8h", "症狀治療"]
       ] },
     { "name": "深頸部感染", "hint": "頸腫、牙關緊閉、口底腫",
       "orders": [
@@ -24,15 +24,15 @@
       ] },
     { "name": "急性細菌性鼻竇炎", "hint": "膿鼻涕 ≥10 天或好轉又惡化",
       "orders": [
-        ["m", "Amoxicillin 500 mg TID 或 875 mg BID × 5–7 天", ""],
-        ["m", "Amoxicillin-clavulanate", "≥65 歲、糖尿病、免疫低下、近期用過抗生素", "高風險"],
-        ["m", "鼻用類固醇 + 生理食鹽水沖洗", ""],
+        ["m", "Amoxicillin 500 mg PO TID × 5–7 天", ""],
+        ["m", "Curam 1 g（875/125）PO BID × 5–7 天", "≥65 歲、糖尿病、免疫低下、近期用過抗生素", "高風險"],
+        ["m", "Mometasone / Fluticasone 鼻噴 2 puff QD + 生理食鹽水沖洗", ""],
         ["x", "CT with contrast", "疑眼眶或顱內擴散", "併發症"]
       ] },
     { "name": "鼻塞流鼻水", "hint": "",
       "orders": [
-        ["m", "Cetirizine / Fexofenadine / Loratadine", "老人避免第一代抗組織胺"],
-        ["m", "Oxymetazoline 鼻噴 ≤3–5 天", "久用會反彈"],
+        ["m", "Levocetirizine 5 mg / Fexofenadine 180 mg / Loratadine 10 mg PO QD", "老人避免第一代抗組織胺"],
+        ["m", "Oxymetazoline 0.05% 鼻噴 BID ≤3 天", "久用會反彈"],
         ["p", "檢視藥物：NSAID、ACEI、CCB、PDE5i、clonidine", ""]
       ] },
     { "name": "流感", "hint": "",
@@ -40,20 +40,22 @@
         ["l", "Influenza PCR", "住院急性呼吸道病人入院就驗"],
         ["m", "Oseltamivir 75 mg PO BID × 5 天", "住院者不論病程都給；腎差調劑量"],
         ["p", "飛沫隔離", ""],
-        ["m", "加抗生素", "重症或改善後又惡化（細菌合併感染）", "重症"]
+        ["m", "Ceftriaxone 2 g IV QD ± Vancomycin", "繼發細菌性肺炎（含 S. aureus）", "重症"],
+        ["m", "Peramivir 300 mg/60 mL IV ×1（重症 600 mg）", "無法口服或吸收不良", "無法口服"],
+        ["m", "Baloxavir 20 mg ×2（≥80 kg ×4）PO ×1", "單次口服替代", "替代"]
       ] },
     { "name": "咳嗽", "hint": "",
       "orders": [
         ["x", "CXR", "急性先排除肺炎、心衰、PE"],
         ["p", "停 ACE inhibitor ≥4 週", "15% 會咳", "ACEI"],
-        ["m", "鎮咳 / 祛痰藥", "症狀緩解，證據有限"],
+        ["m", "Dextromethorphan SR 60 mg PO BID / Benzonatate 100 mg TID（鎮咳）；Ambroxol 30 mg TID / Acetylcysteine 600 mg QD（化痰）", "乾咳鎮咳、痰多化痰，不要兩者硬塞"],
         ["l", "Sputum AFB ×3", "疑結核", "疑 TB"]
       ] },
     { "name": "鼻出血", "hint": "",
       "orders": [
         ["p", "頭前傾，捏鼻翼 ≥5 min（可重複）", ""],
-        ["m", "Oxymetazoline 棉片", "高血壓、心腦血管病小心"],
-        ["m", "局部 Tranexamic acid", "止血率高於前鼻填塞"],
+        ["m", "Oxymetazoline 0.05% 浸棉片", "高血壓、心腦血管病小心"],
+        ["m", "Tranexamic acid 500 mg/5 mL 浸棉片局部", "止血率高於前鼻填塞"],
         ["p", "前鼻填塞（抗凝者用可吸收）", "壓迫無效", "壓迫無效"],
         ["l", "CBC、PT/INR", "Warfarin 驗 INR"],
         ["p", "不常規降血壓", "監測就好"],
@@ -62,10 +64,10 @@
     { "name": "鼻出血 + 抗凝", "hint": "",
       "orders": [
         ["p", "先局部止血；非大出血不逆轉", ""],
-        ["m", "Vitamin K 2–5 mg PO/IV", "Warfarin 需住院", "Warfarin"],
-        ["m", "4F-PCC + Vitamin K 5–10 mg IV", "大出血", "大出血"],
-        ["m", "Idarucizumab 5 g IV", "Dabigatran 大出血", "Dabigatran"],
-        ["m", "4F-PCC 2000 U", "Xa 抑制劑大出血", "Xa 抑制劑"]
+        ["m", "Vitamin K1 10 mg/amp：2–5 mg PO/IV", "Warfarin 需住院", "Warfarin"],
+        ["m", "PCC（Human prothrombin complex 500 IU/vial） + Vitamin K1 10 mg IV", "大出血", "大出血"],
+        ["m", "Idarucizumab（Praxbind）5 g IV", "Dabigatran 大出血", "Dabigatran"],
+        ["m", "PCC（Human prothrombin complex 500 IU/vial） 2000 U", "Xa 抑制劑大出血", "Xa 抑制劑"]
       ] }
   ]
 }

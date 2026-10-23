@@ -14,8 +14,8 @@
       ] },
     { "name": "容積不足：補液", "hint": "",
       "orders": [
-        ["m", "Crystalloid 500 mL over 15 min", "每次後重評；不用膠體"],
-        ["m", "Balanced crystalloid 250 mL ×（最多 1000 mL）", "疑敗血症", "敗血症"],
+        ["m", "NS 或 Lactated Ringer 500 mL over 15 min", "每次後重評；不用膠體"],
+        ["m", "Lactated Ringer 250 mL ×（最多 1000 mL）", "疑敗血症", "敗血症"],
         ["p", "被動抬腿測輸液反應", "不要用尿量預測輸液反應"],
         ["p", "不用利尿劑治療少尿", "只用於容積過量"]
       ] },
@@ -24,26 +24,26 @@
         ["p", "Foley catheter", "下泌尿道尿滯留"],
         ["x", "Renal echo（6 hr 內）", "疑膿腎", "疑膿腎"],
         ["p", "緊急泌尿科：PCN 或 DJ stent（12 hr 內）", "阻塞 + 感染或無尿"],
-        ["m", "抗生素（不等減壓）", "阻塞合併感染", "感染"],
+        ["m", "Ceftriaxone 2 g IV QD（敗血症：Pip-tazo 4.5 g q6h）", "阻塞合併感染", "感染"],
         ["l", "Urine culture（減壓後）", ""]
       ] },
     { "name": "敗血症 + AKI", "hint": "",
       "orders": [
-        ["m", "Norepinephrine（可周邊開始）", "輸液後仍低血壓；MAP ≥65"],
-        ["m", "Vasopressin", "NE 劑量持續上升", "NE 增加"],
-        ["m", "抗生素（1 hr 內）", "依腎功能調劑量"],
+        ["m", "Norepinephrine 4 mg/4 mL：8 mg in D5W 250 mL，0.05–0.5 mcg/kg/min", "輸液後仍低血壓；MAP ≥65"],
+        ["m", "Vasopressin 20 U/mL：0.03 U/min", "NE 劑量持續上升", "NE 增加"],
+        ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h（1 hr 內，首劑不減量）", "之後依 CrCl 調整"],
         ["p", "不用低劑量 dopamine", "無法預防 AKI"]
       ] },
     { "name": "橫紋肌溶解", "hint": "CK >1000",
       "orders": [
-        ["m", "IV fluid 1.5 L/hr，目標尿量 200–300 mL/hr", "避免只用 NS；老人心臟病小心"],
+        ["m", "Lactated Ringer / NS 1.5 L/hr，目標尿量 200–300 mL/hr", "避免只用 NS；老人心臟病小心"],
         ["l", "CK、K、Ca、P、Cr", ""],
         ["p", "避免 mannitol 與 loop diuretic", ""]
       ] },
     { "name": "腫瘤溶解症候群", "hint": "化療前後",
       "orders": [
-        ["m", "IV fluid 3 L/m²/day，尿量 100 mL/m²/hr", ""],
-        ["m", "Rasburicase 0.2 mg/kg/day（≤7 天）", "G6PD 缺乏禁用"],
+        ["m", "NS 3 L/m²/day，尿量 100 mL/m²/hr", ""],
+        ["m", "Rasburicase 1.5 mg/vial：0.2 mg/kg/day（≤7 天）", "G6PD 缺乏禁用"],
         ["l", "Uric acid、K、P、Ca、Cr q6–12h", ""],
         ["p", "不補 K、P", ""]
       ] },
@@ -51,7 +51,7 @@
       "orders": [
         ["p", "停利尿劑、NSAID、腎毒藥；低血壓停 NSBB", ""],
         ["m", "20% Albumin 1 g/kg（max 100 g）× 2 天", "AKI stage >1A"],
-        ["m", "Terlipressin 1 mg IV q4–6h（或 2 mg/day infusion）+ Albumin", "擴容無效、符合 HRS-AKI", "HRS"],
+        ["m", "Terlipressin 1 mg/vial：1 mg IV q4–6h + 20% Albumin 20–40 g/day", "擴容無效、符合 HRS-AKI", "HRS"],
         ["l", "UA、Urine Na", "找其他原因"]
       ] },
     { "name": "顯影劑腎病變預防", "hint": "eGFR <30 或 AKI",
@@ -63,7 +63,7 @@
     { "name": "緊急透析評估", "hint": "內科治療無效",
       "orders": [
         ["p", "照會腎臟科：緊急 HD", "高血鉀、酸中毒、肺水腫、尿毒症（心包炎、腦病變）"],
-        ["m", "Sodium bicarbonate", "pH ≤7.2 + AKI 2–3 期", "嚴重酸中毒"],
+        ["m", "Sodium bicarbonate 7% 20 mL（16.7 mEq/amp）：1–2 mEq/kg IV", "pH ≤7.2 + AKI 2–3 期", "嚴重酸中毒"],
         ["l", "ABG、K、ECG", ""]
       ] },
     { "name": "孕婦少尿", "hint": "<30 mL/hr × 4 hr",

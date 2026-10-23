@@ -8,22 +8,22 @@
         ["l", "VBG + ketone", "糖尿病（SGLT2i 想 euglycemic DKA）", "糖尿病"],
         ["x", "ECG", "合併胸悶", "胸悶"],
         ["x", "KUB / CT abdomen", "腹脹、無排氣（疑阻塞）", "疑阻塞"],
-        ["m", "Crystalloid 500 mL over 15 min", "脫水"],
+        ["m", "NS / Lactated Ringer 500 mL over 15 min", "脫水"],
         ["l", "POCT glucose q4–6h", "糖尿病沒進食"]
       ] },
     { "name": "止吐", "hint": "",
       "orders": [
-        ["m", "Ondansetron 4 mg IV（或 8 mg PO）", "QT 延長要注意"],
-        ["m", "Haloperidol 0.5–2 mg IV", "不同類別；QT 延長", "ondansetron 無效"],
-        ["m", "Metoclopramide 10 mg IV", "老人避免；Parkinson、腸阻塞不用", "替代"],
-        ["m", "Promethazine 6.25 mg IV（稀釋慢推）或深部 IM", "外滲會嚴重組織傷害；老人避免", "替代"],
+        ["m", "Ondansetron 8 mg/4 mL：4 mg IV（或 8 mg PO）", "QT 延長要注意"],
+        ["m", "Haloperidol 5 mg/amp：0.5–1 mg IV", "不同類別；QT 延長", "ondansetron 無效"],
+        ["m", "Metoclopramide 10 mg/2 mL IV", "老人避免；Parkinson、腸阻塞不用", "替代"],
+        ["m", "Prochlorperazine 5 mg/mL：5–10 mg IV/IM", "院內無 promethazine 針", "替代"],
         ["p", "同類止吐 6 hr 內重複無效，換類別", ""],
         ["x", "ECG（QTc）", "多種 QT 延長藥合用時"]
       ] },
     { "name": "化療噁心嘔吐 (突破性)", "hint": "",
       "orders": [
-        ["m", "Olanzapine", "預防處方沒有就加上"],
-        ["m", "Lorazepam", "只作輔助"]
+        ["m", "Olanzapine OD 5 mg PO HS", "預防處方沒有就加上"],
+        ["m", "Lorazepam 0.5–1 mg PO/IV q6h", "只作輔助"]
       ] },
     { "name": "腹瀉：第一輪", "hint": "24 hr ≥3 次稀便",
       "orders": [
@@ -39,8 +39,8 @@
       ] },
     { "name": "止瀉劑", "hint": "",
       "orders": [
-        ["m", "Loperamide 4 mg → 2 mg/每次稀便（max 8 mg/day，≤48 hr）", "免疫正常水瀉；發燒、血便、CDI 不用"],
-        ["m", "Azithromycin 1 g 單次（或 500 mg × 3 天）", "旅遊相關發燒腹瀉或痢疾", "旅遊+發燒"],
+        ["m", "Loperamide 2 mg cap：4 mg → 2 mg/每次稀便（max 8 mg/day，≤48 hr）", "免疫正常水瀉；發燒、血便、CDI 不用"],
+        ["m", "Azithromycin 250 mg ×4（1 g）PO 單次", "旅遊相關發燒腹瀉或痢疾", "旅遊+發燒"],
         ["p", "STEC 不給抗生素與止瀉劑", "增加 HUS"]
       ] },
     { "name": "C. difficile 感染", "hint": "",
@@ -48,32 +48,32 @@
         ["p", "接觸隔離（單人房、手套隔離衣、肥皂洗手）", "酒精對芽孢無效"],
         ["p", "停誘發抗生素", ""],
         ["m", "Fidaxomicin 200 mg PO BID × 10 天", "首選（健保有條件）"],
-        ["m", "Vancomycin 125 mg PO QID × 10 天", "可接受替代"],
-        ["m", "Metronidazole 500 mg PO TID × 10–14 天", "只限非嚴重且前兩藥拿不到", "前兩藥沒有"],
+        ["m", "Vancomycin 125 mg cap PO QID × 10 天", "可接受替代"],
+        ["m", "Metronidazole 250 mg ×2 PO TID × 10–14 天", "只限非嚴重且前兩藥拿不到", "前兩藥沒有"],
         ["l", "CBC（WBC）、Cr", "WBC ≥15K 或 Cr >1.5 = 嚴重"]
       ] },
     { "name": "猛爆型 CDI", "hint": "低血壓/休克、ileus、巨結腸",
       "orders": [
-        ["m", "Vancomycin 500 mg PO/NG q6h", ""],
+        ["m", "Vancomycin 125 mg ×4（500 mg）PO/NG q6h", ""],
         ["m", "Metronidazole 500 mg IV q8h", ""],
-        ["m", "Vancomycin 500 mg 直腸灌注 q6h（in NS 100 mL）", "有 ileus", "ileus"],
+        ["m", "Vancomycin 500 mg/vial in NS 100 mL 直腸灌注 q6h", "有 ileus", "ileus"],
         ["x", "CT abdomen", "排除巨結腸、穿孔"],
-        ["m", "IV fluid resuscitation", ""],
+        ["m", "Lactated Ringer 補液", ""],
         ["p", "照會外科、感染科、腸胃科", "48 hr 無反應考慮結腸切除或 FMT"]
       ] },
     { "name": "便秘", "hint": "",
       "orders": [
         ["p", "先排除腸阻塞與代謝異常（低 K、高 Ca、甲低）", ""],
-        ["m", "PEG 17 g PO QD", ""],
-        ["m", "Sennoside 8.6–17.2 mg PO QD", "刺激性；腸阻塞禁用"],
-        ["m", "Magnesium oxide 400–500 mg QD", "腎差避免", "腎功能正常"],
-        ["m", "Lactulose 15 g QD", ""],
-        ["m", "Bisacodyl 10 mg 栓劑", "30–60 min 起效", "急用"]
+        ["m", "PEG 4000（Forlax 10 g/包）1–2 包 PO QD", ""],
+        ["m", "Sennoside 12 mg ×1–2 PO HS", "刺激性；腸阻塞禁用"],
+        ["m", "Magnesium oxide 250 mg ×2 PO TID", "腎差避免", "腎功能正常"],
+        ["m", "Lactulose 15–30 mL PO QD–BID", ""],
+        ["m", "Bisacodyl 10 mg 栓劑 或 Glycerin enema 60 mL", "30–60 min 起效", "急用"]
       ] },
     { "name": "Opioid 便秘", "hint": "",
       "orders": [
-        ["m", "滲透性 + 刺激性瀉劑（規則使用）", "第一線；不要單用軟便劑"],
-        ["m", "Naldemedine / Naloxegol", "瀉劑無效", "瀉劑無效"]
+        ["m", "Sennoside 12 mg ×2 HS + Magnesium oxide 250 mg ×2 TID（規則）", "第一線；不要單用軟便劑"],
+        ["m", "Naldemedine 0.2 mg PO QD", "瀉劑無效", "瀉劑無效"]
       ] }
   ]
 }

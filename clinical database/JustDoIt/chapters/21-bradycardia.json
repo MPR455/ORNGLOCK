@@ -14,20 +14,20 @@
       ] },
     { "name": "不穩定心搏過緩", "hint": "低血壓、昏厥、心衰、缺血",
       "orders": [
-        ["m", "Atropine 0.5–1 mg IV q3–5min（max 3 mg）", "竇性或 AV node 層級；<0.5 mg 可能反而變慢"],
+        ["m", "Atropine 1 mg/mL：0.5–1 mg IV q3–5min（max 3 mg）", "竇性或 AV node 層級；<0.5 mg 可能反而變慢"],
         ["p", "不給 atropine", "寬 QRS 高度阻滯、心臟移植", "寬 QRS/移植"],
-        ["m", "Epinephrine 2–10 mcg/min IV", "atropine 無效", "atropine 無效"],
-        ["m", "Dopamine 5–20 mcg/kg/min（每 2 min +5）", "", "atropine 無效"],
-        ["m", "Isoproterenol 1–20 mcg/min", "無升壓作用；冠心缺血避免", "atropine 無效"],
+        ["m", "Epinephrine 1 mg in NS 250 mL：2–10 mcg/min", "atropine 無效", "atropine 無效"],
+        ["m", "Dopamine premix 400 mg/250 mL：5–20 mcg/kg/min（每 2 min +5）", "", "atropine 無效"],
+        ["m", "Isoproterenol 0.2 mg/amp：1–20 mcg/min", "無升壓作用；冠心缺血避免", "atropine 無效"],
         ["p", "經皮起搏（前後位貼片）", "橋接；摸脈搏確認捕捉；清醒者給止痛鎮靜", "藥物無效"],
         ["p", "經靜脈暫時起搏", "藥物無效、持續不穩", "藥物無效"]
       ] },
     { "name": "藥物中毒心搏過緩", "hint": "β-blocker / CCB / Digoxin",
       "orders": [
-        ["m", "Glucagon IV", "β-blocker", "β-blocker"],
-        ["m", "Calcium IV", "CCB", "CCB"],
-        ["m", "High-dose insulin + dextrose", "β-blocker 或 CCB 低血壓；追蹤血糖與 K"],
-        ["m", "Digoxin Fab", "Digoxin 中毒有症狀", "Digoxin"],
+        ["m", "Glucagon 1 mg/kit：3–5 mg IV → 1–5 mg/hr", "β-blocker", "β-blocker"],
+        ["m", "5% Calcium chloride 20 mL（1 g）或 10% Calcium gluconate 30 mL IV", "CCB", "CCB"],
+        ["m", "Actrapid 1 U/kg IV + 10% Glucose", "β-blocker 或 CCB 低血壓；追蹤血糖與 K"],
+        ["m", "Atropine 0.5–1 mg IV + MgSO4 2 g IV", "院內無 Digoxin Fab；補 K、必要時起搏", "Digoxin"],
         ["m", "Atropine 1–2 mg，每 5 min 加倍", "有機磷 / carbamate", "有機磷"],
         ["p", "同時準備起搏", "不要等藥物失敗"],
         ["p", "諮詢毒物中心", ""]
@@ -35,7 +35,7 @@
     { "name": "下壁 MI + AV block", "hint": "",
       "orders": [
         ["m", "Atropine", ""],
-        ["m", "Aminophylline 250 mg IV bolus", "藥物無效、症狀不嚴重", "atropine 無效"],
+        ["m", "Aminophylline 250 mg/10 mL：250 mg IV slow", "藥物無效、症狀不嚴重", "atropine 無效"],
         ["p", "儘速再灌流", ""],
         ["p", "暫時起搏", "藥物無效的有症狀緩脈", "藥物無效"]
       ] },

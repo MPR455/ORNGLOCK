@@ -3,19 +3,19 @@
   "items": [
     { "name": "一般止痛（多模式）", "hint": "",
       "orders": [
-        ["m", "Acetaminophen 0.5–1 g PO q4–6h（max 4 g/day）", "定時給；肝毒風險者上限 3 g"],
-        ["m", "Acetaminophen 1 g IV q6h（>50 kg）", "不能口服", "NPO"],
-        ["m", "NSAID", "CrCl <30、心血管病、潰瘍、CABG 後避免", "無禁忌"],
+        ["m", "Acetaminophen 500 mg ×1–2 PO q6h（max 4 g/day）", "定時給；肝毒風險者上限 3 g"],
+        ["m", "Propacetamol 1 g ×2（2 g）IV q6h", "= Acetaminophen 1 g；院內 IV 劑型為 propacetamol", "NPO"],
+        ["m", "Ketorolac 30 mg IV q6h（≤5 天）/ Parecoxib 40 mg IV q12h / Celecoxib 200 mg PO BID", "腎差、出血、潰瘍不用", "無禁忌"],
         ["p", "重評：IV 後 15–30 min、PO 後 1–2 hr", ""],
         ["p", "新痛或分數高且無反應：找新問題或手術併發症", ""]
       ] },
     { "name": "中重度痛：強效 opioid", "hint": "",
       "orders": [
-        ["m", "Morphine 2–10 mg SC/IV q4h PRN", "顱內壓高或頭部外傷避免"],
-        ["m", "Oxycodone IR 2.5–5 mg PO q4h PRN", "未用過 opioid；能口服優先", "能口服"],
-        ["m", "Hydromorphone 0.3–0.7 mg IV q3–4h PRN（PO 1–4 mg）", "", "替代"],
-        ["m", "Fentanyl 25–100 mcg IV slow（老人 12.5–25）", "腎差或透析較適合；快推會胸壁僵直", "腎差"],
-        ["m", "Laxative（常規）", "預防便秘"],
+        ["m", "Morphine 10 mg/mL：2–10 mg SC/IV q4h PRN", "顱內壓高或頭部外傷避免"],
+        ["m", "OxyCodone IR 5 mg cap：5 mg PO q4h PRN", "未用過 opioid；能口服優先", "能口服"],
+        ["m", "Tramadol 50–100 mg PO/IV q6h（max 400 mg/day）", "院內無 IV hydromorphone；中度痛替代", "替代"],
+        ["m", "Fentanyl 0.05 mg/mL：25–100 mcg IV slow（老人 12.5–25）", "腎差或透析較適合；快推會胸壁僵直", "腎差"],
+        ["m", "Sennoside 12 mg ×2 HS + MgO 250 mg ×2 TID（規則）", "預防便秘"],
         ["p", "監測意識與 RR", "給 O2 時 SpO2 看不出通氣不足"],
         ["p", "避免與 BZD、gabapentinoid 併用", "呼吸抑制"],
         ["p", "不用 IM", "吸收不穩又痛"]
@@ -23,13 +23,13 @@
     { "name": "Methadone / Buprenorphine 使用者", "hint": "",
       "orders": [
         ["p", "繼續原藥", ""],
-        ["m", "加短效 full agonist（劑量較高）", "不要因怕成癮而止痛不足"]
+        ["m", "Morphine 2–4 mg IV q2–4h PRN（劑量較高）", "不要因怕成癮而止痛不足"]
       ] },
     { "name": "Opioid 呼吸抑制", "hint": "嗜睡、RR 慢、針尖瞳孔",
       "orders": [
         ["p", "打開氣道、BVM 通氣", "先通氣"],
-        ["m", "Naloxone 0.08–0.12 mg IV q2–3min", "長期用 opioid 或術後，小量滴定避免戒斷"],
-        ["m", "Naloxone 0.2–2 mg IV/IM", "危及生命", "危及生命"],
+        ["m", "Naloxone 0.4 mg 稀釋成 10 mL：0.04–0.12 mg IV q2–3min", "長期用 opioid 或術後，小量滴定避免戒斷"],
+        ["m", "Naloxone 0.4 mg/amp：0.4–2 mg IV/IM", "危及生命", "危及生命"],
         ["m", "Naloxone infusion", "長效 opioid 再抑制", "再抑制"],
         ["l", "床邊血糖", ""],
         ["p", "暫停 / 減量 opioid", ""]
@@ -37,15 +37,15 @@
     { "name": "Acetaminophen 過量", "hint": "",
       "orders": [
         ["l", "APAP level（≥4 hr）、AST/ALT、CMP、INR", "4 hr 前的濃度不能用"],
-        ["m", "Activated charcoal 50–100 g", "4 hr 內、氣道安全", "4 hr 內"],
-        ["m", "NAC 150 mg/kg over ≥1 hr，20–24 hr 總量 ≥300 mg/kg", "高於治療線，或病史不可靠"],
+        ["m", "Activated charcoal 50 g PO", "4 hr 內、氣道安全", "4 hr 內"],
+        ["m", "N-acetylcysteine 20%（5 g/25 mL）：150 mg/kg over ≥1 hr，20–24 hr 總量 ≥300 mg/kg", "高於治療線，或病史不可靠"],
         ["p", "先給 NAC 不等濃度", ">200 mg/kg 或 >10 g 且結果會晚於 8 hr", "高劑量"],
         ["p", "照會毒物中心", ""],
         ["p", "停 NAC：濃度 <10、INR <2、AST/ALT 下降、臨床好", ""]
       ] },
     { "name": "神經痛", "hint": "",
       "orders": [
-        ["m", "Gabapentin / Pregabalin / Amitriptyline / Duloxetine 擇一", "CrCl <60 gabapentinoid 減量"]
+        ["m", "Gabapentin 300 mg HS 起 / Pregabalin 75 mg BID / Amitriptyline 10–25 mg HS / Duloxetine 30 mg QD 擇一", "CrCl <60 gabapentinoid 減量"]
       ] }
   ]
 }

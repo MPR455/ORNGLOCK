@@ -13,10 +13,10 @@
     { "name": "抗凝劑使用者傷口出血", "hint": "",
       "orders": [
         ["p", "局部止血；非大出血不常規逆轉", ""],
-        ["m", "Vitamin K 2–5 mg PO/IV", "Warfarin 需住院或輸血", "Warfarin"],
-        ["m", "4F-PCC 依 INR + Vitamin K 5–10 mg IV", "大出血", "大出血"],
-        ["m", "Idarucizumab 5 g IV", "Dabigatran 大出血", "Dabigatran"],
-        ["m", "4F-PCC 2000 U", "Apixaban/Rivaroxaban 大出血", "Xa 抑制劑"]
+        ["m", "Vitamin K1 10 mg/amp：2–5 mg PO/IV", "Warfarin 需住院或輸血", "Warfarin"],
+        ["m", "PCC（Human prothrombin complex 500 IU/vial） 依 INR + Vitamin K1 10 mg IV", "大出血", "大出血"],
+        ["m", "Idarucizumab（Praxbind）5 g IV", "Dabigatran 大出血", "Dabigatran"],
+        ["m", "PCC（Human prothrombin complex 500 IU/vial） 2000 U（500 IU ×4）", "Apixaban/Rivaroxaban 大出血", "Xa 抑制劑"]
       ] },
     { "name": "腔室症候群", "hint": "痛不成比例、被動牽拉痛",
       "orders": [
@@ -28,46 +28,46 @@
       "orders": [
         ["p", "拆線 + 切開引流，換藥至二次癒合", "主要治療"],
         ["m", "Cefazolin 1 g IV q8h（或 Cephalexin 500 mg PO q6h）", "紅腫 >5 cm、>38.5°C、HR >110 時加", "全身反應"],
-        ["m", "Vancomycin 15 mg/kg IV q12h", "MRSA 風險", "MRSA"],
-        ["m", "Piperacillin-tazobactam 4.5 g q8h / Ertapenem 1 g q24h", "腸道/泌尿生殖道手術後", "腸道手術"],
+        ["m", "Vancomycin 15–20 mg/kg IV q12h", "MRSA 風險", "MRSA"],
+        ["m", "Piperacillin-tazobactam 4.5 g q8h / Ertapenem 1 g QD", "腸道/泌尿生殖道手術後", "腸道手術"],
         ["l", "Wound culture（深部組織）", ""],
         ["p", "只懷疑 SSI 不給抗生素", "先確定診斷"]
       ] },
     { "name": "壞死性軟組織感染", "hint": "痛不成比例、木頭般硬、毒性",
       "orders": [
         ["p", "緊急外科清創（6 hr 內）", "治療主軸；影像不得延誤手術"],
-        ["m", "Vancomycin + Piperacillin-tazobactam（或 Carbapenem）", "1 hr 內"],
-        ["m", "Clindamycin（抗毒素）", "A 群鏈球菌", "GAS"],
+        ["m", "Vancomycin 15–20 mg/kg q12h + Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h（或 Meropenem 1 g q8h）", "1 hr 內"],
+        ["m", "Clindamycin 300 mg/2 mL：600–900 mg IV q8h", "A 群鏈球菌", "GAS"],
         ["l", "Blood culture、CBC、Cr、CK、Lactate", ""],
-        ["m", "積極補液", "清創後大量滲液"]
+        ["m", "Lactated Ringer 積極補液", "清創後大量滲液"]
       ] },
     { "name": "撕裂傷", "hint": "",
       "orders": [
         ["p", "檢查遠端脈搏、感覺運動", ""],
         ["p", "清創、沖洗、縫合", "穿刺傷或汙染重不縫"],
-        ["m", "Tetanus toxoid（Tdap）", "依接種史"],
+        ["m", "Td（Tetanus & Diphtheria toxoid）0.5 mL IM（或 Tdap 自費）", "依接種史"],
         ["m", "Cefazolin 2 g IV q8h（50–100 kg）", "開放性骨折，3 hr 內", "開放骨折"]
       ] },
     { "name": "破傷風預防", "hint": "",
       "orders": [
-        ["m", "Tdap 0.5 mL IM", "接種不明/<3 劑；或髒傷口 >5 年、乾淨傷口 >10 年"],
-        ["m", "TIG 250 IU IM（不同部位）", "髒傷口 + 接種不明或 <3 劑", "髒+未完整"]
+        ["m", "Td（Tetanus & Diphtheria toxoid）0.5 mL IM（或 Tdap 自費）", "接種不明/<3 劑；或髒傷口 >5 年、乾淨傷口 >10 年"],
+        ["m", "Tetanus immune globulin 250 IU IM（不同部位）", "髒傷口 + 接種不明或 <3 劑", "髒+未完整"]
       ] },
     { "name": "動物 / 人咬傷", "hint": "",
       "orders": [
         ["p", "肥皂 + 大量清水沖洗 ≥15 min，優碘消毒", "最重要的預防"],
         ["p", "不一期縫合（臉部例外）", ""],
-        ["m", "Amoxicillin-clavulanate 875/125 mg PO BID × 3–5 天", "手、臉、深、免疫低下、無脾"],
-        ["m", "Tdap", "確認破傷風"],
+        ["m", "Curam 1 g（Amox-clav 875/125）PO BID × 3–5 天", "手、臉、深、免疫低下、無脾"],
+        ["m", "Td 0.5 mL IM", "確認破傷風"],
         ["p", "狂犬病：與衛生局討論 PEP", "野生哺乳類（鼬獾、白鼻心、蝙蝠）", "野生動物"],
         ["m", "Rabies vaccine D0/3/7/14 IM 三角肌", "第二類以上野生動物暴露", "野生動物"],
-        ["m", "HRIG 20 IU/kg 傷口浸潤", "第三類暴露", "第三類"]
+        ["m", "Rabies immunoglobulin（HRIG 300 IU/2 mL）20 IU/kg 傷口浸潤", "第三類暴露", "第三類"]
       ] },
     { "name": "糖尿病足感染", "hint": "",
       "orders": [
         ["l", "Tissue culture（刮除或切片，不用棉棒）", ""],
         ["l", "ABI / Toe pressure", "評估缺血"],
-        ["m", "IV 廣效抗生素", "深部或廣泛感染", "嚴重"],
+        ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h ± Vancomycin（中度：Amsulber 3 g q6h）", "取深部組織培養後開始", "嚴重"],
         ["p", "緊急外科清創引流", "危及肢體", "嚴重"]
       ] },
     { "name": "病房跌倒", "hint": "",
@@ -84,7 +84,8 @@
         ["m", "LR 2 mL/kg/%TBSA 起始（24 hr 量）", "≥20% TBSA", "≥20%"],
         ["p", "尿量 0.5 mL/kg/hr", ""],
         ["l", "COHb", "疑吸入性傷害", "吸入"],
-        ["p", "早期插管", "口腔水泡、聲音沙啞、喘鳴", "氣道"]
+        ["p", "早期插管", "口腔水泡、聲音沙啞、喘鳴", "氣道"],
+        ["m", "Silver sulfadiazine 1% cream（Flamazine）外用 QD–BID", "二度以上、非顏面；顏面用 Bacitracin-neomycin oint"]
       ] }
   ]
 }

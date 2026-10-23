@@ -3,25 +3,25 @@
   "items": [
     { "name": "重度 / 有症狀低血鈣", "hint": "Ca <1.9 mmol/L 或麻、抽筋、QT 長",
       "orders": [
-        ["m", "10% Calcium gluconate 10–20 mL + D5W 50–100 mL IV over 10 min", "可重複到無症狀；不可直推、不可混含磷或 bicarbonate"],
-        ["m", "10% Calcium gluconate 100 mL in NS/D5W 1 L，50–100 mL/hr", "接續輸注，依血鈣調"],
+        ["m", "10% Calcium gluconate 10 mL ×1–2 + D5W 100 mL IV over 10 min", "可重複到無症狀；不可直推、不可混含磷或 bicarbonate"],
+        ["m", "10% Calcium gluconate 10 amp（100 mL）in NS/D5W 1 L，50–100 mL/hr", "接續輸注，依血鈣調"],
         ["x", "ECG monitor", "digoxin 使用者全程監測"],
         ["l", "Ca q1–4h（輸注中）", ""],
         ["l", "Albumin、iCa、Mg、P、PTH、Vitamin D、Cr", ""],
-        ["m", "MgSO4", "低 Mg 會讓低鈣補不上", "低 Mg"],
-        ["m", "Calcium chloride（中心靜脈）", "大量輸血、創傷", "大量輸血"],
+        ["m", "MgSO4 2 g IV", "低 Mg 會讓低鈣補不上", "低 Mg"],
+        ["m", "5% Calcium chloride 20 mL（1 g）IV（中心靜脈）", "大量輸血、創傷", "大量輸血"],
         ["p", "ESRD / 透析：不用大量 IV 鈣", ""]
       ] },
     { "name": "輕度低血鈣", "hint": "無症狀、>1.9",
       "orders": [
-        ["m", "Calcium carbonate PO 隨餐（每次 ≤500 mg 元素鈣）", "用 PPI 改 calcium citrate"],
-        ["m", "Alfacalcidol 0.25 mcg/day 或 Calcitriol", "副甲狀腺低下（含術後）", "副甲狀腺低下"],
+        ["m", "Calcium carbonate 500 mg PO TID 隨餐", "用 PPI 改 calcium citrate"],
+        ["m", "Alfacalcidol 0.5 mcg PO QD 或 Calcitriol 0.25 mcg BID", "副甲狀腺低下（含術後）", "副甲狀腺低下"],
         ["l", "Albumin-corrected Ca", "白蛋白每少 1 g/dL，Ca 加 0.8 mg/dL"]
       ] },
     { "name": "橫紋肌溶解 / TLS 低血鈣", "hint": "",
       "orders": [
         ["p", "無症狀不補鈣", "會加重沉積"],
-        ["m", "Calcium gluconate", "有症狀或心臟不穩", "有症狀"]
+        ["m", "10% Calcium gluconate 10–20 mL IV", "有症狀或心臟不穩", "有症狀"]
       ] },
     { "name": "高血鈣", "hint": "校正 Ca >3.0 mmol/L（>12 mg/dL）",
       "orders": [
@@ -29,11 +29,11 @@
         ["x", "ECG", "QT 縮短"],
         ["m", "NS 1–2 L bolus → 200–500 mL/hr（尿量 100–150 mL/hr）", "第一線；心腎差小心過量"],
         ["p", "停 thiazide、lithium、Vit D、Ca 補充", ""],
-        ["m", "Zoledronic acid 4 mg IV over 15–30 min", "補液後仍高或惡性腫瘤；CrCl <60 減量延長輸注", "仍高/腫瘤"],
-        ["m", "Calcitonin 4–8 U/kg SC/IM q6–12h × 48–72 hr", ">14 mg/dL 起始合併；4–6 hr 起效", "重度"],
+        ["m", "Zoledronic acid 4 mg/vial IV over 15–30 min", "補液後仍高或惡性腫瘤；CrCl <60 減量延長輸注", "仍高/腫瘤"],
+        ["m", "Calcitonin 100 IU/amp：4 IU/kg SC/IM q12h × 48 hr", ">14 mg/dL 起始合併；4–6 hr 起效", "重度"],
         ["m", "Denosumab 120 mg SC", "bisphosphonate 無效或腎差", "難治/腎差"],
-        ["m", "Prednisolone 40 mg QD", "淋巴瘤、肉芽腫、Vit D 中毒", "calcitriol 相關"],
-        ["m", "Furosemide", "只用於容積過量", "容積過多"],
+        ["m", "Prednisolone 5 mg ×8（40 mg）PO QD", "淋巴瘤、肉芽腫、Vit D 中毒", "calcitriol 相關"],
+        ["m", "Furosemide 20–40 mg IV", "只用於容積過量", "容積過多"],
         ["p", "透析", "嚴重腎衰", "腎衰"],
         ["l", "Ca、Mg、P 追蹤", "bisphosphonate 後 2–4 天最低"]
       ] }
