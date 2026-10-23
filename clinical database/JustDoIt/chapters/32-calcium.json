@@ -1,5 +1,5 @@
 {
-  "no": "34", "slug": "calcium", "title": "鈣", "icon": "🦴",
+  "no": "32", "slug": "calcium", "title": "鈣", "icon": "🦴",
   "items": [
     { "name": "重度 / 有症狀低血鈣", "hint": "Ca <1.9 mmol/L 或麻、抽筋、QT 長",
       "orders": [

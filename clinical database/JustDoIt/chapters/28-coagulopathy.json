@@ -1,5 +1,5 @@
 {
-  "no": "30", "slug": "coagulopathy", "title": "凝血異常", "icon": "🧬",
+  "no": "28", "slug": "coagulopathy", "title": "凝血異常", "icon": "🧬",
   "items": [
     { "name": "凝血檢驗異常：判讀", "hint": "INR / aPTT 高",
       "orders": [

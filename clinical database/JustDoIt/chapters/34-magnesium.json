@@ -1,5 +1,5 @@
 {
-  "no": "36", "slug": "magnesium", "title": "鎂", "icon": "✨",
+  "no": "34", "slug": "magnesium", "title": "鎂", "icon": "✨",
   "items": [
     { "name": "低血鎂（重度 / 有症狀）", "hint": "顫抖、抽搐、心律不整",
       "orders": [

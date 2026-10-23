@@ -1,12 +1,12 @@
 # Clinical database · JustDoIt
 
 Order data behind the **值班** tab on <https://mpr455.github.io/ORNGLOCK/>.
-Each of the 36 on-call chapters becomes a short menu of conditions, and each
+Each of the 34 on-call chapters becomes a short menu of conditions, and each
 condition lists what to order: 💊 medications, 🧪 labs, 📷 exams/imaging and
 ⚙️ bedside procedures, each with a one-line reason.
 
 The entries are condensed and rewritten from the
-[值班冒險 速看指引](https://med-study-rpg.com/oncall/pocket/) (AI-generated,
+值班冒險 速看指引 (AI-generated,
 not reviewed line by line by a person). They are for teaching, not medical
 advice: check doses against the hospital formulary and the patient's renal and
 hepatic function.

@@ -1,5 +1,5 @@
 {
-  "no": "29", "slug": "anemia", "title": "貧血", "icon": "🩸",
+  "no": "27", "slug": "anemia", "title": "貧血", "icon": "🩸",
   "items": [
     { "name": "Hb 明顯下降：找出血", "hint": "降 ≥2 g/dL 或不穩",
       "orders": [

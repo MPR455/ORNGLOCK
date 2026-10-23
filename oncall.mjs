@@ -2,7 +2,6 @@ import { ONCALL_MENU } from './clinical database/JustDoIt/justdoit-data.mjs';
 
 // 值班 tab: kiosk-style order picker. Symptom -> condition -> tap orders into a tray -> copy.
 const TYPE_INFO = { m: ['💊', '藥物'], l: ['🧪', '檢驗'], x: ['📷', '檢查'], p: ['⚙️', '處置'] };
-const SOURCE = 'https://med-study-rpg.com/oncall/pocket/';
 const esc = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const normalize = value => String(value).normalize('NFKC').toLowerCase().replace(/\s+/g, '');
 
@@ -21,8 +20,7 @@ function homeView() {
 function chapterView(chapter) {
   return `<button class="oc-back" type="button" data-oc="home">‹ 全部症狀</button>
     <h1 class="oc-title" tabindex="-1">${chapter.icon} ${esc(chapter.title)}</h1>
-    <div class="oc-list">${chapter.items.map((item, index) => `<button class="oc-item" type="button" data-oc="item" data-index="${index}"><span class="oc-item-name">${esc(item.name)}</span>${item.hint ? `<span class="oc-item-hint">${esc(item.hint)}</span>` : ''}<span class="oc-item-arrow" aria-hidden="true">›</span></button>`).join('')}</div>
-    <a class="oc-source" href="${SOURCE}${chapter.slug}/" target="_blank" rel="noopener noreferrer">看原文：速看指引 ${chapter.no} ↗</a>`;
+    <div class="oc-list">${chapter.items.map((item, index) => `<button class="oc-item" type="button" data-oc="item" data-index="${index}"><span class="oc-item-name">${esc(item.name)}</span>${item.hint ? `<span class="oc-item-hint">${esc(item.hint)}</span>` : ''}<span class="oc-item-arrow" aria-hidden="true">›</span></button>`).join('')}</div>`;
 }
 
 function itemView(chapter, itemIndex) {
@@ -127,6 +125,15 @@ function hideWhy() {
   root.querySelector(`.oc-why[data-index="${pop.dataset.for}"]`)?.setAttribute('aria-expanded', 'false');
 }
 
+// Esc steps back one screen: popup, then search, then condition, then symptom list.
+function goBack() {
+  const pop = root.querySelector('.oc-pop');
+  if (!pop.hidden) return hideWhy();
+  if (view.query.trim()) { view.query = ''; root.querySelector('#oc-search').value = ''; return render(); }
+  if (view.item !== null) return go(view.chapter);
+  if (view.chapter !== null) go(null);
+}
+
 function onClick(event) {
   const target = event.target.closest('[data-oc]');
   if (!target || !root.contains(target)) { if (!event.target.closest('.oc-pop')) hideWhy(); return; }
@@ -160,7 +167,6 @@ export function initOncall(options = {}) {
       <button class="oc-tray-btn" type="button" data-oc="tray" aria-label="醫囑單，0 項">🧾<span class="oc-tray-label"> 醫囑單</span> <b>0</b></button>
     </div>
     <div class="oc-body"></div>
-    <p class="oc-foot">整理自 <a href="${SOURCE}" target="_blank" rel="noopener noreferrer">值班冒險 速看指引</a>（AI 生成、未經人工逐條審閱）。教學用途，不構成醫療建議；劑量請依院內藥典與腎肝功能核對。</p>
     <div class="oc-pop" role="tooltip" hidden></div>
     <dialog class="oc-tray" aria-labelledby="oc-tray-title">
       <div class="oc-tray-head"><h2 id="oc-tray-title">🧾 醫囑單</h2><button class="oc-big" type="button" data-oc="close" aria-label="關閉">×</button></div>
@@ -172,7 +178,10 @@ export function initOncall(options = {}) {
     view.query = event.target.value; hideWhy(); render();
   });
   document.addEventListener('click', onClick);
-  document.addEventListener('keydown', event => { if (event.key === 'Escape') hideWhy(); });
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Escape' || !root.classList.contains('active') || root.querySelector('.oc-tray').open) return;
+    event.preventDefault(); goBack();
+  });
   addEventListener('resize', hideWhy);
   render();
 }

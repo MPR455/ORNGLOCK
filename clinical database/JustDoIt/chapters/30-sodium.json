@@ -1,5 +1,5 @@
 {
-  "no": "32", "slug": "sodium", "title": "鈉", "icon": "🧂",
+  "no": "30", "slug": "sodium", "title": "鈉", "icon": "🧂",
   "items": [
     { "name": "低血鈉：嚴重症狀", "hint": "嘔吐、抽搐、昏迷、深度嗜睡",
       "orders": [

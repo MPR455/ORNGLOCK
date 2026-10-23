@@ -1,5 +1,5 @@
 {
-  "no": "28", "slug": "glucose", "title": "血糖", "icon": "🍬",
+  "no": "26", "slug": "glucose", "title": "血糖", "icon": "🍬",
   "items": [
     { "name": "低血糖（清醒能吞）", "hint": "BS <72",
       "orders": [
