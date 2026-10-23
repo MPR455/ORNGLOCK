@@ -1,0 +1,79 @@
+{
+  "no": "24", "slug": "gi-symptoms", "title": "消化道症狀", "icon": "🤮",
+  "items": [
+    { "name": "嘔吐：第一輪", "hint": "",
+      "orders": [
+        ["p", "找原因：腸阻塞、opioid、出血、顱內壓、ACS、DKA", ""],
+        ["l", "CBC、Na/K、BUN/Cr、glucose、Lipase", ""],
+        ["l", "VBG + ketone", "糖尿病（SGLT2i 想 euglycemic DKA）", "糖尿病"],
+        ["x", "ECG", "合併胸悶", "胸悶"],
+        ["x", "KUB / CT abdomen", "腹脹、無排氣（疑阻塞）", "疑阻塞"],
+        ["m", "Crystalloid 500 mL over 15 min", "脫水"],
+        ["l", "POCT glucose q4–6h", "糖尿病沒進食"]
+      ] },
+    { "name": "止吐", "hint": "",
+      "orders": [
+        ["m", "Ondansetron 4 mg IV（或 8 mg PO）", "QT 延長要注意"],
+        ["m", "Haloperidol 0.5–2 mg IV", "不同類別；QT 延長", "ondansetron 無效"],
+        ["m", "Metoclopramide 10 mg IV", "老人避免；Parkinson、腸阻塞不用", "替代"],
+        ["m", "Promethazine 6.25 mg IV（稀釋慢推）或深部 IM", "外滲會嚴重組織傷害；老人避免", "替代"],
+        ["p", "同類止吐 6 hr 內重複無效，換類別", ""],
+        ["x", "ECG（QTc）", "多種 QT 延長藥合用時"]
+      ] },
+    { "name": "化療噁心嘔吐 (突破性)", "hint": "",
+      "orders": [
+        ["m", "Olanzapine", "預防處方沒有就加上"],
+        ["m", "Lorazepam", "只作輔助"]
+      ] },
+    { "name": "腹瀉：第一輪", "hint": "24 hr ≥3 次稀便",
+      "orders": [
+        ["p", "評估脫水", ""],
+        ["m", "ORS 2–4 L", "輕中度脫水"],
+        ["m", "Lactated Ringer / NS IV", "嚴重脫水、休克、意識變", "嚴重脫水"],
+        ["p", "停瀉劑後再評估", ""],
+        ["l", "Stool C. difficile（NAAT/GDH + toxin）", "住院中、近期抗生素；48 hr 內用過瀉劑不送", "住院/抗生素"],
+        ["l", "Stool culture（Salmonella、Shigella、Campylobacter、STEC）", "發燒、血便、嚴重腹痛", "發燒/血便"],
+        ["l", "Blood culture", "敗血症、免疫低下", "敗血症"],
+        ["l", "CBC、Hb、Plt、BUN/Cr", "STEC 追 HUS", "STEC"],
+        ["p", "管灌改連續滴注", "", "管灌"]
+      ] },
+    { "name": "止瀉劑", "hint": "",
+      "orders": [
+        ["m", "Loperamide 4 mg → 2 mg/每次稀便（max 8 mg/day，≤48 hr）", "免疫正常水瀉；發燒、血便、CDI 不用"],
+        ["m", "Azithromycin 1 g 單次（或 500 mg × 3 天）", "旅遊相關發燒腹瀉或痢疾", "旅遊+發燒"],
+        ["p", "STEC 不給抗生素與止瀉劑", "增加 HUS"]
+      ] },
+    { "name": "C. difficile 感染", "hint": "",
+      "orders": [
+        ["p", "接觸隔離（單人房、手套隔離衣、肥皂洗手）", "酒精對芽孢無效"],
+        ["p", "停誘發抗生素", ""],
+        ["m", "Fidaxomicin 200 mg PO BID × 10 天", "首選（健保有條件）"],
+        ["m", "Vancomycin 125 mg PO QID × 10 天", "可接受替代"],
+        ["m", "Metronidazole 500 mg PO TID × 10–14 天", "只限非嚴重且前兩藥拿不到", "前兩藥沒有"],
+        ["l", "CBC（WBC）、Cr", "WBC ≥15K 或 Cr >1.5 = 嚴重"]
+      ] },
+    { "name": "猛爆型 CDI", "hint": "低血壓/休克、ileus、巨結腸",
+      "orders": [
+        ["m", "Vancomycin 500 mg PO/NG q6h", ""],
+        ["m", "Metronidazole 500 mg IV q8h", ""],
+        ["m", "Vancomycin 500 mg 直腸灌注 q6h（in NS 100 mL）", "有 ileus", "ileus"],
+        ["x", "CT abdomen", "排除巨結腸、穿孔"],
+        ["m", "IV fluid resuscitation", ""],
+        ["p", "照會外科、感染科、腸胃科", "48 hr 無反應考慮結腸切除或 FMT"]
+      ] },
+    { "name": "便秘", "hint": "",
+      "orders": [
+        ["p", "先排除腸阻塞與代謝異常（低 K、高 Ca、甲低）", ""],
+        ["m", "PEG 17 g PO QD", ""],
+        ["m", "Sennoside 8.6–17.2 mg PO QD", "刺激性；腸阻塞禁用"],
+        ["m", "Magnesium oxide 400–500 mg QD", "腎差避免", "腎功能正常"],
+        ["m", "Lactulose 15 g QD", ""],
+        ["m", "Bisacodyl 10 mg 栓劑", "30–60 min 起效", "急用"]
+      ] },
+    { "name": "Opioid 便秘", "hint": "",
+      "orders": [
+        ["m", "滲透性 + 刺激性瀉劑（規則使用）", "第一線；不要單用軟便劑"],
+        ["m", "Naldemedine / Naloxegol", "瀉劑無效", "瀉劑無效"]
+      ] }
+  ]
+}

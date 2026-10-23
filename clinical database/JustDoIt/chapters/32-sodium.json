@@ -1,0 +1,67 @@
+{
+  "no": "32", "slug": "sodium", "title": "鈉", "icon": "🧂",
+  "items": [
+    { "name": "低血鈉：嚴重症狀", "hint": "嘔吐、抽搐、昏迷、深度嗜睡",
+      "orders": [
+        ["m", "3% NaCl 150 mL IV over 20 min", "不論原因；優先於鑑別"],
+        ["l", "Na 20 min 後（同時再輸 150 mL）", "重複 2 次或 Na 升 5 即停"],
+        ["p", "Na 升 5 且症狀改善：停 3%，NS 保持管路", ""],
+        ["l", "Na 6 hr、12 hr，之後每日", ""],
+        ["p", "24 hr ≤10、之後每 24 hr ≤8", "直到 130"],
+        ["m", "3% NaCl 繼續，Na 每小時升 1", "Na 升 5 但症狀沒改善（每 4 hr 測）", "症狀未改善"]
+      ] },
+    { "name": "低血鈉：中度症狀", "hint": "噁心、意識混亂、頭痛",
+      "orders": [
+        ["m", "3% NaCl 150 mL IV over 20 min ×1", "目標 24 hr 升 5"],
+        ["l", "Na 1、6、12 hr", ""]
+      ] },
+    { "name": "低血鈉：鑑別", "hint": "",
+      "orders": [
+        ["l", "Serum osmolality、glucose", "排除高血糖、假性低血鈉"],
+        ["l", "Urine osmolality、Urine Na（同一份尿）", "尿滲透壓 ≤100 喝太多；尿鈉 ≤30 有效血量不足"],
+        ["l", "TSH、Cortisol", "SIAD 是排除診斷"],
+        ["p", "檢視藥物：thiazide、SSRI、carbamazepine、antipsychotics、tramadol、desmopressin", ""],
+        ["p", "停非必要低張輸液", ""]
+      ] },
+    { "name": "低血容低血鈉", "hint": "嘔吐、腹瀉、利尿劑",
+      "orders": [
+        ["m", "NS 或 balanced crystalloid 0.5–1 mL/kg/hr", ""],
+        ["p", "尿量突然 >100 mL/hr：q2h 測 Na", "即將矯正過快的警訊"]
+      ] },
+    { "name": "SIAD", "hint": "",
+      "orders": [
+        ["p", "限水", "第一線"],
+        ["m", "Oral urea 或 Low-dose loop diuretic + NaCl PO", "第二線", "限水無效"],
+        ["m", "Tolvaptan", "健保：Na <125、傳統治療 48 hr 無效、≤4 天；Na ≥125 停", "難治"]
+      ] },
+    { "name": "高容積低血鈉", "hint": "心衰、肝硬化",
+      "orders": [
+        ["p", "限水（肝硬化 Na 120–125：1000 mL/day）", ""],
+        ["m", "Albumin", "肝硬化 Na <120", "肝硬化"]
+      ] },
+    { "name": "矯正過快", "hint": "24 hr >10 或之後 >8",
+      "orders": [
+        ["p", "停止主動治療", ""],
+        ["m", "D5W 10 mL/kg over 1 hr", "讓 Na 回降；嚴密看尿量"],
+        ["m", "Desmopressin 2 mcg IV（≥8 hr 才能重複）", ""],
+        ["l", "Na q2h", ""]
+      ] },
+    { "name": "疑腎上腺危象 + 低鈉", "hint": "低血壓、長期類固醇",
+      "orders": [
+        ["m", "Hydrocortisone 100 mg IV → 200 mg/24 hr", "不等檢驗"],
+        ["m", "NS 1000 mL 第 1 hr", ""],
+        ["l", "Cortisol、ACTH", "給藥前抽"]
+      ] },
+    { "name": "高血鈉", "hint": "Na >145",
+      "orders": [
+        ["l", "Na、K、BUN/Cr、glucose、Urine osmolality", ""],
+        ["m", "NS", "容積不足先補", "容積不足"],
+        ["m", "D5W 或 0.45% NaCl（每日需要量 + 部分缺水量）", ""],
+        ["p", "PO / NG 給水", "安全時儘早"],
+        ["p", "≤0.5 mmol/L/hr、24 hr ≤10", "急性有症狀：第 1 hr 可降 5"],
+        ["l", "Na q4h", ""],
+        ["m", "Desmopressin 1–2 mcg IV/IM", "已知中樞性尿崩症 + 大量稀釋尿", "CDI"],
+        ["p", "床邊備水", "清醒能喝"]
+      ] }
+  ]
+}

@@ -1,11 +1,13 @@
 import { extractAdmissionSections } from './sections.mjs';
 import { initDirectory, refreshDirectoryLayout } from './directory.mjs';
 import { initHandoff } from './handoff.mjs';
+import { initOncall } from './oncall.mjs';
 
 const $ = id => document.getElementById(id);
 const TABS = [
   { id: 'directory', icon: '☎️', label: 'Directory', short: 'Directory' },
   { id: 'handoff', icon: '📝', label: '交班單', short: '交班單' },
+  { id: 'oncall', icon: '🍟', label: '值班', short: '值班' },
   { id: 'notes', icon: '🤖', label: '病歷', short: '病歷' },
   { id: 'faq', icon: '❓', label: 'FAQ 腫麼用', short: 'FAQ 腫麼用' },
   { id: 'key', icon: '⚿', label: 'API key', short: 'API key' }
@@ -251,4 +253,4 @@ $('download-output').addEventListener('click', () => {
   const url = URL.createObjectURL(new Blob([$('output-notes').value], { type: 'text/plain;charset=utf-8' })); const anchor = document.createElement('a'); anchor.href = url; anchor.download = `ORNGLOCK-${state.generatedAction || 'document'}-${new Date().toISOString().slice(0, 10)}.txt`; document.body.append(anchor); anchor.click(); anchor.remove(); setTimeout(() => URL.revokeObjectURL(url), 1000);
 });
 handoff = initHandoff({ endpoint, getKey: () => state.apiKey, openKeySettings, copyText, toast });
-buildNavigation(); initDirectory({ closeMenu }); updateInputs(); loadNoteTemplates(); connect();
+buildNavigation(); initDirectory({ closeMenu }); initOncall({ copyText, toast }); updateInputs(); loadNoteTemplates(); connect();

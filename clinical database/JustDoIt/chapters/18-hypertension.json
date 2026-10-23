@@ -1,0 +1,88 @@
+{
+  "no": "18", "slug": "hypertension", "title": "高血壓", "icon": "📈",
+  "items": [
+    { "name": "血壓高：先確認", "hint": "BP >180/120",
+      "orders": [
+        ["l", "重量 BP：休息 5 min，正確袖套，量雙臂", "單次讀數不足以決策"],
+        ["p", "處理疼痛、焦慮、尿滯留、缺氧", "緩解後血壓常回落"],
+        ["p", "檢視藥物：NSAID、類固醇、去充血劑、停用 clonidine/β-blocker", ""],
+        ["l", "BUN/Cr、電解質、UA、CBC", "找器官損傷"],
+        ["x", "ECG", ""],
+        ["l", "Troponin、NT-proBNP", "胸痛或喘", "胸痛/喘"],
+        ["x", "Brain CT", "神經症狀", "神經症狀"],
+        ["l", "Pregnancy test", "育齡女性"]
+      ] },
+    { "name": "無器官損傷的嚴重高血壓", "hint": ">180/120，沒有急性損傷",
+      "orders": [
+        ["p", "不給 PRN 降壓（PO 或 IV）", "40–50% 會自行下降；加藥增加 AKI 與死亡"],
+        ["m", "恢復或調整常規口服降壓藥（排程）", ""],
+        ["p", "密切監測 BP", ""],
+        ["p", "不含服 nifedipine", "降壓幅度無法預測，會誘發中風或心肌缺血"]
+      ] },
+    { "name": "高血壓急症（一般）", "hint": ">180/120 + 急性器官損傷",
+      "orders": [
+        ["p", "轉 ICU、A-line", ""],
+        ["m", "Nicardipine 5 mg/hr IV，q5min +2.5（max 15）", "較易達短期目標；嚴重主動脈瓣狹窄禁用"],
+        ["m", "Labetalol 0.3–1 mg/kg（max 20 mg）slow IV q10min（24 hr ≤300 mg）", "氣喘、心衰、AV block、心搏過緩不用", "替代"],
+        ["m", "Clevidipine 1–2 mg/hr，q90s 加倍（max 21）", "大豆/蛋過敏禁用", "替代"],
+        ["p", "第 1 hr SBP 降 ≤25%；2–6 hr <160/100；24–48 hr 130–140", "降太快會灌流不足、AKI"]
+      ] },
+    { "name": "主動脈剝離 + 高血壓", "hint": "",
+      "orders": [
+        ["m", "Esmolol 500–1000 mcg/kg 1 min → 50 mcg/kg/min（max 300）", "先降心率：HR 60–80"],
+        ["m", "Labetalol IV", "β-blocker 替代", "替代"],
+        ["m", "Diltiazem / Verapamil IV", "β-blocker 禁忌", "β 禁忌"],
+        ["m", "Nicardipine IV", "心率控制後 BP 仍高才加", "BP 仍高"],
+        ["m", "Morphine IV", "止痛；避免 NSAID"],
+        ["p", "20 min 內 SBP ≤120", ""],
+        ["x", "CTA aorta", ""]
+      ] },
+    { "name": "急性肺水腫 + 高血壓", "hint": "",
+      "orders": [
+        ["m", "NTG 5 mcg/min，q3–5min +5（max 200）", "首選；容積不足禁用"],
+        ["m", "Furosemide 40 mg IV", ""],
+        ["p", "CPAP / BiPAP", "呼吸窘迫"],
+        ["p", "β-blocker 禁忌", ""]
+      ] },
+    { "name": "ACS + 高血壓", "hint": "",
+      "orders": [
+        ["m", "NTG 0.4 mg SL q5min ×3 → NTG IV 10 mcg/min", "PDE5i 48 hr 內禁用"],
+        ["m", "Esmolol IV", "無心衰、HR >60、SBP >100"]
+      ] },
+    { "name": "腦出血血壓", "hint": "SBP 150–220",
+      "orders": [
+        ["m", "Nicardipine IV 滴定", "目標 SBP 130–150；2 hr 內開始"],
+        ["p", "避免 SBP <130、避免降幅 >70", "會傷腎、神經惡化"],
+        ["p", "避免 nitroprusside", "影響顱內壓"]
+      ] },
+    { "name": "缺血性中風血壓", "hint": "",
+      "orders": [
+        ["m", "Labetalol / Nicardipine → <185/110", "要溶栓", "溶栓前"],
+        ["p", "溶栓後 <180/105 × 24 hr", ""],
+        ["p", "未再灌流且 <220/120：不急著降", ""],
+        ["m", "24 hr 內降 15%", "未再灌流且 ≥220/120", "≥220/120"]
+      ] },
+    { "name": "子癇前症嚴重高血壓", "hint": "孕產婦 ≥160/110 持續 15 min",
+      "orders": [
+        ["m", "Labetalol 10–20 mg IV → q10–30min 20–80 mg（≤300 mg）", "30–60 min 內給"],
+        ["m", "Hydralazine 5 mg IV → q20–40min 5–10 mg（≤20 mg）", "", "替代"],
+        ["m", "Nifedipine 10–20 mg PO，20 min 可重複", "", "替代"],
+        ["m", "MgSO4 4 g IV over 20 min → 1 g/hr", "預防子癇"],
+        ["p", "目標 <160/105", ""],
+        ["p", "禁 ACEI、ARB、nitroprusside", ""],
+        ["m", "10% Calcium gluconate 10 mL IV", "鎂中毒", "鎂中毒"]
+      ] },
+    { "name": "兒茶酚胺過量", "hint": "嗜鉻細胞瘤、古柯鹼、安非他命",
+      "orders": [
+        ["m", "Phentolamine 5 mg IV，q10min（≤50 mg/day）", ""],
+        ["m", "Benzodiazepine", "古柯鹼激動"],
+        ["p", "不單用 β-blocker", "未阻斷 α 會高血壓危象"],
+        ["p", "體溫 >40°C：冰水浸泡", ""]
+      ] },
+    { "name": "停藥反彈", "hint": "停 clonidine / β-blocker",
+      "orders": [
+        ["m", "恢復原藥", ""],
+        ["m", "IV 降壓", "無法口服", "NPO"]
+      ] }
+  ]
+}

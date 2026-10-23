@@ -1,0 +1,76 @@
+{
+  "no": "31", "slug": "acid-base", "title": "酸鹼", "icon": "⚗️",
+  "items": [
+    { "name": "血氣判讀", "hint": "",
+      "orders": [
+        ["l", "ABG（休克或 SBP <90 抽動脈）", "記錄給氧方式"],
+        ["l", "Na、K、Cl、HCO3 → AG = Na + K − (Cl + HCO3)", "確認院內公式"],
+        ["l", "Lactate、β-hydroxybutyrate、glucose、BUN/Cr", "高 AG 找原因"],
+        ["l", "Serum osmolality（算 osmolal gap）", "疑毒性醇類", "疑醇類"],
+        ["l", "Salicylate level", "耳鳴、原發呼吸性鹼中毒", "疑水楊酸"],
+        ["l", "30–60 min 後重抽", "明顯酸中毒或高碳酸"]
+      ] },
+    { "name": "高 AG 代謝性酸中毒", "hint": "",
+      "orders": [
+        ["p", "想：DKA、乳酸、腎衰、毒物（甲醇、乙二醇、水楊酸、metformin）", ""],
+        ["l", "Blood & urine tox screen", "昏迷病人"],
+        ["l", "Ketone（不用尿酮）", "飢餓、酒精性酮酸也會高"],
+        ["p", "照會腎臟科：緊急透析", "嚴重酸中毒 + 高 K、水腫、尿毒", "嚴重"]
+      ] },
+    { "name": "乳酸升高", "hint": ">2 mmol/L",
+      "orders": [
+        ["l", "Lactate q2h × 8 hr → q8–12h", "每 2 hr 降 ≥10% 較好"],
+        ["m", "Crystalloid 30 mL/kg（敗血症）", "不要為了乳酸正常持續輸液"],
+        ["p", "停 metformin（AKI 時）", ""],
+        ["l", "Blood culture", "疑敗血症"]
+      ] },
+    { "name": "毒性醇類（甲醇 / 乙二醇）", "hint": "",
+      "orders": [
+        ["l", "AG、osmolal gap、methanol / ethylene glycol level、UA（草酸結晶）、ECG", "OG <30 也不能排除"],
+        ["m", "Fomepizole 15 mg/kg IV", "高度懷疑就給，不等檢驗"],
+        ["m", "Folic / folinic acid", "甲醇", "甲醇"],
+        ["p", "透析：甲醇 pH ≤7.15 或 AG >24", "轉可透析醫院"],
+        ["p", "聯絡毒物中心", ""]
+      ] },
+    { "name": "水楊酸中毒", "hint": "",
+      "orders": [
+        ["m", "IV fluid 補足容積", ""],
+        ["m", "Sodium bicarbonate IV（尿 pH 7.5–8.7）", "鹼化尿液"],
+        ["l", "Salicylate level 重複、K", ""],
+        ["p", "緊急透析", "意識改變、ARDS、>100 mg/dL（腎差 >90）", "嚴重"]
+      ] },
+    { "name": "要不要補鹼", "hint": "",
+      "orders": [
+        ["m", "Sodium bicarbonate", "敗血症 pH ≤7.2 + AKI 2–3 期", "pH ≤7.2 + AKI"],
+        ["m", "8.4% NaHCO3 100 mmol + 無菌水 400 mL q2h 到 pH >7", "DKA pH <7.0 可考慮", "DKA pH <7"],
+        ["p", "單純乳酸酸中毒不給", "會低 K、腦水腫"]
+      ] },
+    { "name": "正常 AG 酸中毒", "hint": "高氯性",
+      "orders": [
+        ["p", "想：腹瀉、大量 NS、DKA 恢復期、RTA", ""],
+        ["m", "改用 Balanced crystalloid", "大量 NS 所致"],
+        ["l", "Cl 每日", "用 NS 時"]
+      ] },
+    { "name": "呼吸性酸中毒", "hint": "PaCO2 >45 + pH <7.35",
+      "orders": [
+        ["p", "O2 目標 88–92%（Venturi 24–28%）", "過度給氧會加重"],
+        ["p", "BiPAP", "COPD pH ≤7.35；1–4 hr 看改善"],
+        ["m", "Naloxone", "opioid", "opioid"],
+        ["l", "FVC", "神經肌肉病", "神經肌肉"],
+        ["p", "插管", "NIV 失敗或快速惡化", "NIV 失敗"]
+      ] },
+    { "name": "代謝性鹼中毒", "hint": "",
+      "orders": [
+        ["l", "Urine Na、Cl、K", "嘔吐：尿 Cl 低"],
+        ["m", "NS", "低氯、容積不足"],
+        ["m", "KCl + 補 Mg", ""],
+        ["p", "停利尿劑或改 spironolactone", ""],
+        ["m", "Acetazolamide", "嚴重鹼中毒合併水腫", "水腫"]
+      ] },
+    { "name": "呼吸性鹼中毒", "hint": "過度換氣",
+      "orders": [
+        ["p", "先排除 PE、肺炎、氣胸、敗血症、疼痛、水楊酸", ""],
+        ["p", "不要紙袋回吸", ""]
+      ] }
+  ]
+}

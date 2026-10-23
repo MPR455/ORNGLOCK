@@ -1,0 +1,97 @@
+{
+  "no": "17", "slug": "fever", "title": "發燒", "icon": "🌡️",
+  "items": [
+    { "name": "新發燒：第一輪", "hint": "住院中 ≥38.3°C",
+      "orders": [
+        ["l", "Blood culture ×2（兩個部位，各 ~10 mL）", "抗生素前，但不延誤"],
+        ["l", "CBC/DC、CRP、BUN/Cr、電解質、肝功能、PT", ""],
+        ["l", "VBG + Lactate", "中/高風險"],
+        ["l", "UA + Urine culture", ""],
+        ["x", "CXR", ""],
+        ["l", "Procalcitonin", "可考慮", "可選"],
+        ["p", "看傷口、管路、皮膚、壓瘡", "找感染源"],
+        ["p", "NEWS 重評", "≥7 高風險 q30min"]
+      ] },
+    { "name": "敗血症 / 敗血性休克", "hint": "感染 + 低血壓或乳酸高",
+      "orders": [
+        ["m", "Broad-spectrum antibiotics（1 hr 內）", "很可能/確定敗血症或休克；可能者 3 hr 內"],
+        ["m", "Balanced crystalloid 30 mL/kg（3 hr 內）", "或 250 mL bolus 重複到 1000 mL 再評估"],
+        ["m", "Norepinephrine（可周邊開始）", "輸液後仍低；MAP ≥65（≥65 歲 60–65）", "持續低血壓"],
+        ["m", "Vasopressin", "NE 劑量持續上升", "NE 上升"],
+        ["m", "Hydrocortisone 200 mg/day IV", "敗血性休克可考慮", "休克"],
+        ["l", "Lactate 追蹤", ""],
+        ["p", "Source control（6 hr 內）", "膿瘍、膽管炎、阻塞腎盂腎炎、壞死性感染、感染導管"],
+        ["m", "Insulin", "BS ≥180", "高血糖"]
+      ] },
+    { "name": "疑導管相關菌血症 (CRBSI)", "hint": "中心導管 + 發燒",
+      "orders": [
+        ["l", "配對 blood culture：導管一套 + 周邊一套（標示）", "抗生素前"],
+        ["p", "拔除非隧道式 CVC 並送尖端培養", "不明原因 sepsis 或插入處紅膿", "紅膿/sepsis"],
+        ["m", "Vancomycin", "MRSA 盛行環境的經驗用藥"],
+        ["m", "加抗綠膿 β-lactam", "嗜中性球低、嚴重敗血症、已知 MDR 移生", "高風險"]
+      ] },
+    { "name": "社區型肺炎", "hint": "",
+      "orders": [
+        ["m", "Ceftriaxone 1–2 g QD + Azithromycin 500 mg QD", ""],
+        ["m", "Levofloxacin 750 mg QD", "非重症單用；重症不單用", "替代"],
+        ["l", "Sputum culture、Blood culture", "重症或 MRSA/綠膿風險", "重症"]
+      ] },
+    { "name": "腹內感染", "hint": "",
+      "orders": [
+        ["x", "CT abdomen（膽道先 echo）", ""],
+        ["m", "Ceftriaxone + Metronidazole（或 Ertapenem）", "低風險社區型"],
+        ["m", "Piperacillin-tazobactam / Meropenem / Cefepime + Metronidazole", "高風險", "高風險"],
+        ["p", "外科 / 介入放射 source control", ""],
+        ["p", "Source control 後抗生素 ≤4 天", ""]
+      ] },
+    { "name": "C. difficile", "hint": "抗生素後腹瀉",
+      "orders": [
+        ["l", "Stool C. difficile toxin / PCR", ""],
+        ["m", "Vancomycin 125 mg PO QID × 10 天", "或 fidaxomicin 200 mg BID × 10 天"],
+        ["m", "Vancomycin 500 mg PO/NG QID + Metronidazole 500 mg IV q8h", "Fulminant（休克、ileus、megacolon）", "Fulminant"],
+        ["p", "接觸隔離", ""]
+      ] },
+    { "name": "嗜中性球低下發燒", "hint": "ANC <500 + 發燒",
+      "orders": [
+        ["l", "Blood culture ≥2 套（每個管腔各一 + 周邊）", ""],
+        ["m", "Piperacillin-tazobactam 4.5 g IV q6h", "1 hr 內；或 cefepime / meropenem"],
+        ["m", "Cefepime 2 g IV q8h", "", "替代"],
+        ["m", "Meropenem 1 g IV q8h", "ESBL 盛行或不穩定", "ESBL"],
+        ["m", "加 Vancomycin", "疑導管、皮膚軟組織、肺炎或不穩定；2 天無 G(+) 證據停", "特定情況"],
+        ["m", "Ciprofloxacin + Clindamycin / Aztreonam + Vancomycin", "β-lactam 立即型過敏", "過敏"],
+        ["x", "CXR", "有呼吸道症狀"],
+        ["p", "不量肛溫、不肛診", ""],
+        ["x", "Chest/sinus CT + Galactomannan", "4–7 天仍燒，高風險", "持續燒"]
+      ] },
+    { "name": "疑細菌性腦膜炎", "hint": "",
+      "orders": [
+        ["l", "Blood culture", "抗生素前"],
+        ["m", "Ceftriaxone 2 g IV q12h", "1 hr 內"],
+        ["m", "Ampicillin 2 g IV q4h", "Listeria 風險（>50 歲、糖尿病、免疫抑制、癌症）", "Listeria"],
+        ["m", "Vancomycin 10–20 mg/kg q8–12h", "PCN 抗藥地區", "抗藥"],
+        ["m", "Dexamethasone 10 mg IV QID × 4 天", "與第一劑抗生素同時"],
+        ["m", "Acyclovir 10 mg/kg IV q8h", "疑腦炎", "腦炎"],
+        ["x", "LP（無禁忌時）", ""]
+      ] },
+    { "name": "輸血中發燒", "hint": "",
+      "orders": [
+        ["p", "暫停輸血、保留 IV、核對", ""],
+        ["m", "Acetaminophen 500–1000 mg PO", "輕度（38–39°C）可觀察下繼續", "輕度"],
+        ["l", "血品退回；Blood culture、DAT、haptoglobin、LDH、尿 Hb", "≥39°C 或寒顫：想細菌污染或溶血", "中重度"],
+        ["m", "Epinephrine 0.5 mg IM", "合併休克 + 喘鳴", "anaphylaxis"]
+      ] },
+    { "name": "Malignant hyperthermia", "hint": "麻醉中 ETCO2、HR、體溫飆",
+      "orders": [
+        ["p", "停所有誘發藥，100% O2 高流量過度通氣", ""],
+        ["m", "Dantrolene 2.5 mg/kg IV，q10min 重複", "到 ETCO2 <45、體溫 <38.5"],
+        ["m", "Cold crystalloid 2–3 L IV", "降溫至 38.5°C 停"],
+        ["l", "ABG、K、CK、尿 myoglobin", ""],
+        ["x", "ECG monitor", "高血鉀"]
+      ] },
+    { "name": "退燒", "hint": "",
+      "orders": [
+        ["m", "Acetaminophen PO/IV", "只為舒適；不為改善敗血症預後而退燒"],
+        ["p", "NSAID 小心", "血小板低、腎差"]
+      ] }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "no": "07", "slug": "dyspnea", "title": "喘、呼吸困難", "icon": "🫁",
+  "items": [
+    { "name": "喘：第一輪", "hint": "新發呼吸困難或 SpO2 下降",
+      "orders": [
+        ["p", "O2 nasal cannula 2–6 L/min → SpO2 94–98%", "給氧治療低血氧，不是治療喘"],
+        ["p", "O2 NRM 15 L/min", "SpO2 <85% 或重症（休克、敗血症）", "SpO2 <85%"],
+        ["p", "Venturi 24–28% 或 NC 1–2 L/min → SpO2 88–92%", "COPD、BMI >40、神經肌肉病", "CO2 滯留風險"],
+        ["l", "ABG（30–60 min 內）", "重症、SpO2 非預期降、需要給氧者；SpO2 正常看不出 CO2"],
+        ["x", "CXR", ""],
+        ["x", "12-lead ECG", ""],
+        ["l", "CBC、BUN/Cr、電解質", ""],
+        ["l", "NT-proBNP", "疑心衰；<300 可排除", "疑心衰"],
+        ["l", "Troponin、D-dimer", "依懷疑 ACS 或 PE", "疑 ACS/PE"]
+      ] },
+    { "name": "給氧升級", "hint": "NRM 仍達不到目標",
+      "orders": [
+        ["p", "HFNC", "低血氧性呼吸衰竭（無 CO2 滯留）"],
+        ["p", "BiPAP（NIV）", "COPD 高碳酸 pH ≤7.35、肺水腫合併酸中毒", "高碳酸"],
+        ["p", "轉 ICU / 準備插管", "NIV 1 hr 後 P/F <175 或惡化；延誤插管增加死亡"]
+      ] },
+    { "name": "Anaphylaxis", "hint": "突發呼吸/循環問題 ± 皮膚",
+      "orders": [
+        ["m", "Epinephrine 0.5 mg IM（1 mg/mL 0.5 mL）大腿前外側", "第一線，有 IV 也一樣；5 min 無改善重複"],
+        ["p", "停可疑藥物或血品", ""],
+        ["p", "O2 NRM 15 L/min", ""],
+        ["m", "NS 500–1000 mL IV bolus", "低血壓；不含糖晶體液", "低血壓"],
+        ["m", "Salbutamol ± Ipratropium neb", "持續喘鳴的輔助；不能取代 epinephrine", "喘鳴"],
+        ["l", "Tryptase（2 hr 內）", "診斷不確定時；不延誤治療"],
+        ["p", "平躺抬腿（低血壓）/ 半坐臥（呼吸困難）", "不要突然站起"],
+        ["m", "Epinephrine IV infusion（ICU）", "2 劑 IM 後仍有症狀", "難治"],
+        ["p", "觀察 ≥6–12 hr", "雙相反應約 5%，中位 12 hr"]
+      ] },
+    { "name": "異物哽塞", "hint": "進食中突然無法說話咳嗽",
+      "orders": [
+        ["p", "5 下背部拍擊 → 5 下腹部推擠，交替", "無法有效咳嗽時"],
+        ["p", "失去反應：CPR，從胸外按壓開始", "看得到的異物才移除", "無反應"],
+        ["p", "喉鏡 + 異物鉗；必要時 eFONA", "初步處置無效", "無效"]
+      ] },
+    { "name": "急性失代償性心衰竭", "hint": "肺水腫、鬱血",
+      "orders": [
+        ["m", "Furosemide 40 mg IV", "未用過利尿劑的起始；已在用者給口服劑量兩倍 IV"],
+        ["l", "Spot urine Na（2 hr）+ 尿量（6 hr）", "尿鈉 ≥70 或尿量 ≥100 mL/hr 為反應良好"],
+        ["m", "Furosemide 劑量加倍 ± Acetazolamide 500 mg IV", "反應不足", "反應差"],
+        ["m", "NTG IV", "SBP >110 時", "SBP >110"],
+        ["p", "CPAP / BiPAP", "RR >25、SpO2 <90%", "呼吸窘迫"],
+        ["l", "Cr、K、Mg q24h；I/O、體重", ""],
+        ["x", "Echo", ""],
+        ["l", "Lactate", "疑低灌流", "低灌流"],
+        ["m", "Norepinephrine", "心因性休克", "休克"]
+      ] },
+    { "name": "氣喘急性發作", "hint": "",
+      "orders": [
+        ["m", "Salbutamol 4–10 puffs MDI q20min ×1 hr", "第一線"],
+        ["m", "Ipratropium + Salbutamol neb", "中至重度；1–2 hr 後再用沒好處"],
+        ["m", "Prednisolone 50 mg PO QAM × 5–7 天", "1 hr 內給；口服與靜脈同效"],
+        ["m", "Hydrocortisone 200 mg IV（分次）", "無法口服", "無法口服"],
+        ["m", "MgSO4 2 g IV over 20 min", "初始治療無效且持續低血氧", "無效"],
+        ["p", "O2 → SpO2 92–96%", "成人不宜 >96%"],
+        ["l", "PEF / FEV1", "治療前與第 1 hr"],
+        ["l", "ABG", "PEF <50% 或無反應", "嚴重"]
+      ] },
+    { "name": "COPD 急性惡化", "hint": "",
+      "orders": [
+        ["p", "O2 Venturi 24–28% → SpO2 88–92%", "過量給氧會 CO2 上升"],
+        ["l", "ABG，30–60 min 後重驗", ""],
+        ["m", "Salbutamol + Ipratropium neb（空氣驅動）q1h ×2–3 → q2–4h", ""],
+        ["m", "Prednisolone 40 mg PO QD × 5 天", "更長療程增加肺炎與死亡"],
+        ["m", "Amoxicillin-clavulanate 或 Doxycycline × 5–7 天", "喘加劇、痰量增、痰變膿至少兩項（含痰變膿）", "痰變膿"],
+        ["l", "Sputum culture", "頻繁惡化或需呼吸器", "頻繁惡化"],
+        ["p", "BiPAP", "pH ≤7.35 且 PaCO2 >45", "酸中毒"],
+        ["p", "不用 aminophylline、呼吸興奮劑", "副作用多"]
+      ] },
+    { "name": "疑肺栓塞", "hint": "見胸痛章；喘 + 心搏快",
+      "orders": [
+        ["x", "CTPA", "高機率或 D-dimer 升高"],
+        ["l", "D-dimer（年齡 ×10）", "低/中機率", "低中機率"],
+        ["m", "Enoxaparin 1 mg/kg SC q12h", "中高機率檢查中就開始；CrCl <30 改 UFH"],
+        ["m", "Heparin IV bolus + infusion", "不穩定、預期溶栓", "不穩定"],
+        ["m", "Alteplase 100 mg IV over 2 hr", "高風險（休克）且無禁忌", "休克"]
+      ] },
+    { "name": "社區型肺炎 (CAP)", "hint": "非重症住院",
+      "orders": [
+        ["m", "Ceftriaxone 1–2 g IV QD + Azithromycin 500 mg QD", "標準住院 CAP"],
+        ["m", "Levofloxacin 750 mg QD", "替代；疑結核避免", "替代"],
+        ["l", "Sputum Gram stain & culture、Blood culture ×2", "重症、要蓋 MRSA/綠膿、90 天內住院用過 IV 抗生素", "重症/風險"],
+        ["l", "Influenza rapid PCR", "流感季"],
+        ["m", "Oseltamivir", "流感陽性", "流感"],
+        ["l", "CURB-65 / PSI", "決定照護層級"],
+        ["p", "總療程 ≥5 天且臨床穩定", ""]
+      ] },
+    { "name": "重症肺炎 / 需涵蓋抗藥菌", "hint": "",
+      "orders": [
+        ["m", "β-lactam + Azithromycin 或 + Levofloxacin", "重症 CAP"],
+        ["m", "Vancomycin（依濃度）或 Linezolid 600 mg q12h", "MRSA 風險", "MRSA"],
+        ["m", "Piperacillin-tazobactam 4.5 g q6h / Cefepime 2 g q8h / Meropenem 1 g q8h", "綠膿桿菌風險", "綠膿"],
+        ["m", "Hydrocortisone 200 mg/day IV infusion", "重症 CAP 可考慮；流感、麴菌不用", "重症"]
+      ] },
+    { "name": "院內肺炎 HAP / VAP", "hint": "住院 48 hr 後",
+      "orders": [
+        ["m", "Piperacillin-tazobactam 4.5 g IV q6h", "或 cefepime 2 g q8h / meropenem 1 g q8h"],
+        ["m", "加 Vancomycin", "MRSA 病史或單位比例高", "MRSA"],
+        ["l", "Endotracheal aspirate culture", "VAP", "插管"],
+        ["p", "療程 7 天", ""]
+      ] },
+    { "name": "張力性氣胸", "hint": "低血壓 + 單側呼吸音消失",
+      "orders": [
+        ["p", "Needle decompression 5th ICS 腋中線", "不等影像"],
+        ["p", "Chest tube", "減壓後"]
+      ] },
+    { "name": "胸水", "hint": "",
+      "orders": [
+        ["x", "Chest echo-guided thoracentesis", "一律影像導引"],
+        ["l", "Pleural fluid pH、LDH、protein、glucose、cell count、Gram/culture、cytology", "pH 不要混到麻藥或 heparin"],
+        ["l", "Serum LDH、protein", "Light's criteria"],
+        ["p", "Chest tube", "膿或 pH ≤7.2", "膿胸"],
+        ["p", "一次抽 ≤1.5 L", "避免復張性肺水腫"]
+      ] },
+    { "name": "插管 / RSI", "hint": "NIV 失敗、無法矯正低血氧",
+      "orders": [
+        ["p", "Preoxygenation 100% O2 3 min（或 CPAP / HFNO）", ""],
+        ["m", "Ketamine 誘導", "血行動力較穩定"],
+        ["m", "Rocuronium 1.2 mg/kg IV", "比 succinylcholine 少高血鉀"],
+        ["m", "NS 500 mL bolus + 升壓劑備用", "插管後低血壓可達 25%"],
+        ["x", "Waveform capnography", "確認管位的唯一標準"],
+        ["x", "CXR", "看深度"]
+      ] },
+    { "name": "藥物呼吸抑制", "hint": "呼吸慢、針尖瞳孔",
+      "orders": [
+        ["p", "BVM 通氣", ""],
+        ["m", "Naloxone 0.2–2 mg IV q2–3min", ""],
+        ["l", "ABG", "排除高碳酸血症"],
+        ["m", "Naloxone infusion", "再抑制（長效 opioid）", "再抑制"]
+      ] },
+    { "name": "過度換氣", "hint": "先排除器質性原因",
+      "orders": [
+        ["l", "SpO2、ABG", "排除氣胸、肺炎、PE"],
+        ["p", "不要紙袋回吸", "會造成低血氧"]
+      ] }
+  ]
+}

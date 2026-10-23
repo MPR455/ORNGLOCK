@@ -1,0 +1,55 @@
+{
+  "no": "25", "slug": "sedatives", "title": "鎮靜安眠藥", "icon": "😴",
+  "items": [
+    { "name": "睡不著要安眠藥", "hint": "",
+      "orders": [
+        ["p", "先找原因：痛、缺氧、尿急、譫妄、類固醇/β-agonist", ""],
+        ["p", "環境：減少夜間處置與噪音", ""],
+        ["l", "STOP 問卷（OSA）", "≥2 分高風險；對鎮靜劑敏感"],
+        ["m", "Zolpidem 5 mg PO HS（男性 5–10 mg）", "短期 ≤4 週；不要太晚吃"],
+        ["m", "Eszopiclone 1 mg PO HS（≥65 歲 max 2 mg）", "", "替代"],
+        ["m", "Doxepin 3–6 mg PO HS", "老人或想避免 Z-drug", "老人"],
+        ["p", "老人避免 BZD、Z-drug、diphenhydramine", "譫妄、跌倒、骨折"],
+        ["p", "避免與 opioid、gabapentinoid 併用", "呼吸抑制"]
+      ] },
+    { "name": "躁動被要求鎮靜（譫妄）", "hint": "",
+      "orders": [
+        ["l", "4AT", "先確認是不是譫妄"],
+        ["l", "SpO2、血糖、電解質、感染評估", "先處理可逆原因"],
+        ["m", "Haloperidol 最低劑量（≤1 週）", "降低衝突無效 + 痛苦或傷人風險；Parkinson/Lewy 避免"],
+        ["p", "不給 BZD", "除非酒精或 BZD 戒斷"],
+        ["p", "不約束", "除非即將傷人傷己"]
+      ] },
+    { "name": "酒精中毒躁動", "hint": "",
+      "orders": [
+        ["m", "Haloperidol", "對呼吸影響最小；避免 BZD"],
+        ["p", "避免 IM olanzapine + BZD", "血氧會掉"]
+      ] },
+    { "name": "興奮劑中毒躁動", "hint": "",
+      "orders": [
+        ["m", "Benzodiazepine（如 Lorazepam）", "第一線"]
+      ] },
+    { "name": "酒精戒斷", "hint": "",
+      "orders": [
+        ["l", "CIWA-Ar", "<10 輕、10–18 中、≥19 重"],
+        ["m", "Chlordiazepoxide 25–100 mg PO q4–6h PRN CIWA ≥10", "症狀觸發"],
+        ["m", "Diazepam front loading", "重度", "重度"],
+        ["m", "Lorazepam IV", "戒斷癲癇或肝病", "癲癇/肝病"],
+        ["m", "Thiamine 100 mg IV/IM QD × 3–5 天", ""],
+        ["p", "重評：24 hr 內 q1–4h", ""]
+      ] },
+    { "name": "長期 BZD 使用者", "hint": "",
+      "orders": [
+        ["p", "不要突然停", "戒斷可危及生命"],
+        ["m", "Lorazepam（換藥時）", "肝功能差時較安全", "肝差"]
+      ] },
+    { "name": "過度鎮靜", "hint": "叫不醒、呼吸慢",
+      "orders": [
+        ["p", "刺激深呼吸 + O2；必要時 BVM", "先支持通氣"],
+        ["m", "Naloxone", "opioid + BZD 合併時先給", "合併 opioid"],
+        ["m", "Flumazenil 0.2 mg IV（max 1 mg）", "單純 BZD、非長期使用、無癲癇心律不整風險", "單純 BZD"],
+        ["l", "ABG", ""],
+        ["p", "持續觀察到不再復發", "拮抗劑作用短"]
+      ] }
+  ]
+}

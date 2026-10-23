@@ -1,0 +1,48 @@
+{
+  "no": "33", "slug": "potassium", "title": "鉀", "icon": "🍌",
+  "items": [
+    { "name": "高血鉀 K ≥6.0", "hint": "",
+      "orders": [
+        ["x", "12-lead ECG STAT", "ECG 正常不能排除"],
+        ["x", "Continuous ECG monitor", "K ≥6.5 或 ECG 變化"],
+        ["l", "Repeat K（大靜脈輕抽、不握拳）", "排除假性高血鉀；高度懷疑時不等確認"],
+        ["m", "10% Calcium gluconate 30 mL IV over 10 min", "有 ECG 變化；不降 K，只保護心臟", "ECG 變化"],
+        ["m", "10% Calcium chloride 10 mL IV over 5 min", "Peri-arrest；中心靜脈", "瀕臨停止"],
+        ["m", "Regular insulin 10 U + Glucose 25 g IV", "先測血糖；15 min 內起效"],
+        ["m", "10% Glucose 50 mL/hr × 5 hr", "治療前 BS <126", "BS <126"],
+        ["m", "Salbutamol 10–20 mg neb", "和 insulin 一起；心臟病人減量"],
+        ["m", "SZC 10 g PO TID", "1 hr 內起效", "加速排除"],
+        ["m", "Furosemide IV", "非無尿、無容積不足", "有尿"],
+        ["l", "K 1、2、4、6、24 hr；BS 監測到 6 hr", "目標 2 hr 內 <6"],
+        ["p", "照會腎臟科：緊急透析", "藥物無效、ESKD、寡尿 AKI、橫紋肌溶解", "無效/ESKD"]
+      ] },
+    { "name": "高血鉀：去除原因", "hint": "",
+      "orders": [
+        ["p", "停補鉀、含鉀輸液、低鈉鹽", ""],
+        ["p", "暫停 ACEI/ARB/MRA、NSAID、TMP-SMX、保鉀利尿劑、heparin、β-blocker", "急性病時"],
+        ["l", "BUN/Cr、glucose、VBG、CK", ""]
+      ] },
+    { "name": "高血鉀心跳停止", "hint": "",
+      "orders": [
+        ["m", "10% Calcium chloride 10 mL IV push", ""],
+        ["m", "Sodium bicarbonate 50 mmol IV（另一管路）", ""],
+        ["m", "Insulin 10 U + Glucose 25 g", ""],
+        ["p", "持續 CPR 下考慮透析", ""]
+      ] },
+    { "name": "低血鉀", "hint": "K <3.5",
+      "orders": [
+        ["x", "ECG", ""],
+        ["l", "Mg", "低 Mg 要一起補，否則 K 補不上"],
+        ["m", "KCl SR 20–40 mEq PO（40–100 mEq/day 分次）", "能吃就口服"],
+        ["m", "KCl IV ≤10 mEq/hr（濃度 <30–40 mEq/L，NS 稀釋）", "K <2.5 或不能口服；絕不直推", "K <2.5"],
+        ["m", "KCl IV ≤20 mEq/hr（中心靜脈 + 連續 ECG）", "K <2.0 合併 ECG 變化或麻痺", "危急"],
+        ["m", "MgSO4 2 g IV over 15 min", "低 Mg 且有症狀", "低 Mg"],
+        ["l", "K 追蹤", "目標 K 4；腎差從低劑量起"],
+        ["p", "停 thiazide / loop 或加 MRA", "利尿劑引起", "利尿劑"]
+      ] },
+    { "name": "低血鉀心跳停止", "hint": "",
+      "orders": [
+        ["m", "KCl 20 mmol IV over 2–3 min → 10 mmol over 2 min", "只限低血鉀造成的心跳停止"]
+      ] }
+  ]
+}

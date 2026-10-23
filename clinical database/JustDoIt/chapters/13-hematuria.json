@@ -1,0 +1,75 @@
+{
+  "no": "13", "slug": "hematuria", "title": "血尿", "icon": "🩸",
+  "items": [
+    { "name": "試紙血尿：確認", "hint": "Dipstick 陽性",
+      "orders": [
+        ["l", "Urine microscopy（RBC/HPF）", "≥3 RBC/HPF 才算；試紙會被肌紅素、月經干擾"],
+        ["l", "BUN/Cr、eGFR", ""],
+        ["l", "Urine protein/Cr、dysmorphic RBC", "提示腎絲球來源"],
+        ["l", "Urine culture", "排除 UTI；治療後複驗"]
+      ] },
+    { "name": "橫紋肌溶解", "hint": "試紙陽性但鏡檢少 RBC + 肌痛",
+      "orders": [
+        ["l", "CK、K、P、Ca、Cr、ABG、PT", "CK >1000"],
+        ["x", "ECG", "高血鉀"],
+        ["m", "IV fluid 1.5 L/hr，尿量 200–300 mL/hr", "不要只用 NS"],
+        ["p", "Foley 監測尿量", ""],
+        ["m", "Calcium gluconate", "只在高血鉀合併心臟不穩時", "高 K + 心臟"],
+        ["p", "避免 mannitol 與 loop diuretic", ""]
+      ] },
+    { "name": "肉眼血尿", "hint": "",
+      "orders": [
+        ["l", "CBC、PT/INR、aPTT、BUN/Cr", ""],
+        ["m", "Crystalloid 500 mL over 15 min", "需要復甦時", "低血壓"],
+        ["m", "pRBC：Hb <7（冠心病 <8）", ""],
+        ["p", "3-way Foley + continuous bladder irrigation", "血塊阻塞，依院內流程與泌尿科討論", "血塊"],
+        ["x", "CT urography", "肉眼血尿 30–40% 是惡性"]
+      ] },
+    { "name": "血尿 + 腰痛發燒", "hint": "疑腎盂腎炎或感染性阻塞",
+      "orders": [
+        ["l", "UA、Urine culture、Blood culture", "抗生素前，但不延誤"],
+        ["l", "CBC、CRP、Cr、尿酸、Ca、Na/K", ""],
+        ["x", "Renal echo（膿腎 6 hr 內）", "第一線"],
+        ["x", "Non-contrast CT", "確認結石"],
+        ["m", "Ceftriaxone 2 g IV QD", "第一線"],
+        ["m", "Ciprofloxacin 400 mg IV BID", "第一線替代；過去 12 個月用過 FQ 不用", "替代"],
+        ["m", "Piperacillin-tazobactam 4.5 g TID / Meropenem 1 g TID", "敗血症或多重抗藥菌", "敗血症"],
+        ["p", "緊急減壓（PCN 或 DJ stent）", "阻塞合併感染"],
+        ["p", "療程：FQ 5–7 天或其他 7 天", ""]
+      ] },
+    { "name": "腎絞痛止痛", "hint": "",
+      "orders": [
+        ["m", "NSAID（如 Ketorolac / Diclofenac）", "第一線，止痛優於 opioid；腎差小心"],
+        ["m", "Acetaminophen", ""],
+        ["m", "Tramadol / Hydromorphone", "第二線；不用 pethidine", "第二線"]
+      ] },
+    { "name": "導尿管相關感染 (CAUTI)", "hint": "",
+      "orders": [
+        ["p", "更換或移除導尿管", ""],
+        ["l", "Urine culture（從新管採檢）", "抗生素前"],
+        ["p", "無症狀不送培養、不治療", "膿尿、混濁、異味不足以診斷"],
+        ["p", "療程 7 天（反應慢 14 天）", ""]
+      ] },
+    { "name": "外傷 / 導尿後血尿", "hint": "",
+      "orders": [
+        ["x", "Multiphase CT", "穩定的外傷 + 肉眼血尿"],
+        ["x", "Retrograde cystography（≥300–350 mL）", "骨盆骨折 + 肉眼血尿", "骨盆骨折"],
+        ["p", "尿道口流血：不放經尿道導尿管", "先確認尿道完整", "尿道口流血"]
+      ] },
+    { "name": "抗凝劑使用者血尿", "hint": "",
+      "orders": [
+        ["l", "CBC、PT/INR、aPTT（dabigatran 加 TT）", ""],
+        ["p", "非重大出血：可考慮繼續抗凝", "已止血支持繼續"],
+        ["m", "Vitamin K 2–5 mg PO/IV", "Warfarin，需住院或輸血", "Warfarin"],
+        ["m", "4F-PCC 依 INR + Vitamin K 5–10 mg IV", "重大出血", "重大出血"],
+        ["m", "Idarucizumab 5 g IV", "Dabigatran 重大出血", "Dabigatran"],
+        ["m", "4F-PCC 2000 U", "Apixaban/Rivaroxaban 重大出血", "Xa 抑制劑"]
+      ] },
+    { "name": "疑腎絲球腎炎", "hint": "蛋白尿 + 變形 RBC + 腎功能下降",
+      "orders": [
+        ["l", "ANCA（MPO/PR3）、anti-GBM、C3/C4、ANA", ""],
+        ["l", "Urine sediment（RBC cast）", ""],
+        ["p", "照會腎臟科（24 hr 內）", "不要因等切片延後免疫抑制"]
+      ] }
+  ]
+}

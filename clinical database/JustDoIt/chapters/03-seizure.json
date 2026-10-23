@@ -1,0 +1,90 @@
+{
+  "no": "03", "slug": "seizure", "title": "癲癇", "icon": "⚡",
+  "items": [
+    { "name": "癲癇重積：0–5 分", "hint": "抽搐中，穩定期",
+      "orders": [
+        ["l", "指尖血糖（0–2 min）", "低血糖要先排除；抽搐中難量時別延誤治療"],
+        ["p", "側躺、頭擺位保呼吸道、別塞東西入口", "非侵入方式保持通暢"],
+        ["p", "O2 NRM 15 L/min → SpO2 94–98%", "取得可靠血氧前給高濃度氧"],
+        ["p", "建立 IV（0–5 min）", "第一線給藥途徑"],
+        ["l", "Glucose、CBC、生化、Ca、Mg、抗癲癇藥濃度", "找可逆原因、查服藥順從性"],
+        ["x", "Brain CT", "多數情況適用；已知癲癇的典型發作通常不用"]
+      ] },
+    { "name": "癲癇重積：第一線 (≥5 分)", "hint": "持續 ≥5 min 或反覆未醒",
+      "orders": [
+        ["m", "Lorazepam 0.1 mg/kg IV（max 4 mg/劑，≤2 mg/min）", "首選；一次給足全劑量，5–10 min 未停可重複一次"],
+        ["m", "Diazepam 0.15 mg/kg IV（max 10 mg/劑，≤5 mg/min）", "IV 替代", "無 lorazepam"],
+        ["m", "Midazolam 0.2 mg/kg IM（max 10 mg）", "沒有 IV 時首選；比 IV lorazepam 更快有效", "無 IV"],
+        ["p", "監測呼吸抑制與低血壓", "BZD 副作用"]
+      ] },
+    { "name": "癲癇重積：第二線 (≥20 分)", "hint": "足量 BZD 後仍在抽",
+      "orders": [
+        ["m", "Levetiracetam 60 mg/kg IV（max 4,500 mg）", "交互作用少、不經肝；懷孕首選"],
+        ["m", "Fosphenytoin 20 mg PE/kg IV（≤150 mg PE/min，max 1,500 mg PE）", "AV block、竇性過緩禁用；要心臟監測", "替代"],
+        ["m", "Valproate 40 mg/kg IV（max 3,000 mg）", "肝病禁用；可生育女性避免", "替代"],
+        ["m", "Phenytoin 20 mg/kg IV（≤50 mg/min，只能配 NS）", "要心臟監測", "替代"],
+        ["l", "抗癲癇藥血中濃度", "原本有吃藥者查順從性"]
+      ] },
+    { "name": "難治型重積 (≥40 分)", "hint": "第二線也無效",
+      "orders": [
+        ["p", "插管 + 轉 ICU", "持續輸注需呼吸支持，可能要升壓劑"],
+        ["m", "Midazolam 0.2 mg/kg IV（2 mg/min），維持 0.05–2 mg/kg/hr", "麻醉類輸注"],
+        ["m", "Propofol 1–2 mg/kg 負荷，維持 30–200 mcg/kg/min", ">80 mcg/kg/min 超過 48 hr 小心 propofol infusion syndrome", "替代"],
+        ["x", "Continuous EEG", "調到電發作停止或 burst suppression；昏迷至少 48 hr"],
+        ["p", "維持 24–48 hr 後緩慢撤除", "撤除時給足維持用抗癲癇藥"]
+      ] },
+    { "name": "抽完沒醒", "hint": "停抽 >10 min 意識未回基準",
+      "orders": [
+        ["x", "Continuous EEG（SE 開始 1 hr 內）", "18–50% 停抽後仍是非痙攣性重積"],
+        ["l", "血糖、電解質、血氨、毒物", "排除其他意識障礙"]
+      ] },
+    { "name": "抽搐合併低血糖", "hint": "BS < 72",
+      "orders": [
+        ["m", "20% Glucose 100 mL IV over 15 min", "或 10% 200 mL；心腎衰用最小量"],
+        ["m", "Glucagon 1 mg IM", "沒 IV 時；酗酒、肝病效果差", "無 IV"],
+        ["l", "10 min 後重測血糖", "仍低就重複"],
+        ["m", "Thiamine 200 mg IV TID", "疑 Wernicke；可與糖同時給", "酒精/營養差"]
+      ] },
+    { "name": "抽搐合併低血鈉", "hint": "嚴重症狀",
+      "orders": [
+        ["m", "3% NaCl 150 mL IV over 20 min", "可重複 2 次，或 Na 升 5 為止"],
+        ["l", "Na 每 20 min", ""],
+        ["p", "第一個 24 hr Na 上升 ≤10", "之後每天 ≤8 直到 130"]
+      ] },
+    { "name": "抽搐合併低血鈣", "hint": "嚴重低血鈣",
+      "orders": [
+        ["m", "10% Calcium gluconate 10–20 mL + D5W 50–100 mL IV over 10 min", ""],
+        ["x", "ECG monitor", "給鈣時監測"]
+      ] },
+    { "name": "酒精戒斷癲癇", "hint": "停酒 24–48 hr 內發作",
+      "orders": [
+        ["m", "Lorazepam 或 Diazepam IV", "BZD 是第一線"],
+        ["p", "不用 phenytoin、β-blocker、α2 agonist", "對戒斷癲癇無效"],
+        ["m", "Magnesium sulfate IV", "低 Mg、心律不整或曾戒斷發作"],
+        ["m", "Thiamine 100 mg IV/IM QD × 3–5 天", ""],
+        ["p", "密切監測 ≥24 hr，每 1–2 hr 重評", ""],
+        ["x", "EEG 及/或 Brain CT", "新發作、型態不同、局部缺損、發燒、外傷", "新型態"]
+      ] },
+    { "name": "子癇", "hint": "孕婦或產後抽搐",
+      "orders": [
+        ["m", "MgSO4 4 g IV over 5–15 min，之後 1 g/hr", "子癇首選，優於抗癲癇藥"],
+        ["p", "q30min BP/HR/RR/SpO2、反射；每小時尿量", "看鎂中毒"],
+        ["l", "Serum Mg q4h", "寡尿（<30 mL/hr 超過 4 hr）時", "寡尿"],
+        ["m", "10% Calcium gluconate 10 mL IV（稀釋 10 min）", "鎂中毒：反射消失、RR <12、SpO2 <94%", "鎂中毒"],
+        ["p", "降壓：SBP >160 或 DBP >110", "重度高血壓"]
+      ] },
+    { "name": "抽搐後外傷 / 橫紋肌溶解", "hint": "撞頭、肌痛、茶色尿",
+      "orders": [
+        ["x", "Head CT（1 hr 內）", "GCS ≤12、骨折徵象、局部缺損、外傷後發作"],
+        ["p", "頸椎保護", "頭臉外傷先假設頸椎受傷"],
+        ["l", "CK、K、Cr、UA（潛血）", "CK >1000 為橫紋肌溶解"],
+        ["m", "IV fluid 1.5 L/hr，目標尿量 200–300 mL/hr", "避免只用 NS；心臟病與老人小心"]
+      ] },
+    { "name": "昏厥 vs 癲癇", "hint": "不確定是不是抽搐",
+      "orders": [
+        ["x", "12-lead ECG", "找可模仿發作的心臟原因"],
+        ["x", "EEG（72 hr 內）", "首次發作後；正常也不能排除"],
+        ["x", "Telemetry", "懷疑心因性昏厥時", "疑心因"]
+      ] }
+  ]
+}

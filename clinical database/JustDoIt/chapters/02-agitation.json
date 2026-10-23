@@ -1,0 +1,89 @@
+{
+  "no": "02", "slug": "agitation", "title": "躁動、攻擊", "icon": "😡",
+  "items": [
+    { "name": "躁動：先找可逆原因", "hint": "鎮靜前先查",
+      "orders": [
+        ["l", "床邊血糖", "低血糖可以表現成攻擊或抽搐"],
+        ["l", "SpO2、ABG", "缺氧常表現成坐立不安而不是喘"],
+        ["l", "體溫；發燒則做敗血症 work-up", "敗血症是常見原因"],
+        ["l", "Na/K/Ca/Mg、BUN/Cr、CBC", "代謝與電解質異常"],
+        ["x", "Bladder scan", "尿滯留是常見誘因"],
+        ["p", "用藥檢視：停抗膽鹼、BZD、類固醇、H2 blocker、opioid、meperidine", "這些藥會引發或加重譫妄"],
+        ["p", "降低刺激、重新定向、找家屬陪伴", "給藥前先試"]
+      ] },
+    { "name": "譫妄需要藥物控制", "hint": "非酒精/BZD 戒斷，即將傷人",
+      "orders": [
+        ["x", "ECG（QTc）", "haloperidol 前做基準；QTc >500 不用"],
+        ["m", "Haloperidol 低劑量 PO/IM（短期 <1 週）", "最低劑量起始；Parkinson、Lewy body 失智要避免"],
+        ["m", "Quetiapine PO", "Parkinson 病人較不易惡化", "Parkinson"],
+        ["p", "避免 BZD", "會加重譫妄；除非是酒精或 BZD 戒斷"],
+        ["p", "避免 IV haloperidol", "若必用，每日 5–10 mg 且連續 ECG 監測"]
+      ] },
+    { "name": "精神病性躁動", "hint": "已知精神疾病，有幻覺妄想",
+      "orders": [
+        ["m", "Risperidone 2 mg PO（q2h 可重複，max 6 mg/day）", "能口服首選"],
+        ["m", "Olanzapine 10 mg IM（q20min，max 30 mg/day）", "不能口服；不要再追加 BZD", "不能口服"],
+        ["m", "Ziprasidone 10–20 mg IM（max 40 mg/day）", "不能口服的另一選擇", "不能口服"],
+        ["m", "Haloperidol 5 mg PO/IM（max 20 mg/day）", "第一代；EPS 較多"],
+        ["m", "首劑不足：加 Lorazepam 2 mg PO/IM", "優於追加同一種抗精神病藥；首劑為 IM olanzapine 時不加", "首劑不足"]
+      ] },
+    { "name": "暴力攻擊（非譫妄）", "hint": "即將傷人，需快速鎮靜",
+      "orders": [
+        ["m", "Lorazepam 2 mg IM（q2h，max 12 mg/day）", "無精神病症狀時；有心臟病或沒 ECG 時優先"],
+        ["m", "Haloperidol 5 mg IM + Promethazine IM", "有 ECG、無心血管病時；合併可減少 EPS", "有 ECG"],
+        ["p", "給藥後至少每小時量 vital signs 與意識", "超過最大劑量或看似睡著：每 15 分鐘"],
+        ["p", "床邊備 BVM、O2、抽吸", "過度鎮靜與呼吸抑制"]
+      ] },
+    { "name": "刺激性藥物中毒", "hint": "安非他命、古柯鹼等",
+      "orders": [
+        ["m", "Benzodiazepine（如 Lorazepam）", "多數娛樂性藥物中毒躁動的第一線"],
+        ["l", "CK、體溫、腎功能、電解質", "注意高熱與橫紋肌溶解"]
+      ] },
+    { "name": "酒精中毒（非戒斷）", "hint": "喝醉吵鬧",
+      "orders": [
+        ["m", "抗精神病藥（如 Haloperidol）", "盡量少用藥；避免 BZD，與酒精一起會呼吸抑制"],
+        ["l", "血中酒精濃度", "病史不清時區分中毒與戒斷"]
+      ] },
+    { "name": "Wernicke 腦病變", "hint": "四項中兩項：營養差、眼徵、小腦、意識/記憶",
+      "orders": [
+        ["m", "Thiamine 200 mg IV TID（in NS 或 D5W 100 mL，30 min）", "疑似就給；三聯徵敏感度低"],
+        ["m", "Thiamine 100 mg IV/IM QD × 3–5 天", "住院酒精戒斷預防", "預防"],
+        ["m", "Thiamine 200 mg IM/IV 在給糖前", "急診、Wernicke 高風險預防", "高風險"]
+      ] },
+    { "name": "高熱 + 橫紋肌溶解", "hint": "肌痛無力，CK >1000",
+      "orders": [
+        ["l", "CK、BUN/Cr、K、Ca、P、ABG、尿液", "追腎傷與高血鉀"],
+        ["x", "ECG STAT", "高血鉀與心律不整"],
+        ["m", "IV fluid 1.5 L/hr（非只用 NS）", "目標尿量 200–300 mL/hr、尿液 pH >6.5；心臟病與老人要小心"],
+        ["p", "Foley 監測尿量", ""],
+        ["p", "停 statin、neuroleptic", "可能是原因"],
+        ["p", "避免 mannitol、loop diuretic", "沒有幫助"],
+        ["p", "查腔室症候群", "需骨科評估筋膜切開"]
+      ] },
+    { "name": "疑 NMS", "hint": "抗精神病藥 + 高熱、僵直、意識變",
+      "orders": [
+        ["p", "停 neuroleptic", "可疑藥物先暫停"],
+        ["l", "CK、腎功能、電解質、ABG、凝血（DIC）", "追蹤併發症"],
+        ["x", "ECG", ""],
+        ["m", "Benzodiazepine", "控制躁動與顫抖"],
+        ["m", "Bromocriptine", "矯正低 dopamine 狀態"],
+        ["m", "Dantrolene", "作為肌肉鬆弛劑；角色有爭議", "嚴重僵直"],
+        ["p", "積極降溫（>40 °C）", "至少 0.15 °C/min，到 38.6 °C 停"]
+      ] },
+    { "name": "疑 Serotonin syndrome", "hint": "SSRI/SNRI/TCA/lithium + 高熱、瞳孔大、躁動",
+      "orders": [
+        ["p", "停 serotonergic 藥物", ""],
+        ["l", "CK、腎功能、電解質、ABG、Lithium level", "可加驗抗憂鬱藥濃度"],
+        ["x", "ECG", ""],
+        ["m", "Benzodiazepine", "控制躁動"],
+        ["m", "Chlorpromazine", "可考慮；本身是 dopamine 拮抗劑，未與 NMS 分清時小心", "嚴重"],
+        ["m", "Sodium bicarbonate", "TCA 所致", "TCA"]
+      ] },
+    { "name": "藥物過度鎮靜", "hint": "給鎮靜後呼吸抑制",
+      "orders": [
+        ["p", "Bag-valve-mask 通氣", "有脈搏但呼吸抑制，先通氣"],
+        ["m", "Naloxone", "有合併 opioid 時先給", "合併 opioid"],
+        ["m", "Flumazenil 0.2 mg IV（滴定至 1 mg）", "只用於單純 BZD；長期使用者會誘發難治戒斷與抽搐", "單純 BZD"]
+      ] }
+  ]
+}

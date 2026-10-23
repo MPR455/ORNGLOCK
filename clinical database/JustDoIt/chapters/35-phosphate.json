@@ -1,0 +1,41 @@
+{
+  "no": "35", "slug": "phosphate", "title": "磷", "icon": "🧪",
+  "items": [
+    { "name": "低血磷", "hint": "",
+      "orders": [
+        ["l", "P、Ca、Mg、K", "確認單位 mg/dL 或 mmol/L"],
+        ["p", "找原因：再餵食、DKA 治療中、酒精、IV ferric carboxymaltose、tenofovir", ""],
+        ["m", "補磷（PO / IV）", "酒精戒斷 P <1 mg/dL；DKA 只在 <1.0 mmol/L 且有肌無力"],
+        ["m", "Potassium phosphate 20–30 mmol 加入輸液", "DKA 嚴重低磷 + 呼吸或心臟受損", "DKA"],
+        ["p", "補太快會低血鈣", ""]
+      ] },
+    { "name": "再餵食症候群預防", "hint": "BMI <16、幾乎沒吃 >10 天、電解質低",
+      "orders": [
+        ["l", "K、Mg、P（開始前）→ q12h × 3 天", ""],
+        ["m", "Thiamine 100 mg/day × 5–7 天（給糖前）", "Wernicke 風險：200 mg IV"],
+        ["p", "起始 ≤10 kcal/kg/day（極端 5），4–7 天加到足量", "IV 葡萄糖熱量也要算"],
+        ["m", "補 K、P（0.3–0.6 mmol/kg/day）、Mg", "餵食同時補"],
+        ["p", "Vital signs q4h × 24 hr、每日體重、I/O", ""],
+        ["p", "電解質急降：熱量減 50%", "", "電解質急降"]
+      ] },
+    { "name": "高血磷：TLS", "hint": "",
+      "orders": [
+        ["m", "IV fluid 3 L/m²/day（尿量 100 mL/m²/hr）", ""],
+        ["l", "K、尿酸、P、Ca、Cr q6–12h", ""],
+        ["p", "不補 K、P", ""],
+        ["m", "Calcium gluconate", "只有有症狀低血鈣時", "症狀性低鈣"],
+        ["p", "照會腎臟科：透析", "高 K / 高 P 對內科治療無效", "無效"]
+      ] },
+    { "name": "高血磷：橫紋肌溶解", "hint": "",
+      "orders": [
+        ["m", "IV fluid 1.5 L/hr（尿量 200–300 mL/hr）", "利尿會帶走磷"],
+        ["p", "無症狀不補鈣", "血鈣之後會回升"],
+        ["l", "U&E、CK", ""]
+      ] },
+    { "name": "慢性高血磷（CKD）", "hint": "",
+      "orders": [
+        ["m", "Phosphate binder（隨餐）", "依持續升高才開始；避免長期含鋁"],
+        ["p", "限磷飲食", ""]
+      ] }
+  ]
+}

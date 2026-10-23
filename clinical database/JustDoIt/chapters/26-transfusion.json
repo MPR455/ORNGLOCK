@@ -1,0 +1,81 @@
+{
+  "no": "26", "slug": "transfusion", "title": "輸血", "icon": "🅾️",
+  "items": [
+    { "name": "紅血球輸注", "hint": "",
+      "orders": [
+        ["l", "Type & screen（輸血前）", ""],
+        ["m", "pRBC 1 U：Hb <7 g/dL", "穩定住院成人；每單位後重驗 Hb"],
+        ["m", "pRBC：Hb <8", "心血管疾病、骨科手術", "心血管病"],
+        ["p", "Vital signs：輸前 30 min、開始 15 min、結束、結束後 1 hr", ""],
+        ["p", "每單位 4 hr 內輸完；只用 NS 管路", ""]
+      ] },
+    { "name": "血小板輸注", "hint": "",
+      "orders": [
+        ["m", "Platelet：<10K", "化療/移植低增生，無出血"],
+        ["m", "Platelet：<30K 且出血", "嚴重或關鍵部位出血可到 100K", "出血"],
+        ["m", "Platelet：>50K", "侵入性處置或手術前；中樞神經手術 >100K", "處置前"],
+        ["m", "Platelet：<20–50K", "腰椎穿刺前（各指引不同）", "LP 前"],
+        ["p", "ITP、TTP、HIT 不預防性輸", ""],
+        ["l", "輸後 Platelet", ""]
+      ] },
+    { "name": "FFP / Cryoprecipitate", "hint": "",
+      "orders": [
+        ["m", "FFP 15–20 mL/kg", "出血 + PT 或 aPTT >1.5x；不用於只是 INR 高"],
+        ["m", "Cryoprecipitate", "Fibrinogen <1.5 g/L + 出血（產後 <2.0）"],
+        ["p", "不用 FFP 反轉 warfarin", "用 PCC + Vitamin K"]
+      ] },
+    { "name": "大量輸血", "hint": "HR >110 及/或 SBP <90 + 出血",
+      "orders": [
+        ["p", "啟動 MTP、聯絡血庫", ""],
+        ["m", "O 型 RBC（<50 歲女性 O RhD−）", "血型未明"],
+        ["m", "FFP:RBC 1:1–1:2", ""],
+        ["m", "Platelet >50K、Fibrinogen >1.5", ""],
+        ["m", "Tranexamic acid 1 g IV over 10 min → 1 g over 8 hr", "創傷 3 hr 內；消化道出血不用", "創傷/產後"],
+        ["l", "CBC、PT/aPTT、Fibrinogen、iCa q30–60min", ""],
+        ["m", "10% Calcium gluconate", "iCa <0.9 mmol/L", "低 iCa"],
+        ["p", "血品加溫", ""]
+      ] },
+    { "name": "輸血中不適：第一步", "hint": "",
+      "orders": [
+        ["p", "暫停輸血、NS 保留 IV", ""],
+        ["p", "核對病人、手圈、血袋；看血袋外觀", "不符當 ABO 不相容處理"],
+        ["l", "CBC、腎功能、肝功能", "中重度反應"],
+        ["p", "血袋與管路留存送血庫", "嚴重反應"]
+      ] },
+    { "name": "輕度反應", "hint": "38–39°C 或只有癢疹",
+      "orders": [
+        ["m", "Acetaminophen 500–1000 mg PO", "單純發熱"],
+        ["m", "Chlorphenamine / 抗組織胺", "過敏；放慢速度"],
+        ["p", "觀察下可繼續", ""]
+      ] },
+    { "name": "疑急性溶血 / 血品汙染", "hint": "≥39°C、寒顫、休克、腰痛",
+      "orders": [
+        ["p", "停止輸血", ""],
+        ["l", "重做相容試驗、DAT、haptoglobin、LDH、Bil、凝血、尿 Hb", ""],
+        ["l", "Blood culture（病人 + 血袋）", ""],
+        ["m", "IV fluid", "支持性"],
+        ["m", "廣效 IV 抗生素", "疑汙染（培養後）", "疑汙染"],
+        ["p", "通知血庫、血液科", ""]
+      ] },
+    { "name": "TACO / TRALI", "hint": "輸血後喘",
+      "orders": [
+        ["p", "停輸血、高流量 O2（SpO2 94–98%）", ""],
+        ["x", "CXR", ""],
+        ["l", "NT-proBNP、ABG", "TACO 會升"],
+        ["x", "Echo", "看左心房高壓"],
+        ["m", "Furosemide 40 mg IV", "TACO（高血壓、正平衡）；TRALI 不用", "TACO"],
+        ["p", "呼吸支持", "TRALI 主要治療", "TRALI"]
+      ] },
+    { "name": "輸血過敏性休克", "hint": "",
+      "orders": [
+        ["m", "Epinephrine 0.5 mg IM q5min", "血小板低也照打"],
+        ["m", "Crystalloid 500–1000 mL", ""],
+        ["p", "平躺抬腿", ""]
+      ] },
+    { "name": "照射 / 洗滌血品", "hint": "",
+      "orders": [
+        ["m", "Irradiated RBC / Platelet", "異體 HSCT、Hodgkin、purine analogue、CAR-T、親屬捐血"],
+        ["m", "Washed RBC / Platelet", "反覆中重度過敏或 IgA 缺乏", "反覆過敏"]
+      ] }
+  ]
+}

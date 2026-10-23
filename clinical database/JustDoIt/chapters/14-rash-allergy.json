@@ -1,0 +1,104 @@
+{
+  "no": "14", "slug": "rash-allergy", "title": "皮疹與過敏", "icon": "🔴",
+  "items": [
+    { "name": "Anaphylaxis", "hint": "氣道/呼吸/循環問題 ± 皮疹",
+      "orders": [
+        ["m", "Epinephrine 0.5 mg IM（1 mg/mL 0.5 mL）大腿前外側", "第一線；有 IV 也一樣；5 min 無改善重複"],
+        ["p", "停疑似藥物或血品", ""],
+        ["p", "O2 NRM 15 L/min → SpO2 94–98%", ""],
+        ["m", "Crystalloid 500–1000 mL IV bolus", "低血壓；不用膠體", "低血壓"],
+        ["p", "低血壓平躺抬腿；呼吸問題半坐臥", "不要站立走動"],
+        ["x", "SpO2、BP、ECG monitor", "不延誤 epinephrine"],
+        ["m", "Salbutamol 5 mg + Ipratropium 500 mcg neb", "喘鳴的輔助", "喘鳴"],
+        ["m", "Epinephrine infusion：1 mg in NS 100 mL，0.5–1 mL/kg/hr", "2 劑 IM 仍有症狀（難治）", "難治"],
+        ["m", "Glucagon 1 mg IV（可重複）", "β-blocker 使用者難治", "β-blocker"],
+        ["m", "Cetirizine 10–20 mg PO", "穩定後處理皮膚症狀；不屬初始急救", "穩定後"],
+        ["m", "Hydrocortisone 200 mg IV", "難治性，復甦後考慮", "難治"],
+        ["l", "Tryptase（2 hr 內，最晚 4 hr）", "診斷不確定時"],
+        ["p", "觀察 ≥6–12 hr", "雙相反應約 5%"]
+      ] },
+    { "name": "ACEI 血管性水腫", "hint": "臉唇舌腫、無蕁麻疹",
+      "orders": [
+        ["p", "停 ACE inhibitor", "對 epinephrine 常無反應"],
+        ["m", "Epinephrine 0.5 mg IM", "診斷不確定時仍給"],
+        ["p", "評估氣道、準備困難插管", ""]
+      ] },
+    { "name": "輸血反應", "hint": "輸血中新症狀",
+      "orders": [
+        ["p", "暫停輸血、保留 IV、核對身分", ""],
+        ["p", "輕度（38–39°C 或只癢/疹）可在觀察下繼續", "", "輕度"],
+        ["l", "血品退回、重做相容試驗、Blood culture、尿 Hb", "≥39°C 或升 ≥2°C：想細菌污染或溶血", "中重度"],
+        ["l", "CBC、腎功能、肝功能", ""],
+        ["x", "CXR", "呼吸困難：TACO / TRALI", "呼吸困難"]
+      ] },
+    { "name": "蕁麻疹", "hint": "風團 ± 血管性水腫",
+      "orders": [
+        ["m", "Cetirizine 10 mg PO QD（或其他第二代 H1）", "第一線；老人避免第一代"],
+        ["m", "Prednisolone 20–50 mg PO QD ≤10 天", "急性嚴重或慢性急性惡化", "嚴重"],
+        ["p", "有呼吸或循環症狀 → 當 anaphylaxis", ""]
+      ] },
+    { "name": "Vancomycin 輸注反應", "hint": "潮紅、搔癢",
+      "orders": [
+        ["p", "減慢輸注速度", ""],
+        ["m", "H1 抗組織胺前置", "輕症"],
+        ["p", "合併低血壓或喘 → 評估 anaphylaxis", ""]
+      ] },
+    { "name": "疑 SJS / TEN", "hint": "疼痛性紫斑、水皰、黏膜受累",
+      "orders": [
+        ["p", "立刻停可疑藥物", "越早停死亡越低；其他常規藥繼續"],
+        ["l", "CBC、ESR、CRP、BUN/Cr、Mg、P、HCO3、glucose、肝功能、PT", ""],
+        ["x", "Skin biopsy（病理 + DIF）、CXR", ""],
+        ["l", "SCORTEN（24 hr 內）", ""],
+        ["p", "照會眼科（每日）", "不含防腐劑潤滑劑 q2h"],
+        ["p", "剝離 >10% → 燒傷中心或 ICU", ""],
+        ["p", "房溫 25–28°C、避免黏貼電極與血壓袖套", ""]
+      ] },
+    { "name": "疑 DRESS", "hint": "新藥 2–8 週後皮疹 + 發燒 + 臉腫",
+      "orders": [
+        ["p", "停致病及交叉反應藥物", ""],
+        ["l", "CBC/DC（eosinophil、atypical lymph）、肝腎功能、UA", ""],
+        ["x", "ECG", "心肌炎"],
+        ["l", "EBV、CMV、HHV-6 PCR", ""],
+        ["m", "全身性類固醇（重度）", "3–6 個月緩慢減量", "重度"],
+        ["p", "避免經驗性 NSAID 與抗生素（尤其 amoxicillin）", ""]
+      ] },
+    { "name": "不褪色紫斑（疑腦膜炎雙球菌）", "hint": "紫斑 >2 mm 或快速擴散瘀點",
+      "orders": [
+        ["l", "Blood culture、CBC、CRP、Lactate、PCR", "抗生素前抽，但 1 hr 內要給"],
+        ["m", "Ceftriaxone 2 g IV", "不可混含鈣溶液"],
+        ["p", "飛沫隔離 24 hr", ""],
+        ["p", "不做 LP", "紫斑廣泛"],
+        ["p", "24 hr 內通報衛生局", ""],
+        ["m", "接觸者：Rifampin 600 mg q12h × 2 天 或 Ceftriaxone 250 mg IM", "密切接觸者預防", "接觸者"]
+      ] },
+    { "name": "疑 HIT", "hint": "肝素使用中血小板下降",
+      "orders": [
+        ["l", "4Ts score", "低可能性不驗不治療"],
+        ["p", "停所有 heparin（含沖管）", "中/高可能性"],
+        ["m", "Argatroban / Bivalirudin IV", "重症或出血風險高"],
+        ["m", "Fondaparinux 或 DOAC", "穩定者", "穩定"],
+        ["l", "HIT antibody（ELISA）", ""],
+        ["p", "血小板 >150 前不開 warfarin", ""]
+      ] },
+    { "name": "帶狀皰疹", "hint": "單側皮節水泡",
+      "orders": [
+        ["m", "Valacyclovir 1 g PO TID × 7 天", "72 hr 內最有效"],
+        ["m", "Acyclovir 10 mg/kg IV q8h", "播散、內臟侵犯或免疫低下", "播散"],
+        ["p", "接觸隔離、覆蓋病灶", ""],
+        ["p", "照會眼科", "V1 或鼻尖水泡", "V1"]
+      ] },
+    { "name": "蜂窩性組織炎", "hint": "",
+      "orders": [
+        ["m", "Cephalexin / Cefazolin", ""],
+        ["m", "Doxycycline / Clindamycin / TMP-SMX", "疑 MRSA", "MRSA"],
+        ["p", "膿瘍：切開引流", "", "膿瘍"]
+      ] },
+    { "name": "壞死性筋膜炎", "hint": "痛到不成比例、皮下硬、毒性",
+      "orders": [
+        ["p", "緊急外科會診清創", ""],
+        ["m", "Piperacillin-tazobactam 3.375 g IV q6–8h + Vancomycin 15 mg/kg q12h", "廣效涵蓋"],
+        ["l", "CBC、CRP、Na、glucose、Cr、CK、Lactate、Blood culture", ""],
+        ["x", "CT", "看皮下氣體；不可延誤手術"]
+      ] }
+  ]
+}

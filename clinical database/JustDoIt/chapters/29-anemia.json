@@ -1,0 +1,68 @@
+{
+  "no": "29", "slug": "anemia", "title": "貧血", "icon": "🩸",
+  "items": [
+    { "name": "Hb 明顯下降：找出血", "hint": "降 ≥2 g/dL 或不穩",
+      "orders": [
+        ["l", "Repeat CBC、Type & screen、PT/INR、aPTT", "復甦前 Hb 可能偽高"],
+        ["l", "Anti-Xa / TT", "DOAC 使用者", "DOAC"],
+        ["p", "看黑便、血便、傷口、引流管、後腹腔痛", ""],
+        ["x", "CT abdomen/pelvis", "疑後腹腔出血（處置後背/腰痛）", "疑後腹腔"],
+        ["x", "CTA", "持續血便", "血便"],
+        ["m", "Crystalloid", "不穩定先補液", "不穩"]
+      ] },
+    { "name": "輸血門檻", "hint": "",
+      "orders": [
+        ["m", "pRBC 1 U：Hb <7", "穩定住院；每單位後重評"],
+        ["m", "pRBC：Hb <8", "心血管疾病、骨科手術", "心血管病"],
+        ["m", "pRBC：目標 Hb 8–10", "急性冠心症", "ACS"],
+        ["p", "1 hr 需 ≥3 U：啟動 MTP", ""]
+      ] },
+    { "name": "抗凝劑使用者出血", "hint": "",
+      "orders": [
+        ["p", "停抗凝；非大出血不常規逆轉", ""],
+        ["m", "4F-PCC 依 INR + Vitamin K 5–10 mg IV", "Warfarin 大出血", "Warfarin"],
+        ["m", "Idarucizumab 5 g IV", "Dabigatran", "Dabigatran"],
+        ["m", "PCC / aPCC", "Xa 抑制劑", "Xa 抑制劑"],
+        ["m", "Desmopressin", "尿毒血小板功能異常", "尿毒"]
+      ] },
+    { "name": "穩定貧血：分型", "hint": "",
+      "orders": [
+        ["l", "CBC + MCV、Reticulocyte、Peripheral smear", ""],
+        ["l", "Ferritin、Iron、TIBC、TSAT", "MCV <80"],
+        ["l", "Vitamin B12、Folate（補充前抽）", "MCV >100"],
+        ["l", "LDH、Haptoglobin、Bil T/D、DAT", "疑溶血", "疑溶血"],
+        ["l", "BUN/Cr、TSH", ""],
+        ["l", "Stool occult blood", "缺鐵要找消化道", "缺鐵"]
+      ] },
+    { "name": "缺鐵性貧血", "hint": "Ferritin <30（發炎時 <100）",
+      "orders": [
+        ["m", "Ferrous sulfate 1 錠 PO QD（空腹）", "不要因等內視鏡延後補鐵"],
+        ["m", "隔日一錠", "不耐受", "不耐受"],
+        ["m", "IV iron（Ferric carboxymaltose ≤20 mg/kg 或 1000 mg）", "口服無效、吸收不良、持續出血、CKD；菌血症暫緩", "口服不行"],
+        ["l", "2–4 週後 Hb", "升 ≥1 g/dL 表示有效"],
+        ["l", "Phosphate", "IV ferric carboxymaltose 低磷常見", "IV 鐵"]
+      ] },
+    { "name": "B12 / 葉酸缺乏", "hint": "",
+      "orders": [
+        ["m", "Hydroxocobalamin 1000 mcg IM 每週 3 次 × 2 週", "無神經症狀；B12 和葉酸都低先給 B12"],
+        ["m", "Hydroxocobalamin 1000 mcg IM 隔日", "有神經症狀，不要延遲", "神經症狀"],
+        ["m", "Folic acid 5 mg PO QD × 4 個月", "先補 B12 再補葉酸"],
+        ["l", "Intrinsic factor antibody", ""],
+        ["l", "K", "嚴重貧血治療後可能低鉀"]
+      ] },
+    { "name": "疑 TTP", "hint": "血小板低 + 碎片紅血球",
+      "orders": [
+        ["l", "Smear（schistocytes）、LDH、Haptoglobin、Cr、DAT、Coagulation", ""],
+        ["l", "ADAMTS-13（治療前抽）", ""],
+        ["x", "Troponin、ECG", ""],
+        ["p", "緊急血漿置換 + 類固醇", "轉可執行機構"],
+        ["p", "不預防性輸血小板", ""]
+      ] },
+    { "name": "CKD 貧血", "hint": "",
+      "orders": [
+        ["l", "Ferritin、TSAT", "先補鐵"],
+        ["m", "ESA", "透析者 Hb ≤9–10 開始；目標 <11.5"],
+        ["l", "Hb q2–4 週", "每月上升 ≤1 g/dL"]
+      ] }
+  ]
+}

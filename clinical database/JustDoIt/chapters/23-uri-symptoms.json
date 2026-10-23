@@ -1,0 +1,71 @@
+{
+  "no": "23", "slug": "uri-symptoms", "title": "上呼吸道症狀", "icon": "🤧",
+  "items": [
+    { "name": "上呼吸道阻塞 / 會厭炎", "hint": "喘鳴、流口水、吞嚥困難",
+      "orders": [
+        ["p", "坐起、O2 NRM 15 L/min", "不要躺平、不要壓舌"],
+        ["p", "困難氣道車到床邊、找熟練者", "清醒插管可能誘發完全阻塞"],
+        ["p", "緊急耳鼻喉 / 麻醉", ""],
+        ["m", "Heliox", "機械性阻塞可試", "機械阻塞"]
+      ] },
+    { "name": "喉嚨痛（細菌性）", "hint": "Centor ≥3",
+      "orders": [
+        ["l", "Rapid strep test", "Centor 0–1 不需"],
+        ["m", "Penicillin V 500 mg PO QID × 5–10 天", ""],
+        ["m", "Cephalexin × 10 天", "PCN 過敏（非過敏性休克）", "PCN 過敏"],
+        ["m", "Clarithromycin 250–500 mg BID × 5 天", "過敏性休克史", "嚴重過敏"],
+        ["m", "Acetaminophen / Ibuprofen", "症狀治療"]
+      ] },
+    { "name": "深頸部感染", "hint": "頸腫、牙關緊閉、口底腫",
+      "orders": [
+        ["x", "Neck CT with contrast", ""],
+        ["p", "耳鼻喉：切開引流", ""],
+        ["l", "Blood culture", ""]
+      ] },
+    { "name": "急性細菌性鼻竇炎", "hint": "膿鼻涕 ≥10 天或好轉又惡化",
+      "orders": [
+        ["m", "Amoxicillin 500 mg TID 或 875 mg BID × 5–7 天", ""],
+        ["m", "Amoxicillin-clavulanate", "≥65 歲、糖尿病、免疫低下、近期用過抗生素", "高風險"],
+        ["m", "鼻用類固醇 + 生理食鹽水沖洗", ""],
+        ["x", "CT with contrast", "疑眼眶或顱內擴散", "併發症"]
+      ] },
+    { "name": "鼻塞流鼻水", "hint": "",
+      "orders": [
+        ["m", "Cetirizine / Fexofenadine / Loratadine", "老人避免第一代抗組織胺"],
+        ["m", "Oxymetazoline 鼻噴 ≤3–5 天", "久用會反彈"],
+        ["p", "檢視藥物：NSAID、ACEI、CCB、PDE5i、clonidine", ""]
+      ] },
+    { "name": "流感", "hint": "",
+      "orders": [
+        ["l", "Influenza PCR", "住院急性呼吸道病人入院就驗"],
+        ["m", "Oseltamivir 75 mg PO BID × 5 天", "住院者不論病程都給；腎差調劑量"],
+        ["p", "飛沫隔離", ""],
+        ["m", "加抗生素", "重症或改善後又惡化（細菌合併感染）", "重症"]
+      ] },
+    { "name": "咳嗽", "hint": "",
+      "orders": [
+        ["x", "CXR", "急性先排除肺炎、心衰、PE"],
+        ["p", "停 ACE inhibitor ≥4 週", "15% 會咳", "ACEI"],
+        ["m", "鎮咳 / 祛痰藥", "症狀緩解，證據有限"],
+        ["l", "Sputum AFB ×3", "疑結核", "疑 TB"]
+      ] },
+    { "name": "鼻出血", "hint": "",
+      "orders": [
+        ["p", "頭前傾，捏鼻翼 ≥5 min（可重複）", ""],
+        ["m", "Oxymetazoline 棉片", "高血壓、心腦血管病小心"],
+        ["m", "局部 Tranexamic acid", "止血率高於前鼻填塞"],
+        ["p", "前鼻填塞（抗凝者用可吸收）", "壓迫無效", "壓迫無效"],
+        ["l", "CBC、PT/INR", "Warfarin 驗 INR"],
+        ["p", "不常規降血壓", "監測就好"],
+        ["p", "照會耳鼻喉", "後鼻出血或填塞無效", "填塞無效"]
+      ] },
+    { "name": "鼻出血 + 抗凝", "hint": "",
+      "orders": [
+        ["p", "先局部止血；非大出血不逆轉", ""],
+        ["m", "Vitamin K 2–5 mg PO/IV", "Warfarin 需住院", "Warfarin"],
+        ["m", "4F-PCC + Vitamin K 5–10 mg IV", "大出血", "大出血"],
+        ["m", "Idarucizumab 5 g IV", "Dabigatran 大出血", "Dabigatran"],
+        ["m", "4F-PCC 2000 U", "Xa 抑制劑大出血", "Xa 抑制劑"]
+      ] }
+  ]
+}

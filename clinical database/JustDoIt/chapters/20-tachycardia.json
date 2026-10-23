@@ -1,0 +1,99 @@
+{
+  "no": "20", "slug": "tachycardia", "title": "心搏過速", "icon": "💓",
+  "items": [
+    { "name": "心搏過速：第一輪", "hint": "HR >100",
+      "orders": [
+        ["x", "12-lead ECG（發作當下）", "先分 QRS 寬窄、規則與否"],
+        ["x", "Continuous ECG monitor + 備去顫器", ""],
+        ["l", "CBC、BUN/Cr、Na/K/Mg/Ca、TSH", ""],
+        ["l", "Troponin", "胸痛或缺血", "胸痛"],
+        ["p", "檢視藥物：升壓劑、atropine、salbutamol、theophylline、停 β-blocker", ""]
+      ] },
+    { "name": "不穩定心搏過速", "hint": "低血壓、意識變、胸痛、心衰、休克",
+      "orders": [
+        ["p", "Synchronized cardioversion（清醒者先鎮靜）", "有脈搏 VT 120–150 J 起；AF 最大輸出或 ≥200 J"],
+        ["m", "Midazolam / Propofol 小劑量滴定", "電擊前鎮靜；可能讓血壓更差"],
+        ["p", "Unsynchronized 高能量電擊", "多形性 VT 一律當不穩定", "多形性 VT"],
+        ["m", "Amiodarone 300 mg IV over 10–20 min → 再電擊", "電擊後仍不穩；預激 AF 不用", "電擊無效"],
+        ["p", "床邊備 atropine / 經皮節律器", "電擊後心搏過緩"]
+      ] },
+    { "name": "竇性心搏過速", "hint": "P 波正常、HR >100",
+      "orders": [
+        ["p", "找原因：發燒、感染、脫水、貧血、痛、PE、甲亢、低血糖", "不要直接用 β-blocker 壓心率"],
+        ["l", "CBC、電解質、TSH、血糖", ""],
+        ["m", "依原因處理（如 IV fluid）", ""],
+        ["p", "敗血性休克不用 β-blocker", ""]
+      ] },
+    { "name": "PSVT（規則窄 QRS）", "hint": "穩定",
+      "orders": [
+        ["p", "Modified Valsalva（吹針筒 + 平躺抬腿）", "轉復率 43%"],
+        ["m", "Adenosine 6 mg IV push + NS flush → 12 mg → 18 mg", "肘前靜脈快推；預激寬 QRS 不用"],
+        ["m", "Diltiazem 0.25 mg/kg IV over 2 min", "低血壓、HFrEF、疑 VT 不用", "adenosine 無效"],
+        ["m", "Verapamil 5–10 mg IV over 2 min", "", "adenosine 無效"],
+        ["m", "Metoprolol 2.5–5 mg IV over 2 min，q10min ×3", "失代償心衰不用", "adenosine 無效"],
+        ["p", "同步電擊", "藥物無效", "藥物無效"]
+      ] },
+    { "name": "心房顫動 RVR（穩定）", "hint": "不規則窄 QRS",
+      "orders": [
+        ["p", "處理誘因：敗血症、容積過多、甲亢", ""],
+        ["m", "Diltiazem 0.25 mg/kg IV over 2–5 min → 5–15 mg/hr", "LVEF >40%"],
+        ["m", "Metoprolol 2.5–5 mg IV（累積 ≤15 mg）", "急性心衰、嚴重氣喘不用", "替代"],
+        ["m", "Esmolol 500 mcg/kg 1 min → 50–300 mcg/kg/min", "", "替代"],
+        ["m", "Digoxin 0.25–0.5 mg IV（24 hr ≤1.5 mg）", "LVEF ≤40%；先查腎功能", "LVEF ≤40%"],
+        ["m", "Amiodarone 150–300 mg IV over 1 hr → 10–50 mg/hr", "低血壓或 EF 很差；可能轉復有中風風險", "低血壓/EF 差"],
+        ["m", "Magnesium IV", "合併控速時可加"],
+        ["p", "目標 HR <110", ""],
+        ["p", ">24–48 hr 不早期轉復", "除非抗凝 ≥3 週或 TEE 無血栓"]
+      ] },
+    { "name": "心房顫動：抗凝", "hint": "",
+      "orders": [
+        ["l", "CHA2DS2-VA", "≥2 建議抗凝"],
+        ["m", "Apixaban 5 mg BID / Rivaroxaban 20 mg QD / Edoxaban 60 mg QD / Dabigatran 150 mg BID", "DOAC 優於 warfarin；腎差調整"],
+        ["m", "Warfarin（INR 2–3）", "機械瓣或中重度 MS", "機械瓣"],
+        ["m", "Heparin / Enoxaparin", "非預定轉復時儘快開始", "要轉復"]
+      ] },
+    { "name": "心房撲動", "hint": "HR ~150 規則",
+      "orders": [
+        ["m", "β-blocker 或 Diltiazem IV", "控速"],
+        ["p", "同步電擊（低能量 70–120 J 起）", "轉復"],
+        ["m", "Amiodarone IV", "其他不可用時", "其他不行"]
+      ] },
+    { "name": "預激合併 AF（快寬不規則）", "hint": "WPW",
+      "orders": [
+        ["p", "不給 adenosine、diltiazem、verapamil、β-blocker、digoxin、amiodarone", "會誘發 VF"],
+        ["p", "同步電擊", "不穩定，門檻低"],
+        ["m", "Procainamide 1 g over 30 min → 2 mg/min", "穩定", "穩定"],
+        ["m", "Ibutilide 1 mg（<60 kg 0.01 mg/kg）over 10 min", "QTc 長禁用", "穩定"]
+      ] },
+    { "name": "穩定寬 QRS（疑 VT）", "hint": "當 VT 處理",
+      "orders": [
+        ["p", "不給 verapamil / diltiazem", "VT 會惡化"],
+        ["p", "同步電擊", "鎮靜風險低時第一線"],
+        ["m", "Amiodarone 150 mg IV over 10 min → 1 mg/min ×6 hr → 0.5 mg/min ×18 hr", "鎮靜風險高或用藥", "用藥"],
+        ["m", "Procainamide 10–15 mg/kg over 20 min", "結構性心臟病；心衰、低血壓不用", "用藥"],
+        ["m", "Adenosine", "規則單形性、較像 SVT 時協助診斷", "像 SVT"],
+        ["l", "K、Mg", ""],
+        ["x", "Echo", ""]
+      ] },
+    { "name": "Torsades de pointes", "hint": "QT 長 + 多形性 VT",
+      "orders": [
+        ["p", "非同步高能量電擊", "持續性"],
+        ["m", "MgSO4 2 g IV over 1–2 min（可重複）", "血鎂正常也有效"],
+        ["m", "KCl → K 4.5–5", ""],
+        ["p", "停 QT 延長藥：haloperidol、FQ、macrolide、ondansetron、methadone", ""],
+        ["m", "Isoproterenol 0.5–10 mcg/min 或 overdrive pacing", "鎂無效 + 心搏過緩", "反覆發作"]
+      ] },
+    { "name": "MAT", "hint": "≥3 種 P 波、不規則",
+      "orders": [
+        ["p", "處理肺病、低血氧", "電擊無效"],
+        ["m", "MgSO4 IV", ""],
+        ["m", "Metoprolol 2.5–5 mg IV 或 Diltiazem / Verapamil", "嚴重肺病避免 β-blocker"]
+      ] },
+    { "name": "PVC / NSVT", "hint": "",
+      "orders": [
+        ["l", "K、Mg、Troponin", "找可逆原因"],
+        ["x", "12-lead ECG、Echo", ""],
+        ["m", "β-blocker", "有症狀", "有症狀"]
+      ] }
+  ]
+}

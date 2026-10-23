@@ -1,0 +1,82 @@
+{
+  "no": "05", "slug": "dizziness-syncope", "title": "頭暈、昏厥", "icon": "😵",
+  "items": [
+    { "name": "昏厥：基本評估", "hint": "暫時意識喪失後",
+      "orders": [
+        ["x", "12-lead ECG", "每個都做；找心律不整與缺血"],
+        ["l", "臥姿 + 站立 3 min 血壓心跳", "SBP 降 ≥20、DBP 降 ≥10 或 <90 且症狀重現 = 姿勢性低血壓"],
+        ["l", "床邊血糖", "糖尿病病人排除低血糖"],
+        ["l", "Hb / Hct", "懷疑出血時", "疑出血"],
+        ["l", "Troponin", "懷疑缺血時", "疑缺血"],
+        ["l", "D-dimer", "懷疑肺栓塞且機率低時", "疑 PE"],
+        ["x", "Telemetry", "疑心因性；住院最多 24 hr"],
+        ["x", "Pacemaker / ICD interrogation", "有心臟裝置", "有裝置"],
+        ["x", "Echocardiography", "懷疑結構性心臟病", "疑結構性"]
+      ] },
+    { "name": "有症狀的心搏過緩", "hint": "HR 慢 + 低血壓/意識變",
+      "orders": [
+        ["m", "Atropine 0.5–1 mg IV q3–5min（max 3 mg）", "AV node 層級較有效；寬 QRS/結下阻滯可能加重"],
+        ["m", "Dopamine 5–20 mcg/kg/min IV", "atropine 無效且冠心缺血機率低", "atropine 無效"],
+        ["m", "Epinephrine 2–10 mcg/min IV", "依效果調", "atropine 無效"],
+        ["m", "Isoproterenol 1–20 mcg/min IV", "監測缺血性胸痛", "atropine 無效"],
+        ["p", "Transcutaneous pacing", "藥物無效、血行動力不穩的過渡", "藥物無效"],
+        ["m", "Calcium IV / Glucagon / High-dose insulin", "CCB 或 β-blocker 過量", "藥物中毒"],
+        ["m", "Digoxin Fab", "Digoxin 中毒", "Digoxin"]
+      ] },
+    { "name": "急性持續頭暈 (AVS)", "hint": "持續眩暈 + 自發眼震",
+      "orders": [
+        ["p", "HINTS 床邊檢查（受訓者做）", "任一中樞型就當中風處理"],
+        ["x", "MRI-DWI + MRA（stroke protocol）", "HINTS 中樞或不確定；CT 對缺血敏感度低"],
+        ["x", "Brain CT", "劇烈頭痛、嗜睡、無法坐站，疑出血", "疑出血"],
+        ["x", "CT/CTA", "4.5 hr 內可能再灌流", "再灌流候選"],
+        ["m", "Tenecteplase 0.25 mg/kg（max 25 mg）", "4.5 hr 內符合溶栓條件", "溶栓"]
+      ] },
+    { "name": "BPPV", "hint": "轉頭誘發、數秒到數分",
+      "orders": [
+        ["p", "Dix-Hallpike", "陽性：扭轉上跳眼震，潛伏 5–20 秒、60 秒內消"],
+        ["p", "Epley maneuver", "後半規管；可診斷當下做"],
+        ["p", "Supine roll test → BBQ roll / Gufoni", "水平半規管", "水平型"],
+        ["m", "止吐藥（手法前 30–60 min）", "曾嚴重噁心者", "嚴重噁心"],
+        ["p", "不用 meclizine 等前庭抑制劑", "會干擾代償"]
+      ] },
+    { "name": "前庭神經炎", "hint": "持續眩暈 >24 hr，HINTS 全周邊",
+      "orders": [
+        ["m", "前庭抑制劑 ≤3–5 天", "只短期；老人避免第一代抗組織胺與 BZD"],
+        ["m", "短期類固醇", "3 天內就醫，與病人共同決策", "3 天內"],
+        ["p", "轉介前庭復健", ""]
+      ] },
+    { "name": "姿勢性低血壓", "hint": "站起來暈",
+      "orders": [
+        ["p", "檢視並減停降壓藥、利尿劑、α-blocker、TCA", "藥物是最常見原因"],
+        ["m", "IV 或 PO 含鈉補液", "急性脫水所致"],
+        ["l", "CBC、BUN/Cr", "找出血、脫水"],
+        ["m", "Midodrine 2.5–10 mg PO TID", "非藥物無效時", "持續"],
+        ["m", "Fludrocortisone 0.1–0.3 mg PO QD", "高血壓、心衰不用；監測 K", "持續"]
+      ] },
+    { "name": "昏厥 + 胸痛（疑 ACS）", "hint": "",
+      "orders": [
+        ["x", "12-lead ECG（10 min 內）", ""],
+        ["l", "hs-Troponin 0 / 1–2 hr", ""],
+        ["x", "Continuous ECG monitor + 備去顫器", ""]
+      ] },
+    { "name": "昏厥 + 撕裂痛（疑主動脈剝離）", "hint": "四肢血壓差 >20",
+      "orders": [
+        ["l", "四肢血壓", ""],
+        ["l", "D-dimer", "只用於低機率者", "低機率"],
+        ["x", "CT aortography", "第一線影像"],
+        ["m", "IV β-blocker（如 esmolol / labetalol）", "目標 SBP <120、HR ≤60"],
+        ["p", "A-line、ICU", ""]
+      ] },
+    { "name": "昏厥 + 喘（疑 PE）", "hint": "",
+      "orders": [
+        ["x", "CTPA", "穩定者；不穩定改床邊心超"],
+        ["m", "Heparin IV（UFH）", "高/中機率，檢查中就開始"],
+        ["x", "Bedside echo", "低血壓、疑高風險", "不穩定"]
+      ] },
+    { "name": "昏厥後跌倒受傷", "hint": "",
+      "orders": [
+        ["x", "Head CT", "GCS ≤12、骨折徵象、吐 >1 次、抗凝者等", "頭部外傷"],
+        ["x", "C-spine CT（1 hr 內）", "≥65 歲、危險機轉、肢體感覺異常", "疑頸椎"]
+      ] }
+  ]
+}
