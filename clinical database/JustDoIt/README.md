@@ -1,7 +1,7 @@
 # Clinical database · JustDoIt
 
 Order data behind the **值班** tab on <https://mpr455.github.io/ORNGLOCK/>.
-Each of the 34 on-call chapters becomes a short menu of conditions, and each
+Each of the 35 chapters becomes a short menu of conditions, and each
 condition lists what to order: 💊 medications, 🧪 labs, 📷 exams/imaging and
 ⚙️ bedside procedures, each with a one-line reason.
 
@@ -37,6 +37,7 @@ justdoit-data.mjs       generated module the site imports (do not edit)
 }
 ```
 
+- Optional `sources`: list of guidelines the chapter was checked against (not shown in the tab).
 - Order type: `m` medication, `l` lab, `x` exam or imaging, `p` procedure or bedside action.
 - The fourth field is optional. Orders that have it are alternatives for a
   specific situation (for example `無 IV`), so **＋ 基本醫囑** skips them and

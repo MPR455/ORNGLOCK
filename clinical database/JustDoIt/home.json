@@ -54,6 +54,7 @@
     { "title": "💊 要開藥", "tiles": [
       { "label": "止痛", "chapter": "analgesia" },
       { "label": "睡不著 / 鎮靜", "chapter": "sedatives" },
+      { "label": "抗生素", "chapter": "antibiotics" },
       { "label": "點滴 / 輸液", "chapter": "fluids" }
     ] }
   ]

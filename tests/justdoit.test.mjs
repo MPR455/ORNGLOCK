@@ -5,7 +5,7 @@ import { loadChapters, loadHome, renderModule } from '../clinical database/JustD
 
 test('every chapter file and the home layout are valid, and the bundled module is up to date', async () => {
   const chapters = await loadChapters();
-  assert.equal(chapters.length, 34);
+  assert.equal(chapters.length, 35);
   const bundled = await readFile(new URL('../clinical database/JustDoIt/justdoit-data.mjs', import.meta.url), 'utf8');
   assert.equal(bundled.replace(/\r\n/g, '\n'), renderModule(chapters, await loadHome(chapters)), 'Run: node "clinical database/JustDoIt/build-data.mjs"');
 });

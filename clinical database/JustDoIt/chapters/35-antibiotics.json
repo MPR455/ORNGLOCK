@@ -1,0 +1,267 @@
+{
+  "no": "35", "slug": "antibiotics", "title": "抗生素", "icon": "🧫",
+  "sources": [
+    "IDSA 2026 Guidance on the Treatment of Antimicrobial-Resistant Gram-Negative Infections (Tamma et al., CID 2026, doi:10.1093/cid/ciag481) — idsociety.org/practice-guideline/amr-guidance",
+    "IDSA 2025 Guideline on Complicated Urinary Tract Infections",
+    "ATS 2025 focused update, Community-Acquired Pneumonia (AJRCCM) and ATS/IDSA 2019 CAP guideline",
+    "IDSA/ATS 2016 HAP/VAP guideline",
+    "IDSA 2014 Skin and Soft Tissue Infection guideline; IWGDF/IDSA 2023 diabetic foot infection",
+    "SIS/IDSA intra-abdominal infection guidelines (2010, 2017 revision); Tokyo Guidelines 2018",
+    "IDSA 2004 bacterial meningitis guideline; ESCMID 2016",
+    "AHA 2015 infective endocarditis statement; Tong et al., JAMA 2025 S. aureus bacteremia review",
+    "IDSA 2018 febrile neutropenia (ASCO/IDSA); IDSA/SHEA 2021 C. difficile focused update",
+    "ASHP/IDSA/PIDS/SIDP 2020 vancomycin therapeutic monitoring consensus"
+  ],
+  "items": [
+    { "name": "開抗生素前：檢查清單", "hint": "每次都要",
+      "orders": [
+        ["l", "Blood culture ×2（兩處）+ 感染部位培養", "抗生素前抽，但敗血性休克不可為此延誤"],
+        ["l", "BUN/Cr（算 CrCl）、肝功能", "多數抗生素要依腎功能調劑量"],
+        ["p", "查過敏史：是哪種反應？", "皮疹 vs 過敏性休克，決定能不能用 cephalosporin"],
+        ["p", "查過去 90 天培養與抗生素史", "曾有 MRSA、綠膿、ESBL → 經驗用藥要涵蓋"],
+        ["p", "看本院 antibiogram", "休克選感受性 ≥90%、敗血症 ≥80% 的藥"],
+        ["p", "48–72 hr 看培養：降階或停藥", "臨床改善 + 可口服 → 改 PO"]
+      ] },
+    { "name": "不明來源敗血症 / 休克", "hint": "找不到感染源",
+      "orders": [
+        ["m", "Piperacillin-tazobactam 4.5 g IV q6h", "1 hr 內；涵蓋 G(−)、綠膿、厭氧"],
+        ["m", "Meropenem 1 g IV q8h", "ESBL 風險（曾培養出、近期住院用過廣效藥）或休克中仍惡化", "ESBL 風險"],
+        ["m", "Cefepime 2 g IV q8h + Metronidazole 500 mg q8h", "Pip-tazo 替代", "替代"],
+        ["m", "加 Vancomycin 25–30 mg/kg IV 負荷", "MRSA 風險：曾 MRSA、導管、皮膚感染、透析、休克", "MRSA 風險"],
+        ["p", "找感染源並 6 hr 內控制", "膿瘍、阻塞、導管、壞死組織"]
+      ] },
+    { "name": "社區型肺炎（一般病房）", "hint": "CAP 非重症",
+      "orders": [
+        ["m", "Ceftriaxone 1–2 g IV QD + Azithromycin 500 mg QD", "標準組合"],
+        ["m", "Levofloxacin 750 mg IV/PO QD", "單用替代；疑結核避免（會延誤診斷）", "替代"],
+        ["m", "Amoxicillin-clavulanate 1.2 g IV q8h + Azithromycin", "β-lactam 替代", "替代"],
+        ["p", "療程 ≥5 天且臨床穩定", "退燒 48 hr、可進食、生命徵象正常"],
+        ["p", "不給類固醇", "非重症 CAP 不建議（ATS 2025）"]
+      ] },
+    { "name": "社區型肺炎（重症 / ICU）", "hint": "需升壓劑或呼吸器",
+      "orders": [
+        ["m", "Ceftriaxone 2 g QD + Azithromycin 500 mg QD（或 + Levofloxacin 750 mg）", "重症不單用 FQ"],
+        ["m", "加 Vancomycin 或 Linezolid 600 mg q12h", "一年內呼吸道曾培養出 MRSA", "MRSA"],
+        ["m", "改 Pip-tazo 4.5 g q6h / Cefepime 2 g q8h / Meropenem 1 g q8h", "一年內曾培養出綠膿", "綠膿"],
+        ["m", "Hydrocortisone 200 mg/day IV", "重症 CAP 建議（非流感）", "非流感"],
+        ["l", "Sputum culture、Blood culture、Legionella / Pneumococcal urine Ag", ""],
+        ["m", "Oseltamivir 75 mg BID", "流感陽性", "流感"]
+      ] },
+    { "name": "院內 / 呼吸器肺炎 (HAP/VAP)", "hint": "住院 ≥48 hr",
+      "orders": [
+        ["m", "Piperacillin-tazobactam 4.5 g IV q6h", "或 Cefepime 2 g q8h / Meropenem 1 g q8h"],
+        ["m", "加第二個抗綠膿藥（Amikacin 或 Levofloxacin）", "高死亡風險（休克、呼吸器）或 90 天內 IV 抗生素；不用兩個 β-lactam", "高風險"],
+        ["m", "加 Vancomycin（AUC 400–600）或 Linezolid 600 mg q12h", "MRSA 病史或單位 MRSA >20%", "MRSA"],
+        ["l", "Endotracheal aspirate culture", "VAP 半定量培養"],
+        ["p", "療程 7 天", ""]
+      ] },
+    { "name": "吸入性肺炎", "hint": "",
+      "orders": [
+        ["m", "Ceftriaxone 1–2 g QD（或 Ampicillin-sulbactam 3 g q6h）", "不常規加厭氧涵蓋"],
+        ["m", "Ampicillin-sulbactam 3 g IV q6h", "懷疑肺膿瘍或膿胸才要厭氧", "膿瘍/膿胸"],
+        ["p", "化學性肺炎常 24–48 hr 自行緩解", "可能不需要抗生素"]
+      ] },
+    { "name": "膀胱炎（單純）", "hint": "女性、無發燒無腰痛",
+      "orders": [
+        ["m", "Nitrofurantoin 100 mg PO BID × 5 天", "CrCl <30 不用"],
+        ["m", "TMP-SMX DS 1 tab BID × 3 天", "當地抗藥率 <20%", "替代"],
+        ["m", "Fosfomycin 3 g PO ×1", "", "替代"],
+        ["l", "Urine culture", "住院病人、男性、復發"]
+      ] },
+    { "name": "腎盂腎炎 / 複雜性 UTI", "hint": "發燒、腰痛、男性、導管、阻塞",
+      "orders": [
+        ["l", "Urine culture + Blood culture", ""],
+        ["m", "Ceftriaxone 2 g IV QD", "無敗血症首選之一"],
+        ["m", "Ciprofloxacin 400 mg IV BID / Levofloxacin 750 mg QD", "過去 12 個月用過 FQ 或曾抗藥不用", "替代"],
+        ["m", "Piperacillin-tazobactam 4.5 g q6h / Cefepime 2 g q8h", "", "替代"],
+        ["m", "Meropenem 1 g q8h / Ertapenem 1 g QD", "敗血症 + ESBL 風險；無敗血症不選 carbapenem", "敗血症"],
+        ["p", "不用 nitrofurantoin、口服 fosfomycin", "腎實質濃度不足"],
+        ["p", "療程：FQ 5–7 天，其他 7 天", "臨床改善可改口服"],
+        ["x", "Renal echo", "排除阻塞；阻塞 + 感染要引流"]
+      ] },
+    { "name": "腹腔內感染（社區型、低風險）", "hint": "闌尾、憩室、穿孔",
+      "orders": [
+        ["m", "Ceftriaxone 2 g QD + Metronidazole 500 mg q8h", ""],
+        ["m", "Ertapenem 1 g IV QD", "", "替代"],
+        ["m", "Ciprofloxacin + Metronidazole", "嚴重 β-lactam 過敏", "過敏"],
+        ["p", "Source control 後療程 4 天", "不要拖到 10–14 天"]
+      ] },
+    { "name": "腹腔內感染（重症 / 院內 / 術後）", "hint": "",
+      "orders": [
+        ["m", "Piperacillin-tazobactam 4.5 g IV q6h", ""],
+        ["m", "Meropenem 1 g IV q8h", "ESBL 風險", "ESBL"],
+        ["m", "Cefepime 2 g q8h + Metronidazole 500 mg q8h", "", "替代"],
+        ["m", "加 Vancomycin", "術後、曾 MRSA；不常規", "MRSA"],
+        ["m", "加 Fluconazole / Echinocandin", "上消化道穿孔且免疫低下、反覆手術", "念珠菌風險"],
+        ["l", "腹腔檢體培養", "術中或引流取"]
+      ] },
+    { "name": "膽管炎 / 膽囊炎", "hint": "",
+      "orders": [
+        ["m", "Ceftriaxone 2 g QD + Metronidazole 500 mg q8h", "社區型輕中度"],
+        ["m", "Piperacillin-tazobactam 4.5 g q6h", "重度（Grade III）或院內", "重度"],
+        ["p", "膽道引流後療程 4–7 天", "膽囊切除後非複雜性 ≤24 hr"]
+      ] },
+    { "name": "蜂窩性組織炎（非化膿）", "hint": "紅腫熱痛、無膿",
+      "orders": [
+        ["m", "Cefazolin 2 g IV q8h", "鏈球菌為主；有全身徵象時"],
+        ["m", "Cephalexin 500 mg PO QID × 5 天", "無全身徵象", "輕症"],
+        ["m", "Clindamycin 300–450 mg PO TID", "PCN 過敏", "過敏"],
+        ["p", "抬高患肢、治療足癬", ""]
+      ] },
+    { "name": "化膿性皮膚感染 / MRSA", "hint": "膿瘍、癤",
+      "orders": [
+        ["p", "切開引流", "主要治療"],
+        ["m", "TMP-SMX DS 1–2 tab PO BID 或 Doxycycline 100 mg BID", "引流後仍有全身徵象、免疫低下", "全身徵象"],
+        ["m", "Vancomycin IV（AUC 400–600）", "住院、嚴重", "嚴重"],
+        ["m", "Linezolid 600 mg PO/IV q12h", "", "替代"],
+        ["l", "膿液培養", ""]
+      ] },
+    { "name": "壞死性筋膜炎", "hint": "",
+      "orders": [
+        ["p", "緊急外科清創", "最重要"],
+        ["m", "Vancomycin + Piperacillin-tazobactam 4.5 g q6h", "或 Meropenem"],
+        ["m", "Clindamycin 900 mg IV q8h", "抑制毒素（GAS）"]
+      ] },
+    { "name": "糖尿病足感染", "hint": "",
+      "orders": [
+        ["m", "Amoxicillin-clavulanate 875 mg PO BID", "輕度"],
+        ["m", "Ampicillin-sulbactam 3 g q6h 或 Ceftriaxone + Metronidazole", "中度", "中度"],
+        ["m", "Piperacillin-tazobactam 4.5 g q6h ± Vancomycin", "重度、綠膿或 MRSA 風險", "重度"],
+        ["l", "組織培養（刮或切片，不用棉棒）", ""],
+        ["x", "X-ray / MRI", "疑骨髓炎"]
+      ] },
+    { "name": "細菌性腦膜炎", "hint": "",
+      "orders": [
+        ["m", "Ceftriaxone 2 g IV q12h", "1 hr 內"],
+        ["m", "Vancomycin 15–20 mg/kg IV q8–12h", "肺炎鏈球菌抗藥"],
+        ["m", "Ampicillin 2 g IV q4h", ">50 歲、免疫低下（Listeria）", "Listeria"],
+        ["m", "Dexamethasone 10 mg IV q6h × 4 天", "第一劑抗生素前或同時"],
+        ["m", "Vancomycin + Cefepime 2 g q8h（或 Meropenem 2 g q8h）", "神經外科術後 / 引流管", "術後"],
+        ["m", "Acyclovir 10 mg/kg IV q8h", "疑 HSV 腦炎", "疑腦炎"]
+      ] },
+    { "name": "疑心內膜炎（經驗性）", "hint": "",
+      "orders": [
+        ["l", "Blood culture ×3（不同部位，間隔 ≥30 min）", "抗生素前"],
+        ["x", "TTE → TEE", ""],
+        ["m", "Vancomycin + Ceftriaxone 2 g QD", "原生瓣膜"],
+        ["m", "Vancomycin + Cefepime 2 g q8h + Gentamicin", "人工瓣膜或院內", "人工瓣膜"],
+        ["p", "照會心外：心衰、膿瘍、大贅生物、栓塞", ""]
+      ] },
+    { "name": "金黃色葡萄球菌菌血症", "hint": "S. aureus 血液培養陽性",
+      "orders": [
+        ["m", "Vancomycin（等藥敏）", "先涵蓋 MRSA"],
+        ["m", "Cefazolin 2 g IV q8h", "MSSA 首選（優於 vancomycin）", "MSSA"],
+        ["m", "Vancomycin AUC 400–600 或 Daptomycin 8–10 mg/kg QD", "MRSA；dapto 不用於肺炎", "MRSA"],
+        ["l", "Repeat blood culture q24–48h 到陰性", ""],
+        ["x", "Echocardiography（TTE，多數要 TEE）", ""],
+        ["p", "移除導管、引流膿瘍", ""],
+        ["p", "照會感染科", "降低死亡"],
+        ["p", "療程：非複雜 ≥14 天；複雜 4–6 週", "從第一套陰性培養起算"]
+      ] },
+    { "name": "導管相關菌血症 (CRBSI)", "hint": "",
+      "orders": [
+        ["l", "配對培養：導管 + 周邊", ""],
+        ["m", "Vancomycin", "經驗性"],
+        ["m", "加 Cefepime 2 g q8h 或 Pip-tazo", "嗜中性球低下、敗血症、股靜脈導管", "重症"],
+        ["p", "拔管", "S. aureus、G(−)、腸球菌、念珠菌"],
+        ["m", "Echinocandin（Micafungin 100 mg QD）", "念珠菌", "念珠菌"]
+      ] },
+    { "name": "嗜中性球低下發燒", "hint": "ANC <500 + 發燒",
+      "orders": [
+        ["m", "Cefepime 2 g IV q8h", "1 hr 內"],
+        ["m", "Piperacillin-tazobactam 4.5 g q6h / Meropenem 1 g q8h", "", "替代"],
+        ["m", "加 Vancomycin", "導管感染、皮膚、肺炎、血行動力不穩", "特定情況"],
+        ["m", "加 Caspofungin / Voriconazole", "4–7 天仍燒、高風險", "持續燒"]
+      ] },
+    { "name": "化膿性關節炎", "hint": "",
+      "orders": [
+        ["x", "關節液 Gram/culture/WBC/crystal", "抗生素前"],
+        ["m", "Vancomycin + Ceftriaxone 2 g QD", "Gram stain 前"],
+        ["m", "Cefazolin 2 g q8h", "MSSA", "MSSA"],
+        ["p", "骨科引流", ""]
+      ] },
+    { "name": "C. difficile", "hint": "",
+      "orders": [
+        ["m", "Fidaxomicin 200 mg PO BID × 10 天", "首選"],
+        ["m", "Vancomycin 125 mg PO QID × 10 天", "", "替代"],
+        ["m", "Vancomycin 500 mg PO q6h + Metronidazole 500 mg IV q8h", "猛爆型", "猛爆型"],
+        ["p", "停誘發抗生素", ""]
+      ] },
+    { "name": "ESBL 腸桿菌", "hint": "E. coli / Klebsiella ESBL（IDSA 2026）",
+      "orders": [
+        ["m", "Nitrofurantoin / TMP-SMX", "單純膀胱炎", "膀胱炎"],
+        ["m", "TMP-SMX / Ciprofloxacin / Levofloxacin（若敏感）", "腎盂腎炎、cUTI 首選", "cUTI"],
+        ["m", "Ertapenem 1 g QD", "cUTI 不能口服", "cUTI"],
+        ["m", "Meropenem 1 g IV q8h（或 Ertapenem 1 g QD）", "尿路以外；重症或低白蛋白用 meropenem", "尿路外"],
+        ["p", "侵襲性感染不用 Pip-tazo、Cefepime", "治療失敗率較高"],
+        ["m", "改 PO：TMP-SMX / FQ", "敏感、臨床穩定、source control 後", "降階"]
+      ] },
+    { "name": "AmpC 腸桿菌", "hint": "E. cloacae、K. aerogenes、C. freundii",
+      "orders": [
+        ["m", "Cefepime 2 g IV q8h", "MIC ≤8 且無 ESBL"],
+        ["p", "避免 Ceftriaxone、Ceftazidime、Pip-tazo", "治療中誘發抗藥"],
+        ["m", "TMP-SMX / FQ", "cUTI", "cUTI"]
+      ] },
+    { "name": "CRE（KPC）", "hint": "",
+      "orders": [
+        ["m", "Meropenem-vaborbactam 4 g IV q8h", "稍優先"],
+        ["m", "Ceftazidime-avibactam 2.5 g IV q8h", "", "替代"],
+        ["m", "Imipenem-relebactam 1.25 g IV q6h", "", "替代"],
+        ["l", "Carbapenemase 基因檢測", "決定用藥"],
+        ["p", "照會感染科；取得依院內藥局", ""]
+      ] },
+    { "name": "CRE（NDM / MBL）", "hint": "",
+      "orders": [
+        ["m", "Aztreonam-avibactam", "首選"],
+        ["m", "Ceftazidime-avibactam 2.5 g q8h + Aztreonam 2 g q8h（同時輸注）", "沒有 aztreonam-avibactam", "替代"],
+        ["m", "Cefiderocol 2 g IV q8h（3 hr 輸注）", "", "替代"],
+        ["p", "照會感染科", ""]
+      ] },
+    { "name": "CRE（OXA-48）", "hint": "",
+      "orders": [
+        ["m", "Ceftazidime-avibactam 2.5 g IV q8h", "首選"],
+        ["p", "不用 Meropenem-vaborbactam、Imipenem-relebactam", "對 OXA-48 無效"]
+      ] },
+    { "name": "DTR 綠膿桿菌", "hint": "難治抗藥",
+      "orders": [
+        ["m", "Ceftolozane-tazobactam 3 g IV q8h", "肺炎首選（一般感染 1.5 g q8h）"],
+        ["m", "Ceftazidime-avibactam 2.5 g q8h / Imipenem-relebactam 1.25 g q6h", "尿路以外", "替代"],
+        ["m", "Cefiderocol 2 g q8h", "產 MBL（NDM/VIM/IMP）時首選", "MBL"],
+        ["m", "Cefepime 2 g q8h（3 hr 輸注）", "碳青黴烯抗藥但 cefepime 敏感", "Cefepime 敏感"]
+      ] },
+    { "name": "CRAB（抗碳青黴烯鮑氏不動桿菌）", "hint": "",
+      "orders": [
+        ["m", "Sulbactam-durlobactam + Meropenem / Imipenem", "首選"],
+        ["m", "Ampicillin-sulbactam 9 g IV q8h（延長輸注）+ 第二個藥", "只能作橋接", "橋接"],
+        ["m", "Minocycline 200 mg q12h / Polymyxin B / Cefiderocol（合併治療）", "替代，至少兩種", "替代"],
+        ["p", "照會感染科", ""]
+      ] },
+    { "name": "Stenotrophomonas maltophilia", "hint": "",
+      "orders": [
+        ["m", "Cefiderocol 2 g IV q8h", "首選（IDSA 2026）"],
+        ["m", "Aztreonam-avibactam + 第二個藥", "", "替代"],
+        ["m", "Levofloxacin / TMP-SMX（合併）", "", "替代"]
+      ] },
+    { "name": "VRE", "hint": "",
+      "orders": [
+        ["m", "Linezolid 600 mg IV/PO q12h", "監測血小板"],
+        ["m", "Daptomycin 8–12 mg/kg IV QD", "菌血症；監測 CK", "菌血症"],
+        ["m", "Nitrofurantoin / Fosfomycin", "膀胱炎", "膀胱炎"]
+      ] },
+    { "name": "Penicillin 過敏怎麼開", "hint": "",
+      "orders": [
+        ["p", "問清楚：皮疹 vs 過敏性休克 vs SJS", "多數「過敏」不是真的"],
+        ["m", "Cefazolin / Ceftriaxone / Cefepime", "非嚴重（只有皮疹）可直接用", "輕微反應"],
+        ["m", "Aztreonam 2 g IV q8h", "嚴重過敏需 G(−) 涵蓋（與 ceftazidime 有交叉）", "嚴重過敏"],
+        ["m", "Vancomycin / Clindamycin / Linezolid", "嚴重過敏需 G(+) 涵蓋", "嚴重過敏"],
+        ["p", "SJS/DRESS 史：避開整類", ""]
+      ] },
+    { "name": "Vancomycin 怎麼開", "hint": "",
+      "orders": [
+        ["m", "負荷 20–35 mg/kg IV（max 3 g）", "重症或 MRSA 菌血症"],
+        ["m", "維持 15–20 mg/kg q8–12h（依 CrCl）", ""],
+        ["l", "AUC 400–600（或 trough 15–20）", "第 3–4 劑前抽"],
+        ["l", "Cr q24–48h", "腎毒性；和 Pip-tazo 併用更高"]
+      ] }
+  ]
+}
