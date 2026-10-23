@@ -15,7 +15,7 @@
     { "name": "輕度低血鈣", "hint": "無症狀、>1.9",
       "orders": [
         ["m", "Calcium carbonate 500 mg PO TID 隨餐", "用 PPI 改 calcium citrate"],
-        ["m", "Alfacalcidol 0.5 mcg PO QD 或 Calcitriol 0.25 mcg BID", "副甲狀腺低下（含術後）", "副甲狀腺低下"],
+        ["m", "Alfacalcidol 0.5 mcg PO QD", "副甲狀腺低下（含術後）", "副甲狀腺低下"],
         ["l", "Albumin-corrected Ca", "白蛋白每少 1 g/dL，Ca 加 0.8 mg/dL"]
       ] },
     { "name": "橫紋肌溶解 / TLS 低血鈣", "hint": "",

@@ -42,7 +42,8 @@
       { "label": "肢體痛 / 腫", "chapter": "limb-pain" },
       { "label": "喉嚨 / 鼻 / 咳嗽", "chapter": "uri-symptoms" },
       { "label": "眼睛紅 / 痛 / 看不清", "chapter": "eye" },
-      { "label": "中毒 / 蛇咬", "chapter": "poisoning" }
+      { "label": "中毒 / 蛇咬", "chapter": "poisoning" },
+      { "label": "甲狀腺 / 腎上腺", "chapter": "endocrine" }
     ] },
     { "title": "🧪 檢驗異常", "tiles": [
       { "label": "血糖", "chapter": "glucose" },

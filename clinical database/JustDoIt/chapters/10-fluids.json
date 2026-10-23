@@ -23,7 +23,7 @@
         ["m", "Furosemide 20 mg/amp ×2（40 mg）IV", "未用過者；已在用者給口服劑量兩倍"],
         ["l", "Spot urine Na 2 hr / 尿量 6 hr", "尿鈉 ≥70 或尿量 ≥100 mL/hr 算有效"],
         ["m", "Furosemide 加倍 或 + Acetazolamide 250 mg ×2 PO QD", "反應不足", "反應差"],
-        ["m", "Indapamide 1.5 mg PO QD 或 Benzyl hydrochlorothiazide 4 mg PO", "院內無 metolazone；thiazide 序列阻斷", "抗性"],
+        ["m", "Hydrochlorothiazide 25 mg PO QD", "院內無 metolazone；thiazide 序列阻斷", "抗性"],
         ["l", "Cr、電解質 q24h", ""]
       ] },
     { "name": "Albumin 適應症", "hint": "",

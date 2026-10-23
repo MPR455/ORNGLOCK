@@ -5,8 +5,7 @@
       "orders": [
         ["p", "坐起、O2 NRM 15 L/min", "不要躺平、不要壓舌"],
         ["p", "困難氣道車到床邊、找熟練者", "清醒插管可能誘發完全阻塞"],
-        ["p", "緊急耳鼻喉 / 麻醉", ""],
-        ["m", "Heliox", "機械性阻塞可試", "機械阻塞"]
+        ["p", "緊急耳鼻喉 / 麻醉", ""]
       ] },
     { "name": "喉嚨痛（細菌性）", "hint": "Centor ≥3",
       "orders": [
@@ -26,12 +25,12 @@
       "orders": [
         ["m", "Amoxicillin 500 mg PO TID × 5–7 天", ""],
         ["m", "Curam 1 g（875/125）PO BID × 5–7 天", "≥65 歲、糖尿病、免疫低下、近期用過抗生素", "高風險"],
-        ["m", "Mometasone / Fluticasone 鼻噴 2 puff QD + 生理食鹽水沖洗", ""],
+        ["m", "Mometasone 鼻噴 2 puff QD + 生理食鹽水沖洗", ""],
         ["x", "CT with contrast", "疑眼眶或顱內擴散", "併發症"]
       ] },
     { "name": "鼻塞流鼻水", "hint": "",
       "orders": [
-        ["m", "Levocetirizine 5 mg / Fexofenadine 180 mg / Loratadine 10 mg PO QD", "老人避免第一代抗組織胺"],
+        ["m", "Levocetirizine 5 mg 或 Fexofenadine 180 mg PO QD", "老人避免第一代抗組織胺"],
         ["m", "Oxymetazoline 0.05% 鼻噴 BID ≤3 天", "久用會反彈"],
         ["p", "檢視藥物：NSAID、ACEI、CCB、PDE5i、clonidine", ""]
       ] },
@@ -50,6 +49,12 @@
         ["p", "停 ACE inhibitor ≥4 週", "15% 會咳", "ACEI"],
         ["m", "Dextromethorphan SR 60 mg PO BID / Benzonatate 100 mg TID（鎮咳）；Ambroxol 30 mg TID / Acetylcysteine 600 mg QD（化痰）", "乾咳鎮咳、痰多化痰，不要兩者硬塞"],
         ["l", "Sputum AFB ×3", "疑結核", "疑 TB"]
+      ] },
+    { "name": "口腔念珠菌（鵝口瘡）", "hint": "白斑可刮除；類固醇吸入、抗生素、免疫低下",
+      "orders": [
+        ["m", "Nystatin 100,000 U/mL：5 mL 含漱後吞 QID × 7–14 天", "輕中度"],
+        ["m", "Fluconazole 200 mg PO D1 → 100 mg QD × 7–14 天", "中重度或吞嚥痛（疑食道）", "中重度"],
+        ["p", "吸入類固醇後漱口", ""]
       ] },
     { "name": "鼻出血", "hint": "",
       "orders": [

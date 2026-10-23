@@ -55,7 +55,6 @@
         ["l", "ADAMTS-13（TPE 前抽）", ""],
         ["p", "緊急血漿置換（TPE）", ""],
         ["m", "Methylprednisolone 500 mg/vial：1 g IV QD × 3 天 或 Prednisolone 1 mg/kg/day", ""],
-        ["m", "Caplacizumab 10 mg IV → 10 mg SC QD + Rituximab 375 mg/m² 每週", "免疫性 TTP", "iTTP"],
         ["p", "不預防性輸血小板、不給抗血小板", ""]
       ] },
     { "name": "疑 HIT", "hint": "Heparin 5–14 天後血小板降",

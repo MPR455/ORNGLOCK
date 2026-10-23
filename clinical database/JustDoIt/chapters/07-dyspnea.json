@@ -123,7 +123,10 @@
         ["m", "Rocuronium 50 mg/5 mL：1.2 mg/kg IV", "比 succinylcholine 少高血鉀"],
         ["m", "NS 500 mL bolus + Norepinephrine 備用", "插管後低血壓可達 25%"],
         ["x", "Waveform capnography", "確認管位的唯一標準"],
-        ["x", "CXR", "看深度"]
+        ["x", "CXR", "看深度"],
+        ["m", "Succinylcholine 1.5 mg/kg IV", "rocuronium 替代；高鉀、橫紋肌溶解、神經肌肉病禁用", "替代"],
+        ["m", "Phenylephrine 1 mg in NS 10 mL：100 mcg IV push", "插管前後低血壓 push-dose", "低血壓"],
+        ["m", "Sugammadex 200 mg/2 mL：16 mg/kg IV", "用 rocuronium 後無法插管也無法通氣", "無法通氣"]
       ] },
     { "name": "藥物呼吸抑制", "hint": "呼吸慢、針尖瞳孔",
       "orders": [

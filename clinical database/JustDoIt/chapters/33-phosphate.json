@@ -35,7 +35,7 @@
       ] },
     { "name": "慢性高血磷（CKD）", "hint": "",
       "orders": [
-        ["m", "隨餐：Calcium carbonate 500 mg / Calcium acetate 667 mg / Sevelamer 800 mg / Lanthanum 750 mg TID", "依持續升高才開始；避免長期含鋁"],
+        ["m", "隨餐：Calcium carbonate 500 mg / Calcium acetate 667 mg / Sevelamer 800 mg TID", "依持續升高才開始；避免長期含鋁"],
         ["p", "限磷飲食", ""]
       ] }
   ]

@@ -18,7 +18,8 @@
         ["m", "Metoclopramide 10 mg/2 mL IV", "老人避免；Parkinson、腸阻塞不用", "替代"],
         ["m", "Prochlorperazine 5 mg/mL：5–10 mg IV/IM", "院內無 promethazine 針", "替代"],
         ["p", "同類止吐 6 hr 內重複無效，換類別", ""],
-        ["x", "ECG（QTc）", "多種 QT 延長藥合用時"]
+        ["x", "ECG（QTc）", "多種 QT 延長藥合用時"],
+        ["m", "Domperidone 10 mg PO TID（QT 注意）", "口服、Parkinson 患者（不過血腦）", "口服"]
       ] },
     { "name": "化療噁心嘔吐 (突破性)", "hint": "",
       "orders": [
@@ -41,7 +42,8 @@
       "orders": [
         ["m", "Loperamide 2 mg cap：4 mg → 2 mg/每次稀便（max 8 mg/day，≤48 hr）", "免疫正常水瀉；發燒、血便、CDI 不用"],
         ["m", "Azithromycin 250 mg ×4（1 g）PO 單次", "旅遊相關發燒腹瀉或痢疾", "旅遊+發燒"],
-        ["p", "STEC 不給抗生素與止瀉劑", "增加 HUS"]
+        ["p", "STEC 不給抗生素與止瀉劑", "增加 HUS"],
+        ["m", "Smectite（Smecta）3 g PO TID", "吸附；與其他藥間隔 2 hr", "替代"]
       ] },
     { "name": "C. difficile 感染", "hint": "",
       "orders": [

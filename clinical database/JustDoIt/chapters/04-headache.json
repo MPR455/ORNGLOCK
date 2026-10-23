@@ -39,7 +39,8 @@
         ["x", "Brain CT without contrast", ""],
         ["m", "20% Mannitol 0.5–1 g/kg IV over 5–15 min", "低血壓者利尿效果差"],
         ["m", "3% NaCl 250 mL IV over 15–30 min", "Na 每 4–6 hr，<160", "替代"],
-        ["l", "Na、Osmolality", "避免 Na <135"]
+        ["l", "Na、Osmolality", "避免 Na <135"],
+        ["m", "Glycerol 250 mL IV q6–8h", "mannitol 替代；腎差較安全", "替代"]
       ] },
     { "name": "疑細菌性腦膜炎", "hint": "發燒 + 頭痛 + 頸僵/意識變",
       "orders": [

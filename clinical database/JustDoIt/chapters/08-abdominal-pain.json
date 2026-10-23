@@ -12,7 +12,8 @@
         ["x", "CT abdomen/pelvis with IV contrast", "廣泛腹痛 + 發燒、右下腹痛；eGFR ≥30 顯影劑安全"],
         ["x", "Abdominal echo", "右上腹痛（膽道）", "右上腹"],
         ["m", "Morphine 2–4 mg IV q4h PRN（或 Tramadol 50 mg PO q6h）", "不會遮蔽腹部檢查"],
-        ["m", "Acetaminophen 500 mg PO q6h（NPO：Propacetamol 1 g ×2 IV q6h）", "多模式止痛"]
+        ["m", "Acetaminophen 500 mg PO q6h（NPO：Propacetamol 1 g ×2 IV q6h）", "多模式止痛"],
+        ["m", "Hyoscine butylbromide（Buscopan）20 mg IV/IM", "腸胃、膽道、腎絞痛的痙攣痛；青光眼、尿滯留避免", "絞痛"]
       ] },
     { "name": "腹痛合併休克", "hint": "SBP <90、心搏快、乳酸高",
       "orders": [
@@ -154,7 +155,8 @@
       "orders": [
         ["m", "Pantoprazole 40 mg PO QD（或 Esomeprazole 40 mg）", "餐前 30–60 min"],
         ["l", "H. pylori test", "潰瘍、NSAID、低劑量 aspirin"],
-        ["x", "Upper endoscopy", "有警示症狀（出血、體重減輕、貧血）", "警示症狀"]
+        ["x", "Upper endoscopy", "有警示症狀（出血、體重減輕、貧血）", "警示症狀"],
+        ["m", "Al-Mg 懸液 15 mL PO QID PRN", "症狀緩解；與其他藥間隔 2 hr", "症狀緩解"]
       ] },
     { "name": "疑腎上腺危象", "hint": "長期類固醇 + 休克 + 腹痛",
       "orders": [

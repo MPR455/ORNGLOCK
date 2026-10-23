@@ -133,7 +133,8 @@
         ["x", "CTA head & neck、ECG、Echo", "找栓塞源"],
         ["m", "Timolol 0.5% 1 gtt + Acetazolamide 250 mg ×2 PO", "降眼壓讓栓子往下游"],
         ["p", "眼球按摩（閉眼壓 10 秒放 5 秒 ×5 min）", ""],
-        ["m", "Methylprednisolone 500 mg IV", "疑顳動脈炎", "GCA"]
+        ["m", "Methylprednisolone 500 mg IV", "疑顳動脈炎", "GCA"],
+        ["m", "Tropicamide 1% 1 gtt", "散瞳看眼底（櫻桃紅斑）"]
       ] },
     { "name": "ICU 眼閉不全 / 暴露性角膜病變", "hint": "鎮靜插管、眼睛閉不緊",
       "orders": [

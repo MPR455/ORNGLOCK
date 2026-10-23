@@ -9,7 +9,8 @@
         ["l", "Na/K/Ca/Mg、BUN/Cr、CBC", "代謝與電解質異常"],
         ["x", "Bladder scan", "尿滯留是常見誘因"],
         ["p", "用藥檢視：停抗膽鹼、BZD、類固醇、H2 blocker、opioid、meperidine", "這些藥會引發或加重譫妄"],
-        ["p", "降低刺激、重新定向、找家屬陪伴", "給藥前先試"]
+        ["p", "降低刺激、重新定向、找家屬陪伴", "給藥前先試"],
+        ["m", "Nicotine patch（Nicotinell TTS 20）1 片 QD", "吸菸者尼古丁戒斷", "吸菸者"]
       ] },
     { "name": "譫妄需要藥物控制", "hint": "非酒精/BZD 戒斷，即將傷人",
       "orders": [
@@ -17,7 +18,8 @@
         ["m", "Haloperidol 0.5–1 mg PO 或 2.5 mg IM（5 mg/amp 半支）；短期 <1 週", "最低劑量起始；Parkinson、Lewy body 失智要避免"],
         ["m", "Quetiapine 12.5–25 mg PO HS（25 mg 錠半顆）", "Parkinson 病人較不易惡化", "Parkinson"],
         ["p", "避免 BZD", "會加重譫妄；除非是酒精或 BZD 戒斷"],
-        ["p", "避免 IV haloperidol", "若必用，每日 5–10 mg 且連續 ECG 監測"]
+        ["p", "避免 IV haloperidol", "若必用，每日 5–10 mg 且連續 ECG 監測"],
+        ["m", "Dexmedetomidine 200 mcg/2 mL：0.2–0.7 mcg/kg/hr IV（不負荷）", "ICU 躁動、插管中；心搏過緩、低血壓", "ICU"]
       ] },
     { "name": "精神病性躁動", "hint": "已知精神疾病，有幻覺妄想",
       "orders": [

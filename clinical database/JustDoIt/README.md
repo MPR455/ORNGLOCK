@@ -1,7 +1,7 @@
 # Clinical database · JustDoIt
 
-Order data behind the **值班** tab on <https://mpr455.github.io/ORNGLOCK/>.
-Each of the 37 chapters becomes a short menu of conditions, and each
+Order data behind the **order** tab on <https://mpr455.github.io/ORNGLOCK/>.
+Each of the 38 chapters becomes a short menu of conditions, and each
 condition lists what to order: 💊 medications, 🧪 labs, 📷 exams/imaging and
 ⚙️ bedside procedures, each with a one-line reason.
 
@@ -19,6 +19,10 @@ home.json               home screen: 🚨 urgent shortcuts straight to a conditi
                         then tiles grouped by how the call comes in (vitals,
                         symptoms, lab values, drug requests); every chapter
                         must appear in exactly one section
+formulary.json          on-call subset of the hospital formulary: generic name,
+                        strengths stocked, match regex (no item codes)
+formulary-check.mjs     every 💊 order may only name formulary drugs, and every
+                        formulary drug must be used by some order (npm test)
 build-data.mjs          checks the chapter files and home.json, then bundles them
 justdoit-data.mjs       generated module the site imports (do not edit)
 ```

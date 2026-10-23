@@ -33,6 +33,13 @@
         ["l", "Wound culture（深部組織）", ""],
         ["p", "只懷疑 SSI 不給抗生素", "先確定診斷"]
       ] },
+    { "name": "小傷口感染 / 膿痂疹", "hint": "局部紅、蜜黃色痂、無全身症狀",
+      "orders": [
+        ["p", "清除痂皮、NS 清洗", ""],
+        ["m", "Mupirocin 2% oint TID × 5 天", "首選外用"],
+        ["m", "Fusidic acid 2% cream TID × 5 天", "替代", "替代"],
+        ["m", "Cephalexin 500 mg PO QID × 5–7 天", "範圍大、多處", "範圍大"]
+      ] },
     { "name": "壞死性軟組織感染", "hint": "痛不成比例、木頭般硬、毒性",
       "orders": [
         ["p", "緊急外科清創（6 hr 內）", "治療主軸；影像不得延誤手術"],
@@ -46,7 +53,9 @@
         ["p", "檢查遠端脈搏、感覺運動", ""],
         ["p", "清創、沖洗、縫合", "穿刺傷或汙染重不縫"],
         ["m", "Td（Tetanus & Diphtheria toxoid）0.5 mL IM（或 Tdap 自費）", "依接種史"],
-        ["m", "Cefazolin 2 g IV q8h（50–100 kg）", "開放性骨折，3 hr 內", "開放骨折"]
+        ["m", "Cefazolin 2 g IV q8h（50–100 kg）", "開放性骨折，3 hr 內", "開放骨折"],
+        ["m", "Povidone-iodine 10% 消毒傷口周圍 → NS 大量沖洗", "不要倒進傷口深處"],
+        ["m", "Lidocaine 1%（或含 epinephrine）局部浸潤（≤4.5 mg/kg；含 epi ≤7 mg/kg）", "縫合前麻醉；指尖、陰莖不用含 epi 也可"]
       ] },
     { "name": "破傷風預防", "hint": "",
       "orders": [
@@ -85,7 +94,18 @@
         ["p", "尿量 0.5 mL/kg/hr", ""],
         ["l", "COHb", "疑吸入性傷害", "吸入"],
         ["p", "早期插管", "口腔水泡、聲音沙啞、喘鳴", "氣道"],
-        ["m", "Silver sulfadiazine 1% cream（Flamazine）外用 QD–BID", "二度以上、非顏面；顏面用 Bacitracin-neomycin oint"]
+        ["m", "Silver sulfadiazine 1% cream（Flamazine）外用 QD–BID", "二度以上、非顏面；顏面用 Bacitracin-neomycin oint"],
+        ["m", "Bacitracin-neomycin oint BID", "顏面燒傷（不用 silver sulfadiazine）", "顏面"]
+      ] },
+    { "name": "針扎 / 血體液暴露", "hint": "工作人員針扎、黏膜噴濺",
+      "orders": [
+        ["p", "立即沖洗：肥皂水洗傷口、黏膜用 NS 沖", "不要擠壓、不要用漂白水"],
+        ["l", "來源：HBsAg、anti-HCV、HIV Ag/Ab；被扎者：HBsAg、anti-HBs、anti-HCV、HIV、ALT", ""],
+        ["m", "Hepatitis B immune globulin（HBIG）0.06 mL/kg IM（24 hr 內）", "未免疫或 anti-HBs <10 且來源 HBsAg(+) 或未知", "HBV 風險"],
+        ["m", "Hepatitis B vaccine（Engerix-B 20 mcg）1 mL IM（另一側三角肌）", "未完成疫苗者，同時開始", "未免疫"],
+        ["m", "Truvada 1 錠 QD + Dolutegravir 50 mg QD × 28 天", "HIV PEP：越快越好，72 hr 內", "HIV 風險"],
+        ["m", "Td 0.5 mL IM", "傷口且破傷風疫苗 >10 年"],
+        ["p", "通報院內感控、追蹤 6 週 / 3 個月 / 6 個月", ""]
       ] }
   ]
 }

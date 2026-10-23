@@ -45,7 +45,8 @@
         ["m", "NS 3 L/m²/day，尿量 100 mL/m²/hr", ""],
         ["m", "Rasburicase 1.5 mg/vial：0.2 mg/kg/day（≤7 天）", "G6PD 缺乏禁用"],
         ["l", "Uric acid、K、P、Ca、Cr q6–12h", ""],
-        ["p", "不補 K、P", ""]
+        ["p", "不補 K、P", ""],
+        ["m", "Allopurinol 100 mg ×3 PO QD", "中風險預防；已發生用 rasburicase", "預防"]
       ] },
     { "name": "肝硬化 + AKI", "hint": "",
       "orders": [

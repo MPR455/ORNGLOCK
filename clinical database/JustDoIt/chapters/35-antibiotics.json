@@ -65,8 +65,10 @@
       "orders": [
         ["m", "Nitrofurantoin 100 mg PO BID × 5 天", "CrCl <30 不用"],
         ["m", "Cotrimoxazole（SMZ 400/TMP 80）2 tab BID × 3 天", "當地抗藥率 <20%", "替代"],
-        ["m", "Cephalexin 500 mg PO BID × 5–7 天（或 Curam 625 mg BID）", "院內無 fosfomycin；β-lactam 療程較長", "替代"],
-        ["l", "Urine culture", "住院病人、男性、復發"]
+        ["m", "Fosfomycin 3 g granules PO ×1", "單次；比 nitrofurantoin 稍弱", "替代"],
+        ["l", "Urine culture", "住院病人、男性、復發"],
+        ["m", "Cephalexin 500 mg PO BID × 5–7 天（或 Curam 625 mg BID）", "β-lactam 療程較長", "替代"],
+        ["m", "Phenazopyridine 100 mg PO TID × 2 天", "解尿痛；尿會變橘紅", "解尿痛"]
       ] },
     { "name": "腎盂腎炎 / 複雜性 UTI", "hint": "發燒、腰痛、男性、導管、阻塞",
       "orders": [
@@ -150,7 +152,7 @@
     { "name": "金黃色葡萄球菌菌血症", "hint": "S. aureus 血液培養陽性",
       "orders": [
         ["m", "Vancomycin 25 mg/kg IV 負荷 → 15–20 mg/kg q12h（依 CrCl、濃度）（等藥敏）", "先涵蓋 MRSA"],
-        ["m", "Cefazolin 2 g IV q8h", "MSSA 首選（優於 vancomycin）", "MSSA"],
+        ["m", "Cefazolin 2 g IV q8h 或 Oxacillin 2 g IV q4h", "MSSA 首選（優於 vancomycin）", "MSSA"],
         ["m", "Vancomycin AUC 400–600 或 Daptomycin（350/500 mg/vial）8–10 mg/kg QD", "MRSA；dapto 不用於肺炎", "MRSA"],
         ["l", "Repeat blood culture q24–48h 到陰性", ""],
         ["x", "Echocardiography（TTE，多數要 TEE）", ""],
@@ -164,7 +166,7 @@
         ["m", "Vancomycin 25 mg/kg IV 負荷 → 15–20 mg/kg q12h（依 CrCl、濃度）", "經驗性"],
         ["m", "加 Cefepime 2 g q8h 或 Pip-tazo", "嗜中性球低下、敗血症、股靜脈導管", "重症"],
         ["p", "拔管", "S. aureus、G(−)、腸球菌、念珠菌"],
-        ["m", "Echinocandin（Micafungin 100 mg QD）", "念珠菌", "念珠菌"]
+        ["m", "Micafungin 100 mg IV QD", "念珠菌", "念珠菌"]
       ] },
     { "name": "嗜中性球低下發燒", "hint": "ANC <500 + 發燒",
       "orders": [
@@ -189,7 +191,7 @@
       ] },
     { "name": "ESBL 腸桿菌", "hint": "E. coli / Klebsiella ESBL（IDSA 2026）",
       "orders": [
-        ["m", "Nitrofurantoin 100 mg BID / Cotrimoxazole 2 tab BID", "單純膀胱炎", "膀胱炎"],
+        ["m", "Nitrofurantoin 100 mg BID / Cotrimoxazole 2 tab BID / Fosfomycin 3 g ×1", "單純膀胱炎", "膀胱炎"],
         ["m", "Cotrimoxazole / Ciprofloxacin / Levofloxacin（若敏感）", "腎盂腎炎、cUTI 首選", "cUTI"],
         ["m", "Ertapenem 1 g QD", "cUTI 不能口服", "cUTI"],
         ["m", "Meropenem 1 g IV q8h（或 Ertapenem 1 g QD）", "尿路以外；重症或低白蛋白用 meropenem", "尿路外"],
@@ -232,7 +234,7 @@
       "orders": [
         ["m", "Sulbactam 500 mg/vial ×6（3 g）IV q8h（4 hr 輸注）+ 第二個藥", "院內無 sulbactam-durlobactam；高劑量 sulbactam 9 g/day"],
         ["m", "Amsulber 1.5 g ×6（9 g）IV q8h（4 hr 輸注）+ 第二個藥", "同樣給到 sulbactam 9 g/day", "替代"],
-        ["m", "Minocycline 100 mg ×2 IV q12h / Polymyxin B 2.5 mg/kg 負荷 → 1.5 mg/kg q12h / Cefiderocol 2 g q8h", "第二個藥擇一", "第二個藥"],
+        ["m", "Minocycline 200 mg IV q12h / Polymyxin B 2.5 mg/kg → 1.5 mg/kg q12h / Colistin 9 MU → 4.5 MU q12h / Tigecycline 200 → 100 mg q12h / Cefiderocol 2 g q8h", "第二個藥擇一", "第二個藥"],
         ["p", "照會感染科", ""]
       ] },
     { "name": "Stenotrophomonas maltophilia", "hint": "",
@@ -245,7 +247,7 @@
       "orders": [
         ["m", "Linezolid 600 mg IV/PO q12h", "監測血小板"],
         ["m", "Daptomycin 8–12 mg/kg IV QD", "菌血症；監測 CK", "菌血症"],
-        ["m", "Nitrofurantoin 100 mg BID", "膀胱炎", "膀胱炎"]
+        ["m", "Nitrofurantoin 100 mg BID / Fosfomycin 3 g ×1", "膀胱炎", "膀胱炎"]
       ] },
     { "name": "Penicillin 過敏怎麼開", "hint": "",
       "orders": [
@@ -260,7 +262,8 @@
         ["m", "負荷 20–35 mg/kg IV（max 3 g）", "重症或 MRSA 菌血症"],
         ["m", "維持 15–20 mg/kg q8–12h（依 CrCl）", ""],
         ["l", "AUC 400–600（或 trough 15–20）", "第 3–4 劑前抽"],
-        ["l", "Cr q24–48h", "腎毒性；和 Pip-tazo 併用更高"]
+        ["l", "Cr q24–48h", "腎毒性；和 Pip-tazo 併用更高"],
+        ["m", "Teicoplanin 400 mg（6–12 mg/kg）IV q12h ×3 → QD", "腎毒性較低的替代", "替代"]
       ] },
     { "name": "念珠菌血症", "hint": "血液培養長 Candida",
       "orders": [
@@ -293,7 +296,9 @@
       "orders": [
         ["m", "Paxlovid（Nirmatrelvir 300 mg + Ritonavir 100 mg）PO BID × 5 天", "自費；先查交互作用；eGFR 30–60 減為 150 mg"],
         ["m", "Dexamethasone 6 mg（4 mg 錠 + 0.5 mg ×4）PO/IV QD × 10 天", "需要氧氣才給", "需氧"],
-        ["m", "Enoxaparin 預防劑量 / Fraxiparine 0.4 mL SC QD", "住院 VTE 預防"]
+        ["m", "Enoxaparin 預防劑量 / Fraxiparine 0.4 mL SC QD", "住院 VTE 預防"],
+        ["m", "Remdesivir 200 mg IV D1 → 100 mg QD × 4 天（高風險未住院 3 天）", "住院需氧，或不能用 Paxlovid", "住院"],
+        ["m", "Molnupiravir 200 mg ×4（800 mg）PO BID × 5 天", "Paxlovid 交互作用太多時", "替代"]
       ] },
     { "name": "疥瘡", "hint": "夜間癢、指縫隧道、機構住民",
       "orders": [

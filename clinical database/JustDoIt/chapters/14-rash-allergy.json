@@ -33,9 +33,20 @@
       ] },
     { "name": "蕁麻疹", "hint": "風團 ± 血管性水腫",
       "orders": [
-        ["m", "Levocetirizine 5 mg / Fexofenadine 180 mg / Bilastine 20 mg PO QD（可加到 4 倍）", "第一線；老人避免第一代"],
+        ["m", "Levocetirizine 5 mg 或 Fexofenadine 180 mg PO QD（可加到 4 倍）", "第一線；老人避免第一代"],
         ["m", "Prednisolone 5 mg/tab：20–40 mg PO QD ≤5–10 天", "急性嚴重或慢性急性惡化", "嚴重"],
-        ["p", "有呼吸或循環症狀 → 當 anaphylaxis", ""]
+        ["p", "有呼吸或循環症狀 → 當 anaphylaxis", ""],
+        ["m", "Hydroxyzine 25 mg PO HS", "夜間癢、睡不著", "夜間癢"]
+      ] },
+    { "name": "接觸性皮膚炎 / 濕疹", "hint": "紅疹、脫屑、癢；膠布、藥膏、清潔劑",
+      "orders": [
+        ["p", "找出並停用刺激物（膠布、外用藥）", ""],
+        ["m", "Mometasone furoate cream 0.1% QD（身體）", "中效類固醇，一天一次"],
+        ["m", "Hydrocortisone cream 1% BID", "顏面、皺褶、陰部", "顏面"],
+        ["m", "Clobetasol 0.05% oint BID ≤2 週", "手掌腳底、厚斑塊", "嚴重"],
+        ["m", "Calamine lotion PRN", "止癢、滲液少時"],
+        ["m", "Levocetirizine 5 mg PO HS", "止癢"],
+        ["m", "Prednisolone 0.5 mg/kg PO QD × 5–7 天", "範圍 >20% 體表、顏面腫", "廣泛"]
       ] },
     { "name": "Vancomycin 輸注反應", "hint": "潮紅、搔癢",
       "orders": [
@@ -99,6 +110,13 @@
         ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h + Vancomycin 15 mg/kg q12h + Clindamycin 900 mg q8h", "廣效涵蓋"],
         ["l", "CBC、CRP、Na、glucose、Cr、CK、Lactate、Blood culture", ""],
         ["x", "CT", "看皮下氣體；不可延誤手術"]
+      ] },
+    { "name": "黴菌 / 念珠菌皮膚感染", "hint": "皺褶紅疹 + 衛星病灶、股癬、尿布疹",
+      "orders": [
+        ["m", "Clotrimazole cream BID × 2–4 週", "症狀好後再擦 1 週"],
+        ["m", "Fluconazole 150 mg PO 每週 1 次 × 2–4 週", "範圍大或外用無效", "廣泛"],
+        ["p", "保持乾燥、紗布隔開皺褶", ""],
+        ["x", "KOH 鏡檢", "不確定時"]
       ] }
   ]
 }
