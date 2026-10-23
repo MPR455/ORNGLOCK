@@ -1,0 +1,60 @@
+{
+  "urgent": [
+    { "label": "休克", "icon": "📉", "chapter": "hypotension-shock", "item": "低血壓：第一輪" },
+    { "label": "敗血性休克", "icon": "🦠", "chapter": "fever", "item": "敗血症 / 敗血性休克" },
+    { "label": "過敏性休克", "icon": "🐝", "chapter": "dyspnea", "item": "Anaphylaxis" },
+    { "label": "抽搐不停", "icon": "⚡", "chapter": "seizure", "item": "癲癇重積：第一線 (≥5 分)" },
+    { "label": "低血糖", "icon": "🍬", "chapter": "glucose", "item": "低血糖（意識不清 / NPO）" },
+    { "label": "高血鉀", "icon": "🍌", "chapter": "potassium", "item": "高血鉀 K ≥6.0" },
+    { "label": "快且不穩", "icon": "💓", "chapter": "tachycardia", "item": "不穩定心搏過速" },
+    { "label": "慢且不穩", "icon": "🐢", "chapter": "bradycardia", "item": "不穩定心搏過緩" },
+    { "label": "疑中風", "icon": "🧠", "chapter": "altered-consciousness", "item": "疑急性中風：溶栓" },
+    { "label": "鴉片過量", "icon": "😪", "chapter": "altered-consciousness", "item": "疑鴉片類過量" },
+    { "label": "張力性氣胸", "icon": "🫁", "chapter": "dyspnea", "item": "張力性氣胸" },
+    { "label": "大量出血", "icon": "🩸", "chapter": "gi-bleeding", "item": "消化道出血：第一輪" }
+  ],
+  "sections": [
+    { "title": "📞 生命徵象異常", "tiles": [
+      { "label": "血壓高", "chapter": "hypertension" },
+      { "label": "血壓低", "chapter": "hypotension-shock" },
+      { "label": "心跳快", "chapter": "tachycardia" },
+      { "label": "心跳慢", "chapter": "bradycardia" },
+      { "label": "發燒", "chapter": "fever" },
+      { "label": "喘 / 血氧低", "chapter": "dyspnea" },
+      { "label": "意識改變", "chapter": "altered-consciousness" },
+      { "label": "尿少", "chapter": "oliguria" },
+      { "label": "尿多", "chapter": "polyuria" }
+    ] },
+    { "title": "🤒 症狀", "tiles": [
+      { "label": "胸痛", "chapter": "chest-pain" },
+      { "label": "腹痛", "chapter": "abdominal-pain" },
+      { "label": "頭痛", "chapter": "headache" },
+      { "label": "頭暈 / 昏倒", "chapter": "dizziness-syncope" },
+      { "label": "抽搐", "chapter": "seizure" },
+      { "label": "躁動", "chapter": "agitation" },
+      { "label": "吐血 / 黑便", "chapter": "gi-bleeding" },
+      { "label": "嘔吐 / 腹瀉 / 便秘", "chapter": "gi-symptoms" },
+      { "label": "血尿", "chapter": "hematuria" },
+      { "label": "皮疹 / 過敏", "chapter": "rash-allergy" },
+      { "label": "傷口", "chapter": "wounds" },
+      { "label": "肢體痛 / 腫", "chapter": "limb-pain" },
+      { "label": "喉嚨 / 鼻 / 咳嗽", "chapter": "uri-symptoms" }
+    ] },
+    { "title": "🧪 檢驗異常", "tiles": [
+      { "label": "血糖", "chapter": "glucose" },
+      { "label": "鈉 Na", "chapter": "sodium" },
+      { "label": "鉀 K", "chapter": "potassium" },
+      { "label": "鈣 Ca", "chapter": "calcium" },
+      { "label": "磷 P", "chapter": "phosphate" },
+      { "label": "鎂 Mg", "chapter": "magnesium" },
+      { "label": "血氣 / 酸鹼", "chapter": "acid-base" },
+      { "label": "Hb 低", "chapter": "anemia" },
+      { "label": "INR / 凝血", "chapter": "coagulopathy" }
+    ] },
+    { "title": "💊 要開藥", "tiles": [
+      { "label": "止痛", "chapter": "analgesia" },
+      { "label": "睡不著 / 鎮靜", "chapter": "sedatives" },
+      { "label": "點滴 / 輸液", "chapter": "fluids" }
+    ] }
+  ]
+}

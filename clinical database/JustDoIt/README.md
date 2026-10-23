@@ -15,7 +15,11 @@ hepatic function.
 
 ```
 chapters/NN-slug.json   one file per chapter (edit these)
-build-data.mjs          checks the chapter files and bundles them
+home.json               home screen: 🚨 urgent shortcuts straight to a condition,
+                        then tiles grouped by how the call comes in (vitals,
+                        symptoms, lab values, drug requests); every chapter
+                        must appear in exactly one section
+build-data.mjs          checks the chapter files and home.json, then bundles them
 justdoit-data.mjs       generated module the site imports (do not edit)
 ```
 

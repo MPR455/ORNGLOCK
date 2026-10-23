@@ -1,6 +1,6 @@
-import { ONCALL_MENU } from './clinical database/JustDoIt/justdoit-data.mjs';
+import { ONCALL_MENU, ONCALL_HOME } from './clinical database/JustDoIt/justdoit-data.mjs';
 
-// 值班 tab: kiosk-style order picker. Symptom -> condition -> tap orders into a tray -> copy.
+// 值班 tab: kiosk-style order picker. Call type -> condition -> tap orders into a tray -> copy.
 const TYPE_INFO = { m: ['💊', '藥物'], l: ['🧪', '檢驗'], x: ['📷', '檢查'], p: ['⚙️', '處置'] };
 const esc = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const normalize = value => String(value).normalize('NFKC').toLowerCase().replace(/\s+/g, '');
@@ -12,13 +12,38 @@ let root, copyText = async () => {}, toast = () => {};
 const orderKey = (chapter, itemIndex, orderIndex) => `${chapter.slug}:${itemIndex}:${orderIndex}`;
 const orderLine = order => order[3] ? `${order[1]}（${order[3]}）` : order[1];
 
+// Recently opened conditions are a per-device convenience; storage can be unavailable.
+const RECENT_KEY = 'ornglock_oncall_recent_v1';
+function loadRecent() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(RECENT_KEY) || '[]');
+    return saved.map(([slug, name]) => {
+      const chapter = ONCALL_MENU.findIndex(entry => entry.slug === slug);
+      const item = chapter < 0 ? -1 : ONCALL_MENU[chapter].items.findIndex(entry => entry.name === name);
+      return item < 0 ? null : { chapter, item };
+    }).filter(Boolean);
+  } catch { return []; }
+}
+function rememberRecent(chapter, item) {
+  const entry = [ONCALL_MENU[chapter].slug, ONCALL_MENU[chapter].items[item].name];
+  const list = loadRecent().map(({ chapter: c, item: i }) => [ONCALL_MENU[c].slug, ONCALL_MENU[c].items[i].name])
+    .filter(([slug, name]) => slug !== entry[0] || name !== entry[1]);
+  try { localStorage.setItem(RECENT_KEY, JSON.stringify([entry, ...list].slice(0, 6))); } catch {}
+}
+
+const tile = (className, action, attrs, icon, label) => `<button class="${className}" type="button" data-oc="${action}" ${attrs}><span class="oc-tile-icon" aria-hidden="true">${icon}</span><span class="oc-tile-name">${esc(label)}</span></button>`;
+
+// Home is grouped by how the call comes in: emergencies first, then vitals, symptoms, lab values, drug requests.
 function homeView() {
-  return `<h1 class="oc-title" tabindex="-1">值班 · 你今晚遇到什麼？</h1>
-    <div class="oc-grid">${ONCALL_MENU.map((chapter, index) => `<button class="oc-tile" type="button" data-oc="chapter" data-index="${index}"><span class="oc-tile-icon" aria-hidden="true">${chapter.icon}</span><span class="oc-tile-name">${esc(chapter.title)}</span><span class="oc-tile-no">${chapter.no}</span></button>`).join('')}</div>`;
+  const recent = loadRecent();
+  const recentRow = recent.length ? `<section class="oc-section"><h2>🕘 最近</h2><div class="oc-chips">${recent.map(({ chapter, item }) => `<button class="oc-chip" type="button" data-oc="hit" data-chapter="${chapter}" data-index="${item}">${esc(ONCALL_MENU[chapter].items[item].name)}</button>`).join('')}</div></section>` : '';
+  const urgent = `<section class="oc-section oc-urgent"><h2>🚨 危急：直接開醫囑</h2><div class="oc-grid">${ONCALL_HOME.urgent.map(entry => tile('oc-tile oc-tile-urgent', 'hit', `data-chapter="${entry.chapter}" data-index="${entry.item}"`, entry.icon, entry.label)).join('')}</div></section>`;
+  const sections = ONCALL_HOME.sections.map(section => `<section class="oc-section"><h2>${esc(section.title)}</h2><div class="oc-grid">${section.tiles.map(entry => tile('oc-tile', 'chapter', `data-index="${entry.chapter}"`, entry.icon, entry.label)).join('')}</div></section>`).join('');
+  return recentRow + urgent + sections;
 }
 
 function chapterView(chapter) {
-  return `<button class="oc-back" type="button" data-oc="home">‹ 全部症狀</button>
+  return `<button class="oc-back" type="button" data-oc="home">‹ 首頁</button>
     <h1 class="oc-title" tabindex="-1">${chapter.icon} ${esc(chapter.title)}</h1>
     <div class="oc-list">${chapter.items.map((item, index) => `<button class="oc-item" type="button" data-oc="item" data-index="${index}"><span class="oc-item-name">${esc(item.name)}</span>${item.hint ? `<span class="oc-item-hint">${esc(item.hint)}</span>` : ''}<span class="oc-item-arrow" aria-hidden="true">›</span></button>`).join('')}</div>`;
 }
@@ -50,7 +75,7 @@ function searchView() {
     const haystack = normalize([chapter.title, item.name, item.hint || '', ...item.orders.map(order => order[1])].join(' '));
     if (haystack.includes(query)) hits.push([chapter, item, index]);
   }));
-  if (!hits.length) return `<h1 class="oc-title" tabindex="-1">找不到「${esc(view.query)}」</h1><p class="oc-hint">試試其他關鍵字，或清除搜尋回到全部症狀。</p>`;
+  if (!hits.length) return `<h1 class="oc-title" tabindex="-1">找不到「${esc(view.query)}」</h1><p class="oc-hint">試試其他關鍵字，或按 Esc 清除搜尋。</p>`;
   return `<h1 class="oc-title" tabindex="-1">搜尋結果 · ${hits.length}</h1>
     <div class="oc-list">${hits.map(([chapter, item, index]) => `<button class="oc-item" type="button" data-oc="hit" data-chapter="${ONCALL_MENU.indexOf(chapter)}" data-index="${index}"><span class="oc-item-name">${esc(item.name)}</span><span class="oc-item-hint">${chapter.icon} ${esc(chapter.title)}${item.hint ? ' · ' + esc(item.hint) : ''}</span><span class="oc-item-arrow" aria-hidden="true">›</span></button>`).join('')}</div>`;
 }
@@ -81,6 +106,7 @@ function go(chapter, item = null) {
   hideWhy();
   view.chapter = chapter; view.item = item; view.query = '';
   root.querySelector('#oc-search').value = '';
+  if (item !== null) rememberRecent(chapter, item);
   render();
   scrollTo({ top: 0 });
   root.querySelector('.oc-title')?.focus({ preventScroll: true });
