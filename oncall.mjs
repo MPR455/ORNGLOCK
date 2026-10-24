@@ -113,6 +113,7 @@ function renderTray() {
 function render() {
   const chapter = view.chapter === null ? null : ONCALL_MENU[view.chapter];
   root.querySelector('.oc-body').innerHTML = view.query.trim() ? searchView() : chapter && view.item !== null ? itemView(chapter, view.item) : chapter ? chapterView(chapter) : homeView();
+  root.querySelector('.oc-fab-back').hidden = chapter === null && !view.query.trim();
   updateCounts();
 }
 
@@ -180,6 +181,7 @@ function onClick(event) {
   const target = event.target.closest('[data-oc]');
   if (!target || !root.contains(target)) { if (!event.target.closest('.oc-pop')) hideWhy(); return; }
   const action = target.dataset.oc, index = Number(target.dataset.index);
+  if (action === 'back') return goBack(); // floating button: same steps as Esc
   if (action !== 'why') hideWhy();
   if (action === 'home') go(null);
   else if (action === 'chapter') go(index);
@@ -210,6 +212,7 @@ export function initOncall(options = {}) {
     </div>
     <div class="oc-body"></div>
     <div class="oc-pop" role="tooltip" hidden></div>
+    <button class="oc-fab-back" type="button" data-oc="back" aria-label="返回上一頁" hidden>‹ 返回</button>
     <dialog class="oc-tray" aria-labelledby="oc-tray-title">
       <div class="oc-tray-head"><h2 id="oc-tray-title">🧾 醫囑單</h2><button class="oc-big" type="button" data-oc="close" aria-label="關閉">×</button></div>
       <ul class="oc-tray-list"></ul>
