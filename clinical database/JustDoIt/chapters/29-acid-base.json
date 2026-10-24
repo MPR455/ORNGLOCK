@@ -8,7 +8,8 @@
         ["l", "Lactate、β-hydroxybutyrate、glucose、BUN/Cr", "高 AG 找原因"],
         ["l", "Serum osmolality（算 osmolal gap）", "疑毒性醇類", "疑醇類"],
         ["l", "Salicylate level", "耳鳴、原發呼吸性鹼中毒", "疑水楊酸"],
-        ["l", "30–60 min 後重抽", "明顯酸中毒或高碳酸"]
+        ["l", "30–60 min 後重抽", "明顯酸中毒或高碳酸"],
+        ["m", "Sodium bicarbonate 7% 20 mL（16.7 mEq/amp）", "適應：pH ≤7.2 + AKI、高鉀、TCA｜禁忌：呼吸性酸中毒、單純乳酸中毒效果有限", "pH ≤7.2"]
       ] },
     { "name": "高 AG 代謝性酸中毒", "hint": "",
       "orders": [

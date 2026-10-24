@@ -1,6 +1,17 @@
 {
   "no": "30", "slug": "sodium", "title": "鈉", "icon": "🧂",
   "items": [
+    { "name": "鈉異常：第一輪", "hint": "先分原因再決定補鹽或限水",
+      "orders": [
+        ["l", "Serum osmolality、glucose", "排除高血糖、假性低血鈉"],
+        ["l", "Urine osmolality、Urine Na（同一份尿）", "尿滲透壓 ≤100 喝太多；尿鈉 ≤30 有效血量不足"],
+        ["l", "TSH、Cortisol", "SIAD 是排除診斷"],
+        ["p", "檢視藥物：thiazide、SSRI、carbamazepine、antipsychotics、tramadol、desmopressin", ""],
+        ["p", "停非必要低張輸液", ""],
+        ["l", "Na（重抽）、glucose、BUN/Cr、K", "排除：假性低鈉、高血糖、腎衰"],
+        ["m", "3% NaCl 150 mL IV over 20 min（可重複 ×3）", "適應：Na <130 + 抽搐、昏迷、嘔吐｜24 hr 上升 ≤8–10", "嚴重症狀"],
+        ["m", "D5W 或 Half-saline 0.45%", "適應：高血鈉補水（優先 PO/NG）", "Na >145"]
+      ] },
     { "name": "低血鈉：嚴重症狀", "hint": "嘔吐、抽搐、昏迷、深度嗜睡",
       "orders": [
         ["m", "3% NaCl 150 mL IV over 20 min", "不論原因；優先於鑑別"],
@@ -14,14 +25,6 @@
       "orders": [
         ["m", "3% NaCl 150 mL IV over 20 min ×1", "目標 24 hr 升 5"],
         ["l", "Na 1、6、12 hr", "目的：避免矯正過快（ODS）"]
-      ] },
-    { "name": "低血鈉：鑑別", "hint": "",
-      "orders": [
-        ["l", "Serum osmolality、glucose", "排除高血糖、假性低血鈉"],
-        ["l", "Urine osmolality、Urine Na（同一份尿）", "尿滲透壓 ≤100 喝太多；尿鈉 ≤30 有效血量不足"],
-        ["l", "TSH、Cortisol", "SIAD 是排除診斷"],
-        ["p", "檢視藥物：thiazide、SSRI、carbamazepine、antipsychotics、tramadol、desmopressin", ""],
-        ["p", "停非必要低張輸液", ""]
       ] },
     { "name": "低血容低血鈉", "hint": "嘔吐、腹瀉、利尿劑",
       "orders": [

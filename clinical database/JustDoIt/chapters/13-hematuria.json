@@ -6,7 +6,8 @@
         ["l", "Urine microscopy（RBC/HPF）", "≥3 RBC/HPF 才算；試紙會被肌紅素、月經干擾"],
         ["l", "BUN/Cr、eGFR", "排除：腎實質疾病（腎絲球腎炎）、AKI"],
         ["l", "Urine protein/Cr、dysmorphic RBC", "提示腎絲球來源"],
-        ["l", "Urine culture", "排除 UTI；治療後複驗"]
+        ["l", "Urine culture", "排除 UTI；治療後複驗"],
+        ["m", "Acetaminophen 500 mg PO q6h PRN", "適應：解尿痛、腰痛｜NSAID 先看腎功能", "疼痛"]
       ] },
     { "name": "橫紋肌溶解", "hint": "試紙陽性但鏡檢少 RBC + 肌痛",
       "orders": [

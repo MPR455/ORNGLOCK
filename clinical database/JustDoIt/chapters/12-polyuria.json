@@ -7,7 +7,8 @@
         ["l", "Serum osmolality、Urine osmolality", "尿液滲透壓低提示尿崩症"],
         ["p", "核對所有入量：PO、管灌、藥物、TPN、血品", ""],
         ["p", "檢視藥物：mannitol、lithium、foscarnet、tenofovir、利尿劑", ""],
-        ["p", "I/O、體重", ""]
+        ["p", "I/O、體重", ""],
+        ["m", "D5W 或 Half-saline 0.45%", "適應：多尿合併高血鈉｜注意：降 Na ≤10/24 hr", "Na >145"]
       ] },
     { "name": "高血糖滲透性利尿 / HHS", "hint": "BS ≥600、滲透壓 >300",
       "orders": [

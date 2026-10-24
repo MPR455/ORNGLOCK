@@ -1,6 +1,16 @@
 {
   "no": "14", "slug": "rash-allergy", "title": "皮疹與過敏", "icon": "🔴",
   "items": [
+    { "name": "皮疹：第一輪", "hint": "先排除危險皮疹",
+      "orders": [
+        ["p", "看黏膜（口、眼、生殖器）、水泡、Nikolsky、紫斑、發燒", "任一 → SJS/TEN、DRESS、腦膜炎雙球菌血症"],
+        ["p", "列 8 週內新藥，停最可疑的", "藥疹多在用藥 4–28 天出現"],
+        ["l", "CBC/DC、LFT、Cr", "排除：DRESS（嗜酸球↑、肝炎）、血管炎（腎）"],
+        ["l", "Blood culture ×2", "排除：紫斑 + 發燒 → 腦膜炎雙球菌、敗血症", "發燒 + 紫斑"],
+        ["m", "Levocetirizine 5 mg PO QD", "適應：癢、蕁麻疹、單純藥疹"],
+        ["m", "Mometasone furoate cream 0.1% QD", "適應：單純藥疹、濕疹｜禁忌：疑黴菌或細菌感染", "局部"],
+        ["m", "Epinephrine 1 mg/mL：0.5 mg IM", "適應：合併喘、低血壓、喉頭水腫（anaphylaxis）", "喘 / 低血壓"]
+      ] },
     { "name": "Anaphylaxis", "hint": "氣道/呼吸/循環問題 ± 皮疹",
       "orders": [
         ["m", "Epinephrine 1 mg/mL：0.5 mL（0.5 mg）IM 大腿前外側", "第一線；有 IV 也一樣；5 min 無改善重複"],

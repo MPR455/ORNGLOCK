@@ -6,7 +6,8 @@
         ["p", "問抗凝劑、抗血小板藥、最後一劑時間", "最有用的資訊"],
         ["l", "PT/INR、aPTT、Fibrinogen、CBC、D-dimer、Cr", "排除：DIC、肝衰、維生素 K 缺乏、抗凝劑影響"],
         ["l", "Smear", "疑 TTP 或 DIC"],
-        ["p", "Heparin 封管抽血會假性異常", "重抽周邊"]
+        ["p", "Heparin 封管抽血會假性異常", "重抽周邊"],
+        ["m", "Vitamin K1 10 mg/amp：2–5 mg PO/IV", "適應：warfarin INR 高、維生素 K 缺乏", "INR 高"]
       ] },
     { "name": "Warfarin 大出血", "hint": "",
       "orders": [

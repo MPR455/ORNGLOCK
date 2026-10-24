@@ -1,6 +1,16 @@
 {
   "no": "26", "slug": "glucose", "title": "血糖", "icon": "🍬",
   "items": [
+    { "name": "血糖異常：第一輪", "hint": "測到太高或太低",
+      "orders": [
+        ["l", "POCT 重測（必要時抽靜脈血）", "排除：測量錯誤（末梢冰冷、貧血、輸液手臂）"],
+        ["l", "Blood ketone、VBG（pH、HCO3）", "排除：DKA", "BS >250"],
+        ["l", "Na、K、BUN/Cr、Serum osmolality", "排除：HHS（osm >320）", "BS >600"],
+        ["p", "檢視：insulin / SU 劑量、進食量、類固醇、腎功能、感染", "最常見：吃少了藥沒減"],
+        ["m", "Dextrose powder 15–20 g 溶水 PO", "適應：BS <70 清醒能吞", "BS <70 能吃"],
+        ["m", "50% Glucose 20 mL ×2 amp IV push（BS <40：×4 amp）", "適應：BS <70 不能吃 / 意識差", "BS <70 不能吃"],
+        ["m", "Actrapid SC 依 sliding scale", "適應：BS >180 持續｜禁忌：不能單用；DKA 要 IV", "BS >180"]
+      ] },
     { "name": "低血糖（清醒能吞）", "hint": "BS <72",
       "orders": [
         ["m", "Dextrose powder 15–20 g 溶水 PO（或果汁 150–200 mL）", "acarbose 使用者只能用純葡萄糖"],

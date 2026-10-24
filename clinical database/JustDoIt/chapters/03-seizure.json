@@ -8,7 +8,9 @@
         ["p", "O2 NRM 15 L/min → SpO2 94–98%", "取得可靠血氧前給高濃度氧"],
         ["p", "建立 IV（0–5 min）", "第一線給藥途徑"],
         ["l", "Glucose、CBC、生化、Ca、Mg、抗癲癇藥濃度", "找可逆原因、查服藥順從性"],
-        ["x", "Brain CT", "多數情況適用；已知癲癇的典型發作通常不用"]
+        ["x", "Brain CT", "多數情況適用；已知癲癇的典型發作通常不用"],
+        ["m", "Lorazepam 2 mg/amp：0.1 mg/kg IV（max 4 mg）", "適應：抽 ≥5 min 或反覆發作｜無 IV：Midazolam 10 mg IM", "≥5 分"],
+        ["m", "50% Glucose 20 mL ×2 amp IV push（BS <40：×4 amp）", "適應：低血糖抽搐", "BS <70"]
       ] },
     { "name": "癲癇重積：第一線 (≥5 分)", "hint": "持續 ≥5 min 或反覆未醒",
       "orders": [

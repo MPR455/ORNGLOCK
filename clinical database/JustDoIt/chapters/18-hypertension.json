@@ -10,7 +10,8 @@
         ["x", "ECG", "排除：QT 延長、高/低鉀變化、心律不整、缺血"],
         ["l", "Troponin、NT-proBNP", "胸痛或喘", "胸痛/喘"],
         ["x", "Brain CT", "神經症狀", "神經症狀"],
-        ["l", "Pregnancy test", "育齡女性"]
+        ["l", "Pregnancy test", "育齡女性"],
+        ["m", "恢復常規口服藥；要追加：Amlodipine 5 mg PO（或 Labetalol 200 mg PO）", "適應：無症狀高血壓，不急降｜禁忌：不要 IV 降壓、不要含服 nifedipine", "無器官損傷"]
       ] },
     { "name": "無器官損傷的嚴重高血壓", "hint": ">180/120，沒有急性損傷",
       "orders": [

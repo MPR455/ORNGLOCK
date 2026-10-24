@@ -15,7 +15,10 @@
         ["p", "O2：目標 SpO2 88–92%", "COPD 或高碳酸血症風險，血氣前", "COPD"],
         ["l", "NH3、Lactate、Serum osmolality、Blood ketone", "排除：肝性腦病變、乳酸中毒、毒性醇類、DKA"],
         ["l", "TSH、Free T4、Cortisol", "排除：黏液水腫、腎上腺不足", "找不到原因"],
-        ["l", "Troponin、BNP", "排除：無痛性心肌梗塞、心衰低灌流（老人）"]
+        ["l", "Troponin、BNP", "排除：無痛性心肌梗塞、心衰低灌流（老人）"],
+        ["m", "50% Glucose 20 mL ×2 amp IV push（BS <40：×4 amp）", "適應：BS <70", "BS <70"],
+        ["m", "Naloxone 0.4 mg IV", "適應：呼吸慢 + 針狀瞳孔（疑 opioid）｜注意：一次給太多誘發戒斷", "疑 opioid"],
+        ["m", "Vitamin B complex amp（B1 60 mg/amp）×3 IV（給糖前）", "適應：酒精、營養不良（預防 Wernicke）", "酒精 / 營養差"]
       ] },
     { "name": "低血糖", "hint": "BS < 72 mg/dL",
       "orders": [

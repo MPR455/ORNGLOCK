@@ -1,6 +1,16 @@
 {
   "no": "23", "slug": "uri-symptoms", "title": "上呼吸道症狀", "icon": "🤧",
   "items": [
+    { "name": "喉嚨痛 / 咳嗽：第一輪", "hint": "先排除氣道危險",
+      "orders": [
+        ["p", "紅旗：流口水、喘鳴、張口困難、聲音像含滷蛋、頸部腫", "會厭炎、深頸部感染 → 坐著、備氣道"],
+        ["l", "Rapid strep test 或 Throat culture", "排除：A 群鏈球菌（Centor ≥3 才驗）", "Centor ≥3"],
+        ["l", "Influenza / COVID rapid test", "排除：流感、COVID（決定抗病毒與隔離）", "發燒 + 上呼吸道"],
+        ["x", "CXR", "排除：肺炎（咳 + 發燒 / 喘 / 血氧低）", "咳 + 發燒"],
+        ["m", "Acetaminophen 500 mg PO q6h PRN", "適應：喉嚨痛、發燒"],
+        ["m", "Benzydamine spray TID", "適應：咽痛、插管後喉嚨痛"],
+        ["m", "Dextromethorphan SR 60 mg PO BID", "適應：乾咳影響睡眠｜禁忌：併 MAOI；痰多不用", "乾咳"]
+      ] },
     { "name": "上呼吸道阻塞 / 會厭炎", "hint": "喘鳴、流口水、吞嚥困難",
       "orders": [
         ["p", "坐起、O2 NRM 15 L/min", "不要躺平、不要壓舌"],

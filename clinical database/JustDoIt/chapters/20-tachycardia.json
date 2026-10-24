@@ -7,7 +7,9 @@
         ["x", "Continuous ECG monitor + 備去顫器", "目的：抓 VT/VF、高度 AV block"],
         ["l", "CBC、BUN/Cr、Na/K/Mg/Ca、TSH", "排除：貧血、高低鉀鎂、甲亢"],
         ["l", "Troponin", "胸痛或缺血", "胸痛"],
-        ["p", "檢視藥物：升壓劑、atropine、salbutamol、theophylline、停 β-blocker", ""]
+        ["p", "檢視藥物：升壓劑、atropine、salbutamol、theophylline、停 β-blocker", ""],
+        ["m", "NS 500 mL IV over 30 min", "適應：脫水、出血、發燒造成竇性心搏過速｜禁忌：心衰", "脫水"],
+        ["m", "Adenosine 6 mg/2 mL：6 mg IV push + NS flush → 12 mg", "適應：規則窄 QRS（PSVT）｜禁忌：WPW + AF、氣喘、高度 AV block", "PSVT"]
       ] },
     { "name": "不穩定心搏過速", "hint": "低血壓、意識變、胸痛、心衰、休克",
       "orders": [

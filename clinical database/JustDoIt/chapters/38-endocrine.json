@@ -1,6 +1,13 @@
 {
   "no": "38", "slug": "endocrine", "title": "甲狀腺 / 內分泌急症", "icon": "🦋",
   "items": [
+    { "name": "內分泌急症：第一輪", "hint": "不明原因休克、意識差、心跳異常",
+      "orders": [
+        ["l", "TSH、Free T4、Cortisol（± ACTH）", "排除：甲狀腺風暴、黏液水腫、腎上腺不足"],
+        ["l", "Na、K、glucose、Ca", "排除：低鈉高鉀（腎上腺）、低血糖、高鈣危象"],
+        ["x", "ECG", "排除：AF（甲亢）、心搏過緩（甲低）"],
+        ["m", "Hydrocortisone 100 mg IV", "適應：疑腎上腺危象，先抽 cortisol 再給，不等結果", "疑腎上腺"]
+      ] },
     { "name": "甲狀腺風暴", "hint": "高燒、心搏過速、躁動、腹瀉 + 甲亢",
       "orders": [
         ["l", "TSH、Free T4、T3、LFT、BS、Cortisol", "目的：確認甲亢；排除合併腎上腺不足、肝損傷"],

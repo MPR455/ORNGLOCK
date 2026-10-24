@@ -11,7 +11,8 @@
         ["l", "D-dimer", "懷疑肺栓塞且機率低時", "疑 PE"],
         ["x", "Telemetry", "疑心因性；住院最多 24 hr"],
         ["x", "Pacemaker / ICD interrogation", "有心臟裝置", "有裝置"],
-        ["x", "Echocardiography", "懷疑結構性心臟病", "疑結構性"]
+        ["x", "Echocardiography", "懷疑結構性心臟病", "疑結構性"],
+        ["m", "NS 500 mL IV over 30 min", "適應：姿勢性低血壓、脫水、出血｜禁忌：心衰", "姿勢性低血壓"]
       ] },
     { "name": "有症狀的心搏過緩", "hint": "HR 慢 + 低血壓/意識變",
       "orders": [

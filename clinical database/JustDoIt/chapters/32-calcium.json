@@ -1,6 +1,14 @@
 {
   "no": "32", "slug": "calcium", "title": "鈣", "icon": "🦴",
   "items": [
+    { "name": "鈣異常：第一輪", "hint": "先校正再處理",
+      "orders": [
+        ["l", "Albumin（校正 Ca）或 iCa", "排除：假性低鈣（低白蛋白）"],
+        ["l", "Mg、P、PTH、Cr", "目的：低鎂、副甲狀腺、CKD；高鈣 PTH 低 → 腫瘤"],
+        ["x", "ECG", "排除：QT 延長（低鈣）、QT 縮短 / 心律不整（高鈣）"],
+        ["m", "10% Calcium gluconate 10 mL ×1–2 + D5W 100 mL IV over 10 min", "適應：有症狀低鈣（手麻、抽筋、QT 長）", "低鈣有症狀"],
+        ["m", "NS 200–300 mL/hr", "適應：高鈣第一步（尿量 100–150 mL/hr）｜禁忌：心衰", "高鈣"]
+      ] },
     { "name": "重度 / 有症狀低血鈣", "hint": "Ca <1.9 mmol/L 或麻、抽筋、QT 長",
       "orders": [
         ["m", "10% Calcium gluconate 10 mL ×1–2 + D5W 100 mL IV over 10 min", "可重複到無症狀；不可直推、不可混含磷或 bicarbonate"],

@@ -1,6 +1,16 @@
 {
   "no": "31", "slug": "potassium", "title": "鉀", "icon": "🍌",
   "items": [
+    { "name": "鉀異常：第一輪", "hint": "K 異常先做這些",
+      "orders": [
+        ["x", "12-lead ECG", "排除：高鉀（高聳 T、PR↑、QRS 寬）、低鉀（U 波、QT 延長）"],
+        ["l", "重抽 K（不握拳、不溶血）", "排除：假性高血鉀", "意外偏高"],
+        ["l", "Mg、BUN/Cr、glucose、VBG", "排除：低鎂（補不上鉀）、AKI、酸中毒、高血糖"],
+        ["p", "檢視藥物：ACEI/ARB、MRA、NSAID、TMP-SMX、heparin、利尿劑、insulin、β-agonist", ""],
+        ["m", "10% Calcium gluconate 10 mL ×3 IV over 10 min", "適應：K >6 + ECG 變化（穩膜）", "K >6 + ECG"],
+        ["m", "Actrapid 0.1 U/kg（max 10 U）+ 50% Glucose 50 mL（25 g）IV（BS >250 可不給糖）", "適應：K ≥6（轉移）｜注意：q1h 驗血糖 ×6 hr", "K ≥6"],
+        ["m", "KCl SR 600 mg（8 mEq）或 750 mg（10 mEq）2–4 錠 PO（或 K gluconate 20 mEq 液）", "適應：K <3.5 能吃｜先補 Mg", "K <3.5"]
+      ] },
     { "name": "高血鉀 K ≥6.0", "hint": "",
       "orders": [
         ["x", "12-lead ECG STAT", "ECG 正常不能排除"],

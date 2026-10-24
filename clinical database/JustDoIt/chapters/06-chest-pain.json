@@ -10,7 +10,9 @@
         ["x", "Continuous ECG monitor + 備去顫器", "疑 ACS 或持續胸痛"],
         ["p", "O2 only if SpO2 <90%", "多數 ACS 不缺氧；過多氧氣可能擴大梗塞"],
         ["x", "Repeat ECG q15–30min（第 1 hr）", "症狀持續或初始 ECG 無法診斷"],
-        ["x", "V3R、V4R / V7–V9", "下壁 STEMI 看右心室；疑後壁", "下壁/後壁"]
+        ["x", "V3R、V4R / V7–V9", "下壁 STEMI 看右心室；疑後壁", "下壁/後壁"],
+        ["m", "Aspirin 100 mg ×3（300 mg）嚼碎", "適應：疑 ACS｜禁忌：活動性出血、aspirin 過敏、疑主動脈剝離", "疑 ACS"],
+        ["m", "NTG 0.6 mg SL", "適應：缺血性胸痛｜禁忌：SBP <90、右心梗塞、48 hr 內 PDE5i", "疑 ACS"]
       ] },
     { "name": "疑 ACS：初始藥物", "hint": "缺血性胸痛",
       "orders": [

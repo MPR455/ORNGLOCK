@@ -11,7 +11,10 @@
         ["x", "12-lead ECG", "排除：缺血、心律不整、高鉀、心包炎"],
         ["l", "CBC、BUN/Cr、電解質", "排除：貧血、AKI（顯影劑前）、高低鉀/鎂"],
         ["l", "NT-proBNP", "疑心衰；<300 可排除", "疑心衰"],
-        ["l", "Troponin、D-dimer", "依懷疑 ACS 或 PE", "疑 ACS/PE"]
+        ["l", "Troponin、D-dimer", "依懷疑 ACS 或 PE", "疑 ACS/PE"],
+        ["m", "Combivent UDV（Ipratropium 0.5 mg + Salbutamol 2.5 mg）neb", "適應：喘鳴、COPD / 氣喘｜注意：心搏過速", "喘鳴"],
+        ["m", "Furosemide 20 mg/amp ×2（40 mg）IV", "適應：肺水腫、容積過多｜禁忌：低血壓、脫水", "肺水腫"],
+        ["m", "Hydrocortisone 100 mg IV ×1", "適應：支氣管痙攣、過敏、COPD 惡化｜注意：高血糖", "喘鳴 / 過敏"]
       ] },
     { "name": "給氧升級", "hint": "NRM 仍達不到目標",
       "orders": [

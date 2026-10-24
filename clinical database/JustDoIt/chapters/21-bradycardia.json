@@ -10,7 +10,8 @@
         ["l", "Digoxin level", "有在吃", "Digoxin"],
         ["l", "Troponin", "疑缺血"],
         ["p", "檢視藥物：β-blocker、CCB、digoxin、clonidine、amiodarone、donepezil", "停可疑藥物"],
-        ["x", "V3R、V4R", "疑下壁 MI", "下壁 MI"]
+        ["x", "V3R、V4R", "疑下壁 MI", "下壁 MI"],
+        ["m", "Atropine 1 mg/mL：0.5–1 mg IV q3–5min（max 3 mg）", "適應：症狀性心搏過緩｜無效：寬 QRS block、心臟移植 → 直接起搏", "不穩定"]
       ] },
     { "name": "不穩定心搏過緩", "hint": "低血壓、昏厥、心衰、缺血",
       "orders": [

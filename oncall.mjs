@@ -44,15 +44,32 @@ function homeView() {
   return recentRow + urgent + sections;
 }
 
+const actions = () => `<div class="oc-actions"><button class="oc-big oc-primary" type="button" data-oc="all">＋ 基本醫囑</button><button class="oc-big" type="button" data-oc="tray">🧾 看醫囑單 (${tray.size})</button></div>`;
+
+// A chapter opens on its first condition's orders (the work-up for that call);
+// the other conditions follow as "依情況再加".
 function chapterView(chapter) {
+  const [start, ...rest] = chapter.items;
   return `<button class="oc-back" type="button" data-oc="home">‹ 首頁</button>
     <h1 class="oc-title" tabindex="-1">${chapter.icon} ${esc(chapter.title)}</h1>
-    <div class="oc-list">${chapter.items.map((item, index) => `<button class="oc-item" type="button" data-oc="item" data-index="${index}"><span class="oc-item-name">${esc(item.name)}</span>${item.hint ? `<span class="oc-item-hint">${esc(item.hint)}</span>` : ''}<span class="oc-item-arrow" aria-hidden="true">›</span></button>`).join('')}</div>`;
+    <p class="oc-hint">先開：${esc(start.name)}${start.hint ? ` · ${esc(start.hint)}` : ''}</p>
+    ${actions()}
+    ${orderGroups(chapter, 0)}
+    <section class="oc-section"><h2>依情況再加</h2><div class="oc-list">${rest.map((item, index) => `<button class="oc-item" type="button" data-oc="item" data-index="${index + 1}"><span class="oc-item-name">${esc(item.name)}</span>${item.hint ? `<span class="oc-item-hint">${esc(item.hint)}</span>` : ''}<span class="oc-item-arrow" aria-hidden="true">›</span></button>`).join('')}</div></section>`;
 }
 
 function itemView(chapter, itemIndex) {
   const item = chapter.items[itemIndex];
-  const groups = Object.keys(TYPE_INFO).map(type => {
+  return `<button class="oc-back" type="button" data-oc="chapter" data-index="${ONCALL_MENU.indexOf(chapter)}">‹ ${esc(chapter.title)}</button>
+    <h1 class="oc-title" tabindex="-1">${esc(item.name)}</h1>
+    ${item.hint ? `<p class="oc-hint">${esc(item.hint)}</p>` : ''}
+    ${actions()}
+    ${orderGroups(chapter, itemIndex)}`;
+}
+
+function orderGroups(chapter, itemIndex) {
+  const item = chapter.items[itemIndex];
+  return Object.keys(TYPE_INFO).map(type => {
     const rows = item.orders.map((order, index) => [order, index]).filter(([order]) => order[0] === type);
     if (!rows.length) return '';
     const [icon, label] = TYPE_INFO[type];
@@ -64,11 +81,6 @@ function itemView(chapter, itemIndex) {
         </div>`;
     }).join('')}</section>`;
   }).join('');
-  return `<button class="oc-back" type="button" data-oc="chapter" data-index="${ONCALL_MENU.indexOf(chapter)}">‹ ${esc(chapter.title)}</button>
-    <h1 class="oc-title" tabindex="-1">${esc(item.name)}</h1>
-    ${item.hint ? `<p class="oc-hint">${esc(item.hint)}</p>` : ''}
-    <div class="oc-actions"><button class="oc-big oc-primary" type="button" data-oc="all">＋ 基本醫囑</button><button class="oc-big" type="button" data-oc="tray">🧾 看醫囑單 (${tray.size})</button></div>
-    ${groups}`;
 }
 
 function searchView() {
@@ -114,7 +126,9 @@ function go(chapter, item = null) {
   root.querySelector('.oc-title')?.focus({ preventScroll: true });
 }
 
-function currentItem() { const chapter = ONCALL_MENU[view.chapter]; return [chapter, chapter.items[view.item]]; }
+// On a chapter page the orders shown are its first condition's.
+const shownItem = () => view.item ?? 0;
+function currentItem() { const chapter = ONCALL_MENU[view.chapter]; return [chapter, chapter.items[shownItem()]]; }
 
 function togglePick(button) {
   const [chapter, item] = currentItem(), order = item.orders[Number(button.dataset.index)], key = button.dataset.key;
@@ -177,7 +191,7 @@ function onClick(event) {
     // Orders tagged with a situation (order[3]) are alternatives; pick those by hand.
     const [chapter, item] = currentItem();
     const core = item.orders.map((order, orderIndex) => [order, orderIndex]).filter(([order]) => !order[3]);
-    core.forEach(([order, orderIndex]) => tray.set(orderKey(chapter, view.item, orderIndex), { item: item.name, text: orderLine(order) }));
+    core.forEach(([order, orderIndex]) => tray.set(orderKey(chapter, shownItem(), orderIndex), { item: item.name, text: orderLine(order) }));
     render(); toast(`已加入 ${core.length} 項基本醫囑；有標籤的請依情況點選`);
   }
   else if (action === 'tray') { renderTray(); root.querySelector('.oc-tray').showModal(); }
