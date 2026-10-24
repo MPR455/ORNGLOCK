@@ -27,7 +27,7 @@
     { "name": "孕產婦頭痛 / 子癇前症", "hint": "BP ≥160/110 或新發嚴重頭痛",
       "orders": [
         ["m", "Labetalol 25 mg/5 mL：20 mg IV，q10–30min 20–80 mg（累積 ≤300 mg）", "持續 ≥15 min 就 30–60 min 內給藥"],
-        ["m", "Hydralazine 20 mg/amp：5 mg IV，q20–40min 5–10 mg（累積 ≤20 mg）", "", "替代"],
+        ["m", "Hydralazine 20 mg/amp：5 mg IV，q20–40min 5–10 mg（累積 ≤20 mg）", "適應：孕婦重度高血壓（labetalol 替代）｜注意：反射性心搏過速、作用不可預測", "替代"],
         ["m", "Nifedipine 10 mg cap PO（勿咬破），20 min 後可重複", "每日最高 180 mg", "替代"],
         ["m", "MgSO4 10% 20 mL ×2（4 g）IV over 20 min，之後 1 g/hr", "預防子癇；看尿量、呼吸、反射"],
         ["p", "禁用 ACEI、ARB、nitroprusside", "孕期禁忌"],
@@ -36,7 +36,7 @@
     { "name": "顱內壓上升", "hint": "頭痛 + 嘔吐 + 意識降",
       "orders": [
         ["p", "床頭 >30°、頭置中、SpO2 >94%", "基本措施"],
-        ["x", "Brain CT without contrast", ""],
+        ["x", "Brain CT without contrast", "排除：出血、腫瘤、水腦、中線偏移、腦疝"],
         ["m", "20% Mannitol 0.5–1 g/kg IV over 5–15 min", "低血壓者利尿效果差"],
         ["m", "3% NaCl 250 mL IV over 15–30 min", "Na 每 4–6 hr，<160", "替代"],
         ["l", "Na、Osmolality", "避免 Na <135"],
@@ -46,31 +46,31 @@
       "orders": [
         ["l", "Blood culture ×2", "抗生素前抽，但不延誤"],
         ["m", "Ceftriaxone 2 g IV q12h", "1 hr 內給；不可混含鈣溶液"],
-        ["m", "Vancomycin 15–20 mg/kg IV q8–12h（谷濃度 15–20）", "依當地肺炎鏈球菌抗藥率", "抗藥地區"],
-        ["m", "Ampicillin 500 mg/vial ×4（2 g）IV q4h", ">50 歲或 Listeria 風險（糖尿病、免疫抑制、癌症）", ">50 歲"],
+        ["m", "Vancomycin 15–20 mg/kg IV q8–12h（谷濃度 15–20）", "依當地肺炎鏈球菌抗藥率｜腎調：AUC 400–600；CrCl 10–50 → q24h；HD 透析後補；併 Pip-tazo 腎毒性較高", "抗藥地區"],
+        ["m", "Ampicillin 500 mg/vial ×4（2 g）IV q4h", ">50 歲或 Listeria 風險（糖尿病、免疫抑制、癌症）｜腎調：CrCl 10–50 → q6–12h；<10 → q12–24h", ">50 歲"],
         ["m", "Dexamethasone 5 mg/amp ×2（10 mg）IV q6h × 4 天", "與第一劑抗生素同時"],
         ["x", "LP：cell count、glucose、protein、Gram stain、culture", "安全時在抗生素前"],
         ["x", "Brain CT before LP", "局部缺損、新抽搐、GCS ≤9、瞳孔異常", "先影像"]
       ] },
     { "name": "疑病毒性腦炎", "hint": "發燒 + 意識/行為改變",
       "orders": [
-        ["m", "Acyclovir 250 mg/vial：10 mg/kg IV q8h", "疑似就開始；依腎功能調"],
+        ["m", "Acyclovir 250 mg/vial：10 mg/kg IV q8h", "疑似就開始；依腎功能調｜腎調：CrCl 25–50 → q12h；10–25 → q24h；<10 → 半量 q24h"],
         ["x", "LP：HSV PCR", "陰性但臨床相符，3–7 天後重驗"],
         ["x", "Brain MRI", "顳葉病灶"]
       ] },
     { "name": "神經外科術後 / 引流管感染", "hint": "術後發燒 + 頭痛 + 意識變",
       "orders": [
         ["l", "CSF culture、cell、glucose、Gram stain", "培養是最重要的"],
-        ["m", "Vancomycin 25 mg/kg IV 負荷 → 15–20 mg/kg q12h（依 CrCl、濃度）", ""],
-        ["m", "Cefepime 2 g IV q8h（或 Meropenem 2 g IV q8h）", "抗綠膿桿菌 β-lactam"],
-        ["x", "MRI with gadolinium + DWI", ""]
+        ["m", "Vancomycin 25 mg/kg IV 負荷 → 15–20 mg/kg q12h（依 CrCl、濃度）", "適應：MRSA / 院內 G(+) 涵蓋｜注意：腎毒性（併 Pip-tazo 更高）、第 4 劑前抽濃度｜腎調：CrCl 10–50 q24h；HD 每次透析後"],
+        ["m", "Cefepime 2 g IV q8h（或 Meropenem 2 g IV q8h）", "抗綠膿桿菌 β-lactam｜腎調：CrCl 30–60 → 2 g q12h；11–29 → 2 g q24h；HD 1 g QD"],
+        ["x", "MRI with gadolinium + DWI", "排除：腦膿瘍、硬膜下積膿、腦室炎｜禁忌：eGFR <30 慎用 gadolinium、心律器"]
       ] },
     { "name": "疑腦膿瘍", "hint": "頭痛、發燒、局部缺損",
       "orders": [
         ["x", "Brain MRI with/without gadolinium（DWI）", "無法 MRI 改增強 CT"],
         ["l", "Blood culture ×2", "陽性率約 28%"],
         ["m", "Ceftriaxone 2 g IV q12h + Metronidazole 500 mg IV q8h", "社區型"],
-        ["m", "Meropenem 2 g IV q8h + Vancomycin 15–20 mg/kg q8–12h", "術後", "術後"],
+        ["m", "Meropenem 2 g IV q8h + Vancomycin 15–20 mg/kg q8–12h", "術後｜腎調：CrCl 26–50 → 1 g q12h；10–25 → 500 mg q12h；<10 → 500 mg QD", "術後"],
         ["p", "LP 相對禁忌", "陽性率低、風險高"]
       ] },
     { "name": "頭部外傷：要不要 CT", "hint": "撞到頭",
@@ -93,14 +93,14 @@
     { "name": "腰椎穿刺後頭痛", "hint": "直立加重、平躺改善",
       "orders": [
         ["p", "平躺、補水", "多數 2 週內緩解"],
-        ["m", "Acetaminophen 500 mg PO q6h / Ibuprofen 400 mg PO q8h", ""],
+        ["m", "Acetaminophen 500 mg PO q6h / Ibuprofen 400 mg PO q8h", "適應：輕中度頭痛｜禁忌：NSAID 避免 AKI、心衰、GI 出血、抗凝"],
         ["p", "Epidural blood patch", "持續嚴重時", "嚴重"]
       ] },
     { "name": "疑顳動脈炎 (GCA)", "hint": ">60 歲、頭皮痛、下顎跛行、視力",
       "orders": [
         ["m", "Methylprednisolone 500 mg/vial：500–1000 mg IV QD × 3 天", "有視力喪失威脅", "視力威脅"],
         ["m", "Prednisolone 5 mg/tab：1 mg/kg PO QD（max 60 mg）", "無顱部缺血表現"],
-        ["l", "ESR、CRP、CBC", ""],
+        ["l", "ESR、CRP、CBC", "排除：顳動脈炎（ESR/CRP 高、血小板高）；正常則可能性低"],
         ["x", "Temporal artery biopsy（2 週內，>1 cm）", "類固醇開始後兩週內"]
       ] },
     { "name": "急性閉角型青光眼", "hint": "眼痛、紅眼、光暈、嘔吐",
@@ -114,9 +114,9 @@
       ] },
     { "name": "頭面部帶狀皰疹", "hint": "單側水泡",
       "orders": [
-        ["m", "Valaciclovir 500 mg ×2（1 g）PO TID × 7 天（或 Famciclovir 250 mg ×2 TID）", "72 hr 內最有效"],
+        ["m", "Valaciclovir 500 mg ×2（1 g）PO TID × 7 天（或 Famciclovir 250 mg ×2 TID）", "72 hr 內最有效｜腎調：CrCl 30–49 → 1 g q12h；10–29 → 1 g q24h"],
         ["p", "眼科檢查", "V1 分支或鼻尖水泡 (Hutchinson sign)"],
-        ["m", "Gabapentin 300 mg PO HS 起（或 Pregabalin 75 mg BID）", "神經痛；老人避免與 opioid 併用"]
+        ["m", "Gabapentin 300 mg PO HS 起（或 Pregabalin 75 mg BID）", "神經痛；老人避免與 opioid 併用｜腎調：CrCl 30–59 → 400–1400 mg/day；15–29 → 200–700 mg/day"]
       ] },
     { "name": "偏頭痛急性發作", "hint": "單側搏動、噁心、畏光",
       "orders": [

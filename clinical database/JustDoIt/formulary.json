@@ -166,14 +166,18 @@
       ["Dantrolene", "20 mg、120 mg/vial"],
       ["Cyproheptadine", "4 mg/tab"],
       ["Nicotine patch", "Nicotinell TTS 20/30", "Nicotine"],
-      ["Sumatriptan", "50 mg/tab、20 mg nasal spray"]
+      ["Sumatriptan", "50 mg/tab、20 mg nasal spray"],
+      ["Estazolam", "2 mg/tab"],
+      ["Alprazolam", "0.5 mg/tab"],
+      ["Chlorpromazine", "50 mg/tab"],
+      ["Baclofen", "5/10 mg/tab"]
     ] },
     { "group": "止痛", "drugs": [
       ["Acetaminophen", "500 mg/tab"],
       ["Propacetamol", "1 g/vial（= acetaminophen 0.5 g）"],
       ["Ibuprofen", "400 mg/tab"],
       ["Naproxen", "250 mg/tab"],
-      ["Diclofenac", "25 mg/tab"],
+      ["Diclofenac", "25 mg/tab、12.5 mg supp"],
       ["Ketorolac", "30 mg/mL amp；0.5% 眼藥"],
       ["Parecoxib", "40 mg/vial"],
       ["Celecoxib", "200 mg/cap"],
@@ -185,7 +189,13 @@
       ["Gabapentin", "100/300 mg/cap"],
       ["Pregabalin", "75 mg/cap"],
       ["Amitriptyline", "25 mg/tab"],
-      ["Duloxetine", "30 mg/cap"]
+      ["Duloxetine", "30 mg/cap"],
+      ["Lysine acetylsalicylate", "Stin 500 mg/vial", "Lysine acetylsalicylate|(?<![a-z])Stin"],
+      ["Tramadol-acetaminophen", "Ultracet / Utraphen 37.5/325 mg", "Ultracet|Utraphen"],
+      ["Nalbuphine", "10 mg/mL amp"],
+      ["Tizanidine", "2 mg/tab"],
+      ["Flurbiprofen patch", "40 mg/patch", "Flurbiprofen"],
+      ["Etofenamate gel", "10% gel", "Etofenamate"]
     ] },
     { "group": "腸胃", "drugs": [
       ["Pantoprazole", "40 mg/tab、40 mg/vial"],
@@ -206,14 +216,21 @@
       ["PEG 4000", "Forlax 10 g/pack", "PEG 4000|Forlax"],
       ["PEG 3350 bowel prep", "Klean-prep", "Klean-prep|PEG 3350"],
       ["Sennoside", "12 mg/tab"],
-      ["Bisacodyl", "10 mg supp"],
+      ["Bisacodyl", "5 mg/tab、10 mg supp"],
       ["Magnesium oxide", "250 mg/tab", "Magnesium oxide|MgO"],
       ["Glycerin enema", "60 mL", "Glycerin"],
       ["Loperamide", "2 mg/cap"],
       ["Smectite", "Smecta 3 g/sachet", "Smectite|Smecta"],
       ["Naldemedine", "0.2 mg/tab"],
       ["Oral rehydration solution", "Oral electrolyte maintenance soln 500 mL", "ORS|Oral electrolyte"],
-      ["Diatrizoate", "Gastrografin 65%", "Diatrizoate meglumine|Diatrizoate|Gastrografin"]
+      ["Diatrizoate", "Gastrografin 65%", "Diatrizoate meglumine|Diatrizoate|Gastrografin"],
+      ["Oxethazaine", "Strocain（Oxethazaine 5 mg + Polymigel）", "Strocain（[^）]*）|Strocain|Oxethazaine"],
+      ["Alginate suspension", "Alginate sodium 50 mg/mL", "Alginate"],
+      ["Mosapride", "5 mg/tab"],
+      ["Simethicone", "Dimethicone 40 mg/tab、Simethicone susp", "Simethicone|Dimethicone"],
+      ["Fleet enema", "118 mL", "Fleet"],
+      ["Xylmol", "Lidocaine + Hydrocortisone oint / supp", "(?<!High-)Xylmol"],
+      ["High-Xylmol", "Lidocaine + Phenylephrine + Betamethasone oint", "High-Xylmol oint（[^）]*）|High-Xylmol"]
     ] },
     { "group": "輸液 / 電解質 / 營養", "drugs": [
       ["Normal saline", "0.9% NaCl 100/250/500/1000 mL", "\\bNS\\b|NaCl 0\\.9|0\\.9% NaCl|D5S"],
@@ -245,7 +262,8 @@
       ["Iron sucrose", "20 mg Fe/mL"],
       ["Epoetin beta", "Recormon 2000–10,000 IU", "Recormon|Epoetin"],
       ["Sevelamer", "800 mg/tab"],
-      ["Calcium acetate", "667 mg/tab"]
+      ["Calcium acetate", "667 mg/tab"],
+      ["Multi-electrolyte No.3", "台大三號 500 mL", "Multi-electrolyte No\\.3|台大三號"]
     ] },
     { "group": "內分泌 / 類固醇", "drugs": [
       ["Regular insulin", "Actrapid 100 U/mL", "Actrapid|Regular insulin"],
@@ -273,7 +291,7 @@
     ] },
     { "group": "呼吸 / 過敏 / 耳鼻", "drugs": [
       ["Salbutamol MDI", "100 mcg/puff", "Salbutamol MDI"],
-      ["Ipratropium-salbutamol", "Combivent UDV 0.5/2.5 mg", "Combivent|Ipratropium|Salbutamol(?! MDI)"],
+      ["Ipratropium-salbutamol", "Combivent UDV 0.5/2.5 mg", "Combivent UDV（[^）]*）|Combivent|Salbutamol(?! MDI)"],
       ["Aminophylline", "250 mg/10 mL"],
       ["Levocetirizine", "5 mg/tab"],
       ["Fexofenadine", "180 mg/tab"],
@@ -285,7 +303,9 @@
       ["Ambroxol", "30 mg/tab"],
       ["Acetylcysteine", "600 mg eff tab；IV 20% 5 g/25 mL", "Acetylcysteine|N-acetylcysteine"],
       ["Oxymetazoline", "0.05% nasal spray"],
-      ["Mometasone nasal spray", "50 mcg/puff", "Mometasone 鼻噴|Mometasone nasal"]
+      ["Mometasone nasal spray", "50 mcg/puff", "Mometasone 鼻噴|Mometasone nasal"],
+      ["Ipratropium neb", "0.5 mg/2 mL", "Ipratropium"],
+      ["Terbutaline neb", "5 mg/2 mL", "Terbutaline"]
     ] },
     { "group": "解毒劑", "drugs": [
       ["Naloxone", "0.4 mg/mL amp"],
@@ -333,7 +353,9 @@
       ["Ascorbate eye drops", "10 mg/mL 眼藥", "Ascorbate"],
       ["Carbomer gel", "Vidisic 0.2%", "Carbomer|Vidisic"],
       ["Sustain-tears ointment", "眼藥膏", "Sustain-tears"],
-      ["Artificial tears", "Tears naturale free", "Tears naturale"]
+      ["Artificial tears", "Tears naturale free", "Tears naturale"],
+      ["Sulfamethoxazole eye drops", "4% 眼藥", "Sulfamethoxazole 4%"],
+      ["Chloramphenicol eye drops", "0.25% 眼藥", "Chloramphenicol"]
     ] },
     { "group": "皮膚 / 外用", "drugs": [
       ["Silver sulfadiazine", "1% cream", "Silver sulfadiazine|Flamazine"],
@@ -345,11 +367,21 @@
       ["Clobetasol", "0.05% oint"],
       ["Hydrocortisone cream", "1% cream", "Hydrocortisone cream"],
       ["Clotrimazole", "cream"],
-      ["Calamine lotion", "100 mL", "Calamine lotion|Calamine"]
+      ["Calamine lotion", "100 mL", "Calamine lotion|Calamine"],
+      ["Doxepin cream", "5% cream", "Doxepin"],
+      ["Urea cream", "10% cream", "Urea 10%"],
+      ["Zinc oxide", "20% oint", "Zinc oxide"],
+      ["Heparinoid gel", "Hirudoid", "Heparinoid|Hirudoid"],
+      ["Triamcinolone oral paste", "0.1% in orabase", "Triamcinolone"],
+      ["Chlorhexidine gargle", "0.2% 200 mL", "Chlorhexidine"],
+      ["Benzydamine spray", "1.5/3 mg/mL", "Benzydamine"]
     ] },
     { "group": "泌尿", "drugs": [
       ["Tamsulosin", "0.2/0.4 mg"],
-      ["Phenazopyridine", "100 mg/tab"]
+      ["Phenazopyridine", "100 mg/tab"],
+      ["Bethanechol", "25 mg/tab"],
+      ["Mirabegron", "25/50 mg/tab"],
+      ["Doxazosin", "2/4 mg/tab"]
     ] }
   ]
 }

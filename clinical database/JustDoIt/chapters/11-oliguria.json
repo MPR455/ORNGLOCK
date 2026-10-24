@@ -4,13 +4,14 @@
     { "name": "少尿 / AKI：第一輪", "hint": "<0.5 mL/kg/hr × 6 hr 或 Cr 升 ≥0.3",
       "orders": [
         ["x", "Bladder scan / 導尿", "先排除尿滯留與導尿管阻塞"],
-        ["l", "BUN/Cr、Na/K、CBC/DC", ""],
+        ["l", "BUN/Cr、Na/K、CBC/DC", "排除：高鉀（要急透析？）、BUN/Cr >20 腎前性、感染"],
         ["l", "UA（dipstick：血、蛋白、WBC、nitrite、糖）", "血尿 + 蛋白尿要想腎絲球腎炎"],
         ["l", "Urine Na / Cr", "輔助判斷灌流不足"],
         ["x", "Renal echo（24 hr 內）", "病因不明或有阻塞風險"],
         ["p", "I/O、每日體重", ""],
         ["p", "停 NSAID、aminoglycoside、ACEI/ARB、利尿劑", "會加重腎損傷"],
-        ["p", "藥物依腎功能調整（請藥師）", ""]
+        ["p", "藥物依腎功能調整（請藥師）", ""],
+        ["m", "Furosemide stress test：1–1.5 mg/kg IV", "適應：容積已補足、無阻塞｜判讀：2 hr 尿量 <200 mL → 進展至透析風險高｜利尿劑不能治療 AKI", "容積已足"]
       ] },
     { "name": "容積不足：補液", "hint": "",
       "orders": [
@@ -25,28 +26,38 @@
         ["x", "Renal echo（6 hr 內）", "疑膿腎", "疑膿腎"],
         ["p", "緊急泌尿科：PCN 或 DJ stent（12 hr 內）", "阻塞 + 感染或無尿"],
         ["m", "Ceftriaxone 2 g IV QD（敗血症：Pip-tazo 4.5 g q6h）", "阻塞合併感染", "感染"],
-        ["l", "Urine culture（減壓後）", ""]
+        ["l", "Urine culture（減壓後）", "目的：阻塞合併感染找菌種"]
+      ] },
+    { "name": "急性尿滯留", "hint": "尿不出來、下腹脹；用超音波確認",
+      "orders": [
+        ["x", "Bladder scan（PVR）", "目的：>300（或 >150 有症狀）= 尿滯留；50–150 排空差；<50 排空好"],
+        ["p", "On Foley 減壓（3–5 天）", "留置越久 UTI 越多"],
+        ["m", "Tamsulosin 0.4 mg PO QD（≥3 天後再 TWOC）", "適應：BPH 尿滯留，提高自解成功率｜注意：姿勢性低血壓；急性期不加 5-ARI"],
+        ["m", "Bethanechol 25 mg PO TID", "適應：PVR 50–150、膀胱收縮力不足｜禁忌：機械性阻塞、氣喘、心搏過緩、OAB", "收縮差"],
+        ["m", "Mirabegron 50 mg PO QD", "適應：PVR <50 的頻尿急尿（OAB）｜禁忌：尿滯留、未控制高血壓", "OAB"],
+        ["l", "UA + Urine culture", "排除：合併 UTI（先治感染再 TWOC）"],
+        ["p", "導尿後記 I/O；>200 mL/hr 補液", "阻塞解除後利尿會脫水、低鈉低鉀"]
       ] },
     { "name": "敗血症 + AKI", "hint": "",
       "orders": [
         ["m", "Norepinephrine 4 mg/4 mL：8 mg in D5W 250 mL，0.05–0.5 mcg/kg/min", "輸液後仍低血壓；MAP ≥65"],
-        ["m", "Vasopressin 20 U/mL：0.03 U/min", "NE 劑量持續上升", "NE 增加"],
-        ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h（1 hr 內，首劑不減量）", "之後依 CrCl 調整"],
+        ["m", "Vasopressin 20 U in NS 100 mL（0.2 U/mL）：9 mL/hr = 0.03 U/min", "NE 劑量持續上升", "NE 增加"],
+        ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h（1 hr 內，首劑不減量）", "之後依 CrCl 調整｜腎調：CrCl 20–40 → 3.375 g q6h；<20 → 2.25 g q6h；HD 2.25 g q8h + 0.75 g 透析後"],
         ["p", "不用低劑量 dopamine", "無法預防 AKI"]
       ] },
     { "name": "橫紋肌溶解", "hint": "CK >1000",
       "orders": [
         ["m", "Lactated Ringer / NS 1.5 L/hr，目標尿量 200–300 mL/hr", "避免只用 NS；老人心臟病小心"],
-        ["l", "CK、K、Ca、P、Cr", ""],
+        ["l", "CK、K、Ca、P、Cr", "排除：橫紋肌溶解（CK >5× 上限）、高鉀、低鈣、AKI"],
         ["p", "避免 mannitol 與 loop diuretic", ""]
       ] },
     { "name": "腫瘤溶解症候群", "hint": "化療前後",
       "orders": [
-        ["m", "NS 3 L/m²/day，尿量 100 mL/m²/hr", ""],
+        ["m", "NS 3 L/m²/day，尿量 100 mL/m²/hr", "適應：腫瘤溶解預防與治療｜禁忌：心衰、無尿（需透析）"],
         ["m", "Rasburicase 1.5 mg/vial：0.2 mg/kg/day（≤7 天）", "G6PD 缺乏禁用"],
-        ["l", "Uric acid、K、P、Ca、Cr q6–12h", ""],
+        ["l", "Uric acid、K、P、Ca、Cr q6–12h", "排除：TLS（尿酸、K、P 升高、Ca 下降、Cr 上升）"],
         ["p", "不補 K、P", ""],
-        ["m", "Allopurinol 100 mg ×3 PO QD", "中風險預防；已發生用 rasburicase", "預防"]
+        ["m", "Allopurinol 100 mg ×3 PO QD", "中風險預防；已發生用 rasburicase｜腎調：CrCl <30 → 50–100 mg 起", "預防"]
       ] },
     { "name": "肝硬化 + AKI", "hint": "",
       "orders": [
@@ -59,19 +70,19 @@
       "orders": [
         ["m", "NS 1–3 mL/kg/hr，檢查前 1 hr 到後 3–12 hr", "注意心衰"],
         ["p", "停 Metformin 48 hr", "腎功能正常後再恢復"],
-        ["l", "Cr 48–72 hr 後", ""]
+        ["l", "Cr 48–72 hr 後", "目的：顯影劑腎病變（Cr 升 ≥0.3）"]
       ] },
     { "name": "緊急透析評估", "hint": "內科治療無效",
       "orders": [
         ["p", "照會腎臟科：緊急 HD", "高血鉀、酸中毒、肺水腫、尿毒症（心包炎、腦病變）"],
         ["m", "Sodium bicarbonate 7% 20 mL（16.7 mEq/amp）：1–2 mEq/kg IV", "pH ≤7.2 + AKI 2–3 期", "嚴重酸中毒"],
-        ["l", "ABG、K、ECG", ""]
+        ["l", "ABG、K、ECG", "目的：AEIOU 透析適應：pH <7.1、K >6.5 + ECG 變化"]
       ] },
     { "name": "孕婦少尿", "hint": "<30 mL/hr × 4 hr",
       "orders": [
         ["p", "不常規擴充血漿容積", "子癇前症補液可能危險；總輸液 ~80 mL/hr"],
         ["m", "MgSO4 維持 1 g/hr", "腎差或少尿"],
-        ["l", "Serum Mg q4h", ""]
+        ["l", "Serum Mg q4h", "目的：Mg 4.8–8.4 mg/dL 治療範圍；過高 → 反射消失、呼吸抑制"]
       ] }
   ]
 }

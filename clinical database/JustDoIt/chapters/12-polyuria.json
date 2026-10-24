@@ -12,8 +12,8 @@
     { "name": "高血糖滲透性利尿 / HHS", "hint": "BS ≥600、滲透壓 >300",
       "orders": [
         ["m", "NS 1 L 第 1 hr，之後 0.5–1 L/hr", "前 8–12 hr 補一半缺水量"],
-        ["l", "POCT glucose q1–2h", ""],
-        ["l", "電解質、P、Cr、β-hydroxybutyrate、VBG q4h", ""],
+        ["l", "POCT glucose q1–2h", "目的：每小時降 50–75 mg/dL；太快 → 腦水腫"],
+        ["l", "電解質、P、Cr、β-hydroxybutyrate、VBG q4h", "目的：K 補充、排除合併 DKA（酮體、pH）"],
         ["l", "Serum osmolality q1h × 6 hr → q2h", "每小時降 3–8 mOsm/kg"],
         ["m", "0.45% NaCl", "液體平衡足夠但滲透壓仍升", "滲透壓不降"],
         ["p", "Na 24 hr 下降 ≤10", "避免腦水腫"]
@@ -22,7 +22,7 @@
       "orders": [
         ["m", "NS 恢復血壓脈搏", "容積不足先補", "容積不足"],
         ["m", "Desmopressin 4 mcg/mL：1–2 mcg IV/SC", "已確診 CDI，補液後尿量多且尿滲透壓低"],
-        ["l", "Serum Na q4h（復甦期）→ q12h", ""],
+        ["l", "Serum Na q4h（復甦期）→ q12h", "目的：DDAVP 後 Na 下降太快（≤10/24 hr）"],
         ["p", "床邊備水", "清醒且有口渴者"],
         ["p", "Desmopressin 不可漏給", "漏給曾致死"],
         ["p", "照會內分泌", ""]
@@ -32,23 +32,23 @@
         ["m", "D5W 或 Half-saline 0.45%（每日需要量 + 部分缺水量）", "可行時改 PO/NG 給水"],
         ["p", "急性有症狀：第 1 hr 降 5，24 hr ≤10", "", "急性"],
         ["p", "慢性/無症狀：≤0.5 mmol/L/hr，24 hr ≤10", ""],
-        ["l", "Na q4h", ""]
+        ["l", "Na q4h", "目的：降 Na 不超過 10 mmol/L/24 hr（腦水腫）"]
       ] },
     { "name": "阻塞解除後利尿", "hint": "導尿後大量排尿",
       "orders": [
         ["m", "Half-saline 0.45%（少於尿量）", "低血容或低血壓時更積極"],
-        ["l", "Na/K/Mg、BUN/Cr、尿電解質", ""],
+        ["l", "Na/K/Mg、BUN/Cr、尿電解質", "排除：阻塞解除後大量利尿造成低鈉、低鉀、低鎂"],
         ["p", "I/O q1–2h", ""]
       ] },
     { "name": "高血鈣多尿", "hint": "",
       "orders": [
-        ["l", "Ca（白蛋白校正）、P、PTH、BUN/Cr", ""],
+        ["l", "Ca（白蛋白校正）、P、PTH、BUN/Cr", "排除：PTH 高 → 副甲亢；PTH 低 → 腫瘤（PTHrP）、Vitamin D"],
         ["x", "ECG", "Ca >3.5 有心律不整風險"],
         ["m", "NS 補液", "見鈣章"]
       ] },
     { "name": "利尿劑過度利尿", "hint": "",
       "orders": [
-        ["l", "Na、K、Mg、BUN/Cr 每日", ""],
+        ["l", "Na、K、Mg、BUN/Cr 每日", "目的：低鉀、低鈉、低鎂、腎前性 AKI"],
         ["p", "減量或停利尿劑", "合併低血壓時"],
         ["m", "KCl 600 mg（8 mEq）2–3 錠 PO 或 K gluconate 20 mEq 液（目標 K 4）", "同時矯正低 Mg", "低 K"]
       ] }

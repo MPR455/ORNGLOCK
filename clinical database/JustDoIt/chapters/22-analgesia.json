@@ -7,23 +7,26 @@
         ["m", "Propacetamol 1 g ×2（2 g）IV q6h", "= Acetaminophen 1 g；院內 IV 劑型為 propacetamol", "NPO"],
         ["m", "Ketorolac 30 mg IV q6h（≤5 天）/ Parecoxib 40 mg IV q12h / Celecoxib 200 mg PO BID", "腎差、出血、潰瘍不用", "無禁忌"],
         ["p", "重評：IV 後 15–30 min、PO 後 1–2 hr", ""],
-        ["p", "新痛或分數高且無反應：找新問題或手術併發症", ""]
+        ["p", "新痛或分數高且無反應：找新問題或手術併發症", ""],
+        ["m", "Ultracet（Tramadol 37.5 mg + Acetaminophen 325 mg）1 tab PO QID", "適應：中度痛 regular 打底｜注意：噁心、頭暈；併 SSRI 抽搐 / serotonin｜算進 acetaminophen 總量", "中度痛"],
+        ["p", "Regular 打底 + PRN 救急", "只開 PRN 病人會一直痛一直按鈴"]
       ] },
     { "name": "中重度痛：強效 opioid", "hint": "",
       "orders": [
-        ["m", "Morphine 10 mg/mL：2–10 mg SC/IV q4h PRN", "顱內壓高或頭部外傷避免"],
+        ["m", "Morphine 10 mg/mL：2–10 mg SC/IV q4h PRN", "顱內壓高或頭部外傷避免｜腎調：腎差代謝物蓄積 → 改 fentanyl"],
         ["m", "OxyCodone IR 5 mg cap：5 mg PO q4h PRN", "未用過 opioid；能口服優先", "能口服"],
-        ["m", "Tramadol 50–100 mg PO/IV q6h（max 400 mg/day）", "院內無 IV hydromorphone；中度痛替代", "替代"],
+        ["m", "Tramadol 50–100 mg PO/IV q6h（max 400 mg/day）", "院內無 IV hydromorphone；中度痛替代｜腎調：CrCl <30 → q12h，max 200 mg/day", "替代"],
         ["m", "Fentanyl 0.05 mg/mL：25–100 mcg IV slow（老人 12.5–25）", "腎差或透析較適合；快推會胸壁僵直", "腎差"],
         ["m", "Sennoside 12 mg ×2 HS + MgO 250 mg ×2 TID（規則）", "預防便秘"],
         ["p", "監測意識與 RR", "給 O2 時 SpO2 看不出通氣不足"],
         ["p", "避免與 BZD、gabapentinoid 併用", "呼吸抑制"],
-        ["p", "不用 IM", "吸收不穩又痛"]
+        ["p", "不用 IM", "吸收不穩又痛"],
+        ["m", "Nalbuphine 10 mg IV/IM q6h PRN", "適應：中重度痛、呼吸抑制有天花板｜禁忌：長期 opioid 使用者（誘發戒斷）", "替代"]
       ] },
     { "name": "Methadone / Buprenorphine 使用者", "hint": "",
       "orders": [
         ["p", "繼續原藥", ""],
-        ["m", "Morphine 2–4 mg IV q2–4h PRN（劑量較高）", "不要因怕成癮而止痛不足"]
+        ["m", "Morphine 2–4 mg IV q2–4h PRN（劑量較高）", "不要因怕成癮而止痛不足｜腎調：腎差代謝物蓄積 → 改 fentanyl"]
       ] },
     { "name": "Opioid 呼吸抑制", "hint": "嗜睡、RR 慢、針尖瞳孔",
       "orders": [
@@ -31,7 +34,7 @@
         ["m", "Naloxone 0.4 mg 稀釋成 10 mL：0.04–0.12 mg IV q2–3min", "長期用 opioid 或術後，小量滴定避免戒斷"],
         ["m", "Naloxone 0.4 mg/amp：0.4–2 mg IV/IM", "危及生命", "危及生命"],
         ["m", "Naloxone infusion", "長效 opioid 再抑制", "再抑制"],
-        ["l", "床邊血糖", ""],
+        ["l", "床邊血糖", "排除：低血糖（意識差最快可逆原因）"],
         ["p", "暫停 / 減量 opioid", ""]
       ] },
     { "name": "Acetaminophen 過量", "hint": "",
@@ -45,7 +48,14 @@
       ] },
     { "name": "神經痛", "hint": "",
       "orders": [
-        ["m", "Gabapentin 300 mg HS 起 / Pregabalin 75 mg BID / Amitriptyline 10–25 mg HS / Duloxetine 30 mg QD 擇一", "CrCl <60 gabapentinoid 減量"]
+        ["m", "Gabapentin 300 mg HS 起 / Pregabalin 75 mg BID / Amitriptyline 10–25 mg HS / Duloxetine 30 mg QD 擇一", "CrCl <60 gabapentinoid 減量｜腎調：CrCl 30–59 → 400–1400 mg/day；15–29 → 200–700 mg/day"]
+      ] },
+    { "name": "肌肉痠痛 / 局部痛", "hint": "肩頸腰背、扭傷、臥床痠痛",
+      "orders": [
+        ["m", "Flurbiprofen 40 mg patch 1 片 QD", "適應：局部肌肉痠痛｜禁忌：破皮、NSAID 過敏"],
+        ["m", "Etofenamate gel 外用 TID", "適應：局部痛、扭傷｜禁忌：破皮"],
+        ["m", "Tizanidine 2 mg PO TID", "適應：肌肉痙攣｜禁忌：併 ciprofloxacin / fluvoxamine（低血壓）、肝病", "肌肉緊"],
+        ["m", "Lidocaine 700 mg patch 12 hr 貼 / 12 hr 休", "適應：帶狀疱疹後神經痛、局部神經痛", "神經痛"]
       ] }
   ]
 }

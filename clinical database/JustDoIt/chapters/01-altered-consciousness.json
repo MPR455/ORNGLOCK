@@ -12,11 +12,14 @@
         ["x", "Brain CT without contrast (STAT)", "昏迷先當結構性，穩定 ABC 與頸椎後做"],
         ["l", "Co-oximetry (COHb)", "疑一氧化碳中毒", "疑 CO"],
         ["p", "O2：目標 SpO2 94–98%", "重症起始非再吸入面罩 15 L/min，取得可靠血氧後下調"],
-        ["p", "O2：目標 SpO2 88–92%", "COPD 或高碳酸血症風險，血氣前", "COPD"]
+        ["p", "O2：目標 SpO2 88–92%", "COPD 或高碳酸血症風險，血氣前", "COPD"],
+        ["l", "NH3、Lactate、Serum osmolality、Blood ketone", "排除：肝性腦病變、乳酸中毒、毒性醇類、DKA"],
+        ["l", "TSH、Free T4、Cortisol", "排除：黏液水腫、腎上腺不足", "找不到原因"],
+        ["l", "Troponin、BNP", "排除：無痛性心肌梗塞、心衰低灌流（老人）"]
       ] },
     { "name": "低血糖", "hint": "BS < 72 mg/dL",
       "orders": [
-        ["m", "50% Glucose 20 mL ×2 amp IV push（或 10% Glucose 250 mL IV over 15 min）", "無意識/抽搐/NPO 且有 IV；或 10% 200 mL；心腎衰用最小量", "無意識"],
+        ["m", "50% Glucose 20 mL ×2 amp IV push（BS <40：×4 amp）", "無意識/抽搐/NPO 且有 IV；或 10% 200 mL；心腎衰用最小量", "無意識"],
         ["m", "Glucagon 1 mg IM ×1", "沒有 IV 時；酗酒、肝病、營養不良、sulfonylurea 效果差", "無 IV"],
         ["m", "Dextrose powder 15–20 g 溶水 PO（或果汁 150–200 mL）", "清醒能吞嚥時首選", "能吞"],
         ["p", "停 insulin 輸注", "低血糖處理完再重啟"],
@@ -47,9 +50,9 @@
       "orders": [
         ["l", "Blood culture ×2（抗生素前）", "不能延誤抗生素"],
         ["m", "Ceftriaxone 2 g IV q12h", "病原未明首選；不可和含鈣溶液混；抵院 1 hr 內給"],
-        ["m", "Ampicillin 500 mg/vial ×4（2 g）IV q4h", "加上 Listeria 覆蓋：老人、免疫低下", "Listeria 風險"],
+        ["m", "Ampicillin 500 mg/vial ×4（2 g）IV q4h", "加上 Listeria 覆蓋：老人、免疫低下｜腎調：CrCl 10–50 → q6–12h；<10 → q12–24h", "Listeria 風險"],
         ["m", "Dexamethasone 5 mg/amp ×2（10 mg）IV q6h × 4 天（抗生素前或同時）", "與第一劑抗生素同時；最晚第一劑後 4 hr 內"],
-        ["m", "Acyclovir 250 mg/vial：10 mg/kg IV q8h", "疑 HSV 腦炎時，結果出來前就開始", "疑腦炎"],
+        ["m", "Acyclovir 250 mg/vial：10 mg/kg IV q8h", "疑 HSV 腦炎時，結果出來前就開始｜腎調：CrCl 25–50 → q12h；10–25 → q24h；<10 → 半量 q24h", "疑腦炎"],
         ["x", "Brain CT before LP", "局部神經缺損、新發癲癇、GCS 低、瞳孔異常、免疫低下", "先影像"],
         ["x", "Lumbar puncture：CSF cell/glucose/protein/Gram stain/culture", "安全且不延誤抗生素時；紫斑廣泛或穿刺處感染不做"],
         ["l", "Serum cryptococcal antigen", "HIV 病人原因不明的中樞神經疾病", "HIV"],
@@ -59,7 +62,7 @@
       "orders": [
         ["x", "Continuous EEG（1 hr 內，至少 48 hr）", "可能只表現為昏迷或細微抽動"],
         ["m", "Lorazepam 2 mg/amp：0.1 mg/kg IV（max 4 mg），5–10 min 可重複", "確定癲癇重積後首選；推速 ≤2 mg/min"],
-        ["m", "Levetiracetam 60 mg/kg IV（max 4,500 mg）over 10 min", "院內無 fosphenytoin；LEV 不需心臟監測"],
+        ["m", "Levetiracetam 60 mg/kg IV（max 4,500 mg）over 10 min", "院內無 fosphenytoin；LEV 不需心臟監測｜腎調：CrCl 30–50 → 250–750 mg q12h；<30 → 250–500 mg q12h；HD 透析後補"],
         ["p", "氣道不穩：10 min 內插管", "目標發作後 60 min 內控制"],
         ["m", "Phenytoin 250 mg/5 mL：20 mg/kg IV（≤50 mg/min，配 NS）+ 心臟監測", "替代第二線；低血壓、心律不整", "替代"]
       ] },
@@ -98,9 +101,9 @@
     { "name": "溶栓後血管性水腫", "hint": "嘴唇、舌頭腫",
       "orders": [
         ["p", "停 alteplase 與 ACE inhibitor", "兩者都會加重"],
-        ["m", "Methylprednisolone 125 mg IV（40 mg/vial ×3）", ""],
-        ["m", "Diphenhydramine 30 mg/amp IV", ""],
-        ["m", "Famotidine 20 mg/amp IV", ""],
+        ["m", "Methylprednisolone 125 mg IV（40 mg/vial ×3）", "適應：溶栓或 ACEI 相關血管性水腫｜禁忌：無絕對禁忌；高血糖要監測"],
+        ["m", "Diphenhydramine 30 mg/amp IV", "適應：組織胺性水腫、蕁麻疹｜注意：嗜睡、尿滯留；老人譫妄"],
+        ["m", "Famotidine 20 mg/amp IV", "適應：H2 阻斷輔助抗組織胺｜腎調：CrCl <50 減半"],
         ["p", "喉部/軟顎/口底受影響：準備清醒內視鏡插管", "30 min 內快速進展的插管風險高", "喉部受累"]
       ] },
     { "name": "中風抗血小板", "hint": "缺血性中風、未溶栓",

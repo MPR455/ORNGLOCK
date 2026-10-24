@@ -6,7 +6,7 @@
         ["x", "12-lead ECG（10 min 內）", "判讀有無 STEMI；正常不能排除 ACS"],
         ["l", "hs-Troponin 0 hr，1–2 hr 後重抽", "有 troponin 時 CK-MB、myoglobin 沒幫助"],
         ["x", "CXR", "找肺部與胸腔原因；不能排除剝離，不可延誤再灌流"],
-        ["l", "CBC、BUN/Cr、電解質", ""],
+        ["l", "CBC、BUN/Cr、電解質", "排除：貧血、AKI（顯影劑前）、高低鉀/鎂"],
         ["x", "Continuous ECG monitor + 備去顫器", "疑 ACS 或持續胸痛"],
         ["p", "O2 only if SpO2 <90%", "多數 ACS 不缺氧；過多氧氣可能擴大梗塞"],
         ["x", "Repeat ECG q15–30min（第 1 hr）", "症狀持續或初始 ECG 無法診斷"],
@@ -20,9 +20,9 @@
         ["m", "Ticagrelor 180 mg PO，之後 90 mg BID", "P2Y12；預期 24 hr 內導管者不常規預處理"],
         ["m", "Clopidogrel 300–600 mg PO，之後 75 mg QD", "出血風險高或其他禁忌", "高出血風險"],
         ["m", "Heparin 25,000 U/5 mL：60 U/kg（max 4000）bolus + 12 U/kg/hr（max 1000），aPTT 60–80", "診斷 ACS 就給"],
-        ["m", "Enoxaparin 60 mg/0.6 mL：1 mg/kg SC q12h", "腎差要調", "替代"],
+        ["m", "Enoxaparin 60 mg/0.6 mL：1 mg/kg SC q12h", "腎差要調｜腎調：CrCl <30 → 1 mg/kg QD", "替代"],
         ["m", "Fondaparinux 2.5 mg SC QD", "CrCl <20–30 不用；PCI 需另加 UFH", "替代"],
-        ["m", "Morphine 10 mg/mL：2–4 mg IV q5–15min", "其他抗缺血藥已最大仍痛", "嚴重痛"],
+        ["m", "Morphine 10 mg/mL：2–4 mg IV q5–15min", "其他抗缺血藥已最大仍痛｜腎調：腎差代謝物蓄積 → 改 fentanyl", "嚴重痛"],
         ["m", "Bisoprolol 1.25 mg PO QD（或 Metoprolol 12.5 mg BID），24 hr 內", "心衰、休克風險、AV block、氣喘發作不給"],
         ["m", "Pantoprazole 40 mg PO QD", "DAPT 且消化道出血風險高"]
       ] },
@@ -30,15 +30,15 @@
       "orders": [
         ["p", "Activate cath lab：Primary PCI", "≤12 hr 症狀，診斷到 PCI <120 min；不等 troponin"],
         ["m", "Aspirin 300 mg + Ticagrelor 180 mg（或 Prasugrel 20 mg）", "Prasugrel：曾中風/TIA 不用；≥75 歲謹慎"],
-        ["m", "Heparin 60 U/kg IV bolus（max 4000）", ""],
+        ["m", "Heparin 60 U/kg IV bolus（max 4000）", "適應：STEMI 送 PCI 前｜禁忌：活動性出血、HIT 史"],
         ["m", "Alteplase 15 mg IV bolus → 0.75 mg/kg/30 min → 0.5 mg/kg/60 min（max 100 mg）", "院內無 tenecteplase；120 min 內不能 PCI 才給", "無法 PCI"],
         ["x", "Echo", "休克或機械性併發症", "休克"]
       ] },
     { "name": "NSTE-ACS 極高風險", "hint": "休克、持續痛、致命心律不整、急性心衰",
       "orders": [
         ["p", "緊急導管（2 hr 內）", "任一極高風險特徵"],
-        ["x", "ECG monitor ≥24 hr", ""],
-        ["m", "Heparin 12 U/kg/hr（aPTT 60–80）持續到血管再通", ""]
+        ["x", "ECG monitor ≥24 hr", "目的：抓 VT/VF、再缺血"],
+        ["m", "Heparin 12 U/kg/hr（aPTT 60–80）持續到血管再通", "適應：NSTE-ACS 抗凝｜禁忌：活動性出血、HIT｜監測：aPTT q6h、血小板"]
       ] },
     { "name": "疑主動脈剝離", "hint": "撕裂痛轉移到背、四肢血壓差 >20",
       "orders": [
@@ -47,7 +47,7 @@
         ["l", "D-dimer", "只在 ADD-RS <2 的低風險者用", "低風險"],
         ["m", "Esmolol 500 mcg/kg → 50–300 mcg/kg/min（或 Labetalol 20 mg IV q10min）", "先降心率：HR 60–80、SBP <120"],
         ["m", "Nicardipine 5 mg/hr IV", "β-blocker 後血壓仍高才加；先加會反射性心搏過速", "BP 仍高"],
-        ["m", "Morphine 2–4 mg IV q5–10min 滴定", "疼痛會升高心率血壓；避免 NSAID"],
+        ["m", "Morphine 2–4 mg IV q5–10min 滴定", "疼痛會升高心率血壓；避免 NSAID｜腎調：腎差代謝物蓄積 → 改 fentanyl"],
         ["p", "A-line、ICU、尿量", ""],
         ["p", "禁用抗凝、溶栓", "疑剝離是溶栓絕對禁忌"]
       ] },
@@ -57,10 +57,10 @@
         ["l", "D-dimer（年齡 ×10 切點）", "只用於低/中機率；住院中用處有限", "低中機率"],
         ["x", "CTPA", "高機率或 D-dimer 升高"],
         ["x", "V/Q scan 或 下肢靜脈超音波", "腎差、碘過敏無法 CTPA", "無法 CTPA"],
-        ["m", "Enoxaparin 60 mg/0.6 mL：1 mg/kg SC q12h", "中高機率在檢查中就開始"],
+        ["m", "Enoxaparin 60 mg/0.6 mL：1 mg/kg SC q12h", "中高機率在檢查中就開始｜腎調：CrCl <30 → 1 mg/kg QD"],
         ["l", "Troponin、BNP；Echo 看 RV", "風險分層"],
         ["m", "Rivaroxaban 15 mg BID ×3 週 → 20 mg QD", "確診後口服；腎差、懷孕不用 DOAC", "確診"],
-        ["m", "Apixaban 10 mg BID ×7 天 → 5 mg BID", "", "確診"]
+        ["m", "Apixaban 10 mg BID ×7 天 → 5 mg BID", "適應：穩定 PE / DVT｜禁忌：CrCl <25、機械瓣、APS、懷孕", "確診"]
       ] },
     { "name": "肺栓塞（不穩定）", "hint": "SBP <90 或掉 ≥40 超過 15 min",
       "orders": [
@@ -78,18 +78,18 @@
       ] },
     { "name": "穩定氣胸", "hint": "",
       "orders": [
-        ["x", "CXR", ""],
+        ["x", "CXR", "排除：肺炎、氣胸、肺水腫、胸水、縱膈腔變寬"],
         ["p", "O2 NRM 15 L/min", "加速吸收；高碳酸風險者不用"],
         ["p", "Needle aspiration", "PSP 有症狀或小型 SSP", "有症狀"],
         ["p", "Chest tube (<14F)", "機械通氣中或高風險", "插管中"]
       ] },
     { "name": "心包炎", "hint": "姿勢性胸痛、廣泛 ST 上升 + PR 下降",
       "orders": [
-        ["x", "ECG、Echo、CXR", ""],
-        ["l", "CRP、Troponin", ""],
+        ["x", "ECG、Echo、CXR", "排除：心包填塞（低電壓、電交替、心包積液）；ECG 廣泛 ST↑ + PR↓ 支持心包炎"],
+        ["l", "CRP、Troponin", "目的：CRP 追療效；Troponin 高 → 心肌心包炎"],
         ["m", "Ibuprofen 400 mg ×2（800 mg）PO TID × 1–2 週 + Pantoprazole 40 mg QD", "第一線"],
         ["m", "Aspirin 500 mg ×2 PO TID × 1–2 週", "已在吃 aspirin 或 MI 後", "MI 後"],
-        ["m", "Colchicine 0.5 mg PO BID × 3 個月", "<70 kg 或腎差改 QD；減少復發"]
+        ["m", "Colchicine 0.5 mg PO BID × 3 個月", "<70 kg 或腎差改 QD；減少復發｜腎調：CrCl <30 → 0.5 mg 單次，2 週內不重複"]
       ] },
     { "name": "心包填塞", "hint": "低血壓 + JVP 高 + 心音遠",
       "orders": [
@@ -101,23 +101,24 @@
     { "name": "疑食道/消化道穿孔", "hint": "嘔吐後胸痛、皮下氣腫",
       "orders": [
         ["x", "CT with contrast + CT esophagography", "首選"],
-        ["l", "CBC、電解質、腎肝功能、pH、Lactate", ""],
+        ["l", "CBC、電解質、腎肝功能、pH、Lactate", "排除：敗血症、組織缺血（乳酸）、AKI"],
         ["p", "NPO", ""],
-        ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h + Fluconazole 400 mg IV QD", "涵蓋腸道菌、厭氧菌與念珠菌"],
-        ["m", "Pantoprazole 40 mg IV q12h", ""]
+        ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h + Fluconazole 400 mg IV QD", "涵蓋腸道菌、厭氧菌與念珠菌｜腎調：CrCl 20–40 → 3.375 g q6h；<20 → 2.25 g q6h；HD 2.25 g q8h + 0.75 g 透析後"],
+        ["m", "Pantoprazole 40 mg IV q12h", "適應：消化道穿孔 / 出血、NPO｜注意：長期用 CDI、肺炎、低鎂"]
       ] },
     { "name": "低風險 / 非心因胸痛", "hint": "ECG 正常、troponin 陰性",
       "orders": [
         ["m", "Acetaminophen 500 mg PO q6h PRN", "肌肉骨骼痛；心血管風險者避免 NSAID"],
         ["m", "Pantoprazole 40 mg PO QD × 2 週（PPI 試驗）", "疑 GERD、無警示症狀"],
-        ["m", "Valaciclovir 500 mg ×2（1 g）PO TID × 7 天", "帶狀皰疹，72 hr 內", "皮疹"]
+        ["m", "Valaciclovir 500 mg ×2（1 g）PO TID × 7 天", "帶狀皰疹，72 hr 內｜腎調：CrCl 30–49 → 1 g q12h；10–29 → 1 g q24h", "皮疹"]
       ] },
     { "name": "術後心肌損傷 (PMI)", "hint": "術後 troponin 上升",
       "orders": [
-        ["x", "12-lead ECG", ""],
+        ["x", "12-lead ECG", "排除：缺血、心律不整、高鉀、心包炎"],
         ["l", "Hb", "<8 g/dL 先輸血"],
         ["x", "Echo", "找心律不整、心衰、Takotsubo"],
-        ["p", "找原因：敗血症、PE、中風、低血壓", "找不到原因要想 PE"],
+        ["l", "Blood culture、Lactate", "排除：敗血症造成需求性缺血"],
+        ["x", "CTPA", "排除：術後肺栓塞（找不到原因時）", "找不到原因"],
         ["m", "Aspirin 100 mg QD + Atorvastatin 40 mg QD", "推定缺血時；先和外科討論出血"]
       ] }
   ]

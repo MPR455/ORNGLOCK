@@ -4,7 +4,8 @@
     { "name": "低血磷", "hint": "",
       "orders": [
         ["l", "P、Ca、Mg、K", "確認單位 mg/dL 或 mmol/L"],
-        ["p", "找原因：再餵食、DKA 治療中、酒精、IV ferric carboxymaltose、tenofovir", ""],
+        ["l", "Mg、K、Ca", "目的：常一起低（再餵食、DKA 治療中、酒精）"],
+        ["p", "檢視：再餵食、DKA insulin、酒精、tenofovir、IV 鐵劑", ""],
         ["m", "PO：Neutral phosphate 29 mg/mL 或 Phosphate oral solution（P 30 mg/mL）15–20 mL TID", "輕中度、能口服；腹瀉是限制"],
         ["m", "Potassium phosphate（P 3 mmol + K 4.4 mEq/mL）5–10 mL（15–30 mmol）加入輸液", "DKA 嚴重低磷 + 呼吸或心臟受損", "DKA"],
         ["p", "補太快會低血鈣", ""],
@@ -12,7 +13,7 @@
       ] },
     { "name": "再餵食症候群預防", "hint": "BMI <16、幾乎沒吃 >10 天、電解質低",
       "orders": [
-        ["l", "K、Mg、P（開始前）→ q12h × 3 天", ""],
+        ["l", "K、Mg、P（開始前）→ q12h × 3 天", "目的：再餵食症候群（P、K、Mg 驟降）"],
         ["m", "Vitamin B complex amp（B1 60 mg/amp） ×2 IV QD 或 Dicethiamine 50 mg PO TID × 5–7 天（給糖前）", "院內無單方 thiamine 針，以 B 群針 B1 含量換算；給糖前先打"],
         ["p", "起始 ≤10 kcal/kg/day（極端 5），4–7 天加到足量", "IV 葡萄糖熱量也要算"],
         ["m", "KCl / Potassium phosphate / MgSO4 依值補（P 0.3–0.6 mmol/kg/day）", "餵食同時補"],
@@ -21,8 +22,8 @@
       ] },
     { "name": "高血磷：TLS", "hint": "",
       "orders": [
-        ["m", "NS / Lactated Ringer 3 L/m²/day（尿量 100 mL/m²/hr）", ""],
-        ["l", "K、尿酸、P、Ca、Cr q6–12h", ""],
+        ["m", "NS / Lactated Ringer 3 L/m²/day（尿量 100 mL/m²/hr）", "適應：TLS 高血磷｜禁忌：無尿、心衰（需透析）"],
+        ["l", "K、尿酸、P、Ca、Cr q6–12h", "目的：TLS 監測；Ca×P >60 → 鈣磷沉積"],
         ["p", "不補 K、P", ""],
         ["m", "10% Calcium gluconate 10 mL IV", "只有有症狀低血鈣時", "症狀性低鈣"],
         ["p", "照會腎臟科：透析", "高 K / 高 P 對內科治療無效", "無效"]
@@ -31,7 +32,7 @@
       "orders": [
         ["m", "Lactated Ringer / NS 1.5 L/hr（尿量 200–300 mL/hr）", "利尿會帶走磷"],
         ["p", "無症狀不補鈣", "血鈣之後會回升"],
-        ["l", "U&E、CK", ""]
+        ["l", "U&E、CK", "目的：橫紋肌溶解程度、AKI、高鉀"]
       ] },
     { "name": "慢性高血磷（CKD）", "hint": "",
       "orders": [

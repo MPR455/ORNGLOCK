@@ -2,6 +2,8 @@ import { ONCALL_MENU, ONCALL_HOME } from './clinical database/JustDoIt/justdoit-
 
 // 值班 tab: kiosk-style order picker. Call type -> condition -> tap orders into a tray -> copy.
 const TYPE_INFO = { m: ['💊', '藥物'], l: ['🧪', '檢驗'], x: ['📷', '檢查'], p: ['⚙️', '處置'] };
+// "?" popup heading per order type; a reason may hold several "｜"-separated lines.
+const WHY_HEADING = { m: '適應 / 禁忌', l: '排除 / 目的', x: '排除 / 目的', p: '為什麼？' };
 const esc = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const normalize = value => String(value).normalize('NFKC').toLowerCase().replace(/\s+/g, '');
 
@@ -135,7 +137,7 @@ function showWhy(button) {
   if (pop.dataset.for === button.dataset.index && !pop.hidden) return hideWhy();
   hideWhy();
   const [, item] = currentItem(), order = item.orders[Number(button.dataset.index)];
-  pop.innerHTML = `<strong>為什麼？</strong><span>${esc(order[2])}</span>`;
+  pop.innerHTML = `<strong>${WHY_HEADING[order[0]]}</strong>${order[2].split('｜').map(line => `<span>${esc(line)}</span>`).join('')}`;
   pop.dataset.for = button.dataset.index; pop.hidden = false;
   button.setAttribute('aria-expanded', 'true');
   const box = button.getBoundingClientRect(), width = Math.min(360, innerWidth - 24);

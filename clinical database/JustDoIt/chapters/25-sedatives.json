@@ -3,15 +3,21 @@
   "items": [
     { "name": "睡不著要安眠藥", "hint": "",
       "orders": [
-        ["p", "先找原因：痛、缺氧、尿急、譫妄、類固醇/β-agonist", ""],
+        ["l", "SpO2、床邊血糖", "排除：缺氧、低血糖造成不安"],
+        ["x", "Bladder scan", "排除：尿滯留（夜間躁動常見原因）"],
+        ["p", "止痛、停晚間類固醇 / β-agonist、譫妄先篩 CAM", "譫妄不給 BZD（酒精 / BZD 戒斷除外）"],
         ["p", "環境：減少夜間處置與噪音", ""],
         ["l", "STOP 問卷（OSA）", "≥2 分高風險；對鎮靜劑敏感"],
         ["m", "Zolpidem 10 mg ½ 錠（5 mg）PO HS（男性 5–10 mg）", "短期 ≤4 週；不要太晚吃"],
-        ["m", "Zopiclone 7.5 mg ½ 錠（3.75 mg）PO HS", "", "替代"],
+        ["m", "Zopiclone 7.5 mg ½ 錠（3.75 mg）PO HS", "適應：維持型失眠（易醒）｜禁忌：譫妄、呼吸抑制風險（COPD、OSA、併 opioid）", "替代"],
         ["m", "Trazodone 25–50 mg PO HS（50 mg 錠）", "老人較少跌倒、依賴", "老人"],
         ["p", "老人避免 BZD、Z-drug、diphenhydramine", "譫妄、跌倒、骨折"],
         ["p", "避免與 opioid、gabapentinoid 併用", "呼吸抑制"],
-        ["m", "Lemborexant 5 mg PO HS", "食慾素拮抗劑，老人替代、少依賴", "老人"]
+        ["m", "Lemborexant 5 mg PO HS", "食慾素拮抗劑，老人替代、少依賴", "老人"],
+        ["m", "Diphenhydramine 30 mg IV HS", "適應：<65 歲、願意打針、快速入睡｜禁忌：老人（譫妄、尿滯留、跌倒）", "<65 歲"],
+        ["m", "Estazolam 2 mg ½ 錠 PO HS", "適應：維持型失眠（易醒）｜禁忌：譫妄、COPD/OSA、併 opioid、老人", "易醒"],
+        ["m", "Lorazepam 1 mg PO HS", "適應：合併焦慮、肝功能差（不經 CYP）｜禁忌：譫妄、呼吸抑制風險", "肝差"],
+        ["m", "Alprazolam 0.5 mg PO HS", "適應：焦慮睡不著｜禁忌：譫妄、呼吸抑制風險", "焦慮"]
       ] },
     { "name": "躁動被要求鎮靜（譫妄）", "hint": "",
       "orders": [
@@ -49,7 +55,7 @@
         ["p", "刺激深呼吸 + O2；必要時 BVM", "先支持通氣"],
         ["m", "Naloxone 0.4 mg IV", "opioid + BZD 合併時先給", "合併 opioid"],
         ["m", "Flumazenil 0.2 mg IV（max 1 mg）", "單純 BZD、非長期使用、無癲癇心律不整風險", "單純 BZD"],
-        ["l", "ABG", ""],
+        ["l", "ABG", "排除：CO2 滯留（過度鎮靜、COPD）"],
         ["p", "持續觀察到不再復發", "拮抗劑作用短"]
       ] }
   ]

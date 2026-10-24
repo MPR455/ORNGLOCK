@@ -6,8 +6,8 @@
         ["m", "10% Calcium gluconate 10 mL ×1–2 + D5W 100 mL IV over 10 min", "可重複到無症狀；不可直推、不可混含磷或 bicarbonate"],
         ["m", "10% Calcium gluconate 10 amp（100 mL）in NS/D5W 1 L，50–100 mL/hr", "接續輸注，依血鈣調"],
         ["x", "ECG monitor", "digoxin 使用者全程監測"],
-        ["l", "Ca q1–4h（輸注中）", ""],
-        ["l", "Albumin、iCa、Mg、P、PTH、Vitamin D、Cr", ""],
+        ["l", "Ca q1–4h（輸注中）", "目的：iCa 正常即停；過量 → 高血鈣"],
+        ["l", "Albumin、iCa、Mg、P、PTH、Vitamin D、Cr", "目的：校正鈣；低鎂、副甲狀腺低下、維生素 D 缺乏、CKD"],
         ["m", "MgSO4 2 g IV", "低 Mg 會讓低鈣補不上", "低 Mg"],
         ["m", "5% Calcium chloride 20 mL（1 g）IV（中心靜脈）", "大量輸血、創傷", "大量輸血"],
         ["p", "ESRD / 透析：不用大量 IV 鈣", ""]

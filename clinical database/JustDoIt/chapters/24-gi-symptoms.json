@@ -3,8 +3,11 @@
   "items": [
     { "name": "嘔吐：第一輪", "hint": "",
       "orders": [
-        ["p", "找原因：腸阻塞、opioid、出血、顱內壓、ACS、DKA", ""],
-        ["l", "CBC、Na/K、BUN/Cr、glucose、Lipase", ""],
+        ["x", "KUB（立位或側臥）", "排除：腸阻塞（air-fluid level）、free air（穿孔）"],
+        ["x", "Brain CT without contrast", "排除：顱內壓上升（噴射性嘔吐 + 頭痛 / 意識改變）", "頭痛 / 神經學"],
+        ["l", "Troponin", "排除：下壁 MI（老人、糖尿病常以嘔吐表現）", "胸悶 / 危險因子"],
+        ["l", "Digoxin level", "排除：digoxin 中毒", "服 digoxin"],
+        ["l", "CBC、Na/K/Cl、Ca、BUN/Cr、glucose、Lipase", "排除：低鉀低氯鹼中毒、尿毒、高血鈣、胰臟炎、DKA"],
         ["l", "VBG + ketone", "糖尿病（SGLT2i 想 euglycemic DKA）", "糖尿病"],
         ["x", "ECG", "合併胸悶", "胸悶"],
         ["x", "KUB / CT abdomen", "腹脹、無排氣（疑阻塞）", "疑阻塞"],
@@ -19,7 +22,9 @@
         ["m", "Prochlorperazine 5 mg/mL：5–10 mg IV/IM", "院內無 promethazine 針", "替代"],
         ["p", "同類止吐 6 hr 內重複無效，換類別", ""],
         ["x", "ECG（QTc）", "多種 QT 延長藥合用時"],
-        ["m", "Domperidone 10 mg PO TID（QT 注意）", "口服、Parkinson 患者（不過血腦）", "口服"]
+        ["m", "Domperidone 10 mg PO TID（QT 注意）", "口服、Parkinson 患者（不過血腦）", "口服"],
+        ["m", "Dexamethasone 5 mg ×1–2 IV", "適應：PONV、化療輔助（常併 5-HT3）｜注意：高血糖", "PONV"],
+        ["m", "Diphenhydramine 30 mg IV", "適應：前庭性、動暈｜禁忌：老人、譫妄、尿滯留", "前庭性"]
       ] },
     { "name": "化療噁心嘔吐 (突破性)", "hint": "",
       "orders": [
@@ -43,7 +48,8 @@
         ["m", "Loperamide 2 mg cap：4 mg → 2 mg/每次稀便（max 8 mg/day，≤48 hr）", "免疫正常水瀉；發燒、血便、CDI 不用"],
         ["m", "Azithromycin 250 mg ×4（1 g）PO 單次", "旅遊相關發燒腹瀉或痢疾", "旅遊+發燒"],
         ["p", "STEC 不給抗生素與止瀉劑", "增加 HUS"],
-        ["m", "Smectite（Smecta）3 g PO TID", "吸附；與其他藥間隔 2 hr", "替代"]
+        ["m", "Smectite（Smecta）3 g PO TID", "吸附；與其他藥間隔 2 hr", "替代"],
+        ["l", "Stool C. difficile toxin / PCR", "排除：CDI（抗生素中或停藥 8 週內水瀉）→ 不能用 loperamide", "用過抗生素"]
       ] },
     { "name": "C. difficile 感染", "hint": "",
       "orders": [
@@ -56,21 +62,49 @@
       ] },
     { "name": "猛爆型 CDI", "hint": "低血壓/休克、ileus、巨結腸",
       "orders": [
-        ["m", "Vancomycin 125 mg ×4（500 mg）PO/NG q6h", ""],
-        ["m", "Metronidazole 500 mg IV q8h", ""],
+        ["m", "Vancomycin 125 mg ×4（500 mg）PO/NG q6h", "適應：猛爆型 CDI（低血壓、ileus、巨結腸）｜注意：口服不吸收，不用調腎"],
+        ["m", "Metronidazole 500 mg IV q8h", "適應：猛爆型 CDI 合併 ileus（輔助）｜注意：金屬味、周邊神經病變、與酒精反應"],
         ["m", "Vancomycin 500 mg/vial in NS 100 mL 直腸灌注 q6h", "有 ileus", "ileus"],
         ["x", "CT abdomen", "排除巨結腸、穿孔"],
-        ["m", "Lactated Ringer 補液", ""],
+        ["m", "Lactated Ringer 補液", "適應：腹瀉脫水、低血容｜注意：心衰、ESRD 分次給"],
         ["p", "照會外科、感染科、腸胃科", "48 hr 無反應考慮結腸切除或 FMT"]
       ] },
     { "name": "便秘", "hint": "",
       "orders": [
-        ["p", "先排除腸阻塞與代謝異常（低 K、高 Ca、甲低）", ""],
-        ["m", "PEG 4000（Forlax 10 g/包）1–2 包 PO QD", ""],
+        ["x", "KUB", "排除：腸阻塞、糞石、巨結腸"],
+        ["l", "K、Ca、TSH", "排除：低鉀、高血鈣、甲低"],
+        ["p", "肛診：糞石嵌塞 → 手指挖便", "灌腸只到降結腸；嵌塞光吃藥沒用"],
+        ["m", "PEG 4000（Forlax 10 g/包）1–2 包 PO QD", "適應：便秘第一線（滲透性）｜禁忌：腸阻塞、穿孔"],
         ["m", "Sennoside 12 mg ×1–2 PO HS", "刺激性；腸阻塞禁用"],
         ["m", "Magnesium oxide 250 mg ×2 PO TID", "腎差避免", "腎功能正常"],
-        ["m", "Lactulose 15–30 mL PO QD–BID", ""],
-        ["m", "Bisacodyl 10 mg 栓劑 或 Glycerin enema 60 mL", "30–60 min 起效", "急用"]
+        ["m", "Lactulose 15–30 mL PO QD–BID", "適應：便秘、肝性腦病變｜注意：脹氣、腹瀉造成高鈉；腸阻塞禁用"],
+        ["m", "Bisacodyl 10 mg 栓劑 或 Glycerin enema 60 mL", "30–60 min 起效", "急用"],
+        ["m", "Bisacodyl 5 mg ×1–2 PO HS", "適應：刺激性瀉劑起手式｜禁忌：腸阻塞、急腹症"],
+        ["m", "Mosapride 5 mg PO TID", "適應：腸蠕動差、合併脹氣｜注意：不會 EPS", "促蠕動"],
+        ["m", "Fleet enema 1 支 PR", "適應：急用；只到降結腸｜禁忌：腎衰（磷）、腸阻塞", "急用"]
+      ] },
+    { "name": "脹氣", "hint": "腹脹、排氣少；術後、臥床、opioid",
+      "orders": [
+        ["x", "KUB", "排除：ileus、腸阻塞（脹 + 吐 + 不排氣）", "吐或不排氣"],
+        ["m", "Simethicone（Dimethicone 40 mg）2 tab PO TID", "適應：消脹氣｜NG 病人用懸液"],
+        ["m", "Mosapride 5 mg PO TID", "適應：促進腸蠕動｜禁忌：機械性阻塞"],
+        ["p", "薄荷油（Menthol packing）PRN、鼓勵下床走動", "術後脹氣最有效的是下床"]
+      ] },
+    { "name": "打嗝", "hint": "持續打嗝影響進食睡眠",
+      "orders": [
+        ["m", "Metoclopramide 10 mg IV/PO TID", "適應：第一線（同時改善胃排空）｜禁忌：腸阻塞、Parkinson；EPS"],
+        ["m", "Chlorpromazine 50 mg ¼ 錠 PO HS 起", "適應：頑固打嗝｜禁忌：老人、譫妄、QTc 延長、低血壓；鎮靜極強", "頑固"],
+        ["m", "Baclofen 5 mg PO TID", "適應：頑固打嗝替代｜禁忌：腎差（蓄積致意識差）", "頑固"],
+        ["m", "Gabapentin 300 mg PO HS", "適應：中樞性 / 頑固打嗝替代｜腎調：CrCl <60 減量", "替代"],
+        ["l", "Na、Ca、BUN/Cr", "排除：電解質異常、尿毒（>48 hr 打嗝）", ">48 hr"],
+        ["x", "CXR", "排除：橫膈刺激（膈下膿瘍、肺炎、腫瘤）", ">48 hr"]
+      ] },
+    { "name": "痔瘡", "hint": "肛門痛、出血、外痔腫",
+      "orders": [
+        ["m", "Xylmol oint（Lidocaine + Hydrocortisone）TID 外用", "適應：痔瘡痛、癢｜注意：類固醇 ≤1 週"],
+        ["m", "High-Xylmol oint（Lidocaine + Phenylephrine + Betamethasone）TID", "適應：腫脹明顯｜禁忌：血栓性外痔要切開", "腫脹"],
+        ["m", "Sennoside 12 mg PO HS", "適應：軟便避免用力"],
+        ["p", "溫水坐浴 TID、避免久坐用力", ""]
       ] },
     { "name": "Opioid 便秘", "hint": "",
       "orders": [

@@ -4,8 +4,8 @@
     { "name": "心搏過緩：第一輪", "hint": "HR <50",
       "orders": [
         ["x", "12-lead ECG", "看阻滯類型與層級"],
-        ["x", "Continuous ECG monitor", ""],
-        ["l", "K、Ca、Mg、glucose、ABG（pH）", ""],
+        ["x", "Continuous ECG monitor", "目的：抓 pause、高度 AV block 進展"],
+        ["l", "K、Ca、Mg、glucose、ABG（pH）", "排除：高鉀（最常見可逆原因）、酸中毒、低血糖"],
         ["l", "TSH", "疑甲狀腺低下"],
         ["l", "Digoxin level", "有在吃", "Digoxin"],
         ["l", "Troponin", "疑缺血"],
@@ -17,7 +17,7 @@
         ["m", "Atropine 1 mg/mL：0.5–1 mg IV q3–5min（max 3 mg）", "竇性或 AV node 層級；<0.5 mg 可能反而變慢"],
         ["p", "不給 atropine", "寬 QRS 高度阻滯、心臟移植", "寬 QRS/移植"],
         ["m", "Epinephrine 1 mg in NS 250 mL：2–10 mcg/min", "atropine 無效", "atropine 無效"],
-        ["m", "Dopamine premix 400 mg/250 mL：5–20 mcg/kg/min（每 2 min +5）", "", "atropine 無效"],
+        ["m", "Dopamine premix 400 mg/250 mL：5–20 mcg/kg/min（每 2 min +5）", "適應：不穩定心搏過緩 atropine 無效時，等起搏｜注意：心律不整", "atropine 無效"],
         ["m", "Isoproterenol 0.2 mg/amp：1–20 mcg/min", "無升壓作用；冠心缺血避免", "atropine 無效"],
         ["p", "經皮起搏（前後位貼片）", "橋接；摸脈搏確認捕捉；清醒者給止痛鎮靜", "藥物無效"],
         ["p", "經靜脈暫時起搏", "藥物無效、持續不穩", "藥物無效"]
@@ -34,7 +34,7 @@
       ] },
     { "name": "下壁 MI + AV block", "hint": "",
       "orders": [
-        ["m", "Atropine", ""],
+        ["m", "Atropine", "適應：下壁 MI 迷走張力的竇緩、AV block｜注意：寬 QRS 型 block 無效"],
         ["m", "Aminophylline 250 mg/10 mL：250 mg IV slow", "藥物無效、症狀不嚴重", "atropine 無效"],
         ["p", "儘速再灌流", ""],
         ["p", "暫時起搏", "藥物無效的有症狀緩脈", "藥物無效"]
@@ -42,17 +42,17 @@
     { "name": "高度 / 三度 AV block", "hint": "Mobitz II、CHB",
       "orders": [
         ["p", "貼經皮起搏貼片備用", "可能突然惡化"],
-        ["x", "Echo", ""],
+        ["x", "Echo", "排除：EF 下降、瓣膜病、心包積液、右心擴大（PE）"],
         ["p", "照會心臟科：永久起搏", "非可逆原因時，有無症狀都建議"]
       ] },
     { "name": "疑顱內壓上升", "hint": "緩脈 + 高血壓 + 呼吸不規則",
       "orders": [
-        ["x", "Brain CT without contrast", ""],
+        ["x", "Brain CT without contrast", "排除：出血、腫瘤、水腦、中線偏移、腦疝"],
         ["p", "床頭 >30°、頭置中", ""]
       ] },
     { "name": "節律器病人", "hint": "",
       "orders": [
-        ["x", "Pacemaker interrogation", ""],
+        ["x", "Pacemaker interrogation", "目的：確認 sensing / capture、電池、有無誤放電"],
         ["p", "去顫貼片距裝置 >8 cm", ""]
       ] }
   ]

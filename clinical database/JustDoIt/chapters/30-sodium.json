@@ -6,14 +6,14 @@
         ["m", "3% NaCl 150 mL IV over 20 min", "不論原因；優先於鑑別"],
         ["l", "Na 20 min 後（同時再輸 150 mL）", "重複 2 次或 Na 升 5 即停"],
         ["p", "Na 升 5 且症狀改善：停 3%，NS 保持管路", ""],
-        ["l", "Na 6 hr、12 hr，之後每日", ""],
+        ["l", "Na 6 hr、12 hr，之後每日", "目的：24 hr 上升 ≤8–10；過快 → D5W ± DDAVP 拉回"],
         ["p", "24 hr ≤10、之後每 24 hr ≤8", "直到 130"],
         ["m", "3% NaCl 繼續，Na 每小時升 1", "Na 升 5 但症狀沒改善（每 4 hr 測）", "症狀未改善"]
       ] },
     { "name": "低血鈉：中度症狀", "hint": "噁心、意識混亂、頭痛",
       "orders": [
         ["m", "3% NaCl 150 mL IV over 20 min ×1", "目標 24 hr 升 5"],
-        ["l", "Na 1、6、12 hr", ""]
+        ["l", "Na 1、6、12 hr", "目的：避免矯正過快（ODS）"]
       ] },
     { "name": "低血鈉：鑑別", "hint": "",
       "orders": [
@@ -25,7 +25,7 @@
       ] },
     { "name": "低血容低血鈉", "hint": "嘔吐、腹瀉、利尿劑",
       "orders": [
-        ["m", "NS 或 Lactated Ringer 0.5–1 mL/kg/hr", ""],
+        ["m", "NS 或 Lactated Ringer 0.5–1 mL/kg/hr", "適應：低血容低血鈉｜注意：容積補足後 ADH 關閉 → 尿量暴增、Na 衝太快"],
         ["p", "尿量突然 >100 mL/hr：q2h 測 Na", "即將矯正過快的警訊"]
       ] },
     { "name": "SIAD", "hint": "",
@@ -43,23 +43,23 @@
       "orders": [
         ["p", "停止主動治療", ""],
         ["m", "D5W 10 mL/kg over 1 hr", "讓 Na 回降；嚴密看尿量"],
-        ["m", "Desmopressin 4 mcg/mL：2 mcg IV（≥8 hr 才能重複）", ""],
-        ["l", "Na q2h", ""]
+        ["m", "Desmopressin 4 mcg/mL：2 mcg IV（≥8 hr 才能重複）", "適應：Na 矯正過快時「拉回來」（合併 D5W）｜注意：嚴格限水"],
+        ["l", "Na q2h", "目的：確認 Na 下降回目標"]
       ] },
     { "name": "疑腎上腺危象 + 低鈉", "hint": "低血壓、長期類固醇",
       "orders": [
         ["m", "Hydrocortisone 100 mg/vial IV → 50 mg q6h", "不等檢驗"],
-        ["m", "NS 1000 mL 第 1 hr", ""],
+        ["m", "NS 1000 mL 第 1 hr", "適應：腎上腺危象低血壓｜注意：低鈉病人仍要注意矯正速度"],
         ["l", "Cortisol、ACTH", "給藥前抽"]
       ] },
     { "name": "高血鈉", "hint": "Na >145",
       "orders": [
-        ["l", "Na、K、BUN/Cr、glucose、Urine osmolality", ""],
+        ["l", "Na、K、BUN/Cr、glucose、Urine osmolality", "排除：高血糖滲透性利尿；尿滲透壓 <300 → 尿崩症、>600 → 攝取不足"],
         ["m", "NS", "容積不足先補", "容積不足"],
-        ["m", "D5W 或 Half-saline 0.45%（每日需要量 + 部分缺水量）", ""],
+        ["m", "D5W 或 Half-saline 0.45%（每日需要量 + 部分缺水量）", "適應：高血鈉補水（優先 PO/NG）｜注意：慢性者 24 hr 降 ≤10"],
         ["p", "PO / NG 給水", "安全時儘早"],
         ["p", "≤0.5 mmol/L/hr、24 hr ≤10", "急性有症狀：第 1 hr 可降 5"],
-        ["l", "Na q4h", ""],
+        ["l", "Na q4h", "目的：降 Na 不超過 10 mmol/L/24 hr（腦水腫）"],
         ["m", "Desmopressin 4 mcg/mL：1–2 mcg IV/SC", "已知中樞性尿崩症 + 大量稀釋尿", "CDI"],
         ["p", "床邊備水", "清醒能喝"]
       ] }

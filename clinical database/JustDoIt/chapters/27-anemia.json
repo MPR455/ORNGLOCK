@@ -27,11 +27,11 @@
       ] },
     { "name": "穩定貧血：分型", "hint": "",
       "orders": [
-        ["l", "CBC + MCV、Reticulocyte、Peripheral smear", ""],
+        ["l", "CBC + MCV、Reticulocyte、Peripheral smear", "目的：小球（缺鐵、海洋性）/ 大球（B12、葉酸、肝、酒）；Retic 高 → 溶血或出血"],
         ["l", "Ferritin、Iron、TIBC、TSAT", "MCV <80"],
         ["l", "Vitamin B12、Folate（補充前抽）", "MCV >100"],
         ["l", "LDH、Haptoglobin、Bil T/D、DAT", "疑溶血", "疑溶血"],
-        ["l", "BUN/Cr、TSH", ""],
+        ["l", "BUN/Cr、TSH", "排除：腎性貧血、甲低"],
         ["l", "Stool occult blood", "缺鐵要找消化道", "缺鐵"]
       ] },
     { "name": "缺鐵性貧血", "hint": "Ferritin <30（發炎時 <100）",
@@ -47,14 +47,14 @@
         ["m", "Hydroxocobalamin 1000 mcg/amp IM 每週 3 次 × 2 週", "無神經症狀；B12 和葉酸都低先給 B12"],
         ["m", "Hydroxocobalamin 1000 mcg IM 隔日", "有神經症狀，不要延遲", "神經症狀"],
         ["m", "Folic acid 5 mg PO QD × 4 個月", "先補 B12 再補葉酸"],
-        ["l", "Intrinsic factor antibody", ""],
+        ["l", "Intrinsic factor antibody", "排除：惡性貧血（B12 缺乏原因）"],
         ["l", "K", "嚴重貧血治療後可能低鉀"]
       ] },
     { "name": "疑 TTP", "hint": "血小板低 + 碎片紅血球",
       "orders": [
-        ["l", "Smear（schistocytes）、LDH、Haptoglobin、Cr、DAT、Coagulation", ""],
-        ["l", "ADAMTS-13（治療前抽）", ""],
-        ["x", "Troponin、ECG", ""],
+        ["l", "Smear（schistocytes）、LDH、Haptoglobin、Cr、DAT、Coagulation", "排除：TTP/HUS（schistocytes + 溶血 + DAT 陰性 + 凝血正常）vs DIC（凝血異常）"],
+        ["l", "ADAMTS-13（治療前抽）", "目的：<10% 確診 TTP；血漿置換前抽"],
+        ["x", "Troponin、ECG", "排除：TTP 心肌侵犯（猝死主因）"],
         ["p", "緊急血漿置換 + 類固醇", "轉可執行機構"],
         ["p", "不預防性輸血小板", ""]
       ] },

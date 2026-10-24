@@ -17,13 +17,13 @@
     { "name": "低鎂合併低鈣", "hint": "",
       "orders": [
         ["m", "MgSO4 10% 20 mL ×3（6 g）in NS 500 mL over 24 hr", "輕度無症狀低鈣"],
-        ["l", "Mg、Ca 追到正常", ""]
+        ["l", "Mg、Ca 追到正常", "目的：Mg 補足 Ca 才升得上"]
       ] },
     { "name": "Torsades de pointes", "hint": "",
       "orders": [
         ["p", "非同步電擊", "持續或不穩定"],
         ["m", "MgSO4 10% 20 mL（2 g）IV over 1–10 min（可重複）", "血鎂正常也有效"],
-        ["m", "KCl premix → K ≥4.0（4.5–5）", ""],
+        ["m", "KCl premix → K ≥4.0（4.5–5）", "適應：TdP 時維持高正常 K"],
         ["p", "停 QT 延長藥", ""],
         ["m", "Isoproterenol 0.2 mg/amp：2–10 mcg/min / 起搏", "補鎂後仍反覆", "反覆"]
       ] },
@@ -39,7 +39,7 @@
     { "name": "子癇前症鎂中毒", "hint": "反射消失、RR <12、SpO2 <94%、尿 <30 mL/hr",
       "orders": [
         ["p", "停 MgSO4 輸注", ""],
-        ["l", "Serum Mg", ""],
+        ["l", "Serum Mg", "目的：Mg 中毒程度；>12 呼吸抑制"],
         ["m", "10% Calcium gluconate 10 mL in NS 100 mL over 10 min", "中毒明確"],
         ["p", "q30min BP/HR/RR/SpO2、每小時尿量與反射", "監測"],
         ["m", "MgSO4 維持 1 g/hr，q4h 驗 Mg", "腎差或少尿", "腎差"]

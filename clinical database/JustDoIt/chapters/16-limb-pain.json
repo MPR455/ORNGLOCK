@@ -5,7 +5,7 @@
       "orders": [
         ["p", "手持 Doppler 聽動脈/靜脈訊號（雙腳）", "觸診脈搏不準"],
         ["m", "Heparin 25,000 U/5 mL：5000 U（或 80 U/kg）IV bolus → 18 U/kg/hr", "確診後立刻給；HIT 改非 heparin"],
-        ["l", "aPTT、CBC、Cr、K、CK、Type & screen", ""],
+        ["l", "aPTT、CBC、Cr、K、CK、Type & screen", "目的：heparin 基準、再灌流後高鉀、橫紋肌溶解"],
         ["x", "CTA", "IIA/IIB 規劃血管重建；不可延誤治療"],
         ["p", "緊急血管外科", "IIB（運動缺損）需緊急重建"],
         ["p", "O2、止痛、補液", ""],
@@ -24,15 +24,15 @@
         ["l", "Wells DVT score", "≤1 unlikely、≥2 likely"],
         ["l", "D-dimer", "DVT unlikely 時；陰性可排除", "unlikely"],
         ["x", "Duplex ultrasound（全腿）", "likely 或 D-dimer 陽性"],
-        ["m", "Enoxaparin 60 mg/0.6 mL：1 mg/kg SC q12h", "中高度懷疑且超音波要等", "等超音波"],
+        ["m", "Enoxaparin 60 mg/0.6 mL：1 mg/kg SC q12h", "中高度懷疑且超音波要等｜腎調：CrCl <30 → 1 mg/kg QD", "等超音波"],
         ["l", "CBC、PT/aPTT、Cr、肝功能", "抗凝前基準"]
       ] },
     { "name": "DVT 確診：抗凝", "hint": "",
       "orders": [
         ["m", "Rivaroxaban 15 mg PO BID × 3 週 → 20 mg QD（隨餐）", "DOAC 優於 warfarin"],
-        ["m", "Apixaban 10 mg PO BID × 7 天 → 5 mg BID", "", "替代"],
+        ["m", "Apixaban 10 mg PO BID × 7 天 → 5 mg BID", "適應：DVT / PE（無 heparin 導入期）｜禁忌：CrCl <25、懷孕、機械瓣、APS", "替代"],
         ["m", "Heparin 80 IU/kg IV bolus + 18 IU/kg/hr", "CrCl <30、透析、即將處置、不穩定", "腎差"],
-        ["m", "Enoxaparin 1 mg/kg SC q12h", "癌症相關或懷孕", "癌症/懷孕"],
+        ["m", "Enoxaparin 1 mg/kg SC q12h", "癌症相關或懷孕｜腎調：CrCl <30 → 1 mg/kg QD", "癌症/懷孕"],
         ["p", "停 aspirin（心血管預防用）", "減少出血"],
         ["l", "Platelet（HIT 篩檢）", "UFH 使用者 Day 4–14"]
       ] },
@@ -50,31 +50,31 @@
       ] },
     { "name": "蜂窩性組織炎", "hint": "",
       "orders": [
-        ["m", "Cefazolin 1 g IV q8h", "有全身徵象"],
+        ["m", "Cefazolin 1 g IV q8h", "有全身徵象｜腎調：CrCl 10–30 → q12h；<10 → q24h"],
         ["m", "Cephalexin 500 mg PO QID × 5 天", "無全身徵象", "輕症"],
-        ["m", "Vancomycin 15 mg/kg IV q12h", "穿刺傷、MRSA、膿、SIRS", "MRSA"],
+        ["m", "Vancomycin 15 mg/kg IV q12h", "穿刺傷、MRSA、膿、SIRS｜腎調：AUC 400–600；CrCl 10–50 → q24h；HD 透析後補；併 Pip-tazo 腎毒性較高", "MRSA"],
         ["p", "抬高患肢、處理足癬", ""],
         ["l", "Blood culture", "化療、嗜中性球低、動物咬傷", "免疫低下"]
       ] },
     { "name": "壞死性筋膜炎", "hint": "痛不成比例、木頭硬",
       "orders": [
         ["p", "緊急外科清創", "影像可能延誤"],
-        ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h + Vancomycin 15 mg/kg q12h", ""],
+        ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h + Vancomycin 15 mg/kg q12h", "適應：壞死性筋膜炎經驗性（混合菌 + MRSA）｜加 clindamycin 抑制毒素｜腎調：Pip-tazo CrCl <40 → 3.375 g q6h"],
         ["m", "Penicillin G 3 MU/vial：4 MU IV q4h + Clindamycin 900 mg q8h", "確認 A 群鏈球菌", "GAS"],
-        ["l", "Blood culture、Lactate、CBC、CK", ""]
+        ["l", "Blood culture、Lactate、CBC、CK", "排除：敗血症、肌肉壞死"]
       ] },
     { "name": "急性單關節炎（疑感染）", "hint": "紅腫熱痛關節",
       "orders": [
         ["x", "Arthrocentesis：Gram/culture、WBC/DC、crystal", "抗生素前；>50,000 提示感染"],
-        ["l", "Blood culture ×2、CBC、CRP、ESR", ""],
+        ["l", "Blood culture ×2、CBC、CRP、ESR", "目的：化膿性關節炎常合併菌血症；關節液才是確診"],
         ["x", "Joint X-ray", "基準"],
-        ["m", "Cefazolin 2 g q8h（GPC）或 Ceftriaxone 2 g QD（GNB / 淋病）", "無抗藥風險"],
-        ["m", "Vancomycin 15–20 mg/kg q12h + Cefepime 2 g q8h", "院內或關節手術後", "院內"],
+        ["m", "Cefazolin 2 g q8h（GPC）或 Ceftriaxone 2 g QD（GNB / 淋病）", "無抗藥風險｜腎調：CrCl 10–30 → q12h；<10 → q24h"],
+        ["m", "Vancomycin 15–20 mg/kg q12h + Cefepime 2 g q8h", "院內或關節手術後｜腎調：AUC 400–600；CrCl 10–50 → q24h；HD 透析後補；併 Pip-tazo 腎毒性較高", "院內"],
         ["p", "骨科：關節引流（24 hr 內）", ""]
       ] },
     { "name": "急性痛風", "hint": "已排除感染",
       "orders": [
-        ["m", "Colchicine 0.5 mg ×2（1 mg）PO，1 hr 後 0.5 mg", "12 hr 內最有效；腎差、CYP3A4 抑制劑避免"],
+        ["m", "Colchicine 0.5 mg ×2（1 mg）PO，1 hr 後 0.5 mg", "12 hr 內最有效；腎差、CYP3A4 抑制劑避免｜腎調：CrCl <30 → 0.5 mg 單次，2 週內不重複"],
         ["m", "Naproxen 250 mg ×2 BID + Pantoprazole 40 mg QD", "腎差、消化性潰瘍小心", "替代"],
         ["m", "Prednisolone 5 mg ×6（30 mg）PO QD × 5 天", "腎差或不能用 NSAID", "腎差"],
         ["m", "Methylprednisolone 40 mg/vial：80–120 mg IV × 1–2 天", "NPO", "NPO"],
@@ -85,15 +85,15 @@
         ["x", "Whole spine MRI（24 hr 內）", "MRI 禁忌改 CT"],
         ["m", "Dexamethasone 5 mg/amp ×3 IV（或 4 mg ×4 PO），之後 16 mg/day", "有神經症狀"],
         ["m", "Pantoprazole 40 mg PO QD", "類固醇期間"],
-        ["l", "Glucose 監測", ""],
+        ["l", "Glucose 監測", "目的：高劑量 dexamethasone 造成高血糖"],
         ["p", "平躺，疑不穩定時脊椎固定", ""],
         ["p", "照會腫瘤/放療/神經外科", ""]
       ] },
     { "name": "疑脊椎感染 / 硬膜外膿瘍", "hint": "背痛 + 發燒 + CRP 高",
       "orders": [
-        ["l", "Blood culture ×2、ESR、CRP", ""],
-        ["x", "Spine MRI with/without contrast", ""],
-        ["m", "Vancomycin 15–20 mg/kg q12h + Ceftriaxone 2 g q12h", "硬膜外膿瘍或不穩定"],
+        ["l", "Blood culture ×2、ESR、CRP", "目的：菌血症找菌（多為 S. aureus）；ESR/CRP 追療效"],
+        ["x", "Spine MRI with/without contrast", "排除：硬膜外膿瘍、脊髓壓迫、椎間盤炎（全脊椎）"],
+        ["m", "Vancomycin 15–20 mg/kg q12h + Ceftriaxone 2 g q12h", "硬膜外膿瘍或不穩定｜腎調：AUC 400–600；CrCl 10–50 → q24h；HD 透析後補；併 Pip-tazo 腎毒性較高"],
         ["p", "緊急脊椎外科", "神經受損"]
       ] }
   ]

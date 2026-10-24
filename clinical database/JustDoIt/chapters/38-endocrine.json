@@ -3,7 +3,7 @@
   "items": [
     { "name": "甲狀腺風暴", "hint": "高燒、心搏過速、躁動、腹瀉 + 甲亢",
       "orders": [
-        ["l", "TSH、Free T4、T3、LFT、BS、Cortisol", ""],
+        ["l", "TSH、Free T4、T3、LFT、BS、Cortisol", "目的：確認甲亢；排除合併腎上腺不足、肝損傷"],
         ["x", "ECG", "AF 常見"],
         ["m", "Propylthiouracil 50 mg ×4（200 mg）PO/NG q4h（負荷 500–1000 mg）", "首選；也抑制 T4→T3"],
         ["m", "Methimazole 5 mg ×4（20 mg）PO q4–6h", "替代（PTU 肝毒性、孕婦第二三期）", "替代"],
@@ -15,7 +15,7 @@
       ] },
     { "name": "黏液水腫昏迷", "hint": "低體溫、意識差、心搏過緩、低鈉 + 甲低",
       "orders": [
-        ["l", "TSH、Free T4、Cortisol（給 T4 前抽）、Na、BS、ABG", ""],
+        ["l", "TSH、Free T4、Cortisol（給 T4 前抽）、Na、BS、ABG", "目的：確診甲低；排除合併腎上腺不足（先給類固醇）、低鈉、CO2 滯留"],
         ["m", "Hydrocortisone 100 mg IV q8h", "先給，避免誘發腎上腺危象"],
         ["m", "Thyroxine 0.1 mg ×2–4（200–400 mcg）NG 負荷 → 50–100 mcg QD", "院內無 IV levothyroxine；老人、冠心病用低劑量"],
         ["m", "50% Glucose 20 mL ×2 amp IV", "低血糖", "低血糖"],
@@ -24,9 +24,9 @@
       ] },
     { "name": "腎上腺危象", "hint": "休克 + 腹痛嘔吐 + 低鈉高鉀；長期類固醇突停",
       "orders": [
-        ["l", "Cortisol + ACTH（不等結果）、Na、K、BS", ""],
-        ["m", "Hydrocortisone 100 mg IV/IM → 50 mg q6h", ""],
-        ["m", "NS 1000 mL IV（第 1 hr）", ""],
+        ["l", "Cortisol + ACTH（不等結果）、Na、K、BS", "目的：原發性（ACTH↑、K↑）vs 次發性；先給 hydrocortisone"],
+        ["m", "Hydrocortisone 100 mg IV/IM → 50 mg q6h", "適應：腎上腺危象｜注意：不要等 cortisol 結果；高血糖"],
+        ["m", "NS 1000 mL IV（第 1 hr）", "適應：腎上腺危象低血壓、低鈉｜注意：心衰病人分次給"],
         ["m", "50% Glucose 20 mL ×2 amp IV", "低血糖", "低血糖"],
         ["p", "找誘因：感染、停藥、手術", ""]
       ] }

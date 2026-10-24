@@ -19,7 +19,7 @@
       ] },
     { "name": "癲癇重積：第二線 (≥20 分)", "hint": "足量 BZD 後仍在抽",
       "orders": [
-        ["m", "Levetiracetam 500 mg/5 mL：60 mg/kg IV（max 4,500 mg）over 10 min", "交互作用少、不經肝；懷孕首選"],
+        ["m", "Levetiracetam 500 mg/5 mL：60 mg/kg IV（max 4,500 mg）over 10 min", "交互作用少、不經肝；懷孕首選｜腎調：CrCl 30–50 → 250–750 mg q12h；<30 → 250–500 mg q12h；HD 透析後補"],
         ["m", "Valproate 400 mg/vial：40 mg/kg IV（max 3,000 mg）over 10 min", "肝病禁用；可生育女性避免", "替代"],
         ["m", "Phenytoin 250 mg/5 mL：20 mg/kg IV（≤50 mg/min，只能配 NS）", "要心臟監測", "替代"],
         ["l", "抗癲癇藥血中濃度", "原本有吃藥者查順從性"],
@@ -40,7 +40,7 @@
       ] },
     { "name": "抽搐合併低血糖", "hint": "BS < 72",
       "orders": [
-        ["m", "50% Glucose 20 mL ×2 amp IV push（或 10% Glucose 250 mL IV over 15 min）", "或 10% 200 mL；心腎衰用最小量"],
+        ["m", "50% Glucose 20 mL ×2 amp IV push（BS <40：×4 amp）", "或 10% 200 mL；心腎衰用最小量"],
         ["m", "Glucagon 1 mg IM", "沒 IV 時；酗酒、肝病效果差", "無 IV"],
         ["l", "10 min 後重測血糖", "仍低就重複"],
         ["m", "Vitamin B complex amp（B1 60 mg/amp） ×3 IV TID", "院內無單方 thiamine 針，以 B 群針 B1 含量換算；給糖前先打", "酒精/營養差"]
@@ -48,12 +48,12 @@
     { "name": "抽搐合併低血鈉", "hint": "嚴重症狀",
       "orders": [
         ["m", "3% NaCl 150 mL IV over 20 min", "可重複 2 次，或 Na 升 5 為止"],
-        ["l", "Na 每 20 min", ""],
+        ["l", "Na 每 20 min", "目的：確認 3% NaCl bolus 後上升 4–6 即停｜防矯正過快（24 hr ≤8–10）"],
         ["p", "第一個 24 hr Na 上升 ≤10", "之後每天 ≤8 直到 130"]
       ] },
     { "name": "抽搐合併低血鈣", "hint": "嚴重低血鈣",
       "orders": [
-        ["m", "10% Calcium gluconate 10–20 mL + D5W 50–100 mL IV over 10 min", ""],
+        ["m", "10% Calcium gluconate 10–20 mL + D5W 50–100 mL IV over 10 min", "適應：有症狀低血鈣、抽搐、QT 延長｜禁忌：digoxin 中毒慎用；與 NaHCO3 同管會沉澱"],
         ["x", "ECG monitor", "給鈣時監測"]
       ] },
     { "name": "酒精戒斷癲癇", "hint": "停酒 24–48 hr 內發作",

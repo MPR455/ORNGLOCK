@@ -5,7 +5,7 @@
       "orders": [
         ["m", "NaCl 0.225% + 5% Glucose（1/4 S）+ KCl 20 mEq/L：水 25–30 mL/kg/day", "Na/K/Cl 各 ~1 mmol/kg/day、糖 50–100 g/day"],
         ["m", "20–25 mL/kg/day", "老人、衰弱、腎差、心衰、再餵食風險", "低耐受"],
-        ["l", "BUN/Cr、電解質每日；體重每週 2 次", ""],
+        ["l", "BUN/Cr、電解質每日；體重每週 2 次", "目的：低鈉（低張輸液）、低鉀、容積過多"],
         ["l", "Cl 每日", "用 NS 等 Cl >120 的輸液時"],
         ["p", "能吃就停", "每次查房檢視需求"]
       ] },
@@ -24,7 +24,7 @@
         ["l", "Spot urine Na 2 hr / 尿量 6 hr", "尿鈉 ≥70 或尿量 ≥100 mL/hr 算有效"],
         ["m", "Furosemide 加倍 或 + Acetazolamide 250 mg ×2 PO QD", "反應不足", "反應差"],
         ["m", "Hydrochlorothiazide 25 mg PO QD", "院內無 metolazone；thiazide 序列阻斷", "抗性"],
-        ["l", "Cr、電解質 q24h", ""]
+        ["l", "Cr、電解質 q24h", "目的：利尿後低鉀、低鈉、AKI"]
       ] },
     { "name": "Albumin 適應症", "hint": "",
       "orders": [
@@ -56,7 +56,8 @@
       "orders": [
         ["p", "停止輸注、用小針筒抽吸後拔管", "不要沖管、不加壓"],
         ["m", "NTG tts 25 mg patch 貼外滲處", "院內無 phentolamine；局部硝酸鹽擴張血管", "升壓劑"],
-        ["p", "靜脈炎：拔管，疑感染送培養", ""]
+        ["p", "靜脈炎：拔管，疑感染送培養", ""],
+        ["m", "Heparinoid gel（Hirudoid）外用 TID", "適應：表淺靜脈炎、瘀青｜禁忌：破皮、出血處", "靜脈炎"]
       ] }
   ]
 }

@@ -43,7 +43,8 @@
       "orders": [
         ["m", "Meclizine 25 mg PO TID 或 Dimenhydrinate 50 mg PO q6h，≤3 天", "只短期；老人避免第一代抗組織胺與 BZD"],
         ["m", "Prednisolone 5 mg/tab：50 mg PO QD × 5 天 → 5 天減量", "3 天內就醫，與病人共同決策", "3 天內"],
-        ["p", "轉介前庭復健", ""]
+        ["p", "轉介前庭復健", ""],
+        ["m", "Diphenhydramine 30 mg IV ×1", "適應：急性眩暈嘔吐｜禁忌：老人譫妄、尿滯留、青光眼", "急性期"]
       ] },
     { "name": "姿勢性低血壓", "hint": "站起來暈",
       "orders": [
@@ -55,13 +56,13 @@
       ] },
     { "name": "昏厥 + 胸痛（疑 ACS）", "hint": "",
       "orders": [
-        ["x", "12-lead ECG（10 min 內）", ""],
-        ["l", "hs-Troponin 0 / 1–2 hr", ""],
-        ["x", "Continuous ECG monitor + 備去顫器", ""]
+        ["x", "12-lead ECG（10 min 內）", "排除：STEMI、新 LBBB、心律不整（昏厥原因）"],
+        ["l", "hs-Troponin 0 / 1–2 hr", "排除：NSTEMI（0/1h 或 0/2h 演算法）；單次升高要看動態"],
+        ["x", "Continuous ECG monitor + 備去顫器", "目的：抓 VT/VF、高度 AV block"]
       ] },
     { "name": "昏厥 + 撕裂痛（疑主動脈剝離）", "hint": "四肢血壓差 >20",
       "orders": [
-        ["l", "四肢血壓", ""],
+        ["l", "四肢血壓", "排除：主動脈剝離（兩臂差 >20 mmHg）"],
         ["l", "D-dimer", "只用於低機率者", "低機率"],
         ["x", "CT aortography", "第一線影像"],
         ["m", "Esmolol 100 mg/10 mL：500 mcg/kg → 50–300 mcg/kg/min（或 Labetalol 20 mg IV）", "目標 SBP <120、HR ≤60"],

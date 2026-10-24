@@ -12,7 +12,11 @@
       ] },
     { "name": "高 AG 代謝性酸中毒", "hint": "",
       "orders": [
-        ["p", "想：DKA、乳酸、腎衰、毒物（甲醇、乙二醇、水楊酸、metformin）", ""],
+        ["l", "Lactate", "排除：乳酸中毒（休克、缺血、metformin）"],
+        ["l", "Blood ketone（β-hydroxybutyrate）+ glucose", "排除：DKA、酒精性 / 飢餓酮酸"],
+        ["l", "BUN/Cr", "排除：尿毒"],
+        ["l", "Serum osmolality（算 osm gap）", "排除：甲醇、乙二醇（gap >10）"],
+        ["l", "Salicylate、Acetaminophen level", "排除：水楊酸、5-oxoproline（長期 acetaminophen）"],
         ["l", "Blood & urine tox screen", "昏迷病人"],
         ["l", "Ketone（不用尿酮）", "飢餓、酒精性酮酸也會高"],
         ["p", "照會腎臟科：緊急透析", "嚴重酸中毒 + 高 K、水腫、尿毒", "嚴重"]
@@ -34,9 +38,9 @@
       ] },
     { "name": "水楊酸中毒", "hint": "",
       "orders": [
-        ["m", "NS / Lactated Ringer 補足容積", ""],
+        ["m", "NS / Lactated Ringer 補足容積", "適應：水楊酸中毒常脫水｜注意：肺水腫風險"],
         ["m", "Sodium bicarbonate 7% 20 mL ×5（≈84 mEq）in D5W 1 L，150 mL/hr（尿 pH 7.5–8）", "鹼化尿液"],
-        ["l", "Salicylate level 重複、K", ""],
+        ["l", "Salicylate level 重複、K", "目的：2 hr 一次直到下降；低鉀會讓尿無法鹼化"],
         ["p", "緊急透析", "意識改變、ARDS、>100 mg/dL（腎差 >90）", "嚴重"]
       ] },
     { "name": "要不要補鹼", "hint": "",
@@ -47,7 +51,9 @@
       ] },
     { "name": "正常 AG 酸中毒", "hint": "高氯性",
       "orders": [
-        ["p", "想：腹瀉、大量 NS、DKA 恢復期、RTA", ""],
+        ["l", "Urine Na、K、Cl（urine anion gap）", "判讀：UAG 負 → 腹瀉 / GI 流失；UAG 正 → RTA"],
+        ["l", "K", "目的：低鉀 → 腹瀉、type 1/2 RTA；高鉀 → type 4 RTA"],
+        ["p", "核對 NS 量、腹瀉 / 造口量", "大量 NS 是住院最常見原因"],
         ["m", "改用 Lactated Ringer", "大量 NS 所致"],
         ["l", "Cl 每日", "用 NS 時"]
       ] },
@@ -63,13 +69,16 @@
       "orders": [
         ["l", "Urine Na、Cl、K", "嘔吐：尿 Cl 低"],
         ["m", "NS", "低氯、容積不足"],
-        ["m", "KCl（premix 20 mEq/500 mL 或 PO）+ MgSO4 2 g", ""],
+        ["m", "KCl（premix 20 mEq/500 mL 或 PO）+ MgSO4 2 g", "適應：低鉀低氯代謝性鹼中毒｜注意：補鉀前先補鎂才補得上"],
         ["p", "停利尿劑或改 spironolactone", ""],
         ["m", "Acetazolamide 250 mg ×1–2 PO QD", "嚴重鹼中毒合併水腫", "水腫"]
       ] },
     { "name": "呼吸性鹼中毒", "hint": "過度換氣",
       "orders": [
-        ["p", "先排除 PE、肺炎、氣胸、敗血症、疼痛、水楊酸", ""],
+        ["x", "CXR", "排除：肺炎、氣胸、肺水腫"],
+        ["l", "D-dimer → CTPA", "排除：肺栓塞"],
+        ["l", "Lactate、Blood culture", "排除：早期敗血症"],
+        ["l", "Salicylate level", "排除：水楊酸中毒（呼鹼 + 代酸）"],
         ["p", "不要紙袋回吸", ""]
       ] }
   ]

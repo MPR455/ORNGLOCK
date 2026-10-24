@@ -7,19 +7,20 @@
         ["p", "2 條大號 IV", ""],
         ["m", "NS 或 Lactated Ringer 500 mL over 15 min，重評", "敗血症 250 mL × 最多 1000 mL"],
         ["l", "ABG（動脈）、Lactate", "乳酸 >2 提示休克"],
-        ["l", "CBC、BUN/Cr、電解質、肝功能、PT、Type & screen", ""],
+        ["l", "CBC、BUN/Cr、電解質、肝功能、PT、Type & screen", "排除：出血（Hb）、AKI、低鉀、肝衰；準備輸血"],
         ["l", "Blood culture ×2", "疑感染", "疑感染"],
         ["x", "12-lead ECG", "高齡可能是 MI"],
         ["x", "Bedside echo（RUSH）", "<2 min 分出休克型態"],
         ["p", "Foley：尿量 ≥0.5 mL/kg/hr", ""],
-        ["p", "檢視降壓藥、鎮靜藥", ""]
+        ["p", "檢視降壓藥、鎮靜藥", ""],
+        ["l", "TSH、Free T4、Cortisol（± ACTH）", "排除：腎上腺不足、甲低（補液 + 升壓仍低時）", "持續低血壓"]
       ] },
     { "name": "敗血性休克", "hint": "",
       "orders": [
-        ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h（1 hr 內）", "先抽血培養；ESBL 風險 Meropenem 1 g q8h；MRSA 風險加 Vancomycin"],
+        ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h（1 hr 內）", "先抽血培養；ESBL 風險 Meropenem 1 g q8h；MRSA 風險加 Vancomycin｜腎調：CrCl 20–40 → 3.375 g q6h；<20 → 2.25 g q6h；HD 2.25 g q8h + 0.75 g 透析後"],
         ["m", "Lactated Ringer 30 mL/kg", "TBI 用 NS；不用澱粉、gelatin"],
         ["m", "Norepinephrine 4 mg/4 mL：8 mg in D5W 250 mL，0.05–0.5 mcg/kg/min", "MAP 65；≥65 歲 60–65"],
-        ["m", "Vasopressin 20 U/mL：0.03 U/min", "NE 劑量持續上升", "NE 上升"],
+        ["m", "Vasopressin 20 U in NS 100 mL（0.2 U/mL）：9 mL/hr = 0.03 U/min", "NE 劑量持續上升", "NE 上升"],
         ["m", "Epinephrine 1 mg/mL：0.05–0.5 mcg/kg/min", "NE + vasopressin 仍不足", "仍不足"],
         ["m", "Dobutamine 250 mg/20 mL：2.5–10 mcg/kg/min", "心功能差 + 灌流仍不足", "心功能差"],
         ["m", "Hydrocortisone 50 mg IV q6h（200 mg/day）", "建議使用；>260 mg 無額外益處"],
@@ -30,7 +31,7 @@
     { "name": "過敏性休克", "hint": "",
       "orders": [
         ["m", "Epinephrine 1 mg/mL：0.5 mg IM（大腿前外側），q5min", "第一線"],
-        ["m", "NS / Lactated Ringer 500–1000 mL IV", ""],
+        ["m", "NS / Lactated Ringer 500–1000 mL IV", "適應：過敏性休克大量血管擴張｜注意：epinephrine 才是主角"],
         ["p", "平躺（呼吸困難可坐）", ""],
         ["m", "Epinephrine infusion 1 mg/100 mL NS，0.5–1 mL/kg/hr", "2 劑 IM 後仍休克", "難治"],
         ["m", "Glucagon 1 mg/kit：1–5 mg IV over 5 min", "β-blocker 使用者", "β-blocker"]
@@ -39,19 +40,22 @@
       "orders": [
         ["p", "啟動大量輸血流程", ""],
         ["l", "Type & crossmatch、CBC、PT/aPTT、Fibrinogen、iCa", "每 30–60 min"],
-        ["m", "pRBC + FFP ≥1:2", "沒有凝血結果時"],
-        ["m", "Cryoprecipitate：Fibrinogen <1.5", ""],
-        ["m", "Platelet：維持 >50K", ""],
+        ["m", "大量輸血包：PRBC : FFP : Platelet = 1 : 1 : 1", "適應：4 hr 內預期 ≥8 U PRBC + 不穩定（ABC score ≥2）｜目標 Hb >8、Plt >50K、INR <1.5、Fibrinogen >150、Temp >35、pH >7.2"],
+        ["m", "Cryoprecipitate：Fibrinogen <1.5", "適應：大量輸血 fibrinogen <150 mg/dL"],
+        ["m", "Platelet：維持 >50K", "適應：大量出血維持 >50K（腦傷 >100K）"],
         ["m", "Tranexamic acid 500 mg ×2（1 g）IV over 10 min → 1 g over 8 hr", "創傷 3 hr 內；消化道出血不用", "創傷"],
         ["m", "PCC（Human prothrombin complex 500 IU/vial） 25–50 U/kg + Vitamin K1 10 mg IV", "Warfarin", "Warfarin"],
         ["p", "創傷：SBP 80–90 直到止血", "腦傷維持 MAP ≥80"],
         ["p", "血品加溫", ""],
-        ["p", "照會外科/介入止血", ""]
+        ["p", "照會外科/介入止血", ""],
+        ["m", "10% Calcium gluconate 10 mL IV per 4 U PRBC", "適應：大量輸血 citrate 造成低血鈣｜目標 Ca >8 mg/dL"],
+        ["l", "iCa、ABG、Fibrinogen、PT/aPTT q1h", "目的：致命三角（低體溫、酸中毒、凝血病變）"],
+        ["p", "溫毯 + 加溫輸液（40°C）", "目標體溫 >35°C"]
       ] },
     { "name": "腎上腺危象", "hint": "長期類固醇 + 低血壓、嘔吐、低 Na 高 K",
       "orders": [
         ["l", "Cortisol、ACTH、電解質", "抽完立刻給藥，不等結果"],
-        ["m", "Hydrocortisone 100 mg IV/IM → 200 mg/24 hr（或 50 mg q6h）", ""],
+        ["m", "Hydrocortisone 100 mg IV/IM → 200 mg/24 hr（或 50 mg q6h）", "適應：腎上腺危象；不要等 cortisol 結果｜注意：高血糖"],
         ["m", "NS 1000 mL 第 1 hr", "之後 24 hr 通常 4–6 L"],
         ["p", "照會內分泌", ""]
       ] },
@@ -62,8 +66,8 @@
       ] },
     { "name": "心因性休克", "hint": "",
       "orders": [
-        ["x", "12-lead ECG、Troponin", ""],
-        ["x", "Emergent echo", ""],
+        ["x", "12-lead ECG、Troponin", "排除：急性心肌梗塞（心因性休克最常見原因）"],
+        ["x", "Emergent echo", "排除：EF 低、機械性併發症（乳頭肌斷裂、VSR）、心包填塞、右心擴大"],
         ["m", "Norepinephrine 4 mg/4 mL：8 mg in D5W 250 mL，0.05–0.5 mcg/kg/min", "首選升壓劑"],
         ["m", "Dobutamine 250 mg/20 mL：2.5–10 mcg/kg/min", "SBP <90 + 灌流不足且標準治療無效", "仍灌流差"],
         ["p", "不大量輸液", "肺水腫風險高"],
@@ -74,7 +78,7 @@
       "orders": [
         ["m", "Atropine 0.5–1 mg IV q3–5min（max 3 mg）", "心臟移植、寬 QRS 高度阻斷不用"],
         ["m", "Epinephrine 1 mg in NS 250 mL：2–10 mcg/min", "atropine 無效", "無效"],
-        ["m", "Dopamine premix 400 mg/250 mL：5–20 mcg/kg/min", "", "無效"],
+        ["m", "Dopamine premix 400 mg/250 mL：5–20 mcg/kg/min", "適應：心搏過緩合併低血壓（atropine 無效）｜注意：心律不整多於 NE", "無效"],
         ["p", "經皮 / 經靜脈節律器", "藥物無效", "藥物無效"],
         ["m", "Glucagon 3–5 mg IV / Actrapid 1 U/kg / 5% Calcium chloride 20 mL", "β-blocker 或 CCB 中毒", "中毒"]
       ] },
@@ -92,7 +96,7 @@
         ["m", "Actrapid 1 U/kg IV bolus → 1–10 U/kg/hr + 10% Glucose", "監測血糖與 K"],
         ["m", "5% Calcium chloride 20 mL（1 g）×2–3 IV（中心靜脈）→ 20–40 mg/kg/hr", "CCB 中毒", "CCB"],
         ["m", "Glucagon 1 mg/kit：3–10 mg IV → 1–5 mg/hr", "β-blocker；會嘔吐", "β-blocker"],
-        ["m", "Norepinephrine 4 mg/4 mL：8 mg in D5W 250 mL，0.05–0.5 mcg/kg/min（或 Epinephrine）", ""],
+        ["m", "Norepinephrine 4 mg/4 mL：8 mg in D5W 250 mL，0.05–0.5 mcg/kg/min（或 Epinephrine）", "適應：中毒性休克補 glucagon / insulin 不足時｜注意：周邊可先上，注意外滲"],
         ["p", "諮詢毒物中心", ""]
       ] },
     { "name": "藥物呼吸抑制 + 低血壓", "hint": "",

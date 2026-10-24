@@ -5,27 +5,31 @@
       "orders": [
         ["p", "坐起、O2 NRM 15 L/min", "不要躺平、不要壓舌"],
         ["p", "困難氣道車到床邊、找熟練者", "清醒插管可能誘發完全阻塞"],
-        ["p", "緊急耳鼻喉 / 麻醉", ""]
+        ["p", "緊急耳鼻喉 / 麻醉", ""],
+        ["m", "Epinephrine 1 mg/mL 1–3 mL + NS 至 5 mL neb", "適應：喉頭水腫、拔管後喘鳴（暫時緩解）｜注意：1–2 hr 後反彈、心搏過速", "喘鳴"],
+        ["m", "Dexamethasone 5 mg ×2（10 mg）IV", "適應：氣道水腫（會厭炎、拔管後）｜注意：高血糖"],
+        ["m", "Ceftriaxone 2 g IV QD + Vancomycin 15–20 mg/kg q12h", "適應：會厭炎（H. influenzae、鏈球菌、MRSA）", "會厭炎"],
+        ["x", "Lateral neck X-ray（病人穩定、坐姿）", "排除：會厭炎（thumb sign）、咽後膿瘍｜禁忌：不穩定不要躺平送檢"]
       ] },
     { "name": "喉嚨痛（細菌性）", "hint": "Centor ≥3",
       "orders": [
         ["l", "Rapid strep test", "Centor 0–1 不需"],
-        ["m", "Penicillin V 400,000 U（250 mg）×2 PO QID × 10 天", ""],
+        ["m", "Penicillin V 400,000 U（250 mg）×2 PO QID × 10 天", "適應：A 群鏈球菌咽炎｜禁忌：penicillin 過敏改 cephalosporin / azithro"],
         ["m", "Cefadroxil 500 mg PO BID × 10 天（或 Cephalexin 500 mg BID）", "PCN 過敏（非過敏性休克）", "PCN 過敏"],
         ["m", "Azithromycin 250 mg ×2 D1 → 250 mg QD × 4 天", "嚴重 β-lactam 過敏", "嚴重過敏"],
         ["m", "Acetaminophen 500 mg / Ibuprofen 400 mg PO q6–8h", "症狀治療"]
       ] },
     { "name": "深頸部感染", "hint": "頸腫、牙關緊閉、口底腫",
       "orders": [
-        ["x", "Neck CT with contrast", ""],
+        ["x", "Neck CT with contrast", "排除：扁桃腺周圍 / 咽後膿瘍、Ludwig angina"],
         ["p", "耳鼻喉：切開引流", ""],
-        ["l", "Blood culture", ""]
+        ["l", "Blood culture", "目的：深部感染常合併菌血症"]
       ] },
     { "name": "急性細菌性鼻竇炎", "hint": "膿鼻涕 ≥10 天或好轉又惡化",
       "orders": [
-        ["m", "Amoxicillin 500 mg PO TID × 5–7 天", ""],
+        ["m", "Amoxicillin 500 mg PO TID × 5–7 天", "適應：急性細菌性鼻竇炎（症狀 >10 天或先好後壞）｜禁忌：penicillin 過敏"],
         ["m", "Curam 1 g（875/125）PO BID × 5–7 天", "≥65 歲、糖尿病、免疫低下、近期用過抗生素", "高風險"],
-        ["m", "Mometasone 鼻噴 2 puff QD + 生理食鹽水沖洗", ""],
+        ["m", "Mometasone 鼻噴 2 puff QD + 生理食鹽水沖洗", "適應：鼻竇炎、過敏性鼻炎鼻塞｜注意：流鼻血時暫停"],
         ["x", "CT with contrast", "疑眼眶或顱內擴散", "併發症"]
       ] },
     { "name": "鼻塞流鼻水", "hint": "",
@@ -37,7 +41,7 @@
     { "name": "流感", "hint": "",
       "orders": [
         ["l", "Influenza PCR", "住院急性呼吸道病人入院就驗"],
-        ["m", "Oseltamivir 75 mg PO BID × 5 天", "住院者不論病程都給；腎差調劑量"],
+        ["m", "Oseltamivir 75 mg PO BID × 5 天", "住院者不論病程都給；腎差調劑量｜腎調：CrCl 30–60 → 30 mg BID；10–30 → 30 mg QD"],
         ["p", "飛沫隔離", ""],
         ["m", "Ceftriaxone 2 g IV QD ± Vancomycin", "繼發細菌性肺炎（含 S. aureus）", "重症"],
         ["m", "Peramivir 300 mg/60 mL IV ×1（重症 600 mg）", "無法口服或吸收不良", "無法口服"],
@@ -53,8 +57,15 @@
     { "name": "口腔念珠菌（鵝口瘡）", "hint": "白斑可刮除；類固醇吸入、抗生素、免疫低下",
       "orders": [
         ["m", "Nystatin 100,000 U/mL：5 mL 含漱後吞 QID × 7–14 天", "輕中度"],
-        ["m", "Fluconazole 200 mg PO D1 → 100 mg QD × 7–14 天", "中重度或吞嚥痛（疑食道）", "中重度"],
+        ["m", "Fluconazole 200 mg PO D1 → 100 mg QD × 7–14 天", "中重度或吞嚥痛（疑食道）｜腎調：CrCl <50 → 維持劑量減半（負荷不減）", "中重度"],
         ["p", "吸入類固醇後漱口", ""]
+      ] },
+    { "name": "口腔潰瘍 / 插管後喉嚨痛", "hint": "嘴破、黏膜炎、拔管後痛",
+      "orders": [
+        ["m", "Triamcinolone 0.1% oral paste TID 塗患處", "適應：口腔潰瘍｜禁忌：疑口腔感染（念珠菌、HSV）"],
+        ["m", "Chlorhexidine 0.2% gargle 15 mL BID 含漱", "適應：口腔清潔、黏膜炎｜注意：牙齒染色"],
+        ["m", "Benzydamine spray TID", "適應：插管後喉嚨痛、咽痛", "喉嚨痛"],
+        ["m", "Lidocaine viscous 2% 5–10 mL 含漱後吐掉", "適應：劇痛影響進食｜注意：麻後易嗆，吞嚥前等 30 min", "劇痛"]
       ] },
     { "name": "鼻出血", "hint": "",
       "orders": [

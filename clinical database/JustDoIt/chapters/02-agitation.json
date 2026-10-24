@@ -66,7 +66,7 @@
       "orders": [
         ["p", "停 neuroleptic", "可疑藥物先暫停"],
         ["l", "CK、腎功能、電解質、ABG、凝血（DIC）", "追蹤併發症"],
-        ["x", "ECG", ""],
+        ["x", "ECG", "排除：QT 延長、高/低鉀變化、心律不整、缺血"],
         ["m", "Lorazepam 1–2 mg IV q4–6h", "控制躁動與顫抖"],
         ["m", "Bromocriptine 2.5 mg PO/NG TID", "矯正低 dopamine 狀態"],
         ["m", "Dantrolene 20 mg/vial：1–2.5 mg/kg IV（max 10 mg/kg/day）", "作為肌肉鬆弛劑；角色有爭議", "嚴重僵直"],
@@ -76,7 +76,7 @@
       "orders": [
         ["p", "停 serotonergic 藥物", ""],
         ["l", "CK、腎功能、電解質、ABG、Lithium level", "可加驗抗憂鬱藥濃度"],
-        ["x", "ECG", ""],
+        ["x", "ECG", "排除：QT 延長、高/低鉀變化、心律不整、缺血"],
         ["m", "Lorazepam 1–2 mg IV 或 Diazepam 5–10 mg IV", "控制躁動"],
         ["m", "Cyproheptadine 4 mg/tab：12 mg PO/NG → 2 mg q2h（max 32 mg/day）", "5-HT2A 拮抗，唯一解毒藥；只有口服，可磨粉 NG", "中重度"],
         ["m", "Sodium bicarbonate 7% 20 mL（16.7 mEq/amp）：1–2 mEq/kg IV", "TCA 所致", "TCA"]

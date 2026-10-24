@@ -3,7 +3,7 @@
   "items": [
     { "name": "急性閉角型青光眼", "hint": "眼痛頭痛嘔吐、角膜霧、瞳孔中度散大、眼壓 >40",
       "orders": [
-        ["x", "眼壓量測（每 30–60 min 重測）", ""],
+        ["x", "眼壓量測（每 30–60 min 重測）", "目的：確認降到 <40（pilocarpine 才有效）、<25 安全"],
         ["m", "Cosopt（Dorzolamide 2% + Timolol 0.5%）1 gtt", "減少房水；氣喘、心搏過緩避免 timolol"],
         ["m", "Brimonidine 0.15%（Alphagan P）1 gtt", "間隔 1 min 再點下一種"],
         ["m", "Pilocarpine 2% 1 gtt q15min ×2", "眼壓 <40 後才有效；縮瞳拉開隅角"],
@@ -17,7 +17,7 @@
       "orders": [
         ["p", "立即沖洗 NS / Lactated Ringer 1–2 L 至 pH 7.0–7.2", "鹼傷最急；可接 IV 管沖"],
         ["m", "Proparacaine 0.5% 1–2 gtt", "先麻再沖；不可帶回家"],
-        ["l", "結膜 pH 試紙（沖完 5–10 min 再測）", ""],
+        ["l", "結膜 pH 試紙（沖完 5–10 min 再測）", "目的：pH 7.0–7.2 才停沖洗"],
         ["p", "翻上下眼瞼清除殘留顆粒（濕棉棒）", ""],
         ["m", "Levofloxacin 0.5% QID 或 Tobramycin oint QID", "預防感染"],
         ["m", "Prednisolone acetate 1% q1–2h（第一週）", "中重度；1 週後減量", "中重度"],
@@ -27,7 +27,7 @@
       ] },
     { "name": "細菌性角膜炎 / 角膜潰瘍", "hint": "隱形眼鏡、白色浸潤、螢光染色",
       "orders": [
-        ["l", "角膜刮片 Gram stain + culture（給藥前）", ""],
+        ["l", "角膜刮片 Gram stain + culture（給藥前）", "目的：找菌（綠膿、葡萄球菌、阿米巴）再調藥"],
         ["m", "Moxifloxacin 0.5% q1h（日夜）", "小（<2 mm）、周邊、無前房蓄膿"],
         ["m", "Fortified Vancomycin 25 mg/mL + Ceftazidime 50 mg/mL 交替 q1h（首 1 hr q5–15 min）", "大、中央、前房蓄膿、快速惡化", "嚴重"],
         ["m", "Fortified Cefazolin 50 mg/mL + Gentamicin 12.5 mg/mL q1h", "替代組合", "替代"],
@@ -38,7 +38,7 @@
       ] },
     { "name": "黴菌性角膜炎", "hint": "植物外傷、羽毛狀邊緣、衛星病灶",
       "orders": [
-        ["l", "角膜刮片 KOH + fungal culture", ""],
+        ["l", "角膜刮片 KOH + fungal culture", "目的：確認黴菌（絲狀 vs 酵母）決定 natamycin / amphotericin"],
         ["m", "Natamycin 5% q1h", "絲狀菌（Fusarium、Aspergillus）首選"],
         ["m", "Voriconazole 1% q1h", "深層或 natamycin 無效", "替代"],
         ["m", "Amphotericin B 0.125% q1h", "酵母菌（Candida）", "Candida"],
@@ -48,52 +48,54 @@
     { "name": "單純疱疹角膜炎", "hint": "樹枝狀潰瘍、角膜知覺降低",
       "orders": [
         ["x", "Fluorescein 染色 + 裂隙燈", "樹枝狀上皮缺損"],
-        ["m", "Acyclovir 3% oph oint 5 次/天 × 10–14 天", ""],
+        ["m", "Acyclovir 3% oph oint 5 次/天 × 10–14 天", "適應：HSV 上皮型角膜炎｜禁忌：上皮型不用類固醇"],
         ["m", "Ganciclovir 1% 眼藥 5 次/天", "替代", "替代"],
-        ["m", "Valaciclovir 500 mg PO TID × 10 天", "基質炎、無法點藥", "基質炎"],
+        ["m", "Valaciclovir 500 mg PO TID × 10 天", "基質炎、無法點藥｜腎調：CrCl 30–49 → 1 g q12h；10–29 → 1 g q24h", "基質炎"],
         ["p", "上皮型禁用類固醇", ""]
       ] },
     { "name": "帶狀疱疹眼病 (HZO)", "hint": "三叉神經 V1 皮疹、鼻尖病灶（Hutchinson）",
       "orders": [
-        ["m", "Valaciclovir 500 mg ×2（1 g）PO TID × 7–10 天", "72 hr 內最好，超過仍給"],
-        ["m", "Acyclovir 250 mg/vial：10 mg/kg IV q8h", "免疫低下、重症", "重症"],
+        ["m", "Valaciclovir 500 mg ×2（1 g）PO TID × 7–10 天", "72 hr 內最好，超過仍給｜腎調：CrCl 30–49 → 1 g q12h；10–29 → 1 g q24h"],
+        ["m", "Acyclovir 250 mg/vial：10 mg/kg IV q8h", "免疫低下、重症｜腎調：CrCl 25–50 → q12h；10–25 → q24h；<10 → 半量 q24h", "重症"],
         ["m", "Prednisolone acetate 1% QID", "基質炎、葡萄膜炎", "眼內發炎"],
         ["m", "Atropine 1% BID", "虹膜炎", "虹膜炎"],
         ["m", "Tobramycin oint TID 塗皮疹", "預防皮膚次發感染"],
-        ["m", "Gabapentin 300 mg PO HS 起", "神經痛", "神經痛"],
-        ["x", "裂隙燈 + 眼壓", ""]
+        ["m", "Gabapentin 300 mg PO HS 起", "神經痛｜腎調：CrCl 30–59 → 400–1400 mg/day；15–29 → 200–700 mg/day", "神經痛"],
+        ["x", "裂隙燈 + 眼壓", "排除：HZO 角膜炎、葡萄膜炎、眼壓升高"]
       ] },
     { "name": "細菌性結膜炎", "hint": "膿性分泌物、眼皮黏住、視力正常",
       "orders": [
-        ["m", "Levofloxacin 0.5% QID × 5–7 天", ""],
+        ["m", "Levofloxacin 0.5% QID × 5–7 天", "適應：細菌性結膜炎（膿性分泌物）｜注意：隱形眼鏡者首選 FQ"],
         ["m", "Tobramycin 0.3% QID 或 Tobramycin oint HS", "替代", "替代"],
         ["m", "Ceftriaxone 1 g IM ×1 + Azithromycin 250 mg ×4 PO ×1", "淋病：大量膿、快速惡化", "淋病"],
-        ["p", "隱形眼鏡者：用 FQ（涵蓋綠膿）、檢查角膜", ""]
+        ["p", "隱形眼鏡者：用 FQ（涵蓋綠膿）、檢查角膜", ""],
+        ["m", "Sulfamethoxazole 4% 眼藥 TID", "適應：輕度結膜炎替代｜禁忌：磺胺過敏", "替代"],
+        ["m", "Chloramphenicol 0.25% 眼藥 QID", "適應：結膜炎替代", "替代"]
       ] },
     { "name": "過敏性結膜炎", "hint": "癢、水樣分泌物、雙側",
       "orders": [
-        ["m", "Olopatadine 0.1% BID", ""],
+        ["m", "Olopatadine 0.1% BID", "適應：過敏性結膜炎（癢）"],
         ["m", "Ketotifen 0.025% BID", "替代", "替代"],
         ["m", "Fluorometholone 0.1% QID × 1 週", "嚴重；需追蹤眼壓", "嚴重"],
-        ["m", "人工淚液（Tears naturale free）冷藏 QID", ""],
+        ["m", "人工淚液（Tears naturale free）冷藏 QID", "適應：沖淡過敏原、乾眼｜無防腐劑可頻繁點"],
         ["m", "Levocetirizine 5 mg PO QD", "合併鼻炎"]
       ] },
     { "name": "前葡萄膜炎 / 虹膜炎", "hint": "畏光、睫狀充血、前房細胞、瞳孔小",
       "orders": [
         ["p", "先排除感染（角膜炎、眼內炎）", ""],
-        ["m", "Prednisolone acetate 1% q1–2h → 依反應減量", ""],
+        ["m", "Prednisolone acetate 1% q1–2h → 依反應減量", "適應：非感染性前葡萄膜炎｜禁忌：先排除 HSV、黴菌、細菌角膜炎；追眼壓"],
         ["m", "Cyclopentolate 1% TID 或 Atropine 1% BID", "止痛、防後粘連"],
         ["m", "Timolol 0.5% BID", "眼壓高", "眼壓高"],
         ["l", "HLA-B27、VDRL / TPHA、CXR", "雙側或復發"]
       ] },
     { "name": "眼內炎", "hint": "術後 / 注射後：痛、視力驟降、前房蓄膿",
       "orders": [
-        ["l", "前房 / 玻璃體液 Gram stain + culture", ""],
+        ["l", "前房 / 玻璃體液 Gram stain + culture", "目的：找菌，調整玻璃體內抗生素"],
         ["m", "Intravitreal Vancomycin 1 mg/0.1 mL + Ceftazidime 2.25 mg/0.1 mL", "最重要，越快越好"],
         ["m", "Moxifloxacin 400 mg PO QD", "眼內穿透好"],
         ["m", "Fortified Vancomycin 50 mg/mL + Ceftazidime 50 mg/mL q1h", "傷口滲漏、合併角膜炎", "角膜受累"],
-        ["m", "Prednisolone acetate 1% q1h + Atropine 1% BID", ""],
-        ["m", "Vancomycin 15–20 mg/kg q12h + Ceftriaxone 2 g IV QD", "內因性（菌血症來源）", "內因性"],
+        ["m", "Prednisolone acetate 1% q1h + Atropine 1% BID", "適應：眼內炎消炎、睫狀肌麻痺止痛｜注意：抗生素給了才加類固醇"],
+        ["m", "Vancomycin 15–20 mg/kg q12h + Ceftriaxone 2 g IV QD", "內因性（菌血症來源）｜腎調：AUC 400–600；CrCl 10–50 → q24h；HD 透析後補；併 Pip-tazo 腎毒性較高", "內因性"],
         ["l", "Blood culture ×2", "內因性", "內因性"],
         ["p", "玻璃體切除（視力只剩光覺）", ""]
       ] },
@@ -103,28 +105,29 @@
         ["m", "Curam 1 g（875/125）PO BID × 7–10 天", "眶隔前、輕症", "眶隔前"],
         ["m", "Ceftriaxone 2 g IV QD + Vancomycin 15–20 mg/kg q12h", "眼眶蜂窩性組織炎", "眼眶"],
         ["m", "加 Metronidazole 500 mg IV q8h", "牙源、慢性鼻竇炎、顱內延伸", "厭氧"],
-        ["m", "Amsulber 3 g IV q6h", "替代", "替代"],
+        ["m", "Amsulber 3 g IV q6h", "替代｜腎調：CrCl 15–29 → q12h；<15 → q24h", "替代"],
         ["m", "Oxymetazoline 0.05% 鼻噴 BID ≤3 天", "合併鼻竇炎"],
         ["x", "每 4–6 hr 視力、瞳孔、眼動", "惡化 → 引流"]
       ] },
     { "name": "角膜擦傷 / 異物", "hint": "異物感、流淚、螢光染色陽性",
       "orders": [
         ["m", "Proparacaine 0.5% 1 gtt（僅檢查用）", "不可開回家"],
-        ["x", "Fluorescein paper 染色 + 裂隙燈 + 翻眼瞼", ""],
+        ["x", "Fluorescein paper 染色 + 裂隙燈 + 翻眼瞼", "排除：角膜擦傷、異物、樹枝狀潰瘍（HSV）、Seidel 陽性（穿孔）"],
         ["p", "移除異物（濕棉棒或 25G 針）、鐵鏽環", ""],
-        ["m", "Tobramycin oint 或 Levofloxacin 0.5% QID × 3–5 天", ""],
+        ["m", "Tobramycin oint 或 Levofloxacin 0.5% QID × 3–5 天", "適應：角膜擦傷預防感染｜注意：隱形眼鏡者用 FQ（綠膿）"],
         ["m", "Moxifloxacin 0.5% QID", "隱形眼鏡者（涵蓋綠膿）", "隱形眼鏡"],
         ["m", "Ketorolac 0.5% 眼藥 QID + Acetaminophen 500 mg PO", "止痛"],
-        ["p", "不包眼（隱形眼鏡者絕對不包）", ""]
+        ["p", "不包眼（隱形眼鏡者絕對不包）", ""],
+        ["m", "Gentamicin 0.3% oph oint QID", "適應：眼皮 / 角膜擦傷預防感染（替代）", "替代"]
       ] },
     { "name": "前房出血 (Hyphema)", "hint": "外傷後前房血液",
       "orders": [
-        ["x", "眼壓、裂隙燈；疑開放性外傷做 CT orbit", ""],
-        ["m", "Prednisolone acetate 1% QID", ""],
-        ["m", "Atropine 1% BID", ""],
+        ["x", "眼壓、裂隙燈；疑開放性外傷做 CT orbit", "排除：眼壓升高、眼球破裂、眶內異物｜禁忌：疑眼球破裂不要壓眼"],
+        ["m", "Prednisolone acetate 1% QID", "適應：前房出血減少發炎與再出血｜注意：追眼壓"],
+        ["m", "Atropine 1% BID", "適應：睫狀肌麻痺止痛、防虹膜後粘連"],
         ["m", "Timolol 0.5% BID ± Brimonidine 0.15% TID", "眼壓高", "眼壓高"],
         ["p", "床頭抬高 30°、眼罩；停 NSAID / 抗血小板", ""],
-        ["l", "Sickle cell screen（高風險族群）", ""]
+        ["l", "Sickle cell screen（高風險族群）", "目的：鐮狀細胞病前房出血眼壓高、不能用 acetazolamide"]
       ] },
     { "name": "突發無痛視力喪失", "hint": "疑 CRAO = 眼中風",
       "orders": [
@@ -138,9 +141,9 @@
       ] },
     { "name": "ICU 眼閉不全 / 暴露性角膜病變", "hint": "鎮靜插管、眼睛閉不緊",
       "orders": [
-        ["m", "Carbomer gel 0.2%（Vidisic）q4–6h", ""],
+        ["m", "Carbomer gel 0.2%（Vidisic）q4–6h", "適應：ICU 眼閉不全預防暴露性角膜病變"],
         ["m", "Sustain-tears oph oint HS", "夜間"],
-        ["m", "Tears naturale free q2–4h", ""],
+        ["m", "Tears naturale free q2–4h", "適應：ICU 乾眼保濕（無防腐劑）"],
         ["p", "濕房（保鮮膜）或膠帶閉眼", ""],
         ["m", "Levofloxacin 0.5% QID", "已有上皮缺損", "上皮缺損"]
       ] }

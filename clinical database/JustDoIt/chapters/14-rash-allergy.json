@@ -28,7 +28,7 @@
         ["p", "暫停輸血、保留 IV、核對身分", ""],
         ["p", "輕度（38–39°C 或只癢/疹）可在觀察下繼續", "", "輕度"],
         ["l", "血品退回、重做相容試驗、Blood culture、尿 Hb", "≥39°C 或升 ≥2°C：想細菌污染或溶血", "中重度"],
-        ["l", "CBC、腎功能、肝功能", ""],
+        ["l", "CBC、腎功能、肝功能", "排除：溶血（Hb↓、bilirubin↑）、AKI"],
         ["x", "CXR", "呼吸困難：TACO / TRALI", "呼吸困難"]
       ] },
     { "name": "蕁麻疹", "hint": "風團 ± 血管性水腫",
@@ -57,9 +57,9 @@
     { "name": "疑 SJS / TEN", "hint": "疼痛性紫斑、水皰、黏膜受累",
       "orders": [
         ["p", "立刻停可疑藥物", "越早停死亡越低；其他常規藥繼續"],
-        ["l", "CBC、ESR、CRP、BUN/Cr、Mg、P、HCO3、glucose、肝功能、PT", ""],
-        ["x", "Skin biopsy（病理 + DIF）、CXR", ""],
-        ["l", "SCORTEN（24 hr 內）", ""],
+        ["l", "CBC、ESR、CRP、BUN/Cr、Mg、P、HCO3、glucose、肝功能、PT", "目的：SCORTEN 計分（BUN、glucose、HCO3）與器官侵犯"],
+        ["x", "Skin biopsy（病理 + DIF）、CXR", "目的：確診 SJS/TEN、排除 SSSS、自體免疫水泡病"],
+        ["l", "SCORTEN（24 hr 內）", "目的：預測死亡率，決定轉燒燙傷中心 / ICU"],
         ["p", "照會眼科（每日）", "不含防腐劑潤滑劑 q2h"],
         ["p", "剝離 >10% → 燒傷中心或 ICU", ""],
         ["p", "房溫 25–28°C、避免黏貼電極與血壓袖套", ""]
@@ -67,9 +67,9 @@
     { "name": "疑 DRESS", "hint": "新藥 2–8 週後皮疹 + 發燒 + 臉腫",
       "orders": [
         ["p", "停致病及交叉反應藥物", ""],
-        ["l", "CBC/DC（eosinophil、atypical lymph）、肝腎功能、UA", ""],
+        ["l", "CBC/DC（eosinophil、atypical lymph）、肝腎功能、UA", "排除：DRESS（嗜酸球↑、肝炎、腎炎）"],
         ["x", "ECG", "心肌炎"],
-        ["l", "EBV、CMV、HHV-6 PCR", ""],
+        ["l", "EBV、CMV、HHV-6 PCR", "目的：病毒再活化與 DRESS 嚴重度相關"],
         ["m", "Methylprednisolone 1 mg/kg/day IV（或 Prednisolone 0.5–1 mg/kg）", "3–6 個月緩慢減量", "重度"],
         ["p", "避免經驗性 NSAID 與抗生素（尤其 amoxicillin）", ""]
       ] },
@@ -88,35 +88,48 @@
         ["p", "停所有 heparin（含沖管）", "中/高可能性"],
         ["m", "Fondaparinux 2.5 mg ×3（7.5 mg）SC QD（<50 kg 5 mg）", "院內無 argatroban / bivalirudin；CrCl <30 不用"],
         ["m", "Rivaroxaban 15 mg BID × 3 週 → 20 mg QD", "穩定者", "穩定"],
-        ["l", "HIT antibody（ELISA）", ""],
+        ["l", "HIT antibody（ELISA）", "目的：4T score ≥4 時送；陰性可排除 HIT"],
         ["p", "血小板 >150 前不開 warfarin", ""]
       ] },
     { "name": "帶狀皰疹", "hint": "單側皮節水泡",
       "orders": [
-        ["m", "Valaciclovir 500 mg ×2（1 g）PO TID × 7 天", "72 hr 內最有效"],
-        ["m", "Acyclovir 250 mg/vial：10 mg/kg IV q8h", "播散、內臟侵犯或免疫低下", "播散"],
+        ["m", "Valaciclovir 500 mg ×2（1 g）PO TID × 7 天", "72 hr 內最有效｜腎調：CrCl 30–49 → 1 g q12h；10–29 → 1 g q24h"],
+        ["m", "Acyclovir 250 mg/vial：10 mg/kg IV q8h", "播散、內臟侵犯或免疫低下｜腎調：CrCl 25–50 → q12h；10–25 → q24h；<10 → 半量 q24h", "播散"],
         ["p", "接觸隔離、覆蓋病灶", ""],
         ["p", "照會眼科", "V1 或鼻尖水泡", "V1"]
       ] },
     { "name": "蜂窩性組織炎", "hint": "",
       "orders": [
-        ["m", "Cefazolin 1 g IV q8h 或 Cephalexin 500 mg PO QID", ""],
+        ["m", "Cefazolin 1 g IV q8h 或 Cephalexin 500 mg PO QID", "適應：非化膿性蜂窩性組織炎（鏈球菌、MSSA）｜禁忌：cephalosporin 過敏改 clindamycin｜腎調：CrCl 10–30 → q12h；<10 → q24h"],
         ["m", "Doxycycline 100 mg BID / Clindamycin 300 mg TID / Cotrimoxazole 2 tab BID", "疑 MRSA", "MRSA"],
         ["p", "膿瘍：切開引流", "", "膿瘍"]
       ] },
     { "name": "壞死性筋膜炎", "hint": "痛到不成比例、皮下硬、毒性",
       "orders": [
         ["p", "緊急外科會診清創", ""],
-        ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h + Vancomycin 15 mg/kg q12h + Clindamycin 900 mg q8h", "廣效涵蓋"],
-        ["l", "CBC、CRP、Na、glucose、Cr、CK、Lactate、Blood culture", ""],
+        ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h + Vancomycin 15 mg/kg q12h + Clindamycin 900 mg q8h", "廣效涵蓋｜腎調：CrCl 20–40 → 3.375 g q6h；<20 → 2.25 g q6h；HD 2.25 g q8h + 0.75 g 透析後"],
+        ["l", "CBC、CRP、Na、glucose、Cr、CK、Lactate、Blood culture", "目的：LRINEC 分數（CRP、WBC、Hb、Na、Cr、glucose）；CK 高 → 肌肉侵犯"],
         ["x", "CT", "看皮下氣體；不可延誤手術"]
       ] },
     { "name": "黴菌 / 念珠菌皮膚感染", "hint": "皺褶紅疹 + 衛星病灶、股癬、尿布疹",
       "orders": [
         ["m", "Clotrimazole cream BID × 2–4 週", "症狀好後再擦 1 週"],
-        ["m", "Fluconazole 150 mg PO 每週 1 次 × 2–4 週", "範圍大或外用無效", "廣泛"],
+        ["m", "Fluconazole 150 mg PO 每週 1 次 × 2–4 週", "範圍大或外用無效｜腎調：CrCl <50 → 維持劑量減半（負荷不減）", "廣泛"],
         ["p", "保持乾燥、紗布隔開皺褶", ""],
         ["x", "KOH 鏡檢", "不確定時"]
+      ] },
+    { "name": "皮膚癢（無疹 / 老人乾癢）", "hint": "乾燥、搔抓痕",
+      "orders": [
+        ["l", "BUN/Cr、LFT（bilirubin）、TSH、CBC", "排除：尿毒、膽汁淤積、甲狀腺、血液疾病（全身癢）", "找不到原因"],
+        ["m", "Urea 10% cream BID", "適應：乾燥皮膚保濕"],
+        ["m", "Doxepin 5% cream TID", "適應：止癢（不要大面積）｜注意：嗜睡", "局部癢"],
+        ["m", "Hydroxyzine 25 mg PO HS", "適應：夜間癢｜禁忌：老人譫妄、QT", "夜間癢"]
+      ] },
+    { "name": "尿布疹 / 會陰濕疹", "hint": "臥床、失禁",
+      "orders": [
+        ["m", "Zinc oxide 20% oint 每次換尿布外用", "適應：刺激性皮膚炎隔離保護"],
+        ["m", "Clotrimazole cream BID", "適應：衛星狀紅疹（念珠菌）", "念珠菌"],
+        ["p", "勤換尿布、保持乾燥", ""]
       ] }
   ]
 }

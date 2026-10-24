@@ -6,8 +6,8 @@
         ["p", "直接壓迫 / 加壓繃帶", "不要盲目夾止血鉗"],
         ["p", "止血帶", "壓迫無法控制的危及生命肢體出血", "危及生命"],
         ["l", "CBC（重複）、PT/INR、aPTT、Type & screen、Lactate", "初始 Hb 正常不能排除出血"],
-        ["m", "pRBC：Hb <7（心血管/骨科 <8）", ""],
-        ["m", "Platelet：<50K 且出血", ""],
+        ["m", "pRBC：Hb <7（心血管/骨科 <8）", "適應：限制型輸血｜注意：活動性出血看速度不只看數字"],
+        ["m", "Platelet：<50K 且出血", "適應：活動性出血或處置前 <50K｜注意：ITP、TTP、HIT 不常規輸"],
         ["m", "Cryoprecipitate：Fibrinogen <1.5 g/L", "大量出血", "大量出血"]
       ] },
     { "name": "抗凝劑使用者傷口出血", "hint": "",
@@ -27,10 +27,10 @@
     { "name": "術後傷口感染 (SSI)", "hint": "紅腫痛 + 膿",
       "orders": [
         ["p", "拆線 + 切開引流，換藥至二次癒合", "主要治療"],
-        ["m", "Cefazolin 1 g IV q8h（或 Cephalexin 500 mg PO q6h）", "紅腫 >5 cm、>38.5°C、HR >110 時加", "全身反應"],
-        ["m", "Vancomycin 15–20 mg/kg IV q12h", "MRSA 風險", "MRSA"],
-        ["m", "Piperacillin-tazobactam 4.5 g q8h / Ertapenem 1 g QD", "腸道/泌尿生殖道手術後", "腸道手術"],
-        ["l", "Wound culture（深部組織）", ""],
+        ["m", "Cefazolin 1 g IV q8h（或 Cephalexin 500 mg PO q6h）", "紅腫 >5 cm、>38.5°C、HR >110 時加｜腎調：CrCl 10–30 → q12h；<10 → q24h", "全身反應"],
+        ["m", "Vancomycin 15–20 mg/kg IV q12h", "MRSA 風險｜腎調：AUC 400–600；CrCl 10–50 → q24h；HD 透析後補；併 Pip-tazo 腎毒性較高", "MRSA"],
+        ["m", "Piperacillin-tazobactam 4.5 g q8h / Ertapenem 1 g QD", "腸道/泌尿生殖道手術後｜腎調：CrCl 20–40 → 3.375 g q6h；<20 → 2.25 g q6h；HD 2.25 g q8h + 0.75 g 透析後", "腸道手術"],
+        ["l", "Wound culture（深部組織）", "目的：深部取樣才準；表面棉棒多為移生菌"],
         ["p", "只懷疑 SSI 不給抗生素", "先確定診斷"]
       ] },
     { "name": "小傷口感染 / 膿痂疹", "hint": "局部紅、蜜黃色痂、無全身症狀",
@@ -43,9 +43,9 @@
     { "name": "壞死性軟組織感染", "hint": "痛不成比例、木頭般硬、毒性",
       "orders": [
         ["p", "緊急外科清創（6 hr 內）", "治療主軸；影像不得延誤手術"],
-        ["m", "Vancomycin 15–20 mg/kg q12h + Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h（或 Meropenem 1 g q8h）", "1 hr 內"],
+        ["m", "Vancomycin 15–20 mg/kg q12h + Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h（或 Meropenem 1 g q8h）", "1 hr 內｜腎調：AUC 400–600；CrCl 10–50 → q24h；HD 透析後補；併 Pip-tazo 腎毒性較高"],
         ["m", "Clindamycin 300 mg/2 mL：600–900 mg IV q8h", "A 群鏈球菌", "GAS"],
-        ["l", "Blood culture、CBC、Cr、CK、Lactate", ""],
+        ["l", "Blood culture、CBC、Cr、CK、Lactate", "排除：壞死性感染（CK↑、乳酸↑）、敗血症"],
         ["m", "Lactated Ringer 積極補液", "清創後大量滲液"]
       ] },
     { "name": "撕裂傷", "hint": "",
@@ -53,7 +53,7 @@
         ["p", "檢查遠端脈搏、感覺運動", ""],
         ["p", "清創、沖洗、縫合", "穿刺傷或汙染重不縫"],
         ["m", "Td（Tetanus & Diphtheria toxoid）0.5 mL IM（或 Tdap 自費）", "依接種史"],
-        ["m", "Cefazolin 2 g IV q8h（50–100 kg）", "開放性骨折，3 hr 內", "開放骨折"],
+        ["m", "Cefazolin 2 g IV q8h（50–100 kg）", "開放性骨折，3 hr 內｜腎調：CrCl 10–30 → q12h；<10 → q24h", "開放骨折"],
         ["m", "Povidone-iodine 10% 消毒傷口周圍 → NS 大量沖洗", "不要倒進傷口深處"],
         ["m", "Lidocaine 1%（或含 epinephrine）局部浸潤（≤4.5 mg/kg；含 epi ≤7 mg/kg）", "縫合前麻醉；指尖、陰莖不用含 epi 也可"]
       ] },
@@ -74,14 +74,14 @@
       ] },
     { "name": "糖尿病足感染", "hint": "",
       "orders": [
-        ["l", "Tissue culture（刮除或切片，不用棉棒）", ""],
+        ["l", "Tissue culture（刮除或切片，不用棉棒）", "目的：找真正致病菌（含厭氧、綠膿）"],
         ["l", "ABI / Toe pressure", "評估缺血"],
-        ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h ± Vancomycin（中度：Amsulber 3 g q6h）", "取深部組織培養後開始", "嚴重"],
+        ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h ± Vancomycin（中度：Amsulber 3 g q6h）", "取深部組織培養後開始｜腎調：CrCl 20–40 → 3.375 g q6h；<20 → 2.25 g q6h；HD 2.25 g q8h + 0.75 g 透析後", "嚴重"],
         ["p", "緊急外科清創引流", "危及肢體", "嚴重"]
       ] },
     { "name": "病房跌倒", "hint": "",
       "orders": [
-        ["l", "GCS、Vital signs、臥立位 BP", ""],
+        ["l", "GCS、Vital signs、臥立位 BP", "排除：頭部外傷意識變化、姿勢性低血壓（跌倒原因）"],
         ["x", "Head CT（1 hr 內）", "GCS ≤12、骨折徵象、吐 >1 次、局部缺損", "嚴重"],
         ["x", "Head CT（8 hr 內）", "抗凝或 ≥65 歲 + LOC", "抗凝"],
         ["p", "Neuro check q30min → q1h → q2h", ""],
@@ -100,7 +100,7 @@
     { "name": "針扎 / 血體液暴露", "hint": "工作人員針扎、黏膜噴濺",
       "orders": [
         ["p", "立即沖洗：肥皂水洗傷口、黏膜用 NS 沖", "不要擠壓、不要用漂白水"],
-        ["l", "來源：HBsAg、anti-HCV、HIV Ag/Ab；被扎者：HBsAg、anti-HBs、anti-HCV、HIV、ALT", ""],
+        ["l", "來源：HBsAg、anti-HCV、HIV Ag/Ab；被扎者：HBsAg、anti-HBs、anti-HCV、HIV、ALT", "目的：決定是否給 HBIG、HIV PEP；被扎者基準值供日後追蹤"],
         ["m", "Hepatitis B immune globulin（HBIG）0.06 mL/kg IM（24 hr 內）", "未免疫或 anti-HBs <10 且來源 HBsAg(+) 或未知", "HBV 風險"],
         ["m", "Hepatitis B vaccine（Engerix-B 20 mcg）1 mL IM（另一側三角肌）", "未完成疫苗者，同時開始", "未免疫"],
         ["m", "Truvada 1 錠 QD + Dolutegravir 50 mg QD × 28 天", "HIV PEP：越快越好，72 hr 內", "HIV 風險"],

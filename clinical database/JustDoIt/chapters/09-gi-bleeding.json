@@ -6,11 +6,15 @@
         ["p", "2 條大號 IV", "肝硬化至少兩條"],
         ["m", "NS / Lactated Ringer 500 mL IV over 15 min", "血行動力不穩；不用膠體"],
         ["l", "CBC、BUN/Cr、PT/INR、aPTT、Fibrinogen", "BUN 用來算 GBS"],
-        ["l", "Type & screen（輸血前）", ""],
-        ["l", "Lactate", ""],
+        ["l", "Type & screen（輸血前）", "目的：備血，避免輸血延誤"],
+        ["l", "Lactate", "排除：組織灌流不足、休克（>2 要追，>4 嚴重）"],
         ["p", "停抗凝劑", "不延後內視鏡"],
         ["p", "不常規放 NG", "抽吸判斷來源不準"],
-        ["p", "Glasgow-Blatchford score", "GBS 0–1 為低風險"]
+        ["p", "Glasgow-Blatchford score", "GBS 0–1 為低風險"],
+        ["m", "Ceftriaxone 1 g IV QD（≤7 天）", "適應：肝硬化 + 上消化道出血（降感染與再出血）", "肝硬化"],
+        ["m", "Terlipressin 1 mg IV q6h", "適應：疑靜脈曲張出血（未做胃鏡前）｜禁忌：缺血性心臟病、周邊動脈疾病、低鈉", "疑靜脈曲張"],
+        ["m", "Esomeprazole 40 mg IV q12h", "適應：未知出血源先給；確認潰瘍再改 PPI line", "上消化道"],
+        ["l", "備血：LPR 2 U、FFP 2 U、Platelet 12 U", "目的：Hb <7（心血管 <8）、INR >1.5、Plt <50K 且持續出血時輸"]
       ] },
     { "name": "輸血", "hint": "",
       "orders": [
@@ -18,14 +22,14 @@
         ["m", "pRBC：Hb <8 g/dL", "有心血管疾病", "心血管病"],
         ["m", "Platelet：<50K 且持續出血", "抗血小板藥但血小板不低不輸"],
         ["m", "FFP：PT/aPTT >1.5x 且持續出血", "肝硬化靜脈曲張不例行輸"],
-        ["m", "Cryoprecipitate：Fibrinogen <1.5 g/L", ""],
+        ["m", "Cryoprecipitate：Fibrinogen <1.5 g/L", "適應：出血 + fibrinogen <150 mg/dL；10 U 約升 50–100 mg/dL"],
         ["m", "大量輸血：FFP:RBC ≥1:2", "心跳 >110 及/或 SBP <90 且持續出血", "大量出血"]
       ] },
     { "name": "上消化道出血（非靜脈曲張）", "hint": "",
       "orders": [
         ["x", "EGD 24 hr 內", "不穩定者復甦後隨即做"],
         ["m", "Pantoprazole 40 mg/vial ×2（80 mg）IV bolus", "內視鏡前可考慮，但不延後內視鏡"],
-        ["m", "Pantoprazole 80 mg bolus → 8 mg/hr × 72 hr", "高風險病灶止血後", "止血後"],
+        ["m", "PPI line：Esomeprazole 40 mg ×2 IV → 1 amp in NS 100 mL run 20 mL/hr（8 mg/hr）× 72 hr", "高風險病灶止血後", "止血後"],
         ["l", "H. pylori test", "首次內視鏡時驗"],
         ["p", "Aspirin（次級預防）不停", "若停 3–5 天內恢復"],
         ["p", "不用 Tranexamic acid", "沒降死亡，血栓與癲癇反而增加"],
@@ -37,7 +41,7 @@
         ["m", "Terlipressin 1 mg/vial：2 mg IV q4h × 48 hr → 1 mg q4h", "缺血性心臟病小心；監測 Na", "替代"],
         ["m", "Ceftriaxone 1 g IV q24h（≤7 天）", "預防感染，就診時就給"],
         ["m", "pRBC 目標 Hb 7–8", "過度輸血會升門脈壓"],
-        ["x", "EGD + EVL 12 hr 內", ""],
+        ["x", "EGD + EVL 12 hr 內", "目的：確認並結紮靜脈曲張；先 octreotide/terlipressin + 抗生素"],
         ["m", "Erythromycin 500 mg/vial：250 mg IV over 30 min（內視鏡前 30–120 min）", "清胃，視野較好"],
         ["m", "Lactulose 30 mL PO/NG q6h", "預防肝性腦病變"],
         ["p", "Early TIPS 72 hr 內", "Child C 10–13 或 Child B >7 + 活動性出血", "高風險"],
@@ -50,11 +54,11 @@
         ["x", "CTA abdomen", "持續且血行動力顯著的出血"],
         ["p", "Angiography + embolization", "CTA 見外滲", "CTA 陽性"],
         ["m", "Klean-prep（PEG 3350）4 包泡 4 L", "非緊急住院大腸鏡前"],
-        ["x", "Colonoscopy（非緊急住院）", ""]
+        ["x", "Colonoscopy（非緊急住院）", "目的：找下消化道出血源（憩室、血管擴張、腫瘤）"]
       ] },
     { "name": "Warfarin + 嚴重出血", "hint": "主要出血",
       "orders": [
-        ["m", "PCC（Human prothrombin complex 500 IU/vial）：INR 2–4 → 25 U/kg；4–6 → 35 U/kg；>6 → 50 U/kg（max 5000）", ""],
+        ["m", "PCC（Human prothrombin complex 500 IU/vial）：INR 2–4 → 25 U/kg；4–6 → 35 U/kg；>6 → 50 U/kg（max 5000）", "適應：warfarin 大出血、緊急手術｜禁忌：DIC、HIT 史（含 heparin）；一定合併 Vitamin K"],
         ["m", "Vitamin K1 10 mg/amp：10 mg slow IV", "與 PCC 一起給"],
         ["m", "FFP 10–15 mL/kg", "沒有 PCC 時", "無 PCC"]
       ] },
