@@ -71,6 +71,30 @@ export const DIRECTORY_DATA = {
               "numbers": [
                 "24033792"
               ]
+            },
+            {
+              "id": "directory-contact-5-36",
+              "name": "質子",
+              "numbers": [
+                "24037153",
+                "24037114"
+              ]
+            },
+            {
+              "id": "directory-contact-5-37",
+              "name": "PET核子醫學",
+              "numbers": [
+                "24032620",
+                "24032276"
+              ]
+            },
+            {
+              "id": "directory-contact-5-38",
+              "name": "RTO 放射室",
+              "numbers": [
+                "24032590",
+                "24032598"
+              ]
             }
           ],
           "notes": [],
