@@ -66,7 +66,7 @@
         ["l", "四肢血壓", "排除：主動脈剝離（兩臂差 >20 mmHg）"],
         ["l", "D-dimer", "只用於低機率者", "低機率"],
         ["x", "CT aortography", "第一線影像"],
-        ["m", "Esmolol 100 mg/10 mL：500 mcg/kg → 50–300 mcg/kg/min（或 Labetalol 20 mg IV）", "目標 SBP <120、HR ≤60"],
+        ["m", "Labetalol 25 mg/5 mL：20 mg IV slow → 20–80 mg q10min（max 300 mg）或 0.5–2 mg/min infusion", "適應：主動脈剝離第一線（同時降心率與血壓），目標 HR ≤60、SBP <120｜禁忌：氣喘、失代償心衰、高度 AV block、HR <60"],
         ["p", "A-line、ICU", ""]
       ] },
     { "name": "昏厥 + 喘（疑 PE）", "hint": "",

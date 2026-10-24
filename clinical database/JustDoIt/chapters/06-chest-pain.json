@@ -47,7 +47,7 @@
         ["l", "四肢血壓、脈搏", "差異 >20 代表分支受影響"],
         ["x", "CTA chest/abdomen/pelvis", "首選；太不穩定改床邊 TEE"],
         ["l", "D-dimer", "只在 ADD-RS <2 的低風險者用", "低風險"],
-        ["m", "Esmolol 500 mcg/kg → 50–300 mcg/kg/min（或 Labetalol 20 mg IV q10min）", "先降心率：HR 60–80、SBP <120"],
+        ["m", "Labetalol 25 mg/5 mL：20 mg IV slow → 20–80 mg q10min（max 300 mg）或 0.5–2 mg/min infusion", "適應：主動脈剝離第一線（同時降心率與血壓），目標 HR ≤60、SBP <120｜禁忌：氣喘、失代償心衰、高度 AV block、HR <60"],
         ["m", "Nicardipine 5 mg/hr IV", "β-blocker 後血壓仍高才加；先加會反射性心搏過速", "BP 仍高"],
         ["m", "Morphine 2–4 mg IV q5–10min 滴定", "疼痛會升高心率血壓；避免 NSAID｜腎調：腎差代謝物蓄積 → 改 fentanyl"],
         ["p", "A-line、ICU、尿量", ""],

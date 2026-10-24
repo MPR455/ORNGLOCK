@@ -99,8 +99,6 @@
         ["m", "NS + KCl 20 mEq/500 mL（premix）", "常脫水、低鉀"],
         ["l", "CBC、Lactate、電解質、CRP、BUN/Cr", "排除：絞窄（乳酸↑、白血球↑）、低鉀、脫水 AKI"],
         ["x", "CT abdomen", "排除絞扼、closed loop"],
-        ["m", "Gastrografin（Diatrizoate meglumine 65%）100 mL PO/NG", "24 hr X 光沒到大腸則非手術會失敗"],
-        ["x", "KUB 24 hr after contrast", "目的：顯影劑到大腸 → 可保守治療；沒到 → 考慮手術"],
         ["p", "照會外科", "腹膜炎、絞扼、缺血或 72 hr 未緩解"]
       ] },
     { "name": "SBP（肝硬化腹水）", "hint": "腹水 PMN >250",

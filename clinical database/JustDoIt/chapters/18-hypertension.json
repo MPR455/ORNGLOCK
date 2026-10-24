@@ -38,15 +38,13 @@
         ["p", "第 1 hr SBP 降 ≤25%；2–6 hr <160/100；24–48 hr 130–140", "降太快會灌流不足、AKI"],
         ["m", "Nicardipine line：10 mg ×5 in NS 250 mL（0.2 mg/mL），10 mL/hr 起；每 15 min ±2 mL/hr", "泡法參考：SBP 高於目標 +2 mL/hr、低於目標 −2 mL/hr、<130 hold｜注意：反射性心搏過速", "泡法"],
         ["m", "Labetalol infusion 0.5–2 mg/min（25 mg/5 mL ×8 in D5W 250 mL）", "適應：bolus 有效但需持續控制｜禁忌：氣喘、心衰、AV block、HR <60", "labetalol 持續"],
-        ["m", "Esmolol 500 mcg/kg 1 min → 50–300 mcg/kg/min", "適應：合併心跳快、主動脈剝離、術後（短效好調）｜禁忌：失代償心衰、氣喘、心搏過緩", "心跳快"],
         ["m", "NTG premix 0.2 mg/mL：10–20 mcg/min 起，q5min +10", "適應：合併 ACS 或肺水腫｜禁忌：48 hr 內 PDE5i、右心梗塞、顱內壓高", "ACS / 肺水腫"],
         ["m", "Hydralazine 20 mg/amp：10–20 mg IV q4–6h", "適應：孕婦、其他藥不能用時｜注意：降壓幅度不可預測、反射性心搏過速；不建議當第一線", "替代"],
         ["m", "Nitroprusside 50 mg/vial：0.3–0.5 mcg/kg/min 起，max 10（ICU + A-line、避光）", "適應：其他藥都無效的重度高血壓急症｜禁忌：顱內出血 / 腦壓高、孕婦、腎肝衰（氰化物、thiocyanate 蓄積）；>2 mcg/kg/min 不超過 72 hr", "其他無效"]
       ] },
     { "name": "主動脈剝離 + 高血壓", "hint": "",
       "orders": [
-        ["m", "Esmolol 100 mg/10 mL：500–1000 mcg/kg 1 min → 50 mcg/kg/min（max 300）", "先降心率：HR 60–80"],
-        ["m", "Labetalol 20 mg IV q10min → 1–2 mg/min", "β-blocker 替代", "替代"],
+        ["m", "Labetalol 25 mg/5 mL：20 mg IV slow → 20–80 mg q10min（max 300 mg）或 0.5–2 mg/min infusion", "適應：主動脈剝離第一線（同時降心率與血壓），目標 HR ≤60、SBP <120｜禁忌：氣喘、失代償心衰、高度 AV block、HR <60"],
         ["m", "Verapamil 5 mg/2 mL：5 mg IV over 2 min", "院內無 IV diltiazem；β-blocker 禁忌時控心跳", "β 禁忌"],
         ["m", "Nicardipine 5 mg/hr IV", "心率控制後 BP 仍高才加", "BP 仍高"],
         ["m", "Morphine 2–4 mg IV", "止痛；避免 NSAID｜腎調：腎差代謝物蓄積 → 改 fentanyl"],
@@ -63,7 +61,7 @@
     { "name": "ACS + 高血壓", "hint": "",
       "orders": [
         ["m", "NTG 0.6 mg SL q5min ×3 → NTG premix 10 mcg/min", "PDE5i 48 hr 內禁用"],
-        ["m", "Esmolol 500 mcg/kg → 50 mcg/kg/min", "無心衰、HR >60、SBP >100"]
+        ["m", "Labetalol 10–20 mg IV（或 Bisoprolol 2.5 mg PO）", "適應：ACS 合併高血壓、心跳快｜禁忌：心衰、HR <60、SBP <100、高度 AV block"]
       ] },
     { "name": "腦出血血壓", "hint": "SBP 150–220",
       "orders": [

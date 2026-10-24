@@ -34,7 +34,6 @@
         ["p", "Modified Valsalva（吹針筒 + 平躺抬腿）", "轉復率 43%"],
         ["m", "Adenosine 6 mg/2 mL：6 mg IV push + NS flush → 12 mg → 12 mg", "肘前靜脈快推；預激寬 QRS 不用"],
         ["m", "Verapamil 5 mg/2 mL：5–10 mg IV over 2 min", "適應：PSVT adenosine 無效、氣喘病人｜禁忌：寬 QRS、WPW + AF、EF 低、低血壓", "adenosine 無效"],
-        ["m", "Esmolol 500 mcg/kg 1 min → 50 mcg/kg/min", "院內無 IV metoprolol / diltiazem", "adenosine 無效"],
         ["p", "同步電擊", "藥物無效", "藥物無效"]
       ] },
     { "name": "心房顫動 RVR（穩定）", "hint": "不規則窄 QRS",
@@ -42,7 +41,6 @@
         ["p", "處理誘因：敗血症、容積過多、甲亢", ""],
         ["m", "Verapamil 5 mg IV over 2 min（可再 5–10 mg）", "院內無 IV diltiazem；EF 差不用"],
         ["m", "Metoprolol 25 mg PO q6–12h（或 Bisoprolol 2.5–5 mg QD）", "能口服、血壓可時", "替代"],
-        ["m", "Esmolol 500 mcg/kg 1 min → 50–300 mcg/kg/min", "適應：AF RVR、主動脈剝離（短效好調）｜禁忌：失代償心衰、氣喘急性期、高度 AV block", "替代"],
         ["m", "Digoxin 0.25 mg/mL：0.25–0.5 mg IV（24 hr ≤1.5 mg）", "LVEF ≤40%；先查腎功能", "LVEF ≤40%"],
         ["m", "Amiodarone 150 mg in D5W 100 mL over 10 min → 6 amp in D5W 500 mL：34 mL/hr × 6 hr → 17 mL/hr × 18 hr", "適應：低血壓、EF 差時控速｜注意：靜脈炎、低血壓、QT；HR >120 才需處理", "低血壓/EF 差"],
         ["m", "MgSO4 10% 20 mL（2 g）IV over 15 min", "合併控速時可加"],
@@ -60,7 +58,7 @@
       ] },
     { "name": "心房撲動", "hint": "HR ~150 規則",
       "orders": [
-        ["m", "Esmolol IV 或 Verapamil 5 mg IV", "院內無 IV diltiazem"],
+        ["m", "Verapamil 5 mg IV（或 Metoprolol 25 mg PO）", "適應：控心室速率｜禁忌：verapamil 不用於 EF 低、低血壓、WPW"],
         ["p", "同步電擊（低能量 70–120 J 起）", "轉復"],
         ["m", "Amiodarone 150 mg IV over 10 min", "其他不可用時", "其他不行"]
       ] },
