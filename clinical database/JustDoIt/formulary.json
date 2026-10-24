@@ -102,8 +102,8 @@
       ["Digoxin", "0.25 mg/tab、0.25 mg/mL amp"],
       ["Lidocaine", "2% 5 mL（100 mg）IV；1%/2% ± epinephrine 局部；viscous 2%"],
       ["Nicardipine", "10 mg/10 mL amp、premix 40 mg/200 mL"],
-      ["Hydralazine", "20 mg/mL amp"],
-      ["Nifedipine", "5/10 mg/cap"],
+      ["Hydralazine", "20 mg/mL amp、10/25/50 mg/tab"],
+      ["Nifedipine", "5/10 mg/cap、OROS 30 mg/tab", "Nifedipine OROS|Adalat OROS|Nifedipine"],
       ["Amlodipine", "5 mg/tab"],
       ["Clonidine", "75 mcg/tab"],
       ["Nitroglycerin", "0.6 mg SL、0.4 mg spray、premix 0.2 mg/mL、25 mg patch", "NTG|Nitroglycerin"],
@@ -115,7 +115,12 @@
       ["Glycerol", "Glycerol in fructose 250/500 mL", "Glycerol"],
       ["Midodrine", "2.5 mg/tab"],
       ["Fludrocortisone", "0.1 mg/tab"],
-      ["Atorvastatin", "10/40 mg/tab"]
+      ["Atorvastatin", "10/40 mg/tab"],
+      ["Losartan", "50/100 mg/tab"],
+      ["Valsartan", "80/160 mg/tab"],
+      ["Carvedilol", "6.25/25 mg/tab"],
+      ["Nitroprusside", "50 mg/vial"],
+      ["Nimodipine", "30 mg/tab、10 mg/50 mL IV"]
     ] },
     { "group": "抗血栓 / 止血 / 逆轉", "drugs": [
       ["Aspirin", "100 mg/tab、500 mg/tab"],

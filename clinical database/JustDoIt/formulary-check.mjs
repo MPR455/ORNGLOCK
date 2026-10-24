@@ -8,7 +8,7 @@ const FORMULARY = new URL('./formulary.json', import.meta.url);
 const NOT_DRUGS = new Set(`
 amp vial vials bag bot tab cap pack kit supp patch cream gel oint oph gtt neb puff puffs spray nasal soln solution
 susp powder liquid enema MDI UDV premix tts eff tube free granules lotion epi paste gargle viscous
-line run stress test TWOC Sliding scale
+line run stress test TWOC Sliding scale ICU A-line
 mg mcg mmol mEq kg max min hr day Day per IU
 IV IM SC PO NG BID TID QID QD QAM HS PRN NPO q10 q10min q12h q15min q1h q20 q20min q24h q2h q4h q5min q6h q8h
 bolus infusion loading slow push flush over spacer challenge front overdrive pacing cardioversion Cold
