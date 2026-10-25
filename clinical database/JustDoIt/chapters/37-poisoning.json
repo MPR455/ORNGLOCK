@@ -4,12 +4,22 @@
     { "name": "中毒：第一輪", "hint": "不知道吃了什麼",
       "orders": [
         ["l", "Acetaminophen + Salicylate level", "常見、可治、早期無症狀"],
-        ["l", "ABG + AG + Osmolal gap、BS、Lytes、Cr、LFT、CK", "排除：高 AG 酸中毒、Osm gap ↑ → 甲醇/乙二醇；橫紋肌溶解"],
-        ["x", "ECG（QRS、QTc）", "排除：QRS >100（TCA、鈉通道阻斷）、QTc 延長"],
+        ["l", "ABG + AG + Osmolal gap、BS、Lytes、Cr、LFT、CK", "排除：高 AG 酸中毒、Osm gap ↑ → 甲醇/乙二醇；橫紋肌溶解｜開立：呼吸治療（新）→ Blood gas analysis-artery"],
+        ["x", "ECG（QRS、QTc）", "排除：QRS >100（TCA、鈉通道阻斷）、QTc 延長｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
         ["m", "Activated charcoal 50 g PO/NG", "1 hr 內、氣道安全；不吸附金屬、酒精、鋰", "1 hr 內"],
         ["m", "50% Glucose 20 mL ×2 amp IV", "意識不清先測 BS", "低血糖"],
         ["m", "Naloxone 0.4 mg IV", "呼吸慢、瞳孔小", "疑鴉片"],
         ["p", "去污：脫衣、清洗皮膚", ""]
+      ] },
+    { "name": "腐蝕性物質吞食", "hint": "強酸、強鹼",
+      "orders": [
+        ["x", "CXR", "排除：穿孔（縱膈腔氣、橫膈下氣）"],
+        ["x", "EGD（24 hr 內，≤72 hr 安全）", "目的：Zargar 分級決定預後與飲食｜代碼：M23-002｜☎2227/2228"],
+        ["p", "NPO + 靜脈營養，穩定後再進食", ""],
+        ["m", "Pantoprazole 40 mg IV q12h", "適應：腐蝕性食道 / 胃損傷"],
+        ["m", "Morphine 2–4 mg IV q4h PRN", "適應：疼痛"],
+        ["p", "禁止催吐、中和劑、NG 灌洗", "會加重損傷"],
+        ["p", "穿孔 → 外科；狹窄 3–6 週後擴張", ""]
       ] },
     { "name": "有機磷 / 氨基甲酸鹽（農藥）", "hint": "流涎、流淚、尿便失禁、瞳孔小、肺水",
       "orders": [
@@ -31,7 +41,7 @@
       ] },
     { "name": "抗膽鹼中毒", "hint": "熱、乾、紅、瞳孔大、躁動、尿滯留",
       "orders": [
-        ["x", "ECG：QRS 寬先排除 TCA", "排除：TCA（QRS >100、aVR R 波）→ 不能給 physostigmine，要給 NaHCO3"],
+        ["x", "ECG：QRS 寬先排除 TCA", "排除：TCA（QRS >100、aVR R 波）→ 不能給 physostigmine，要給 NaHCO3｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
         ["m", "Physostigmine 2 mg/5 mL：0.5–2 mg IV slow over 5 min", "純抗膽鹼譫妄；QRS 寬、TCA 禁用"],
         ["m", "Lorazepam 2 mg IV 或 Diazepam 10 mg IV", "躁動"],
         ["p", "導尿、降溫", ""]
@@ -48,7 +58,7 @@
       "orders": [
         ["p", "100% O2 NRM（或插管）", "COHb 半衰期 5 hr → 1 hr"],
         ["l", "COHb、Lactate、Troponin", "目的：COHb 程度、心肌損傷（高壓氧適應）"],
-        ["x", "ECG", "排除：QT 延長、高/低鉀變化、心律不整、缺血"],
+        ["x", "ECG", "排除：QT 延長、高/低鉀變化、心律不整、缺血｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
         ["p", "高壓氧：昏迷、COHb >25%（孕婦 >15%）、心肌缺血、神經學異常", ""]
       ] },
     { "name": "變性血紅素血症", "hint": "SpO2 ~85% 不升、血呈巧克力色",
@@ -92,7 +102,7 @@
       "orders": [
         ["m", "抗神經性蛇毒血清（Antivenin polyvalent neurotropic）4–6 vials IV over 1 hr", "雨傘節症狀晚出現；眼鏡蛇常需更多"],
         ["m", "Neostigmine 0.5 mg/amp：1.5–2 mg IV（先 Atropine 0.6 mg）", "眼鏡蛇神經症狀輔助", "眼鏡蛇"],
-        ["l", "ABG、SpO2、NIF", "目的：NIF > −20 cmH2O 或 PaCO2 上升 → 插管"],
+        ["l", "ABG、SpO2、NIF", "目的：NIF > −20 cmH2O 或 PaCO2 上升 → 插管｜開立：呼吸治療（新）→ Blood gas analysis-artery"],
         ["p", "觀察 ≥24 hr，備插管", ""],
         ["m", "Td 0.5 mL IM", "適應：傷口且破傷風疫苗 >5 年（髒傷口）/ >10 年"],
         ["m", "Curam 1 g PO BID", "眼鏡蛇組織壞死", "壞死"]

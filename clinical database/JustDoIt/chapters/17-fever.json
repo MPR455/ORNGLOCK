@@ -42,7 +42,7 @@
       ] },
     { "name": "腹內感染", "hint": "",
       "orders": [
-        ["x", "CT abdomen（膽道先 echo）", "排除：膿瘍、穿孔、腸缺血；膽道病變超音波較好"],
+        ["x", "CT abdomen（膽道先 echo）", "排除：膿瘍、穿孔、腸缺血；膽道病變超音波較好｜影像診療科 CT ☎2585#316；夜間急診 CT ☎2568｜顯影劑：同意書 + 家屬，先看腎功能"],
         ["m", "Ceftriaxone 2 g IV QD + Metronidazole 500 mg IV q8h（或 Ertapenem 1 g QD）", "低風險社區型"],
         ["m", "Pip-tazo 4.5 g q6h / Meropenem 1 g q8h / Cefepime 2 g q8h + Metronidazole", "高風險｜腎調：CrCl 20–40 → 3.375 g q6h；<20 → 2.25 g q6h；HD 2.25 g q8h + 0.75 g 透析後", "高風險"],
         ["p", "外科 / 介入放射 source control", ""],
@@ -61,11 +61,15 @@
         ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h", "1 hr 內；或 cefepime / meropenem｜腎調：CrCl 20–40 → 3.375 g q6h；<20 → 2.25 g q6h；HD 2.25 g q8h + 0.75 g 透析後"],
         ["m", "Cefepime 2 g IV q8h", "適應：嗜中性球低下發燒首選之一（抗綠膿）｜注意：腎差神經毒性（抽搐、意識差）｜腎調：CrCl 30–60 2 g q12h；11–29 2 g q24h", "替代"],
         ["m", "Meropenem 1 g IV q8h", "ESBL 盛行或不穩定｜腎調：CrCl 26–50 → 1 g q12h；10–25 → 500 mg q12h；<10 → 500 mg QD", "ESBL"],
-        ["m", "加 Vancomycin 15–20 mg/kg q12h", "疑導管、皮膚軟組織、肺炎或不穩定；2 天無 G(+) 證據停｜腎調：AUC 400–600；CrCl 10–50 → q24h；HD 透析後補；併 Pip-tazo 腎毒性較高", "特定情況"],
+        ["m", "加 Vancomycin 15–20 mg/kg q12h 或 Teicoplanin 400 mg q12h ×3 → QD", "適應：導管 / 皮膚 / 植入物感染、MRSA 帶菌、血行不穩｜仍要合併抗 G(−) 藥", "特定情況"],
         ["m", "Ciprofloxacin 400 mg IV q8h + Clindamycin 600 mg q8h；或 Aztreonam 2 g q8h + Vancomycin", "β-lactam 立即型過敏｜腎調：CrCl <30 → 400 mg IV q24h（PO 500 mg QD）", "過敏"],
         ["x", "CXR", "有呼吸道症狀"],
         ["p", "不量肛溫、不肛診", ""],
-        ["x", "Chest/sinus CT + Galactomannan", "4–7 天仍燒，高風險", "持續燒"]
+        ["x", "Chest/sinus CT + Galactomannan", "4–7 天仍燒，高風險", "持續燒"],
+        ["m", "Ceftazidime 1–2 g IV q8h", "適應：血液科 monotherapy 選項之一（與 cefepime、pip-tazo 同級）｜腎調：CrCl 31–50 → q12h；16–30 → q24h", "替代"],
+        ["l", "Blood culture（檢體改黴菌血液培養）", "適應：已用抗生素仍再燒、找不到 focus（不論 WBC 高低）", "抗生素中再燒"],
+        ["m", "Filgrastim 300 mcg SC QD", "適應：高風險 FN（預期 >10 天、ANC <100、敗血症、肺炎、侵襲性黴菌、住院中發燒）｜不用於無發燒的嗜中性球低下", "高風險"],
+        ["p", "Port-A / PICC 疑感染：一套由導管、一套由周邊（檢驗單註明）", "有 MRSA 風險（CVC、Foley、植入物）先考慮移除感染源"]
       ] },
     { "name": "疑細菌性腦膜炎", "hint": "",
       "orders": [
@@ -75,7 +79,12 @@
         ["m", "Vancomycin 10–20 mg/kg q8–12h", "PCN 抗藥地區｜腎調：AUC 400–600；CrCl 10–50 → q24h；HD 透析後補；併 Pip-tazo 腎毒性較高", "抗藥"],
         ["m", "Dexamethasone 5 mg/amp ×2（10 mg）IV q6h × 4 天", "與第一劑抗生素同時"],
         ["m", "Acyclovir 250 mg/vial：10 mg/kg IV q8h", "疑腦炎｜腎調：CrCl 25–50 → q12h；10–25 → q24h；<10 → 半量 q24h", "腦炎"],
-        ["x", "LP（無禁忌時）", "排除：細菌/病毒腦膜炎｜禁忌：腦壓高徵象先 CT、INR >1.5、Plt <50K、局部感染"]
+        ["x", "LP（無禁忌時）", "排除：細菌/病毒腦膜炎｜禁忌：腦壓高徵象先 CT、INR >1.5、Plt <50K、局部感染｜先確認 CT/MRI 正常、凝血正常｜開始前與結束後量壓力（mmH2O），寫 special procedure note｜術後平躺 1 hr"],
+        ["l", "CSF：routine、Gram、India ink、AFB；sugar、protein、lactate", "急鏡檢 + 急生化｜檢體改 CSF｜前幾管易受 traumatic tap 影響，routine / 生化送後面幾管"],
+        ["l", "CSF culture（aerobic、TB、fungus）、TB PCR、cryptococcal Ag、VDRL", ""],
+        ["l", "CSF HSV DNA", "疑病毒性腦炎", "腦炎"],
+        ["l", "CSF cytology", "解剖病理 → Fluid cytology-CSF｜週一至五 16:00 前、週六 12:00 前送，不可冰存", "疑惡性"],
+        ["l", "Serum glucose（LP 前後 30 min 內）", "目的：算 CSF / serum glucose ratio"]
       ] },
     { "name": "輸血中發燒", "hint": "",
       "orders": [
@@ -89,8 +98,8 @@
         ["p", "停所有誘發藥，100% O2 高流量過度通氣", ""],
         ["m", "Dantrolene（20 mg/vial、120 mg/vial）2.5 mg/kg IV，q10min 重複（max 10 mg/kg）", "到 ETCO2 <45、體溫 <38.5"],
         ["m", "Cold NS 2–3 L IV", "降溫至 38.5°C 停"],
-        ["l", "ABG、K、CK、尿 myoglobin", "目的：高碳酸、高鉀、橫紋肌溶解（惡性高熱併發症）"],
-        ["x", "ECG monitor", "高血鉀"]
+        ["l", "ABG、K、CK、尿 myoglobin", "目的：高碳酸、高鉀、橫紋肌溶解（惡性高熱併發症）｜開立：呼吸治療（新）→ Blood gas analysis-artery"],
+        ["x", "ECG monitor", "高血鉀｜醫囑：EKG MONITOR（附註 wireless）"]
       ] },
     { "name": "退燒", "hint": "",
       "orders": [

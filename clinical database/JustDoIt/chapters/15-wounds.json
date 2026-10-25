@@ -15,7 +15,7 @@
       "orders": [
         ["p", "直接壓迫 / 加壓繃帶", "不要盲目夾止血鉗"],
         ["p", "止血帶", "壓迫無法控制的危及生命肢體出血", "危及生命"],
-        ["l", "CBC（重複）、PT/INR、aPTT、Type & screen、Lactate", "初始 Hb 正常不能排除出血"],
+        ["l", "CBC（重複）、PT/INR、aPTT、Type & screen、Lactate", "初始 Hb 正常不能排除出血｜血庫 ☎2538"],
         ["m", "pRBC：Hb <7（心血管/骨科 <8）", "適應：限制型輸血｜注意：活動性出血看速度不只看數字"],
         ["m", "Platelet：<50K 且出血", "適應：活動性出血或處置前 <50K｜注意：ITP、TTP、HIT 不常規輸"],
         ["m", "Cryoprecipitate：Fibrinogen <1.5 g/L", "大量出血", "大量出血"]
@@ -87,13 +87,20 @@
         ["l", "Tissue culture（刮除或切片，不用棉棒）", "目的：找真正致病菌（含厭氧、綠膿）"],
         ["l", "ABI / Toe pressure", "評估缺血"],
         ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h ± Vancomycin（中度：Amsulber 3 g q6h）", "取深部組織培養後開始｜腎調：CrCl 20–40 → 3.375 g q6h；<20 → 2.25 g q6h；HD 2.25 g q8h + 0.75 g 透析後", "嚴重"],
-        ["p", "緊急外科清創引流", "危及肢體", "嚴重"]
+        ["p", "緊急外科清創引流", "危及肢體", "嚴重"],
+        ["l", "身高、體重、HbA1c（3 個月內）、lipid、BUN/Cr、Na/K、CBC/DC、CRP、ALT、albumin、Blood culture ≥1 套、Wound culture", "28 天內避免重抽全套 CBC（改單項）；ESRD 避免反覆 BUN/Cr"],
+        ["x", "Foot X-ray AP + lateral", "適應：變形、紅腫嚴重、Wagner 3（排除骨髓炎、氣體）"],
+        ["x", "Doppler arterial pressure（ABI）", "適應：脈搏弱、傷口久不癒、缺血｜PEDIS perfusion：ABI 0.9–1.1 / <0.9 / ankle <50 mmHg（critical）"],
+        ["x", "CT angiography", "註明傷口位置｜血管重建 → 照會 CV / CVS（PTA / bypass）｜影像診療科 CT ☎2585#316；夜間急診 CT ☎2568｜顯影劑：同意書 + 家屬，先看腎功能", "缺血"],
+        ["x", "Cardioechogram", "適應：3 個月內無報告且有 cardiomegaly、ESRD、PAOD、術前評估（糖尿病足 = CAD 高風險）｜M22-060｜心超：M22-060｜☎2359/2337/2369"],
+        ["p", "Monofilament + vibration test；入院與術後各評一次 PEDIS", ""],
+        ["p", "壞死性筋膜炎 → 照會高壓氧（需高壓氧中心鑑定健保）", ""]
       ] },
     { "name": "病房跌倒", "hint": "",
       "orders": [
         ["l", "GCS、Vital signs、臥立位 BP", "排除：頭部外傷意識變化、姿勢性低血壓（跌倒原因）"],
-        ["x", "Head CT（1 hr 內）", "GCS ≤12、骨折徵象、吐 >1 次、局部缺損", "嚴重"],
-        ["x", "Head CT（8 hr 內）", "抗凝或 ≥65 歲 + LOC", "抗凝"],
+        ["x", "Head CT（1 hr 內）", "GCS ≤12、骨折徵象、吐 >1 次、局部缺損｜日間 ☎3789 / ☎2570；夜間急診 CT ☎2568", "嚴重"],
+        ["x", "Head CT（8 hr 內）", "抗凝或 ≥65 歲 + LOC｜日間 ☎3789 / ☎2570；夜間急診 CT ☎2568", "抗凝"],
         ["p", "Neuro check q30min → q1h → q2h", ""],
         ["x", "X-ray 受傷部位", "排除骨折"]
       ] },
@@ -110,7 +117,7 @@
     { "name": "針扎 / 血體液暴露", "hint": "工作人員針扎、黏膜噴濺",
       "orders": [
         ["p", "立即沖洗：肥皂水洗傷口、黏膜用 NS 沖", "不要擠壓、不要用漂白水"],
-        ["l", "來源：HBsAg、anti-HCV、HIV Ag/Ab；被扎者：HBsAg、anti-HBs、anti-HCV、HIV、ALT", "目的：決定是否給 HBIG、HIV PEP；被扎者基準值供日後追蹤"],
+        ["l", "來源：HBsAg、anti-HCV、HIV Ag/Ab；被扎者：HBsAg、anti-HBs、anti-HCV、HIV、ALT", "目的：決定是否給 HBIG、HIV PEP；被扎者基準值供日後追蹤｜HIV Ag/Ab L72-957 → Western blot L72-958；viral load L72-999（確診才開）"],
         ["m", "Hepatitis B immune globulin（HBIG）0.06 mL/kg IM（24 hr 內）", "未免疫或 anti-HBs <10 且來源 HBsAg(+) 或未知", "HBV 風險"],
         ["m", "Hepatitis B vaccine（Engerix-B 20 mcg）1 mL IM（另一側三角肌）", "未完成疫苗者，同時開始", "未免疫"],
         ["m", "Truvada 1 錠 QD + Dolutegravir 50 mg QD × 28 天", "HIV PEP：越快越好，72 hr 內", "HIV 風險"],

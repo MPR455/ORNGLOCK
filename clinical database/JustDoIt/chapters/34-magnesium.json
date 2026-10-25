@@ -5,7 +5,7 @@
       "orders": [
         ["m", "MgSO4 10% 20 mL（2 g，8 mmol）IV over 15 min", "台灣品項 100 mg/mL"],
         ["m", "MgSO4 10% 20 mL（2 g）IV over 10 min", "合併癲癇", "癲癇"],
-        ["x", "ECG", "PR/QT 延長、TdP"],
+        ["x", "ECG", "PR/QT 延長、TdP｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
         ["l", "K、Ca、Cr", "低 K 要同時補；腎差血鎂會快速上升"],
         ["p", "監測反射、呼吸、尿量", "防高血鎂"]
       ] },
@@ -32,7 +32,7 @@
         ["p", "停所有含鎂藥物與輸液", ""],
         ["m", "10% Calcium gluconate 10–30 mL IV（稀釋，≤200 mg/min）", "可重複；用 digoxin 小心"],
         ["m", "NS 150 mL/hr + Furosemide 1 mg/kg IV", "促進排出"],
-        ["x", "ECG monitor", "AV block、低血壓"],
+        ["x", "ECG monitor", "AV block、低血壓｜醫囑：EKG MONITOR（附註 wireless）"],
         ["p", "通氣支持", "呼吸抑制", "呼吸抑制"],
         ["p", "血液透析", "腎差或症狀嚴重", "腎差"]
       ] },

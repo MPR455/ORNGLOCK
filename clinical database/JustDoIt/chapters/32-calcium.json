@@ -5,7 +5,7 @@
       "orders": [
         ["l", "Albumin（校正 Ca）或 iCa", "排除：假性低鈣（低白蛋白）"],
         ["l", "Mg、P、PTH、Cr", "目的：低鎂、副甲狀腺、CKD；高鈣 PTH 低 → 腫瘤"],
-        ["x", "ECG", "排除：QT 延長（低鈣）、QT 縮短 / 心律不整（高鈣）"],
+        ["x", "ECG", "排除：QT 延長（低鈣）、QT 縮短 / 心律不整（高鈣）｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
         ["m", "10% Calcium gluconate 10 mL ×1–2 + D5W 100 mL IV over 10 min", "適應：有症狀低鈣（手麻、抽筋、QT 長）", "低鈣有症狀"],
         ["m", "NS 200–300 mL/hr", "適應：高鈣第一步（尿量 100–150 mL/hr）｜禁忌：心衰", "高鈣"]
       ] },
@@ -13,7 +13,7 @@
       "orders": [
         ["m", "10% Calcium gluconate 10 mL ×1–2 + D5W 100 mL IV over 10 min", "可重複到無症狀；不可直推、不可混含磷或 bicarbonate"],
         ["m", "10% Calcium gluconate 10 amp（100 mL）in NS/D5W 1 L，50–100 mL/hr", "接續輸注，依血鈣調"],
-        ["x", "ECG monitor", "digoxin 使用者全程監測"],
+        ["x", "ECG monitor", "digoxin 使用者全程監測｜醫囑：EKG MONITOR（附註 wireless）"],
         ["l", "Ca q1–4h（輸注中）", "目的：iCa 正常即停；過量 → 高血鈣"],
         ["l", "Albumin、iCa、Mg、P、PTH、Vitamin D、Cr", "目的：校正鈣；低鎂、副甲狀腺低下、維生素 D 缺乏、CKD"],
         ["m", "MgSO4 2 g IV", "低 Mg 會讓低鈣補不上", "低 Mg"],
@@ -34,10 +34,10 @@
     { "name": "高血鈣", "hint": "校正 Ca >3.0 mmol/L（>12 mg/dL）",
       "orders": [
         ["l", "Albumin-corrected Ca、P、PTH、BUN/Cr、Mg", "PTH 高：副甲狀腺；低：惡性腫瘤"],
-        ["x", "ECG", "QT 縮短"],
+        ["x", "ECG", "QT 縮短｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
         ["m", "NS 1–2 L bolus → 200–500 mL/hr（尿量 100–150 mL/hr）", "第一線；心腎差小心過量"],
         ["p", "停 thiazide、lithium、Vit D、Ca 補充", ""],
-        ["m", "Zoledronic acid 4 mg/vial IV over 15–30 min", "補液後仍高或惡性腫瘤；CrCl <60 減量延長輸注", "仍高/腫瘤"],
+        ["m", "Zoledronic acid 4 mg/vial IV over 15–30 min", "補液後仍高或惡性腫瘤；CrCl <60 減量延長輸注｜近期用過雙磷酸鹽或 denosumab 且 Ca 已在降，避免短期內重複｜腫瘤性高鈣分級：輕 10.5–12.5、中 12.5–14.5、重 >14.5（校正 Ca）", "仍高/腫瘤"],
         ["m", "Calcitonin 100 IU/amp：4 IU/kg SC/IM q12h × 48 hr", ">14 mg/dL 起始合併；4–6 hr 起效", "重度"],
         ["m", "Denosumab 120 mg SC", "bisphosphonate 無效或腎差", "難治/腎差"],
         ["m", "Prednisolone 5 mg ×8（40 mg）PO QD", "淋巴瘤、肉芽腫、Vit D 中毒", "calcitriol 相關"],

@@ -12,7 +12,7 @@
     { "name": "橫紋肌溶解", "hint": "試紙陽性但鏡檢少 RBC + 肌痛",
       "orders": [
         ["l", "CK、K、P、Ca、Cr、ABG、PT", "CK >1000"],
-        ["x", "ECG", "高血鉀"],
+        ["x", "ECG", "高血鉀｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
         ["m", "Lactated Ringer / NS 1.5 L/hr，尿量 200–300 mL/hr", "不要只用 NS"],
         ["p", "Foley 監測尿量", ""],
         ["m", "10% Calcium gluconate 10 mL ×3 IV over 10 min", "只在高血鉀合併心臟不穩時", "高 K + 心臟"],
@@ -24,13 +24,13 @@
         ["m", "NS / Lactated Ringer 500 mL over 15 min", "需要復甦時", "低血壓"],
         ["m", "pRBC：Hb <7（冠心病 <8）", "適應：限制型輸血；ACS 目標 ~10｜注意：老人、心衰慢輸防 TACO"],
         ["p", "3-way Foley + continuous bladder irrigation", "血塊阻塞，依院內流程與泌尿科討論", "血塊"],
-        ["x", "CT urography", "肉眼血尿 30–40% 是惡性"]
+        ["x", "CT urography", "肉眼血尿 30–40% 是惡性｜影像診療科 CT ☎2585#316；夜間急診 CT ☎2568｜顯影劑：同意書 + 家屬，先看腎功能"]
       ] },
     { "name": "血尿 + 腰痛發燒", "hint": "疑腎盂腎炎或感染性阻塞",
       "orders": [
         ["l", "UA、Urine culture、Blood culture", "抗生素前，但不延誤"],
         ["l", "CBC、CRP、Cr、尿酸、Ca、Na/K", "排除：感染、阻塞性 AKI、結石成因（尿酸、高鈣）"],
-        ["x", "Renal echo（膿腎 6 hr 內）", "第一線"],
+        ["x", "Renal echo（膿腎 6 hr 內）", "第一線｜腎超：M24-021｜☎2686"],
         ["x", "Non-contrast CT", "確認結石"],
         ["m", "Ceftriaxone 2 g IV QD", "第一線"],
         ["m", "Ciprofloxacin 200 mg/100 mL ×2（400 mg）IV q12h", "第一線替代；過去 12 個月用過 FQ 不用｜腎調：CrCl <30 → 400 mg IV q24h（PO 500 mg QD）", "替代"],
@@ -68,9 +68,18 @@
       ] },
     { "name": "疑腎絲球腎炎", "hint": "蛋白尿 + 變形 RBC + 腎功能下降",
       "orders": [
-        ["l", "ANCA（MPO/PR3）、anti-GBM、C3/C4、ANA", "排除：急進性腎絲球腎炎（血管炎、Goodpasture、狼瘡）"],
+        ["l", "ANCA（MPO/PR3）、anti-GBM、C3/C4、ANA", "排除：急進性腎絲球腎炎（血管炎、Goodpasture、狼瘡）｜ANA M25-231；anti-dsDNA M25-150；ANCA M25-223（或 M35-031）"],
         ["l", "Urine sediment（RBC cast）", "排除：腎絲球來源血尿（RBC cast、變形紅血球）"],
         ["p", "照會腎臟科（24 hr 內）", "不要因等切片延後免疫抑制"]
+      ] },
+    { "name": "腎病症候群住院", "hint": "水腫、大量蛋白尿、低白蛋白",
+      "orders": [
+        ["l", "C3、C4、ANA（M25-231）、IgG / IgM / IgA / IgE、ASLO、VDRL、HBsAg、anti-HCV", "排除：狼瘡腎炎、感染相關、B / C 肝相關腎病｜ANA M25-231；anti-dsDNA M25-150；ANCA M25-223（或 M35-031）"],
+        ["l", "24 hr urine total protein + CCr、SMA-12、AC sugar、TG、CBC/DC、ESR、Na、K、Cl、CO2", ""],
+        ["x", "CXR、KUB、Kidney echo（M24-021）", "先看舊病歷避免重複｜腎超：M24-021｜☎2686"],
+        ["l", "Cryoglobulin、IEP、PEP、ANCA、HIV", "有需要再開｜HIV Ag/Ab L72-957 → Western blot L72-958；viral load L72-999（確診才開）", "依臨床"],
+        ["p", "臥床休息、低鹽；不要高蛋白飲食、不要隨便給 albumin", ""],
+        ["p", "腎切片：PT、aPTT、Plt、bleeding time（見「開檢查 → 腎臟科」）", ""]
       ] }
   ]
 }

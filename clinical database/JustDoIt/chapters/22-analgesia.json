@@ -23,6 +23,15 @@
         ["p", "不用 IM", "吸收不穩又痛"],
         ["m", "Nalbuphine 10 mg IV/IM q6h PRN", "適應：中重度痛、呼吸抑制有天花板｜禁忌：長期 opioid 使用者（誘發戒斷）", "替代"]
       ] },
+    { "name": "癌症疼痛 / opioid 換算", "hint": "規則給藥 + 突破痛",
+      "orders": [
+        ["m", "Morphine 10 mg/tab PO q4h（規則）+ 同劑量 q1–2h PRN", "適應：中重度癌痛首選 morphine｜ATC 規則給、PRN 救急｜避免 methadone、codeine、meperidine"],
+        ["m", "Fentanyl patch 25 mcg/hr q72h", "換算：25 mcg/hr ≈ 口服 morphine 60 mg/day ≈ IV morphine 1 mg/hr；50 mcg/hr ≈ 120 mg/day｜禁忌：未用過 opioid、發燒（吸收增加）"],
+        ["p", "突破痛劑量 = 每日總量的 10–25%（PO q1–2h、IV q15–30 min）；每天 ≥4 次 → 調高規則劑量", "例：MST 90 mg q12h → IR morphine 30 mg q4h PRN"],
+        ["m", "Sennoside 12 mg ×2 HS + Magnesium oxide 250 mg ×2 TID", "適應：開 opioid 就要開軟便藥"],
+        ["m", "Haloperidol 0.5–1 mg PO/IV", "適應：opioid 引起譫妄", "譫妄"],
+        ["m", "Naloxone 0.4 mg 稀釋成 10 mL：1–2 mL IV 滴定", "適應：呼吸抑制（少見）｜一次給太多會劇痛、戒斷", "呼吸抑制"]
+      ] },
     { "name": "Methadone / Buprenorphine 使用者", "hint": "",
       "orders": [
         ["p", "繼續原藥", ""],

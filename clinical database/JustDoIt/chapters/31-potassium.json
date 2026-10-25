@@ -3,8 +3,8 @@
   "items": [
     { "name": "鉀異常：第一輪", "hint": "K 異常先做這些",
       "orders": [
-        ["x", "12-lead ECG", "排除：高鉀（高聳 T、PR↑、QRS 寬）、低鉀（U 波、QT 延長）"],
-        ["l", "重抽 K（不握拳、不溶血）", "排除：假性高血鉀", "意外偏高"],
+        ["x", "12-lead ECG", "排除：高鉀（高聳 T、PR↑、QRS 寬）、低鉀（U 波、QT 延長）｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
+        ["l", "重抽 K（不握拳、不溶血）", "排除：假性高血鉀｜Plt >700k 或 WBC >100k → 用綠頭（heparin）管，避免假性高血鉀", "意外偏高"],
         ["l", "Mg、BUN/Cr、glucose、VBG", "排除：低鎂（補不上鉀）、AKI、酸中毒、高血糖"],
         ["p", "檢視藥物：ACEI/ARB、MRA、NSAID、TMP-SMX、heparin、利尿劑、insulin、β-agonist", ""],
         ["m", "10% Calcium gluconate 10 mL ×3 IV over 10 min", "適應：K >6 + ECG 變化（穩膜）", "K >6 + ECG"],
@@ -13,8 +13,8 @@
       ] },
     { "name": "高血鉀 K ≥6.0", "hint": "",
       "orders": [
-        ["x", "12-lead ECG STAT", "ECG 正常不能排除"],
-        ["x", "Continuous ECG monitor", "K ≥6.5 或 ECG 變化"],
+        ["x", "12-lead ECG STAT", "ECG 正常不能排除｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
+        ["x", "Continuous ECG monitor", "K ≥6.5 或 ECG 變化｜醫囑：EKG MONITOR（附註 wireless）"],
         ["l", "Repeat K（大靜脈輕抽、不握拳）", "排除假性高血鉀；高度懷疑時不等確認"],
         ["m", "10% Calcium gluconate 10 mL ×3 IV over 10 min", "有 ECG 變化；不降 K，只保護心臟", "ECG 變化"],
         ["m", "5% Calcium chloride 20 mL（1 g）IV over 5 min", "Peri-arrest；中心靜脈", "瀕臨停止"],
@@ -42,7 +42,7 @@
       ] },
     { "name": "低血鉀", "hint": "K <3.5",
       "orders": [
-        ["x", "ECG", "排除：QT 延長、高/低鉀變化、心律不整、缺血"],
+        ["x", "ECG", "排除：QT 延長、高/低鉀變化、心律不整、缺血｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
         ["l", "Mg", "低 Mg 要一起補，否則 K 補不上"],
         ["m", "KCl SR 600 mg（8 mEq）或 750 mg（10 mEq）2–4 錠 PO（或 K gluconate 20 mEq 液）", "能吃就口服"],
         ["m", "KCl 20 mEq/NS 500 mL premix，≤10 mEq/hr", "K <2.5 或不能口服；絕不直推", "K <2.5"],

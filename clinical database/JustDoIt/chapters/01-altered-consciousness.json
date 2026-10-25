@@ -4,12 +4,12 @@
     { "name": "意識改變：第一輪", "hint": "原因不明的意識下降",
       "orders": [
         ["l", "床邊血糖 (POCT glucose)", "先排除低血糖，最快可逆的原因"],
-        ["l", "ABG", "原因不明的混亂/躁動；看 CO2 滯留與酸鹼"],
+        ["l", "ABG", "原因不明的混亂/躁動；看 CO2 滯留與酸鹼｜開立：呼吸治療（新）→ Blood gas analysis-artery"],
         ["l", "CBC/DC、Na/K/Ca/Mg/P、BUN/Cr、肝功能、PT/aPTT", "代謝、感染、出血傾向一次抽"],
         ["l", "酒精濃度、血液與尿液毒物篩檢", "篩檢陰性也不能排除中毒"],
         ["l", "Blood culture ×2", "有發燒或疑敗血症時，抗生素前抽"],
-        ["x", "ECG", "疑鎮靜安眠藥或三環抗憂鬱劑過量"],
-        ["x", "Brain CT without contrast (STAT)", "昏迷先當結構性，穩定 ABC 與頸椎後做"],
+        ["x", "ECG", "疑鎮靜安眠藥或三環抗憂鬱劑過量｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
+        ["x", "Brain CT without contrast (STAT)", "昏迷先當結構性，穩定 ABC 與頸椎後做｜日間 ☎3789 / ☎2570；夜間急診 CT ☎2568"],
         ["l", "Co-oximetry (COHb)", "疑一氧化碳中毒", "疑 CO"],
         ["p", "O2：目標 SpO2 94–98%", "重症起始非再吸入面罩 15 L/min，取得可靠血氧後下調"],
         ["p", "O2：目標 SpO2 88–92%", "COPD 或高碳酸血症風險，血氣前", "COPD"],
@@ -56,14 +56,14 @@
         ["m", "Ampicillin 500 mg/vial ×4（2 g）IV q4h", "加上 Listeria 覆蓋：老人、免疫低下｜腎調：CrCl 10–50 → q6–12h；<10 → q12–24h", "Listeria 風險"],
         ["m", "Dexamethasone 5 mg/amp ×2（10 mg）IV q6h × 4 天（抗生素前或同時）", "與第一劑抗生素同時；最晚第一劑後 4 hr 內"],
         ["m", "Acyclovir 250 mg/vial：10 mg/kg IV q8h", "疑 HSV 腦炎時，結果出來前就開始｜腎調：CrCl 25–50 → q12h；10–25 → q24h；<10 → 半量 q24h", "疑腦炎"],
-        ["x", "Brain CT before LP", "局部神經缺損、新發癲癇、GCS 低、瞳孔異常、免疫低下", "先影像"],
+        ["x", "Brain CT before LP", "局部神經缺損、新發癲癇、GCS 低、瞳孔異常、免疫低下｜日間 ☎3789 / ☎2570；夜間急診 CT ☎2568", "先影像"],
         ["x", "Lumbar puncture：CSF cell/glucose/protein/Gram stain/culture", "安全且不延誤抗生素時；紫斑廣泛或穿刺處感染不做"],
         ["l", "Serum cryptococcal antigen", "HIV 病人原因不明的中樞神經疾病", "HIV"],
         ["l", "UA、CXR", "同時找其他感染源"]
       ] },
     { "name": "非痙攣性癲癇重積 (NCSE)", "hint": "原因不明持續昏迷",
       "orders": [
-        ["x", "Continuous EEG（1 hr 內，至少 48 hr）", "可能只表現為昏迷或細微抽動"],
+        ["x", "Continuous EEG（1 hr 內，至少 48 hr）", "可能只表現為昏迷或細微抽動｜EEG：M29-021（awake）/ M29-029（awake + sleep）｜急做 ☎2240/3943"],
         ["m", "Lorazepam 2 mg/amp：0.1 mg/kg IV（max 4 mg），5–10 min 可重複", "確定癲癇重積後首選；推速 ≤2 mg/min"],
         ["m", "Levetiracetam 60 mg/kg IV（max 4,500 mg）over 10 min", "院內無 fosphenytoin；LEV 不需心臟監測｜腎調：CrCl 30–50 → 250–750 mg q12h；<30 → 250–500 mg q12h；HD 透析後補"],
         ["p", "氣道不穩：10 min 內插管", "目標發作後 60 min 內控制"],
@@ -76,7 +76,7 @@
         ["m", "Mannitol 0.5–1 g/kg IV over 5–15 min，q4–6h 可重複", "周邊 IV 可給；依滲透壓間隙決定是否重複"],
         ["m", "3% NaCl 250 mL IV over 15–30 min", "每 4–6 hr 驗 Na，維持 <160"],
         ["l", "Serum Na、Osmolality q4–6h", "滲透壓治療追蹤；避免 Na <135"],
-        ["x", "Brain CT without contrast", "尚未影像者，能安全擺位就做"],
+        ["x", "Brain CT without contrast", "尚未影像者，能安全擺位就做｜日間 ☎3789 / ☎2570；夜間急診 CT ☎2568"],
         ["p", "急性阻塞性水腦：緊急 EVD", "影像確認後"],
         ["m", "Dexamethasone 10 mg IV → 4 mg IV q6h", "只用於腦瘤、膿瘍、細菌/結核腦膜炎的水腫；TBI 與腦出血不用", "腫瘤水腫"],
         ["m", "Glycerol 250 mL IV q6–8h", "mannitol 替代；腎差較安全", "替代"]
@@ -84,20 +84,41 @@
     { "name": "疑急性中風：溶栓", "hint": "4.5 hr 內、明顯失能",
       "orders": [
         ["l", "床邊血糖", "<50 或 >400 先矯正，15 min 內重評神經"],
-        ["x", "Brain CT without contrast（或 MRI）STAT", "溶栓前排除出血"],
-        ["x", "CTA head & neck", "疑大血管阻塞且 24 hr 內；不用等 Cr"],
+        ["x", "Brain CT without contrast（或 MRI）STAT", "溶栓前排除出血｜日間 ☎3789 / ☎2570；夜間急診 CT ☎2568"],
+        ["x", "CTA head & neck", "疑大血管阻塞且 24 hr 內；不用等 Cr｜影像診療科 CT ☎2585#316；夜間急診 CT ☎2568｜顯影劑：同意書 + 家屬，先看腎功能"],
         ["l", "CBC、PT/INR、aPTT、Cr、肝功能", "沒理由懷疑凝血異常時，不必等結果才溶栓"],
-        ["x", "ECG、CXR", "要做，但不能延誤溶栓"],
+        ["x", "ECG、CXR", "要做，但不能延誤溶栓｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
         ["m", "Labetalol 10–20 mg IV 或 Nicardipine 5 mg/hr → <185/110 再溶栓", "溶栓前血壓門檻"],
         ["m", "Alteplase（Actilyse 50 mg/vial）0.9 mg/kg（max 90 mg）：10% bolus，其餘 60 min", "健保給付為 rt-PA，限 4.5 hr 內"],
         ["p", "溶栓後 BP <180/105 × 24 hr", "神經與血壓 q15min×2h → q30min×6h → q1h 到 24h"],
         ["p", "24 hr 內延後 NG、Foley、A-line", "減少出血；24 hr 追蹤影像後才開抗栓"]
       ] },
+    { "name": "急性中風住院醫囑", "hint": "梗塞或出血，入院第一天",
+      "orders": [
+        ["x", "EKG、CXR、Brain CT", "每個急性中風入院都要｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
+        ["x", "Carotid duplex（M29-079）/ TCCS（M29-088）", "適應：梗塞性中風｜半年內做過先不開｜☎2359/3917/2251"],
+        ["l", "DM lipid profile、sugar AC、HbA1c、CBC/DC、PT、aPTT、BUN/Cr、Na、K", "危險因子篩檢；急診驗過不重複；3 個月內 HbA1c 正常可不驗"],
+        ["m", "NS keep open / 40–80 mL/hr", "適應：中風只給 NS（低張液加重腦水腫）｜注意：避免 fluid overload"],
+        ["m", "Aspirin 100 mg ×3 嚼碎 → 100 mg QD", "適應：梗塞性中風｜不隨便給抗凝（除 CVT 或 VS 交代）"],
+        ["p", "嚴重吞嚥困難 → NG；家屬：一週內可能惡化、坐直進食、不用吸管", ""],
+        ["p", "目標：血糖 <150、體溫 <38、GCS + vitals Q8H（病危 ≥Q4H）", ""],
+        ["p", "中風急性期避免：安眠鎮靜藥（BZD、quetiapine）、抗膽鹼（Vena、TCA）、肌肉鬆弛劑（baclofen、tizanidine 等）", "會影響意識與肌力評估"],
+        ["p", "PPI + clopidogrel：避免 esomeprazole，改 pantoprazole", "esomeprazole 降低 clopidogrel 效果"],
+        ["p", "PAC（mRS 3–4、體力佳）→ 個管師 GSM 66340、處置碼 5113 / 5123", ""]
+      ] },
+    { "name": "中風惡化（stroke in evolution）", "hint": "意識變差、肌力下降、說話停止",
+      "orders": [
+        ["l", "F/S、ABG、Na、K、Ca、glucose、CBC", "排除：呼吸衰竭、低血糖、電解質、貧血（先找可逆的內科原因）"],
+        ["l", "Blood culture、CRP", "排除：感染", "發燒"],
+        ["x", "Brain CT without contrast（急做）", "日間 ☎3789 / ☎2570；夜間急診 CT ☎2568｜排除出血轉化、腦水腫"],
+        ["x", "CTA + Perfusion of brain", "適應：疑大血管阻塞、入院尚未做血管影像，考慮動脈取栓｜影像診療科 CT ☎2585#316；夜間急診 CT ☎2568｜顯影劑：同意書 + 家屬，先看腎功能", "疑大血管"],
+        ["p", "比對 onset time 與 baseline 神經學檢查", ""]
+      ] },
     { "name": "溶栓後顱內出血", "hint": "頭痛、BP 飆、嘔吐、神經惡化",
       "orders": [
         ["p", "停止 alteplase 輸注", "第一步"],
-        ["l", "CBC、PT/INR、aPTT、Fibrinogen、備血", "評估凝血與輸血"],
-        ["x", "Brain CT without contrast STAT", "確認出血"],
+        ["l", "CBC、PT/INR、aPTT、Fibrinogen、備血", "評估凝血與輸血｜血庫 ☎2538"],
+        ["x", "Brain CT without contrast STAT", "確認出血｜日間 ☎3789 / ☎2570；夜間急診 CT ☎2568"],
         ["m", "Tranexamic acid 500 mg/5 mL ×2（1 g）IV over 10 min", "確認症狀性顱內出血後"],
         ["m", "Cryoprecipitate 10–12 U over 10–30 min", "Fibrinogen 仍 <200（或 150）可再給"]
       ] },
@@ -128,17 +149,19 @@
       ] },
     { "name": "肝性腦病變", "hint": "肝硬化 + 嗜睡、撲翼震顫",
       "orders": [
-        ["m", "Lactulose 30 mL PO/NG q1–2h 直到解軟便，再調至每日 2–3 次", "第一線；過量會脫水、高血鈉、吸入"],
+        ["m", "Lactulose 25 mL PO/NG q12h → 調到每日 2–3 次軟便", "適應：overt HE｜軟便 / 水便是治療目標，不要因此停藥或加止瀉｜過量：吸入、脫水、高血鈉、肛周破皮"],
         ["m", "Lactulose 300 mL + 水 700 mL 保留灌腸 q4–6h", "無法口服或合併消化道出血要清腸", "不能口服"],
         ["l", "CBC、電解質、腎功能、血液與尿液培養", "找誘發因素：感染、出血、電解質、利尿劑、便秘"],
-        ["l", "NH3", "單獨升高沒有分期價值，但正常要重新想診斷"],
-        ["x", "Brain CT", "首次發作或懷疑他因；此族群顱內出血風險高"],
-        ["m", "Rifaximin 550 mg PO BID", "反覆發作，加在 lactulose 上", "反覆發作"]
+        ["l", "NH3", "單獨升高沒有分期價值，但正常要重新想診斷｜單獨 NH3 不能診斷 HE；若 NH3 正常要重新找原因｜可用來追療效"],
+        ["x", "Brain CT", "首次發作或懷疑他因；此族群顱內出血風險高｜肝病 ICH 風險 ≥5 倍，症狀可與 HE 相同｜日間 ☎3789 / ☎2570；夜間急診 CT ☎2568"],
+        ["m", "Rifaximin 550 mg PO BID", "反覆發作，加在 lactulose 上", "反覆發作"],
+        ["m", "Neomycin 250 mg ×2（500 mg）PO q6h（≤7 天）", "適應：rifaximin 需專案進口時病房替代｜禁忌：腎差、聽力（耳腎毒性）", "無 rifaximin"],
+        ["p", "找誘因：感染、消化道出血、便秘、電解質、脫水、鎮靜藥", ""]
       ] },
     { "name": "尿毒性腦病變", "hint": "腎衰 + 嗜睡、肌陣攣",
       "orders": [
         ["l", "BUN/Cr、Na/K、ABG", "看是否有需要緊急透析的指標"],
-        ["x", "Renal echo", "找阻塞等可逆原因"],
+        ["x", "Renal echo", "找阻塞等可逆原因｜腎超：M24-021｜☎2686"],
         ["p", "緊急透析評估", "嚴重高鉀、酸中毒、肺水腫或尿毒症併發症"]
       ] },
     { "name": "嚴重低血鈉（有症狀）", "hint": "嘔吐、抽搐、昏迷",
@@ -150,7 +173,7 @@
     { "name": "嚴重低血鈣", "hint": "Ca <1.9 mmol/L 或有症狀",
       "orders": [
         ["m", "10% Calcium gluconate 10 mL ×1–2 amp + D5W 100 mL IV over 10 min", "醫療急症"],
-        ["x", "ECG monitor", "長 QT；用 digoxin 要持續監測"]
+        ["x", "ECG monitor", "長 QT；用 digoxin 要持續監測｜醫囑：EKG MONITOR（附註 wireless）"]
       ] }
   ]
 }

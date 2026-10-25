@@ -5,7 +5,7 @@
       "orders": [
         ["p", "問抗凝劑、抗血小板藥、最後一劑時間", "最有用的資訊"],
         ["l", "PT/INR、aPTT、Fibrinogen、CBC、D-dimer、Cr", "排除：DIC、肝衰、維生素 K 缺乏、抗凝劑影響"],
-        ["l", "Smear", "疑 TTP 或 DIC"],
+        ["l", "Smear", "疑 TTP 或 DIC｜Blood smear interpretation：M26-004（紫頭）｜☎2555"],
         ["p", "Heparin 封管抽血會假性異常", "重抽周邊"],
         ["m", "Vitamin K1 10 mg/amp：2–5 mg PO/IV", "適應：warfarin INR 高、維生素 K 缺乏", "INR 高"]
       ] },
@@ -45,14 +45,14 @@
     { "name": "溶栓後出血", "hint": "",
       "orders": [
         ["p", "停止溶栓劑", ""],
-        ["l", "CBC、PT、aPTT、Fibrinogen、備血", "目的：fibrinogen <150 → cryo；準備輸血"],
+        ["l", "CBC、PT、aPTT、Fibrinogen、備血", "目的：fibrinogen <150 → cryo；準備輸血｜血庫 ☎2538"],
         ["m", "Cryoprecipitate 10 U over 10–30 min", "Fibrinogen ≥150–200"],
         ["m", "Tranexamic acid 500 mg ×2（1 g）IV over 10 min", "適應：溶栓後出血、創傷 3 hr 內｜禁忌：血栓史、DIC 高凝期、腎衰減量"],
-        ["x", "Brain CT", "排除：顱內出血（溶栓後神經惡化先停藥再 CT）"]
+        ["x", "Brain CT", "排除：顱內出血（溶栓後神經惡化先停藥再 CT）｜日間 ☎3789 / ☎2570；夜間急診 CT ☎2568"]
       ] },
     { "name": "疑 TTP", "hint": "血小板低 + MAHA",
       "orders": [
-        ["l", "Smear、LDH、Haptoglobin、Cr、DAT、Coag、Troponin", "排除：TTP（schistocytes）vs DIC vs 自體免疫溶血（DAT+）"],
+        ["l", "Smear、LDH、Haptoglobin、Cr、DAT、Coag、Troponin", "排除：TTP（schistocytes）vs DIC vs 自體免疫溶血（DAT+）｜Blood smear interpretation：M26-004（紫頭）｜☎2555"],
         ["l", "ADAMTS-13（TPE 前抽）", "目的：<10% 確診 TTP；血漿置換前抽"],
         ["p", "緊急血漿置換（TPE）", ""],
         ["m", "Methylprednisolone 500 mg/vial：1 g IV QD × 3 天 或 Prednisolone 1 mg/kg/day", "適應：iTTP 合併血漿置換｜注意：高血糖、感染"],
@@ -92,6 +92,15 @@
         ["m", "Platelet：>50K", "大手術", "大手術"],
         ["m", "Platelet：>100K", "中樞神經手術", "神經手術"],
         ["m", "Platelet：>20–40K", "腰椎穿刺", "LP"]
+      ] },
+    { "name": "血小板低病人照護", "hint": "血液科 / 化療後",
+      "orders": [
+        ["p", "禁 IM 注射、禁 aspirin / NSAID（含 indomethacin）、禁栓劑", ""],
+        ["p", "Plt <20k：向家屬說明出血與顱內出血風險，臥床、避免碰撞", ""],
+        ["m", "Platelet（LP）12 U", "適應：化療中 Plt <20k；或 <50k 合併 GI / 泌尿 / 月經 / 咳血 / 視網膜 / 中樞 / 大量鼻牙齦出血｜一般 Plt <10–20k"],
+        ["m", "Tranexamic acid 250 mg 3 錠 PO QID", "適應：牙齦持續出血｜禁忌：血尿（血塊阻塞）", "牙齦出血"],
+        ["m", "Medroxyprogesterone 10 mg PO QD–BID", "適應：未停經女性預防大量月經出血", "月經"],
+        ["p", "Aplastic、nutritional anemia、AIHA：除非 CNS 症狀或心衰，盡量不輸血", ""]
       ] }
   ]
 }

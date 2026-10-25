@@ -109,7 +109,7 @@
       ] },
     { "name": "眼眶周圍 / 眼眶蜂窩性組織炎", "hint": "眼皮紅腫；眼球突出、眼動痛、視力降 = 眼眶",
       "orders": [
-        ["x", "CT orbit + sinus with contrast", "眼球突出、眼動受限、視力降、複視"],
+        ["x", "CT orbit + sinus with contrast", "眼球突出、眼動受限、視力降、複視｜影像診療科 CT ☎2585#316；夜間急診 CT ☎2568｜顯影劑：同意書 + 家屬，先看腎功能"],
         ["m", "Curam 1 g（875/125）PO BID × 7–10 天", "眶隔前、輕症", "眶隔前"],
         ["m", "Ceftriaxone 2 g IV QD + Vancomycin 15–20 mg/kg q12h", "眼眶蜂窩性組織炎", "眼眶"],
         ["m", "加 Metronidazole 500 mg IV q8h", "牙源、慢性鼻竇炎、顱內延伸", "厭氧"],
@@ -130,7 +130,7 @@
       ] },
     { "name": "前房出血 (Hyphema)", "hint": "外傷後前房血液",
       "orders": [
-        ["x", "眼壓、裂隙燈；疑開放性外傷做 CT orbit", "排除：眼壓升高、眼球破裂、眶內異物｜禁忌：疑眼球破裂不要壓眼"],
+        ["x", "眼壓、裂隙燈；疑開放性外傷做 CT orbit", "排除：眼壓升高、眼球破裂、眶內異物｜禁忌：疑眼球破裂不要壓眼｜影像診療科 CT ☎2585#316；夜間急診 CT ☎2568｜顯影劑：同意書 + 家屬，先看腎功能"],
         ["m", "Prednisolone acetate 1% QID", "適應：前房出血減少發炎與再出血｜注意：追眼壓"],
         ["m", "Atropine 1% BID", "適應：睫狀肌麻痺止痛、防虹膜後粘連"],
         ["m", "Timolol 0.5% BID ± Brimonidine 0.15% TID", "眼壓高", "眼壓高"],
@@ -141,7 +141,7 @@
       "orders": [
         ["p", "視為急性中風：送卒中中心、4.5 hr 內評估", ""],
         ["l", "ESR、CRP", "≥50 歲排除顳動脈炎"],
-        ["x", "CTA head & neck、ECG、Echo", "找栓塞源"],
+        ["x", "CTA head & neck、ECG、Echo", "找栓塞源｜影像診療科 CT ☎2585#316；夜間急診 CT ☎2568｜顯影劑：同意書 + 家屬，先看腎功能"],
         ["m", "Timolol 0.5% 1 gtt + Acetazolamide 250 mg ×2 PO", "降眼壓讓栓子往下游"],
         ["p", "眼球按摩（閉眼壓 10 秒放 5 秒 ×5 min）", ""],
         ["m", "Methylprednisolone 500 mg IV", "疑顳動脈炎", "GCA"],

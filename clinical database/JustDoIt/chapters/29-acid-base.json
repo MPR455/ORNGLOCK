@@ -3,7 +3,7 @@
   "items": [
     { "name": "血氣判讀", "hint": "",
       "orders": [
-        ["l", "ABG（休克或 SBP <90 抽動脈）", "記錄給氧方式"],
+        ["l", "ABG（休克或 SBP <90 抽動脈）", "記錄給氧方式｜開立：呼吸治療（新）→ Blood gas analysis-artery"],
         ["l", "Na、K、Cl、HCO3 → AG = Na + K − (Cl + HCO3)", "確認院內公式"],
         ["l", "Lactate、β-hydroxybutyrate、glucose、BUN/Cr", "高 AG 找原因"],
         ["l", "Serum osmolality（算 osmolal gap）", "疑毒性醇類", "疑醇類"],

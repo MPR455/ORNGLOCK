@@ -5,13 +5,13 @@
       "orders": [
         ["l", "TSH、Free T4、Cortisol（± ACTH）", "排除：甲狀腺風暴、黏液水腫、腎上腺不足"],
         ["l", "Na、K、glucose、Ca", "排除：低鈉高鉀（腎上腺）、低血糖、高鈣危象"],
-        ["x", "ECG", "排除：AF（甲亢）、心搏過緩（甲低）"],
+        ["x", "ECG", "排除：AF（甲亢）、心搏過緩（甲低）｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
         ["m", "Hydrocortisone 100 mg IV", "適應：疑腎上腺危象，先抽 cortisol 再給，不等結果", "疑腎上腺"]
       ] },
     { "name": "甲狀腺風暴", "hint": "高燒、心搏過速、躁動、腹瀉 + 甲亢",
       "orders": [
         ["l", "TSH、Free T4、T3、LFT、BS、Cortisol", "目的：確認甲亢；排除合併腎上腺不足、肝損傷"],
-        ["x", "ECG", "AF 常見"],
+        ["x", "ECG", "AF 常見｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
         ["m", "Propylthiouracil 50 mg ×4（200 mg）PO/NG q4h（負荷 500–1000 mg）", "首選；也抑制 T4→T3"],
         ["m", "Methimazole 5 mg ×4（20 mg）PO q4–6h", "替代（PTU 肝毒性、孕婦第二三期）", "替代"],
         ["m", "Lugol's solution 8–10 滴 PO q6–8h", "給 thionamide 至少 1 hr 後"],

@@ -7,7 +7,7 @@
         ["l", "BUN/Cr、Na/K、CBC/DC", "排除：高鉀（要急透析？）、BUN/Cr >20 腎前性、感染"],
         ["l", "UA（dipstick：血、蛋白、WBC、nitrite、糖）", "血尿 + 蛋白尿要想腎絲球腎炎"],
         ["l", "Urine Na / Cr", "輔助判斷灌流不足"],
-        ["x", "Renal echo（24 hr 內）", "病因不明或有阻塞風險"],
+        ["x", "Renal echo（24 hr 內）", "病因不明或有阻塞風險｜腎超：M24-021｜☎2686"],
         ["p", "I/O、每日體重", ""],
         ["p", "停 NSAID、aminoglycoside、ACEI/ARB、利尿劑", "會加重腎損傷"],
         ["p", "藥物依腎功能調整（請藥師）", ""],
@@ -23,7 +23,7 @@
     { "name": "泌尿道阻塞", "hint": "",
       "orders": [
         ["p", "Foley catheter", "下泌尿道尿滯留"],
-        ["x", "Renal echo（6 hr 內）", "疑膿腎", "疑膿腎"],
+        ["x", "Renal echo（6 hr 內）", "疑膿腎｜腎超：M24-021｜☎2686", "疑膿腎"],
         ["p", "緊急泌尿科：PCN 或 DJ stent（12 hr 內）", "阻塞 + 感染或無尿"],
         ["m", "Ceftriaxone 2 g IV QD（敗血症：Pip-tazo 4.5 g q6h）", "阻塞合併感染", "感染"],
         ["l", "Urine culture（減壓後）", "目的：阻塞合併感染找菌種"]
@@ -54,10 +54,11 @@
     { "name": "腫瘤溶解症候群", "hint": "化療前後",
       "orders": [
         ["m", "NS 3 L/m²/day，尿量 100 mL/m²/hr", "適應：腫瘤溶解預防與治療｜禁忌：心衰、無尿（需透析）"],
-        ["m", "Rasburicase 1.5 mg/vial：0.2 mg/kg/day（≤7 天）", "G6PD 缺乏禁用"],
+        ["m", "Rasburicase 1.5 mg/vial：0.2 mg/kg/day（≤7 天）", "G6PD 缺乏禁用｜使用前需主治或值班總醫師同意（UA >10）"],
         ["l", "Uric acid、K、P、Ca、Cr q6–12h", "排除：TLS（尿酸、K、P 升高、Ca 下降、Cr 上升）"],
         ["p", "不補 K、P", ""],
-        ["m", "Allopurinol 100 mg ×3 PO QD", "中風險預防；已發生用 rasburicase｜腎調：CrCl <30 → 50–100 mg 起", "預防"]
+        ["m", "Allopurinol 100 mg 1–2 錠 PO TID（化療前 ≥1 週）", "適應：高風險 TLS 預防｜高磷時避免鹼化尿液｜腎調：CrCl <30 → 50–100 mg 起", "預防"],
+        ["p", "HD 時機：K >6、UA >10、Cr >10、P >10 或快速上升、容積過多、症狀性高血鈣", "高風險（high-grade lymphoma、ALL-L3、WBC >100k）每天急件驗 K、Ca、P、Cr、UA ×3 天"]
       ] },
     { "name": "肝硬化 + AKI", "hint": "",
       "orders": [
@@ -76,7 +77,18 @@
       "orders": [
         ["p", "照會腎臟科：緊急 HD", "高血鉀、酸中毒、肺水腫、尿毒症（心包炎、腦病變）"],
         ["m", "Sodium bicarbonate 7% 20 mL（16.7 mEq/amp）：1–2 mEq/kg IV", "pH ≤7.2 + AKI 2–3 期", "嚴重酸中毒"],
-        ["l", "ABG、K、ECG", "目的：AEIOU 透析適應：pH <7.1、K >6.5 + ECG 變化"]
+        ["l", "ABG、K、ECG", "目的：AEIOU 透析適應：pH <7.1、K >6.5 + ECG 變化｜開立：呼吸治療（新）→ Blood gas analysis-artery"],
+        ["p", "緊急 HD 適應症（任一即可開始，≥2 項必須緊急）", "肺水腫 / 心衰（不必等 CXR）｜K >6.5 + ECG 變化｜pH <7.2 或 HCO3 <12 有症狀｜嚴重尿毒症狀（噁吐、意識、抽搐）｜尿毒心包膜炎 / 腦病變｜尿量 <200 mL/12 hr 或無尿｜BUN >85、Cr >6.5｜Na >160 或 <115、高血鈣｜高體溫｜可透析毒物"],
+        ["p", "聯絡病房洗腎室", "☎2680/2681（避開 08–09、13:30–14:30、18:45–19:45 on 針時段）｜HD 醫囑與雙腔導管見「開檢查 → 腎臟科」"]
+      ] },
+    { "name": "新診斷尿毒症（fresh uremia）", "hint": "準備進入透析",
+      "orders": [
+        ["p", "I/O + 體重 QD；限鹽 <3 g、限鉀 <40 mEq、限蛋白 <40 g（已透析只限鹽）", ""],
+        ["m", "IV lock（NPO 需維持液 ~40 mL/hr）", "適應：穩定者不需點滴｜大量點滴極易肺水腫"],
+        ["l", "CBC、RPR/VDRL、anti-HIV、HBsAg、anti-HCV、CCr + 24 hr urine protein、Ca、P、ferritin、Fe/TIBC、ABG", "目的：透析前必備（HBsAg、anti-HCV、RPR 出院排洗腎也要）｜HIV Ag/Ab L72-957 → Western blot L72-958；viral load L72-999（確診才開）"],
+        ["x", "Kidney echo", "代碼：M24-021｜☎2686｜6 個月內做過先問 VS"],
+        ["p", "每日評估：尿毒症狀、心衰肺水、酸中毒、AVF thrill / bruit、導管傷口", ""],
+        ["p", "HD → 照會血管外科做 access；PD → 照會一般外科放 Tenckhoff", "PD 衛教 ☎8831/8832/8833/8834"]
       ] },
     { "name": "孕婦少尿", "hint": "<30 mL/hr × 4 hr",
       "orders": [

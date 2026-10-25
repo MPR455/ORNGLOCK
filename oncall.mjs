@@ -5,6 +5,18 @@ const TYPE_INFO = { m: ['💊', '藥物'], l: ['🧪', '檢驗'], x: ['📷', '�
 // "?" popup heading per order type; a reason may hold several "｜"-separated lines.
 const WHY_HEADING = { m: '適應 / 禁忌', l: '排除 / 目的', x: '排除 / 目的', p: '為什麼？' };
 const esc = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+// Hospital extensions in reasons: ☎2534 → tel:24032534; ☎2368/2335 are alternatives;
+// ☎2585#323/324 is one number with several extensions → tel:24032585,323 and tel:24032585,324.
+const EXT_PREFIX = '2403';
+const telLink = (dial, label) => `<a class="oc-tel" href="tel:${EXT_PREFIX}${dial}" aria-label="撥打分機 ${label}">☎ ${label}</a>`;
+function withPhones(text) {
+  return esc(text).replace(/☎(\d{4}(?:\/\d{4})*)(?:#(\d{3}(?:\/\d{3})*))?/g, (match, numbers, extensions) => {
+    const list = numbers.split('/');
+    if (!extensions) return list.map(number => telLink(number, number)).join(' ');
+    return list.flatMap(number => extensions.split('/').map(ext => telLink(`${number},${ext}`, `${number}#${ext}`))).join(' ');
+  });
+}
 const normalize = value => String(value).normalize('NFKC').toLowerCase().replace(/\s+/g, '');
 
 const view = { chapter: null, item: null, query: '' };
@@ -152,7 +164,7 @@ function showWhy(button) {
   if (pop.dataset.for === button.dataset.index && !pop.hidden) return hideWhy();
   hideWhy();
   const [, item] = currentItem(), order = item.orders[Number(button.dataset.index)];
-  pop.innerHTML = `<strong>${WHY_HEADING[order[0]]}</strong>${order[2].split('｜').map(line => `<span>${esc(line)}</span>`).join('')}`;
+  pop.innerHTML = `<strong>${WHY_HEADING[order[0]]}</strong>${order[2].split('｜').map(line => `<span>${withPhones(line)}</span>`).join('')}`;
   pop.dataset.for = button.dataset.index; pop.hidden = false;
   button.setAttribute('aria-expanded', 'true');
   const box = button.getBoundingClientRect(), width = Math.min(360, innerWidth - 24);

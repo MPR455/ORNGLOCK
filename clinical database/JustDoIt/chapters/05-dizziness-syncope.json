@@ -3,15 +3,15 @@
   "items": [
     { "name": "昏厥：基本評估", "hint": "暫時意識喪失後",
       "orders": [
-        ["x", "12-lead ECG", "每個都做；找心律不整與缺血"],
+        ["x", "12-lead ECG", "每個都做；找心律不整與缺血｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
         ["l", "臥姿 + 站立 3 min 血壓心跳", "SBP 降 ≥20、DBP 降 ≥10 或 <90 且症狀重現 = 姿勢性低血壓"],
         ["l", "床邊血糖", "糖尿病病人排除低血糖"],
         ["l", "Hb / Hct", "懷疑出血時", "疑出血"],
         ["l", "Troponin", "懷疑缺血時", "疑缺血"],
         ["l", "D-dimer", "懷疑肺栓塞且機率低時", "疑 PE"],
-        ["x", "Telemetry", "疑心因性；住院最多 24 hr"],
+        ["x", "Telemetry", "疑心因性；住院最多 24 hr｜醫囑：EKG MONITOR（附註 wireless）"],
         ["x", "Pacemaker / ICD interrogation", "有心臟裝置", "有裝置"],
-        ["x", "Echocardiography", "懷疑結構性心臟病", "疑結構性"],
+        ["x", "Echocardiography", "懷疑結構性心臟病｜心超：M22-060｜☎2359/2337/2369", "疑結構性"],
         ["m", "NS 500 mL IV over 30 min", "適應：姿勢性低血壓、脫水、出血｜禁忌：心衰", "姿勢性低血壓"]
       ] },
     { "name": "有症狀的心搏過緩", "hint": "HR 慢 + 低血壓/意識變",
@@ -27,8 +27,8 @@
     { "name": "急性持續頭暈 (AVS)", "hint": "持續眩暈 + 自發眼震",
       "orders": [
         ["p", "HINTS 床邊檢查（受訓者做）", "任一中樞型就當中風處理"],
-        ["x", "MRI-DWI + MRA（stroke protocol）", "HINTS 中樞或不確定；CT 對缺血敏感度低"],
-        ["x", "Brain CT", "劇烈頭痛、嗜睡、無法坐站，疑出血", "疑出血"],
+        ["x", "MRI-DWI + MRA（stroke protocol）", "HINTS 中樞或不確定；CT 對缺血敏感度低｜MRI 室 ☎8400｜Brain MRA：S0290｜做前填鎮靜評估單"],
+        ["x", "Brain CT", "劇烈頭痛、嗜睡、無法坐站，疑出血｜日間 ☎3789 / ☎2570；夜間急診 CT ☎2568", "疑出血"],
         ["x", "CT/CTA", "4.5 hr 內可能再灌流", "再灌流候選"],
         ["m", "Alteplase（Actilyse）0.9 mg/kg（max 90 mg）", "4.5 hr 內符合溶栓條件", "溶栓"]
       ] },
@@ -57,27 +57,27 @@
       ] },
     { "name": "昏厥 + 胸痛（疑 ACS）", "hint": "",
       "orders": [
-        ["x", "12-lead ECG（10 min 內）", "排除：STEMI、新 LBBB、心律不整（昏厥原因）"],
+        ["x", "12-lead ECG（10 min 內）", "排除：STEMI、新 LBBB、心律不整（昏厥原因）｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
         ["l", "hs-Troponin 0 / 1–2 hr", "排除：NSTEMI（0/1h 或 0/2h 演算法）；單次升高要看動態"],
-        ["x", "Continuous ECG monitor + 備去顫器", "目的：抓 VT/VF、高度 AV block"]
+        ["x", "Continuous ECG monitor + 備去顫器", "目的：抓 VT/VF、高度 AV block｜醫囑：EKG MONITOR（附註 wireless）"]
       ] },
     { "name": "昏厥 + 撕裂痛（疑主動脈剝離）", "hint": "四肢血壓差 >20",
       "orders": [
         ["l", "四肢血壓", "排除：主動脈剝離（兩臂差 >20 mmHg）"],
         ["l", "D-dimer", "只用於低機率者", "低機率"],
-        ["x", "CT aortography", "第一線影像"],
+        ["x", "CT aortography", "第一線影像｜影像診療科 CT ☎2585#316；夜間急診 CT ☎2568｜顯影劑：同意書 + 家屬，先看腎功能"],
         ["m", "Labetalol 25 mg/5 mL：20 mg IV slow → 20–80 mg q10min（max 300 mg）或 0.5–2 mg/min infusion", "適應：主動脈剝離第一線（同時降心率與血壓），目標 HR ≤60、SBP <120｜禁忌：氣喘、失代償心衰、高度 AV block、HR <60"],
         ["p", "A-line、ICU", ""]
       ] },
     { "name": "昏厥 + 喘（疑 PE）", "hint": "",
       "orders": [
-        ["x", "CTPA", "穩定者；不穩定改床邊心超"],
-        ["m", "Heparin 25,000 U/5 mL：80 U/kg IV bolus → 18 U/kg/hr", "高/中機率，檢查中就開始"],
+        ["x", "CTPA", "穩定者；不穩定改床邊心超｜影像診療科 CT ☎2585#316；夜間急診 CT ☎2568｜顯影劑：同意書 + 家屬，先看腎功能"],
+        ["m", "Heparin 25,000 U/5 mL：80 U/kg IV bolus → 18 U/kg/hr", "高/中機率，檢查中就開始｜心臟科泡法：25,000 U in NS/D5W 500 mL（50 U/mL）"],
         ["x", "Bedside echo", "低血壓、疑高風險", "不穩定"]
       ] },
     { "name": "昏厥後跌倒受傷", "hint": "",
       "orders": [
-        ["x", "Head CT", "GCS ≤12、骨折徵象、吐 >1 次、抗凝者等", "頭部外傷"],
+        ["x", "Head CT", "GCS ≤12、骨折徵象、吐 >1 次、抗凝者等｜日間 ☎3789 / ☎2570；夜間急診 CT ☎2568", "頭部外傷"],
         ["x", "C-spine CT（1 hr 內）", "≥65 歲、危險機轉、肢體感覺異常", "疑頸椎"]
       ] }
   ]

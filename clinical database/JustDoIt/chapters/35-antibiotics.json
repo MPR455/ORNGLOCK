@@ -80,7 +80,7 @@
         ["m", "Meropenem 1 g q8h / Ertapenem 1 g QD", "敗血症 + ESBL 風險；無敗血症不選 carbapenem｜腎調：CrCl 26–50 → 1 g q12h；10–25 → 500 mg q12h；<10 → 500 mg QD", "敗血症"],
         ["p", "不用 nitrofurantoin、口服 fosfomycin", "腎實質濃度不足"],
         ["p", "療程：FQ 5–7 天，其他 7 天", "臨床改善可改口服"],
-        ["x", "Renal echo", "排除阻塞；阻塞 + 感染要引流"]
+        ["x", "Renal echo", "排除阻塞；阻塞 + 感染要引流｜腎超：M24-021｜☎2686"]
       ] },
     { "name": "腹腔內感染（社區型、低風險）", "hint": "闌尾、憩室、穿孔",
       "orders": [
@@ -131,7 +131,7 @@
         ["m", "Amsulber 3 g q6h 或 Ceftriaxone 2 g IV QD + Metronidazole 500 mg IV q8h", "中度｜腎調：CrCl 15–29 → q12h；<15 → q24h", "中度"],
         ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h ± Vancomycin", "重度、綠膿或 MRSA 風險｜腎調：CrCl 20–40 → 3.375 g q6h；<20 → 2.25 g q6h；HD 2.25 g q8h + 0.75 g 透析後", "重度"],
         ["l", "組織培養（刮或切片，不用棉棒）", "目的：找真正致病菌（含厭氧、綠膿）"],
-        ["x", "X-ray / MRI", "疑骨髓炎"]
+        ["x", "X-ray / MRI", "疑骨髓炎｜MRI 室 ☎8400｜Brain MRA：S0290｜做前填鎮靜評估單"]
       ] },
     { "name": "細菌性腦膜炎", "hint": "",
       "orders": [
@@ -145,7 +145,7 @@
     { "name": "疑心內膜炎（經驗性）", "hint": "",
       "orders": [
         ["l", "Blood culture ×3（不同部位，間隔 ≥30 min）", "抗生素前"],
-        ["x", "TTE → TEE", "目的：TTE 陰性但高度懷疑（人工瓣、S. aureus）要 TEE；看贅生物、膿瘍"],
+        ["x", "TTE → TEE", "目的：TTE 陰性但高度懷疑（人工瓣、S. aureus）要 TEE；看贅生物、膿瘍｜心超：M22-060｜☎2359/2337/2369"],
         ["m", "Vancomycin 15–20 mg/kg q12h + Ceftriaxone 2 g QD", "原生瓣膜｜腎調：AUC 400–600；CrCl 10–50 → q24h；HD 透析後補；併 Pip-tazo 腎毒性較高"],
         ["m", "Vancomycin + Cefepime 2 g q8h + Gentamicin 1 mg/kg q8h", "人工瓣膜或院內｜腎調：AUC 400–600；CrCl 10–50 → q24h；HD 透析後補；併 Pip-tazo 腎毒性較高", "人工瓣膜"],
         ["p", "照會心外：心衰、膿瘍、大贅生物、栓塞", ""]
@@ -156,7 +156,7 @@
         ["m", "Cefazolin 2 g IV q8h 或 Oxacillin 2 g IV q4h", "MSSA 首選（優於 vancomycin）｜腎調：CrCl 10–30 → q12h；<10 → q24h", "MSSA"],
         ["m", "Vancomycin AUC 400–600 或 Daptomycin（350/500 mg/vial）8–10 mg/kg QD", "MRSA；dapto 不用於肺炎｜腎調：AUC 400–600；CrCl 10–50 → q24h；HD 透析後補；併 Pip-tazo 腎毒性較高", "MRSA"],
         ["l", "Repeat blood culture q24–48h 到陰性", "目的：療程從第一次陰性起算；持續陽性找感染源"],
-        ["x", "Echocardiography（TTE，多數要 TEE）", "排除：心內膜炎（S. aureus 菌血症都要做）"],
+        ["x", "Echocardiography（TTE，多數要 TEE）", "排除：心內膜炎（S. aureus 菌血症都要做）｜心超：M22-060｜☎2359/2337/2369"],
         ["p", "移除導管、引流膿瘍", ""],
         ["p", "照會感染科", "降低死亡"],
         ["p", "療程：非複雜 ≥14 天；複雜 4–6 週", "從第一套陰性培養起算"]
@@ -291,7 +291,7 @@
         ["m", "Cotrimoxazole（TMP 80 mg/amp）TMP 15–20 mg/kg/day IV 分 q6–8h × 21 天", "首選｜腎調：CrCl 15–30 → 劑量減半；<15 避免"],
         ["m", "Prednisolone 40 mg BID × 5 天 → 40 mg QD × 5 天 → 20 mg QD × 11 天", "PaO2 <70 或 A-a >35，抗生素 72 hr 內開始", "PaO2 <70"],
         ["m", "Pentamidine 4 mg/kg IV QD", "TMP-SMX 過敏", "過敏"],
-        ["l", "ABG、LDH、β-D-glucan、痰 / BAL PJP PCR", "目的：PaO2 <70 → 加類固醇；β-D-glucan 陰性可排除 PJP"]
+        ["l", "ABG、LDH、β-D-glucan、痰 / BAL PJP PCR", "目的：PaO2 <70 → 加類固醇；β-D-glucan 陰性可排除 PJP｜開立：呼吸治療（新）→ Blood gas analysis-artery"]
       ] },
     { "name": "COVID-19", "hint": "高風險、5 天內",
       "orders": [

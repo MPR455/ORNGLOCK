@@ -55,7 +55,7 @@
         ["p", "刺激深呼吸 + O2；必要時 BVM", "先支持通氣"],
         ["m", "Naloxone 0.4 mg IV", "opioid + BZD 合併時先給", "合併 opioid"],
         ["m", "Flumazenil 0.2 mg IV（max 1 mg）", "單純 BZD、非長期使用、無癲癇心律不整風險", "單純 BZD"],
-        ["l", "ABG", "排除：CO2 滯留（過度鎮靜、COPD）"],
+        ["l", "ABG", "排除：CO2 滯留（過度鎮靜、COPD）｜開立：呼吸治療（新）→ Blood gas analysis-artery"],
         ["p", "持續觀察到不再復發", "拮抗劑作用短"]
       ] }
   ]

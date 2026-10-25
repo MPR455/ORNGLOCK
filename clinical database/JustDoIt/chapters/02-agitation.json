@@ -17,7 +17,7 @@
       ] },
     { "name": "譫妄需要藥物控制", "hint": "非酒精/BZD 戒斷，即將傷人",
       "orders": [
-        ["x", "ECG（QTc）", "haloperidol 前做基準；QTc >500 不用"],
+        ["x", "ECG（QTc）", "haloperidol 前做基準；QTc >500 不用｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
         ["m", "Haloperidol 0.5–1 mg PO 或 2.5 mg IM（5 mg/amp 半支）；短期 <1 週", "最低劑量起始；Parkinson、Lewy body 失智要避免"],
         ["m", "Quetiapine 12.5–25 mg PO HS（25 mg 錠半顆）", "Parkinson 病人較不易惡化", "Parkinson"],
         ["p", "避免 BZD", "會加重譫妄；除非是酒精或 BZD 戒斷"],
@@ -58,7 +58,7 @@
     { "name": "高熱 + 橫紋肌溶解", "hint": "肌痛無力，CK >1000",
       "orders": [
         ["l", "CK、BUN/Cr、K、Ca、P、ABG、尿液", "追腎傷與高血鉀"],
-        ["x", "ECG STAT", "高血鉀與心律不整"],
+        ["x", "ECG STAT", "高血鉀與心律不整｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
         ["m", "Lactated Ringer 1.5 L/hr（不要只用 NS）", "目標尿量 200–300 mL/hr、尿液 pH >6.5；心臟病與老人要小心"],
         ["p", "Foley 監測尿量", ""],
         ["p", "停 statin、neuroleptic", "可能是原因"],
@@ -69,7 +69,7 @@
       "orders": [
         ["p", "停 neuroleptic", "可疑藥物先暫停"],
         ["l", "CK、腎功能、電解質、ABG、凝血（DIC）", "追蹤併發症"],
-        ["x", "ECG", "排除：QT 延長、高/低鉀變化、心律不整、缺血"],
+        ["x", "ECG", "排除：QT 延長、高/低鉀變化、心律不整、缺血｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
         ["m", "Lorazepam 1–2 mg IV q4–6h", "控制躁動與顫抖"],
         ["m", "Bromocriptine 2.5 mg PO/NG TID", "矯正低 dopamine 狀態"],
         ["m", "Dantrolene 20 mg/vial：1–2.5 mg/kg IV（max 10 mg/kg/day）", "作為肌肉鬆弛劑；角色有爭議", "嚴重僵直"],
@@ -79,7 +79,7 @@
       "orders": [
         ["p", "停 serotonergic 藥物", ""],
         ["l", "CK、腎功能、電解質、ABG、Lithium level", "可加驗抗憂鬱藥濃度"],
-        ["x", "ECG", "排除：QT 延長、高/低鉀變化、心律不整、缺血"],
+        ["x", "ECG", "排除：QT 延長、高/低鉀變化、心律不整、缺血｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
         ["m", "Lorazepam 1–2 mg IV 或 Diazepam 5–10 mg IV", "控制躁動"],
         ["m", "Cyproheptadine 4 mg/tab：12 mg PO/NG → 2 mg q2h（max 32 mg/day）", "5-HT2A 拮抗，唯一解毒藥；只有口服，可磨粉 NG", "中重度"],
         ["m", "Sodium bicarbonate 7% 20 mL（16.7 mEq/amp）：1–2 mEq/kg IV", "TCA 所致", "TCA"]

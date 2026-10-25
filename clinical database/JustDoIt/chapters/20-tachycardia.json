@@ -3,8 +3,8 @@
   "items": [
     { "name": "心搏過速：第一輪", "hint": "HR >100",
       "orders": [
-        ["x", "12-lead ECG（發作當下）", "先分 QRS 寬窄、規則與否"],
-        ["x", "Continuous ECG monitor + 備去顫器", "目的：抓 VT/VF、高度 AV block"],
+        ["x", "12-lead ECG（發作當下）", "先分 QRS 寬窄、規則與否｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
+        ["x", "Continuous ECG monitor + 備去顫器", "目的：抓 VT/VF、高度 AV block｜醫囑：EKG MONITOR（附註 wireless）"],
         ["l", "CBC、BUN/Cr、Na/K/Mg/Ca、TSH", "排除：貧血、高低鉀鎂、甲亢"],
         ["l", "Troponin", "胸痛或缺血", "胸痛"],
         ["p", "檢視藥物：升壓劑、atropine、salbutamol、theophylline、停 β-blocker", ""],
@@ -21,7 +21,7 @@
       ] },
     { "name": "竇性心搏過速", "hint": "P 波正常、HR >100",
       "orders": [
-        ["x", "12-lead ECG", "排除：AF / flutter（2:1 常被當竇性 150）、PSVT"],
+        ["x", "12-lead ECG", "排除：AF / flutter（2:1 常被當竇性 150）、PSVT｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
         ["l", "D-dimer → CTPA", "排除：肺栓塞（Wells 中低用 D-dimer）", "疑 PE"],
         ["x", "Bedside echo / IVC", "排除：低血容（IVC 塌陷）、心包填塞"],
         ["l", "Blood culture ×2、Lactate", "排除：早期敗血症", "發燒"],
@@ -76,7 +76,7 @@
         ["m", "Lidocaine 2% 5 mL（100 mg）：1–1.5 mg/kg IV → 1–4 mg/min", "院內無 IV procainamide；缺血性 VT 較有效", "用藥"],
         ["m", "Adenosine 6 mg → 12 mg IV", "規則單形性、較像 SVT 時協助診斷", "像 SVT"],
         ["l", "K、Mg", "目的：K >4、Mg >2，降低 VT/TdP 復發"],
-        ["x", "Echo", "排除：EF 下降、瓣膜病、心包積液、右心擴大（PE）"]
+        ["x", "Echo", "排除：EF 下降、瓣膜病、心包積液、右心擴大（PE）｜心超：M22-060｜☎2359/2337/2369"]
       ] },
     { "name": "Torsades de pointes", "hint": "QT 長 + 多形性 VT",
       "orders": [
@@ -95,7 +95,7 @@
     { "name": "PVC / NSVT", "hint": "",
       "orders": [
         ["l", "K、Mg、Troponin", "找可逆原因"],
-        ["x", "12-lead ECG、Echo", "排除：結構性心臟病（EF↓）、QT 延長、缺血"],
+        ["x", "12-lead ECG、Echo", "排除：結構性心臟病（EF↓）、QT 延長、缺血｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
         ["m", "Bisoprolol 2.5–5 mg PO QD（或 Metoprolol 25 mg BID）", "有症狀", "有症狀"]
       ] }
   ]

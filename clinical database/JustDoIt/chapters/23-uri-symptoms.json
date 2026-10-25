@@ -5,7 +5,7 @@
       "orders": [
         ["p", "紅旗：流口水、喘鳴、張口困難、聲音像含滷蛋、頸部腫", "會厭炎、深頸部感染 → 坐著、備氣道"],
         ["l", "Rapid strep test 或 Throat culture", "排除：A 群鏈球菌（Centor ≥3 才驗）", "Centor ≥3"],
-        ["l", "Influenza / COVID rapid test", "排除：流感、COVID（決定抗病毒與隔離）", "發燒 + 上呼吸道"],
+        ["l", "Influenza / COVID rapid test", "排除：流感、COVID（決定抗病毒與隔離）｜Influenza：rapid L72-768 / PCR L72-906 / culture L72-901", "發燒 + 上呼吸道"],
         ["x", "CXR", "排除：肺炎（咳 + 發燒 / 喘 / 血氧低）", "咳 + 發燒"],
         ["m", "Acetaminophen 500 mg PO q6h PRN", "適應：喉嚨痛、發燒"],
         ["m", "Benzydamine spray TID", "適應：咽痛、插管後喉嚨痛"],
@@ -31,7 +31,7 @@
       ] },
     { "name": "深頸部感染", "hint": "頸腫、牙關緊閉、口底腫",
       "orders": [
-        ["x", "Neck CT with contrast", "排除：扁桃腺周圍 / 咽後膿瘍、Ludwig angina"],
+        ["x", "Neck CT with contrast", "排除：扁桃腺周圍 / 咽後膿瘍、Ludwig angina｜影像診療科 CT ☎2585#316；夜間急診 CT ☎2568｜顯影劑：同意書 + 家屬，先看腎功能"],
         ["p", "耳鼻喉：切開引流", ""],
         ["l", "Blood culture", "目的：深部感染常合併菌血症"]
       ] },
@@ -40,7 +40,7 @@
         ["m", "Amoxicillin 500 mg PO TID × 5–7 天", "適應：急性細菌性鼻竇炎（症狀 >10 天或先好後壞）｜禁忌：penicillin 過敏"],
         ["m", "Curam 1 g（875/125）PO BID × 5–7 天", "≥65 歲、糖尿病、免疫低下、近期用過抗生素", "高風險"],
         ["m", "Mometasone 鼻噴 2 puff QD + 生理食鹽水沖洗", "適應：鼻竇炎、過敏性鼻炎鼻塞｜注意：流鼻血時暫停"],
-        ["x", "CT with contrast", "疑眼眶或顱內擴散", "併發症"]
+        ["x", "CT with contrast", "疑眼眶或顱內擴散｜影像診療科 CT ☎2585#316；夜間急診 CT ☎2568｜顯影劑：同意書 + 家屬，先看腎功能", "併發症"]
       ] },
     { "name": "鼻塞流鼻水", "hint": "",
       "orders": [
@@ -50,7 +50,7 @@
       ] },
     { "name": "流感", "hint": "",
       "orders": [
-        ["l", "Influenza PCR", "住院急性呼吸道病人入院就驗"],
+        ["l", "Influenza PCR", "住院急性呼吸道病人入院就驗｜Influenza：rapid L72-768 / PCR L72-906 / culture L72-901"],
         ["m", "Oseltamivir 75 mg PO BID × 5 天", "住院者不論病程都給；腎差調劑量｜腎調：CrCl 30–60 → 30 mg BID；10–30 → 30 mg QD"],
         ["p", "飛沫隔離", ""],
         ["m", "Ceftriaxone 2 g IV QD ± Vancomycin", "繼發細菌性肺炎（含 S. aureus）", "重症"],

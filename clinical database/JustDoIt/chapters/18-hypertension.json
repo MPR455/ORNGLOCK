@@ -7,9 +7,9 @@
         ["p", "處理疼痛、焦慮、尿滯留、缺氧", "緩解後血壓常回落"],
         ["p", "檢視藥物：NSAID、類固醇、去充血劑、停用 clonidine/β-blocker", ""],
         ["l", "BUN/Cr、電解質、UA、CBC", "找器官損傷"],
-        ["x", "ECG", "排除：QT 延長、高/低鉀變化、心律不整、缺血"],
+        ["x", "ECG", "排除：QT 延長、高/低鉀變化、心律不整、缺血｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
         ["l", "Troponin、NT-proBNP", "胸痛或喘", "胸痛/喘"],
-        ["x", "Brain CT", "神經症狀", "神經症狀"],
+        ["x", "Brain CT", "神經症狀｜日間 ☎3789 / ☎2570；夜間急診 CT ☎2568", "神經症狀"],
         ["l", "Pregnancy test", "育齡女性"],
         ["m", "恢復常規口服藥（漏吃最常見）", "適應：無器官損傷；先看 MAR 有沒有漏給、NPO 停藥｜禁忌：不要 PRN IV 降壓", "無器官損傷"],
         ["m", "Nicardipine（40 mg/200 mL premix）5 mg/hr IV", "適應：有急性器官損傷（見高血壓急症）｜禁忌：嚴重主動脈瓣狹窄", "器官損傷"]
@@ -49,7 +49,7 @@
         ["m", "Nicardipine 5 mg/hr IV", "心率控制後 BP 仍高才加", "BP 仍高"],
         ["m", "Morphine 2–4 mg IV", "止痛；避免 NSAID｜腎調：腎差代謝物蓄積 → 改 fentanyl"],
         ["p", "20 min 內 SBP ≤120", ""],
-        ["x", "CTA aorta", "排除：主動脈剝離 Type A（開刀）vs B（內科）｜注意：腎差要說明顯影劑風險"]
+        ["x", "CTA aorta", "排除：主動脈剝離 Type A（開刀）vs B（內科）｜注意：腎差要說明顯影劑風險｜影像診療科 CT ☎2585#316；夜間急診 CT ☎2568｜顯影劑：同意書 + 家屬，先看腎功能"]
       ] },
     { "name": "急性肺水腫 + 高血壓", "hint": "",
       "orders": [
@@ -65,15 +65,15 @@
       ] },
     { "name": "腦出血血壓", "hint": "SBP 150–220",
       "orders": [
-        ["m", "Nicardipine 5 mg/hr IV 滴定（SBP 目標 ~140）", "目標 SBP 130–150；2 hr 內開始"],
+        ["m", "Nicardipine 5 mg/hr IV 滴定（SBP 目標 ~140）", "目標 SBP 130–150；2 hr 內開始｜神經科目標 SBP ≤140–150（SAH / ICH <140/90）｜神經科泡法：10 PC in NS 100 mL 6 mL/hr ±2 mL/hr（max 30）"],
         ["p", "避免 SBP <130、避免降幅 >70", "會傷腎、神經惡化"],
         ["p", "避免 nitroprusside", "影響顱內壓"]
       ] },
     { "name": "高血壓腦病變 / PRES", "hint": "頭痛、意識混亂、視力模糊、抽搐 + 高血壓",
       "orders": [
-        ["x", "Brain MRI（FLAIR）", "排除：PRES（後腦白質水腫）、中風、出血"],
+        ["x", "Brain MRI（FLAIR）", "排除：PRES（後腦白質水腫）、中風、出血｜MRI 室 ☎8400｜Brain MRA：S0290｜做前填鎮靜評估單"],
         ["x", "眼底檢查", "排除：視乳突水腫、火焰狀出血（惡性高血壓）"],
-        ["l", "Cr、UA、CBC（smear）、LDH", "排除：腎損傷、血栓性微血管病變（schistocytes）"],
+        ["l", "Cr、UA、CBC（smear）、LDH", "排除：腎損傷、血栓性微血管病變（schistocytes）｜Blood smear interpretation：M26-004（紫頭）｜☎2555"],
         ["m", "Nicardipine（40 mg/200 mL premix）5 mg/hr IV，q5min +2.5", "適應：第一線，可滴定｜目標：第 1 hr MAP 降 ≤20–25%"],
         ["m", "Labetalol 20 mg IV q10min", "適應：替代｜禁忌：氣喘、心衰、心搏過緩", "替代"],
         ["m", "Lorazepam 2 mg IV", "適應：抽搐｜同時停誘發藥（calcineurin inhibitor、化療藥）", "抽搐"]
@@ -84,7 +84,7 @@
         ["m", "Labetalol 10–20 mg IV q10min", "適應：nicardipine 替代｜禁忌：氣喘、心搏過緩", "替代"],
         ["m", "Nimodipine 30 mg ×2（60 mg）PO/NG q4h × 21 天", "適應：所有 aneurysmal SAH，降低遲發性腦缺血｜注意：低血壓時改 30 mg q2h，不要停"],
         ["m", "Acetaminophen 500 mg ×1–2 PO q6h + Morphine 2 mg IV PRN", "適應：頭痛（疼痛會推高血壓）｜避免 NSAID、抗血小板"],
-        ["x", "CTA head", "排除：動脈瘤位置、大小（決定 coiling / clipping）"],
+        ["x", "CTA head", "排除：動脈瘤位置、大小（決定 coiling / clipping）｜影像診療科 CT ☎2585#316；夜間急診 CT ☎2568｜顯影劑：同意書 + 家屬，先看腎功能"],
         ["p", "床頭 30°、避免用力、軟便劑", ""]
       ] },
     { "name": "缺血性中風血壓", "hint": "",
@@ -92,7 +92,10 @@
         ["m", "Labetalol 10–20 mg IV / Nicardipine 5 mg/hr → <185/110", "要溶栓", "溶栓前"],
         ["p", "溶栓後 <180/105 × 24 hr", ""],
         ["p", "未再灌流且 <220/120：不急著降", ""],
-        ["m", "Labetalol / Nicardipine：24 hr 內降 15%", "未再灌流且 ≥220/120", "≥220/120"]
+        ["m", "Labetalol / Nicardipine：24 hr 內降 15%", "未再灌流且 ≥220/120", "≥220/120"],
+        ["m", "Labetalol 200 mg ½–1 錠 PO PRN", "適應：血壓微高（神經科病房常用）｜禁忌：心搏過緩、氣喘、AV block", "微高"],
+        ["m", "Captopril 25 mg 1 錠 PO Q6H PRN", "適應：血壓微高｜禁忌：AKI、嚴重腎功能異常、腎動脈狹窄", "微高"],
+        ["p", "IA 取栓後（TICI 2b–3）<140/90", ""]
       ] },
     { "name": "子癇前症嚴重高血壓", "hint": "孕產婦 ≥160/110 持續 15 min",
       "orders": [
@@ -120,7 +123,7 @@
       "orders": [
         ["p", "先處理：疼痛、尿滯留、寒顫 / 低體溫、缺氧、CO2 滯留、焦慮、漏吃降壓藥", "多數處理後血壓就下降"],
         ["x", "Bladder scan", "排除：尿滯留"],
-        ["l", "ABG", "排除：低血氧、CO2 滯留", "意識差 / 喘"],
+        ["l", "ABG", "排除：低血氧、CO2 滯留｜開立：呼吸治療（新）→ Blood gas analysis-artery", "意識差 / 喘"],
         ["m", "Acetaminophen 500 mg ×1–2 PO q6h + Morphine 2–4 mg IV PRN", "適應：疼痛造成血壓高｜禁忌：opioid 呼吸抑制"],
         ["m", "Labetalol 10–20 mg IV q10min", "適應：處理誘因後仍 >180/110、或血管 / 心臟手術需嚴控｜禁忌：氣喘、心搏過緩", "仍 >180/110"],
         ["m", "Nicardipine 5 mg/hr IV", "適應：需持續控制、心搏過緩不能用 β-blocker", "需持續"],

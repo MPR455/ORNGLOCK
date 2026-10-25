@@ -18,7 +18,7 @@
         ["p", "O2 NRM 15 L/min → SpO2 94–98%", ""],
         ["m", "NS / Lactated Ringer 500–1000 mL IV bolus", "低血壓；不用膠體", "低血壓"],
         ["p", "低血壓平躺抬腿；呼吸問題半坐臥", "不要站立走動"],
-        ["x", "SpO2、BP、ECG monitor", "不延誤 epinephrine"],
+        ["x", "SpO2、BP、ECG monitor", "不延誤 epinephrine｜醫囑：EKG MONITOR（附註 wireless）"],
         ["m", "Combivent UDV（Ipratropium 0.5 mg + Salbutamol 2.5 mg）neb", "喘鳴的輔助", "喘鳴"],
         ["m", "Epinephrine 1 mg in NS 100 mL：0.5–1 mL/kg/hr", "2 劑 IM 仍有症狀（難治）", "難治"],
         ["m", "Glucagon 1 mg/kit：1–5 mg IV over 5 min（可重複）", "β-blocker 使用者難治", "β-blocker"],
@@ -78,8 +78,8 @@
       "orders": [
         ["p", "停致病及交叉反應藥物", ""],
         ["l", "CBC/DC（eosinophil、atypical lymph）、肝腎功能、UA", "排除：DRESS（嗜酸球↑、肝炎、腎炎）"],
-        ["x", "ECG", "心肌炎"],
-        ["l", "EBV、CMV、HHV-6 PCR", "目的：病毒再活化與 DRESS 嚴重度相關"],
+        ["x", "ECG", "心肌炎｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
+        ["l", "EBV、CMV、HHV-6 PCR", "目的：病毒再活化與 DRESS 嚴重度相關｜EBV DNA L72-998；CMV DNA L72-966（IgG L72-148 / IgM L72-149）"],
         ["m", "Methylprednisolone 1 mg/kg/day IV（或 Prednisolone 0.5–1 mg/kg）", "3–6 個月緩慢減量", "重度"],
         ["p", "避免經驗性 NSAID 與抗生素（尤其 amoxicillin）", ""]
       ] },

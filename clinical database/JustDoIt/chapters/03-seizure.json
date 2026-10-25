@@ -8,7 +8,7 @@
         ["p", "O2 NRM 15 L/min → SpO2 94–98%", "取得可靠血氧前給高濃度氧"],
         ["p", "建立 IV（0–5 min）", "第一線給藥途徑"],
         ["l", "Glucose、CBC、生化、Ca、Mg、抗癲癇藥濃度", "找可逆原因、查服藥順從性"],
-        ["x", "Brain CT", "多數情況適用；已知癲癇的典型發作通常不用"],
+        ["x", "Brain CT", "多數情況適用；已知癲癇的典型發作通常不用｜日間 ☎3789 / ☎2570；夜間急診 CT ☎2568"],
         ["m", "Lorazepam 2 mg/amp：0.1 mg/kg IV（max 4 mg）", "適應：抽 ≥5 min 或反覆發作｜無 IV：Midazolam 10 mg IM", "≥5 分"],
         ["m", "50% Glucose 20 mL ×2 amp IV push（BS <40：×4 amp）", "適應：低血糖抽搐", "BS <70"]
       ] },
@@ -32,13 +32,22 @@
         ["p", "插管 + 轉 ICU", "持續輸注需呼吸支持，可能要升壓劑"],
         ["m", "Midazolam 15 mg/3 mL：0.2 mg/kg IV（2 mg/min），維持 0.05–2 mg/kg/hr", "麻醉類輸注"],
         ["m", "Propofol 1%（10 mg/mL）1–2 mg/kg 負荷，維持 30–200 mcg/kg/min", ">80 mcg/kg/min 超過 48 hr 小心 propofol infusion syndrome", "替代"],
-        ["x", "Continuous EEG", "調到電發作停止或 burst suppression；昏迷至少 48 hr"],
+        ["x", "Continuous EEG", "調到電發作停止或 burst suppression；昏迷至少 48 hr｜EEG：M29-021（awake）/ M29-029（awake + sleep）｜急做 ☎2240/3943"],
         ["p", "維持 24–48 hr 後緩慢撤除", "撤除時給足維持用抗癲癇藥"]
       ] },
     { "name": "抽完沒醒", "hint": "停抽 >10 min 意識未回基準",
       "orders": [
-        ["x", "Continuous EEG（SE 開始 1 hr 內）", "18–50% 停抽後仍是非痙攣性重積"],
+        ["x", "Continuous EEG（SE 開始 1 hr 內）", "18–50% 停抽後仍是非痙攣性重積｜代碼：EEG M29-029；Video EEG M29-030｜☎2240/3943"],
         ["l", "血糖、電解質、血氨、毒物", "排除其他意識障礙"]
+      ] },
+    { "name": "新發作 / 頻繁抽搐：檢查", "hint": "抽完之後要排什麼",
+      "orders": [
+        ["x", "EEG（awake & sleep）", "代碼：M29-029（awake M29-021）｜發作停止後電聯 10F 腦波室 ☎2240/3943 當日插做，不等排程｜無法下樓 → portable，急單「B: STAT & portable」"],
+        ["l", "F/S、CBC/DC、AST/ALT、BUN/Cr、Na、K、Ca、Mg、CRP、ABG、NH3", "排除：低血糖、低鈉、低鈣鎂、尿毒、肝病、感染"],
+        ["l", "抗癲癇藥濃度", "Phenytoin：生化；Valproate / Phenobarbital / Carbamazepine：其他檢驗 → 癲癇檢驗；低白蛋白驗 free form（free valproic acid L72-121）；其他 ASM：TDM L72-440A（自費 1400 / 2800，寫最後服藥時間）"],
+        ["x", "Brain CT → Brain MRI", "排除：出血、腫瘤；MRI 由 VS 決定｜日間 ☎3789 / ☎2570；夜間急診 CT ☎2568"],
+        ["p", "避免誘發抽搐藥：carbapenem、cefepime、tramadol、theophylline、bupropion、quinolone", "Meropenem 會讓 valproate 濃度掉到近 0"],
+        ["p", "Valproate：不與 NOAC 併用、孕婦禁用、注意血氨與血小板｜Levetiracetam：依腎功能｜Lacosamide：PR 延長、AV block", ""]
       ] },
     { "name": "抽搐合併低血糖", "hint": "BS < 72",
       "orders": [
@@ -56,7 +65,7 @@
     { "name": "抽搐合併低血鈣", "hint": "嚴重低血鈣",
       "orders": [
         ["m", "10% Calcium gluconate 10–20 mL + D5W 50–100 mL IV over 10 min", "適應：有症狀低血鈣、抽搐、QT 延長｜禁忌：digoxin 中毒慎用；與 NaHCO3 同管會沉澱"],
-        ["x", "ECG monitor", "給鈣時監測"]
+        ["x", "ECG monitor", "給鈣時監測｜醫囑：EKG MONITOR（附註 wireless）"]
       ] },
     { "name": "酒精戒斷癲癇", "hint": "停酒 24–48 hr 內發作",
       "orders": [
@@ -65,7 +74,7 @@
         ["m", "MgSO4 10% 20 mL（2 g）IV over 1 hr", "低 Mg、心律不整或曾戒斷發作"],
         ["m", "Vitamin B complex amp（B1 60 mg/amp） ×2 IV/IM QD × 3–5 天", "院內無單方 thiamine 針，以 B 群針 B1 含量換算；給糖前先打"],
         ["p", "密切監測 ≥24 hr，每 1–2 hr 重評", ""],
-        ["x", "EEG 及/或 Brain CT", "新發作、型態不同、局部缺損、發燒、外傷", "新型態"]
+        ["x", "EEG 及/或 Brain CT", "新發作、型態不同、局部缺損、發燒、外傷｜日間 ☎3789 / ☎2570；夜間急診 CT ☎2568", "新型態"]
       ] },
     { "name": "子癇", "hint": "孕婦或產後抽搐",
       "orders": [
@@ -77,16 +86,16 @@
       ] },
     { "name": "抽搐後外傷 / 橫紋肌溶解", "hint": "撞頭、肌痛、茶色尿",
       "orders": [
-        ["x", "Head CT（1 hr 內）", "GCS ≤12、骨折徵象、局部缺損、外傷後發作"],
+        ["x", "Head CT（1 hr 內）", "GCS ≤12、骨折徵象、局部缺損、外傷後發作｜日間 ☎3789 / ☎2570；夜間急診 CT ☎2568"],
         ["p", "頸椎保護", "頭臉外傷先假設頸椎受傷"],
         ["l", "CK、K、Cr、UA（潛血）", "CK >1000 為橫紋肌溶解"],
         ["m", "Lactated Ringer / NS 1.5 L/hr，目標尿量 200–300 mL/hr", "避免只用 NS；心臟病與老人小心"]
       ] },
     { "name": "昏厥 vs 癲癇", "hint": "不確定是不是抽搐",
       "orders": [
-        ["x", "12-lead ECG", "找可模仿發作的心臟原因"],
-        ["x", "EEG（72 hr 內）", "首次發作後；正常也不能排除"],
-        ["x", "Telemetry", "懷疑心因性昏厥時", "疑心因"]
+        ["x", "12-lead ECG", "找可模仿發作的心臟原因｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
+        ["x", "EEG（72 hr 內）", "首次發作後；正常也不能排除｜EEG：M29-021（awake）/ M29-029（awake + sleep）｜急做 ☎2240/3943"],
+        ["x", "Telemetry", "懷疑心因性昏厥時｜醫囑：EKG MONITOR（附註 wireless）", "疑心因"]
       ] }
   ]
 }

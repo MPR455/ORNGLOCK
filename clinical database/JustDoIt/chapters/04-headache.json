@@ -5,7 +5,7 @@
       "orders": [
         ["p", "紅旗：雷擊樣 / 最痛、發燒頸僵、神經缺損、意識改變、抗凝、>50 歲新發、懷孕、外傷", "任一項 → 先 CT 再止痛"],
         ["l", "Vital signs + BP", "排除：高血壓急症（>180/120 + 神經症狀）、發燒（腦膜炎）"],
-        ["x", "Brain CT without contrast", "排除：出血、腫瘤、水腦｜做在給抗凝或 LP 前", "紅旗"],
+        ["x", "Brain CT without contrast", "排除：出血、腫瘤、水腦｜做在給抗凝或 LP 前｜日間 ☎3789 / ☎2570；夜間急診 CT ☎2568", "紅旗"],
         ["l", "CBC、PT/INR、aPTT", "排除：凝血異常（抗凝者顱內出血風險）", "抗凝 / 外傷"],
         ["l", "ESR、CRP", "排除：顳動脈炎", ">50 歲新發"],
         ["m", "Acetaminophen 500 mg ×1–2 PO", "適應：一般頭痛、緊縮型｜禁忌：急性肝衰竭"],
@@ -14,9 +14,9 @@
       ] },
     { "name": "疑 SAH（雷擊樣頭痛）", "hint": "突發劇痛，1 hr 內達最強",
       "orders": [
-        ["x", "Brain CT without contrast STAT", "起病 <6 hr、神經正常、CT 正常可排除"],
+        ["x", "Brain CT without contrast STAT", "起病 <6 hr、神經正常、CT 正常可排除｜日間 ☎3789 / ☎2570；夜間急診 CT ☎2568"],
         ["x", "LP：xanthochromia、RBC", ">6 hr 或有新神經缺損且 CT 陰性", ">6 hr"],
-        ["x", "CTA head & neck", "確認 SAH 後找動脈瘤"],
+        ["x", "CTA head & neck", "確認 SAH 後找動脈瘤｜影像診療科 CT ☎2585#316；夜間急診 CT ☎2568｜顯影劑：同意書 + 家屬，先看腎功能"],
         ["x", "DSA", "CTA 陰性但高度懷疑動脈瘤，或彌漫性 SAH", "CTA 陰性"],
         ["l", "CBC、PT/INR、aPTT", "抗凝者要緊急逆轉"],
         ["m", "Nicardipine 5 mg/hr IV 或 Labetalol 10–20 mg IV", "BP >180–200 逐步降；MAP 不可 <65"],
@@ -28,7 +28,7 @@
         ["m", "Labetalol 25 mg/5 mL：20 mg IV slow，q10min（24 hr ≤300 mg）", "氣喘、AV block、心搏過緩不用", "替代"],
         ["p", "第 1 hr SBP 降 ≤25%；2–6 hr 到 <160/100", "降太快會灌流不足"],
         ["l", "BUN/Cr、UA、Troponin、CBC", "找標的器官損傷"],
-        ["x", "ECG、CXR、Brain CT", "腦病變、肺水腫、出血"]
+        ["x", "ECG、CXR、Brain CT", "腦病變、肺水腫、出血｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"]
       ] },
     { "name": "高血壓但無器官損傷", "hint": "BP >180/120，無急性損傷",
       "orders": [
@@ -47,7 +47,7 @@
     { "name": "顱內壓上升", "hint": "頭痛 + 嘔吐 + 意識降",
       "orders": [
         ["p", "床頭 >30°、頭置中、SpO2 >94%", "基本措施"],
-        ["x", "Brain CT without contrast", "排除：出血、腫瘤、水腦、中線偏移、腦疝"],
+        ["x", "Brain CT without contrast", "排除：出血、腫瘤、水腦、中線偏移、腦疝｜日間 ☎3789 / ☎2570；夜間急診 CT ☎2568"],
         ["m", "20% Mannitol 0.5–1 g/kg IV over 5–15 min", "低血壓者利尿效果差"],
         ["m", "3% NaCl 250 mL IV over 15–30 min", "Na 每 4–6 hr，<160", "替代"],
         ["l", "Na、Osmolality", "避免 Na <135"],
@@ -61,24 +61,24 @@
         ["m", "Ampicillin 500 mg/vial ×4（2 g）IV q4h", ">50 歲或 Listeria 風險（糖尿病、免疫抑制、癌症）｜腎調：CrCl 10–50 → q6–12h；<10 → q12–24h", ">50 歲"],
         ["m", "Dexamethasone 5 mg/amp ×2（10 mg）IV q6h × 4 天", "與第一劑抗生素同時"],
         ["x", "LP：cell count、glucose、protein、Gram stain、culture", "安全時在抗生素前"],
-        ["x", "Brain CT before LP", "局部缺損、新抽搐、GCS ≤9、瞳孔異常", "先影像"]
+        ["x", "Brain CT before LP", "局部缺損、新抽搐、GCS ≤9、瞳孔異常｜日間 ☎3789 / ☎2570；夜間急診 CT ☎2568", "先影像"]
       ] },
     { "name": "疑病毒性腦炎", "hint": "發燒 + 意識/行為改變",
       "orders": [
         ["m", "Acyclovir 250 mg/vial：10 mg/kg IV q8h", "疑似就開始；依腎功能調｜腎調：CrCl 25–50 → q12h；10–25 → q24h；<10 → 半量 q24h"],
         ["x", "LP：HSV PCR", "陰性但臨床相符，3–7 天後重驗"],
-        ["x", "Brain MRI", "顳葉病灶"]
+        ["x", "Brain MRI", "顳葉病灶｜MRI 室 ☎8400｜Brain MRA：S0290｜做前填鎮靜評估單"]
       ] },
     { "name": "神經外科術後 / 引流管感染", "hint": "術後發燒 + 頭痛 + 意識變",
       "orders": [
         ["l", "CSF culture、cell、glucose、Gram stain", "培養是最重要的"],
         ["m", "Vancomycin 25 mg/kg IV 負荷 → 15–20 mg/kg q12h（依 CrCl、濃度）", "適應：MRSA / 院內 G(+) 涵蓋｜注意：腎毒性（併 Pip-tazo 更高）、第 4 劑前抽濃度｜腎調：CrCl 10–50 q24h；HD 每次透析後"],
         ["m", "Cefepime 2 g IV q8h（或 Meropenem 2 g IV q8h）", "抗綠膿桿菌 β-lactam｜腎調：CrCl 30–60 → 2 g q12h；11–29 → 2 g q24h；HD 1 g QD"],
-        ["x", "MRI with gadolinium + DWI", "排除：腦膿瘍、硬膜下積膿、腦室炎｜禁忌：eGFR <30 慎用 gadolinium、心律器"]
+        ["x", "MRI with gadolinium + DWI", "排除：腦膿瘍、硬膜下積膿、腦室炎｜禁忌：eGFR <30 慎用 gadolinium、心律器｜MRI 室 ☎8400｜Brain MRA：S0290｜做前填鎮靜評估單"]
       ] },
     { "name": "疑腦膿瘍", "hint": "頭痛、發燒、局部缺損",
       "orders": [
-        ["x", "Brain MRI with/without gadolinium（DWI）", "無法 MRI 改增強 CT"],
+        ["x", "Brain MRI with/without gadolinium（DWI）", "無法 MRI 改增強 CT｜MRI 室 ☎8400｜Brain MRA：S0290｜做前填鎮靜評估單"],
         ["l", "Blood culture ×2", "陽性率約 28%"],
         ["m", "Ceftriaxone 2 g IV q12h + Metronidazole 500 mg IV q8h", "社區型"],
         ["m", "Meropenem 2 g IV q8h + Vancomycin 15–20 mg/kg q8–12h", "術後｜腎調：CrCl 26–50 → 1 g q12h；10–25 → 500 mg q12h；<10 → 500 mg QD", "術後"],
@@ -86,9 +86,9 @@
       ] },
     { "name": "頭部外傷：要不要 CT", "hint": "撞到頭",
       "orders": [
-        ["x", "Head CT（1 hr 內）", "GCS ≤12、2 hr 後 <15、骨折徵象、外傷後抽、局部缺損、吐 >1 次"],
-        ["x", "Head CT（8 hr 內）", "意識喪失/失憶 + ≥65 歲、凝血異常、危險機轉", "LOC + 風險"],
-        ["x", "Head CT（8 hr 內）", "服抗凝或 aspirin 以外抗血小板", "抗凝"],
+        ["x", "Head CT（1 hr 內）", "GCS ≤12、2 hr 後 <15、骨折徵象、外傷後抽、局部缺損、吐 >1 次｜日間 ☎3789 / ☎2570；夜間急診 CT ☎2568"],
+        ["x", "Head CT（8 hr 內）", "意識喪失/失憶 + ≥65 歲、凝血異常、危險機轉｜日間 ☎3789 / ☎2570；夜間急診 CT ☎2568", "LOC + 風險"],
+        ["x", "Head CT（8 hr 內）", "服抗凝或 aspirin 以外抗血小板｜日間 ☎3789 / ☎2570；夜間急診 CT ☎2568", "抗凝"],
         ["p", "頸椎保護", "頭臉外傷先假設頸椎受傷"]
       ] },
     { "name": "顱內出血 + 抗凝逆轉", "hint": "CT 有出血且使用抗栓藥",

@@ -6,7 +6,7 @@
         ["p", "2 條大號 IV", "肝硬化至少兩條"],
         ["m", "NS / Lactated Ringer 500 mL IV over 15 min", "血行動力不穩；不用膠體"],
         ["l", "CBC、BUN/Cr、PT/INR、aPTT、Fibrinogen", "BUN 用來算 GBS"],
-        ["l", "Type & screen（輸血前）", "目的：備血，避免輸血延誤"],
+        ["l", "Type & screen（輸血前）", "目的：備血，避免輸血延誤｜血庫 ☎2538"],
         ["l", "Lactate", "排除：組織灌流不足、休克（>2 要追，>4 嚴重）"],
         ["p", "停抗凝劑", "不延後內視鏡"],
         ["p", "不常規放 NG", "抽吸判斷來源不準"],
@@ -14,7 +14,7 @@
         ["m", "Ceftriaxone 1 g IV QD（≤7 天）", "適應：肝硬化 + 上消化道出血（降感染與再出血）", "肝硬化"],
         ["m", "Terlipressin 1 mg IV q6h", "適應：疑靜脈曲張出血（未做胃鏡前）｜禁忌：缺血性心臟病、周邊動脈疾病、低鈉", "疑靜脈曲張"],
         ["m", "Esomeprazole 40 mg IV q12h", "適應：未知出血源先給；確認潰瘍再改 PPI line", "上消化道"],
-        ["l", "備血：LPR 2 U、FFP 2 U、Platelet 12 U", "目的：Hb <7（心血管 <8）、INR >1.5、Plt <50K 且持續出血時輸"]
+        ["l", "備血：LPR 2 U、FFP 2 U、Platelet 12 U", "目的：Hb <7（心血管 <8）、INR >1.5、Plt <50K 且持續出血時輸｜血庫 ☎2538"]
       ] },
     { "name": "輸血", "hint": "",
       "orders": [
@@ -27,13 +27,16 @@
       ] },
     { "name": "上消化道出血（非靜脈曲張）", "hint": "",
       "orders": [
-        ["x", "EGD 24 hr 內", "不穩定者復甦後隨即做"],
+        ["x", "EGD 24 hr 內", "不穩定者復甦後隨即做｜EGD：M23-002（減痛 M23-120）｜內視鏡室 ☎2227/2228"],
         ["m", "Pantoprazole 40 mg/vial ×2（80 mg）IV bolus", "內視鏡前可考慮，但不延後內視鏡"],
         ["m", "PPI line：Esomeprazole 40 mg ×2 IV → 1 amp in NS 100 mL run 20 mL/hr（8 mg/hr）× 72 hr", "高風險病灶止血後", "止血後"],
         ["l", "H. pylori test", "首次內視鏡時驗"],
         ["p", "Aspirin（次級預防）不停", "若停 3–5 天內恢復"],
         ["p", "不用 Tranexamic acid", "沒降死亡，血栓與癲癇反而增加"],
-        ["p", "再出血 → 重做 EGD → TAE → 手術", "Hb 降 ≥2、再黑便、再低血壓"]
+        ["p", "再出血 → 重做 EGD → TAE → 手術", "Hb 降 ≥2、再黑便、再低血壓"],
+        ["m", "Erythromycin 500 mg/vial：250 mg IV（EGD 前 30–120 min）", "適應：清空胃內血塊｜替代：Metoclopramide 10 mg IV"],
+        ["p", "抗血栓藥處理", "Aspirin 單用：止血後 3–5 天內恢復｜DAPT：不要兩個都停 → 繼續 aspirin、暫停 clopidogrel，DES 5 天內恢復 P2Y12｜Warfarin：停藥；危及生命且 INR >2.5 → 4F-PCC + 低劑量 Vit K（高栓塞風險 ≤5 mg）；不要為等 INR 延誤 EGD｜DOAC：停藥；3 hr 內服藥給活性碳；dabigatran → idarucizumab；不 bridging"],
+        ["p", "Forrest Ia–IIa：內視鏡止血 + 高劑量 PPI 72 hr；IIb：移除血塊；IIc / III：口服 PPI QD、正常飲食", "一律 H. pylori survey"]
       ] },
     { "name": "靜脈曲張出血", "hint": "肝硬化病人出血",
       "orders": [
@@ -41,20 +44,23 @@
         ["m", "Terlipressin 1 mg/vial：2 mg IV q4h × 48 hr → 1 mg q4h", "缺血性心臟病小心；監測 Na", "替代"],
         ["m", "Ceftriaxone 1 g IV q24h（≤7 天）", "預防感染，就診時就給"],
         ["m", "pRBC 目標 Hb 7–8", "過度輸血會升門脈壓"],
-        ["x", "EGD + EVL 12 hr 內", "目的：確認並結紮靜脈曲張；先 octreotide/terlipressin + 抗生素"],
+        ["x", "EGD + EVL 12 hr 內", "目的：確認並結紮靜脈曲張；先 octreotide/terlipressin + 抗生素｜代碼：EGD M23-002、EVL M23-009｜不穩定：復甦後立即做｜內視鏡室 ☎2227/2228"],
         ["m", "Erythromycin 500 mg/vial：250 mg IV over 30 min（內視鏡前 30–120 min）", "清胃，視野較好"],
         ["m", "Lactulose 30 mL PO/NG q6h", "預防肝性腦病變"],
         ["p", "Early TIPS 72 hr 內", "Child C 10–13 或 Child B >7 + 活動性出血", "高風險"],
         ["p", "Balloon tamponade（≤24 hr）或食道支架", "內視鏡止血失敗的橋接", "止血失敗"],
-        ["p", "不輸 FFP", "無法矯正凝血、加重門脈高壓"]
+        ["p", "不輸 FFP", "無法矯正凝血、加重門脈高壓"],
+        ["m", "Ciprofloxacin 400 mg IV q12h（3–7 天）", "適應：ceftriaxone 替代預防感染", "替代"],
+        ["p", "不給 PPI（除非合併潰瘍）", ""],
+        ["p", "Sengstaken–Blakemore tube", "內視鏡止不住時暫時止血，等 TIPS / 手術（本院無 TIPS）", "止血失敗"]
       ] },
     { "name": "下消化道出血", "hint": "血便",
       "orders": [
         ["p", "先排除上消化道來源（EGD）", "血便 + 不穩定可能是上消化道"],
-        ["x", "CTA abdomen", "持續且血行動力顯著的出血"],
+        ["x", "CTA abdomen", "持續且血行動力顯著的出血｜影像診療科 CT ☎2585#316；夜間急診 CT ☎2568｜顯影劑：同意書 + 家屬，先看腎功能"],
         ["p", "Angiography + embolization", "CTA 見外滲", "CTA 陽性"],
         ["m", "Klean-prep（PEG 3350）4 包泡 4 L", "非緊急住院大腸鏡前"],
-        ["x", "Colonoscopy（非緊急住院）", "目的：找下消化道出血源（憩室、血管擴張、腫瘤）"]
+        ["x", "Colonoscopy（非緊急住院）", "目的：找下消化道出血源（憩室、血管擴張、腫瘤）｜Colonoscopy：M23-013（減痛 M23-121）｜☎2227/2228"]
       ] },
     { "name": "Warfarin + 嚴重出血", "hint": "主要出血",
       "orders": [
