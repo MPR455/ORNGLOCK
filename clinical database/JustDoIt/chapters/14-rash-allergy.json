@@ -1,7 +1,7 @@
 {
-  "no": "14", "slug": "rash-allergy", "title": "皮疹與過敏", "icon": "🔴",
+  "no": "14", "slug": "rash-allergy", "title": "皮疹與過敏", "en": "Rash, allergy", "icon": "🔴",
   "items": [
-    { "name": "皮疹：第一輪", "hint": "先排除危險皮疹",
+    { "name": "皮疹：第一輪", "hint": "先排除危險皮疹", "en": "Rash",
       "orders": [
         ["p", "看黏膜（口、眼、生殖器）、水泡、Nikolsky、紫斑、發燒", "任一 → SJS/TEN、DRESS、腦膜炎雙球菌血症"],
         ["p", "列 8 週內新藥，停最可疑的", "藥疹多在用藥 4–28 天出現"],
@@ -11,7 +11,7 @@
         ["m", "Mometasone furoate cream 0.1% QD", "適應：單純藥疹、濕疹｜禁忌：疑黴菌或細菌感染", "局部"],
         ["m", "Epinephrine 1 mg/mL：0.5 mg IM", "適應：合併喘、低血壓、喉頭水腫（anaphylaxis）", "喘 / 低血壓"]
       ] },
-    { "name": "Anaphylaxis", "hint": "氣道/呼吸/循環問題 ± 皮疹",
+    { "name": "Anaphylaxis", "hint": "氣道/呼吸/循環問題 ± 皮疹", "en": "Anaphylaxis",
       "orders": [
         ["m", "Epinephrine 1 mg/mL：0.5 mL（0.5 mg）IM 大腿前外側", "第一線；有 IV 也一樣；5 min 無改善重複"],
         ["p", "停疑似藥物或血品", ""],
@@ -27,13 +27,13 @@
         ["l", "Tryptase（2 hr 內，最晚 4 hr）", "診斷不確定時"],
         ["p", "觀察 ≥6–12 hr", "雙相反應約 5%"]
       ] },
-    { "name": "ACEI 血管性水腫", "hint": "臉唇舌腫、無蕁麻疹",
+    { "name": "ACEI 血管性水腫", "hint": "臉唇舌腫、無蕁麻疹", "en": "ACEI angioedema",
       "orders": [
         ["p", "停 ACE inhibitor", "對 epinephrine 常無反應"],
         ["m", "Epinephrine 1 mg/mL：0.5 mg IM", "診斷不確定時仍給"],
         ["p", "評估氣道、準備困難插管", ""]
       ] },
-    { "name": "輸血反應", "hint": "輸血中新症狀",
+    { "name": "輸血反應", "hint": "輸血中新症狀", "en": "Transfusion reaction",
       "orders": [
         ["p", "暫停輸血、保留 IV、核對身分", ""],
         ["p", "輕度（38–39°C 或只癢/疹）可在觀察下繼續", "", "輕度"],
@@ -41,14 +41,14 @@
         ["l", "CBC、腎功能、肝功能", "排除：溶血（Hb↓、bilirubin↑）、AKI"],
         ["x", "CXR", "呼吸困難：TACO / TRALI", "呼吸困難"]
       ] },
-    { "name": "蕁麻疹", "hint": "風團 ± 血管性水腫",
+    { "name": "蕁麻疹", "hint": "風團 ± 血管性水腫", "en": "Urticaria, hives",
       "orders": [
         ["m", "Levocetirizine 5 mg 或 Fexofenadine 180 mg PO QD（可加到 4 倍）", "第一線；老人避免第一代"],
         ["m", "Prednisolone 5 mg/tab：20–40 mg PO QD ≤5–10 天", "急性嚴重或慢性急性惡化", "嚴重"],
         ["p", "有呼吸或循環症狀 → 當 anaphylaxis", ""],
         ["m", "Hydroxyzine 25 mg PO HS", "夜間癢、睡不著", "夜間癢"]
       ] },
-    { "name": "接觸性皮膚炎 / 濕疹", "hint": "紅疹、脫屑、癢；膠布、藥膏、清潔劑",
+    { "name": "接觸性皮膚炎 / 濕疹", "hint": "紅疹、脫屑、癢；膠布、藥膏、清潔劑", "en": "Contact dermatitis, eczema",
       "orders": [
         ["p", "找出並停用刺激物（膠布、外用藥）", ""],
         ["m", "Mometasone furoate cream 0.1% QD（身體）", "中效類固醇，一天一次"],
@@ -58,13 +58,13 @@
         ["m", "Levocetirizine 5 mg PO HS", "止癢"],
         ["m", "Prednisolone 0.5 mg/kg PO QD × 5–7 天", "範圍 >20% 體表、顏面腫", "廣泛"]
       ] },
-    { "name": "Vancomycin 輸注反應", "hint": "潮紅、搔癢",
+    { "name": "Vancomycin 輸注反應", "hint": "潮紅、搔癢", "en": "Vancomycin infusion reaction, red man syndrome",
       "orders": [
         ["p", "減慢輸注速度", ""],
         ["m", "Diphenhydramine 30 mg IV（或 Chlorpheniramine 5 mg IV）前置", "輕症"],
         ["p", "合併低血壓或喘 → 評估 anaphylaxis", ""]
       ] },
-    { "name": "疑 SJS / TEN", "hint": "疼痛性紫斑、水皰、黏膜受累",
+    { "name": "疑 SJS / TEN", "hint": "疼痛性紫斑、水皰、黏膜受累", "en": "SJS, TEN, Stevens-Johnson syndrome",
       "orders": [
         ["p", "立刻停可疑藥物", "越早停死亡越低；其他常規藥繼續"],
         ["l", "CBC、ESR、CRP、BUN/Cr、Mg、P、HCO3、glucose、肝功能、PT", "目的：SCORTEN 計分（BUN、glucose、HCO3）與器官侵犯"],
@@ -74,7 +74,7 @@
         ["p", "剝離 >10% → 燒傷中心或 ICU", ""],
         ["p", "房溫 25–28°C、避免黏貼電極與血壓袖套", ""]
       ] },
-    { "name": "疑 DRESS", "hint": "新藥 2–8 週後皮疹 + 發燒 + 臉腫",
+    { "name": "疑 DRESS", "hint": "新藥 2–8 週後皮疹 + 發燒 + 臉腫", "en": "DRESS",
       "orders": [
         ["p", "停致病及交叉反應藥物", ""],
         ["l", "CBC/DC（eosinophil、atypical lymph）、肝腎功能、UA", "排除：DRESS（嗜酸球↑、肝炎、腎炎）"],
@@ -83,7 +83,7 @@
         ["m", "Methylprednisolone 1 mg/kg/day IV（或 Prednisolone 0.5–1 mg/kg）", "3–6 個月緩慢減量", "重度"],
         ["p", "避免經驗性 NSAID 與抗生素（尤其 amoxicillin）", ""]
       ] },
-    { "name": "不褪色紫斑（疑腦膜炎雙球菌）", "hint": "紫斑 >2 mm 或快速擴散瘀點",
+    { "name": "不褪色紫斑（疑腦膜炎雙球菌）", "hint": "紫斑 >2 mm 或快速擴散瘀點", "en": "Purpura fulminans, meningococcemia",
       "orders": [
         ["l", "Blood culture、CBC、CRP、Lactate、PCR", "抗生素前抽，但 1 hr 內要給"],
         ["m", "Ceftriaxone 2 g IV", "不可混含鈣溶液"],
@@ -92,7 +92,7 @@
         ["p", "24 hr 內通報衛生局", ""],
         ["m", "Rifampicin 300 mg ×2（600 mg）PO q12h × 2 天 或 Ceftriaxone 250 mg IM ×1", "密切接觸者預防", "接觸者"]
       ] },
-    { "name": "疑 HIT", "hint": "肝素使用中血小板下降",
+    { "name": "疑 HIT", "hint": "肝素使用中血小板下降", "en": "HIT, heparin-induced thrombocytopenia",
       "orders": [
         ["l", "4Ts score", "低可能性不驗不治療"],
         ["p", "停所有 heparin（含沖管）", "中/高可能性"],
@@ -101,41 +101,41 @@
         ["l", "HIT antibody（ELISA）", "目的：4T score ≥4 時送；陰性可排除 HIT"],
         ["p", "血小板 >150 前不開 warfarin", ""]
       ] },
-    { "name": "帶狀皰疹", "hint": "單側皮節水泡",
+    { "name": "帶狀皰疹", "hint": "單側皮節水泡", "en": "Herpes zoster, shingles",
       "orders": [
         ["m", "Valaciclovir 500 mg ×2（1 g）PO TID × 7 天", "72 hr 內最有效｜腎調：CrCl 30–49 → 1 g q12h；10–29 → 1 g q24h"],
         ["m", "Acyclovir 250 mg/vial：10 mg/kg IV q8h", "播散、內臟侵犯或免疫低下｜腎調：CrCl 25–50 → q12h；10–25 → q24h；<10 → 半量 q24h", "播散"],
         ["p", "接觸隔離、覆蓋病灶", ""],
         ["p", "照會眼科", "V1 或鼻尖水泡", "V1"]
       ] },
-    { "name": "蜂窩性組織炎", "hint": "",
+    { "name": "蜂窩性組織炎", "hint": "", "en": "Cellulitis",
       "orders": [
         ["m", "Cefazolin 1 g IV q8h 或 Cephalexin 500 mg PO QID", "適應：非化膿性蜂窩性組織炎（鏈球菌、MSSA）｜禁忌：cephalosporin 過敏改 clindamycin｜腎調：CrCl 10–30 → q12h；<10 → q24h"],
         ["m", "Doxycycline 100 mg BID / Clindamycin 300 mg TID / Cotrimoxazole 2 tab BID", "疑 MRSA", "MRSA"],
         ["p", "膿瘍：切開引流", "", "膿瘍"]
       ] },
-    { "name": "壞死性筋膜炎", "hint": "痛到不成比例、皮下硬、毒性",
+    { "name": "壞死性筋膜炎", "hint": "痛到不成比例、皮下硬、毒性", "en": "Necrotizing fasciitis, NSTI",
       "orders": [
         ["p", "緊急外科會診清創", ""],
         ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h + Vancomycin 15 mg/kg q12h + Clindamycin 900 mg q8h", "廣效涵蓋｜腎調：CrCl 20–40 → 3.375 g q6h；<20 → 2.25 g q6h；HD 2.25 g q8h + 0.75 g 透析後"],
         ["l", "CBC、CRP、Na、glucose、Cr、CK、Lactate、Blood culture", "目的：LRINEC 分數（CRP、WBC、Hb、Na、Cr、glucose）；CK 高 → 肌肉侵犯"],
         ["x", "CT", "看皮下氣體；不可延誤手術"]
       ] },
-    { "name": "黴菌 / 念珠菌皮膚感染", "hint": "皺褶紅疹 + 衛星病灶、股癬、尿布疹",
+    { "name": "黴菌 / 念珠菌皮膚感染", "hint": "皺褶紅疹 + 衛星病灶、股癬、尿布疹", "en": "Candidiasis, intertrigo, tinea",
       "orders": [
         ["m", "Clotrimazole cream BID × 2–4 週", "症狀好後再擦 1 週"],
         ["m", "Fluconazole 150 mg PO 每週 1 次 × 2–4 週", "範圍大或外用無效｜腎調：CrCl <50 → 維持劑量減半（負荷不減）", "廣泛"],
         ["p", "保持乾燥、紗布隔開皺褶", ""],
         ["x", "KOH 鏡檢", "不確定時"]
       ] },
-    { "name": "皮膚癢（無疹 / 老人乾癢）", "hint": "乾燥、搔抓痕",
+    { "name": "皮膚癢（無疹 / 老人乾癢）", "hint": "乾燥、搔抓痕", "en": "Pruritus, xerosis",
       "orders": [
         ["l", "BUN/Cr、LFT（bilirubin）、TSH、CBC", "排除：尿毒、膽汁淤積、甲狀腺、血液疾病（全身癢）", "找不到原因"],
         ["m", "Urea 10% cream BID", "適應：乾燥皮膚保濕"],
         ["m", "Doxepin 5% cream TID", "適應：止癢（不要大面積）｜注意：嗜睡", "局部癢"],
         ["m", "Hydroxyzine 25 mg PO HS", "適應：夜間癢｜禁忌：老人譫妄、QT", "夜間癢"]
       ] },
-    { "name": "尿布疹 / 會陰濕疹", "hint": "臥床、失禁",
+    { "name": "尿布疹 / 會陰濕疹", "hint": "臥床、失禁", "en": "Diaper dermatitis, IAD",
       "orders": [
         ["m", "Zinc oxide 20% oint 每次換尿布外用", "適應：刺激性皮膚炎隔離保護"],
         ["m", "Clotrimazole cream BID", "適應：衛星狀紅疹（念珠菌）", "念珠菌"],

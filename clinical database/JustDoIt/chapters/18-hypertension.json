@@ -1,7 +1,7 @@
 {
-  "no": "18", "slug": "hypertension", "title": "高血壓", "icon": "📈",
+  "no": "18", "slug": "hypertension", "title": "高血壓", "en": "Hypertension", "icon": "📈",
   "items": [
-    { "name": "血壓高：先確認", "hint": "BP >180/120",
+    { "name": "血壓高：先確認", "hint": "BP >180/120", "en": "Hypertension, high BP",
       "orders": [
         ["l", "重量 BP：休息 5 min，正確袖套，量雙臂", "單次讀數不足以決策"],
         ["p", "處理疼痛、焦慮、尿滯留、缺氧", "緩解後血壓常回落"],
@@ -14,7 +14,7 @@
         ["m", "恢復常規口服藥（漏吃最常見）", "適應：無器官損傷；先看 MAR 有沒有漏給、NPO 停藥｜禁忌：不要 PRN IV 降壓", "無器官損傷"],
         ["m", "Nicardipine（40 mg/200 mL premix）5 mg/hr IV", "適應：有急性器官損傷（見高血壓急症）｜禁忌：嚴重主動脈瓣狹窄", "器官損傷"]
       ] },
-    { "name": "無器官損傷的嚴重高血壓", "hint": ">180/120，沒有急性損傷",
+    { "name": "無器官損傷的嚴重高血壓", "hint": ">180/120，沒有急性損傷", "en": "Hypertensive urgency",
       "orders": [
         ["p", "不給 PRN 降壓（PO 或 IV）", "40–50% 會自行下降；加藥增加 AKI 與死亡"],
         ["m", "恢復常規口服藥（漏吃、NPO 停藥）", "適應：先恢復原藥，隔天由主治調整｜禁忌：不要 PRN IV 降壓、不要含服 nifedipine"],
@@ -30,7 +30,7 @@
         ["p", "不含服 nifedipine", "降壓幅度無法預測，會誘發中風或心肌缺血"],
         ["m", "Doxazosin 2 mg PO HS", "適應：男性合併 BPH｜注意：首劑姿勢性低血壓", "男性 BPH"]
       ] },
-    { "name": "高血壓急症（一般）", "hint": ">180/120 + 急性器官損傷",
+    { "name": "高血壓急症（一般）", "hint": ">180/120 + 急性器官損傷", "en": "Hypertensive emergency",
       "orders": [
         ["p", "轉 ICU、A-line", ""],
         ["m", "Nicardipine（40 mg/200 mL premix）5 mg/hr IV，q5min +2.5（max 15）", "較易達短期目標；嚴重主動脈瓣狹窄禁用"],
@@ -42,7 +42,7 @@
         ["m", "Hydralazine 20 mg/amp：10–20 mg IV q4–6h", "適應：孕婦、其他藥不能用時｜注意：降壓幅度不可預測、反射性心搏過速；不建議當第一線", "替代"],
         ["m", "Nitroprusside 50 mg/vial：0.3–0.5 mcg/kg/min 起，max 10（ICU + A-line、避光）", "適應：其他藥都無效的重度高血壓急症｜禁忌：顱內出血 / 腦壓高、孕婦、腎肝衰（氰化物、thiocyanate 蓄積）；>2 mcg/kg/min 不超過 72 hr", "其他無效"]
       ] },
-    { "name": "主動脈剝離 + 高血壓", "hint": "",
+    { "name": "主動脈剝離 + 高血壓", "hint": "", "en": "Aortic dissection BP control",
       "orders": [
         ["m", "Labetalol 25 mg/5 mL：20 mg IV slow → 20–80 mg q10min（max 300 mg）或 0.5–2 mg/min infusion", "適應：主動脈剝離第一線（同時降心率與血壓），目標 HR ≤60、SBP <120｜禁忌：氣喘、失代償心衰、高度 AV block、HR <60"],
         ["m", "Verapamil 5 mg/2 mL：5 mg IV over 2 min", "院內無 IV diltiazem；β-blocker 禁忌時控心跳", "β 禁忌"],
@@ -51,25 +51,25 @@
         ["p", "20 min 內 SBP ≤120", ""],
         ["x", "CTA aorta", "排除：主動脈剝離 Type A（開刀）vs B（內科）｜注意：腎差要說明顯影劑風險｜影像診療科 CT ☎2585#316；夜間急診 CT ☎2568｜顯影劑：同意書 + 家屬，先看腎功能"]
       ] },
-    { "name": "急性肺水腫 + 高血壓", "hint": "",
+    { "name": "急性肺水腫 + 高血壓", "hint": "", "en": "SCAPE, flash pulmonary edema with HTN",
       "orders": [
         ["m", "NTG premix 0.2 mg/mL：5 mcg/min，q3–5min +5（max 200）", "首選；容積不足禁用"],
         ["m", "Furosemide 20 mg/amp ×2（40 mg）IV", "適應：容積過載、肺水腫｜禁忌：低血容、低血壓；平常有吃利尿劑者給 1–2.5 倍口服量"],
         ["p", "CPAP / BiPAP", "呼吸窘迫"],
         ["p", "β-blocker 禁忌", ""]
       ] },
-    { "name": "ACS + 高血壓", "hint": "",
+    { "name": "ACS + 高血壓", "hint": "", "en": "ACS with hypertension",
       "orders": [
         ["m", "NTG 0.6 mg SL q5min ×3 → NTG premix 10 mcg/min", "PDE5i 48 hr 內禁用"],
         ["m", "Labetalol 10–20 mg IV（或 Bisoprolol 2.5 mg PO）", "適應：ACS 合併高血壓、心跳快｜禁忌：心衰、HR <60、SBP <100、高度 AV block"]
       ] },
-    { "name": "腦出血血壓", "hint": "SBP 150–220",
+    { "name": "腦出血血壓", "hint": "SBP 150–220", "en": "ICH BP target, intracerebral hemorrhage",
       "orders": [
         ["m", "Nicardipine 5 mg/hr IV 滴定（SBP 目標 ~140）", "目標 SBP 130–150；2 hr 內開始｜神經科目標 SBP ≤140–150（SAH / ICH <140/90）｜神經科泡法：10 PC in NS 100 mL 6 mL/hr ±2 mL/hr（max 30）"],
         ["p", "避免 SBP <130、避免降幅 >70", "會傷腎、神經惡化"],
         ["p", "避免 nitroprusside", "影響顱內壓"]
       ] },
-    { "name": "高血壓腦病變 / PRES", "hint": "頭痛、意識混亂、視力模糊、抽搐 + 高血壓",
+    { "name": "高血壓腦病變 / PRES", "hint": "頭痛、意識混亂、視力模糊、抽搐 + 高血壓", "en": "PRES, hypertensive encephalopathy",
       "orders": [
         ["x", "Brain MRI（FLAIR）", "排除：PRES（後腦白質水腫）、中風、出血｜MRI 室 ☎8400｜Brain MRA：S0290｜做前填鎮靜評估單"],
         ["x", "眼底檢查", "排除：視乳突水腫、火焰狀出血（惡性高血壓）"],
@@ -78,7 +78,7 @@
         ["m", "Labetalol 20 mg IV q10min", "適應：替代｜禁忌：氣喘、心衰、心搏過緩", "替代"],
         ["m", "Lorazepam 2 mg IV", "適應：抽搐｜同時停誘發藥（calcineurin inhibitor、化療藥）", "抽搐"]
       ] },
-    { "name": "蜘蛛膜下腔出血 (SAH) 血壓", "hint": "動脈瘤未處理前",
+    { "name": "蜘蛛膜下腔出血 (SAH) 血壓", "hint": "動脈瘤未處理前", "en": "SAH BP control, aneurysm",
       "orders": [
         ["m", "Nicardipine 5 mg/hr IV 滴定 → SBP <160", "適應：動脈瘤處理前防再出血｜注意：避免 SBP <90（灌流不足）"],
         ["m", "Labetalol 10–20 mg IV q10min", "適應：nicardipine 替代｜禁忌：氣喘、心搏過緩", "替代"],
@@ -87,7 +87,7 @@
         ["x", "CTA head", "排除：動脈瘤位置、大小（決定 coiling / clipping）｜影像診療科 CT ☎2585#316；夜間急診 CT ☎2568｜顯影劑：同意書 + 家屬，先看腎功能"],
         ["p", "床頭 30°、避免用力、軟便劑", ""]
       ] },
-    { "name": "缺血性中風血壓", "hint": "",
+    { "name": "缺血性中風血壓", "hint": "", "en": "Ischemic stroke BP",
       "orders": [
         ["m", "Labetalol 10–20 mg IV / Nicardipine 5 mg/hr → <185/110", "要溶栓", "溶栓前"],
         ["p", "溶栓後 <180/105 × 24 hr", ""],
@@ -97,7 +97,7 @@
         ["m", "Captopril 25 mg 1 錠 PO Q6H PRN", "適應：血壓微高｜禁忌：AKI、嚴重腎功能異常、腎動脈狹窄", "微高"],
         ["p", "IA 取栓後（TICI 2b–3）<140/90", ""]
       ] },
-    { "name": "子癇前症嚴重高血壓", "hint": "孕產婦 ≥160/110 持續 15 min",
+    { "name": "子癇前症嚴重高血壓", "hint": "孕產婦 ≥160/110 持續 15 min", "en": "Severe preeclampsia",
       "orders": [
         ["m", "Labetalol 25 mg/5 mL：20 mg IV → q10–30min 20–80 mg（≤300 mg）", "30–60 min 內給"],
         ["m", "Hydralazine 20 mg/amp：5 mg IV → q20–40min 5–10 mg（≤20 mg）", "適應：子癇前症重度高血壓（第二線）｜注意：反射性心搏過速、作用時間不可預測", "替代"],
@@ -107,19 +107,19 @@
         ["p", "禁 ACEI、ARB、nitroprusside", ""],
         ["m", "10% Calcium gluconate 10 mL IV", "鎂中毒", "鎂中毒"]
       ] },
-    { "name": "兒茶酚胺過量", "hint": "嗜鉻細胞瘤、古柯鹼、安非他命",
+    { "name": "兒茶酚胺過量", "hint": "嗜鉻細胞瘤、古柯鹼、安非他命", "en": "Catecholamine excess, pheochromocytoma, cocaine",
       "orders": [
         ["m", "Nicardipine 5 mg/hr IV 或 NTG premix 10 mcg/min 起", "院內無 phentolamine；先 BZD，避免單用 β-blocker"],
         ["m", "Lorazepam 2 mg IV 或 Diazepam 5–10 mg IV", "古柯鹼激動"],
         ["p", "不單用 β-blocker", "未阻斷 α 會高血壓危象"],
         ["p", "體溫 >40°C：冰水浸泡", ""]
       ] },
-    { "name": "停藥反彈", "hint": "停 clonidine / β-blocker",
+    { "name": "停藥反彈", "hint": "停 clonidine / β-blocker", "en": "Rebound hypertension, clonidine withdrawal",
       "orders": [
         ["m", "恢復原藥（Clonidine 75 mcg PO / 原 β-blocker）", "適應：clonidine / β-blocker 突停反彈｜注意：β-blocker 反彈可能誘發 ACS"],
         ["m", "Labetalol 20 mg IV 或 Nicardipine 5 mg/hr", "無法口服", "NPO"]
       ] },
-    { "name": "術後高血壓", "hint": "術後 24–48 hr 血壓高",
+    { "name": "術後高血壓", "hint": "術後 24–48 hr 血壓高", "en": "Postoperative hypertension",
       "orders": [
         ["p", "先處理：疼痛、尿滯留、寒顫 / 低體溫、缺氧、CO2 滯留、焦慮、漏吃降壓藥", "多數處理後血壓就下降"],
         ["x", "Bladder scan", "排除：尿滯留"],

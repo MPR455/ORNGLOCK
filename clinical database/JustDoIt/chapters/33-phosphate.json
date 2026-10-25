@@ -1,7 +1,7 @@
 {
-  "no": "33", "slug": "phosphate", "title": "磷", "icon": "🧪",
+  "no": "33", "slug": "phosphate", "title": "磷", "en": "Phosphate", "icon": "🧪",
   "items": [
-    { "name": "低血磷", "hint": "",
+    { "name": "低血磷", "hint": "", "en": "Hypophosphatemia",
       "orders": [
         ["l", "P、Ca、Mg、K", "確認單位 mg/dL 或 mmol/L"],
         ["l", "Mg、K、Ca", "目的：常一起低（再餵食、DKA 治療中、酒精）"],
@@ -11,7 +11,7 @@
         ["p", "補太快會低血鈣", ""],
         ["m", "Glycophos（P 20 mmol/20 mL）IV over 4–6 hr", "P <1 或有症狀；高鉀時用鈉鹽", "重度"]
       ] },
-    { "name": "再餵食症候群預防", "hint": "BMI <16、幾乎沒吃 >10 天、電解質低",
+    { "name": "再餵食症候群預防", "hint": "BMI <16、幾乎沒吃 >10 天、電解質低", "en": "Refeeding syndrome",
       "orders": [
         ["l", "K、Mg、P（開始前）→ q12h × 3 天", "目的：再餵食症候群（P、K、Mg 驟降）"],
         ["m", "Vitamin B complex amp（B1 60 mg/amp） ×2 IV QD 或 Dicethiamine 50 mg PO TID × 5–7 天（給糖前）", "院內無單方 thiamine 針，以 B 群針 B1 含量換算；給糖前先打"],
@@ -20,7 +20,7 @@
         ["p", "Vital signs q4h × 24 hr、每日體重、I/O", ""],
         ["p", "電解質急降：熱量減 50%", "", "電解質急降"]
       ] },
-    { "name": "高血磷：TLS", "hint": "",
+    { "name": "高血磷：TLS", "hint": "", "en": "Hyperphosphatemia in TLS",
       "orders": [
         ["m", "NS / Lactated Ringer 3 L/m²/day（尿量 100 mL/m²/hr）", "適應：TLS 高血磷｜禁忌：無尿、心衰（需透析）"],
         ["l", "K、尿酸、P、Ca、Cr q6–12h", "目的：TLS 監測；Ca×P >60 → 鈣磷沉積"],
@@ -28,13 +28,13 @@
         ["m", "10% Calcium gluconate 10 mL IV", "只有有症狀低血鈣時", "症狀性低鈣"],
         ["p", "照會腎臟科：透析", "高 K / 高 P 對內科治療無效", "無效"]
       ] },
-    { "name": "高血磷：橫紋肌溶解", "hint": "",
+    { "name": "高血磷：橫紋肌溶解", "hint": "", "en": "Hyperphosphatemia in rhabdomyolysis",
       "orders": [
         ["m", "Lactated Ringer / NS 1.5 L/hr（尿量 200–300 mL/hr）", "利尿會帶走磷"],
         ["p", "無症狀不補鈣", "血鈣之後會回升"],
         ["l", "U&E、CK", "目的：橫紋肌溶解程度、AKI、高鉀"]
       ] },
-    { "name": "慢性高血磷（CKD）", "hint": "",
+    { "name": "慢性高血磷（CKD）", "hint": "", "en": "Chronic hyperphosphatemia, CKD-MBD, phosphate binder",
       "orders": [
         ["m", "隨餐：Calcium carbonate 500 mg / Calcium acetate 667 mg / Sevelamer 800 mg TID", "依持續升高才開始；避免長期含鋁"],
         ["p", "限磷飲食", ""]

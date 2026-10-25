@@ -1,14 +1,14 @@
 {
-  "no": "38", "slug": "endocrine", "title": "甲狀腺 / 內分泌急症", "icon": "🦋",
+  "no": "38", "slug": "endocrine", "title": "甲狀腺 / 內分泌急症", "en": "Thyroid / endocrine emergencies", "icon": "🦋",
   "items": [
-    { "name": "內分泌急症：第一輪", "hint": "不明原因休克、意識差、心跳異常",
+    { "name": "內分泌急症：第一輪", "hint": "不明原因休克、意識差、心跳異常", "en": "Endocrine emergency",
       "orders": [
         ["l", "TSH、Free T4、Cortisol（± ACTH）", "排除：甲狀腺風暴、黏液水腫、腎上腺不足"],
         ["l", "Na、K、glucose、Ca", "排除：低鈉高鉀（腎上腺）、低血糖、高鈣危象"],
         ["x", "ECG", "排除：AF（甲亢）、心搏過緩（甲低）｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
         ["m", "Hydrocortisone 100 mg IV", "適應：疑腎上腺危象，先抽 cortisol 再給，不等結果", "疑腎上腺"]
       ] },
-    { "name": "甲狀腺風暴", "hint": "高燒、心搏過速、躁動、腹瀉 + 甲亢",
+    { "name": "甲狀腺風暴", "hint": "高燒、心搏過速、躁動、腹瀉 + 甲亢", "en": "Thyroid storm, thyrotoxicosis",
       "orders": [
         ["l", "TSH、Free T4、T3、LFT、BS、Cortisol", "目的：確認甲亢；排除合併腎上腺不足、肝損傷"],
         ["x", "ECG", "AF 常見｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
@@ -20,7 +20,7 @@
         ["m", "Hydrocortisone 100 mg IV q8h", "減少 T4→T3、相對腎上腺不足"],
         ["m", "Acetaminophen 500 mg PO q6h + 冰敷", "退燒；不用 aspirin"]
       ] },
-    { "name": "黏液水腫昏迷", "hint": "低體溫、意識差、心搏過緩、低鈉 + 甲低",
+    { "name": "黏液水腫昏迷", "hint": "低體溫、意識差、心搏過緩、低鈉 + 甲低", "en": "Myxedema coma, hypothyroidism",
       "orders": [
         ["l", "TSH、Free T4、Cortisol（給 T4 前抽）、Na、BS、ABG", "目的：確診甲低；排除合併腎上腺不足（先給類固醇）、低鈉、CO2 滯留"],
         ["m", "Hydrocortisone 100 mg IV q8h", "先給，避免誘發腎上腺危象"],
@@ -29,7 +29,7 @@
         ["p", "被動回溫（毯子），避免快速主動回溫", ""],
         ["p", "低通氣：準備插管", ""]
       ] },
-    { "name": "腎上腺危象", "hint": "休克 + 腹痛嘔吐 + 低鈉高鉀；長期類固醇突停",
+    { "name": "腎上腺危象", "hint": "休克 + 腹痛嘔吐 + 低鈉高鉀；長期類固醇突停", "en": "Adrenal crisis",
       "orders": [
         ["l", "Cortisol + ACTH（不等結果）、Na、K、BS", "目的：原發性（ACTH↑、K↑）vs 次發性；先給 hydrocortisone"],
         ["m", "Hydrocortisone 100 mg IV/IM → 50 mg q6h", "適應：腎上腺危象｜注意：不要等 cortisol 結果；高血糖"],

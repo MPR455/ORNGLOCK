@@ -1,7 +1,7 @@
 {
-  "no": "15", "slug": "wounds", "title": "傷口", "icon": "🩹",
+  "no": "15", "slug": "wounds", "title": "傷口", "en": "Wounds", "icon": "🩹",
   "items": [
-    { "name": "傷口：第一輪", "hint": "出血、紅腫、滲液、裂開",
+    { "name": "傷口：第一輪", "hint": "出血、紅腫、滲液、裂開", "en": "Wound problem",
       "orders": [
         ["p", "看傷口：出血、紅腫熱痛範圍（畫線）、分泌物、裂開", "紅腫快速擴大 + 劇痛 → 壞死性感染"],
         ["l", "CBC、CRP", "排除：感染全身反應", "紅腫 / 發燒"],
@@ -11,7 +11,7 @@
         ["m", "Td 0.5 mL IM", "適應：疫苗 >10 年，或髒傷口 >5 年", "破傷風"],
         ["m", "Acetaminophen 500 mg PO q6h PRN", "適應：傷口痛｜禁忌：急性肝衰竭"]
       ] },
-    { "name": "傷口出血", "hint": "",
+    { "name": "傷口出血", "hint": "", "en": "Wound bleeding",
       "orders": [
         ["p", "直接壓迫 / 加壓繃帶", "不要盲目夾止血鉗"],
         ["p", "止血帶", "壓迫無法控制的危及生命肢體出血", "危及生命"],
@@ -20,7 +20,7 @@
         ["m", "Platelet：<50K 且出血", "適應：活動性出血或處置前 <50K｜注意：ITP、TTP、HIT 不常規輸"],
         ["m", "Cryoprecipitate：Fibrinogen <1.5 g/L", "大量出血", "大量出血"]
       ] },
-    { "name": "抗凝劑使用者傷口出血", "hint": "",
+    { "name": "抗凝劑使用者傷口出血", "hint": "", "en": "Wound bleeding on anticoagulants",
       "orders": [
         ["p", "局部止血；非大出血不常規逆轉", ""],
         ["m", "Vitamin K1 10 mg/amp：2–5 mg PO/IV", "Warfarin 需住院或輸血", "Warfarin"],
@@ -28,13 +28,13 @@
         ["m", "Idarucizumab（Praxbind）5 g IV", "Dabigatran 大出血", "Dabigatran"],
         ["m", "PCC（Human prothrombin complex 500 IU/vial） 2000 U（500 IU ×4）", "Apixaban/Rivaroxaban 大出血", "Xa 抑制劑"]
       ] },
-    { "name": "腔室症候群", "hint": "痛不成比例、被動牽拉痛",
+    { "name": "腔室症候群", "hint": "痛不成比例、被動牽拉痛", "en": "Compartment syndrome",
       "orders": [
         ["p", "鬆開環狀敷料、肢體放心臟高度", "30 min 內重評"],
         ["l", "Compartment pressure", "ΔP（DBP − 腔室壓）<30 風險高"],
         ["p", "緊急骨科/外科：筋膜切開", ""]
       ] },
-    { "name": "術後傷口感染 (SSI)", "hint": "紅腫痛 + 膿",
+    { "name": "術後傷口感染 (SSI)", "hint": "紅腫痛 + 膿", "en": "SSI, surgical site infection",
       "orders": [
         ["p", "拆線 + 切開引流，換藥至二次癒合", "主要治療"],
         ["m", "Cefazolin 1 g IV q8h（或 Cephalexin 500 mg PO q6h）", "紅腫 >5 cm、>38.5°C、HR >110 時加｜腎調：CrCl 10–30 → q12h；<10 → q24h", "全身反應"],
@@ -43,14 +43,14 @@
         ["l", "Wound culture（深部組織）", "目的：深部取樣才準；表面棉棒多為移生菌"],
         ["p", "只懷疑 SSI 不給抗生素", "先確定診斷"]
       ] },
-    { "name": "小傷口感染 / 膿痂疹", "hint": "局部紅、蜜黃色痂、無全身症狀",
+    { "name": "小傷口感染 / 膿痂疹", "hint": "局部紅、蜜黃色痂、無全身症狀", "en": "Impetigo, minor wound infection",
       "orders": [
         ["p", "清除痂皮、NS 清洗", ""],
         ["m", "Mupirocin 2% oint TID × 5 天", "首選外用"],
         ["m", "Fusidic acid 2% cream TID × 5 天", "替代", "替代"],
         ["m", "Cephalexin 500 mg PO QID × 5–7 天", "範圍大、多處", "範圍大"]
       ] },
-    { "name": "壞死性軟組織感染", "hint": "痛不成比例、木頭般硬、毒性",
+    { "name": "壞死性軟組織感染", "hint": "痛不成比例、木頭般硬、毒性", "en": "NSTI, necrotizing soft tissue infection",
       "orders": [
         ["p", "緊急外科清創（6 hr 內）", "治療主軸；影像不得延誤手術"],
         ["m", "Vancomycin 15–20 mg/kg q12h + Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h（或 Meropenem 1 g q8h）", "1 hr 內｜腎調：AUC 400–600；CrCl 10–50 → q24h；HD 透析後補；併 Pip-tazo 腎毒性較高"],
@@ -58,7 +58,7 @@
         ["l", "Blood culture、CBC、Cr、CK、Lactate", "排除：壞死性感染（CK↑、乳酸↑）、敗血症"],
         ["m", "Lactated Ringer 積極補液", "清創後大量滲液"]
       ] },
-    { "name": "撕裂傷", "hint": "",
+    { "name": "撕裂傷", "hint": "", "en": "Laceration",
       "orders": [
         ["p", "檢查遠端脈搏、感覺運動", ""],
         ["p", "清創、沖洗、縫合", "穿刺傷或汙染重不縫"],
@@ -67,12 +67,12 @@
         ["m", "Povidone-iodine 10% 消毒傷口周圍 → NS 大量沖洗", "不要倒進傷口深處"],
         ["m", "Lidocaine 1%（或含 epinephrine）局部浸潤（≤4.5 mg/kg；含 epi ≤7 mg/kg）", "縫合前麻醉；指尖、陰莖不用含 epi 也可"]
       ] },
-    { "name": "破傷風預防", "hint": "",
+    { "name": "破傷風預防", "hint": "", "en": "Tetanus prophylaxis",
       "orders": [
         ["m", "Td（Tetanus & Diphtheria toxoid）0.5 mL IM（或 Tdap 自費）", "接種不明/<3 劑；或髒傷口 >5 年、乾淨傷口 >10 年"],
         ["m", "Tetanus immune globulin 250 IU IM（不同部位）", "髒傷口 + 接種不明或 <3 劑", "髒+未完整"]
       ] },
-    { "name": "動物 / 人咬傷", "hint": "",
+    { "name": "動物 / 人咬傷", "hint": "", "en": "Animal bite, human bite",
       "orders": [
         ["p", "肥皂 + 大量清水沖洗 ≥15 min，優碘消毒", "最重要的預防"],
         ["p", "不一期縫合（臉部例外）", ""],
@@ -82,7 +82,7 @@
         ["m", "Rabies vaccine D0/3/7/14 IM 三角肌", "第二類以上野生動物暴露", "野生動物"],
         ["m", "Rabies immunoglobulin（HRIG 300 IU/2 mL）20 IU/kg 傷口浸潤", "第三類暴露", "第三類"]
       ] },
-    { "name": "糖尿病足感染", "hint": "",
+    { "name": "糖尿病足感染", "hint": "", "en": "Diabetic foot infection, DFI",
       "orders": [
         ["l", "Tissue culture（刮除或切片，不用棉棒）", "目的：找真正致病菌（含厭氧、綠膿）"],
         ["l", "ABI / Toe pressure", "評估缺血"],
@@ -96,7 +96,7 @@
         ["p", "Monofilament + vibration test；入院與術後各評一次 PEDIS", ""],
         ["p", "壞死性筋膜炎 → 照會高壓氧（需高壓氧中心鑑定健保）", ""]
       ] },
-    { "name": "病房跌倒", "hint": "",
+    { "name": "病房跌倒", "hint": "", "en": "Inpatient fall",
       "orders": [
         ["l", "GCS、Vital signs、臥立位 BP", "排除：頭部外傷意識變化、姿勢性低血壓（跌倒原因）"],
         ["x", "Head CT（1 hr 內）", "GCS ≤12、骨折徵象、吐 >1 次、局部缺損｜日間 ☎3789 / ☎2570；夜間急診 CT ☎2568", "嚴重"],
@@ -104,7 +104,7 @@
         ["p", "Neuro check q30min → q1h → q2h", ""],
         ["x", "X-ray 受傷部位", "排除骨折"]
       ] },
-    { "name": "燒燙傷", "hint": "",
+    { "name": "燒燙傷", "hint": "", "en": "Burn",
       "orders": [
         ["p", "涼水冷卻 3–5 min（不用冰）", ""],
         ["m", "LR 2 mL/kg/%TBSA 起始（24 hr 量）", "≥20% TBSA", "≥20%"],
@@ -114,7 +114,7 @@
         ["m", "Silver sulfadiazine 1% cream（Flamazine）外用 QD–BID", "二度以上、非顏面；顏面用 Bacitracin-neomycin oint"],
         ["m", "Bacitracin-neomycin oint BID", "顏面燒傷（不用 silver sulfadiazine）", "顏面"]
       ] },
-    { "name": "針扎 / 血體液暴露", "hint": "工作人員針扎、黏膜噴濺",
+    { "name": "針扎 / 血體液暴露", "hint": "工作人員針扎、黏膜噴濺", "en": "Needlestick injury, BBF exposure, PEP",
       "orders": [
         ["p", "立即沖洗：肥皂水洗傷口、黏膜用 NS 沖", "不要擠壓、不要用漂白水"],
         ["l", "來源：HBsAg、anti-HCV、HIV Ag/Ab；被扎者：HBsAg、anti-HBs、anti-HCV、HIV、ALT", "目的：決定是否給 HBIG、HIV PEP；被扎者基準值供日後追蹤｜HIV Ag/Ab L72-957 → Western blot L72-958；viral load L72-999（確診才開）"],

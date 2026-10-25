@@ -1,7 +1,7 @@
 {
-  "no": "03", "slug": "seizure", "title": "癲癇", "icon": "⚡",
+  "no": "03", "slug": "seizure", "title": "癲癇", "en": "Seizure", "icon": "⚡",
   "items": [
-    { "name": "癲癇重積：0–5 分", "hint": "抽搐中，穩定期",
+    { "name": "癲癇重積：0–5 分", "hint": "抽搐中，穩定期", "en": "Status epilepticus, SE, 0–5 min",
       "orders": [
         ["l", "指尖血糖（0–2 min）", "低血糖要先排除；抽搐中難量時別延誤治療"],
         ["p", "側躺、頭擺位保呼吸道、別塞東西入口", "非侵入方式保持通暢"],
@@ -12,14 +12,14 @@
         ["m", "Lorazepam 2 mg/amp：0.1 mg/kg IV（max 4 mg）", "適應：抽 ≥5 min 或反覆發作｜無 IV：Midazolam 10 mg IM", "≥5 分"],
         ["m", "50% Glucose 20 mL ×2 amp IV push（BS <40：×4 amp）", "適應：低血糖抽搐", "BS <70"]
       ] },
-    { "name": "癲癇重積：第一線 (≥5 分)", "hint": "持續 ≥5 min 或反覆未醒",
+    { "name": "癲癇重積：第一線 (≥5 分)", "hint": "持續 ≥5 min 或反覆未醒", "en": "Status epilepticus first line, benzodiazepine",
       "orders": [
         ["m", "Lorazepam 2 mg/amp：0.1 mg/kg IV（max 4 mg/劑，≤2 mg/min）", "首選；一次給足全劑量，5–10 min 未停可重複一次"],
         ["m", "Diazepam 10 mg/2 mL：0.15 mg/kg IV（max 10 mg/劑，≤5 mg/min）", "IV 替代", "無 lorazepam"],
         ["m", "Midazolam 5 mg/1 mL：10 mg IM（<40 kg 5 mg）", "沒有 IV 時首選；比 IV lorazepam 更快有效", "無 IV"],
         ["p", "監測呼吸抑制與低血壓", "BZD 副作用"]
       ] },
-    { "name": "癲癇重積：第二線 (≥20 分)", "hint": "足量 BZD 後仍在抽",
+    { "name": "癲癇重積：第二線 (≥20 分)", "hint": "足量 BZD 後仍在抽", "en": "Status epilepticus second line, ASM",
       "orders": [
         ["m", "Levetiracetam 500 mg/5 mL：60 mg/kg IV（max 4,500 mg）over 10 min", "交互作用少、不經肝；懷孕首選｜腎調：CrCl 30–50 → 250–750 mg q12h；<30 → 250–500 mg q12h；HD 透析後補"],
         ["m", "Valproate 400 mg/vial：40 mg/kg IV（max 3,000 mg）over 10 min", "肝病禁用；可生育女性避免", "替代"],
@@ -27,7 +27,7 @@
         ["l", "抗癲癇藥血中濃度", "原本有吃藥者查順從性"],
         ["m", "Phenobarbital 100 mg/amp：15–20 mg/kg IV（≤100 mg/min）", "第二線替代；呼吸抑制、低血壓", "替代"]
       ] },
-    { "name": "難治型重積 (≥40 分)", "hint": "第二線也無效",
+    { "name": "難治型重積 (≥40 分)", "hint": "第二線也無效", "en": "Refractory status epilepticus, RSE",
       "orders": [
         ["p", "插管 + 轉 ICU", "持續輸注需呼吸支持，可能要升壓劑"],
         ["m", "Midazolam 15 mg/3 mL：0.2 mg/kg IV（2 mg/min），維持 0.05–2 mg/kg/hr", "麻醉類輸注"],
@@ -35,12 +35,12 @@
         ["x", "Continuous EEG", "調到電發作停止或 burst suppression；昏迷至少 48 hr｜EEG：M29-021（awake）/ M29-029（awake + sleep）｜急做 ☎2240/3943"],
         ["p", "維持 24–48 hr 後緩慢撤除", "撤除時給足維持用抗癲癇藥"]
       ] },
-    { "name": "抽完沒醒", "hint": "停抽 >10 min 意識未回基準",
+    { "name": "抽完沒醒", "hint": "停抽 >10 min 意識未回基準", "en": "Postictal not waking, NCSE",
       "orders": [
         ["x", "Continuous EEG（SE 開始 1 hr 內）", "18–50% 停抽後仍是非痙攣性重積｜代碼：EEG M29-029；Video EEG M29-030｜☎2240/3943"],
         ["l", "血糖、電解質、血氨、毒物", "排除其他意識障礙"]
       ] },
-    { "name": "新發作 / 頻繁抽搐：檢查", "hint": "抽完之後要排什麼",
+    { "name": "新發作 / 頻繁抽搐：檢查", "hint": "抽完之後要排什麼", "en": "New-onset seizure workup, EEG, AED level",
       "orders": [
         ["x", "EEG（awake & sleep）", "代碼：M29-029（awake M29-021）｜發作停止後電聯 10F 腦波室 ☎2240/3943 當日插做，不等排程｜無法下樓 → portable，急單「B: STAT & portable」"],
         ["l", "F/S、CBC/DC、AST/ALT、BUN/Cr、Na、K、Ca、Mg、CRP、ABG、NH3", "排除：低血糖、低鈉、低鈣鎂、尿毒、肝病、感染"],
@@ -49,25 +49,25 @@
         ["p", "避免誘發抽搐藥：carbapenem、cefepime、tramadol、theophylline、bupropion、quinolone", "Meropenem 會讓 valproate 濃度掉到近 0"],
         ["p", "Valproate：不與 NOAC 併用、孕婦禁用、注意血氨與血小板｜Levetiracetam：依腎功能｜Lacosamide：PR 延長、AV block", ""]
       ] },
-    { "name": "抽搐合併低血糖", "hint": "BS < 72",
+    { "name": "抽搐合併低血糖", "hint": "BS < 72", "en": "Seizure with hypoglycemia",
       "orders": [
         ["m", "50% Glucose 20 mL ×2 amp IV push（BS <40：×4 amp）", "或 10% 200 mL；心腎衰用最小量"],
         ["m", "Glucagon 1 mg IM", "沒 IV 時；酗酒、肝病效果差", "無 IV"],
         ["l", "10 min 後重測血糖", "仍低就重複"],
         ["m", "Vitamin B complex amp（B1 60 mg/amp） ×3 IV TID", "院內無單方 thiamine 針，以 B 群針 B1 含量換算；給糖前先打", "酒精/營養差"]
       ] },
-    { "name": "抽搐合併低血鈉", "hint": "嚴重症狀",
+    { "name": "抽搐合併低血鈉", "hint": "嚴重症狀", "en": "Seizure with hyponatremia",
       "orders": [
         ["m", "3% NaCl 150 mL IV over 20 min", "可重複 2 次，或 Na 升 5 為止"],
         ["l", "Na 每 20 min", "目的：確認 3% NaCl bolus 後上升 4–6 即停｜防矯正過快（24 hr ≤8–10）"],
         ["p", "第一個 24 hr Na 上升 ≤10", "之後每天 ≤8 直到 130"]
       ] },
-    { "name": "抽搐合併低血鈣", "hint": "嚴重低血鈣",
+    { "name": "抽搐合併低血鈣", "hint": "嚴重低血鈣", "en": "Seizure with hypocalcemia",
       "orders": [
         ["m", "10% Calcium gluconate 10–20 mL + D5W 50–100 mL IV over 10 min", "適應：有症狀低血鈣、抽搐、QT 延長｜禁忌：digoxin 中毒慎用；與 NaHCO3 同管會沉澱"],
         ["x", "ECG monitor", "給鈣時監測｜醫囑：EKG MONITOR（附註 wireless）"]
       ] },
-    { "name": "酒精戒斷癲癇", "hint": "停酒 24–48 hr 內發作",
+    { "name": "酒精戒斷癲癇", "hint": "停酒 24–48 hr 內發作", "en": "Alcohol withdrawal seizure",
       "orders": [
         ["m", "Lorazepam 2 mg IV 或 Diazepam 10 mg IV", "BZD 是第一線"],
         ["p", "不用 phenytoin、β-blocker、α2 agonist", "對戒斷癲癇無效"],
@@ -76,7 +76,7 @@
         ["p", "密切監測 ≥24 hr，每 1–2 hr 重評", ""],
         ["x", "EEG 及/或 Brain CT", "新發作、型態不同、局部缺損、發燒、外傷｜日間 ☎3789 / ☎2570；夜間急診 CT ☎2568", "新型態"]
       ] },
-    { "name": "子癇", "hint": "孕婦或產後抽搐",
+    { "name": "子癇", "hint": "孕婦或產後抽搐", "en": "Eclampsia",
       "orders": [
         ["m", "MgSO4 10% 20 mL ×2（4 g）IV over 5–15 min，之後 1 g/hr", "子癇首選，優於抗癲癇藥"],
         ["p", "q30min BP/HR/RR/SpO2、反射；每小時尿量", "看鎂中毒"],
@@ -84,14 +84,14 @@
         ["m", "10% Calcium gluconate 10 mL IV（稀釋 10 min）", "鎂中毒：反射消失、RR <12、SpO2 <94%", "鎂中毒"],
         ["p", "降壓：SBP >160 或 DBP >110", "重度高血壓"]
       ] },
-    { "name": "抽搐後外傷 / 橫紋肌溶解", "hint": "撞頭、肌痛、茶色尿",
+    { "name": "抽搐後外傷 / 橫紋肌溶解", "hint": "撞頭、肌痛、茶色尿", "en": "Post-seizure trauma, rhabdomyolysis",
       "orders": [
         ["x", "Head CT（1 hr 內）", "GCS ≤12、骨折徵象、局部缺損、外傷後發作｜日間 ☎3789 / ☎2570；夜間急診 CT ☎2568"],
         ["p", "頸椎保護", "頭臉外傷先假設頸椎受傷"],
         ["l", "CK、K、Cr、UA（潛血）", "CK >1000 為橫紋肌溶解"],
         ["m", "Lactated Ringer / NS 1.5 L/hr，目標尿量 200–300 mL/hr", "避免只用 NS；心臟病與老人小心"]
       ] },
-    { "name": "昏厥 vs 癲癇", "hint": "不確定是不是抽搐",
+    { "name": "昏厥 vs 癲癇", "hint": "不確定是不是抽搐", "en": "Syncope vs seizure",
       "orders": [
         ["x", "12-lead ECG", "找可模仿發作的心臟原因｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
         ["x", "EEG（72 hr 內）", "首次發作後；正常也不能排除｜EEG：M29-021（awake）/ M29-029（awake + sleep）｜急做 ☎2240/3943"],

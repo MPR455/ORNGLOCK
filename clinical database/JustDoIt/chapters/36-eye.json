@@ -1,7 +1,7 @@
 {
-  "no": "36", "slug": "eye", "title": "眼科", "icon": "👁️",
+  "no": "36", "slug": "eye", "title": "眼科", "en": "Eye", "icon": "👁️",
   "items": [
-    { "name": "眼睛紅 / 痛 / 看不清：第一輪", "hint": "先量視力、瞳孔、眼壓",
+    { "name": "眼睛紅 / 痛 / 看不清：第一輪", "hint": "先量視力、瞳孔、眼壓", "en": "Red eye, eye pain, blurred vision",
       "orders": [
         ["x", "視力（每眼）+ 瞳孔 + 眼壓", "排除：急性青光眼（眼壓 >40、瞳孔中度散大）、視神經 / 視網膜疾病"],
         ["x", "Fluorescein 染色", "排除：角膜擦傷、潰瘍、樹枝狀潰瘍（HSV）"],
@@ -9,7 +9,7 @@
         ["m", "Proparacaine 0.5% 1 gtt（檢查用）", "適應：檢查前止痛；點了就不痛 → 表面角膜問題｜禁忌：不可開回家"],
         ["m", "人工淚液（Tears naturale free）QID", "適應：乾眼、輕微刺激", "無紅旗"]
       ] },
-    { "name": "急性閉角型青光眼", "hint": "眼痛頭痛嘔吐、角膜霧、瞳孔中度散大、眼壓 >40",
+    { "name": "急性閉角型青光眼", "hint": "眼痛頭痛嘔吐、角膜霧、瞳孔中度散大、眼壓 >40", "en": "Acute angle-closure glaucoma, AACG",
       "orders": [
         ["x", "眼壓量測（每 30–60 min 重測）", "目的：確認降到 <40（pilocarpine 才有效）、<25 安全"],
         ["m", "Cosopt（Dorzolamide 2% + Timolol 0.5%）1 gtt", "減少房水；氣喘、心搏過緩避免 timolol"],
@@ -21,7 +21,7 @@
         ["m", "Ondansetron 4 mg IV + Ketorolac 30 mg IV", "止吐止痛"],
         ["p", "雷射虹膜切開術（LPI），對側眼預防", "根本治療"]
       ] },
-    { "name": "化學性眼灼傷", "hint": "酸鹼噴入眼：先沖再問",
+    { "name": "化學性眼灼傷", "hint": "酸鹼噴入眼：先沖再問", "en": "Chemical eye burn",
       "orders": [
         ["p", "立即沖洗 NS / Lactated Ringer 1–2 L 至 pH 7.0–7.2", "鹼傷最急；可接 IV 管沖"],
         ["m", "Proparacaine 0.5% 1–2 gtt", "先麻再沖；不可帶回家"],
@@ -33,7 +33,7 @@
         ["m", "Ascorbate sodium 10 mg/mL 眼藥 q2h", "鹼傷促進修復", "鹼傷"],
         ["m", "Doxycycline 100 mg PO BID", "抑制 MMP、減少融解", "中重度"]
       ] },
-    { "name": "細菌性角膜炎 / 角膜潰瘍", "hint": "隱形眼鏡、白色浸潤、螢光染色",
+    { "name": "細菌性角膜炎 / 角膜潰瘍", "hint": "隱形眼鏡、白色浸潤、螢光染色", "en": "Bacterial keratitis, corneal ulcer",
       "orders": [
         ["l", "角膜刮片 Gram stain + culture（給藥前）", "目的：找菌（綠膿、葡萄球菌、阿米巴）再調藥"],
         ["m", "Moxifloxacin 0.5% q1h（日夜）", "小（<2 mm）、周邊、無前房蓄膿"],
@@ -44,7 +44,7 @@
         ["m", "Cyclopentolate 1% TID 或 Atropine 1% BID", "止痛、防後粘連"],
         ["p", "停戴隱形眼鏡、不包眼；初期不用類固醇", ""]
       ] },
-    { "name": "黴菌性角膜炎", "hint": "植物外傷、羽毛狀邊緣、衛星病灶",
+    { "name": "黴菌性角膜炎", "hint": "植物外傷、羽毛狀邊緣、衛星病灶", "en": "Fungal keratitis",
       "orders": [
         ["l", "角膜刮片 KOH + fungal culture", "目的：確認黴菌（絲狀 vs 酵母）決定 natamycin / amphotericin"],
         ["m", "Natamycin 5% q1h", "絲狀菌（Fusarium、Aspergillus）首選"],
@@ -53,7 +53,7 @@
         ["m", "Voriconazole 200 mg PO BID（首日 400 mg BID）", "深層、近穿孔", "深層"],
         ["p", "禁用類固醇", ""]
       ] },
-    { "name": "單純疱疹角膜炎", "hint": "樹枝狀潰瘍、角膜知覺降低",
+    { "name": "單純疱疹角膜炎", "hint": "樹枝狀潰瘍、角膜知覺降低", "en": "HSV keratitis, herpes simplex",
       "orders": [
         ["x", "Fluorescein 染色 + 裂隙燈", "樹枝狀上皮缺損"],
         ["m", "Acyclovir 3% oph oint 5 次/天 × 10–14 天", "適應：HSV 上皮型角膜炎｜禁忌：上皮型不用類固醇"],
@@ -61,7 +61,7 @@
         ["m", "Valaciclovir 500 mg PO TID × 10 天", "基質炎、無法點藥｜腎調：CrCl 30–49 → 1 g q12h；10–29 → 1 g q24h", "基質炎"],
         ["p", "上皮型禁用類固醇", ""]
       ] },
-    { "name": "帶狀疱疹眼病 (HZO)", "hint": "三叉神經 V1 皮疹、鼻尖病灶（Hutchinson）",
+    { "name": "帶狀疱疹眼病 (HZO)", "hint": "三叉神經 V1 皮疹、鼻尖病灶（Hutchinson）", "en": "HZO, herpes zoster ophthalmicus",
       "orders": [
         ["m", "Valaciclovir 500 mg ×2（1 g）PO TID × 7–10 天", "72 hr 內最好，超過仍給｜腎調：CrCl 30–49 → 1 g q12h；10–29 → 1 g q24h"],
         ["m", "Acyclovir 250 mg/vial：10 mg/kg IV q8h", "免疫低下、重症｜腎調：CrCl 25–50 → q12h；10–25 → q24h；<10 → 半量 q24h", "重症"],
@@ -71,7 +71,7 @@
         ["m", "Gabapentin 300 mg PO HS 起", "神經痛｜腎調：CrCl 30–59 → 400–1400 mg/day；15–29 → 200–700 mg/day", "神經痛"],
         ["x", "裂隙燈 + 眼壓", "排除：HZO 角膜炎、葡萄膜炎、眼壓升高"]
       ] },
-    { "name": "細菌性結膜炎", "hint": "膿性分泌物、眼皮黏住、視力正常",
+    { "name": "細菌性結膜炎", "hint": "膿性分泌物、眼皮黏住、視力正常", "en": "Bacterial conjunctivitis",
       "orders": [
         ["m", "Levofloxacin 0.5% QID × 5–7 天", "適應：細菌性結膜炎（膿性分泌物）｜注意：隱形眼鏡者首選 FQ"],
         ["m", "Tobramycin 0.3% QID 或 Tobramycin oint HS", "替代", "替代"],
@@ -80,7 +80,7 @@
         ["m", "Sulfamethoxazole 4% 眼藥 TID", "適應：輕度結膜炎替代｜禁忌：磺胺過敏", "替代"],
         ["m", "Chloramphenicol 0.25% 眼藥 QID", "適應：結膜炎替代", "替代"]
       ] },
-    { "name": "過敏性結膜炎", "hint": "癢、水樣分泌物、雙側",
+    { "name": "過敏性結膜炎", "hint": "癢、水樣分泌物、雙側", "en": "Allergic conjunctivitis",
       "orders": [
         ["m", "Olopatadine 0.1% BID", "適應：過敏性結膜炎（癢）"],
         ["m", "Ketotifen 0.025% BID", "替代", "替代"],
@@ -88,7 +88,7 @@
         ["m", "人工淚液（Tears naturale free）冷藏 QID", "適應：沖淡過敏原、乾眼｜無防腐劑可頻繁點"],
         ["m", "Levocetirizine 5 mg PO QD", "合併鼻炎"]
       ] },
-    { "name": "前葡萄膜炎 / 虹膜炎", "hint": "畏光、睫狀充血、前房細胞、瞳孔小",
+    { "name": "前葡萄膜炎 / 虹膜炎", "hint": "畏光、睫狀充血、前房細胞、瞳孔小", "en": "Anterior uveitis, iritis",
       "orders": [
         ["p", "先排除感染（角膜炎、眼內炎）", ""],
         ["m", "Prednisolone acetate 1% q1–2h → 依反應減量", "適應：非感染性前葡萄膜炎｜禁忌：先排除 HSV、黴菌、細菌角膜炎；追眼壓"],
@@ -96,7 +96,7 @@
         ["m", "Timolol 0.5% BID", "眼壓高", "眼壓高"],
         ["l", "HLA-B27、VDRL / TPHA、CXR", "雙側或復發"]
       ] },
-    { "name": "眼內炎", "hint": "術後 / 注射後：痛、視力驟降、前房蓄膿",
+    { "name": "眼內炎", "hint": "術後 / 注射後：痛、視力驟降、前房蓄膿", "en": "Endophthalmitis",
       "orders": [
         ["l", "前房 / 玻璃體液 Gram stain + culture", "目的：找菌，調整玻璃體內抗生素"],
         ["m", "Intravitreal Vancomycin 1 mg/0.1 mL + Ceftazidime 2.25 mg/0.1 mL", "最重要，越快越好"],
@@ -107,7 +107,7 @@
         ["l", "Blood culture ×2", "內因性", "內因性"],
         ["p", "玻璃體切除（視力只剩光覺）", ""]
       ] },
-    { "name": "眼眶周圍 / 眼眶蜂窩性組織炎", "hint": "眼皮紅腫；眼球突出、眼動痛、視力降 = 眼眶",
+    { "name": "眼眶周圍 / 眼眶蜂窩性組織炎", "hint": "眼皮紅腫；眼球突出、眼動痛、視力降 = 眼眶", "en": "Periorbital / orbital cellulitis",
       "orders": [
         ["x", "CT orbit + sinus with contrast", "眼球突出、眼動受限、視力降、複視｜影像診療科 CT ☎2585#316；夜間急診 CT ☎2568｜顯影劑：同意書 + 家屬，先看腎功能"],
         ["m", "Curam 1 g（875/125）PO BID × 7–10 天", "眶隔前、輕症", "眶隔前"],
@@ -117,7 +117,7 @@
         ["m", "Oxymetazoline 0.05% 鼻噴 BID ≤3 天", "合併鼻竇炎"],
         ["x", "每 4–6 hr 視力、瞳孔、眼動", "惡化 → 引流"]
       ] },
-    { "name": "角膜擦傷 / 異物", "hint": "異物感、流淚、螢光染色陽性",
+    { "name": "角膜擦傷 / 異物", "hint": "異物感、流淚、螢光染色陽性", "en": "Corneal abrasion, foreign body",
       "orders": [
         ["m", "Proparacaine 0.5% 1 gtt（僅檢查用）", "不可開回家"],
         ["x", "Fluorescein paper 染色 + 裂隙燈 + 翻眼瞼", "排除：角膜擦傷、異物、樹枝狀潰瘍（HSV）、Seidel 陽性（穿孔）"],
@@ -128,7 +128,7 @@
         ["p", "不包眼（隱形眼鏡者絕對不包）", ""],
         ["m", "Gentamicin 0.3% oph oint QID", "適應：眼皮 / 角膜擦傷預防感染（替代）", "替代"]
       ] },
-    { "name": "前房出血 (Hyphema)", "hint": "外傷後前房血液",
+    { "name": "前房出血 (Hyphema)", "hint": "外傷後前房血液", "en": "Hyphema",
       "orders": [
         ["x", "眼壓、裂隙燈；疑開放性外傷做 CT orbit", "排除：眼壓升高、眼球破裂、眶內異物｜禁忌：疑眼球破裂不要壓眼｜影像診療科 CT ☎2585#316；夜間急診 CT ☎2568｜顯影劑：同意書 + 家屬，先看腎功能"],
         ["m", "Prednisolone acetate 1% QID", "適應：前房出血減少發炎與再出血｜注意：追眼壓"],
@@ -137,7 +137,7 @@
         ["p", "床頭抬高 30°、眼罩；停 NSAID / 抗血小板", ""],
         ["l", "Sickle cell screen（高風險族群）", "目的：鐮狀細胞病前房出血眼壓高、不能用 acetazolamide"]
       ] },
-    { "name": "突發無痛視力喪失", "hint": "疑 CRAO = 眼中風",
+    { "name": "突發無痛視力喪失", "hint": "疑 CRAO = 眼中風", "en": "Sudden painless vision loss, CRAO",
       "orders": [
         ["p", "視為急性中風：送卒中中心、4.5 hr 內評估", ""],
         ["l", "ESR、CRP", "≥50 歲排除顳動脈炎"],
@@ -147,7 +147,7 @@
         ["m", "Methylprednisolone 500 mg IV", "疑顳動脈炎", "GCA"],
         ["m", "Tropicamide 1% 1 gtt", "散瞳看眼底（櫻桃紅斑）"]
       ] },
-    { "name": "ICU 眼閉不全 / 暴露性角膜病變", "hint": "鎮靜插管、眼睛閉不緊",
+    { "name": "ICU 眼閉不全 / 暴露性角膜病變", "hint": "鎮靜插管、眼睛閉不緊", "en": "Exposure keratopathy, lagophthalmos",
       "orders": [
         ["m", "Carbomer gel 0.2%（Vidisic）q4–6h", "適應：ICU 眼閉不全預防暴露性角膜病變"],
         ["m", "Sustain-tears oph oint HS", "夜間"],

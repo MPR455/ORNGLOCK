@@ -1,7 +1,7 @@
 {
-  "no": "29", "slug": "acid-base", "title": "酸鹼", "icon": "⚗️",
+  "no": "29", "slug": "acid-base", "title": "酸鹼", "en": "Acid–base", "icon": "⚗️",
   "items": [
-    { "name": "血氣判讀", "hint": "",
+    { "name": "血氣判讀", "hint": "", "en": "ABG interpretation, blood gas",
       "orders": [
         ["l", "ABG（休克或 SBP <90 抽動脈）", "記錄給氧方式｜開立：呼吸治療（新）→ Blood gas analysis-artery"],
         ["l", "Na、K、Cl、HCO3 → AG = Na + K − (Cl + HCO3)", "確認院內公式"],
@@ -11,7 +11,7 @@
         ["l", "30–60 min 後重抽", "明顯酸中毒或高碳酸"],
         ["m", "Sodium bicarbonate 7% 20 mL（16.7 mEq/amp）", "適應：pH ≤7.2 + AKI、高鉀、TCA｜禁忌：呼吸性酸中毒、單純乳酸中毒效果有限", "pH ≤7.2"]
       ] },
-    { "name": "高 AG 代謝性酸中毒", "hint": "",
+    { "name": "高 AG 代謝性酸中毒", "hint": "", "en": "High anion gap metabolic acidosis, HAGMA",
       "orders": [
         ["l", "Lactate", "排除：乳酸中毒（休克、缺血、metformin）"],
         ["l", "Blood ketone（β-hydroxybutyrate）+ glucose", "排除：DKA、酒精性 / 飢餓酮酸"],
@@ -22,14 +22,14 @@
         ["l", "Ketone（不用尿酮）", "飢餓、酒精性酮酸也會高"],
         ["p", "照會腎臟科：緊急透析", "嚴重酸中毒 + 高 K、水腫、尿毒", "嚴重"]
       ] },
-    { "name": "乳酸升高", "hint": ">2 mmol/L",
+    { "name": "乳酸升高", "hint": ">2 mmol/L", "en": "Lactic acidosis",
       "orders": [
         ["l", "Lactate q2h × 8 hr → q8–12h", "每 2 hr 降 ≥10% 較好"],
         ["m", "Lactated Ringer 30 mL/kg（敗血症）", "不要為了乳酸正常持續輸液"],
         ["p", "停 metformin（AKI 時）", ""],
         ["l", "Blood culture", "疑敗血症"]
       ] },
-    { "name": "毒性醇類（甲醇 / 乙二醇）", "hint": "",
+    { "name": "毒性醇類（甲醇 / 乙二醇）", "hint": "", "en": "Toxic alcohols, methanol, ethylene glycol",
       "orders": [
         ["l", "AG、osmolal gap、methanol / ethylene glycol level、UA（草酸結晶）、ECG", "OG <30 也不能排除"],
         ["m", "Fomepizole 1.5 g/1.5 mL：15 mg/kg IV over 30 min → 10 mg/kg q12h", "高度懷疑就給，不等檢驗"],
@@ -37,20 +37,20 @@
         ["p", "透析：甲醇 pH ≤7.15 或 AG >24", "轉可透析醫院"],
         ["p", "聯絡毒物中心", ""]
       ] },
-    { "name": "水楊酸中毒", "hint": "",
+    { "name": "水楊酸中毒", "hint": "", "en": "Salicylate toxicity, aspirin overdose",
       "orders": [
         ["m", "NS / Lactated Ringer 補足容積", "適應：水楊酸中毒常脫水｜注意：肺水腫風險"],
         ["m", "Sodium bicarbonate 7% 20 mL ×5（≈84 mEq）in D5W 1 L，150 mL/hr（尿 pH 7.5–8）", "鹼化尿液"],
         ["l", "Salicylate level 重複、K", "目的：2 hr 一次直到下降；低鉀會讓尿無法鹼化"],
         ["p", "緊急透析", "意識改變、ARDS、>100 mg/dL（腎差 >90）", "嚴重"]
       ] },
-    { "name": "要不要補鹼", "hint": "",
+    { "name": "要不要補鹼", "hint": "", "en": "Bicarbonate therapy",
       "orders": [
         ["m", "Sodium bicarbonate 7% 20 mL（16.7 mEq/amp）：目標 pH >7.3", "敗血症 pH ≤7.2 + AKI 2–3 期", "pH ≤7.2 + AKI"],
         ["m", "Sodium bicarbonate 7% 20 mL ×6（100 mEq）+ 無菌水 400 mL over 2 hr", "DKA pH <7.0 可考慮", "DKA pH <7"],
         ["p", "單純乳酸酸中毒不給", "會低 K、腦水腫"]
       ] },
-    { "name": "正常 AG 酸中毒", "hint": "高氯性",
+    { "name": "正常 AG 酸中毒", "hint": "高氯性", "en": "NAGMA, normal anion gap acidosis, hyperchloremic",
       "orders": [
         ["l", "Urine Na、K、Cl（urine anion gap）", "判讀：UAG 負 → 腹瀉 / GI 流失；UAG 正 → RTA"],
         ["l", "K", "目的：低鉀 → 腹瀉、type 1/2 RTA；高鉀 → type 4 RTA"],
@@ -58,7 +58,7 @@
         ["m", "改用 Lactated Ringer", "大量 NS 所致"],
         ["l", "Cl 每日", "用 NS 時"]
       ] },
-    { "name": "呼吸性酸中毒", "hint": "PaCO2 >45 + pH <7.35",
+    { "name": "呼吸性酸中毒", "hint": "PaCO2 >45 + pH <7.35", "en": "Respiratory acidosis, hypercapnia",
       "orders": [
         ["p", "O2 目標 88–92%（Venturi 24–28%）", "過度給氧會加重"],
         ["p", "BiPAP", "COPD pH ≤7.35；1–4 hr 看改善"],
@@ -66,7 +66,7 @@
         ["l", "FVC", "神經肌肉病", "神經肌肉"],
         ["p", "插管", "NIV 失敗或快速惡化", "NIV 失敗"]
       ] },
-    { "name": "代謝性鹼中毒", "hint": "",
+    { "name": "代謝性鹼中毒", "hint": "", "en": "Metabolic alkalosis",
       "orders": [
         ["l", "Urine Na、Cl、K", "嘔吐：尿 Cl 低"],
         ["m", "NS", "低氯、容積不足"],
@@ -74,7 +74,7 @@
         ["p", "停利尿劑或改 spironolactone", ""],
         ["m", "Acetazolamide 250 mg ×1–2 PO QD", "嚴重鹼中毒合併水腫", "水腫"]
       ] },
-    { "name": "呼吸性鹼中毒", "hint": "過度換氣",
+    { "name": "呼吸性鹼中毒", "hint": "過度換氣", "en": "Respiratory alkalosis",
       "orders": [
         ["x", "CXR", "排除：肺炎、氣胸、肺水腫"],
         ["l", "D-dimer → CTPA", "排除：肺栓塞"],

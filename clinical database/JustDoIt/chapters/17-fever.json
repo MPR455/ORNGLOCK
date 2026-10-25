@@ -1,7 +1,7 @@
 {
-  "no": "17", "slug": "fever", "title": "發燒", "icon": "🌡️",
+  "no": "17", "slug": "fever", "title": "發燒", "en": "Fever", "icon": "🌡️",
   "items": [
-    { "name": "新發燒：第一輪", "hint": "住院中 ≥38.3°C",
+    { "name": "新發燒：第一輪", "hint": "住院中 ≥38.3°C", "en": "New fever, fever workup",
       "orders": [
         ["l", "Blood culture ×2（兩個部位，各 ~10 mL）", "抗生素前，但不延誤"],
         ["l", "CBC/DC、CRP、BUN/Cr、電解質、肝功能、PT", "排除：感染（WBC、left shift）、器官功能異常（SOFA）"],
@@ -14,7 +14,7 @@
         ["m", "Acetaminophen 500 mg ×1–2 PO q6h PRN BT >38.5（max 4 g/day）", "適應：不適時退燒｜禁忌：急性肝衰竭"],
         ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV（1 hr 內，抽完培養）", "適應：發燒 + 低血壓 / 意識改變 / 呼吸窘迫（敗血症）｜禁忌：β-lactam 過敏｜腎調：首劑不減", "敗血症"]
       ] },
-    { "name": "敗血症 / 敗血性休克", "hint": "感染 + 低血壓或乳酸高",
+    { "name": "敗血症 / 敗血性休克", "hint": "感染 + 低血壓或乳酸高", "en": "Sepsis, septic shock",
       "orders": [
         ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h（1 hr 內）", "很可能/確定敗血症或休克；可能者 3 hr 內；先抽血培養｜腎調：CrCl 20–40 → 3.375 g q6h；<20 → 2.25 g q6h；HD 2.25 g q8h + 0.75 g 透析後"],
         ["m", "Lactated Ringer 30 mL/kg（3 hr 內）", "或 250 mL bolus 重複到 1000 mL 再評估"],
@@ -27,20 +27,20 @@
         ["m", "Meropenem 1 g IV q8h（取代 Pip-tazo）", "90 天內 ESBL、近期廣效抗生素｜腎調：CrCl 26–50 → 1 g q12h；10–25 → 500 mg q12h；<10 → 500 mg QD", "ESBL 風險"],
         ["m", "加 Vancomycin 25 mg/kg IV 負荷", "MRSA 帶菌、導管、皮膚軟組織｜腎調：AUC 400–600；CrCl 10–50 → q24h；HD 透析後補；併 Pip-tazo 腎毒性較高", "MRSA 風險"]
       ] },
-    { "name": "疑導管相關菌血症 (CRBSI)", "hint": "中心導管 + 發燒",
+    { "name": "疑導管相關菌血症 (CRBSI)", "hint": "中心導管 + 發燒", "en": "CRBSI, catheter-related bloodstream infection, CLABSI",
       "orders": [
         ["l", "配對 blood culture：導管一套 + 周邊一套（標示）", "抗生素前"],
         ["p", "拔除非隧道式 CVC 並送尖端培養", "不明原因 sepsis 或插入處紅膿", "紅膿/sepsis"],
         ["m", "Vancomycin 25 mg/kg IV 負荷 → 15–20 mg/kg q12h（依 CrCl、濃度）", "MRSA 盛行環境的經驗用藥｜腎調：AUC 400–600；CrCl 10–50 → q24h；HD 透析後補；併 Pip-tazo 腎毒性較高"],
         ["m", "加 Cefepime 2 g q8h 或 Pip-tazo 4.5 g q6h", "嗜中性球低、嚴重敗血症、已知 MDR 移生", "高風險"]
       ] },
-    { "name": "社區型肺炎", "hint": "",
+    { "name": "社區型肺炎", "hint": "", "en": "CAP, community-acquired pneumonia",
       "orders": [
         ["m", "Ceftriaxone 2 g IV QD + Azithromycin 500 mg（250 mg ×2）PO QD", "適應：CAP 住院（一般病房）｜注意：azithro QT 延長｜禁忌：β-lactam 嚴重過敏改 moxifloxacin"],
         ["m", "Moxifloxacin 400 mg IV/PO QD（Avelox）", "非重症單用；重症不單用", "替代"],
         ["l", "Sputum culture、Blood culture", "重症或 MRSA/綠膿風險", "重症"]
       ] },
-    { "name": "腹內感染", "hint": "",
+    { "name": "腹內感染", "hint": "", "en": "Intra-abdominal infection, IAI",
       "orders": [
         ["x", "CT abdomen（膽道先 echo）", "排除：膿瘍、穿孔、腸缺血；膽道病變超音波較好｜影像診療科 CT ☎2585#316；夜間急診 CT ☎2568｜顯影劑：同意書 + 家屬，先看腎功能"],
         ["m", "Ceftriaxone 2 g IV QD + Metronidazole 500 mg IV q8h（或 Ertapenem 1 g QD）", "低風險社區型"],
@@ -48,14 +48,14 @@
         ["p", "外科 / 介入放射 source control", ""],
         ["p", "Source control 後抗生素 ≤4 天", ""]
       ] },
-    { "name": "C. difficile", "hint": "抗生素後腹瀉",
+    { "name": "C. difficile", "hint": "抗生素後腹瀉", "en": "C. difficile, CDI",
       "orders": [
         ["l", "Stool C. difficile toxin / PCR", "目的：抗生素後 ≥3 次水瀉才送；成形便不要送"],
         ["m", "Vancomycin 125 mg cap PO QID × 10 天", "或 fidaxomicin 200 mg BID × 10 天"],
         ["m", "Vancomycin 125 mg ×4（500 mg）PO/NG QID + Metronidazole 500 mg IV q8h", "Fulminant（休克、ileus、megacolon）", "Fulminant"],
         ["p", "接觸隔離", ""]
       ] },
-    { "name": "嗜中性球低下發燒", "hint": "ANC <500 + 發燒",
+    { "name": "嗜中性球低下發燒", "hint": "ANC <500 + 發燒", "en": "Febrile neutropenia, FN",
       "orders": [
         ["l", "Blood culture ≥2 套（每個管腔各一 + 周邊）", "目的：找 CRBSI；抗生素前抽"],
         ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h", "1 hr 內；或 cefepime / meropenem｜腎調：CrCl 20–40 → 3.375 g q6h；<20 → 2.25 g q6h；HD 2.25 g q8h + 0.75 g 透析後"],
@@ -71,7 +71,7 @@
         ["m", "Filgrastim 300 mcg SC QD", "適應：高風險 FN（預期 >10 天、ANC <100、敗血症、肺炎、侵襲性黴菌、住院中發燒）｜不用於無發燒的嗜中性球低下", "高風險"],
         ["p", "Port-A / PICC 疑感染：一套由導管、一套由周邊（檢驗單註明）", "有 MRSA 風險（CVC、Foley、植入物）先考慮移除感染源"]
       ] },
-    { "name": "疑細菌性腦膜炎", "hint": "",
+    { "name": "疑細菌性腦膜炎", "hint": "", "en": "Bacterial meningitis, lumbar puncture, CSF",
       "orders": [
         ["l", "Blood culture", "抗生素前"],
         ["m", "Ceftriaxone 2 g IV q12h", "1 hr 內"],
@@ -86,14 +86,14 @@
         ["l", "CSF cytology", "解剖病理 → Fluid cytology-CSF｜週一至五 16:00 前、週六 12:00 前送，不可冰存", "疑惡性"],
         ["l", "Serum glucose（LP 前後 30 min 內）", "目的：算 CSF / serum glucose ratio"]
       ] },
-    { "name": "輸血中發燒", "hint": "",
+    { "name": "輸血中發燒", "hint": "", "en": "Febrile transfusion reaction, FNHTR",
       "orders": [
         ["p", "暫停輸血、保留 IV、核對", ""],
         ["m", "Acetaminophen 500 mg ×1–2 PO", "輕度（38–39°C）可觀察下繼續", "輕度"],
         ["l", "血品退回；Blood culture、DAT、haptoglobin、LDH、尿 Hb", "≥39°C 或寒顫：想細菌污染或溶血", "中重度"],
         ["m", "Epinephrine 1 mg/mL：0.5 mg IM", "合併休克 + 喘鳴", "anaphylaxis"]
       ] },
-    { "name": "Malignant hyperthermia", "hint": "麻醉中 ETCO2、HR、體溫飆",
+    { "name": "Malignant hyperthermia", "hint": "麻醉中 ETCO2、HR、體溫飆", "en": "Malignant hyperthermia, MH",
       "orders": [
         ["p", "停所有誘發藥，100% O2 高流量過度通氣", ""],
         ["m", "Dantrolene（20 mg/vial、120 mg/vial）2.5 mg/kg IV，q10min 重複（max 10 mg/kg）", "到 ETCO2 <45、體溫 <38.5"],
@@ -101,7 +101,7 @@
         ["l", "ABG、K、CK、尿 myoglobin", "目的：高碳酸、高鉀、橫紋肌溶解（惡性高熱併發症）｜開立：呼吸治療（新）→ Blood gas analysis-artery"],
         ["x", "ECG monitor", "高血鉀｜醫囑：EKG MONITOR（附註 wireless）"]
       ] },
-    { "name": "退燒", "hint": "",
+    { "name": "退燒", "hint": "", "en": "Antipyretics",
       "orders": [
         ["m", "Acetaminophen 500 mg ×1–2 PO q6h PRN BT >38.5（max 4 g/day）", "適應：第一線退燒、止痛｜禁忌：急性肝衰竭；肝硬化、酒精、營養差 ≤2–3 g/day"],
         ["m", "Propacetamol 1 g ×2 IV q6h PRN", "= Acetaminophen 1 g｜適應：NPO、不能口服", "NPO"],

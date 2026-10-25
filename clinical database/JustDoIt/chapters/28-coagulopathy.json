@@ -1,7 +1,7 @@
 {
-  "no": "28", "slug": "coagulopathy", "title": "凝血異常", "icon": "🧬",
+  "no": "28", "slug": "coagulopathy", "title": "凝血異常", "en": "Coagulopathy", "icon": "🧬",
   "items": [
-    { "name": "凝血檢驗異常：判讀", "hint": "INR / aPTT 高",
+    { "name": "凝血檢驗異常：判讀", "hint": "INR / aPTT 高", "en": "Abnormal coagulation tests, INR, aPTT",
       "orders": [
         ["p", "問抗凝劑、抗血小板藥、最後一劑時間", "最有用的資訊"],
         ["l", "PT/INR、aPTT、Fibrinogen、CBC、D-dimer、Cr", "排除：DIC、肝衰、維生素 K 缺乏、抗凝劑影響"],
@@ -9,19 +9,19 @@
         ["p", "Heparin 封管抽血會假性異常", "重抽周邊"],
         ["m", "Vitamin K1 10 mg/amp：2–5 mg PO/IV", "適應：warfarin INR 高、維生素 K 缺乏", "INR 高"]
       ] },
-    { "name": "Warfarin 大出血", "hint": "",
+    { "name": "Warfarin 大出血", "hint": "", "en": "Warfarin major bleeding, PCC",
       "orders": [
         ["m", "PCC（Human prothrombin complex 500 IU/vial）：INR 2–4 → 25 U/kg；4–6 → 35；>6 → 50（max 5000 U）", "或固定劑量：非顱內 1000 U、顱內 1500 U"],
         ["m", "Vitamin K1 10 mg slow IV（in NS 50 mL，15–30 min）", "一定要和 PCC 一起給"],
         ["l", "INR（PCC 後）", "不足可追加"],
         ["m", "FFP 10–15 mL/kg", "沒有 PCC 時", "無 PCC"]
       ] },
-    { "name": "Warfarin 非大出血", "hint": "",
+    { "name": "Warfarin 非大出血", "hint": "", "en": "Warfarin non-major bleeding, high INR",
       "orders": [
         ["m", "Vitamin K1 10 mg/amp：2–5 mg PO/IV", "需住院、處置或輸血"],
         ["p", "暫停 warfarin", ""]
       ] },
-    { "name": "Dabigatran 出血", "hint": "",
+    { "name": "Dabigatran 出血", "hint": "", "en": "Dabigatran bleeding, idarucizumab",
       "orders": [
         ["m", "Idarucizumab（Praxbind）5 g IV（2.5 g ×2）", "大出血；不等檢驗"],
         ["m", "PCC（Human prothrombin complex 500 IU/vial） 50 U/kg（max 4000）", "沒有 idarucizumab", "無 idarucizumab"],
@@ -29,20 +29,20 @@
         ["p", "可透析移除", "", "腎差"],
         ["l", "TT", "正常可排除有效濃度"]
       ] },
-    { "name": "Xa 抑制劑出血", "hint": "Apixaban / Rivaroxaban / Edoxaban",
+    { "name": "Xa 抑制劑出血", "hint": "Apixaban / Rivaroxaban / Edoxaban", "en": "Factor Xa inhibitor bleeding, apixaban, rivaroxaban",
       "orders": [
         ["m", "PCC（Human prothrombin complex 500 IU/vial） 2000 U（500 IU ×4）或 25–50 U/kg", "關鍵部位或危及生命"],
         ["m", "Activated charcoal 50 g PO", "2–4 hr 內服藥", "剛吃"],
         ["l", "Anti-Xa（藥物校正）", "PT/aPTT 正常不能排除"],
         ["p", "Andexanet 台灣無藥證", ""]
       ] },
-    { "name": "Heparin / LMWH 出血", "hint": "",
+    { "name": "Heparin / LMWH 出血", "hint": "", "en": "Heparin / LMWH bleeding, protamine",
       "orders": [
         ["m", "Protamine 50 mg/5 mL：1 mg / 100 U heparin（≤50 mg/10 min）", "UFH；依距上次給藥時間計算"],
         ["m", "Protamine 0.5–1 mg / mg enoxaparin", "LMWH 只中和 30–40%（<8 hr 用 1 mg）", "LMWH"],
         ["p", "Fondaparinux 無解毒劑", ""]
       ] },
-    { "name": "溶栓後出血", "hint": "",
+    { "name": "溶栓後出血", "hint": "", "en": "Post-thrombolysis bleeding",
       "orders": [
         ["p", "停止溶栓劑", ""],
         ["l", "CBC、PT、aPTT、Fibrinogen、備血", "目的：fibrinogen <150 → cryo；準備輸血｜血庫 ☎2538"],
@@ -50,7 +50,7 @@
         ["m", "Tranexamic acid 500 mg ×2（1 g）IV over 10 min", "適應：溶栓後出血、創傷 3 hr 內｜禁忌：血栓史、DIC 高凝期、腎衰減量"],
         ["x", "Brain CT", "排除：顱內出血（溶栓後神經惡化先停藥再 CT）｜日間 ☎3789 / ☎2570；夜間急診 CT ☎2568"]
       ] },
-    { "name": "疑 TTP", "hint": "血小板低 + MAHA",
+    { "name": "疑 TTP", "hint": "血小板低 + MAHA", "en": "TTP, MAHA",
       "orders": [
         ["l", "Smear、LDH、Haptoglobin、Cr、DAT、Coag、Troponin", "排除：TTP（schistocytes）vs DIC vs 自體免疫溶血（DAT+）｜Blood smear interpretation：M26-004（紫頭）｜☎2555"],
         ["l", "ADAMTS-13（TPE 前抽）", "目的：<10% 確診 TTP；血漿置換前抽"],
@@ -58,7 +58,7 @@
         ["m", "Methylprednisolone 500 mg/vial：1 g IV QD × 3 天 或 Prednisolone 1 mg/kg/day", "適應：iTTP 合併血漿置換｜注意：高血糖、感染"],
         ["p", "不預防性輸血小板、不給抗血小板", ""]
       ] },
-    { "name": "疑 HIT", "hint": "Heparin 5–14 天後血小板降",
+    { "name": "疑 HIT", "hint": "Heparin 5–14 天後血小板降", "en": "HIT, heparin-induced thrombocytopenia",
       "orders": [
         ["l", "4Ts score", "≤3 低機率不驗不治療"],
         ["p", "停所有 heparin（UFH、LMWH、封管）", "≥4 分"],
@@ -67,7 +67,7 @@
         ["l", "HIT antibody（ELISA）", "目的：4T score ≥4 時送；陰性可排除 HIT"],
         ["p", "血小板 ≥150 前不開 warfarin", ""]
       ] },
-    { "name": "DIC", "hint": "ISTH ≥5",
+    { "name": "DIC", "hint": "ISTH ≥5", "en": "DIC, disseminated intravascular coagulation",
       "orders": [
         ["l", "Platelet、PT、Fibrinogen、D-dimer（ISTH score）", "目的：ISTH ≥5 = overt DIC"],
         ["p", "治療原發病", "最重要"],
@@ -75,25 +75,25 @@
         ["m", "FFP 8–12 mL/kg", "出血 + INR ≥2 或 Fibrinogen <150", "出血"],
         ["m", "Cryoprecipitate", "Fibrinogen <1.5 g/L + 出血", "低 fibrinogen"]
       ] },
-    { "name": "維生素 K 缺乏", "hint": "長期抗生素、營養差",
+    { "name": "維生素 K 缺乏", "hint": "長期抗生素、營養差", "en": "Vitamin K deficiency",
       "orders": [
         ["m", "Vitamin K1 10 mg PO 或 slow IV", ">12 hr 才開始矯正"]
       ] },
-    { "name": "尿毒出血", "hint": "",
+    { "name": "尿毒出血", "hint": "", "en": "Uremic bleeding, DDAVP",
       "orders": [
         ["m", "Desmopressin 4 mcg/mL：0.3 mcg/kg IV（in NS 50 mL，15–30 min）", "1 hr 內起效，維持 6–8 hr"],
         ["m", "pRBC：Hct ≥25%", "改善止血"],
         ["p", "透析", ""],
         ["p", "避免輸血小板", ""]
       ] },
-    { "name": "處置前補充", "hint": "",
+    { "name": "處置前補充", "hint": "", "en": "Pre-procedure correction",
       "orders": [
         ["p", "CVC、A-line、胸腹穿刺前不常規輸血小板或 FFP", "ICU 與肝硬化都一樣"],
         ["m", "Platelet：>50K", "大手術", "大手術"],
         ["m", "Platelet：>100K", "中樞神經手術", "神經手術"],
         ["m", "Platelet：>20–40K", "腰椎穿刺", "LP"]
       ] },
-    { "name": "血小板低病人照護", "hint": "血液科 / 化療後",
+    { "name": "血小板低病人照護", "hint": "血液科 / 化療後", "en": "Thrombocytopenia care",
       "orders": [
         ["p", "禁 IM 注射、禁 aspirin / NSAID（含 indomethacin）、禁栓劑", ""],
         ["p", "Plt <20k：向家屬說明出血與顱內出血風險，臥床、避免碰撞", ""],

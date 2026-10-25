@@ -1,7 +1,7 @@
 {
-  "no": "07", "slug": "dyspnea", "title": "喘、呼吸困難", "icon": "🫁",
+  "no": "07", "slug": "dyspnea", "title": "喘、呼吸困難", "en": "Dyspnea, hypoxemia", "icon": "🫁",
   "items": [
-    { "name": "喘：第一輪", "hint": "新發呼吸困難或 SpO2 下降",
+    { "name": "喘：第一輪", "hint": "新發呼吸困難或 SpO2 下降", "en": "Dyspnea, desaturation, hypoxemia",
       "orders": [
         ["p", "O2 nasal cannula 2–6 L/min → SpO2 94–98%", "給氧治療低血氧，不是治療喘"],
         ["p", "O2 NRM 15 L/min", "SpO2 <85% 或重症（休克、敗血症）", "SpO2 <85%"],
@@ -16,13 +16,13 @@
         ["m", "Furosemide 20 mg/amp ×2（40 mg）IV", "適應：肺水腫、容積過多｜禁忌：低血壓、脫水", "肺水腫"],
         ["m", "Hydrocortisone 100 mg IV ×1", "適應：支氣管痙攣、過敏、COPD 惡化｜注意：高血糖", "喘鳴 / 過敏"]
       ] },
-    { "name": "給氧升級", "hint": "NRM 仍達不到目標",
+    { "name": "給氧升級", "hint": "NRM 仍達不到目標", "en": "Oxygen escalation, HFNC, NIV",
       "orders": [
         ["p", "HFNC", "低血氧性呼吸衰竭（無 CO2 滯留）"],
         ["p", "BiPAP（NIV）", "COPD 高碳酸 pH ≤7.35、肺水腫合併酸中毒", "高碳酸"],
         ["p", "轉 ICU / 準備插管", "NIV 1 hr 後 P/F <175 或惡化；延誤插管增加死亡"]
       ] },
-    { "name": "Anaphylaxis", "hint": "突發呼吸/循環問題 ± 皮膚",
+    { "name": "Anaphylaxis", "hint": "突發呼吸/循環問題 ± 皮膚", "en": "Anaphylaxis",
       "orders": [
         ["m", "Epinephrine 1 mg/mL：0.5 mL（0.5 mg）IM 大腿前外側", "第一線，有 IV 也一樣；5 min 無改善重複"],
         ["p", "停可疑藥物或血品", ""],
@@ -34,13 +34,13 @@
         ["m", "Epinephrine 1 mg in NS 100 mL（10 mcg/mL）：0.05–0.5 mcg/kg/min", "2 劑 IM 後仍有症狀", "難治"],
         ["p", "觀察 ≥6–12 hr", "雙相反應約 5%，中位 12 hr"]
       ] },
-    { "name": "異物哽塞", "hint": "進食中突然無法說話咳嗽",
+    { "name": "異物哽塞", "hint": "進食中突然無法說話咳嗽", "en": "Foreign body airway obstruction, choking",
       "orders": [
         ["p", "5 下背部拍擊 → 5 下腹部推擠，交替", "無法有效咳嗽時"],
         ["p", "失去反應：CPR，從胸外按壓開始", "看得到的異物才移除", "無反應"],
         ["p", "喉鏡 + 異物鉗；必要時 eFONA", "初步處置無效", "無效"]
       ] },
-    { "name": "急性失代償性心衰竭", "hint": "肺水腫、鬱血",
+    { "name": "急性失代償性心衰竭", "hint": "肺水腫、鬱血", "en": "ADHF, acute decompensated heart failure, pulmonary edema",
       "orders": [
         ["m", "Furosemide 20 mg/amp ×2（40 mg）IV", "未用過利尿劑的起始；已在用者給口服劑量兩倍 IV"],
         ["l", "Spot urine Na（2 hr）+ 尿量（6 hr）", "尿鈉 ≥70 或尿量 ≥100 mL/hr 為反應良好"],
@@ -53,7 +53,7 @@
         ["m", "Norepinephrine 4 mg/4 mL：8 mg in D5W 250 mL，0.05–0.5 mcg/kg/min", "心因性休克", "休克"],
         ["m", "Hydrocortisone 100 mg IV ×1", "適應：分不清心因性或支氣管痙攣喘時合併 Combivent｜注意：高血糖", "合併喘鳴"]
       ] },
-    { "name": "氣喘急性發作", "hint": "",
+    { "name": "氣喘急性發作", "hint": "", "en": "Asthma exacerbation",
       "orders": [
         ["m", "Salbutamol MDI 100 mcg × 4–10 puffs（spacer）q20min ×1 hr", "第一線"],
         ["m", "Combivent UDV（Ipratropium 0.5 mg + Salbutamol 2.5 mg）neb q20min ×3", "中至重度；1–2 hr 後再用沒好處"],
@@ -65,7 +65,7 @@
         ["l", "ABG", "PEF <50% 或無反應｜開立：呼吸治療（新）→ Blood gas analysis-artery", "嚴重"],
         ["m", "Ipratropium 0.5 mg + Terbutaline 5 mg（A+B）neb q20min ×3", "適應：Combivent 替代｜注意：terbutaline 較易心搏過速｜胸腔科：先評估，勿 routine 開，有需要再開｜記錄 FiO2 與 SpO2 / ABG", "A+B"]
       ] },
-    { "name": "COPD 急性惡化", "hint": "",
+    { "name": "COPD 急性惡化", "hint": "", "en": "COPD exacerbation, AECOPD",
       "orders": [
         ["p", "O2 Venturi 24–28% → SpO2 88–92%", "過量給氧會 CO2 上升"],
         ["l", "ABG，30–60 min 後重驗", "目的：pH <7.35 + PaCO2 ↑ → BiPAP；追蹤是否惡化｜開立：呼吸治療（新）→ Blood gas analysis-artery"],
@@ -77,7 +77,7 @@
         ["p", "不用 aminophylline、呼吸興奮劑", "副作用多"],
         ["m", "Ipratropium 0.5 mg + Terbutaline 5 mg（A+B）neb q4–6h", "適應：Combivent 替代｜注意：心搏過速", "A+B"]
       ] },
-    { "name": "疑肺栓塞", "hint": "見胸痛章；喘 + 心搏快",
+    { "name": "疑肺栓塞", "hint": "見胸痛章；喘 + 心搏快", "en": "PE, pulmonary embolism",
       "orders": [
         ["x", "CTPA", "高機率或 D-dimer 升高｜影像診療科 CT ☎2585#316；夜間急診 CT ☎2568｜顯影劑：同意書 + 家屬，先看腎功能"],
         ["l", "D-dimer（年齡 ×10）", "低/中機率", "低中機率"],
@@ -85,7 +85,7 @@
         ["m", "Heparin 80 U/kg IV bolus → 18 U/kg/hr", "不穩定、預期溶栓｜心臟科泡法：25,000 U in NS/D5W 500 mL（50 U/mL）", "不穩定"],
         ["m", "Alteplase（Actilyse 50 mg ×2）100 mg IV over 2 hr", "高風險（休克）且無禁忌", "休克"]
       ] },
-    { "name": "社區型肺炎 (CAP)", "hint": "非重症住院",
+    { "name": "社區型肺炎 (CAP)", "hint": "非重症住院", "en": "CAP, community-acquired pneumonia",
       "orders": [
         ["m", "Ceftriaxone 2 g IV QD + Azithromycin 500 mg（250 mg ×2）PO QD", "標準住院 CAP"],
         ["m", "Moxifloxacin 400 mg IV/PO QD（Avelox）", "替代；疑結核避免", "替代"],
@@ -95,26 +95,26 @@
         ["l", "CURB-65 / PSI", "決定照護層級"],
         ["p", "總療程 ≥5 天且臨床穩定", ""]
       ] },
-    { "name": "重症肺炎 / 需涵蓋抗藥菌", "hint": "",
+    { "name": "重症肺炎 / 需涵蓋抗藥菌", "hint": "", "en": "Severe pneumonia, MDR risk",
       "orders": [
         ["m", "Ceftriaxone 2 g IV QD + Clarithromycin 500 mg IV q12h（或 + Moxifloxacin 400 mg IV QD）", "重症 CAP"],
         ["m", "Vancomycin 25 mg/kg IV 負荷 → 15–20 mg/kg q12h（依 CrCl、濃度） 或 Linezolid 600 mg IV q12h", "MRSA 風險｜腎調：AUC 400–600；CrCl 10–50 → q24h；HD 透析後補；併 Pip-tazo 腎毒性較高", "MRSA"],
         ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h / Cefepime 2 g q8h / Meropenem 1 g q8h", "綠膿桿菌風險｜腎調：CrCl 20–40 → 3.375 g q6h；<20 → 2.25 g q6h；HD 2.25 g q8h + 0.75 g 透析後", "綠膿"],
         ["m", "Hydrocortisone 50 mg IV q6h（200 mg/day）", "重症 CAP 可考慮；流感、麴菌不用", "重症"]
       ] },
-    { "name": "院內肺炎 HAP / VAP", "hint": "住院 48 hr 後",
+    { "name": "院內肺炎 HAP / VAP", "hint": "住院 48 hr 後", "en": "HAP, VAP, hospital-acquired pneumonia",
       "orders": [
         ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h（或 Cefepime 2 g q8h）", "或 cefepime 2 g q8h / meropenem 1 g q8h｜腎調：CrCl 20–40 → 3.375 g q6h；<20 → 2.25 g q6h；HD 2.25 g q8h + 0.75 g 透析後"],
         ["m", "加 Vancomycin 15–20 mg/kg IV q8–12h（或 Linezolid 600 mg q12h）", "MRSA 病史或單位比例高｜腎調：AUC 400–600；CrCl 10–50 → q24h；HD 透析後補；併 Pip-tazo 腎毒性較高", "MRSA"],
         ["l", "Endotracheal aspirate culture", "VAP", "插管"],
         ["p", "療程 7 天", ""]
       ] },
-    { "name": "張力性氣胸", "hint": "低血壓 + 單側呼吸音消失",
+    { "name": "張力性氣胸", "hint": "低血壓 + 單側呼吸音消失", "en": "Tension pneumothorax",
       "orders": [
         ["p", "Needle decompression 5th ICS 腋中線", "不等影像"],
         ["p", "Chest tube", "減壓後"]
       ] },
-    { "name": "胸水", "hint": "",
+    { "name": "胸水", "hint": "", "en": "Pleural effusion, thoracentesis",
       "orders": [
         ["x", "Chest echo-guided thoracentesis", "一律影像導引｜代碼：Chest echo M21-051；aspiration M21-053（大量症狀性註明 \"s/s relieving tapping\"）；biopsy M21-055｜1F 胸超室，同意書 + 家屬，不需 NPO"],
         ["l", "Pleural fluid pH、LDH、protein、glucose、cell count、Gram/culture、cytology", "pH 不要混到麻藥或 heparin｜加開：檢驗 → 生化 glucose、LDH、T-protein，檢體改 PL｜TB-PCR：分子診斷組（週一、三中午前收件）"],
@@ -123,7 +123,7 @@
         ["p", "一次抽 ≤1.5 L", "避免復張性肺水腫"],
         ["p", "Chest tube / pigtail：引流 <200 mL / 2 hr 且 <1500 mL/day", "再擴張肺水腫（咳、胸痛、冒冷汗、低血壓、粉紅泡沫痰）→ 夾管｜換藥 effusion QD + prn"]
       ] },
-    { "name": "插管 / RSI", "hint": "NIV 失敗、無法矯正低血氧",
+    { "name": "插管 / RSI", "hint": "NIV 失敗、無法矯正低血氧", "en": "Intubation, RSI, rapid sequence intubation",
       "orders": [
         ["p", "Preoxygenation 100% O2 3 min（或 CPAP / HFNO）", ""],
         ["m", "Ketamine 50 mg/mL：1–2 mg/kg IV（或 Etomidate 0.3 mg/kg）", "血行動力較穩定"],
@@ -135,21 +135,21 @@
         ["m", "Phenylephrine 1 mg in NS 10 mL：100 mcg IV push", "插管前後低血壓 push-dose", "低血壓"],
         ["m", "Sugammadex 200 mg/2 mL：16 mg/kg IV", "用 rocuronium 後無法插管也無法通氣", "無法通氣"]
       ] },
-    { "name": "藥物呼吸抑制", "hint": "呼吸慢、針尖瞳孔",
+    { "name": "藥物呼吸抑制", "hint": "呼吸慢、針尖瞳孔", "en": "Drug-induced respiratory depression",
       "orders": [
         ["p", "BVM 通氣", ""],
         ["m", "Naloxone 0.4 mg/amp：0.2–2 mg IV q2–3min", "適應：opioid 呼吸抑制、針狀瞳孔｜注意：一次給太多誘發戒斷、劇痛、肺水腫；半衰期短會再抑制"],
         ["l", "ABG", "排除高碳酸血症｜開立：呼吸治療（新）→ Blood gas analysis-artery"],
         ["m", "Naloxone infusion", "再抑制（長效 opioid）", "再抑制"]
       ] },
-    { "name": "神經肌肉無力：呼吸評估", "hint": "MG、GBS、MND、高位頸髓",
+    { "name": "神經肌肉無力：呼吸評估", "hint": "MG、GBS、MND、高位頸髓", "en": "Neuromuscular weakness, MG, GBS, FVC",
       "orders": [
         ["l", "Measure FVC / SVC（呼吸治療）", "住院當下就量，必要時 QD–BID｜VC <15–20 mL/kg → 轉 ICU、準備插管"],
         ["l", "ABG", "無法配合或嚴重顏面無力時；之後可用 VBG 追｜開立：呼吸治療（新）→ Blood gas analysis-artery"],
         ["p", "MG 避免：aminoglycoside、quinolone、macrolide、β-blocker、肌肉鬆弛劑", "會誘發 myasthenic crisis"],
         ["p", "避免呼吸抑制藥（BZD、肌肉鬆弛劑）", ""]
       ] },
-    { "name": "上腔靜脈症候群", "hint": "臉腫、頸靜脈怒張、喘（肺癌、淋巴瘤）",
+    { "name": "上腔靜脈症候群", "hint": "臉腫、頸靜脈怒張、喘（肺癌、淋巴瘤）", "en": "SVC syndrome, superior vena cava",
       "orders": [
         ["x", "CT chest with contrast", "排除：腫瘤壓迫 vs 血栓｜影像診療科 CT ☎2585#316"],
         ["p", "床頭抬高、給氧、限鹽", ""],
@@ -157,7 +157,7 @@
         ["m", "Dexamethasone 5 mg/amp ×2（10 mg）IV", "適應：淋巴瘤、喉頭水腫 / 喘鳴｜未確診淋巴瘤前會影響病理", "喘鳴"],
         ["p", "依病理：放療（NSCLC、轉移）、化療（SCLC、淋巴瘤）；血栓 → 抗凝", ""]
       ] },
-    { "name": "過度換氣", "hint": "先排除器質性原因",
+    { "name": "過度換氣", "hint": "先排除器質性原因", "en": "Hyperventilation",
       "orders": [
         ["l", "SpO2、ABG", "排除氣胸、肺炎、PE"],
         ["p", "不要紙袋回吸", "會造成低血氧"]

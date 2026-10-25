@@ -1,7 +1,7 @@
 {
-  "no": "27", "slug": "anemia", "title": "貧血", "icon": "🩸",
+  "no": "27", "slug": "anemia", "title": "貧血", "en": "Anemia", "icon": "🩸",
   "items": [
-    { "name": "Hb 明顯下降：找出血", "hint": "降 ≥2 g/dL 或不穩",
+    { "name": "Hb 明顯下降：找出血", "hint": "降 ≥2 g/dL 或不穩", "en": "Hb drop, occult bleeding",
       "orders": [
         ["l", "Repeat CBC、Type & screen、PT/INR、aPTT", "復甦前 Hb 可能偽高｜血庫 ☎2538"],
         ["l", "Anti-Xa / TT", "DOAC 使用者", "DOAC"],
@@ -10,14 +10,14 @@
         ["x", "CTA", "持續血便｜影像診療科 CT ☎2585#316；夜間急診 CT ☎2568｜顯影劑：同意書 + 家屬，先看腎功能", "血便"],
         ["m", "NS / Lactated Ringer", "不穩定先補液", "不穩"]
       ] },
-    { "name": "輸血門檻", "hint": "",
+    { "name": "輸血門檻", "hint": "", "en": "Transfusion threshold",
       "orders": [
         ["m", "pRBC 1 U：Hb <7", "穩定住院；每單位後重評"],
         ["m", "pRBC：Hb <8", "心血管疾病、骨科手術", "心血管病"],
         ["m", "pRBC：目標 Hb 8–10", "急性冠心症", "ACS"],
         ["p", "1 hr 需 ≥3 U：啟動 MTP", ""]
       ] },
-    { "name": "抗凝劑使用者出血", "hint": "",
+    { "name": "抗凝劑使用者出血", "hint": "", "en": "Bleeding on anticoagulants",
       "orders": [
         ["p", "停抗凝；非大出血不常規逆轉", ""],
         ["m", "PCC（Human prothrombin complex 500 IU/vial） 依 INR + Vitamin K1 10 mg IV", "Warfarin 大出血", "Warfarin"],
@@ -25,7 +25,7 @@
         ["m", "PCC（Human prothrombin complex 500 IU/vial） 50 U/kg", "Xa 抑制劑", "Xa 抑制劑"],
         ["m", "Desmopressin 4 mcg/mL：0.3 mcg/kg IV", "尿毒血小板功能異常", "尿毒"]
       ] },
-    { "name": "穩定貧血：分型", "hint": "",
+    { "name": "穩定貧血：分型", "hint": "", "en": "Anemia workup, MCV",
       "orders": [
         ["l", "CBC + MCV、Reticulocyte、Peripheral smear", "目的：小球（缺鐵、海洋性）/ 大球（B12、葉酸、肝、酒）；Retic 高 → 溶血或出血｜Blood smear interpretation：M26-004（紫頭）｜☎2555"],
         ["l", "Ferritin、Iron、TIBC、TSAT", "MCV <80"],
@@ -34,7 +34,7 @@
         ["l", "BUN/Cr、TSH", "排除：腎性貧血、甲低"],
         ["l", "Stool occult blood", "缺鐵要找消化道", "缺鐵"]
       ] },
-    { "name": "缺鐵性貧血", "hint": "Ferritin <30（發炎時 <100）",
+    { "name": "缺鐵性貧血", "hint": "Ferritin <30（發炎時 <100）", "en": "IDA, iron deficiency anemia",
       "orders": [
         ["m", "Ferrous sulfate 324 mg（Fe 64 mg）1 錠 PO QD（空腹）", "不要因等內視鏡延後補鐵"],
         ["m", "隔日一錠", "不耐受", "不耐受"],
@@ -42,7 +42,7 @@
         ["l", "2–4 週後 Hb", "升 ≥1 g/dL 表示有效"],
         ["l", "Phosphate", "IV ferric carboxymaltose 低磷常見", "IV 鐵"]
       ] },
-    { "name": "B12 / 葉酸缺乏", "hint": "",
+    { "name": "B12 / 葉酸缺乏", "hint": "", "en": "B12 / folate deficiency, megaloblastic anemia",
       "orders": [
         ["m", "Hydroxocobalamin 1000 mcg/amp IM 每週 3 次 × 2 週", "無神經症狀；B12 和葉酸都低先給 B12"],
         ["m", "Hydroxocobalamin 1000 mcg IM 隔日", "有神經症狀，不要延遲", "神經症狀"],
@@ -50,7 +50,7 @@
         ["l", "Intrinsic factor antibody", "排除：惡性貧血（B12 缺乏原因）"],
         ["l", "K", "嚴重貧血治療後可能低鉀"]
       ] },
-    { "name": "疑 TTP", "hint": "血小板低 + 碎片紅血球",
+    { "name": "疑 TTP", "hint": "血小板低 + 碎片紅血球", "en": "TTP, thrombotic thrombocytopenic purpura",
       "orders": [
         ["l", "Smear（schistocytes）、LDH、Haptoglobin、Cr、DAT、Coagulation", "排除：TTP/HUS（schistocytes + 溶血 + DAT 陰性 + 凝血正常）vs DIC（凝血異常）｜Blood smear interpretation：M26-004（紫頭）｜☎2555"],
         ["l", "ADAMTS-13（治療前抽）", "目的：<10% 確診 TTP；血漿置換前抽"],
@@ -58,7 +58,7 @@
         ["p", "緊急血漿置換 + 類固醇", "轉可執行機構"],
         ["p", "不預防性輸血小板", ""]
       ] },
-    { "name": "CKD 貧血", "hint": "",
+    { "name": "CKD 貧血", "hint": "", "en": "Anemia of CKD, ESA",
       "orders": [
         ["l", "Ferritin、TSAT", "先補鐵"],
         ["m", "Epoetin beta（Recormon）2000–5000 IU SC 每週 1–3 次（Hb 目標 10–11.5）", "透析者 Hb ≤9–10 開始；目標 <11.5"],

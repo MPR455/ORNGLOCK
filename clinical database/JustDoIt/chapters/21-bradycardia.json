@@ -1,7 +1,7 @@
 {
-  "no": "21", "slug": "bradycardia", "title": "心搏過緩", "icon": "🐢",
+  "no": "21", "slug": "bradycardia", "title": "心搏過緩", "en": "Bradycardia", "icon": "🐢",
   "items": [
-    { "name": "心搏過緩：第一輪", "hint": "HR <50",
+    { "name": "心搏過緩：第一輪", "hint": "HR <50", "en": "Bradycardia",
       "orders": [
         ["x", "12-lead ECG", "看阻滯類型與層級｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
         ["x", "Continuous ECG monitor", "目的：抓 pause、高度 AV block 進展｜醫囑：EKG MONITOR（附註 wireless）"],
@@ -13,7 +13,7 @@
         ["x", "V3R、V4R", "疑下壁 MI", "下壁 MI"],
         ["m", "Atropine 1 mg/mL：0.5–1 mg IV q3–5min（max 3 mg）", "適應：症狀性心搏過緩｜無效：寬 QRS block、心臟移植 → 直接起搏", "不穩定"]
       ] },
-    { "name": "不穩定心搏過緩", "hint": "低血壓、昏厥、心衰、缺血",
+    { "name": "不穩定心搏過緩", "hint": "低血壓、昏厥、心衰、缺血", "en": "Unstable bradycardia, pacing",
       "orders": [
         ["m", "Atropine 1 mg/mL：0.5–1 mg IV q3–5min（max 3 mg）", "竇性或 AV node 層級；<0.5 mg 可能反而變慢"],
         ["p", "不給 atropine", "寬 QRS 高度阻滯、心臟移植", "寬 QRS/移植"],
@@ -23,7 +23,7 @@
         ["p", "經皮起搏（前後位貼片）", "橋接；摸脈搏確認捕捉；清醒者給止痛鎮靜", "藥物無效"],
         ["p", "經靜脈暫時起搏", "藥物無效、持續不穩", "藥物無效"]
       ] },
-    { "name": "藥物中毒心搏過緩", "hint": "β-blocker / CCB / Digoxin",
+    { "name": "藥物中毒心搏過緩", "hint": "β-blocker / CCB / Digoxin", "en": "Drug-induced bradycardia, digoxin toxicity",
       "orders": [
         ["m", "Glucagon 1 mg/kit：3–5 mg IV → 1–5 mg/hr", "β-blocker", "β-blocker"],
         ["m", "5% Calcium chloride 20 mL（1 g）或 10% Calcium gluconate 30 mL IV", "CCB", "CCB"],
@@ -33,25 +33,25 @@
         ["p", "同時準備起搏", "不要等藥物失敗"],
         ["p", "諮詢毒物中心", ""]
       ] },
-    { "name": "下壁 MI + AV block", "hint": "",
+    { "name": "下壁 MI + AV block", "hint": "", "en": "Inferior MI with AV block",
       "orders": [
         ["m", "Atropine", "適應：下壁 MI 迷走張力的竇緩、AV block｜注意：寬 QRS 型 block 無效"],
         ["m", "Aminophylline 250 mg/10 mL：250 mg IV slow", "藥物無效、症狀不嚴重｜注意 theophylline 中毒（噁吐、心律不整）；活動性潰瘍出血停用", "atropine 無效"],
         ["p", "儘速再灌流", ""],
         ["p", "暫時起搏", "藥物無效的有症狀緩脈", "藥物無效"]
       ] },
-    { "name": "高度 / 三度 AV block", "hint": "Mobitz II、CHB",
+    { "name": "高度 / 三度 AV block", "hint": "Mobitz II、CHB", "en": "High-grade AV block, CHB, complete heart block, Mobitz II",
       "orders": [
         ["p", "貼經皮起搏貼片備用", "可能突然惡化"],
         ["x", "Echo", "排除：EF 下降、瓣膜病、心包積液、右心擴大（PE）｜心超：M22-060｜☎2359/2337/2369"],
         ["p", "照會心臟科：永久起搏", "非可逆原因時，有無症狀都建議"]
       ] },
-    { "name": "疑顱內壓上升", "hint": "緩脈 + 高血壓 + 呼吸不規則",
+    { "name": "疑顱內壓上升", "hint": "緩脈 + 高血壓 + 呼吸不規則", "en": "Cushing reflex, increased ICP",
       "orders": [
         ["x", "Brain CT without contrast", "排除：出血、腫瘤、水腦、中線偏移、腦疝｜日間 ☎3789 / ☎2570；夜間急診 CT ☎2568"],
         ["p", "床頭 >30°、頭置中", ""]
       ] },
-    { "name": "節律器病人", "hint": "",
+    { "name": "節律器病人", "hint": "", "en": "Pacemaker, PPM",
       "orders": [
         ["x", "Pacemaker interrogation", "目的：確認 sensing / capture、電池、有無誤放電"],
         ["p", "去顫貼片距裝置 >8 cm", ""]

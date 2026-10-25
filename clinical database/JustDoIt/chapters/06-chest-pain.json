@@ -1,7 +1,7 @@
 {
-  "no": "06", "slug": "chest-pain", "title": "胸痛", "icon": "💔",
+  "no": "06", "slug": "chest-pain", "title": "胸痛", "en": "Chest pain", "icon": "💔",
   "items": [
-    { "name": "胸痛：第一輪", "hint": "住院中新發胸痛",
+    { "name": "胸痛：第一輪", "hint": "住院中新發胸痛", "en": "Chest pain",
       "orders": [
         ["x", "12-lead ECG（10 min 內）", "判讀有無 STEMI；正常不能排除 ACS｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
         ["l", "hs-Troponin 0 hr，1–2 hr 後重抽", "有 troponin 時 CK-MB、myoglobin 沒幫助"],
@@ -14,7 +14,7 @@
         ["m", "Aspirin 100 mg ×3（300 mg）嚼碎", "適應：疑 ACS｜禁忌：活動性出血、aspirin 過敏、疑主動脈剝離", "疑 ACS"],
         ["m", "NTG 0.6 mg SL", "適應：缺血性胸痛｜禁忌：SBP <90、右心梗塞、48 hr 內 PDE5i", "疑 ACS"]
       ] },
-    { "name": "疑 ACS：初始藥物", "hint": "缺血性胸痛",
+    { "name": "疑 ACS：初始藥物", "hint": "缺血性胸痛", "en": "ACS, acute coronary syndrome, MONA",
       "orders": [
         ["m", "Aspirin 100 mg ×3（300 mg）嚼碎 → 100 mg QD", "已在吃也要給起始劑量"],
         ["m", "NTG 0.6 mg SL（或 NTG spray 0.4 mg）q5min ×3", "SBP <90、右心室梗塞、48 hr 內 PDE5i 禁用"],
@@ -28,7 +28,7 @@
         ["m", "Bisoprolol 1.25 mg PO QD（或 Metoprolol 12.5 mg BID），24 hr 內", "心衰、休克風險、AV block、氣喘發作不給"],
         ["m", "Pantoprazole 40 mg PO QD", "DAPT 且消化道出血風險高"]
       ] },
-    { "name": "STEMI", "hint": "ST 上升或等同型態",
+    { "name": "STEMI", "hint": "ST 上升或等同型態", "en": "STEMI",
       "orders": [
         ["p", "Activate cath lab：Primary PCI", "≤12 hr 症狀，診斷到 PCI <120 min；不等 troponin"],
         ["m", "Aspirin 300 mg + Ticagrelor 180 mg（或 Prasugrel 20 mg）", "Prasugrel：曾中風/TIA 不用；≥75 歲謹慎"],
@@ -36,13 +36,13 @@
         ["m", "Alteplase 15 mg IV bolus → 0.75 mg/kg/30 min → 0.5 mg/kg/60 min（max 100 mg）", "院內無 tenecteplase；120 min 內不能 PCI 才給", "無法 PCI"],
         ["x", "Echo", "休克或機械性併發症｜心超：M22-060｜☎2359/2337/2369", "休克"]
       ] },
-    { "name": "NSTE-ACS 極高風險", "hint": "休克、持續痛、致命心律不整、急性心衰",
+    { "name": "NSTE-ACS 極高風險", "hint": "休克、持續痛、致命心律不整、急性心衰", "en": "NSTEMI, NSTE-ACS very high risk",
       "orders": [
         ["p", "緊急導管（2 hr 內）", "任一極高風險特徵"],
         ["x", "ECG monitor ≥24 hr", "目的：抓 VT/VF、再缺血｜醫囑：EKG MONITOR（附註 wireless）"],
         ["m", "Heparin 12 U/kg/hr（aPTT 60–80）持續到血管再通", "適應：NSTE-ACS 抗凝｜禁忌：活動性出血、HIT｜監測：aPTT q6h、血小板｜心臟科泡法：25,000 U in NS/D5W 500 mL（50 U/mL）"]
       ] },
-    { "name": "疑主動脈剝離", "hint": "撕裂痛轉移到背、四肢血壓差 >20",
+    { "name": "疑主動脈剝離", "hint": "撕裂痛轉移到背、四肢血壓差 >20", "en": "Aortic dissection, AD",
       "orders": [
         ["l", "四肢血壓、脈搏", "差異 >20 代表分支受影響"],
         ["x", "CTA chest/abdomen/pelvis", "首選；太不穩定改床邊 TEE｜影像診療科 CT ☎2585#316；夜間急診 CT ☎2568｜顯影劑：同意書 + 家屬，先看腎功能"],
@@ -53,7 +53,7 @@
         ["p", "A-line、ICU、尿量", ""],
         ["p", "禁用抗凝、溶栓", "疑剝離是溶栓絕對禁忌"]
       ] },
-    { "name": "疑肺栓塞（穩定）", "hint": "喘 + 心搏過速 + 吸氣痛",
+    { "name": "疑肺栓塞（穩定）", "hint": "喘 + 心搏過速 + 吸氣痛", "en": "PE, pulmonary embolism (stable)",
       "orders": [
         ["l", "Wells / Geneva 評分", ">4 為 likely"],
         ["l", "D-dimer（年齡 ×10 切點）", "只用於低/中機率；住院中用處有限", "低中機率"],
@@ -64,7 +64,7 @@
         ["m", "Rivaroxaban 15 mg BID ×3 週 → 20 mg QD", "確診後口服；腎差、懷孕不用 DOAC", "確診"],
         ["m", "Apixaban 10 mg BID ×7 天 → 5 mg BID", "適應：穩定 PE / DVT｜禁忌：CrCl <25、機械瓣、APS、懷孕", "確診"]
       ] },
-    { "name": "肺栓塞（不穩定）", "hint": "SBP <90 或掉 ≥40 超過 15 min",
+    { "name": "肺栓塞（不穩定）", "hint": "SBP <90 或掉 ≥40 超過 15 min", "en": "Massive PE, high-risk PE",
       "orders": [
         ["m", "Heparin 80 U/kg IV bolus → 18 U/kg/hr", "不延遲｜心臟科泡法：25,000 U in NS/D5W 500 mL（50 U/mL）"],
         ["x", "Bedside echo（RV/LV >1）或 CTPA", "RV 無過負荷幾乎可排除 PE 休克｜影像診療科 CT ☎2585#316；夜間急診 CT ☎2568｜顯影劑：同意書 + 家屬，先看腎功能"],
@@ -72,20 +72,20 @@
         ["m", "NS 500 mL challenge（≤500 mL）", "積極補液會讓 RV 更擴張"],
         ["m", "Norepinephrine 4 mg/4 mL：8 mg in D5W 250 mL，0.05–0.5 mcg/kg/min", "心因性休克"]
       ] },
-    { "name": "張力性氣胸", "hint": "低血壓 + 單側呼吸音消失 + 氣管偏",
+    { "name": "張力性氣胸", "hint": "低血壓 + 單側呼吸音消失 + 氣管偏", "en": "Tension pneumothorax",
       "orders": [
         ["p", "Needle decompression：5th ICS 腋中線稍前（大號導管）", "不等影像"],
         ["p", "Chest tube", "減壓後一定要放"],
         ["x", "CXR after tube", "確認位置"]
       ] },
-    { "name": "穩定氣胸", "hint": "",
+    { "name": "穩定氣胸", "hint": "", "en": "Pneumothorax",
       "orders": [
         ["x", "CXR", "排除：肺炎、氣胸、肺水腫、胸水、縱膈腔變寬"],
         ["p", "O2 NRM 15 L/min", "加速吸收；高碳酸風險者不用"],
         ["p", "Needle aspiration", "PSP 有症狀或小型 SSP", "有症狀"],
         ["p", "Chest tube (<14F)", "機械通氣中或高風險", "插管中"]
       ] },
-    { "name": "心包炎", "hint": "姿勢性胸痛、廣泛 ST 上升 + PR 下降",
+    { "name": "心包炎", "hint": "姿勢性胸痛、廣泛 ST 上升 + PR 下降", "en": "Pericarditis",
       "orders": [
         ["x", "ECG、Echo、CXR", "排除：心包填塞（低電壓、電交替、心包積液）；ECG 廣泛 ST↑ + PR↓ 支持心包炎｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
         ["l", "CRP、Troponin", "目的：CRP 追療效；Troponin 高 → 心肌心包炎"],
@@ -93,14 +93,14 @@
         ["m", "Aspirin 500 mg ×2 PO TID × 1–2 週", "已在吃 aspirin 或 MI 後", "MI 後"],
         ["m", "Colchicine 0.5 mg PO BID × 3 個月", "<70 kg 或腎差改 QD；減少復發｜腎調：CrCl <30 → 0.5 mg 單次，2 週內不重複"]
       ] },
-    { "name": "心包填塞", "hint": "低血壓 + JVP 高 + 心音遠",
+    { "name": "心包填塞", "hint": "低血壓 + JVP 高 + 心音遠", "en": "Cardiac tamponade",
       "orders": [
         ["x", "Bedside echo", "RA/RV 舒張期塌陷、IVC >20 mm"],
         ["p", "Pericardiocentesis（影像導引）", "血行動力不穩不延遲；每次 <500 mL"],
         ["m", "NS 500 mL IV bolus", "等待穿刺時暫時穩定"],
         ["p", "避免利尿劑與正壓通氣", "會惡化"]
       ] },
-    { "name": "疑食道/消化道穿孔", "hint": "嘔吐後胸痛、皮下氣腫",
+    { "name": "疑食道/消化道穿孔", "hint": "嘔吐後胸痛、皮下氣腫", "en": "Esophageal perforation, Boerhaave",
       "orders": [
         ["x", "CT with contrast + CT esophagography", "首選｜影像診療科 CT ☎2585#316；夜間急診 CT ☎2568｜顯影劑：同意書 + 家屬，先看腎功能"],
         ["l", "CBC、電解質、腎肝功能、pH、Lactate", "排除：敗血症、組織缺血（乳酸）、AKI"],
@@ -108,13 +108,13 @@
         ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h + Fluconazole 400 mg IV QD", "涵蓋腸道菌、厭氧菌與念珠菌｜腎調：CrCl 20–40 → 3.375 g q6h；<20 → 2.25 g q6h；HD 2.25 g q8h + 0.75 g 透析後"],
         ["m", "Pantoprazole 40 mg IV q12h", "適應：消化道穿孔 / 出血、NPO｜注意：長期用 CDI、肺炎、低鎂"]
       ] },
-    { "name": "低風險 / 非心因胸痛", "hint": "ECG 正常、troponin 陰性",
+    { "name": "低風險 / 非心因胸痛", "hint": "ECG 正常、troponin 陰性", "en": "Low-risk chest pain, noncardiac",
       "orders": [
         ["m", "Acetaminophen 500 mg PO q6h PRN", "肌肉骨骼痛；心血管風險者避免 NSAID"],
         ["m", "Pantoprazole 40 mg PO QD × 2 週（PPI 試驗）", "疑 GERD、無警示症狀"],
         ["m", "Valaciclovir 500 mg ×2（1 g）PO TID × 7 天", "帶狀皰疹，72 hr 內｜腎調：CrCl 30–49 → 1 g q12h；10–29 → 1 g q24h", "皮疹"]
       ] },
-    { "name": "術後心肌損傷 (PMI)", "hint": "術後 troponin 上升",
+    { "name": "術後心肌損傷 (PMI)", "hint": "術後 troponin 上升", "en": "PMI, perioperative myocardial injury, MINS",
       "orders": [
         ["x", "12-lead ECG", "排除：缺血、心律不整、高鉀、心包炎｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
         ["l", "Hb", "<8 g/dL 先輸血"],

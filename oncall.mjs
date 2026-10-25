@@ -60,20 +60,23 @@ const actions = () => `<div class="oc-actions"><button class="oc-big oc-primary"
 
 // A chapter opens on its first condition's orders (the work-up for that call);
 // the other conditions follow as "依情況再加".
+// English name and abbreviations (AFib, VT…) shown beside a condition and matched by search.
+const enTag = item => item.en && item.en !== item.name ?`<small class="oc-item-en" lang="en">${esc(item.en)}</small>` : '';
+
 function chapterView(chapter) {
   const [start, ...rest] = chapter.items;
   return `<button class="oc-back" type="button" data-oc="home">‹ 首頁</button>
-    <h1 class="oc-title" tabindex="-1">${chapter.icon} ${esc(chapter.title)}</h1>
-    <p class="oc-hint">先開：${esc(start.name)}${start.hint ? ` · ${esc(start.hint)}` : ''}</p>
+    <h1 class="oc-title" tabindex="-1">${chapter.icon} ${esc(chapter.title)}</h1>${chapter.en ? `<p class="oc-en" lang="en">${esc(chapter.en)}</p>` : ''}
+    <p class="oc-hint">先開：${esc(start.name)}${start.hint ? ` · ${esc(start.hint)}` : ''}${start.en && start.en !== chapter.en ? ` · <span lang="en">${esc(start.en)}</span>` : ''}</p>
     ${actions()}
     ${orderGroups(chapter, 0)}
-    <section class="oc-section"><h2>依情況再加</h2><div class="oc-list">${rest.map((item, index) => `<button class="oc-item" type="button" data-oc="item" data-index="${index + 1}"><span class="oc-item-name">${esc(item.name)}</span>${item.hint ? `<span class="oc-item-hint">${esc(item.hint)}</span>` : ''}<span class="oc-item-arrow" aria-hidden="true">›</span></button>`).join('')}</div></section>`;
+    <section class="oc-section"><h2>依情況再加</h2><div class="oc-list">${rest.map((item, index) => `<button class="oc-item" type="button" data-oc="item" data-index="${index + 1}"><span class="oc-item-name">${esc(item.name)}${enTag(item)}</span>${item.hint ? `<span class="oc-item-hint">${esc(item.hint)}</span>` : ''}<span class="oc-item-arrow" aria-hidden="true">›</span></button>`).join('')}</div></section>`;
 }
 
 function itemView(chapter, itemIndex) {
   const item = chapter.items[itemIndex];
   return `<button class="oc-back" type="button" data-oc="chapter" data-index="${ONCALL_MENU.indexOf(chapter)}">‹ ${esc(chapter.title)}</button>
-    <h1 class="oc-title" tabindex="-1">${esc(item.name)}</h1>
+    <h1 class="oc-title" tabindex="-1">${esc(item.name)}</h1>${item.en && item.en !== item.name ? `<p class="oc-en" lang="en">${esc(item.en)}</p>` : ''}
     ${item.hint ? `<p class="oc-hint">${esc(item.hint)}</p>` : ''}
     ${actions()}
     ${orderGroups(chapter, itemIndex)}`;
@@ -95,15 +98,27 @@ function orderGroups(chapter, itemIndex) {
   }).join('');
 }
 
+// Latin queries match at a word start ("vt" finds VT and NSVT's own word, not "IV TID");
+// other scripts match anywhere. Condition names and English terms rank above order text.
+function matcher(raw) {
+  const query = normalize(raw);
+  if (/[^\x00-\x7f]/.test(query)) return text => normalize(text).includes(query);
+  const pattern = new RegExp(`(^|[^a-z0-9])${raw.trim().toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\s+/g, '\\s*')}`);
+  return text => pattern.test(String(text).normalize('NFKC').toLowerCase());
+}
+
 function searchView() {
-  const query = normalize(view.query), hits = [];
+  const matches = matcher(view.query), hits = [];
   ONCALL_MENU.forEach(chapter => chapter.items.forEach((item, index) => {
-    const haystack = normalize([chapter.title, item.name, item.hint || '', ...item.orders.map(order => order[1])].join(' '));
-    if (haystack.includes(query)) hits.push([chapter, item, index]);
+    const rank = [item.name, item.en || ''].some(matches) ? 0
+      : [item.hint || '', chapter.title, chapter.en || ''].some(matches) ? 1
+      : item.orders.some(order => matches(order[1])) ? 2 : -1;
+    if (rank >= 0) hits.push([chapter, item, index, rank]);
   }));
+  hits.sort((a, b) => a[3] - b[3]);
   if (!hits.length) return `<h1 class="oc-title" tabindex="-1">找不到「${esc(view.query)}」</h1><p class="oc-hint">試試其他關鍵字，或按 Esc 清除搜尋。</p>`;
   return `<h1 class="oc-title" tabindex="-1">搜尋結果 · ${hits.length}</h1>
-    <div class="oc-list">${hits.map(([chapter, item, index]) => `<button class="oc-item" type="button" data-oc="hit" data-chapter="${ONCALL_MENU.indexOf(chapter)}" data-index="${index}"><span class="oc-item-name">${esc(item.name)}</span><span class="oc-item-hint">${chapter.icon} ${esc(chapter.title)}${item.hint ? ' · ' + esc(item.hint) : ''}</span><span class="oc-item-arrow" aria-hidden="true">›</span></button>`).join('')}</div>`;
+    <div class="oc-list">${hits.map(([chapter, item, index]) => `<button class="oc-item" type="button" data-oc="hit" data-chapter="${ONCALL_MENU.indexOf(chapter)}" data-index="${index}"><span class="oc-item-name">${esc(item.name)}${enTag(item)}</span><span class="oc-item-hint">${chapter.icon} ${esc(chapter.title)}${item.hint ? ' · ' + esc(item.hint) : ''}</span><span class="oc-item-arrow" aria-hidden="true">›</span></button>`).join('')}</div>`;
 }
 
 function trayText() {

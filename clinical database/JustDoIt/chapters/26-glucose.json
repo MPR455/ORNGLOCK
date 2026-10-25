@@ -1,7 +1,7 @@
 {
-  "no": "26", "slug": "glucose", "title": "血糖", "icon": "🍬",
+  "no": "26", "slug": "glucose", "title": "血糖", "en": "Glucose", "icon": "🍬",
   "items": [
-    { "name": "血糖異常：第一輪", "hint": "測到太高或太低",
+    { "name": "血糖異常：第一輪", "hint": "測到太高或太低", "en": "Abnormal blood sugar",
       "orders": [
         ["l", "POCT 重測（必要時抽靜脈血）", "排除：測量錯誤（末梢冰冷、貧血、輸液手臂）"],
         ["l", "Blood ketone、VBG（pH、HCO3）", "排除：DKA", "BS >250"],
@@ -11,14 +11,14 @@
         ["m", "50% Glucose 20 mL ×2 amp IV push（BS <40：×4 amp）", "適應：BS <70 不能吃 / 意識差", "BS <70 不能吃"],
         ["m", "Actrapid SC 依 sliding scale", "適應：BS >180 持續｜禁忌：不能單用；DKA 要 IV", "BS >180"]
       ] },
-    { "name": "低血糖（清醒能吞）", "hint": "BS <72",
+    { "name": "低血糖（清醒能吞）", "hint": "BS <72", "en": "Hypoglycemia (awake, can swallow)",
       "orders": [
         ["m", "Dextrose powder 15–20 g 溶水 PO（或果汁 150–200 mL）", "acarbose 使用者只能用純葡萄糖"],
         ["l", "10–15 min 後重測，最多 3 次", "目的：仍 <70 再給 15 g；改善後給長效碳水"],
         ["m", "長效碳水 20 g（餅乾、麵包）", "恢復後（用過 glucagon 給 40 g）"],
         ["p", "停 IV insulin", "處理完再重啟並檢視劑量", "IV insulin 中"]
       ] },
-    { "name": "低血糖（意識不清 / NPO）", "hint": "",
+    { "name": "低血糖（意識不清 / NPO）", "hint": "", "en": "Hypoglycemia (unconscious / NPO), D50",
       "orders": [
         ["m", "50% Glucose 20 mL ×2 amp IV push（BS <40：×4 amp）", "不建議 IV push；腎心衰用最小容量"],
         ["m", "Glucagon 1 mg/kit IM（只給一次）", "沒有 IV；sulfonylurea、酗酒、肝病效果差", "無 IV"],
@@ -27,7 +27,7 @@
         ["l", "BS 監測 24–48 hr", "sulfonylurea 或長效 insulin 引起"],
         ["p", "下一劑 insulin 不要省略，但要減量", ""]
       ] },
-    { "name": "住院高血糖", "hint": "持續 ≥180",
+    { "name": "住院高血糖", "hint": "持續 ≥180", "en": "Inpatient hyperglycemia, basal-bolus insulin",
       "orders": [
         ["l", "POCT glucose AC/HS（NPO q4–6h）", "目的：調整 basal / bolus；目標 140–180（一般病房 100–180）"],
         ["m", "Insulin glargine（Lantus）+ 餐前 Insulin aspart（NovoRapid）+ 矯正（TDD 0.3–0.6 U/kg/day，半 basal 半 bolus）", "不要只用 sliding scale"],
@@ -38,13 +38,13 @@
         ["m", "Sliding scale 範本：BS 200–250 RI 4 U、250–300 6 U、300–350 8 U、350–400 10 U", "適應：basal 之外的補充｜>400：驗 ketone、重評｜隔天把用掉總量一半加到 basal、一半分三餐"],
         ["p", "胰島素醫囑規則", "初住院避免預混型（NovoMix）→ 院內低血糖｜Lispro / Aspart 註明 AC｜筆型胰島素要加開針頭（處置，註明數量）｜當天 PM 劑量要改，16:00 前告知 duty nurse"]
       ] },
-    { "name": "類固醇高血糖", "hint": "",
+    { "name": "類固醇高血糖", "hint": "", "en": "Steroid-induced hyperglycemia",
       "orders": [
         ["m", "NPH（Insulatard）10 U SC QAM，每天依血糖 +10–20%", "早上單次 prednisolone"],
         ["l", "POCT glucose QID", "CBG >216 時"],
         ["p", "類固醇減量時 insulin 也減", "避免夜間低血糖"]
       ] },
-    { "name": "DKA", "hint": "BS ≥200 + ketone ≥3 + pH <7.3",
+    { "name": "DKA", "hint": "BS ≥200 + ketone ≥3 + pH <7.3", "en": "DKA, diabetic ketoacidosis",
       "orders": [
         ["l", "β-hydroxybutyrate、glucose、Na/K/Cl、P、BUN/Cr、VBG、CBC", "用血酮不用尿酮"],
         ["l", "Blood culture、UA、ECG、CXR、β-hCG", "找誘因"],
@@ -58,13 +58,13 @@
         ["m", "Fraxiparine 0.4 mL（3800 IU）SC QD（或 Heparin 5000 U SC q12h）", "血栓預防"],
         ["p", "緩解：ketone <0.6 且 pH ≥7.3", "basal SC 給後 1–2 hr 再停 IV"]
       ] },
-    { "name": "Euglycemic DKA (SGLT2i)", "hint": "BS <200 但酮酸中毒",
+    { "name": "Euglycemic DKA (SGLT2i)", "hint": "BS <200 但酮酸中毒", "en": "Euglycemic DKA, SGLT2 inhibitor",
       "orders": [
         ["p", "停 SGLT2 inhibitor", ""],
         ["m", "10% Glucose 125 mL/hr + Actrapid 0.1 U/kg/hr 同時開始", "血糖不高也要給糖才能打 insulin"],
         ["l", "VBG、ketone", "看 pH 與酮體，不看血糖"]
       ] },
-    { "name": "HHS", "hint": "BS ≥600、滲透壓 >320、無酮酸",
+    { "name": "HHS", "hint": "BS ≥600、滲透壓 >320、無酮酸", "en": "HHS, hyperosmolar hyperglycemic state",
       "orders": [
         ["m", "NS 1 L over 1 hr → 0.5–1 L/hr", "目標 6 hr 正平衡 2–3 L"],
         ["l", "Glucose、Na、K、BUN、滲透壓 q1h × 6 hr", "滲透壓每小時降 3–8"],
@@ -73,7 +73,7 @@
         ["p", "Na 24 hr 降 ≤10", "Na 上升是預期的"],
         ["m", "Fraxiparine 0.4 mL SC QD", "適應：HHS 高凝狀態 VTE 預防｜禁忌：活動性出血、CrCl <30 減量"]
       ] },
-    { "name": "NPO / 術前調藥", "hint": "",
+    { "name": "NPO / 術前調藥", "hint": "", "en": "NPO / perioperative diabetes medications",
       "orders": [
         ["p", "停口服降血糖藥（含 metformin）", ""],
         ["p", "SGLT2i 術前停 3 天", ""],

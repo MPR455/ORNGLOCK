@@ -11,6 +11,8 @@
 .oc-tray-btn b{display:inline-block;min-width:32px;margin-left:6px;padding:2px 6px;background:var(--oc-m);color:#fff}
 .oc-title{margin:14px 0 6px;font-size:30px;line-height:1.25;font-weight:900;color:var(--ink)}
 .oc-title:focus{outline:none}
+.oc-en{margin:-2px 0 8px;font-size:17px;font-weight:700;color:var(--sub)}
+.oc-item-en{display:block;font-size:15px;font-weight:700;color:var(--sub)}
 .oc-hint{margin:0 0 14px;font-size:19px;color:var(--sub)}
 .oc-section{margin-top:18px}
 .oc-section h2{margin:0 0 8px;padding:6px 0;font-size:20px;font-weight:900;color:var(--ink);border-bottom:3px solid var(--ink)}

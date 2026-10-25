@@ -1,7 +1,7 @@
 {
-  "no": "31", "slug": "potassium", "title": "鉀", "icon": "🍌",
+  "no": "31", "slug": "potassium", "title": "鉀", "en": "Potassium", "icon": "🍌",
   "items": [
-    { "name": "鉀異常：第一輪", "hint": "K 異常先做這些",
+    { "name": "鉀異常：第一輪", "hint": "K 異常先做這些", "en": "Potassium disorder",
       "orders": [
         ["x", "12-lead ECG", "排除：高鉀（高聳 T、PR↑、QRS 寬）、低鉀（U 波、QT 延長）｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
         ["l", "重抽 K（不握拳、不溶血）", "排除：假性高血鉀｜Plt >700k 或 WBC >100k → 用綠頭（heparin）管，避免假性高血鉀", "意外偏高"],
@@ -11,7 +11,7 @@
         ["m", "Actrapid 0.1 U/kg（max 10 U）+ 50% Glucose 50 mL（25 g）IV（BS >250 可不給糖）", "適應：K ≥6（轉移）｜注意：q1h 驗血糖 ×6 hr", "K ≥6"],
         ["m", "KCl SR 600 mg（8 mEq）或 750 mg（10 mEq）2–4 錠 PO（或 K gluconate 20 mEq 液）", "適應：K <3.5 能吃｜先補 Mg", "K <3.5"]
       ] },
-    { "name": "高血鉀 K ≥6.0", "hint": "",
+    { "name": "高血鉀 K ≥6.0", "hint": "", "en": "Hyperkalemia",
       "orders": [
         ["x", "12-lead ECG STAT", "ECG 正常不能排除｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
         ["x", "Continuous ECG monitor", "K ≥6.5 或 ECG 變化｜醫囑：EKG MONITOR（附註 wireless）"],
@@ -27,20 +27,20 @@
         ["p", "照會腎臟科：緊急透析", "藥物無效、ESKD、寡尿 AKI、橫紋肌溶解", "無效/ESKD"],
         ["m", "Kalimate（Calcium polystyrene sulfonate 5 g）15 g PO TID", "無 SZC 時；作用慢", "無 SZC"]
       ] },
-    { "name": "高血鉀：去除原因", "hint": "",
+    { "name": "高血鉀：去除原因", "hint": "", "en": "Hyperkalemia, remove cause",
       "orders": [
         ["p", "停補鉀、含鉀輸液、低鈉鹽", ""],
         ["p", "暫停 ACEI/ARB/MRA、NSAID、TMP-SMX、保鉀利尿劑、heparin、β-blocker", "急性病時"],
         ["l", "BUN/Cr、glucose、VBG、CK", "排除：AKI、高血糖、酸中毒、橫紋肌溶解（高鉀原因）"]
       ] },
-    { "name": "高血鉀心跳停止", "hint": "",
+    { "name": "高血鉀心跳停止", "hint": "", "en": "Hyperkalemic cardiac arrest",
       "orders": [
         ["m", "5% Calcium chloride 20 mL ×1–2 IV push", "適應：高血鉀心跳停止｜注意：中心靜脈較安全；不要因給鈣延誤 CPR"],
         ["m", "Sodium bicarbonate 7% 20 mL ×3（50 mEq）IV（另一管路）", "適應：高血鉀合併酸中毒｜注意：與鈣同管沉澱"],
         ["m", "Actrapid 10 U + 50% Glucose 50 mL", "適應：高血鉀轉移｜注意：q1h 驗血糖 ×6 hr（低血糖最常見併發症）"],
         ["p", "持續 CPR 下考慮透析", ""]
       ] },
-    { "name": "低血鉀", "hint": "K <3.5",
+    { "name": "低血鉀", "hint": "K <3.5", "en": "Hypokalemia",
       "orders": [
         ["x", "ECG", "排除：QT 延長、高/低鉀變化、心律不整、缺血｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
         ["l", "Mg", "低 Mg 要一起補，否則 K 補不上"],
@@ -52,7 +52,7 @@
         ["p", "停 thiazide / loop 或加 MRA", "利尿劑引起", "利尿劑"],
         ["m", "Multi-electrolyte No.3（台大三號）500 mL 維持點滴", "適應：需要維持輸液 + 低血鉀（含 K 較多）｜禁忌：高血鉀、無尿", "需點滴"]
       ] },
-    { "name": "低血鉀心跳停止", "hint": "",
+    { "name": "低血鉀心跳停止", "hint": "", "en": "Hypokalemic cardiac arrest",
       "orders": [
         ["m", "15% KCl 20 mEq/10 mL：20 mmol IV over 2–3 min → 10 mmol over 2 min", "只限低血鉀造成的心跳停止"]
       ] }

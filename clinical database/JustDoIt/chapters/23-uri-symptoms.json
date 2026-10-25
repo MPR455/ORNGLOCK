@@ -1,7 +1,7 @@
 {
-  "no": "23", "slug": "uri-symptoms", "title": "上呼吸道症狀", "icon": "🤧",
+  "no": "23", "slug": "uri-symptoms", "title": "上呼吸道症狀", "en": "Upper respiratory symptoms", "icon": "🤧",
   "items": [
-    { "name": "喉嚨痛 / 咳嗽：第一輪", "hint": "先排除氣道危險",
+    { "name": "喉嚨痛 / 咳嗽：第一輪", "hint": "先排除氣道危險", "en": "Sore throat, cough",
       "orders": [
         ["p", "紅旗：流口水、喘鳴、張口困難、聲音像含滷蛋、頸部腫", "會厭炎、深頸部感染 → 坐著、備氣道"],
         ["l", "Rapid strep test 或 Throat culture", "排除：A 群鏈球菌（Centor ≥3 才驗）", "Centor ≥3"],
@@ -11,7 +11,7 @@
         ["m", "Benzydamine spray TID", "適應：咽痛、插管後喉嚨痛"],
         ["m", "Dextromethorphan SR 60 mg PO BID", "適應：乾咳影響睡眠｜禁忌：併 MAOI；痰多不用", "乾咳"]
       ] },
-    { "name": "上呼吸道阻塞 / 會厭炎", "hint": "喘鳴、流口水、吞嚥困難",
+    { "name": "上呼吸道阻塞 / 會厭炎", "hint": "喘鳴、流口水、吞嚥困難", "en": "Upper airway obstruction, epiglottitis, stridor",
       "orders": [
         ["p", "坐起、O2 NRM 15 L/min", "不要躺平、不要壓舌"],
         ["p", "困難氣道車到床邊、找熟練者", "清醒插管可能誘發完全阻塞"],
@@ -21,7 +21,7 @@
         ["m", "Ceftriaxone 2 g IV QD + Vancomycin 15–20 mg/kg q12h", "適應：會厭炎（H. influenzae、鏈球菌、MRSA）", "會厭炎"],
         ["x", "Lateral neck X-ray（病人穩定、坐姿）", "排除：會厭炎（thumb sign）、咽後膿瘍｜禁忌：不穩定不要躺平送檢"]
       ] },
-    { "name": "喉嚨痛（細菌性）", "hint": "Centor ≥3",
+    { "name": "喉嚨痛（細菌性）", "hint": "Centor ≥3", "en": "Bacterial pharyngitis, strep throat",
       "orders": [
         ["l", "Rapid strep test", "Centor 0–1 不需"],
         ["m", "Penicillin V 400,000 U（250 mg）×2 PO QID × 10 天", "適應：A 群鏈球菌咽炎｜禁忌：penicillin 過敏改 cephalosporin / azithro"],
@@ -29,26 +29,26 @@
         ["m", "Azithromycin 250 mg ×2 D1 → 250 mg QD × 4 天", "嚴重 β-lactam 過敏", "嚴重過敏"],
         ["m", "Acetaminophen 500 mg / Ibuprofen 400 mg PO q6–8h", "症狀治療"]
       ] },
-    { "name": "深頸部感染", "hint": "頸腫、牙關緊閉、口底腫",
+    { "name": "深頸部感染", "hint": "頸腫、牙關緊閉、口底腫", "en": "Deep neck infection, Ludwig angina, PTA",
       "orders": [
         ["x", "Neck CT with contrast", "排除：扁桃腺周圍 / 咽後膿瘍、Ludwig angina｜影像診療科 CT ☎2585#316；夜間急診 CT ☎2568｜顯影劑：同意書 + 家屬，先看腎功能"],
         ["p", "耳鼻喉：切開引流", ""],
         ["l", "Blood culture", "目的：深部感染常合併菌血症"]
       ] },
-    { "name": "急性細菌性鼻竇炎", "hint": "膿鼻涕 ≥10 天或好轉又惡化",
+    { "name": "急性細菌性鼻竇炎", "hint": "膿鼻涕 ≥10 天或好轉又惡化", "en": "Acute bacterial sinusitis",
       "orders": [
         ["m", "Amoxicillin 500 mg PO TID × 5–7 天", "適應：急性細菌性鼻竇炎（症狀 >10 天或先好後壞）｜禁忌：penicillin 過敏"],
         ["m", "Curam 1 g（875/125）PO BID × 5–7 天", "≥65 歲、糖尿病、免疫低下、近期用過抗生素", "高風險"],
         ["m", "Mometasone 鼻噴 2 puff QD + 生理食鹽水沖洗", "適應：鼻竇炎、過敏性鼻炎鼻塞｜注意：流鼻血時暫停"],
         ["x", "CT with contrast", "疑眼眶或顱內擴散｜影像診療科 CT ☎2585#316；夜間急診 CT ☎2568｜顯影劑：同意書 + 家屬，先看腎功能", "併發症"]
       ] },
-    { "name": "鼻塞流鼻水", "hint": "",
+    { "name": "鼻塞流鼻水", "hint": "", "en": "Rhinorrhea, nasal congestion",
       "orders": [
         ["m", "Levocetirizine 5 mg 或 Fexofenadine 180 mg PO QD", "老人避免第一代抗組織胺"],
         ["m", "Oxymetazoline 0.05% 鼻噴 BID ≤3 天", "久用會反彈"],
         ["p", "檢視藥物：NSAID、ACEI、CCB、PDE5i、clonidine", ""]
       ] },
-    { "name": "流感", "hint": "",
+    { "name": "流感", "hint": "", "en": "Influenza, flu",
       "orders": [
         ["l", "Influenza PCR", "住院急性呼吸道病人入院就驗｜Influenza：rapid L72-768 / PCR L72-906 / culture L72-901"],
         ["m", "Oseltamivir 75 mg PO BID × 5 天", "住院者不論病程都給；腎差調劑量｜腎調：CrCl 30–60 → 30 mg BID；10–30 → 30 mg QD"],
@@ -57,27 +57,27 @@
         ["m", "Peramivir 300 mg/60 mL IV ×1（重症 600 mg）", "無法口服或吸收不良", "無法口服"],
         ["m", "Baloxavir 20 mg ×2（≥80 kg ×4）PO ×1", "單次口服替代", "替代"]
       ] },
-    { "name": "咳嗽", "hint": "",
+    { "name": "咳嗽", "hint": "", "en": "Cough",
       "orders": [
         ["x", "CXR", "急性先排除肺炎、心衰、PE"],
         ["p", "停 ACE inhibitor ≥4 週", "15% 會咳", "ACEI"],
         ["m", "Dextromethorphan SR 60 mg PO BID / Benzonatate 100 mg TID（鎮咳）；Ambroxol 30 mg TID / Acetylcysteine 600 mg QD（化痰）", "乾咳鎮咳、痰多化痰，不要兩者硬塞"],
         ["l", "Sputum AFB ×3", "疑結核", "疑 TB"]
       ] },
-    { "name": "口腔念珠菌（鵝口瘡）", "hint": "白斑可刮除；類固醇吸入、抗生素、免疫低下",
+    { "name": "口腔念珠菌（鵝口瘡）", "hint": "白斑可刮除；類固醇吸入、抗生素、免疫低下", "en": "Oral candidiasis, thrush",
       "orders": [
         ["m", "Nystatin 100,000 U/mL：5 mL 含漱後吞 QID × 7–14 天", "輕中度"],
         ["m", "Fluconazole 200 mg PO D1 → 100 mg QD × 7–14 天", "中重度或吞嚥痛（疑食道）｜腎調：CrCl <50 → 維持劑量減半（負荷不減）", "中重度"],
         ["p", "吸入類固醇後漱口", ""]
       ] },
-    { "name": "口腔潰瘍 / 插管後喉嚨痛", "hint": "嘴破、黏膜炎、拔管後痛",
+    { "name": "口腔潰瘍 / 插管後喉嚨痛", "hint": "嘴破、黏膜炎、拔管後痛", "en": "Oral ulcer, mucositis, post-extubation sore throat",
       "orders": [
         ["m", "Triamcinolone 0.1% oral paste TID 塗患處", "適應：口腔潰瘍｜禁忌：疑口腔感染（念珠菌、HSV）"],
         ["m", "Chlorhexidine 0.2% gargle 15 mL BID 含漱", "適應：口腔清潔、黏膜炎｜注意：牙齒染色"],
         ["m", "Benzydamine spray TID", "適應：插管後喉嚨痛、咽痛", "喉嚨痛"],
         ["m", "Lidocaine viscous 2% 5–10 mL 含漱後吐掉", "適應：劇痛影響進食｜注意：麻後易嗆，吞嚥前等 30 min", "劇痛"]
       ] },
-    { "name": "鼻出血", "hint": "",
+    { "name": "鼻出血", "hint": "", "en": "Epistaxis",
       "orders": [
         ["p", "頭前傾，捏鼻翼 ≥5 min（可重複）", ""],
         ["m", "Oxymetazoline 0.05% 浸棉片", "高血壓、心腦血管病小心"],
@@ -87,7 +87,7 @@
         ["p", "不常規降血壓", "監測就好"],
         ["p", "照會耳鼻喉", "後鼻出血或填塞無效", "填塞無效"]
       ] },
-    { "name": "鼻出血 + 抗凝", "hint": "",
+    { "name": "鼻出血 + 抗凝", "hint": "", "en": "Epistaxis on anticoagulants",
       "orders": [
         ["p", "先局部止血；非大出血不逆轉", ""],
         ["m", "Vitamin K1 10 mg/amp：2–5 mg PO/IV", "Warfarin 需住院", "Warfarin"],

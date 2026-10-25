@@ -1,7 +1,7 @@
 {
-  "no": "09", "slug": "gi-bleeding", "title": "消化道出血", "icon": "🩸",
+  "no": "09", "slug": "gi-bleeding", "title": "消化道出血", "en": "GI bleeding", "icon": "🩸",
   "items": [
-    { "name": "消化道出血：第一輪", "hint": "吐血、黑便、咖啡渣、血便",
+    { "name": "消化道出血：第一輪", "hint": "吐血、黑便、咖啡渣、血便", "en": "GI bleeding, UGIB, LGIB, hematemesis, melena",
       "orders": [
         ["p", "2 條大號 IV", "肝硬化至少兩條"],
         ["m", "NS / Lactated Ringer 500 mL IV over 15 min", "血行動力不穩；不用膠體"],
@@ -16,7 +16,7 @@
         ["m", "Esomeprazole 40 mg IV q12h", "適應：未知出血源先給；確認潰瘍再改 PPI line", "上消化道"],
         ["l", "備血：LPR 2 U、FFP 2 U、Platelet 12 U", "目的：Hb <7（心血管 <8）、INR >1.5、Plt <50K 且持續出血時輸｜血庫 ☎2538"]
       ] },
-    { "name": "輸血", "hint": "",
+    { "name": "輸血", "hint": "", "en": "Transfusion",
       "orders": [
         ["m", "pRBC：Hb <7 g/dL（目標 7–9）", "限制性輸血較好"],
         ["m", "pRBC：Hb <8 g/dL", "有心血管疾病", "心血管病"],
@@ -25,7 +25,7 @@
         ["m", "Cryoprecipitate：Fibrinogen <1.5 g/L", "適應：出血 + fibrinogen <150 mg/dL；10 U 約升 50–100 mg/dL"],
         ["m", "大量輸血：FFP:RBC ≥1:2", "心跳 >110 及/或 SBP <90 且持續出血", "大量出血"]
       ] },
-    { "name": "上消化道出血（非靜脈曲張）", "hint": "",
+    { "name": "上消化道出血（非靜脈曲張）", "hint": "", "en": "UGIB, non-variceal, peptic ulcer bleeding",
       "orders": [
         ["x", "EGD 24 hr 內", "不穩定者復甦後隨即做｜EGD：M23-002（減痛 M23-120）｜內視鏡室 ☎2227/2228"],
         ["m", "Pantoprazole 40 mg/vial ×2（80 mg）IV bolus", "內視鏡前可考慮，但不延後內視鏡"],
@@ -38,7 +38,7 @@
         ["p", "抗血栓藥處理", "Aspirin 單用：止血後 3–5 天內恢復｜DAPT：不要兩個都停 → 繼續 aspirin、暫停 clopidogrel，DES 5 天內恢復 P2Y12｜Warfarin：停藥；危及生命且 INR >2.5 → 4F-PCC + 低劑量 Vit K（高栓塞風險 ≤5 mg）；不要為等 INR 延誤 EGD｜DOAC：停藥；3 hr 內服藥給活性碳；dabigatran → idarucizumab；不 bridging"],
         ["p", "Forrest Ia–IIa：內視鏡止血 + 高劑量 PPI 72 hr；IIb：移除血塊；IIc / III：口服 PPI QD、正常飲食", "一律 H. pylori survey"]
       ] },
-    { "name": "靜脈曲張出血", "hint": "肝硬化病人出血",
+    { "name": "靜脈曲張出血", "hint": "肝硬化病人出血", "en": "Variceal bleeding, EV, EVL",
       "orders": [
         ["m", "Octreotide 100 mcg/amp：50 mcg IV bolus → 25–50 mcg/hr × 2–5 天", "不必等內視鏡"],
         ["m", "Terlipressin 1 mg/vial：2 mg IV q4h × 48 hr → 1 mg q4h", "缺血性心臟病小心；監測 Na", "替代"],
@@ -54,7 +54,7 @@
         ["p", "不給 PPI（除非合併潰瘍）", ""],
         ["p", "Sengstaken–Blakemore tube", "內視鏡止不住時暫時止血，等 TIPS / 手術（本院無 TIPS）", "止血失敗"]
       ] },
-    { "name": "下消化道出血", "hint": "血便",
+    { "name": "下消化道出血", "hint": "血便", "en": "LGIB, lower GI bleeding, hematochezia",
       "orders": [
         ["p", "先排除上消化道來源（EGD）", "血便 + 不穩定可能是上消化道"],
         ["x", "CTA abdomen", "持續且血行動力顯著的出血｜影像診療科 CT ☎2585#316；夜間急診 CT ☎2568｜顯影劑：同意書 + 家屬，先看腎功能"],
@@ -62,13 +62,13 @@
         ["m", "Klean-prep（PEG 3350）4 包泡 4 L", "非緊急住院大腸鏡前"],
         ["x", "Colonoscopy（非緊急住院）", "目的：找下消化道出血源（憩室、血管擴張、腫瘤）｜Colonoscopy：M23-013（減痛 M23-121）｜☎2227/2228"]
       ] },
-    { "name": "Warfarin + 嚴重出血", "hint": "主要出血",
+    { "name": "Warfarin + 嚴重出血", "hint": "主要出血", "en": "Warfarin major bleeding",
       "orders": [
         ["m", "PCC（Human prothrombin complex 500 IU/vial）：INR 2–4 → 25 U/kg；4–6 → 35 U/kg；>6 → 50 U/kg（max 5000）", "適應：warfarin 大出血、緊急手術｜禁忌：DIC、HIT 史（含 heparin）；一定合併 Vitamin K"],
         ["m", "Vitamin K1 10 mg/amp：10 mg slow IV", "與 PCC 一起給"],
         ["m", "FFP 10–15 mL/kg", "沒有 PCC 時", "無 PCC"]
       ] },
-    { "name": "DOAC + 嚴重出血", "hint": "主要出血",
+    { "name": "DOAC + 嚴重出血", "hint": "主要出血", "en": "DOAC major bleeding, NOAC",
       "orders": [
         ["m", "Idarucizumab（Praxbind）5 g IV（2.5 g ×2）", "Dabigatran", "Dabigatran"],
         ["m", "PCC（Human prothrombin complex 500 IU/vial） 50 U/kg IV（max 4000）", "Xa 抑制劑或無 idarucizumab", "Xa 抑制劑"],

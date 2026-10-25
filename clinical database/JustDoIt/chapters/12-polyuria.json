@@ -1,7 +1,7 @@
 {
-  "no": "12", "slug": "polyuria", "title": "尿量增加", "icon": "🚽",
+  "no": "12", "slug": "polyuria", "title": "尿量增加", "en": "Polyuria", "icon": "🚽",
   "items": [
-    { "name": "多尿：第一輪", "hint": "尿量異常增加",
+    { "name": "多尿：第一輪", "hint": "尿量異常增加", "en": "Polyuria",
       "orders": [
         ["l", "Glucose、Na/K、Ca（白蛋白校正）、BUN/Cr", "高血糖、高血鈣是常見原因"],
         ["l", "Serum osmolality、Urine osmolality", "尿液滲透壓低提示尿崩症"],
@@ -10,7 +10,7 @@
         ["p", "I/O、體重", ""],
         ["m", "D5W 或 Half-saline 0.45%", "適應：多尿合併高血鈉｜注意：降 Na ≤10/24 hr", "Na >145"]
       ] },
-    { "name": "高血糖滲透性利尿 / HHS", "hint": "BS ≥600、滲透壓 >300",
+    { "name": "高血糖滲透性利尿 / HHS", "hint": "BS ≥600、滲透壓 >300", "en": "HHS, osmotic diuresis, hyperglycemia",
       "orders": [
         ["m", "NS 1 L 第 1 hr，之後 0.5–1 L/hr", "前 8–12 hr 補一半缺水量"],
         ["l", "POCT glucose q1–2h", "目的：每小時降 50–75 mg/dL；太快 → 腦水腫"],
@@ -19,7 +19,7 @@
         ["m", "0.45% NaCl", "液體平衡足夠但滲透壓仍升", "滲透壓不降"],
         ["p", "Na 24 hr 下降 ≤10", "避免腦水腫"]
       ] },
-    { "name": "中樞性尿崩症 (CDI)", "hint": "大量稀釋尿、高血鈉",
+    { "name": "中樞性尿崩症 (CDI)", "hint": "大量稀釋尿、高血鈉", "en": "Central diabetes insipidus, CDI, AVP deficiency",
       "orders": [
         ["m", "NS 恢復血壓脈搏", "容積不足先補", "容積不足"],
         ["m", "Desmopressin 4 mcg/mL：1–2 mcg IV/SC", "已確診 CDI，補液後尿量多且尿滲透壓低"],
@@ -28,26 +28,26 @@
         ["p", "Desmopressin 不可漏給", "漏給曾致死"],
         ["p", "照會內分泌", ""]
       ] },
-    { "name": "多尿合併高血鈉", "hint": "Na >145",
+    { "name": "多尿合併高血鈉", "hint": "Na >145", "en": "Polyuria with hypernatremia",
       "orders": [
         ["m", "D5W 或 Half-saline 0.45%（每日需要量 + 部分缺水量）", "可行時改 PO/NG 給水"],
         ["p", "急性有症狀：第 1 hr 降 5，24 hr ≤10", "", "急性"],
         ["p", "慢性/無症狀：≤0.5 mmol/L/hr，24 hr ≤10", ""],
         ["l", "Na q4h", "目的：降 Na 不超過 10 mmol/L/24 hr（腦水腫）"]
       ] },
-    { "name": "阻塞解除後利尿", "hint": "導尿後大量排尿",
+    { "name": "阻塞解除後利尿", "hint": "導尿後大量排尿", "en": "Postobstructive diuresis",
       "orders": [
         ["m", "Half-saline 0.45%（少於尿量）", "低血容或低血壓時更積極"],
         ["l", "Na/K/Mg、BUN/Cr、尿電解質", "排除：阻塞解除後大量利尿造成低鈉、低鉀、低鎂"],
         ["p", "I/O q1–2h", ""]
       ] },
-    { "name": "高血鈣多尿", "hint": "",
+    { "name": "高血鈣多尿", "hint": "", "en": "Hypercalcemia polyuria",
       "orders": [
         ["l", "Ca（白蛋白校正）、P、PTH、BUN/Cr", "排除：PTH 高 → 副甲亢；PTH 低 → 腫瘤（PTHrP）、Vitamin D"],
         ["x", "ECG", "Ca >3.5 有心律不整風險｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
         ["m", "NS 補液", "見鈣章"]
       ] },
-    { "name": "利尿劑過度利尿", "hint": "",
+    { "name": "利尿劑過度利尿", "hint": "", "en": "Overdiuresis",
       "orders": [
         ["l", "Na、K、Mg、BUN/Cr 每日", "目的：低鉀、低鈉、低鎂、腎前性 AKI"],
         ["p", "減量或停利尿劑", "合併低血壓時"],

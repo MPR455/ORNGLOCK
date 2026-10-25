@@ -32,3 +32,12 @@ test('every ☎ extension in a reason is one the phone links understand', async 
   }
   assert.deepEqual(bad, []);
 });
+
+test('every chapter and condition has an English name for search', async () => {
+  const missing = [];
+  for (const chapter of await loadChapters()) {
+    if (!chapter.en) missing.push(chapter.slug);
+    for (const item of chapter.items) if (!item.en) missing.push(`${chapter.slug} / ${item.name}`);
+  }
+  assert.deepEqual(missing, []);
+});

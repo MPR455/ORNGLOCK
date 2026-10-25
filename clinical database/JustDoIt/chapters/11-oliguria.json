@@ -1,7 +1,7 @@
 {
-  "no": "11", "slug": "oliguria", "title": "尿量減少", "icon": "🚱",
+  "no": "11", "slug": "oliguria", "title": "尿量減少", "en": "Oliguria", "icon": "🚱",
   "items": [
-    { "name": "少尿 / AKI：第一輪", "hint": "<0.5 mL/kg/hr × 6 hr 或 Cr 升 ≥0.3",
+    { "name": "少尿 / AKI：第一輪", "hint": "<0.5 mL/kg/hr × 6 hr 或 Cr 升 ≥0.3", "en": "Oliguria, AKI, acute kidney injury",
       "orders": [
         ["x", "Bladder scan / 導尿", "先排除尿滯留與導尿管阻塞"],
         ["l", "BUN/Cr、Na/K、CBC/DC", "排除：高鉀（要急透析？）、BUN/Cr >20 腎前性、感染"],
@@ -13,14 +13,14 @@
         ["p", "藥物依腎功能調整（請藥師）", ""],
         ["m", "Furosemide stress test：1–1.5 mg/kg IV", "適應：容積已補足、無阻塞｜判讀：2 hr 尿量 <200 mL → 進展至透析風險高｜利尿劑不能治療 AKI", "容積已足"]
       ] },
-    { "name": "容積不足：補液", "hint": "",
+    { "name": "容積不足：補液", "hint": "", "en": "Hypovolemia, prerenal AKI",
       "orders": [
         ["m", "NS 或 Lactated Ringer 500 mL over 15 min", "每次後重評；不用膠體"],
         ["m", "Lactated Ringer 250 mL ×（最多 1000 mL）", "疑敗血症", "敗血症"],
         ["p", "被動抬腿測輸液反應", "不要用尿量預測輸液反應"],
         ["p", "不用利尿劑治療少尿", "只用於容積過量"]
       ] },
-    { "name": "泌尿道阻塞", "hint": "",
+    { "name": "泌尿道阻塞", "hint": "", "en": "Urinary obstruction, postrenal, hydronephrosis",
       "orders": [
         ["p", "Foley catheter", "下泌尿道尿滯留"],
         ["x", "Renal echo（6 hr 內）", "疑膿腎｜腎超：M24-021｜☎2686", "疑膿腎"],
@@ -28,7 +28,7 @@
         ["m", "Ceftriaxone 2 g IV QD（敗血症：Pip-tazo 4.5 g q6h）", "阻塞合併感染", "感染"],
         ["l", "Urine culture（減壓後）", "目的：阻塞合併感染找菌種"]
       ] },
-    { "name": "急性尿滯留", "hint": "尿不出來、下腹脹；用超音波確認",
+    { "name": "急性尿滯留", "hint": "尿不出來、下腹脹；用超音波確認", "en": "AUR, acute urinary retention",
       "orders": [
         ["x", "Bladder scan（PVR）", "目的：>300（或 >150 有症狀）= 尿滯留；50–150 排空差；<50 排空好"],
         ["p", "On Foley 減壓（3–5 天）", "留置越久 UTI 越多"],
@@ -38,20 +38,20 @@
         ["l", "UA + Urine culture", "排除：合併 UTI（先治感染再 TWOC）"],
         ["p", "導尿後記 I/O；>200 mL/hr 補液", "阻塞解除後利尿會脫水、低鈉低鉀"]
       ] },
-    { "name": "敗血症 + AKI", "hint": "",
+    { "name": "敗血症 + AKI", "hint": "", "en": "Sepsis-associated AKI",
       "orders": [
         ["m", "Norepinephrine 4 mg/4 mL：8 mg in D5W 250 mL，0.05–0.5 mcg/kg/min", "輸液後仍低血壓；MAP ≥65"],
         ["m", "Vasopressin 20 U in NS 100 mL（0.2 U/mL）：9 mL/hr = 0.03 U/min", "NE 劑量持續上升", "NE 增加"],
         ["m", "Piperacillin-tazobactam 4.5 g（2.25 g ×2 vial）IV q6h（1 hr 內，首劑不減量）", "之後依 CrCl 調整｜腎調：CrCl 20–40 → 3.375 g q6h；<20 → 2.25 g q6h；HD 2.25 g q8h + 0.75 g 透析後"],
         ["p", "不用低劑量 dopamine", "無法預防 AKI"]
       ] },
-    { "name": "橫紋肌溶解", "hint": "CK >1000",
+    { "name": "橫紋肌溶解", "hint": "CK >1000", "en": "Rhabdomyolysis",
       "orders": [
         ["m", "Lactated Ringer / NS 1.5 L/hr，目標尿量 200–300 mL/hr", "避免只用 NS；老人心臟病小心"],
         ["l", "CK、K、Ca、P、Cr", "排除：橫紋肌溶解（CK >5× 上限）、高鉀、低鈣、AKI"],
         ["p", "避免 mannitol 與 loop diuretic", ""]
       ] },
-    { "name": "腫瘤溶解症候群", "hint": "化療前後",
+    { "name": "腫瘤溶解症候群", "hint": "化療前後", "en": "TLS, tumor lysis syndrome",
       "orders": [
         ["m", "NS 3 L/m²/day，尿量 100 mL/m²/hr", "適應：腫瘤溶解預防與治療｜禁忌：心衰、無尿（需透析）"],
         ["m", "Rasburicase 1.5 mg/vial：0.2 mg/kg/day（≤7 天）", "G6PD 缺乏禁用｜使用前需主治或值班總醫師同意（UA >10）"],
@@ -60,20 +60,20 @@
         ["m", "Allopurinol 100 mg 1–2 錠 PO TID（化療前 ≥1 週）", "適應：高風險 TLS 預防｜高磷時避免鹼化尿液｜腎調：CrCl <30 → 50–100 mg 起", "預防"],
         ["p", "HD 時機：K >6、UA >10、Cr >10、P >10 或快速上升、容積過多、症狀性高血鈣", "高風險（high-grade lymphoma、ALL-L3、WBC >100k）每天急件驗 K、Ca、P、Cr、UA ×3 天"]
       ] },
-    { "name": "肝硬化 + AKI", "hint": "",
+    { "name": "肝硬化 + AKI", "hint": "", "en": "HRS, hepatorenal syndrome, cirrhosis AKI",
       "orders": [
         ["p", "停利尿劑、NSAID、腎毒藥；低血壓停 NSBB", ""],
         ["m", "20% Albumin 1 g/kg（max 100 g）× 2 天", "AKI stage >1A"],
         ["m", "Terlipressin 1 mg/vial：1 mg IV q4–6h + 20% Albumin 20–40 g/day", "擴容無效、符合 HRS-AKI", "HRS"],
         ["l", "UA、Urine Na", "找其他原因"]
       ] },
-    { "name": "顯影劑腎病變預防", "hint": "eGFR <30 或 AKI",
+    { "name": "顯影劑腎病變預防", "hint": "eGFR <30 或 AKI", "en": "CIN, contrast nephropathy prevention, CA-AKI",
       "orders": [
         ["m", "NS 1–3 mL/kg/hr，檢查前 1 hr 到後 3–12 hr", "注意心衰"],
         ["p", "停 Metformin 48 hr", "腎功能正常後再恢復"],
         ["l", "Cr 48–72 hr 後", "目的：顯影劑腎病變（Cr 升 ≥0.3）"]
       ] },
-    { "name": "緊急透析評估", "hint": "內科治療無效",
+    { "name": "緊急透析評估", "hint": "內科治療無效", "en": "Emergent dialysis, HD indications",
       "orders": [
         ["p", "照會腎臟科：緊急 HD", "高血鉀、酸中毒、肺水腫、尿毒症（心包炎、腦病變）"],
         ["m", "Sodium bicarbonate 7% 20 mL（16.7 mEq/amp）：1–2 mEq/kg IV", "pH ≤7.2 + AKI 2–3 期", "嚴重酸中毒"],
@@ -81,7 +81,7 @@
         ["p", "緊急 HD 適應症（任一即可開始，≥2 項必須緊急）", "肺水腫 / 心衰（不必等 CXR）｜K >6.5 + ECG 變化｜pH <7.2 或 HCO3 <12 有症狀｜嚴重尿毒症狀（噁吐、意識、抽搐）｜尿毒心包膜炎 / 腦病變｜尿量 <200 mL/12 hr 或無尿｜BUN >85、Cr >6.5｜Na >160 或 <115、高血鈣｜高體溫｜可透析毒物"],
         ["p", "聯絡病房洗腎室", "☎2680/2681（避開 08–09、13:30–14:30、18:45–19:45 on 針時段）｜HD 醫囑與雙腔導管見「開檢查 → 腎臟科」"]
       ] },
-    { "name": "新診斷尿毒症（fresh uremia）", "hint": "準備進入透析",
+    { "name": "新診斷尿毒症（fresh uremia）", "hint": "準備進入透析", "en": "Fresh uremia, ESRD, new dialysis",
       "orders": [
         ["p", "I/O + 體重 QD；限鹽 <3 g、限鉀 <40 mEq、限蛋白 <40 g（已透析只限鹽）", ""],
         ["m", "IV lock（NPO 需維持液 ~40 mL/hr）", "適應：穩定者不需點滴｜大量點滴極易肺水腫"],
@@ -90,7 +90,7 @@
         ["p", "每日評估：尿毒症狀、心衰肺水、酸中毒、AVF thrill / bruit、導管傷口", ""],
         ["p", "HD → 照會血管外科做 access；PD → 照會一般外科放 Tenckhoff", "PD 衛教 ☎8831/8832/8833/8834"]
       ] },
-    { "name": "孕婦少尿", "hint": "<30 mL/hr × 4 hr",
+    { "name": "孕婦少尿", "hint": "<30 mL/hr × 4 hr", "en": "Oliguria in pregnancy",
       "orders": [
         ["p", "不常規擴充血漿容積", "子癇前症補液可能危險；總輸液 ~80 mL/hr"],
         ["m", "MgSO4 維持 1 g/hr", "腎差或少尿"],

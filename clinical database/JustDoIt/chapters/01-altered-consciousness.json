@@ -1,7 +1,7 @@
 {
-  "no": "01", "slug": "altered-consciousness", "title": "意識改變", "icon": "🧠",
+  "no": "01", "slug": "altered-consciousness", "title": "意識改變", "en": "Altered mental status", "icon": "🧠",
   "items": [
-    { "name": "意識改變：第一輪", "hint": "原因不明的意識下降",
+    { "name": "意識改變：第一輪", "hint": "原因不明的意識下降", "en": "AMS, altered consciousness, coma",
       "orders": [
         ["l", "床邊血糖 (POCT glucose)", "先排除低血糖，最快可逆的原因"],
         ["l", "ABG", "原因不明的混亂/躁動；看 CO2 滯留與酸鹼｜開立：呼吸治療（新）→ Blood gas analysis-artery"],
@@ -20,7 +20,7 @@
         ["m", "Naloxone 0.4 mg IV", "適應：呼吸慢 + 針狀瞳孔（疑 opioid）｜注意：一次給太多誘發戒斷", "疑 opioid"],
         ["m", "Vitamin B complex amp（B1 60 mg/amp）×3 IV（給糖前）", "適應：酒精、營養不良（預防 Wernicke）", "酒精 / 營養差"]
       ] },
-    { "name": "低血糖", "hint": "BS < 72 mg/dL",
+    { "name": "低血糖", "hint": "BS < 72 mg/dL", "en": "Hypoglycemia",
       "orders": [
         ["m", "50% Glucose 20 mL ×2 amp IV push（BS <40：×4 amp）", "無意識/抽搐/NPO 且有 IV；或 10% 200 mL；心腎衰用最小量", "無意識"],
         ["m", "Glucagon 1 mg IM ×1", "沒有 IV 時；酗酒、肝病、營養不良、sulfonylurea 效果差", "無 IV"],
@@ -31,12 +31,12 @@
         ["m", "10% Glucose 500 mL IV 100 mL/hr", "NPO 病人恢復後維持", "NPO"],
         ["l", "血糖監測 24–48 hr", "sulfonylurea 或長效 insulin 引起，風險持續 24–36 hr"]
       ] },
-    { "name": "疑 Wernicke / 營養不良", "hint": "酒精、減重手術、吸收不良",
+    { "name": "疑 Wernicke / 營養不良", "hint": "酒精、減重手術、吸收不良", "en": "Wernicke encephalopathy, thiamine deficiency",
       "orders": [
         ["m", "Vitamin B complex amp（B1 60 mg/amp） ×3 in NS 100 mL IV TID（B1 ≈180 mg）", "院內無單方 thiamine 針，以 B 群針 B1 含量換算；給糖前先打"],
         ["m", "Vitamin B complex amp（B1 60 mg/amp） ×2 IV/IM QD × 3–5 天（或 Dicethiamine 50 mg PO TID）", "酒精戒斷的預防劑量", "預防"]
       ] },
-    { "name": "疑鴉片類過量", "hint": "昏迷 + 呼吸慢 + 針尖瞳孔",
+    { "name": "疑鴉片類過量", "hint": "昏迷 + 呼吸慢 + 針尖瞳孔", "en": "Opioid overdose",
       "orders": [
         ["p", "Bag-valve-mask 通氣 每 6 秒 1 次", "有脈搏但呼吸抑制，先給氣再給藥"],
         ["m", "Naloxone 0.4 mg/amp：0.2–0.4 mg IV q2–3 min（呼吸停止 2 mg）", "滴定到恢復呼吸與氣道反射，不是要完全清醒"],
@@ -44,12 +44,12 @@
         ["m", "Naloxone infusion：有效劑量 ×2/3 per hr（2 mg in NS 100 mL）", "長效鴉片類，反應後又再抑制", "再抑制"],
         ["p", "持續監測 SpO2/RR 至風險低", "原藥作用常比 naloxone 長"]
       ] },
-    { "name": "疑 Benzodiazepine 過量", "hint": "單純 BZD 中毒 + 呼吸抑制",
+    { "name": "疑 Benzodiazepine 過量", "hint": "單純 BZD 中毒 + 呼吸抑制", "en": "Benzodiazepine overdose",
       "orders": [
         ["m", "Flumazenil 0.5 mg/5 mL：0.2 mg IV，q1 min 滴定至最多 1 mg", "只用於選定的單純 BZD 中毒；長期使用者、癲癇或心律不整風險者避免"],
         ["m", "Naloxone 0.4 mg IV 先給", "混合中毒先拮抗鴉片類較合理", "合併鴉片"]
       ] },
-    { "name": "疑細菌性腦膜炎", "hint": "發燒 + 頭痛 + 意識改變",
+    { "name": "疑細菌性腦膜炎", "hint": "發燒 + 頭痛 + 意識改變", "en": "Bacterial meningitis",
       "orders": [
         ["l", "Blood culture ×2（抗生素前）", "不能延誤抗生素"],
         ["m", "Ceftriaxone 2 g IV q12h", "病原未明首選；不可和含鈣溶液混；抵院 1 hr 內給"],
@@ -61,7 +61,7 @@
         ["l", "Serum cryptococcal antigen", "HIV 病人原因不明的中樞神經疾病", "HIV"],
         ["l", "UA、CXR", "同時找其他感染源"]
       ] },
-    { "name": "非痙攣性癲癇重積 (NCSE)", "hint": "原因不明持續昏迷",
+    { "name": "非痙攣性癲癇重積 (NCSE)", "hint": "原因不明持續昏迷", "en": "NCSE, nonconvulsive status epilepticus",
       "orders": [
         ["x", "Continuous EEG（1 hr 內，至少 48 hr）", "可能只表現為昏迷或細微抽動｜EEG：M29-021（awake）/ M29-029（awake + sleep）｜急做 ☎2240/3943"],
         ["m", "Lorazepam 2 mg/amp：0.1 mg/kg IV（max 4 mg），5–10 min 可重複", "確定癲癇重積後首選；推速 ≤2 mg/min"],
@@ -69,7 +69,7 @@
         ["p", "氣道不穩：10 min 內插管", "目標發作後 60 min 內控制"],
         ["m", "Phenytoin 250 mg/5 mL：20 mg/kg IV（≤50 mg/min，配 NS）+ 心臟監測", "替代第二線；低血壓、心律不整", "替代"]
       ] },
-    { "name": "顱內壓上升 / 腦疝", "hint": "頭痛嘔吐、瞳孔不等、意識降",
+    { "name": "顱內壓上升 / 腦疝", "hint": "頭痛嘔吐、瞳孔不等、意識降", "en": "Increased ICP, brain herniation",
       "orders": [
         ["p", "床頭抬高 >30°，頭部置中", "改善靜脈回流的基本措施"],
         ["p", "SpO2 >94%，維持正常體溫", "缺氧與發燒都會讓顱內壓更高"],
@@ -81,7 +81,7 @@
         ["m", "Dexamethasone 10 mg IV → 4 mg IV q6h", "只用於腦瘤、膿瘍、細菌/結核腦膜炎的水腫；TBI 與腦出血不用", "腫瘤水腫"],
         ["m", "Glycerol 250 mL IV q6–8h", "mannitol 替代；腎差較安全", "替代"]
       ] },
-    { "name": "疑急性中風：溶栓", "hint": "4.5 hr 內、明顯失能",
+    { "name": "疑急性中風：溶栓", "hint": "4.5 hr 內、明顯失能", "en": "Acute stroke, IVT thrombolysis, tPA",
       "orders": [
         ["l", "床邊血糖", "<50 或 >400 先矯正，15 min 內重評神經"],
         ["x", "Brain CT without contrast（或 MRI）STAT", "溶栓前排除出血｜日間 ☎3789 / ☎2570；夜間急診 CT ☎2568"],
@@ -93,7 +93,7 @@
         ["p", "溶栓後 BP <180/105 × 24 hr", "神經與血壓 q15min×2h → q30min×6h → q1h 到 24h"],
         ["p", "24 hr 內延後 NG、Foley、A-line", "減少出血；24 hr 追蹤影像後才開抗栓"]
       ] },
-    { "name": "急性中風住院醫囑", "hint": "梗塞或出血，入院第一天",
+    { "name": "急性中風住院醫囑", "hint": "梗塞或出血，入院第一天", "en": "Acute stroke admission orders, CVA, ischemic stroke, ICH",
       "orders": [
         ["x", "EKG、CXR、Brain CT", "每個急性中風入院都要｜EKG：M22-012 / M22-014（開單確認），床邊改 P｜☎2368/2335"],
         ["x", "Carotid duplex（M29-079）/ TCCS（M29-088）", "適應：梗塞性中風｜半年內做過先不開｜☎2359/3917/2251"],
@@ -106,7 +106,7 @@
         ["p", "PPI + clopidogrel：避免 esomeprazole，改 pantoprazole", "esomeprazole 降低 clopidogrel 效果"],
         ["p", "PAC（mRS 3–4、體力佳）→ 個管師 GSM 66340、處置碼 5113 / 5123", ""]
       ] },
-    { "name": "中風惡化（stroke in evolution）", "hint": "意識變差、肌力下降、說話停止",
+    { "name": "中風惡化（stroke in evolution）", "hint": "意識變差、肌力下降、說話停止", "en": "Stroke in evolution, progressing stroke",
       "orders": [
         ["l", "F/S、ABG、Na、K、Ca、glucose、CBC", "排除：呼吸衰竭、低血糖、電解質、貧血（先找可逆的內科原因）"],
         ["l", "Blood culture、CRP", "排除：感染", "發燒"],
@@ -114,7 +114,7 @@
         ["x", "CTA + Perfusion of brain", "適應：疑大血管阻塞、入院尚未做血管影像，考慮動脈取栓｜影像診療科 CT ☎2585#316；夜間急診 CT ☎2568｜顯影劑：同意書 + 家屬，先看腎功能", "疑大血管"],
         ["p", "比對 onset time 與 baseline 神經學檢查", ""]
       ] },
-    { "name": "溶栓後顱內出血", "hint": "頭痛、BP 飆、嘔吐、神經惡化",
+    { "name": "溶栓後顱內出血", "hint": "頭痛、BP 飆、嘔吐、神經惡化", "en": "Post-thrombolysis ICH, sICH",
       "orders": [
         ["p", "停止 alteplase 輸注", "第一步"],
         ["l", "CBC、PT/INR、aPTT、Fibrinogen、備血", "評估凝血與輸血｜血庫 ☎2538"],
@@ -122,7 +122,7 @@
         ["m", "Tranexamic acid 500 mg/5 mL ×2（1 g）IV over 10 min", "確認症狀性顱內出血後"],
         ["m", "Cryoprecipitate 10–12 U over 10–30 min", "Fibrinogen 仍 <200（或 150）可再給"]
       ] },
-    { "name": "溶栓後血管性水腫", "hint": "嘴唇、舌頭腫",
+    { "name": "溶栓後血管性水腫", "hint": "嘴唇、舌頭腫", "en": "Post-tPA angioedema",
       "orders": [
         ["p", "停 alteplase 與 ACE inhibitor", "兩者都會加重"],
         ["m", "Methylprednisolone 125 mg IV（40 mg/vial ×3）", "適應：溶栓或 ACEI 相關血管性水腫｜禁忌：無絕對禁忌；高血糖要監測"],
@@ -130,12 +130,12 @@
         ["m", "Famotidine 20 mg/amp IV", "適應：H2 阻斷輔助抗組織胺｜腎調：CrCl <50 減半"],
         ["p", "喉部/軟顎/口底受影響：準備清醒內視鏡插管", "30 min 內快速進展的插管風險高", "喉部受累"]
       ] },
-    { "name": "中風抗血小板", "hint": "缺血性中風、未溶栓",
+    { "name": "中風抗血小板", "hint": "缺血性中風、未溶栓", "en": "Antiplatelet for stroke, DAPT",
       "orders": [
         ["m", "Aspirin 100 mg ×3（300 mg）嚼碎 → 100 mg QD（48 hr 內開始）", "溶栓開始後 90 min 內不給 IV aspirin"],
         ["m", "Aspirin 100 mg + Clopidogrel 300 mg 負荷 → 75 mg QD × 21 天", "NIHSS ≤3 的輕微中風或高風險 TIA (ABCD2 ≥4)，24 hr 內開始", "輕微中風"]
       ] },
-    { "name": "酒精戒斷", "hint": "停酒 6–24 hr、手抖、冒汗、心搏快",
+    { "name": "酒精戒斷", "hint": "停酒 6–24 hr、手抖、冒汗、心搏快", "en": "Alcohol withdrawal",
       "orders": [
         ["l", "CIWA-Ar 評分", "<10 輕、10–18 中、≥19 重；已譫妄改用 CAM-ICU/RASS"],
         ["l", "電解質、Mg、P、肝腎功能、CBC、血糖", "不要等結果才治療"],
@@ -147,7 +147,7 @@
         ["m", "Phenobarbital 100 mg/amp：10 mg/kg IV over 30 min", "難治型，限 ICU 等高度監測", "難治"],
         ["p", "重評：前 24 hr 每 1–4 hr", "戒斷癲癇後每 1–2 hr，持續 6–24 hr"]
       ] },
-    { "name": "肝性腦病變", "hint": "肝硬化 + 嗜睡、撲翼震顫",
+    { "name": "肝性腦病變", "hint": "肝硬化 + 嗜睡、撲翼震顫", "en": "Hepatic encephalopathy, HE",
       "orders": [
         ["m", "Lactulose 25 mL PO/NG q12h → 調到每日 2–3 次軟便", "適應：overt HE｜軟便 / 水便是治療目標，不要因此停藥或加止瀉｜過量：吸入、脫水、高血鈉、肛周破皮"],
         ["m", "Lactulose 300 mL + 水 700 mL 保留灌腸 q4–6h", "無法口服或合併消化道出血要清腸", "不能口服"],
@@ -158,19 +158,19 @@
         ["m", "Neomycin 250 mg ×2（500 mg）PO q6h（≤7 天）", "適應：rifaximin 需專案進口時病房替代｜禁忌：腎差、聽力（耳腎毒性）", "無 rifaximin"],
         ["p", "找誘因：感染、消化道出血、便秘、電解質、脫水、鎮靜藥", ""]
       ] },
-    { "name": "尿毒性腦病變", "hint": "腎衰 + 嗜睡、肌陣攣",
+    { "name": "尿毒性腦病變", "hint": "腎衰 + 嗜睡、肌陣攣", "en": "Uremic encephalopathy",
       "orders": [
         ["l", "BUN/Cr、Na/K、ABG", "看是否有需要緊急透析的指標"],
         ["x", "Renal echo", "找阻塞等可逆原因｜腎超：M24-021｜☎2686"],
         ["p", "緊急透析評估", "嚴重高鉀、酸中毒、肺水腫或尿毒症併發症"]
       ] },
-    { "name": "嚴重低血鈉（有症狀）", "hint": "嘔吐、抽搐、昏迷",
+    { "name": "嚴重低血鈉（有症狀）", "hint": "嘔吐、抽搐、昏迷", "en": "Severe hyponatremia",
       "orders": [
         ["m", "3% NaCl 150 mL IV over 20 min", "可重複最多 2 次，或直到 Na 升 5"],
         ["l", "Serum Na 20 min 後", "每次 bolus 後追"],
         ["p", "24 hr 內 Na 上升 ≤10", "避免滲透性脫髓鞘"]
       ] },
-    { "name": "嚴重低血鈣", "hint": "Ca <1.9 mmol/L 或有症狀",
+    { "name": "嚴重低血鈣", "hint": "Ca <1.9 mmol/L 或有症狀", "en": "Severe hypocalcemia",
       "orders": [
         ["m", "10% Calcium gluconate 10 mL ×1–2 amp + D5W 100 mL IV over 10 min", "醫療急症"],
         ["x", "ECG monitor", "長 QT；用 digoxin 要持續監測｜醫囑：EKG MONITOR（附註 wireless）"]
