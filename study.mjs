@@ -25,12 +25,12 @@ export function initStudy({ toast = () => {} } = {}) {
   const root = document.getElementById('tab-study');
   root.innerHTML = `
     <div class="study-library">
-      <div class="study-heading"><div><h1 id="study-title">📚 Study</h1><p>Pick a book. Load a deck. Keep learning.</p></div><button type="button" class="study-btn" data-study="refresh">↻ Refresh books</button></div>
+      <div class="study-heading"><button type="button" class="study-btn" data-study="refresh">↻ Refresh books</button></div>
       <div class="study-books" id="study-books" role="group" aria-label="Books"><p class="study-hint">Loading books…</p></div>
       <div class="study-deck-controls"><label class="study-deck-label" for="study-deck">Deck<select id="study-deck" disabled><option>Choose a book</option></select></label><button class="study-btn study-primary" type="button" data-study="load" disabled>↓ Load deck</button><button class="study-btn" type="button" data-study="open">＋ Open .apkg</button><input id="study-file" type="file" accept=".apkg" hidden></div>
-      <p class="study-status" id="study-status" role="status" aria-live="polite">Decks load only when you select Load deck. You can also open an APKG from your computer.</p>
+      <p class="study-status" id="study-status" role="status" aria-live="polite" hidden></p>
     </div>
-    <div class="study-welcome" id="study-welcome"><span aria-hidden="true">🃏</span><h2>Your next study session starts here.</h2><p>Choose a book above, then load one of its decks.</p><p class="study-hint">Questions, answers, explanations, and images — together in one place.</p></div>
+    <div class="study-welcome" id="study-welcome"><span aria-hidden="true">🃏</span><p>If you don't know, the thing to do is not get scared, but to learn.</p></div>
     <div class="study-session" id="study-session" hidden>
       <div class="study-filters"><label for="study-category">Category<select id="study-category"></select></label><label class="study-search-label" for="study-search">Search cards<input type="search" id="study-search" placeholder="Question, answer, or keyword…" autocomplete="off"></label><label class="study-shuffle"><input type="checkbox" id="study-shuffle">Shuffle</label></div>
       <div class="study-workspace">
@@ -48,7 +48,7 @@ export function initStudy({ toast = () => {} } = {}) {
   let catalog, book, collection, loadedId = '', order = [], position = 0, answer = false, layout = 'cards', page = 0, busy = false, focusMode = false, focusedNatively = false, loading, requestId = 0, refreshId = 0, searchTimer;
   const openImage = initStudyImages(root.querySelector('dialog'));
   const frame = createCardFrame($('frame'), { onImage: openImage, onKey: keydown });
-  const status = (message, error = false) => { $('status').textContent = message; $('status').classList.toggle('study-error', error); };
+  const status = (message, error = false) => { $('status').textContent = message; $('status').hidden = !message; $('status').classList.toggle('study-error', error); };
   const selectedDeck = () => book?.decks.find(deck => deck.id === $('deck').value);
   function updateButtons() {
     for (const action of ['load', 'open', 'refresh']) button(action).disabled = busy || (action === 'load' && !selectedDeck());
