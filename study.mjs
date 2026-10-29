@@ -34,7 +34,7 @@ export function initStudy({ toast = () => {} } = {}) {
     <div class="study-session" id="study-session" hidden>
       <div class="study-filters"><label for="study-category">Category<select id="study-category"></select></label><label class="study-search-label" for="study-search">Search cards<input type="search" id="study-search" placeholder="Question, answer, or keyword…" autocomplete="off"></label><label class="study-shuffle"><input type="checkbox" id="study-shuffle">Shuffle</label></div>
       <div class="study-workspace">
-        <div class="study-viewer-head"><div><span class="study-eyebrow" id="study-loaded-book"></span><h2 id="study-loaded-name"></h2><p id="study-count" aria-live="polite"></p></div><button class="study-btn" data-study="focus" type="button" aria-pressed="false">⛶ Focus / fullscreen</button></div>
+        <div class="study-viewer-head"><div><span class="study-eyebrow" id="study-loaded-book"></span><h2 id="study-loaded-name"></h2><p id="study-count" aria-live="polite"></p></div><button class="study-btn" data-study="focus" type="button" aria-pressed="false">⛶ Focus mode</button></div>
         <progress id="study-progress" value="0" max="1" aria-label="Position in deck"></progress>
         <div class="study-card"><p class="study-card-state" id="study-card-state" hidden>No cards match. Try another category or search.</p><iframe id="study-frame" title="Study card" sandbox="allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe></div>
         <div class="study-answer-bar"><button class="study-btn" data-study="prev" type="button" aria-label="Previous card">← Prev</button><button class="study-btn study-primary" data-study="reveal" type="button">Show answer</button><button class="study-btn" data-study="next" type="button" aria-label="Next card">Next →</button></div>
@@ -45,7 +45,7 @@ export function initStudy({ toast = () => {} } = {}) {
     <dialog class="study-image-dialog" aria-label="Image viewer"><div class="study-image-head"><span>Image viewer</span><div><button type="button" class="study-btn" data-image="out" aria-label="Zoom out">−</button><output aria-live="polite">100%</output><button type="button" class="study-btn" data-image="in" aria-label="Zoom in">＋</button><button type="button" class="study-btn" data-image="fit">Fit</button><button type="button" class="study-btn" data-image="close" aria-label="Close image viewer">✕</button></div></div><div class="study-image-stage"><img alt="Deck image" draggable="false"></div><p>Scroll or pinch to zoom · Drag to pan · Double-click to zoom / reset · Esc to close</p></dialog>`;
   const $ = id => root.querySelector(`#study-${id}`);
   const button = action => root.querySelector(`[data-study="${action}"]`);
-  let catalog, book, collection, loadedId = '', order = [], position = 0, answer = false, layout = 'cards', page = 0, busy = false, focusMode = false, focusedNatively = false, loading, requestId = 0, refreshId = 0, searchTimer;
+  let catalog, book, collection, loadedId = '', order = [], position = 0, answer = false, layout = 'cards', page = 0, busy = false, focusMode = false, loading, requestId = 0, refreshId = 0, searchTimer;
   const openImage = initStudyImages(root.querySelector('dialog'));
   const frame = createCardFrame($('frame'), { onImage: openImage, onKey: keydown });
   const status = (message, error = false) => { $('status').textContent = message; $('status').hidden = !message; $('status').classList.toggle('study-error', error); };
@@ -167,16 +167,13 @@ export function initStudy({ toast = () => {} } = {}) {
   function exitFocus() {
     if (!focusMode) return;
     focusMode = false; document.body.classList.remove('study-focus');
-    button('focus').textContent = '⛶ Focus / fullscreen'; button('focus').setAttribute('aria-pressed', 'false');
-    if (document.fullscreenElement === root) document.exitFullscreen().catch(() => {});
-    focusedNatively = false;
+    button('focus').textContent = '⛶ Focus mode'; button('focus').setAttribute('aria-pressed', 'false');
     button('focus').focus({ preventScroll: true });
   }
-  async function toggleFocus() {
+  function toggleFocus() {
     if (focusMode) { exitFocus(); return; }
     focusMode = true; document.body.classList.add('study-focus');
     button('focus').textContent = '⛶ Exit focus'; button('focus').setAttribute('aria-pressed', 'true');
-    try { if (root.requestFullscreen) { await root.requestFullscreen(); focusedNatively = true; } } catch { /* Focus layout also works where native fullscreen is unavailable. */ }
     button('focus').focus({ preventScroll: true });
   }
   function keydown(event) {
@@ -222,7 +219,6 @@ export function initStudy({ toast = () => {} } = {}) {
   }, 180); });
   $('jump').addEventListener('keydown', event => { if (event.key === 'Enter') button('jump').click(); });
   document.addEventListener('keydown', keydown);
-  document.addEventListener('fullscreenchange', () => { if (focusedNatively && document.fullscreenElement !== root) exitFocus(); });
   new MutationObserver(() => frame.theme()).observe(document.body, { attributes: true, attributeFilter: ['class'] });
   return { refresh, exitFocus };
 }
