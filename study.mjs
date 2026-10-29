@@ -25,9 +25,14 @@ export function initStudy({ toast = () => {} } = {}) {
   const root = document.getElementById('tab-study');
   root.innerHTML = `
     <div class="study-library">
-      <div class="study-heading"><button type="button" class="study-btn" data-study="refresh">↻ Refresh books</button></div>
-      <div class="study-books" id="study-books" role="group" aria-label="Books"><p class="study-hint">Loading books…</p></div>
-      <div class="study-deck-controls"><label class="study-deck-label" for="study-deck">Deck<select id="study-deck" disabled><option>Choose a book</option></select></label><button class="study-btn study-primary" type="button" data-study="load" disabled>↓ Load deck</button><button class="study-btn" type="button" data-study="open">＋ Open .apkg</button><input id="study-file" type="file" accept=".apkg" hidden></div>
+      <div class="study-library-bar">
+        <div class="study-books" id="study-books" role="group" aria-label="Books"><p class="study-hint">Loading books…</p></div>
+        <div class="study-library-actions">
+          <button type="button" class="study-btn" data-study="refresh" aria-label="Refresh books" title="Refresh books"><span aria-hidden="true">↻</span><span class="study-action-label">Refresh books</span></button>
+          <button type="button" class="study-btn" data-study="toggle-library" aria-expanded="true" aria-controls="study-books study-deck-controls" aria-label="Hide books and decks" title="Hide books and decks"><span id="study-selection-icon" aria-hidden="true">⌃</span><span class="study-action-label" id="study-selection-label">Hide books &amp; decks</span></button>
+        </div>
+      </div>
+      <div class="study-deck-controls" id="study-deck-controls"><label class="study-deck-label" for="study-deck">Deck<select id="study-deck" disabled><option>Choose a book</option></select></label><button class="study-btn study-primary" type="button" data-study="load" disabled>↓ Load deck</button><button class="study-btn" type="button" data-study="open">＋ Open .apkg</button><input id="study-file" type="file" accept=".apkg" hidden></div>
       <p class="study-status" id="study-status" role="status" aria-live="polite" hidden></p>
     </div>
     <div class="study-welcome" id="study-welcome"><span aria-hidden="true">🃏</span><p>If you don't know, the thing to do is not get scared, but to learn.</p></div>
@@ -50,6 +55,15 @@ export function initStudy({ toast = () => {} } = {}) {
   const frame = createCardFrame($('frame'), { onImage: openImage, onKey: keydown });
   const status = (message, error = false) => { $('status').textContent = message; $('status').hidden = !message; $('status').classList.toggle('study-error', error); };
   const selectedDeck = () => book?.decks.find(deck => deck.id === $('deck').value);
+  function toggleLibrary() {
+    const collapsed = !$('books').hidden;
+    $('books').hidden = collapsed; $('deck-controls').hidden = collapsed; button('refresh').hidden = collapsed;
+    root.querySelector('.study-library').classList.toggle('study-library-collapsed', collapsed);
+    const toggle = button('toggle-library'), label = collapsed ? 'Show books and decks' : 'Hide books and decks';
+    toggle.setAttribute('aria-expanded', String(!collapsed)); toggle.setAttribute('aria-label', label); toggle.title = label;
+    $('selection-icon').textContent = collapsed ? '⌄' : '⌃';
+    $('selection-label').textContent = collapsed ? 'Show books & decks' : 'Hide books & decks';
+  }
   function updateButtons() {
     for (const action of ['load', 'open', 'refresh']) button(action).disabled = busy || (action === 'load' && !selectedDeck());
     $('deck').disabled = busy || !book?.decks.length;
@@ -198,6 +212,7 @@ export function initStudy({ toast = () => {} } = {}) {
     if (pos !== undefined) navigate(+pos);
     const action = event.target.closest('[data-study]')?.dataset.study;
     if (action === 'refresh') refresh(true);
+    if (action === 'toggle-library') toggleLibrary();
     if (action === 'load') load();
     if (action === 'open') $('file').click();
     if (action === 'prev') navigate(position - 1);

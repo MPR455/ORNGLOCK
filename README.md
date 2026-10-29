@@ -107,6 +107,8 @@ decks/
 
 No deck list needs editing. During `npm start`, **Refresh books** rescans local folders immediately. On GitHub Pages, commit/push the new folders and decks to `main`; the existing Pages workflow scans and publishes them on every build. The deployed site updates after that deployment. A hosted browser cannot read folders on your computer until their files are published. Removing a deck also removes it from the next generated build.
 
+**Refresh books** sits alongside the book buttons. **Hide books & decks** collapses the book and deck controls while keeping your selection and loaded cards; **Show books & decks** restores them. Extra books scroll horizontally when needed.
+
 **Focus mode** fills the browser page and hides the top banner, book/deck controls, filters, card browser, and mobile navigation. Questions, answers, previous/next, and an exit control remain visible. The browser's tabs, address bar, and window stay available. Press **F** to toggle focus and **Esc** to exit. Use **A / ←** for previous, **S / Space / ↓** to reveal, and **D / →** for next, outside text fields.
 
 Click any deck image to open a floating viewer. Use its **+/−** controls, the mouse wheel, or a pinch gesture to zoom; drag to pan. Double-click toggles zoom/reset, **Fit / 0** resets the view, and **Esc** closes it. The viewer also works in focus mode.
