@@ -4,20 +4,23 @@ import { fileURLToPath } from 'node:url';
 import { resolve, extname } from 'node:path';
 import { ACTIONS, HANDOFF_ACTIONS, DEFAULT_MODEL, MAX_BODY_BYTES } from './actions.mjs';
 import { createMemoryGuard, handleApi, positiveInteger } from './api.mjs';
+import { studyCatalog } from '../scripts/study-catalog.mjs';
 
 const ROOT = fileURLToPath(new URL('../', import.meta.url));
 const STATIC = new Map([
   ['/', 'index.html'], ['/index.html', 'index.html'], ['/styles.css', 'styles.css'], ['/app.js', 'app.js'], ['/sections.mjs', 'sections.mjs'], ['/config.js', 'config.js'],
   ['/directory.css', 'directory.css'], ['/directory.mjs', 'directory.mjs'], ['/directory-data.mjs', 'directory-data.mjs'],
   ...['handoff.css', 'handoff.mjs', 'handoff-model.mjs', 'handoff-import.mjs', 'handoff-editor.mjs', 'oncall.css', 'oncall.mjs'].map(file => [`/${file}`, file]),
+  ...['study.css', 'study.mjs', 'study-core.mjs', 'study-frame.mjs', 'study-images.mjs'].map(file => [`/${file}`, file]),
+  ...['jszip.min.js', 'sql-wasm.js', 'sql-wasm.wasm', 'JSZip-LICENSE.md', 'sql.js-LICENSE.txt'].map(file => [`/vendor/study/${file}`, `vendor/study/${file}`]),
   [`/${encodeURI('clinical database/JustDoIt/justdoit-data.mjs')}`, 'clinical database/JustDoIt/justdoit-data.mjs'],
   ['/assets/ornglock.png', 'assets/ornglock.png'], ['/assets/ornglock-symbol.png', 'assets/ornglock-symbol.png'],
   ['/assets/cgmh-oph.svg', 'assets/cgmh-oph.svg'], ['/assets/cgmh-em.svg', 'assets/cgmh-em.svg'],
   ...['assets/faq-first-time.png', 'assets/faq-logo.png', 'assets/faq-vpn.png', 'assets/faq-google-api.png', 'assets/faq-shortcut.png', 'assets/faq-mobile-shortcut.png'].map(file => [`/${file}`, file]),
   ...['PE example/Admission normal PE.txt', 'PE example/Admission ROS.txt', 'PE example/Progress normal PE.txt'].map(file => [`/${encodeURI(file)}`, file])
 ]);
-const MIME = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.mjs': 'text/javascript; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png', '.txt': 'text/plain; charset=utf-8' };
-const CSP = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'";
+const MIME = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.mjs': 'text/javascript; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png', '.txt': 'text/plain; charset=utf-8', '.json': 'application/json; charset=utf-8', '.wasm': 'application/wasm', '.apkg': 'application/octet-stream' };
+const CSP = "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; media-src 'self' blob: data:; connect-src 'self' https:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'";
 
 export async function startLocal({ port = 8787, host = '127.0.0.1', sharedKey = '', handoffSharedKey = '', model = DEFAULT_MODEL, allowedOrigins = [], guard, fetch: providerFetch, prompts: configuredPrompts } = {}) {
   const prompts = configuredPrompts || Object.fromEntries(await Promise.all([...ACTIONS, ...HANDOFF_ACTIONS].map(async action => {
@@ -55,7 +58,17 @@ export async function startLocal({ port = 8787, host = '127.0.0.1', sharedKey = 
         return;
       }
       if (!['GET', 'HEAD'].includes(incoming.method)) { outgoing.writeHead(405); outgoing.end('Method not allowed'); return; }
-      const filename = STATIC.get(url.pathname);
+      if (url.pathname === '/decks/catalog.json') {
+        const catalog = await studyCatalog(ROOT);
+        outgoing.writeHead(200, { 'Content-Type': MIME['.json'] });
+        outgoing.end(incoming.method === 'HEAD' ? undefined : JSON.stringify(catalog));
+        return;
+      }
+      let filename = STATIC.get(url.pathname);
+      if (!filename && url.pathname.startsWith('/decks/')) {
+        const catalog = await studyCatalog(ROOT);
+        filename = catalog.books.flatMap(book => book.decks).find(deck => `/${deck.file}` === url.pathname)?.id;
+      }
       if (!filename) { outgoing.writeHead(404); outgoing.end('Not found'); return; }
       const data = await readFile(resolve(ROOT, filename));
       outgoing.writeHead(200, { 'Content-Type': MIME[extname(filename)] || 'application/octet-stream', 'Content-Security-Policy': CSP });

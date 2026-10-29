@@ -89,6 +89,30 @@ $env:ORNGLOCK_API_BASE = 'https://ornglock-api.YOUR-SUBDOMAIN.workers.dev'
 npm run build
 ```
 
+## Study decks
+
+The **Study** tab reads Anki `.apkg` decks on demand. It follows OPH Study's card reader with ORNGLOCK Order's square controls, large text, and shared color themes. Features include categories, shuffle, search, answer reveal, card/list browsing, card-number navigation, and saved study position on this browser. Reader libraries are bundled locally; no CDN is needed to open a deck.
+
+Put decks in folders directly inside `decks/`. Each folder becomes a book labeled with the exact folder name. Subfolders inside a book are also scanned. For example:
+
+```text
+decks/
+  內科會考/
+    內科會考_114年.apkg
+  急專/
+    ER_MCQ_114-100_by_category2.apkg
+  Another book/
+    Another deck.apkg
+```
+
+No deck list needs editing. During `npm start`, **Refresh books** rescans local folders immediately. On GitHub Pages, commit/push the new folders and decks to `main`; the existing Pages workflow scans and publishes them on every build. The deployed site updates after that deployment. A hosted browser cannot read folders on your computer until their files are published. Removing a deck also removes it from the next generated build.
+
+**Focus / fullscreen** hides the top banner, book/deck controls, filters, card browser, and mobile navigation. Questions, answers, previous/next, and an exit control remain visible. If native fullscreen is unavailable, the same focus layout fills the page. Press **F** to toggle focus and **Esc** to exit. Use **A / ←** for previous, **S / Space / ↓** to reveal, and **D / →** for next, outside text fields.
+
+Click any deck image to open a floating viewer. Use its **+/−** controls, the mouse wheel, or a pinch gesture to zoom; drag to pan. Double-click toggles zoom/reset, **Fit / 0** resets the view, and **Esc** closes it. The viewer also works in focus mode.
+
+APKG reading supports Anki 2.0/2.1 SQLite exports, including cloze cards, embedded images/audio, and model styles. For newer compressed Anki exports, re-export with **Support older Anki (2.0)** enabled. **Open .apkg** reads a local file in your browser without uploading it.
+
 ## Shared-key fallback
 
 The shared key is the default. A shared quota, invalid-key, or permissions error produces a clear message and an **Use my API key** option. Source notes and previous output are kept. The visitor explicitly selects their key, returns to the notes, and runs a document button again. The app never silently switches between keys or repeatedly retries a billable call.

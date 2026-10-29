@@ -2,12 +2,14 @@ import { extractAdmissionSections } from './sections.mjs';
 import { initDirectory, refreshDirectoryLayout } from './directory.mjs';
 import { initHandoff } from './handoff.mjs';
 import { initOncall } from './oncall.mjs';
+import { initStudy } from './study.mjs';
 
 const $ = id => document.getElementById(id);
 const TABS = [
   { id: 'directory', icon: '☎️', label: 'Directory', short: 'Directory' },
   { id: 'handoff', icon: '📝', label: '交班單', short: '交班單' },
   { id: 'oncall', icon: '🍟', label: 'order', short: 'order' },
+  { id: 'study', icon: '📚', label: 'Study', short: 'Study' },
   { id: 'notes', icon: '🤖', label: '病歷', short: '病歷' },
   { id: 'faq', icon: '❓', label: 'FAQ 腫麼用', short: 'FAQ 腫麼用' },
   { id: 'key', icon: '⚿', label: 'API key', short: 'API key' }
@@ -15,7 +17,7 @@ const TABS = [
 const TITLES = { admission: 'Admission note', consult: 'Consult request', summary: 'Treatment summary', support: 'Anti/O2/IV' };
 const state = { tab: 'notes', apiKey: '', ready: false, sharedAvailable: false, active: null, lastAction: null, model: '', maxChars: 100000, generatedAction: null, startedAt: 0 };
 const noteTemplates = new Map();
-let handoff;
+let handoff, study;
 let sheetOpener, elapsedTimer, toastTimer;
 
 function tabButton(tab, className = '', iconClass = '') {
@@ -68,6 +70,8 @@ function showTab(id, focus = false) {
   closeMenu(); closeSheet(false);
   if (id === 'directory') refreshDirectoryLayout();
   if (id === 'handoff') handoff?.refresh();
+  if (id === 'study') study?.refresh();
+  else study?.exitFocus();
   if (focus) $(`tab-${id}`).focus({ preventScroll: true });
 }
 
@@ -253,4 +257,5 @@ $('download-output').addEventListener('click', () => {
   const url = URL.createObjectURL(new Blob([$('output-notes').value], { type: 'text/plain;charset=utf-8' })); const anchor = document.createElement('a'); anchor.href = url; anchor.download = `ORNGLOCK-${state.generatedAction || 'document'}-${new Date().toISOString().slice(0, 10)}.txt`; document.body.append(anchor); anchor.click(); anchor.remove(); setTimeout(() => URL.revokeObjectURL(url), 1000);
 });
 handoff = initHandoff({ endpoint, getKey: () => state.apiKey, openKeySettings, copyText, toast });
+study = initStudy({ toast });
 buildNavigation(); initDirectory({ closeMenu }); initOncall({ copyText, toast }); updateInputs(); loadNoteTemplates(); connect();
