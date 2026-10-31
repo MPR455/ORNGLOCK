@@ -23,7 +23,9 @@ const view = { chapter: null, item: null, query: '' };
 const tray = new Map(); // key -> { item, text }
 let root, copyText = async () => {}, toast = () => {};
 
-const orderKey = (chapter, itemIndex, orderIndex) => `${chapter.slug}:${itemIndex}:${orderIndex}`;
+const orderKey = (chapter, itemIndex, orderIndex) => chapter.items[itemIndex].orderIds?.[orderIndex]
+  ? `icu:${chapter.items[itemIndex].orderIds[orderIndex]}` : `${chapter.slug}:${itemIndex}:${orderIndex}`;
+const reviewOnly = (item, index) => item.reviewOnlyIds?.includes(item.orderIds[index]);
 const orderLine = order => order[3] ? `${order[1]}（${order[3]}）` : order[1];
 
 // Recently opened conditions are a per-device convenience; storage can be unavailable.
@@ -56,7 +58,12 @@ function homeView() {
   return recentRow + urgent + sections;
 }
 
-const actions = () => `<div class="oc-actions"><button class="oc-big oc-primary" type="button" data-oc="all">＋ 基本醫囑</button><button class="oc-big" type="button" data-oc="tray">🧾 看醫囑單 (${tray.size})</button></div>`;
+const actions = item => `<div class="oc-actions">${item.icuLines ? '' : '<button class="oc-big oc-primary" type="button" data-oc="all">＋ 基本醫囑</button>'}<button class="oc-big" type="button" data-oc="tray">🧾 看醫囑單 (${tray.size})</button></div>`;
+
+function icuNavigation(chapter) {
+  if (chapter.slug !== 'icu-lines') return '';
+  return `<section class="oc-section"><h2>分類瀏覽</h2><div class="oc-chips">${chapter.items.map((item, index) => `<button class="oc-chip" type="button" data-oc="item" data-index="${index}">${esc(item.name.replace('ICU Lines：', ''))}</button>`).join('')}</div></section>`;
+}
 
 // A chapter opens on its first condition's orders (the work-up for that call);
 // the other conditions follow as "依情況再加".
@@ -67,10 +74,11 @@ function chapterView(chapter) {
   const [start, ...rest] = chapter.items;
   return `<button class="oc-back" type="button" data-oc="home">‹ 首頁</button>
     <h1 class="oc-title" tabindex="-1">${chapter.icon} ${esc(chapter.title)}</h1>${chapter.en ? `<p class="oc-en" lang="en">${esc(chapter.en)}</p>` : ''}
-    <p class="oc-hint">先開：${esc(start.name)}${start.hint ? ` · ${esc(start.hint)}` : ''}${start.en && start.en !== chapter.en ? ` · <span lang="en">${esc(start.en)}</span>` : ''}</p>
-    ${actions()}
+    ${chapter.slug === 'icu-lines' ? '' : `<p class="oc-hint">先開：${esc(start.name)}${start.hint ? ` · ${esc(start.hint)}` : ''}${start.en && start.en !== chapter.en ? ` · <span lang="en">${esc(start.en)}</span>` : ''}</p>`}
+    ${icuNavigation(chapter)}
+    ${actions(start)}
     ${orderGroups(chapter, 0)}
-    <section class="oc-section"><h2>依情況再加</h2><div class="oc-list">${rest.map((item, index) => `<button class="oc-item" type="button" data-oc="item" data-index="${index + 1}"><span class="oc-item-name">${esc(item.name)}${enTag(item)}</span>${item.hint ? `<span class="oc-item-hint">${esc(item.hint)}</span>` : ''}<span class="oc-item-arrow" aria-hidden="true">›</span></button>`).join('')}</div></section>`;
+    ${chapter.slug === 'icu-lines' ? '' : `<section class="oc-section"><h2>依情況再加</h2><div class="oc-list">${rest.map((item, index) => `<button class="oc-item" type="button" data-oc="item" data-index="${index + 1}"><span class="oc-item-name">${esc(item.name)}${enTag(item)}</span>${item.hint ? `<span class="oc-item-hint">${esc(item.hint)}</span>` : ''}<span class="oc-item-arrow" aria-hidden="true">›</span></button>`).join('')}</div></section>`}`;
 }
 
 function itemView(chapter, itemIndex) {
@@ -78,7 +86,8 @@ function itemView(chapter, itemIndex) {
   return `<button class="oc-back" type="button" data-oc="chapter" data-index="${ONCALL_MENU.indexOf(chapter)}">‹ ${esc(chapter.title)}</button>
     <h1 class="oc-title" tabindex="-1">${esc(item.name)}</h1>${item.en && item.en !== item.name ? `<p class="oc-en" lang="en">${esc(item.en)}</p>` : ''}
     ${item.hint ? `<p class="oc-hint">${esc(item.hint)}</p>` : ''}
-    ${actions()}
+    ${icuNavigation(chapter)}
+    ${actions(item)}
     ${orderGroups(chapter, itemIndex)}`;
 }
 
@@ -90,8 +99,9 @@ function orderGroups(chapter, itemIndex) {
     const [icon, label] = TYPE_INFO[type];
     return `<section class="oc-group oc-type-${type}"><h2>${icon} ${label}</h2>${rows.map(([order, index]) => {
       const key = orderKey(chapter, itemIndex, index), picked = tray.has(key);
+      const reference = reviewOnly(item, index);
       return `<div class="oc-order${picked ? ' picked' : ''}">
-          <button class="oc-pick" type="button" data-oc="pick" data-key="${key}" data-index="${index}" aria-pressed="${picked}"><span class="oc-check" aria-hidden="true">${picked ? '✓' : '+'}</span><span class="oc-order-text">${esc(order[1])}${order[3] ? `<em class="oc-when">${esc(order[3])}</em>` : ''}</span></button>
+          <button class="oc-pick" type="button" data-oc="pick" data-key="${key}" data-index="${index}" aria-pressed="${picked}"${reference ? ' disabled' : ''}><span class="oc-check" aria-hidden="true">${reference ? 'ⓘ' : picked ? '✓' : '+'}</span><span class="oc-order-text">${esc(order[1])}${order[3] ? `<em class="oc-when">${esc(order[3])}</em>` : ''}</span></button>
           ${order[2] ? `<button class="oc-why" type="button" data-oc="why" data-index="${index}" aria-label="為什麼：${esc(order[1])}" aria-expanded="false">?</button>` : ''}
         </div>`;
     }).join('')}</section>`;
@@ -109,7 +119,11 @@ function matcher(raw) {
 
 function searchView() {
   const matches = matcher(view.query), hits = [];
+  const icuOnly = ONCALL_MENU[view.chapter]?.slug === 'icu-lines';
   ONCALL_MENU.forEach(chapter => chapter.items.forEach((item, index) => {
+    if (icuOnly && chapter.slug !== 'icu-lines') return;
+    // Related chapters mirror the canonical ICU groups; list one search hit per group.
+    if (item.icuLines && chapter.slug !== 'icu-lines') return;
     const rank = [item.name, item.en || ''].some(matches) ? 0
       : [item.hint || '', chapter.title, chapter.en || ''].some(matches) ? 1
       : item.orders.some(order => matches(order[1])) ? 2 : -1;
@@ -117,7 +131,7 @@ function searchView() {
   }));
   hits.sort((a, b) => a[3] - b[3]);
   if (!hits.length) return `<h1 class="oc-title" tabindex="-1">找不到「${esc(view.query)}」</h1><p class="oc-hint">試試其他關鍵字，或按 Esc 清除搜尋。</p>`;
-  return `<h1 class="oc-title" tabindex="-1">搜尋結果 · ${hits.length}</h1>
+  return `<h1 class="oc-title" tabindex="-1">${icuOnly ? 'ICU Lines ' : ''}搜尋結果 · ${hits.length}</h1>
     <div class="oc-list">${hits.map(([chapter, item, index]) => `<button class="oc-item" type="button" data-oc="hit" data-chapter="${ONCALL_MENU.indexOf(chapter)}" data-index="${index}"><span class="oc-item-name">${esc(item.name)}${enTag(item)}</span><span class="oc-item-hint">${chapter.icon} ${esc(chapter.title)}${item.hint ? ' · ' + esc(item.hint) : ''}</span><span class="oc-item-arrow" aria-hidden="true">›</span></button>`).join('')}</div>`;
 }
 
@@ -139,6 +153,7 @@ function renderTray() {
 
 function render() {
   const chapter = view.chapter === null ? null : ONCALL_MENU[view.chapter];
+  root.querySelector('#oc-search').placeholder = chapter?.slug === 'icu-lines' ? '搜尋 ICU Lines：藥名、商品名…' : '搜尋：低血鉀、chest pain、naloxone…';
   root.querySelector('.oc-body').innerHTML = view.query.trim() ? searchView() : chapter && view.item !== null ? itemView(chapter, view.item) : chapter ? chapterView(chapter) : homeView();
   root.querySelector('.oc-fab-back').hidden = chapter === null && !view.query.trim();
   updateCounts();
@@ -160,6 +175,7 @@ function currentItem() { const chapter = ONCALL_MENU[view.chapter]; return [chap
 
 function togglePick(button) {
   const [chapter, item] = currentItem(), order = item.orders[Number(button.dataset.index)], key = button.dataset.key;
+  if (reviewOnly(item, Number(button.dataset.index))) return;
   if (tray.has(key)) tray.delete(key); else tray.set(key, { item: item.name, text: orderLine(order) });
   const picked = tray.has(key);
   button.setAttribute('aria-pressed', String(picked));
@@ -179,14 +195,16 @@ function showWhy(button) {
   if (pop.dataset.for === button.dataset.index && !pop.hidden) return hideWhy();
   hideWhy();
   const [, item] = currentItem(), order = item.orders[Number(button.dataset.index)];
-  pop.innerHTML = `<strong>${WHY_HEADING[order[0]]}</strong>${order[2].split('｜').map(line => `<span>${withPhones(line)}</span>`).join('')}`;
+  const details = order[2].split('｜');
+  if (item.icuLines && details[0] === 'ICU Line') details.shift();
+  pop.innerHTML = `<strong>${item.icuLines ? 'ICU Line · 配製 / 劑量 / 注意' : WHY_HEADING[order[0]]}</strong>${details.map(line => `<span>${withPhones(line)}</span>`).join('')}`;
   pop.dataset.for = button.dataset.index; pop.hidden = false;
   button.setAttribute('aria-expanded', 'true');
   const box = button.getBoundingClientRect(), width = Math.min(360, innerWidth - 24);
   pop.style.width = `${width}px`;
   pop.style.left = `${Math.max(12, Math.min(box.right - width, innerWidth - width - 12)) + scrollX}px`;
   const below = box.bottom + 8, height = pop.offsetHeight;
-  pop.style.top = `${(below + height > innerHeight - 12 ? box.top - height - 8 : below) + scrollY}px`;
+  pop.style.top = `${Math.max(12, Math.min(below + height > innerHeight - 12 ? box.top - height - 8 : below, innerHeight - height - 12)) + scrollY}px`;
 }
 
 function hideWhy() {

@@ -12,7 +12,7 @@ line run stress test TWOC Sliding scale ICU A-line keep open lock EGD q72h
 mg mcg mmol mEq kg max min hr day Day per IU
 IV IM SC PO NG BID TID QID QD QAM HS PRN NPO q10 q10min q12h q15min q1h q20 q20min q24h q2h q4h q5min q6h q8h
 bolus infusion loading slow push flush over spacer challenge front overdrive pacing cardioversion Cold
-CIWA CrCl AUC ECG INR aPTT SBP Hct TDD TBSA GPC GNB NSAID PPI SMZ TMP
+CIWA CrCl AUC ECG INR aPTT SBP Hct TDD TBSA GPC GNB NSAID PPI SMZ TMP ACS DVT protocol
 pRBC FFP Platelet Cryoprecipitate Fibrinogen transfusion RBC
 acid sodium Sodium chloride gluconate phosphate Phosphate carbonate acetate sulfate oxide bicarbonate
 human Human immune globulin immunoglobulin vaccine toxoid Diphtheria Tetanus Rabies polyvalent Antivenin antidote Cyanide

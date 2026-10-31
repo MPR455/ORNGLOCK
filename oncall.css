@@ -50,7 +50,9 @@
 .oc-order.picked .oc-check{background:var(--oc-type);color:#fff}
 .oc-why{flex:0 0 68px;border:3px solid var(--line);background:var(--card);color:var(--ink);font-size:28px;font-weight:900}
 .oc-why:hover,.oc-why[aria-expanded=true]{border-color:var(--ink);background:var(--ink);color:var(--bg)}
-.oc-pop{position:absolute;z-index:300;display:flex;flex-direction:column;gap:6px;padding:14px 16px;background:var(--ink);color:var(--bg);font-size:18px;line-height:1.5;box-shadow:6px 6px 0 var(--oc-m)}
+.oc-pop{position:absolute;z-index:300;display:flex;flex-direction:column;gap:6px;padding:14px 16px;background:var(--ink);color:var(--bg);font-size:18px;line-height:1.5;box-shadow:6px 6px 0 var(--oc-m);max-height:calc(100dvh - 24px);overflow-y:auto;overflow-wrap:anywhere}
+.oc-pop a{color:inherit;text-decoration:underline}
+.oc-pick:disabled{opacity:.65;cursor:default}
 .oc-pop strong{font-size:15px;letter-spacing:.06em;opacity:.8}
 .oc-pop[hidden]{display:none}
 .oc-tel{display:inline-flex;align-items:center;min-height:44px;margin:2px 6px 2px 0;padding:0 12px;border:2px solid var(--bg);color:var(--bg);font-weight:900;text-decoration:none;white-space:nowrap}

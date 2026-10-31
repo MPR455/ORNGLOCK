@@ -1,0 +1,557 @@
+{
+  "sources": {
+    "icu2024": "ICU lines.pdf · MICU(1) 蕭旋玲藥師 · 2024-05-12",
+    "icu2017": "iCU meds.pdf · 加護病房常用藥物 · 2017-10-04"
+  },
+  "groups": [
+    {
+      "name": "升壓、強心",
+      "en": "Vasopressors, inotropes, dopamine, dobutamine, norepinephrine, Levophed, vasopressin, Pitressin, epinephrine, adrenaline, milrinone, Primacor",
+      "chapters": [
+        "hypotension-shock"
+      ],
+      "lines": [
+        {
+          "id": "dopamine",
+          "text": "Dopamine line：1–20 mcg/kg/min IV，依反應滴定",
+          "sources": [
+            "icu2024",
+            "icu2017"
+          ],
+          "details": [
+            "配製：200 mg/5 mL/amp ×2 加入 NS / D5W 250 mL。",
+            "劑量：1–20 mcg/kg/min；10 mL/hr 於 BW 60 kg 約 4.3 mcg/kg/min。",
+            "400 mg/250 mL premix 已稀釋，可直接使用。"
+          ]
+        },
+        {
+          "id": "dobutamine",
+          "text": "Dobutamine line：2–20 mcg/kg/min IV",
+          "sources": [
+            "icu2024",
+            "icu2017"
+          ],
+          "details": [
+            "配製：250 mg/20 mL/vial ×2 加入 NS / D5W 250 mL。",
+            "劑量：2–20 mcg/kg/min；10 mL/hr 於 BW 60 kg 約 4.8 mcg/kg/min。",
+            "低劑量 <5 mcg/kg/min 血管擴張效果較顯著。"
+          ]
+        },
+        {
+          "id": "norepinephrine",
+          "text": "Norepinephrine line：4 mg/4 mL ×2 加入 D5W 250 mL IV",
+          "sources": [
+            "icu2024",
+            "icu2017"
+          ],
+          "details": [
+            "配製：4 mg/4 mL/amp ×2 加入 D5W 250 mL。",
+            "劑量：1–40 mcg/min 或 0.05–2 mcg/kg/min；10 mL/hr 約 5.2 mcg/min。",
+            "監測血壓與周邊灌流；注意血管外滲。"
+          ]
+        },
+        {
+          "id": "vasopressin",
+          "text": "Vasopressin line：20 U 加入 NS 100 mL，0.01–0.03 U/min IV",
+          "sources": [
+            "icu2024",
+            "icu2017"
+          ],
+          "details": [
+            "配製：20 U/1 mL/amp ×1 加入 NS 100 mL。",
+            "劑量：0.01–0.03 U/min；3 mL/hr 約 0.01 U/min。",
+            "可每 10–15 min 調整 1.5 mL/hr，依 U/min 控制上限。用於升壓劑需求增加的休克。"
+          ]
+        },
+        {
+          "id": "epinephrine",
+          "text": "Epinephrine line：1 mg/mL ×5 加入 NS / D5W 500 mL IV",
+          "sources": [
+            "icu2024",
+            "icu2017"
+          ],
+          "details": [
+            "配製：1 mg/1 mL/amp ×5 加入 NS / D5W 500 mL。",
+            "劑量：2–20 mcg/min；20 mL/hr 約 3.3 mcg/min。"
+          ]
+        },
+        {
+          "id": "milrinone",
+          "text": "Milrinone line：0.375–0.75 mcg/kg/min IV",
+          "sources": [
+            "icu2024",
+            "icu2017"
+          ],
+          "details": [
+            "配製：10 mg/10 mL/vial ×2 加入 NS / D5W 80 mL，合計 100 mL（200 mcg/mL）。",
+            "Loading：50 mcg/kg over 10 min；維持 0.375–0.75 mcg/kg/min。",
+            "腎功能不全須調整。"
+          ],
+          "references": [
+            "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=813e8ca2-de54-4a7c-a2d2-8bd44396c341"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "心率支持、抗心律不整",
+      "en": "Chronotropes, antiarrhythmics, isoproterenol, Proterenol, amiodarone, Cordarone, lidocaine, Xylocaine, verapamil, Verpamil",
+      "chapters": [
+        "tachycardia"
+      ],
+      "lines": [
+        {
+          "id": "isoproterenol",
+          "text": "Isoproterenol line：1–10 mcg/min IV",
+          "sources": [
+            "icu2024",
+            "icu2017"
+          ],
+          "details": [
+            "配製：0.2 mg/1 mL/amp ×5 加入 NS / D5W 500 mL。",
+            "劑量：1–10 mcg/min；30 mL/hr 約 1 mcg/min。",
+            "可用於 QT 延長合併 TdP 或特定中毒情境；注意心肌缺血。"
+          ]
+        },
+        {
+          "id": "amiodarone",
+          "text": "Amiodarone line：150 mg IV over 10 min → 1 mg/min ×6 hr → 0.5 mg/min ×18 hr",
+          "sources": [
+            "icu2024",
+            "icu2017"
+          ],
+          "details": [
+            "Loading：150 mg/3 mL/amp ×1 加入 D5W 30 mL，輸注 >10 min。",
+            "維持：6 amp（900 mg）加入 D5W 500 mL；約 33 mL/hr ×6 hr，再 17 mL/hr ×18 hr。",
+            "使用 D5W、玻璃瓶或 PP bag。當日總量計入先前已給藥；注意低血壓。"
+          ]
+        },
+        {
+          "id": "lidocaine",
+          "text": "Lidocaine line：1–4 mg/min IV",
+          "sources": [
+            "icu2024",
+            "icu2017"
+          ],
+          "details": [
+            "Loading：1–1.5 mg/kg；IV >1 min。製劑為 2% 5 mL/amp（100 mg）。",
+            "維持配製：2 g 加入 NS / D5W 400 mL；15 mL/hr = 1 mg/min，維持範圍 1–4 mg/min。",
+            "適用心室性心律不整；心衰、肝功能異常時注意蓄積、意識障礙與癲癇。"
+          ]
+        },
+        {
+          "id": "verapamil",
+          "text": "Verapamil line：5–20 mg/hr IV",
+          "sources": [
+            "icu2024",
+            "icu2017"
+          ],
+          "details": [
+            "先 2.5–5 mg IV >1–2 min，需要時 15–30 min 後再給 5–10 mg。",
+            "持續輸注：5–20 mg/hr；5 mg/2 mL/amp。",
+            "禁忌：寬 QRS 心搏過速、WPW + AF、高度 AV block；EF 低、低血壓避免。"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "降壓、血管擴張",
+      "en": "Vasodilators, antihypertensives, nitroglycerin, NTG, Millisrol, nicardipine, Perdipine, labetalol, Trandate",
+      "chapters": [
+        "hypertension"
+      ],
+      "lines": [
+        {
+          "id": "nitroglycerin",
+          "text": "NTG line：按實際製劑濃度以 mcg/min 滴定 IV",
+          "sources": [
+            "icu2024",
+            "icu2017"
+          ],
+          "details": [
+            "院內 premix：0.2 mg/mL；以 mcg/min 滴定。10 mcg/min = 3 mL/hr，20 mcg/min = 6 mL/hr。",
+            "另有 5 mg/10 mL/amp（0.5 mg/mL），需依實際製劑選擇配法。",
+            "適用 ACS、肺水腫合併高血壓；PDE5 抑制劑禁用，易耐受。"
+          ]
+        },
+        {
+          "id": "nicardipine",
+          "text": "Nicardipine line：5–15 mg/hr IV",
+          "sources": [
+            "icu2024",
+            "icu2017"
+          ],
+          "details": [
+            "配製：10 mg/10 mL/amp ×5 加入 NS / D5W 250 mL。",
+            "5 mg/hr 起，每 15 min +2.5 mg/hr，max 15 mg/hr。",
+            "另有 premix 40 mg/200 mL；注意反射性心搏過速。"
+          ]
+        },
+        {
+          "id": "labetalol",
+          "text": "Labetalol line：10–120 mg/hr IV",
+          "sources": [
+            "icu2024",
+            "icu2017"
+          ],
+          "details": [
+            "配製：25 mg/5 mL/amp ×8（200 mg），以 D5W 稀釋至總量 250 mL（0.8 mg/mL）。",
+            "持續輸注：10–120 mg/hr；此配方 10 mL/hr = 8 mg/hr。",
+            "禁忌：氣喘、心衰、AV block、心搏過緩。"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "止痛",
+      "en": "Analgesia, opioids, morphine, fentanyl",
+      "chapters": [
+        "analgesia"
+      ],
+      "lines": [
+        {
+          "id": "morphine",
+          "text": "Morphine line：2–30 mg/hr IV，按止痛與呼吸反應滴定",
+          "sources": [
+            "icu2024",
+            "icu2017"
+          ],
+          "details": [
+            "配製：10 mg/1 mL/amp ×2 加入 NS / D5W 250 mL；12 mL/hr 約 1 mg/hr。",
+            "持續輸注範圍 2–30 mg/hr，按止痛與呼吸反應滴定；脫離呼吸器時 tachypnea 可用較低劑量。",
+            "注意低血壓、呼吸抑制、支氣管收縮；腎差易蓄積。"
+          ]
+        },
+        {
+          "id": "fentanyl",
+          "text": "Fentanyl line：0.15–0.6 mcg/kg/hr IV",
+          "sources": [
+            "icu2024",
+            "icu2017"
+          ],
+          "details": [
+            "配製：0.05 mg/mL、2 mL/amp（100 mcg）×2 加入 NS / D5W 250 mL。",
+            "劑量：0.15–0.6 mcg/kg/hr；12 mL/hr 於 BW 60 kg 約 0.16 mcg/kg/hr。",
+            "注意胸壁僵直與呼吸抑制。"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "鎮靜",
+      "en": "Sedation, dexmedetomidine, Precedex, propofol, Fresofol, midazolam, Dormicum, lorazepam, Anxicam, haloperidol, Haldol",
+      "chapters": [
+        "sedatives"
+      ],
+      "lines": [
+        {
+          "id": "dexmedetomidine",
+          "text": "Dexmedetomidine line：0.2–0.7 mcg/kg/hr IV",
+          "sources": [
+            "icu2024",
+            "icu2017"
+          ],
+          "details": [
+            "配製：200 mcg/2 mL/vial ×1 加入 NS 100 mL。",
+            "Loading：0.5 mcg/kg >10 min；維持 0.2–0.7 mcg/kg/hr。6 mL/hr 於 BW 60 kg 約 0.2 mcg/kg/hr。",
+            "監測 BP、HR。"
+          ]
+        },
+        {
+          "id": "propofol",
+          "text": "Propofol line：0.3–3 mg/kg/hr IV",
+          "sources": [
+            "icu2024",
+            "icu2017"
+          ],
+          "details": [
+            "10 mg/mL 原液（200 mg/20 mL 或 500 mg/50 mL），不需稀釋。",
+            "維持：0.3–3 mg/kg/hr；0.1 × BW mL/hr 對應 1 mg/kg/hr。",
+            "注意 propofol infusion syndrome：代謝性酸中毒、心搏過緩、橫紋肌溶解、AKI。"
+          ]
+        },
+        {
+          "id": "midazolam",
+          "text": "Midazolam line：0.02–0.1 mg/kg/hr IV",
+          "sources": [
+            "icu2024",
+            "icu2017"
+          ],
+          "details": [
+            "配製：15 mg/3 mL/amp ×5（75 mg）加入 NS / D5W 250 mL；22 mL/hr 於 BW 60 kg 約 0.1 mg/kg/hr。",
+            "Loading：0.01–0.05 mg/kg >3–5 min；鎮靜維持 0.02–0.1 mg/kg/hr。",
+            "難治癲癇另用 0.045–0.6 mg/kg/hr，由神經重症方案決定。長期、大量易蓄積，低血容易低血壓。"
+          ]
+        },
+        {
+          "id": "lorazepam",
+          "text": "Lorazepam line：0.01–0.1 mg/kg/hr IV（≤10 mg/hr）",
+          "sources": [
+            "icu2024",
+            "icu2017"
+          ],
+          "details": [
+            "製劑：2 mg/mL/amp；loading 0.02–0.04 mg/kg（≤2 mg）。",
+            "持續輸注：0.01–0.1 mg/kg/hr（≤10 mg/hr）。",
+            "輸注 >48 hr 注意 propylene glycol 蓄積與腎衰竭。"
+          ]
+        },
+        {
+          "id": "haloperidol",
+          "text": "Haloperidol line：先確認院內核准用法",
+          "sources": [
+            "icu2017"
+          ],
+          "reviewOnly": true,
+          "details": [
+            "持續 IV 用法與劑量須先確認院內核准方案。",
+            "注意 QT 延長與心律不整，需 ECG 監測。"
+          ],
+          "references": [
+            "https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=e702b2f0-d464-41c3-977a-d37bb22c0ab0&type=display"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "肌肉鬆弛",
+      "en": "Neuromuscular blockade, paralysis, NMBA, cisatracurium, Nimbex, rocuronium, Esmeron",
+      "chapters": [
+        "sedatives"
+      ],
+      "lines": [
+        {
+          "id": "cisatracurium",
+          "text": "Cisatracurium line：0.03–0.2 mg/kg/hr IV",
+          "sources": [
+            "icu2024",
+            "icu2017"
+          ],
+          "details": [
+            "配製：2 mg/mL、5 mL/amp（10 mg）×5 加入 NS / D5W 250 mL。",
+            "Loading：0.1–0.2 mg/kg；維持 0.03–0.2 mg/kg/hr。17 mL/hr 於 BW 60 kg 約 0.05 mg/kg/hr。",
+            "先鎮靜、止痛並支持通氣；長時間使用注意肌無力。"
+          ]
+        },
+        {
+          "id": "rocuronium",
+          "text": "Rocuronium line：0.24–0.96 mg/kg/hr IV",
+          "sources": [
+            "icu2024",
+            "icu2017"
+          ],
+          "details": [
+            "製劑：50 mg/5 mL 或 100 mg/10 mL（10 mg/mL）。",
+            "Loading：0.5–1 mg/kg；維持 0.24–0.96 mg/kg/hr。稀釋配方依院內方案。",
+            "先鎮靜、止痛並支持通氣；依神經肌肉監測調整。"
+          ],
+          "references": [
+            "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=116385ea-69fc-4f44-b463-6210291032df"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "支氣管擴張",
+      "en": "Bronchodilation, asthma, COPD, aminophylline, theophylline",
+      "chapters": [
+        "dyspnea"
+      ],
+      "lines": [
+        {
+          "id": "aminophylline",
+          "text": "Aminophylline line：0.5 mg/kg/hr IV",
+          "sources": [
+            "icu2024",
+            "icu2017"
+          ],
+          "details": [
+            "配製：250 mg/10 mL/amp ×2 加入 NS / D5W 500 mL。",
+            "Loading：5.5 mg/kg >30 min；維持 0.5 mg/kg/hr。30 mL/hr 於 BW 60 kg 約 0.5 mg/kg/hr。",
+            "CHF 可用 0.1–0.2 mg/kg/hr；Theophylline = 0.8 × aminophylline。"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "抗凝、抗血小板",
+      "en": "Anticoagulation, antiplatelet, ACS, PE, DVT, heparin, Agglutex, tirofiban, Aggrastat",
+      "chapters": [
+        "chest-pain",
+        "coagulopathy"
+      ],
+      "lines": [
+        {
+          "id": "heparin",
+          "text": "Heparin line：ACS 12–15 U/kg/hr；PE / DVT 18 U/kg/hr IV",
+          "sources": [
+            "icu2017"
+          ],
+          "details": [
+            "ACS：12–15 U/kg/hr（max 1000 U/hr）。",
+            "PE / DVT：80 U/kg IV loading，再 18 U/kg/hr。製劑為 25,000 U/5 mL/vial；配製依院內方案。",
+            "依 aPTT / anti-Xa 調整；監測血小板、出血與 HIT。"
+          ]
+        },
+        {
+          "id": "tirofiban",
+          "text": "Tirofiban line：先確認心臟科 protocol",
+          "sources": [
+            "icu2017"
+          ],
+          "reviewOnly": true,
+          "details": [
+            "Loading、持續輸注劑量與配方依心臟科 protocol。",
+            "製劑：12.5 mg/50 mL/vial；腎功能不全須調整。"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "止血、消化道出血",
+      "en": "GI bleeding, octreotide, Sandostatin",
+      "chapters": [
+        "gi-bleeding"
+      ],
+      "lines": [
+        {
+          "id": "octreotide",
+          "text": "Octreotide line：25–50 mcg/hr IV",
+          "sources": [
+            "icu2017"
+          ],
+          "details": [
+            "配製：100 mcg/1 mL/amp ×10 加入 NS / D5W 250 mL。",
+            "劑量：25–50 mcg/hr；約 6.3–12.5 mL/hr。",
+            "用於疑靜脈曲張出血；注意高血糖、腹部絞痛。"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SAH",
+      "en": "Subarachnoid hemorrhage, SAH, nimodipine, Nimotop",
+      "chapters": [
+        "altered-consciousness",
+        "hypertension"
+      ],
+      "lines": [
+        {
+          "id": "nimodipine",
+          "text": "Nimodipine line：1–2 mg/hr IV（限專用 IV 製劑）",
+          "sources": [
+            "icu2017"
+          ],
+          "details": [
+            "配製：專用 IV 製劑 10 mg/50 mL/bot ×2 加入 NS / D5W 400 mL。",
+            "SAH：1–2 mg/hr（25–50 mL/hr）；BW <70 kg 或低血壓可 0.5 mg/hr 起。",
+            "限專用 IV 製劑；口服 / NG 製劑不可注射。"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "抗癲癇",
+      "en": "Status epilepticus, anticonvulsants, valproate, Depakine",
+      "chapters": [
+        "seizure"
+      ],
+      "lines": [
+        {
+          "id": "valproate",
+          "text": "Valproate line：1–4 mg/kg/hr IV",
+          "sources": [
+            "icu2017"
+          ],
+          "details": [
+            "配製：400 mg/vial ×10（4 g）加入 NS / D5W 250 mL。",
+            "Loading：15–45 mg/kg over 15 min；持續輸注 1–4 mg/kg/hr，核對日總量。",
+            "注意肝臟、血液毒性；可監測給藥前血中濃度。"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "電解質補充",
+      "en": "Electrolytes, magnesium sulfate, MgSO4, hypomagnesemia",
+      "chapters": [
+        "magnesium"
+      ],
+      "lines": [
+        {
+          "id": "magnesium",
+          "text": "MgSO4 line：0.5–1 g/hr IV（max 2 g/hr）",
+          "sources": [
+            "icu2017"
+          ],
+          "details": [
+            "配製：10% 2 g/20 mL/amp ×3（6 g）加入 NS 250 mL。",
+            "嚴重低血鎂：先 1–2 g over 1 hr，再 0.5–1 g/hr（max 2 g/hr）。",
+            "腎差須調整；監測 Mg、反射、呼吸、尿量。快速輸注可能低血壓、傳導阻滯、肌無力。"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "解毒劑",
+      "en": "Antidote infusions, poisoning, naloxone, flumazenil, Anexate, pralidoxime, PAM",
+      "chapters": [
+        "poisoning"
+      ],
+      "lines": [
+        {
+          "id": "naloxone",
+          "text": "Naloxone line：0.4 mg/hr IV，依呼吸反應調整",
+          "sources": [
+            "icu2017"
+          ],
+          "details": [
+            "配製：0.4 mg/1 mL/amp ×10（4 mg）加入 NS 250 mL；25 mL/hr 約 0.4 mg/hr。",
+            "Opioid 中毒：先依呼吸反應給 bolus，再個別決定維持速率。",
+            "注意急性戒斷；拮抗作用短，須持續觀察。"
+          ]
+        },
+        {
+          "id": "flumazenil",
+          "text": "Flumazenil line：0.1–0.5 mg/hr IV",
+          "sources": [
+            "icu2017"
+          ],
+          "details": [
+            "製劑：0.5 mg/5 mL/amp；維持 0.1–0.5 mg/hr，配製依院內方案。",
+            "避免用於長期 BZD 使用、癲癇病史、不明 / 混合中毒及顱內壓高。"
+          ]
+        },
+        {
+          "id": "pralidoxime",
+          "text": "Pralidoxime line：4–8 mg/kg/hr IV",
+          "sources": [
+            "icu2017"
+          ],
+          "details": [
+            "有機磷中毒：先 30 mg/kg IV over 20 min，再 4–8 mg/kg/hr。",
+            "院內製劑：PAM 500 mg/20 mL；稀釋配方依院內方案。"
+          ]
+        }
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "drug": "Drotrecogin alfa",
+      "reason": "2017 原表明示已下市，不列為可選 ICU line。"
+    },
+    {
+      "drug": "Diltiazem IV",
+      "reason": "2017 有 IV 配方，但既有院內 formulary 明示只有口服、無 IV；保留現有替代方案。"
+    },
+    {
+      "drug": "Alteplase",
+      "reason": "屬依適應症與時間窗決定的限時溶栓療程，保留既有中風 / PE 分類，不當成可任意延續的 ICU line。"
+    },
+    {
+      "drug": "Adenosine / Atropine / Hydralazine / Diazepam 等",
+      "reason": "原表只有推注或間歇給藥；保留既有相關分類，不重複列為持續輸注。"
+    }
+  ]
+}

@@ -64,6 +64,9 @@
     ] },
     { "title": "📇 開檢查 / 分機", "tiles": [
       { "label": "檢查代碼 / 分機", "chapter": "exams" }
+    ] },
+    { "title": "💉 ICU Lines", "tiles": [
+      { "label": "ICU Lines 總覽 / 分類", "chapter": "icu-lines" }
     ] }
   ]
 }

@@ -6,6 +6,48 @@ import { fileURLToPath } from 'node:url';
 const here = new URL('./', import.meta.url);
 const TYPES = new Set(['m', 'l', 'x', 'p']);
 
+// One source catalog supplies the ICU browser and related chapters. Stable IDs
+// let the UI deduplicate a line selected through any of those locations.
+export async function loadIcuLines() {
+  return JSON.parse(await readFile(new URL('icu-lines.json', here), 'utf8'));
+}
+
+function addIcuLines(chapters, catalog) {
+  const ids = new Set();
+  const items = catalog.groups.map(group => {
+    if (!group.name || !group.en || !group.lines?.length || !group.chapters?.length) throw new Error('icu-lines.json: incomplete group');
+    const orders = group.lines.map(line => {
+      if (!line.id || ids.has(line.id) || !line.text || !line.details?.length || !line.sources?.length) throw new Error(`icu-lines.json: invalid line ${line.id}`);
+      ids.add(line.id);
+      for (const key of line.sources) {
+        if (!catalog.sources[key]) throw new Error(`icu-lines.json: unknown source ${key}`);
+      }
+      return ['m', line.text, ['ICU Line', ...line.details].join('｜'), line.reviewOnly ? '專科確認・僅供查閱' : 'ICU・依情況選用'];
+    });
+    const item = {
+      name: `ICU Lines：${group.name}`, en: `ICU Lines, ${group.en}`,
+      icuLines: true, orderIds: group.lines.map(line => line.id),
+      reviewOnlyIds: group.lines.filter(line => line.reviewOnly).map(line => line.id), orders
+    };
+    for (const slug of group.chapters) {
+      const chapter = chapters.find(entry => entry.slug === slug);
+      if (!chapter) throw new Error(`icu-lines.json: unknown chapter ${slug}`);
+      chapter.items.push(item);
+    }
+    return item;
+  });
+  chapters.push({
+    no: String(chapters.length + 1).padStart(2, '0'), slug: 'icu-lines',
+    title: 'ICU Lines', en: 'ICU continuous infusions', icon: '💉',
+    items: [{
+      name: 'ICU Lines：全部', en: 'All ICU Lines, continuous infusions',
+      icuLines: true, orderIds: items.flatMap(item => item.orderIds),
+      reviewOnlyIds: items.flatMap(item => item.reviewOnlyIds), orders: items.flatMap(item => item.orders)
+    }, ...items]
+  });
+  return chapters;
+}
+
 export async function loadChapters() {
   const names = (await readdir(new URL('chapters/', here))).filter(name => name.endsWith('.json')).sort();
   const chapters = [];
@@ -22,7 +64,7 @@ export async function loadChapters() {
     }
     chapters.push(chapter);
   }
-  return chapters;
+  return addIcuLines(chapters, await loadIcuLines());
 }
 
 // Resolves home.json's slugs and condition names to indices; every chapter must appear in exactly one section.
