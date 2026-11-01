@@ -306,7 +306,20 @@
       ["Calcitonin", "100 IU/amp"],
       ["Denosumab", "120 mg"],
       ["Alfacalcidol", "0.5 mcg/tab"],
-      ["Medroxyprogesterone", "10 mg/tab"]
+      ["Medroxyprogesterone", "10 mg/tab"],
+      ["Metformin", "500 mg/tab、XR 500 mg"],
+      ["Gliclazide", "MR 30/60 mg/tab"],
+      ["Glimepiride", "2 mg/tab"],
+      ["Glipizide", "5 mg/tab"],
+      ["Repaglinide", "1 mg/tab"],
+      ["Linagliptin", "5 mg/tab"],
+      ["Sitagliptin", "100 mg/tab"],
+      ["Empagliflozin", "10/25 mg/tab"],
+      ["Dapagliflozin", "10 mg/tab"],
+      ["Pioglitazone", "30 mg/tab"],
+      ["Acarbose", "50/100 mg/tab"],
+      ["Dulaglutide", "0.75/1.5 mg/0.5 mL pen"],
+      ["Semaglutide", "SC pen、Rybelsus 3/7/14 mg tab"]
     ] },
     { "group": "呼吸 / 過敏 / 耳鼻", "drugs": [
       ["Salbutamol MDI", "100 mcg/puff", "Salbutamol MDI"],
