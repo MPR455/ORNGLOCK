@@ -41,48 +41,25 @@
         ["p", "長效：glargine（Lantus 100 U、Toujeo 300 U）、detemir（Levemir）、degludec（Tresiba）", "basal；第一型 NPO 也不能停"],
         ["p", "預混：NovoMix 30 / 50、Humalog Mix25 / 50、Ryzodeg、Mixtard 30；Soliqua（glargine + lixisenatide）", "初住院避免預混 → 院內低血糖"]
       ] },
-    { "name": "口服降血糖藥：住院怎麼處理", "hint": "要停哪些", "en": "Oral antidiabetic drugs in hospital",
+    { "name": "降血糖藥（OHA / GLP-1）", "hint": "降多少、會不會低血糖", "en": "Oral antidiabetic drugs, OHA, GLP-1, HbA1c reduction, hypoglycemia risk",
       "orders": [
-        ["p", "急性病、NPO、要打顯影劑或開刀：多數 OHA 先停，改胰島素", "穩定、會吃、無禁忌、預計短住院可續用（尤其 DPP-4i）"],
-        ["p", "Metformin 停：eGFR <30、休克 / 敗血症 / 缺氧、肝衰竭、乳酸高；顯影劑 eGFR <45 或 AKI 停 48 hr", ""],
-        ["p", "SGLT2i 停：NPO、急性病、手術前 3 天（ertugliflozin 4 天）", "風險：euglycemic DKA、脫水"],
-        ["p", "Sulfonylurea 停：吃不好、NPO、老人、CKD", "低血糖可延長 24–72 hr；避免 glibenclamide"],
-        ["p", "GLP-1 RA 每週針：術前停 1 週", "噁吐、胃排空慢；胰臟炎病史避免"]
-      ] },
-    { "name": "Metformin", "hint": "第一線", "en": "Metformin",
-      "orders": [
-        ["m", "Metformin 500 mg PO BID（隨餐）→ 每週加量，max 2000–2550 mg/day", "適應：第二型第一線｜禁忌：eGFR <30（30–45 不新開、最多 1000 mg/day）、乳酸中毒風險、肝衰竭、酗酒｜XR 500 mg QD 腸胃副作用較少"]
-      ] },
-    { "name": "Sulfonylurea / Glinide", "hint": "便宜、會低血糖", "en": "Sulfonylureas and meglitinides",
-      "orders": [
-        ["m", "Gliclazide MR 30–120 mg PO QAM（30 / 60 mg 錠）", "適應：CKD 較安全的 SU｜禁忌：吃不好、NPO｜副作用：低血糖、體重增加"],
-        ["m", "Glimepiride 1–4 mg PO QAM（2 mg 錠，max 8 mg）", "禁忌：eGFR <30、老人慎用"],
-        ["m", "Glipizide 2.5–10 mg PO QD–BID（5 mg 錠，max 20 mg）", "肝代謝，CKD 可用"],
-        ["m", "Repaglinide 0.5–1 mg PO AC（1 mg 錠）", "餐前吃、沒吃那餐就不吃｜CKD 可用｜不與 gemfibrozil 併用", "飲食不規律"],
-        ["p", "避免 glibenclamide（老人、CKD 長時間低血糖）", "SU 低血糖要住院觀察 24–48 hr"]
-      ] },
-    { "name": "DPP-4 inhibitor", "hint": "住院最安全的口服藥", "en": "DPP-4 inhibitors",
-      "orders": [
-        ["m", "Linagliptin 5 mg PO QD", "不用腎調｜低血糖少"],
-        ["m", "Sitagliptin 100 mg PO QD", "eGFR 30–45 → 50 mg；<30 → 25 mg（本院 100 mg 錠，可用 Janumet 50 劑型）"],
-        ["p", "其他：vildagliptin 50 mg BID、saxagliptin 5 mg QD、alogliptin 25 mg QD", "不與 GLP-1 RA 併用｜saxagliptin、alogliptin 心衰慎用"]
-      ] },
-    { "name": "SGLT2 inhibitor", "hint": "HF、CKD 有好處", "en": "SGLT2 inhibitors",
-      "orders": [
-        ["m", "Empagliflozin 10 mg PO QD（可 25 mg）", "適應：合併心衰竭、CKD、ASCVD｜禁忌：第一型、DKA 病史、反覆泌尿生殖道感染、脫水｜eGFR <20 不新開"],
-        ["m", "Dapagliflozin 10 mg PO QD", "同上（HF / CKD 也可用）"],
-        ["p", "其他：canagliflozin 100 mg、ertugliflozin 5 mg", "風險：euglycemic DKA（急性病、NPO、手術停）、生殖器黴菌感染、脫水"]
-      ] },
-    { "name": "Pioglitazone / Acarbose", "hint": "", "en": "Pioglitazone and acarbose",
-      "orders": [
-        ["m", "Pioglitazone 15–30 mg PO QD（30 mg 錠）", "適應：胰島素阻抗、NASH｜禁忌：心衰竭（NYHA III–IV）、水腫、膀胱癌、骨折風險"],
-        ["m", "Acarbose 50 mg PO TID（第一口飯一起吃）", "飯後高血糖｜副作用：脹氣｜低血糖只能用純葡萄糖治療"]
-      ] },
-    { "name": "GLP-1 RA / Tirzepatide", "hint": "每週一針", "en": "GLP-1 receptor agonists",
-      "orders": [
-        ["m", "Dulaglutide 0.75 mg SC 每週 → 1.5 mg", "適應：ASCVD、肥胖｜禁忌：胰臟炎病史、MTC / MEN2、嚴重胃輕癱｜副作用：噁吐"],
-        ["m", "Semaglutide SC 0.25 mg 每週 ×4 → 0.5 → 1 mg", "口服 Rybelsus 3 → 7 → 14 mg QD：早上空腹、≤120 mL 水、30 min 後再吃東西"],
-        ["p", "其他：liraglutide QD、tirzepatide 每週（2.5 → 15 mg）", "住院中通常不新開；術前停 1 週"]
+        ["p", "單用不會低血糖：metformin、DPP-4i、SGLT2i、pioglitazone、acarbose、GLP-1 RA｜會低血糖：sulfonylurea、glinide、insulin", "HbA1c 每降 1% ≈ 平均血糖降約 29 mg/dL（eAG = 28.7 × HbA1c − 46.7）"],
+        ["p", "加新藥時 HbA1c 已接近目標：SU 減半或停、insulin 減 10–20%", "低血糖多來自 SU / insulin 疊加，不是新加的藥本身"],
+        ["m", "Metformin 500 mg PO BID（隨餐）→ 每週加量，max 2000–2550 mg/day", "HbA1c ↓1.0–1.5%（平均血糖約 ↓30–45）｜低血糖：單用幾乎不會｜第一線｜禁忌：eGFR <30（30–45 不新開、max 1000 mg/day）、休克 / 缺氧、肝衰竭、酗酒｜顯影劑 eGFR <45 或 AKI 停 48 hr｜XR 500 mg QD 腸胃較少", "低血糖 低"],
+        ["m", "Linagliptin 5 mg PO QD", "HbA1c ↓0.5–0.8%（約 ↓15–25）｜低血糖：單用不會｜不用腎調，住院最安全的口服藥", "低血糖 低"],
+        ["m", "Sitagliptin 100 mg PO QD", "HbA1c ↓0.5–0.8%（約 ↓15–25）｜低血糖：單用不會｜eGFR 30–45 → 50 mg、<30 → 25 mg（本院 100 mg 錠，可用 Janumet 50 劑型）｜不與 GLP-1 RA 併用", "低血糖 低"],
+        ["m", "Empagliflozin 10 mg PO QD（可 25 mg）", "HbA1c ↓0.5–0.8%（約 ↓15–25；eGFR <45 降糖效果小）｜低血糖：單用不會｜適應：心衰竭、CKD、ASCVD｜禁忌：第一型、DKA 病史、脫水、反覆泌尿生殖道感染｜急性病 / NPO / 術前 3 天停（euglycemic DKA）", "低血糖 低"],
+        ["m", "Dapagliflozin 10 mg PO QD", "HbA1c ↓0.5–0.8%（約 ↓15–25）｜低血糖：單用不會｜同 empagliflozin（HF / CKD 也可用）", "低血糖 低"],
+        ["m", "Pioglitazone 15–30 mg PO QD（30 mg 錠）", "HbA1c ↓0.5–1.4%（約 ↓15–40），6–12 週才達最大效果｜低血糖：單用不會｜禁忌：心衰竭、水腫、膀胱癌、骨折風險", "低血糖 低"],
+        ["m", "Acarbose 50 mg PO TID（第一口飯一起吃）", "HbA1c ↓0.5–0.8%（約 ↓15–25），主要降飯後血糖｜低血糖：單用不會｜合併 SU / insulin 低血糖只能用純葡萄糖治療｜副作用：脹氣", "低血糖 低"],
+        ["m", "Dulaglutide 0.75 mg SC 每週 → 1.5 mg", "HbA1c ↓1.0–1.5%（約 ↓30–45）｜低血糖：單用不會｜適應：ASCVD、肥胖｜禁忌：胰臟炎病史、MTC / MEN2、嚴重胃輕癱｜術前停 1 週", "低血糖 低"],
+        ["m", "Semaglutide SC 0.25 mg 每週 ×4 → 0.5 → 1 mg（口服 Rybelsus 3 → 7 → 14 mg QD）", "HbA1c ↓1.0–1.8%（約 ↓30–50；口服 ↓1.0–1.4）｜低血糖：單用不會｜口服：早上空腹、≤120 mL 水、30 min 後再進食｜其他：tirzepatide ↓2.0–2.4%", "低血糖 低"],
+        ["m", "Gliclazide MR 30–120 mg PO QAM（30 / 60 mg 錠）", "HbA1c ↓1.0–1.5%（約 ↓30–45），幾小時內就有效｜低血糖：會，SU 中較低｜CKD 較安全的 SU｜禁忌：吃不好、NPO", "低血糖 中"],
+        ["m", "Glimepiride 1–4 mg PO QAM（2 mg 錠，max 8 mg）", "HbA1c ↓1.0–1.5%（約 ↓30–45）｜低血糖：高，可延長 24–72 hr｜老人、eGFR <30 避免｜從 1 mg（½ 錠）開始", "低血糖 高"],
+        ["m", "Glipizide 2.5–10 mg PO QD–BID（5 mg 錠，max 20 mg）", "HbA1c ↓1.0–1.5%（約 ↓30–45）｜低血糖：會｜肝代謝，CKD 可用｜從 2.5 mg 開始", "低血糖 高"],
+        ["m", "Repaglinide 0.5–1 mg PO AC（1 mg 錠）", "HbA1c ↓0.5–1.5%（約 ↓15–45）｜低血糖：會（比 SU 短）｜沒吃那餐就不吃｜CKD 可用｜不與 gemfibrozil 併用", "低血糖 中"],
+        ["p", "避免 glibenclamide（老人、CKD 長時間低血糖）；SU 引起低血糖要觀察 24–48 hr", ""],
+        ["p", "住院：急性病、NPO、要打顯影劑或開刀 → 多數停用改胰島素", "穩定、會吃、預計短住院可續用（尤其 DPP-4i）"]
       ] },
     { "name": "出院降血糖藥怎麼選", "hint": "", "en": "Choosing diabetes medication at discharge",
       "orders": [
