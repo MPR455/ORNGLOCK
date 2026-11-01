@@ -49,7 +49,6 @@
 .dd-pop-title{font-size:19px !important;letter-spacing:0 !important;opacity:1 !important}
 .dd-pop-orders{display:flex;flex-direction:column;gap:6px}
 #tab-ddx .oc-pop strong:not(.dd-pop-title){margin-top:4px}
-.dd-note{margin:22px 0 0;font-size:14px;color:var(--sub)}
 body.theme-black #tab-ddx .dd-zone.on{fill:#ffd21f}
 @media(max-width:860px){
   .dd-layout{grid-template-columns:1fr;gap:12px}

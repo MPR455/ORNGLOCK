@@ -9,9 +9,9 @@ const $ = id => document.getElementById(id);
 const TABS = [
   { id: 'directory', icon: '☎️', label: 'Directory', short: 'Directory' },
   { id: 'handoff', icon: '📝', label: '交班單', short: '交班單' },
-  { id: 'oncall', icon: '🍟', label: 'order', short: 'order' },
+  { id: 'oncall', icon: '🍟', label: 'Order', short: 'Order' },
   // Off the phone bottom bar (already full); reachable from "All" on mobile.
-  { id: 'ddx', icon: '🧍', label: 'differential diagnosis', short: 'DDx', mobilePrimary: false },
+  { id: 'ddx', icon: '🧍', label: 'DDx', short: 'DDx', mobilePrimary: false },
   { id: 'notes', icon: '🤖', label: '病歷', short: '病歷' },
   { id: 'faq', icon: '❓', label: 'FAQ 腫麼用', short: 'FAQ 腫麼用' },
   { id: 'study', icon: '📚', label: 'Study', short: 'Study' },

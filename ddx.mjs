@@ -64,7 +64,7 @@ function orderLabel([slug, name]) {
   const chapter = ONCALL_MENU.find(entry => entry.slug === slug);
   return `${chapter ? `${chapter.icon} ${chapter.title} › ` : ''}${name}`;
 }
-const orderLinks = (orders = [], className = 'dd-order') => orders.map(([slug, name]) => `<button class="${className}" type="button" data-dd="order" data-slug="${esc(slug)}" data-name="${esc(name)}"><span class="dd-order-tag">order</span><span>${esc(orderLabel([slug, name]))}</span><span aria-hidden="true">›</span></button>`).join('');
+const orderLinks = (orders = [], className = 'dd-order') => orders.map(([slug, name]) => `<button class="${className}" type="button" data-dd="order" data-slug="${esc(slug)}" data-name="${esc(name)}"><span class="dd-order-tag">Order</span><span>${esc(orderLabel([slug, name]))}</span><span aria-hidden="true">›</span></button>`).join('');
 
 function figure() {
   const zones = VIEWS[view.side].map(([id, tag, attrs]) => {
@@ -95,7 +95,7 @@ function homeView() {
     return symptoms.length ? `<section class="oc-section"><h2>${esc(title)}</h2><div class="oc-grid">${symptoms.map(symptom => `<button class="oc-tile" type="button" data-dd="symptom" data-index="${DDX_SYMPTOMS.indexOf(symptom)}"><span class="oc-tile-name">${esc(symptom.name)}<small class="dd-tile-en" lang="en">${esc(symptom.en)}</small></span></button>`).join('')}</div></section>` : '';
   }).join('');
   return `<h1 class="oc-title" tabindex="-1">🧍 鑑別診斷</h1>
-    <p class="oc-hint">點左邊身體部位，或在上面搜尋症狀（中文 / English 都可以）。每個診斷按 <b>?</b> 看要做的理學檢查和評分量表，按 <b>order</b> 直接跳到醫囑。</p>${sections}`;
+    <p class="oc-hint">點左邊身體部位，或在上面搜尋症狀（中文 / English 都可以）。每個診斷按 <b>?</b> 看要做的理學檢查和評分量表，按 <b>Order</b> 直接跳到醫囑。</p>${sections}`;
 }
 
 function regionView() {
@@ -137,8 +137,7 @@ function symptomView() {
     <h1 class="oc-title" tabindex="-1">${esc(symptom.name)}</h1><p class="oc-en" lang="en">${esc(symptom.en)}</p>
     <div class="oc-chips dd-regions">${symptom.regions.map(id => `<button class="oc-chip" type="button" data-dd="region" data-region="${id}">${REGION[id].icon} ${esc(REGION[id].name)}</button>`).join('')}</div>
     ${firstStep(symptom.first)}
-    ${groups}
-    <p class="dd-note">教學用整理，非醫療建議；劑量與流程以院內規範為準。</p>`;
+    ${groups}`;
 }
 
 // Latin queries match at a word start ("pe" finds PE and "PE" in Wells (PE), not "type");
@@ -239,8 +238,8 @@ function onClick(event) {
   else if (action === 'hit') go({ symptom: Number(target.dataset.index), region: null, focus: target.dataset.key });
   else if (action === 'why') showWhy(target);
   else if (action === 'order') {
-    if (openOrder(target.dataset.slug, target.dataset.name)) toast(`order：${target.dataset.name}`);
-    else toast('order 裡找不到這一項');
+    if (openOrder(target.dataset.slug, target.dataset.name)) toast(`Order：${target.dataset.name}`);
+    else toast('Order 裡找不到這一項');
   }
 }
 
