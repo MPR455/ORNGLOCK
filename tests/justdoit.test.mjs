@@ -6,7 +6,7 @@ import { loadFormulary, checkFormulary } from '../clinical database/JustDoIt/for
 
 test('every chapter file and the home layout are valid, and the bundled module is up to date', async () => {
   const chapters = await loadChapters();
-  assert.equal(chapters.length, 40);
+  assert.equal(chapters.length, 50);
   const bundled = await readFile(new URL('../clinical database/JustDoIt/justdoit-data.mjs', import.meta.url), 'utf8');
   assert.equal(bundled.replace(/\r\n/g, '\n'), renderModule(chapters, await loadHome(chapters)), 'Run: node "clinical database/JustDoIt/build-data.mjs"');
 });
@@ -69,4 +69,12 @@ test('legacy review-only lines retain their status in every browsing location', 
       assert.match(item.orders[item.orderIds.indexOf(id)][3], /僅供查閱/);
     }
   }
+});
+
+test('extensions sit in the "?" reason, where they are tappable, not in the order line', async () => {
+  const inline = [];
+  for (const chapter of await loadChapters()) for (const item of chapter.items) for (const order of item.orders) {
+    if (order[1].includes('☎')) inline.push(`${chapter.slug} / ${item.name}: ${order[1]}`);
+  }
+  assert.deepEqual(inline, []);
 });

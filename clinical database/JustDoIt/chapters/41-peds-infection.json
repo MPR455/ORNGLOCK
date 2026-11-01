@@ -1,0 +1,102 @@
+{
+  "no": "41", "slug": "peds-infection", "title": "兒科：發燒 / 感染", "en": "Pediatric fever and infections", "icon": "🌡️",
+  "items": [
+    { "name": "兒童發燒：找來源", "hint": "新住院、找不到 focus", "en": "Pediatric fever workup, fever without source",
+      "orders": [
+        ["l", "CBC/DC、CRP、Blood culture、GOT", "新病人疑感染常規"],
+        ["l", "U/A + U/C（先驗再給抗生素）", "排除：UTI（狀況差先治療）"],
+        ["x", "CXR", "排除：肺炎、TB"],
+        ["p", "看耳膜、關節活動、皮膚、口腔", "排除：AOM、骨髓炎 / 化膿性關節炎、膿瘍（echo）、腸病毒"],
+        ["l", "EBV VCA IgG / IgM、ASLO", "化膿性扁桃腺炎時加開", "扁桃腺"],
+        ["p", "非感染：Kawasaki、SLE、白血病", "燒 ≥5 天想 Kawasaki"]
+      ] },
+    { "name": "<3 個月嬰兒發燒", "hint": "一定要抗生素", "en": "Febrile infant under 3 months, neonatal sepsis workup",
+      "orders": [
+        ["l", "CBC/DC、CRP、Blood culture、U/A + U/C", "完整 sepsis work-up"],
+        ["l", "LP：CSF routine、Gram、culture、sugar、protein", "排除：腦膜炎"],
+        ["m", "Ampicillin 50 mg/kg IV q6h（100–200 mg/kg/day）", "腦膜炎劑量 200–400 mg/kg/day｜≤7 天新生兒見「新生兒」章"],
+        ["m", "Gentamicin 5 mg/kg IV QD", "與 ampicillin 合用｜追 BUN/Cr、第 4 劑後藥物濃度"],
+        ["m", "Cefotaxime 50 mg/kg IV q6h（腦膜炎 200 mg/kg/day）", "替代 gentamicin（疑腦膜炎）", "腦膜炎"],
+        ["p", "不明 focus 一定要先給抗生素，等培養再調", "不規則給退燒藥；用水枕"]
+      ] },
+    { "name": "兒童敗血症 / 休克", "hint": "灌流差、低血壓", "en": "Pediatric sepsis and septic shock",
+      "orders": [
+        ["m", "Normal saline 或 Lactated Ringer 10–20 mL/kg", "重複評估 CRT、意識、尿量"],
+        ["m", "10% Glucose（D10W）2 mL/kg slow IV", "適應：低血糖", "低血糖"],
+        ["m", "Cefotaxime 或 Ceftriaxone + Vancomycin 15 mg/kg q6h", "社區型兒童｜新生兒：ampicillin + aminoglycoside 或 cefotaxime"],
+        ["m", "Vancomycin + Cefepime 50 mg/kg q8h 或 Meropenem 20 mg/kg q8h", "院內感染", "院內"],
+        ["m", "Penicillin G + Clindamycin 10 mg/kg q6h", "適應：侵襲性 A 群鏈球菌（水痘後）", "GAS"],
+        ["m", "Dopamine 5–10 mcg/kg/min", "適應：補液後仍低血壓｜6 mg/kg in 100 mL：1 mL/hr = 1 mcg/kg/min", "升壓"],
+        ["l", "PT、aPTT、DIC profile、BUN、Cr、Na、K、Cl、ABG、lactate", "活力差、疑 sepsis"]
+      ] },
+    { "name": "兒童細菌性腦膜炎", "hint": "發燒 + 頸僵 / 囟門鼓 / 意識變", "en": "Pediatric bacterial meningitis",
+      "orders": [
+        ["l", "LP：CSF routine、Gram、culture、sugar、protein、lactate", "有 IICP 徵象先做 brain CT"],
+        ["m", "Vancomycin 15 mg/kg IV q6h + Ceftriaxone 50 mg/kg IV q12h（100 mg/kg/day）", "經驗性"],
+        ["m", "Acyclovir 20 mg/kg IV q8h（3 個月–12 歲）；>12 歲 10 mg/kg", "適應：疑 HSV 腦炎（口腔潰瘍、局部抽搐）", "HSV"],
+        ["m", "Rifampicin 10 mg/kg PO BID ×2 天（腦膜炎雙球菌）；20 mg/kg QD ×4 天（Hib）", "適應：密切接觸者預防", "接觸者"],
+        ["p", "療程：腦膜炎雙球菌 7 天、肺炎鏈球菌 / Hib 10 天、GBS 14 天、G(−) 21 天", ""]
+      ] },
+    { "name": "兒童泌尿道感染", "hint": "發燒 + 膿尿", "en": "Pediatric urinary tract infection, pyelonephritis",
+      "orders": [
+        ["l", "U/A、U/C（抗生素前）", ""],
+        ["m", "Gentamicin 5 mg/kg IV QD + Cefazolin 25 mg/kg IV q6h（100 mg/kg/day）", "經驗性；療程 10–14 天"],
+        ["x", "Ped nephrosonography（M32-064）", "代碼：M32-064｜☎8528"],
+        ["x", "VCUG", "排除：膀胱輸尿管逆流｜☎8399", "反覆 / 異常"],
+        ["x", "DMSA kidney（N73-041）+ SPECT（N73-006）", "目的：腎疤痕", "反覆 / 異常"],
+        ["m", "Cotrimoxazole 2 mg/kg（TMP）PO QD", "適應：UTI 預防（5 mg/kg/day 以 TMP 計，依主治）", "預防"]
+      ] },
+    { "name": "兒童常用抗生素劑量", "hint": "IV 依 mg/kg", "en": "Pediatric antibiotic doses",
+      "orders": [
+        ["m", "Amoxicillin-clavulanate IV 30 mg/kg q6h（120 mg/kg/day）", "本院 IV = amoxicillin 1 g + clavulanate 200 mg｜PO 原廠：一般 BW/4 mL BID、AOM 高劑量 BW/2 mL BID（台廠勿用速算）"],
+        ["m", "Ampicillin-sulbactam 25–75 mg/kg IV q6h", ""],
+        ["m", "Oxacillin 40–50 mg/kg IV q6h（max 12 g/day）", "MSSA 皮膚 / 骨關節"],
+        ["m", "Cefazolin 25 mg/kg IV q6h", ""],
+        ["m", "Cefuroxime 25–35 mg/kg IV q8h（100 mg/kg/day）", ""],
+        ["m", "Ceftriaxone 25–50 mg/kg IV q12h（腦膜炎 100 mg/kg/day）", "AGE / Salmonella 50–75 mg/kg/day"],
+        ["m", "Ceftazidime 30–50 mg/kg IV q8h", ""],
+        ["m", "Cefepime 50 mg/kg IV q12h（max 2 g）；綠膿 / 腦膜炎 / FN q8h", ""],
+        ["m", "Piperacillin-tazobactam 100 mg/kg IV q8h", ""],
+        ["m", "Meropenem 20 mg/kg IV q8h（CNS 40 mg/kg）", ""],
+        ["m", "Amikacin 15 mg/kg/day IV（q8h 或 QD）", "追濃度與腎功能"],
+        ["m", "Teicoplanin 10 mg/kg q12h ×3 → 10 mg/kg QD", "不過 BBB"],
+        ["m", "Clindamycin 30–40 mg/kg/day IV q6h", ""],
+        ["m", "Metronidazole 15 mg/kg 負荷 → 7.5 mg/kg IV q6h", ""],
+        ["m", "Azithromycin 10 mg/kg PO QD ×3–5 天（max 500 mg）", "黴漿菌 / 披衣菌｜≥8 歲可用 doxycycline 2.2 mg/kg BID"],
+        ["m", "Cotrimoxazole（TMP）8–12 mg/kg/day q12h；PJP 20 mg/kg/day q6h", ""],
+        ["m", "Fluconazole 6–12 mg/kg QD", ""]
+      ] },
+    { "name": "腸病毒", "hint": "手足口、皰疹性咽峽炎", "en": "Enterovirus, hand-foot-mouth disease, herpangina",
+      "orders": [
+        ["p", "重症前兆：嗜睡、肌躍型抽搐、持續嘔吐、心跳快、呼吸急促、肢體無力", "疑重症 → 規則監測 BP、血糖、心跳，通知上級"],
+        ["p", "IV 只給 80% 維持量，不要過度 hydration", ""],
+        ["m", "Benzydamine spray 1 puff / 4 kg q1.5–3h（max 4 puff）", "適應：口腔潰瘍痛（自費）"],
+        ["m", "Acetaminophen BW/2 mL q6h PRN", ""]
+      ] },
+    { "name": "兒童流感", "hint": "快篩陽性或高度懷疑", "en": "Pediatric influenza, oseltamivir",
+      "orders": [
+        ["l", "Influenza rapid（L72-768）/ PCR（L72-906）", ""],
+        ["m", "Oseltamivir 75 mg/cap BID ×5 天：<3 月 12 mg、3–5 月 20、6–11 月 25、<15 kg 30、15–24 kg 45、25–40 kg 60、>40 kg 75 mg", "先 stat 領 10 PC 再改五天自備藥｜公費需填申請單"],
+        ["p", "呼吸道病原 FilmArray（L72-971，檢體 TH，自費 8000）或 virus isolation", "依需要"]
+      ] },
+    { "name": "急性中耳炎（AOM）", "hint": "耳痛、耳膜鼓起", "en": "Acute otitis media",
+      "orders": [
+        ["p", "診斷：急性發作 + 中耳積液（耳膜鼓起、活動差、氣液面、耳漏）+ 發炎（紅或耳痛）", "只有耳膜紅不能診斷"],
+        ["p", "<6 月一律抗生素；6 月–2 歲確定就給；≥2 歲嚴重才給，否則觀察", ""],
+        ["m", "Amoxicillin-clavulanate PO 高劑量（amoxicillin 80–90 mg/kg/day）BID ×10 天", "原廠速算：BW/2 mL BID"],
+        ["m", "Ibuprofen 或 Acetaminophen BW/2 mL q6h PRN", "止耳痛"]
+      ] },
+    { "name": "兒童蜂窩性組織炎 / 骨關節感染", "hint": "紅腫熱痛", "en": "Pediatric cellulitis, septic arthritis, osteomyelitis",
+      "orders": [
+        ["m", "Oxacillin 40–50 mg/kg IV q6h", "MSSA 首選"],
+        ["m", "Vancomycin 15 mg/kg q6h 或 Teicoplanin", "適應：MRSA", "MRSA"],
+        ["p", "化膿性關節炎、深頸部感染、眼眶蜂窩性組織炎 → 照會外科", "療程：化膿性關節炎 / 骨髓炎 >28 天"]
+      ] },
+    { "name": "抗生素療程", "hint": "多久", "en": "Antibiotic duration in children",
+      "orders": [
+        ["p", "新生兒敗血症 10–14 天；新生兒腦膜炎 GBS 14–21、G(−) 21 天", ""],
+        ["p", "肺炎：肺炎鏈球菌 7–10、Hib 10–14、金葡菌 >21、披衣菌 14–21 天；膿胸 >21 天", ""],
+        ["p", "AOM 10、鼻竇炎 10、腎盂腎炎 10–14、化膿性關節炎 / 骨髓炎 >28 天", ""]
+      ] }
+  ]
+}

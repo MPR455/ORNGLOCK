@@ -1,0 +1,73 @@
+{
+  "no": "45", "slug": "peds-newborn", "title": "兒科：新生兒 / 嬰兒室", "en": "Newborn nursery and neonatal care", "icon": "👶",
+  "items": [
+    { "name": "嬰兒室入院醫囑", "hint": "健康新生兒", "en": "Newborn nursery admission orders",
+      "orders": [
+        ["m", "Vitamin K1 1 mg IM（出生 6 hr 內）", ""],
+        ["m", "Tetracycline 眼藥膏 1 gtt OU（出生 1 hr 內）", ""],
+        ["m", "Hepatitis B vaccine 0.5 mL（5 mcg）IM（24 hr 內，BBW ≥2000 g）", "HBV、HBIG 公費要各自單獨存一筆"],
+        ["m", "HBIG 0.5 mL IM（24 hr 內）", "適應：母親 HBsAg(+)", "母 HBsAg+"],
+        ["l", "Newborn screening（M32-020）", "出生滿 48 hr 且吃奶滿 24 hr，72 hr 內完成、輸血前｜父母皆無身分證改 M32-019"],
+        ["l", "新生兒聽力篩檢", "父母無身分證改 M32-018（AABR 自費）"],
+        ["p", "住院單診斷碼 Z3800 / Z3801 / Z3830 / Z3831；嬰兒室代號 PBAB", "Impression：生產方式、GA、BBW、Apgar"],
+        ["p", "看產單：母親檢驗（HBsAg、GBS）、妊娠併發症、破水時間、身高體重頭圍（SGA / LGA）", "決定要不要驗血糖、抽血、HBIG、轉床"],
+        ["p", "自費篩檢 / 超音波一律點範本、勾自費", "腦 M32-061、腹 M32-063、腎 M32-037、脊髓 M32-103、髖 S46-235-Z、心超 M22-051-ZT"]
+      ] },
+    { "name": "新生兒低血糖", "hint": "SGA、LGA、IDM", "en": "Neonatal hypoglycemia",
+      "orders": [
+        ["p", "監測對象：SGA（37 週 <2400 g、38 週 <2500、39 週 <2600、40 週 <2700）、BBW >4000 g、糖尿病 / GDM 母親", ""],
+        ["l", "F/S：到嬰兒室、30 min、1 hr、2 hr、4 hr", "範本：stat → Q30′×1、Q1h×1、Q2h×1、Q4h×1"],
+        ["m", "10% Glucose（D10W）10–20 mL PO 或餵奶", "適應：F/S ≤40，30 分鐘後複測｜維持 q3h 餵奶"],
+        ["p", "仍 <40、兩次 ≤40 或任一次 <25 → 通知醫師、轉 OBN", ""]
+      ] },
+    { "name": "新生兒感染風險：PROM / GBS / 產時發燒", "hint": "要不要抽血、給抗生素", "en": "Neonatal early-onset sepsis risk, PROM, GBS",
+      "orders": [
+        ["p", "臨床徵象（心跳快、呼吸快、體溫不穩、發燒 ≥38、喘、發紺、活力差、持續 F/S ≤40）或新生兒發燒 → 直入 OBN + 抽血 + 抗生素", ""],
+        ["p", "產時母親發燒 ≥39 → OBN + 抽血 + 抗生素；38–38.9 且寶寶好 → 嬰兒室抽血視結果", "產後母親發燒 → 嬰兒室，通知主治"],
+        ["p", "破水：早產 34–36 週 ≥18 hr → OBN + 抗生素；足月 ≥48 hr → OBN + 抗生素；足月 18–48 hr → 嬰兒室抽血視結果", ""],
+        ["p", "GBS(+)/未知：IAP ≥4 hr 足夠且 ≥35 週 → routine；34 週或 IAP 不足 → 抽血（34 週 + 不足 → OBN + 抗生素）", "足夠 IAP = penicillin G、ampicillin 或 cefazolin 產前 ≥4 hr"],
+        ["l", "CBC/DC、CRP、Blood culture（出生 6–12 hr）", "抽血者觀察 ≥48 hr"],
+        ["p", "轉 OBN：臨床症狀、WBC ≥30000 或 ≤5000、band ≥5%、I/T ≥0.2、CRP ≥10、urine GBS Ag(+)", ""],
+        ["m", "Ampicillin 50 mg/kg IM：GA <34 週 q12h、≥35 週 q8h（≤7 天）", ""],
+        ["m", "Gentamicin IM：GA ≤34 週 5 mg/kg q36h；≥35 週 4 mg/kg q24h", ""]
+      ] },
+    { "name": "新生兒黃疸", "hint": "", "en": "Neonatal hyperbilirubinemia, phototherapy",
+      "orders": [
+        ["p", "需進一步檢查：microbilirubin 第一天 >5、任何時間 >15、照光 3 天後仍黃", ""],
+        ["l", "CBC/DC、reticulocyte、bilirubin T/D、CRP", "陰性 → 繼續照光"],
+        ["l", "Blood type、Rh、direct Coombs、PB smear、G6PD、TSH、U/A、U/C", "依情況加 TORCH IgM、VDRL、HBsAg、sepsis work-up", "進一步"],
+        ["p", "轉 OBN：24 hr 內黃疸、上升 >5 mg/dL/24 hr、足月 ≥17（早產 2000–2499 g ≥15）、direct ≥2、Hb <13 或 retic >5%", ""],
+        ["p", "照光 1 台 JOD301；2 台（加強）D919-030", "照光每台加水 10 mL/kg/day"],
+        ["p", "早產 <35 週照光 / 換血：<1500 g 5–8 / 13–16；1500–1999 8–12 / 16–18；2000–2500 11–14 / 18–20", "危險因子：溶血、G6PD、窒息、嗜睡、體溫不穩、敗血症、酸中毒、albumin <3"]
+      ] },
+    { "name": "OBN 新生兒輸液", "hint": "TDF", "en": "Neonatal total daily fluid and IV fluids",
+      "orders": [
+        ["p", "第一天：早產 80、足月 70 mL/kg/day；每天 +10 到 150（照光 +10，max 170）", "體重還在掉時用出生體重算｜TDF = 奶 + TPN + SMOF + IVF"],
+        ["m", "第一天：<1000 g D5W、>1000 g 10% Glucose（D10W）", "<24 hr 加開 24 hr 生化"],
+        ["m", "24 hr 後：早產 / LBW 1/4 saline + dextrose 500 mL + 50% Glucose 2 PC；足月正常吃奶 1/4 saline + dextrose", ""],
+        ["p", "周邊：TPN / SMOF ≤1 g、dextrose <12.5%、不補鈣、不給高濃度升壓藥；keep open = 2 mL/hr", "TPN 1 g = 40 mL、SMOF 1 g = 5 mL｜奶醫囑在下一餐前 2 hr 送出"]
+      ] },
+    { "name": "新生兒抗生素劑量", "hint": "依體重與日齡", "en": "Neonatal antibiotic dosing",
+      "orders": [
+        ["m", "Ampicillin：<2 kg 0–7 天 50 mg/kg q12h、>7 天 q8h；>2 kg 0–7 天 q8h、>7 天 q6h", "腦膜炎劑量加倍"],
+        ["m", "Gentamicin：0–7 天 2.5 mg/kg q12h、>7 天 2.5 mg/kg q8h", ""],
+        ["m", "Cefotaxime 50 mg/kg：0–7 天 q12h、>7 天 q8h", ""],
+        ["m", "Vancomycin 15 mg/kg：0–7 天 q12h、>7 天 q8h", ""],
+        ["p", "ETT：<1000 g 2.5（7 cm）、1000–2000 g 3.0（8 cm）、2000–4000 g 3.5（9 cm）、>4000 g 3.5–4.0（10 cm）", ""]
+      ] },
+    { "name": "新生兒 PE 重點", "hint": "24 hr 內做完", "en": "Newborn physical examination",
+      "orders": [
+        ["p", "RR 40–60、HR 100–180、頭圍足月 32–37 cm", ""],
+        ["p", "頭：囟門、骨縫；產瘤（跨骨縫）vs 頭血腫（不跨骨縫）vs 帽狀腱膜下出血（波動、可大量失血）", ""],
+        ["p", "眼紅反射、耳位低 / 廔管、唇顎裂、後鼻孔閉鎖（NG 確認）、大量泡沫口水（TE fistula）", ""],
+        ["p", "鎖骨骨折、臂神經叢（Erb / Klumpke）、心雜音、股動脈脈搏、舟狀腹（橫膈疝氣）", ""],
+        ["p", "臍帶 2 動脈 1 靜脈；胎便 48 hr 內；生殖器不明不要先定性別；髖關節 Barlow / Ortolani", "有發現告知護理師並寫入 admission note"]
+      ] },
+    { "name": "停止親子同室", "hint": "母嬰同室中變差", "en": "Stop rooming-in warning signs",
+      "orders": [
+        ["p", "活力 / 吸吮差、發紺或蒼白、腹脹嘔吐、體溫 ≥38 或 ≤36.5、體重掉 >10%、尿布 ≤6 片", ""],
+        ["p", "→ 回嬰兒室、問病史做 PE、監測餵食與 I/O、疑敗血症做 sepsis work-up；餵不好或異常 → OBN", ""],
+        ["l", "Apt test（吞入母血）、KB test（M32-522）", "Apt：鹼化後仍粉紅 = 胎兒血｜KB：母胎輸血", "吐血 / 貧血"]
+      ] }
+  ]
+}

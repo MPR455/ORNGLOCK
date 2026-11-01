@@ -1,0 +1,75 @@
+{
+  "no": "43", "slug": "peds-neuro", "title": "兒科：抽搐 / 神經", "en": "Pediatric seizure and neurology", "icon": "⚡",
+  "items": [
+    { "name": "兒童抽搐中", "hint": "先當真的處理", "en": "Pediatric active seizure, status epilepticus first line",
+      "orders": [
+        ["p", "O2、側躺、清呼吸道、移除危險物；測 F/S", "真假難分一律當真"],
+        ["m", "Diazepam IV BW/4 mg（0.2–0.3 mg/kg，<5 mg/min）或 PR BW/2 mg（0.5 mg/kg）", "5 分鐘未停可再給｜<5 歲 max 5 mg、>5 歲 max 10 mg"],
+        ["m", "Lorazepam 0.1 mg/kg IV（≤2 mg/min）", "5 分鐘可再給", "替代"],
+        ["m", "Midazolam 0.15 mg/kg IV/IM", "無 IV 時", "無 IV"],
+        ["l", "F/S、Na、K、Ca、Mg、Cl、lactate、blood gas、CPK、抗癲癇藥濃度", "新病人加 CBC/DC、B/C、BUN、Cr、GOT、GPT、P、NH3"],
+        ["p", "第一劑 diazepam 無效 → 通知 LW / 上線", ""]
+      ] },
+    { "name": "兒童抽搐：第二線", "hint": "BZD 後仍抽", "en": "Pediatric status epilepticus second line",
+      "orders": [
+        ["m", "Phenytoin 10–20 mg/kg IV（<50 mg/min）→ 5 mg/kg/day q8–12h", "適應：>1 歲或頭部外傷，較不影響意識｜只能用 NS（不可混葡萄糖）"],
+        ["m", "Phenobarbital 10–20 mg/kg IV over 5–10 min（max 300 mg）→ 5 mg/kg/day q12h", "適應：<1 歲｜與 diazepam 太近易 apnea"],
+        ["m", "Valproate 15 mg/kg IV over 3–5 min → 1 mg/kg/hr 或 10 mg/kg q8h", "<2 歲慎用（肝毒性）、追 AST/ALT/NH3｜與 meropenem 併用濃度掉"],
+        ["m", "Levetiracetam 10–20 mg/kg IV → 10 mg/kg q8–12h", "依腎功能"],
+        ["p", "第三線（midazolam / lorazepam 連續滴注）→ 轉 PICU", "嚴重腦水腫照 IICP 處理；積極找原因（brain CT）"]
+      ] },
+    { "name": "抽搐病人入院常規", "hint": "有抽搐病史住院", "en": "Seizure patient admission orders",
+      "orders": [
+        ["p", "呼吸治療單：O2 flow PRN if seizure", "文字醫囑：O2 flow and diazepam __ mg IV（或 supp）PRN if seizure"],
+        ["m", "Diazepam IV BW/4 mg PRN if seizure（無 IV 改 supp BW/2 mg）", "藥囑要開"],
+        ["l", "抗癲癇藥濃度（trough）", "檢驗 → 其他檢驗 → 癲癇藥物｜入院正在抽 → stat 抽完再給藥"],
+        ["p", "不要停原本的抗癲癇藥；NPO 要先改 IV 劑型", "已吃 phenobarbital / phenytoin / valproate 控制差 → boost 5 mg/kg"],
+        ["p", "問：有無吃藥、劑量或藥物改變、型態是否相同、發燒、感染、電解質、外傷、發展遲緩", ""]
+      ] },
+    { "name": "熱性痙攣", "hint": "6 月–6 歲、發燒 24 hr 內", "en": "Febrile seizure, simple vs complex",
+      "orders": [
+        ["p", "單純型：<15 分、24 hr 內一次、全身性；複雜型：>15 分、一天 ≥2 次、局部、發作後局部症狀；>30 分 = febrile SE", ""],
+        ["l", "LP", "排除：腦膜炎（重點在找發燒原因）", "疑 CNS"],
+        ["x", "EEG + Brain MRI", "適應：複雜型或過去病史", "複雜型"],
+        ["p", "第一次熱性痙攣：不排 EEG、不給抗癲癇藥", "抽完 2–3 hr 仍未清醒 → 想腦炎或 NCSE"]
+      ] },
+    { "name": "第一次無熱抽搐：檢查", "hint": "新發作", "en": "First unprovoked seizure workup, EEG",
+      "orders": [
+        ["x", "EEG sleep（M29-018-Z，<6 歲）/ awake + sleep（M29-029-Z，>6 歲）", "☎8526/8525 電話告知技術員｜chloral hydrate 0.5 mL/kg"],
+        ["x", "Brain echo（前囟未關 M32-061；已關 TCCS M29-088-Z）、Brain CT / MRI", "MRI ☎8400"],
+        ["l", "Na、K、Cl、Ca、Mg、sugar、BUN、Cr（± ABG、NH3）", ""],
+        ["p", "通常不需給藥，除非 EEG 明顯異常", "Dravet（SCN1A）避免 lamotrigine、phenobarbital、oxcarbazepine、carbamazepine、phenytoin"]
+      ] },
+    { "name": "兒童腦炎", "hint": "發燒 + 意識 / 行為改變", "en": "Pediatric encephalitis",
+      "orders": [
+        ["l", "CSF：HSV、enterovirus、mycoplasma、EBV", ""],
+        ["m", "Acyclovir 20 mg/kg IV q8h（3 月–12 歲）；>12 歲 10 mg/kg q8h", "適應：口腔潰瘍或局部抽搐"],
+        ["m", "Half-saline（D2.5S½）60–80% 維持量", "限水"],
+        ["m", "Glycerol 0.5 mL/kg/hr 或 Mannitol 2.5–5 mL/kg q6h", "降腦壓", "IICP"],
+        ["p", "排除：電解質、低血糖、顱內病灶、中毒、重積癲癇", "監測意識"]
+      ] },
+    { "name": "兒童顱內壓上升", "hint": "嘔吐、囟門鼓、Cushing", "en": "Pediatric increased intracranial pressure",
+      "orders": [
+        ["p", "嘔吐、嗜睡、前囟鼓、高音哭、頭痛、乳突水腫、瞳孔散大、Cushing triad", ""],
+        ["x", "Brain CT", "排除：水腦、出血｜日間 ☎3789、夜間急診 ☎2568、兒童 CT ☎8404"],
+        ["m", "Glycerol 0.5 mL/kg/hr 或 10 mL/kg/day", "taper 與主治確認（每 2 hr 減 2–3 mL/hr；反彈頭痛 → hold）"],
+        ["m", "Mannitol 2.5–5 mL/kg IV q6h（max 75 mL）", ""],
+        ["m", "Dexamethasone 0.15 mg/kg IV q6h（max 5 mg）", "適應：腫瘤周圍水腫", "腫瘤"],
+        ["p", "床頭抬高、限水 75% 維持量；GCS <8 插管；照會神外（EVD、shunt）", "確認主治是否指定神外醫師"]
+      ] },
+    { "name": "抗癲癇藥後起疹", "hint": "新用藥後紅疹", "en": "Rash on antiseizure medication",
+      "orders": [
+        ["p", "立即停所有抗癲癇藥，通知 fellow / 主治", "調整用藥務必與主治或總醫師討論"],
+        ["m", "Diazepam PRN if seizure", "停藥期間抽搐只給 diazepam"],
+        ["m", "Diphenhydramine 1 mg/kg IV q6h", "抗組織胺或類固醇"]
+      ] },
+    { "name": "兒童抗癲癇藥維持劑量", "hint": "病房常用", "en": "Pediatric antiseizure medication doses",
+      "orders": [
+        ["m", "Phenobarbital 維持 3–5 mg/kg/day", "負荷 10–15 mg/kg"],
+        ["m", "Levetiracetam 維持 10–50 mg/kg/day", "負荷 10–20 mg/kg｜腎排"],
+        ["m", "Valproate 維持 20–40 mg/kg/day", "負荷 10–20 mg/kg｜肝代謝"],
+        ["m", "Phenytoin 維持 5 mg/kg/day", "負荷 10–15 mg/kg"],
+        ["p", "Topiramate 1–9、oxcarbazepine 10–60（局部型首選）、zonisamide 2–4、clonazepam 0.1–0.2、vigabatrin 30–100、lacosamide 2–12 mg/kg/day", "確認劑型並在藥囑後註記劑量"]
+      ] }
+  ]
+}

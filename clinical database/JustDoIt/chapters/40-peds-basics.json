@@ -1,0 +1,80 @@
+{
+  "no": "40", "slug": "peds-basics", "title": "兒科：基本醫囑 / 劑量", "en": "Pediatrics basics, dosing, fluids, resuscitation", "icon": "🧒",
+  "items": [
+    { "name": "兒科住院基本醫囑", "hint": "每個新病人都要", "en": "Pediatric admission orders, weight-based dosing",
+      "orders": [
+        ["p", "體重、身高、頭圍（<3 歲必量）＋生長曲線百分位", "頭圍：足月 35 cm；0–3 月 +2 cm/月、3–6 月 +1、6–12 月 +0.5"],
+        ["p", "TPR QID、BP QD、I/O Q8H", "腦瘤 / 頭部外傷 / 昏厥：加 GCS + BP q4–8h"],
+        ["p", "先問過敏史與 G6PD；penicillin 類做 PCT（<3 個月免）", ""],
+        ["p", "劑量規則：針劑寫 mg、口服水劑寫 mL", "≥40 kg 用成人劑量（20 kg ≈ 半量，不超過成人最大量）｜<7 歲開糖漿、約 7 歲可吞錠｜<20 kg 每種藥通常 ≤10 mL/dose，糖漿 >10 mL 要再確認｜分清 mg/kg/dose vs mg/kg/day"],
+        ["p", "抗生素、抗癲癇藥、類固醇、鎮靜：藥囑後註記 mg/kg/day", "例：Cefazolin 100 mg/kg/day；progress note 也要寫劑量與起訖日"],
+        ["p", "開檢查一律註明年齡與 indication", "Kawasaki 心超註明身高體重｜支氣管鏡、胸超先聯絡胸腔科 CR"]
+      ] },
+    { "name": "維持輸液（4-2-1）", "hint": "NPO 或喝不夠", "en": "Maintenance IV fluid, Holliday-Segar 4-2-1, 100-50-20",
+      "orders": [
+        ["p", "速率：<10 kg → 4 mL/kg/hr；10–20 kg → 40 + 2×(BW−10)；>20 kg → 60 + (BW−20) mL/hr", "一天量 100 / 50 / 20 mL/kg：10 kg = 1000 mL（約 40 mL/hr）、20 kg = 1500（60）、30 kg = 1700（70）"],
+        ["m", "1/4 saline + dextrose（D5S¼ / D0.225S）維持量", "適應：一般維持、等張脫水｜低血糖或持續腹瀉：每 500 mL 加 50% Glucose 1–2 amp（+2–4%）"],
+        ["m", "Multi-electrolyte No.2（台大二號）或 No.3（台大三號）", "適應：腸胃炎吐瀉（<8–10 歲用二號、大孩用三號），無禁忌可 1.2–1.5× 維持量｜禁忌：高血鉀、無尿、休克", "腸胃炎"],
+        ["m", "Half-saline（D2.5S½）60–80% 維持量", "適應：腦炎 / 腦水腫限水（大孩可用 D5S）", "腦炎"],
+        ["p", "沒有小便不加 K；15% KCl 不可 IV push", "尿量目標 1–4 mL/kg/hr（平均 2）"],
+        ["p", "維持電解質：Na 3 mEq/kg、K 2 mEq/kg（前 10 kg）", ""]
+      ] },
+    { "name": "脫水評估與補液", "hint": "吐瀉、喝不下", "en": "Dehydration assessment and rehydration",
+      "orders": [
+        ["p", "脫水程度：嬰兒（≤6 月）5 / 10 / 15%；大孩 3 / 6 / 9%", "看皮膚彈性、口唇黏膜、眼窩、眼淚、囟門、脈搏、尿量｜有病前體重：(病前 − 現在) / 病前"],
+        ["m", "Normal saline 或 Lactated Ringer 10–20 mL/kg bolus", "適應：生命徵象不穩、嚴重少尿｜補 deficit 時要扣掉已給的 bolus，否則易低鈉、高血糖、抽搐"],
+        ["l", "Na、K、Cl、BUN、Cr、sugar（± ABG）", "高鈉（>150）Na q6h；低鈉（<130）Na q12h"],
+        ["p", "高血鈉脫水：至少 half saline + 5% dextrose，Na 下降 ≤0.5 mEq/L/hr", "", "高鈉"],
+        ["m", "3% NaCl 10 mL/kg over 1 hr", "適應：低血鈉合併抽搐｜一般低鈉脫水上升 ≤2 mEq/L/hr", "低鈉抽搐"]
+      ] },
+    { "name": "發燒 routine / 退燒藥", "hint": ">38.5°C", "en": "Fever routine, antipyretics, acetaminophen, ibuprofen",
+      "orders": [
+        ["p", ">38°C 冰枕（<3 個月用水枕）；>38.5°C 退燒藥；>39°C 吃藥 1 hr 仍高 → 栓劑或 ibuprofen + 溫水浴", "<3 個月不規則吃退燒藥｜記錄發燒天數、溫度與症狀先後"],
+        ["m", "Acetaminophen 24 mg/mL：BW/2 mL PO q6h PRN（10–15 mg/kg）", "最安全的第一線"],
+        ["m", "Ibuprofen 20 mg/mL：BW/2 mL PO q6h PRN（5–10 mg/kg）", "禁忌：<6 個月、脫水、腎功能差、出血"],
+        ["m", "Diclofenac supp 12.5 mg：15–20 kg 1 顆、10–14 kg ⅔、7.5–9 kg ½、<7.5 kg ⅓ q6h PRN", "一天 ≤3 次｜禁忌：腹瀉、血液腫瘤病人（勿塞劑、勿肛溫）", ">39°C"]
+      ] },
+    { "name": "檢查鎮靜", "hint": "CT、MRI、EEG、心超不能配合", "en": "Procedural sedation, chloral hydrate, midazolam, ketamine",
+      "orders": [
+        ["m", "Chloral hydrate 10%（100 mg/mL）0.5 mL/kg PO（50 mg/kg）", "適應：CT、EEG、腦幹聽力｜心超 0.6 mL/kg、MRI 1 mL/kg｜max 30 mL｜意識變差者減量｜新生兒全量 0.5 mL/kg｜需鎮靜同意書 + 恢復紀錄表"],
+        ["m", "Midazolam 0.1 mg/kg IV（max 5 mg）", "適應：MRI 加量、BMA｜劑型 5 mg/1 mL、15 mg/3 mL｜中重度鎮靜同意書", "加強"],
+        ["m", "Ketamine 1 mg/kg IV（max 50 mg）", "劑量用 mg 開（1 支 = 500 mg/10 mL，勿開 1 PC）｜禁忌：顱內壓上升", "加強"],
+        ["p", "Brain echo 不需鎮靜；意識差者不一定要開", ""]
+      ] },
+    { "name": "兒童生命徵象正常值", "hint": "HR / RR / BP", "en": "Pediatric vital signs normal ranges",
+      "orders": [
+        ["p", "HR：新生兒 125（70–190）、1–11 月 120（80–160）、2 歲 110（80–130）、4 歲 100（80–120）、6 歲 100（75–115）、8–10 歲 90（70–110）", ""],
+        ["p", "RR：新生兒 30–50、1 歲 25–35、2–4 歲 20–30、5–15 歲 15–25、>15 歲 12–20", "出生後 1–2 hr 可 >50"],
+        ["p", "低血壓：SBP < 70 + 2 × 年齡；CRT >2 秒 = 灌流差", "連續 BP 變化更重要"],
+        ["p", "SIRS：T >38 或 <36、HR >160（嬰）/ >150（兒）、RR >60 / >50、WBC >12k 或 band >10%", "嚴重敗血症 SBP：嬰 <65、兒 <75、青少年 <90"]
+      ] },
+    { "name": "兒童急救藥物 / CPR", "hint": "PALS", "en": "Pediatric resuscitation, PALS drug doses",
+      "orders": [
+        ["m", "Epinephrine 0.01 mg/kg IV/IO（1:10,000 0.1 mL/kg）q3–5 min", "適應：無脈搏、HR <60 合併灌流差｜經氣管內管 0.1 mg/kg（1:1000 0.1 mL/kg）"],
+        ["m", "Atropine 0.02 mg/kg IV（最小 0.1 mg、單次最大 0.5 mg）", "適應：迷走神經性緩脈、AV block", "緩脈"],
+        ["m", "Adenosine 0.1 mg/kg 快速推（max 6 mg）→ 0.2 mg/kg（max 12 mg）", "適應：SVT（嬰兒 ≥220、兒童 ≥180/min）｜先試迷走刺激", "SVT"],
+        ["m", "Amiodarone 5 mg/kg IV over 20–60 min", "適應：VF / 無脈 VT（可重複 2 次）、穩定寬 QRS", "VT"],
+        ["m", "10% Glucose（D10W）2 mL/kg slow IV", "適應：低血糖", "低血糖"],
+        ["m", "Calcium gluconate 10% 1 mL/kg（100 mg/kg）", "適應：低血鈣、高血鉀、CCB 中毒", "高鉀"],
+        ["m", "Sodium bicarbonate 1 mEq/kg", "適應：通氣良好下代謝性酸中毒、高血鉀｜新生兒用 0.5 mEq/mL 2 mL/kg", "酸中毒"],
+        ["m", "Naloxone 0.1 mg/kg IV/IM（max 2 mg）q2–3 min", "適應：鴉片類過量", "鴉片"],
+        ["p", "電擊：去顫 2 J/kg → 4 J/kg；同步整流 0.5–1 J/kg → 2 J/kg", "15:2 按壓通氣（雙人），100–120 次/分，深度胸厚 1/3"],
+        ["p", "ETT 內徑 = (16 + 年齡) / 4；深度 = 3 × 內徑", "Dopamine / dobutamine 6 mg/kg in 100 mL → 1 mL/hr = 1 mcg/kg/min"]
+      ] },
+    { "name": "兒童高血鉀", "hint": "K ≥6", "en": "Pediatric hyperkalemia",
+      "orders": [
+        ["x", "ECG + monitor", ">6 T 波高尖；6.5–7.5 PR / QRS 變寬；>8 P 波消失、可 VF"],
+        ["m", "Calcium gluconate 10% 0.5–1 mL/kg over 3–5 min", "適應：心律不整或 ECG 變化｜10 分鐘可重複｜不可與 NaHCO3 同管"],
+        ["m", "Regular insulin 0.1 U/kg IV + 50% Glucose 稀釋成 D25W 2 mL/kg（0.5 g/kg）over 30 min", "適應：K >7｜每小時驗血糖"],
+        ["m", "Sodium bicarbonate 1–2 mEq/kg over 5–10 min", "適應：K >7（無酸中毒也可）"],
+        ["m", "Calcium polystyrene sulfonate（Kalimate）1 g/kg PO / 灌腸 q6h", "適應：K 6–7 增加排出"],
+        ["p", "上述無效 → 透析", ""]
+      ] },
+    { "name": "值班 panic lab / 要找外科", "hint": "先想到再說", "en": "Panic values, emergent surgery in children",
+      "orders": [
+        ["p", "Panic：WBC >20k、blast、band >5%、CRP >100、Hb <7、Plt <20k、B/C 長 GNB、sugar <50", ""],
+        ["p", "急開刀：闌尾炎、腸缺血、腸套疊復位失敗、腸扭轉、沾黏性腸阻塞、化膿性關節炎、深頸部感染、眼眶蜂窩性組織炎、異物吸入", ""],
+        ["p", "意識改變為轉 PICU 標準；GCS <8 考慮插管保護呼吸道", "病人轉 ICU：通知主治、寫 transfer note"]
+      ] }
+  ]
+}

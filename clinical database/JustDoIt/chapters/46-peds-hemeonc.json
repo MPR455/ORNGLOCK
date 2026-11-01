@@ -1,0 +1,94 @@
+{
+  "no": "46", "slug": "peds-hemeonc", "title": "兒科：血液腫瘤", "en": "Pediatric hematology and oncology", "icon": "🩸",
+  "items": [
+    { "name": "兒童嗜中性球低下發燒", "hint": "True emergency", "en": "Pediatric febrile neutropenia",
+      "orders": [
+        ["p", "第一時間開抗生素，親手交護理師送單", "BP Q8H（及早發現敗血性休克）、I/O Q8H｜不要量肛溫、不用肛門栓劑"],
+        ["l", "CBC/DC、生化、Blood culture（有 Port-A：一套由 port、一套周邊）、U/A ± U/C", "查口腔、肛門、皮膚、注射處｜CXR（咳、喘、胸痛）、KUB / echo（腹痛、腹瀉 → typhlitis）"],
+        ["m", "Ceftazidime 50 mg/kg IV q8h + Amikacin 5 mg/kg IV q8h", "病人看起來不好、找不到 focus"],
+        ["m", "Cefepime 50 mg/kg IV q8h 或 Meropenem 20 mg/kg IV q8h", "單一藥物替代｜疑 ESBL → carbapenem", "替代"],
+        ["m", "Cefazolin 25 mg/kg q6h + Gentamicin 2 mg/kg q8h", "適應：\"not sick\"、生命徵象穩定", "穩定"],
+        ["m", "加 Vancomycin 15 mg/kg q6h（或 Teicoplanin）", "適應：傷口感染、Port-A 紅腫、腦膜炎徵象｜3 天無 MRSA 改回", "導管 / 皮膚"],
+        ["m", "加 Metronidazole 7.5 mg/kg q6h", "適應：肛門痛或紅腫", "肛周"],
+        ["m", "Half-saline（D2.5/0.45S）", "維持 vessel tonicity"],
+        ["m", "Fluconazole 6–12 mg/kg 或 Voriconazole 6 → 4 mg/kg q12h", "適應：廣效抗生素 >5 天仍燒、培養有黴菌、影像疑黴菌、肝脾微膿瘍", ">5 天"],
+        ["m", "Filgrastim 5 mcg/kg IV", "縮短 neutropenia｜預設 SC 記得改 IV（300 mcg ≥40 kg、75 mcg 劑型）", "依主治"],
+        ["p", "退燒 3 天且白血球回升可出院；用抗生素中再 spiking → 換藥前再抽 B/C ± fungus culture", ""]
+      ] },
+    { "name": "新診斷白血病", "hint": "Leukemia work-up", "en": "Newly diagnosed childhood leukemia workup",
+      "orders": [
+        ["m", "1/4 saline + dextrose 500 mL + Sodium bicarbonate 20 mL，3000 mL/m2/day", "P 高 → 馬上移除含 NaHCO3 點滴（鹼性易磷酸鈣結晶）"],
+        ["l", "CBC/DC、PT、aPTT、fibrinogen、AT-III、BUN、Cr、AST、ALT、Na、K、Ca、P、uric acid、LDH、albumin、TP", ""],
+        ["l", "EBV-VCA IgG、CMV IgG、HBsAg、anti-HBs、anti-HBc、IgG/M/A、U/A、Blood smear interpretation（M32-504）、備血", ""],
+        ["x", "CXR", "縱膈腔腫瘤"],
+        ["m", "Allopurinol 10 mg/kg/day PO TID", ""],
+        ["m", "Rasburicase 0.15–0.2 mg/kg（max 7.5 mg）", "適應：uric acid >8｜禁忌：G6PD 缺乏", "UA >8"],
+        ["x", "BMA：aspiration、POX、PAS、leukemia marker、chromosome、RT-PCR（ALL C77-001 ×3、AML C77-029）、MRD（C77-043）", "6L 抹片室 ☎8195｜cell marker ☎8365#365｜染色體 ☎2355"],
+        ["p", "WBC >100k：小心輸血，維持 Plt >20k；無症狀盡量不輸 RBC（增加黏滯）", ""]
+      ] },
+    { "name": "兒童腫瘤溶解症候群", "hint": "UA、K、P 高，Ca 低", "en": "Pediatric tumor lysis syndrome",
+      "orders": [
+        ["p", "Lab TLS ≥2 項：UA >8、K >6、P >6.5、Ca <7；+ 腎功能、心律不整或抽搐 = clinical TLS", ""],
+        ["m", "Hydration 2–3 L/m2/day，尿量 ≥3 mL/kg/hr", "可加 Furosemide"],
+        ["m", "Allopurinol 10 mg/kg/day TID 或 Rasburicase（高風險）", "高磷時不要鹼化尿液"],
+        ["l", "LDH、BUN/Cr、electrolyte、uric acid、VBG、urine pH / SG；EKG、尿量、體重", ""],
+        ["m", "Calcium gluconate 10% 0.5–1 mL/kg slow IV + ECG", "適應：有症狀低血鈣（tetany）｜Ca × P >60 會沉積", "低鈣症狀"],
+        ["m", "Sevelamer 或 Calcium carbonate", "高血磷", "高磷"],
+        ["p", "透析：P >6 + 低鈣、GFR <50%、K >6 合併 QRS 寬、嚴重酸中毒、利尿無效水腫、無尿 / 尿毒、有症狀低鈣、BP >150/90 且 10 hr 尿少、心衰", ""]
+      ] },
+    { "name": "兒童輸血", "hint": "LPR / LPP", "en": "Pediatric transfusion thresholds and orders",
+      "orders": [
+        ["p", "本單位只用 LPR、LPP、ILPR、ILPP（不用 PRBC、platelet concentrate）", "寫血品、用量、日期、時間：LPR 2U run >2 hr；LPP 6U run >1 hr"],
+        ["p", "每次住院第一次輸血要同意書；移植前後或 SAA 用免疫抑制 → 照射 ILPR / ILPP", "血庫 ☎2538/2548"],
+        ["p", "RBC：兒童 Hb <8 圍術期 / 有症狀慢性貧血 / 骨髓衰竭；<13 + 嚴重心肺病｜≤4 月嬰兒 <13 嚴重肺或心、<10 中度肺病或大手術、<8 有症狀", ""],
+        ["p", "Plt：<50k 出血或侵入性處置；<20k 骨髓衰竭有出血風險；<10k 無風險｜≤4 月：<100k 出血 / ECMO、<50k 處置或不穩、<20k 穩定", ""],
+        ["m", "Diphenhydramine 1 mg/kg IV ± Hydrocortisone", "適應：常輸血起疹者 premed｜Diphenhydramine 預設 IM，記得改 IV", "常起疹"]
+      ] },
+    { "name": "Port-A 照護 / 阻塞", "hint": "", "en": "Port-A catheter care and occlusion",
+      "orders": [
+        ["m", "Heparin lock：>40 kg 100 U/mL 5 mL；10–40 kg 100 U/mL 3 mL；<10 kg 10 U/mL 3 mL", "拔針時邊推邊拔保持正壓｜過量可能 HIT"],
+        ["p", "抽血先抽 5–6 mL 丟棄", ""],
+        ["m", "Urokinase 5000 U/lumen（病房：6000 U 稀釋成 NS 3 mL）留置 ≥2 hr", "適應：確認針位、姿勢、藥物後仍阻塞｜無效重複 10000 U/lumen → 手術移除"],
+        ["x", "Ultrasonography / venography", "適應：DVT 徵象", "DVT"]
+      ] },
+    { "name": "血友病出血", "hint": "Factor VIII / IX", "en": "Hemophilia bleeding replacement",
+      "orders": [
+        ["m", "Factor VIII concentrate：關節 40 U/kg → 第 2、3 天 20 U/kg；危及生命 / 手術提升到 100%（50 U/kg → 3–4 U/kg/hr）", "A 型：1 U/kg 提升 2%｜腸腰肌 50 → 25 q12h → 20 QOD 共 10–14 天"],
+        ["m", "Factor IX concentrate：關節 60–80 U/kg → 第 2、4 天 40 U/kg；嚴重 80 → 40 U/kg q24h", "B 型：1 U/kg 提升 1%（重組型 ×1.4）｜會診血液科", "B 型"],
+        ["m", "Tranexamic acid", "適應：口腔、鼻出血、拔牙", "黏膜"],
+        ["m", "Desmopressin", "適應：輕度 A 型", "輕度 A"],
+        ["p", "手術前篩凝血因子抗體（inhibitor）", ""]
+      ] },
+    { "name": "骨髓穿刺（BMA）", "hint": "白血病", "en": "Pediatric bone marrow aspiration",
+      "orders": [
+        ["m", "Midazolam 0.1 mg/kg + Ketamine 1 mg/kg IV", "劑量一律寫 mg（Ketamine 1 PC = 500 mg！）｜病人能配合可免｜O2 standby"],
+        ["m", "Lidocaine 1% 5 mL 局麻", ""],
+        ["m", "Heparin 25,000 U/5 mL 1 PC（rinse 空針）", ""],
+        ["p", "新診斷約 18 mL：無菌管 2 mL marker、綠頭 2 mL chromosome、紫頭（大）2 mL molecular、綠頭 5 mL ×2 + 紫頭 2 mL MRD；追蹤約 9 mL", "Dry tap 且 PB blast >70% → 改抽 PB 綠頭 10 mL ×2 + 紫頭 2 mL"],
+        ["p", "同意書：骨髓檢查、剩餘檢體 ×2、癌症分子診斷單、MRD 單", ""]
+      ] },
+    { "name": "腫瘤急症：高血鈣 / SIADH", "hint": "", "en": "Pediatric oncologic hypercalcemia and SIADH",
+      "orders": [
+        ["m", "Normal saline 3000 mL/m2/day + Furosemide 1–2 mg/kg IV q6h", "高血鈣 >12：停含鈣藥物"],
+        ["m", "Calcitonin 4–8 IU/kg SC/IM q12h", "", "高鈣"],
+        ["m", "Prednisolone 1.5–2 mg/kg/day", "", "高鈣"],
+        ["p", "SIADH：Na <130、Sosm <280、Uosm >500 → 限水（不感流失 500 mL/m2/day）、利尿；嚴重 3% NaCl 慢慢給", "Endoxan、vincristine、cisplatin 會引起"]
+      ] },
+    { "name": "腫瘤急症：SVC / 脊髓壓迫 / 顱內壓", "hint": "", "en": "Pediatric SVC syndrome, spinal cord compression, raised ICP",
+      "orders": [
+        ["p", "SVC / 前縱膈腫瘤：不要平躺、不要鎮靜（插管可能極困難）", ""],
+        ["x", "CXR、Chest CT", ""],
+        ["l", "CBC/DC、LDH、uric acid、AFP、β-hCG", "先評估麻醉風險"],
+        ["x", "Spine MRI with gadolinium", "脊髓壓迫：背痛、近端無力、感覺平面、大小便｜禁 LP", "背痛無力"],
+        ["m", "Dexamethasone 1–2 mg/kg/day 負荷 → 0.25–0.5 mg/kg q6h", "脊髓壓迫 / 腫瘤水腫"],
+        ["p", "IICP：床頭抬高、75% 維持量、mannitol、插管過度換氣、照會神外", ""]
+      ] },
+    { "name": "Typhlitis / 肛周膿瘍", "hint": "嗜中性球低下 + 右下腹痛", "en": "Neutropenic enterocolitis (typhlitis), perirectal abscess",
+      "orders": [
+        ["x", "KUB、Abdominal echo、CT", ""],
+        ["p", "NPO、NG 減壓、IVF 與電解質", ""],
+        ["m", "Piperacillin-tazobactam 或 Meropenem（± Metronidazole）", "涵蓋厭氧與 G(−)"],
+        ["p", "手術：持續出血、穿孔、敗血症控制不住｜肛周膿瘍：抗生素、G-CSF、坐浴", ""]
+      ] }
+  ]
+}

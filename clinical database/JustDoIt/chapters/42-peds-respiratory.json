@@ -1,0 +1,96 @@
+{
+  "no": "42", "slug": "peds-respiratory", "title": "兒科：呼吸", "en": "Pediatric respiratory: croup, asthma, bronchiolitis, pneumonia", "icon": "🫁",
+  "items": [
+    { "name": "兒童喘 / 血氧低：第一輪", "hint": "先分上下呼吸道", "en": "Pediatric dyspnea and desaturation",
+      "orders": [
+        ["p", "聽呼吸音：stridor → croup；wheeze → 氣喘 / 細支氣管炎；crackles → 肺炎", "哮吼 cold flow；1 歲前喘鳴嬰兒 warm flow（加 heater）"],
+        ["p", "O2：<5 歲 O2 hood、>5 歲鼻導管 / 面罩", "開呼吸治療申請單（O2、拍痰、吸入藥、oximeter）"],
+        ["l", "ABG 或 VBG、electrolyte", "適應：SpO2 <95%"],
+        ["x", "CXR", "排除：肺炎、氣胸、縱膈氣腫、肺塌陷"],
+        ["p", "IV 70–80% 維持量；喘時不要 feeding as tolerated", "急性喘時奶量減半或 NPO，防嗆奶吸入"],
+        ["p", "吸入藥要開 stat 才會馬上吸；routine = TID（9-15-21）", ""]
+      ] },
+    { "name": "哮吼（Croup）", "hint": "stridor、犬吠咳，6 月–3 歲", "en": "Croup, laryngotracheobronchitis",
+      "orders": [
+        ["m", "Dexamethasone 0.6 mg/kg PO/IM/IV ×1（max 16 mg）", "不需重複給"],
+        ["m", "Epinephrine 1:1000 0.5 mL/kg（max 5 mL）+ NS 2 mL 霧化 q20min PRN stridor", "適應：中度以上｜住院 q2h PRN，通常吸約 3 天"],
+        ["m", "Budesonide neb 2 mg ×1", "第二線", "替代"],
+        ["p", "O2 hood cold flow", ""],
+        ["p", "常規不驗血、不驗病毒、不照片子；不典型才照 neck lateral", "排除會厭炎（thumb sign）、咽後膿瘍"],
+        ["p", "轉 PICU：治療後仍嚴重、休息時 stridor 加重、需插管、呼吸衰竭徵象", "呼吸變慢、發紺、CO2 上升、意識變差"]
+      ] },
+    { "name": "兒童氣喘急性發作", "hint": "wheeze、用力呼吸", "en": "Pediatric acute asthma exacerbation",
+      "orders": [
+        ["m", "Terbutaline neb 0.2 mg/kg（max 10 mg）q20min ×3", "加 warm flow O2"],
+        ["m", "Ipratropium neb 0.25–0.5 mg q20min ×3", "適應：大喘（A + B）"],
+        ["m", "Methylprednisolone 1–2 mg/kg/day IV q6h", "轉口服 Prednisolone 1 mg/kg/day｜IV + PO 總天數 ≤7 天"],
+        ["m", "Prednisolone 1–2 mg/kg/day PO（max 60 mg）", "輕中度可直接口服", "口服"],
+        ["m", "Epinephrine 1:1000 0.01 mL/kg SC（max 0.3 mL）q20min ×3", "適應：吸入無效", "重度"],
+        ["m", "Aminophylline IV", "適應：住院 / ICU 仍未改善｜追 theophylline 濃度", "ICU"],
+        ["l", "ABG", "適應：SpO2 <95%"],
+        ["x", "CXR", "適應：氣胸 / 縱膈氣腫 / 皮下氣腫徵象、胸痛、發燒 ≥38.9、rales、插管後"],
+        ["p", "不要給鎮靜劑", "轉 ICU：1 hr 內反應差、PEF <30%、PaCO2 >45、PaO2 <60、嗜睡"],
+        ["p", "每日評 asthma severity score（GINA 或 Pulmonary Index Score）", "可出院：PEF >70% 持續 1 hr、SpO2 >95%"]
+      ] },
+    { "name": "氣喘出院 / 保養藥", "hint": "控制用藥", "en": "Pediatric asthma controller and discharge medications",
+      "orders": [
+        ["m", "Salbutamol MDI 1–2 puff st、q20min PRN", "<6 歲一律加開自費吸藥輔助器 aerochamber（84-935-060081）"],
+        ["m", "Montelukast：6 月–2 歲 4 mg granule、2–6 歲 4 mg chewable、>6 歲 5 mg chewable 1 pc HS", "健保不含 <6 個月"],
+        ["m", "Fluticasone MDI 50 mcg：1–4 歲 50–100 mcg BID、>4 歲 50–200 mcg BID", "保養用"],
+        ["m", "Salbutamol 2 mg/tab：2–6 歲 0.1–0.2 mg/kg TID、6–12 歲 2 mg TID、>12 歲 2–4 mg TID", "", "口服"],
+        ["m", "Fenoterol syrup 0.5 mg/mL：BW/5 mL QID（<1 mL/kg/day）", "", "口服"],
+        ["m", "Procaterol 5 mcg/mL：<0.5 mL/kg/day BID", "", "口服"],
+        ["p", "第一次吸藥 → L 棟 B1 氣喘中心衛教", "氣喘中心 ☎8770"]
+      ] },
+    { "name": "細支氣管炎", "hint": "<2 歲、RSV", "en": "Bronchiolitis, RSV",
+      "orders": [
+        ["p", "住院：<3 個月、GA <34 週、心肺疾病或免疫低下、RR >70、活力差、SpO2 <92% + 喘、CO2 高、肺塌陷 / 實質化", ""],
+        ["p", "O2 hood with heater（warm flow）", ""],
+        ["m", "Terbutaline neb + Acetylcysteine neb 試用", "效果因人而異，依主治決定", "依主治"],
+        ["l", "Sputum RSV Ag（<2 歲）；<4 個月加 chlamydia Ag", ""],
+        ["p", "拍痰至少每天 2 次", ""]
+      ] },
+    { "name": "兒童社區肺炎", "hint": "發燒 + 咳 + crackles", "en": "Pediatric community-acquired pneumonia",
+      "orders": [
+        ["x", "CXR PA + lateral", "疑肋膜積水加照 lateral decubitus"],
+        ["l", "CBC/DC、CRP、Blood culture", ""],
+        ["l", "Mycoplasma Ab、cold agglutinin、rapid agglutinin（床邊）", "適應：>2 歲疑黴漿菌", ">2 歲"],
+        ["l", "Sputum smear + culture、urine pneumococcal Ag（自費）", "疑細菌性", "細菌"],
+        ["l", "FilmArray（L72-971，檢體 TH，自費 8000）或 throat virus culture", "疑病毒", "病毒"],
+        ["m", "Amoxicillin-clavulanate IV 30 mg/kg q6h（120 mg/kg/day）", "第一線（或 Piperacillin-tazobactam）"],
+        ["m", "Cefuroxime 或 Ceftriaxone", "替代"],
+        ["m", "Azithromycin 10 mg/kg PO QD ×3–5 天", "黴漿菌｜≥8 歲可用 doxycycline", "非典型"],
+        ["m", "Acetylcysteine neb + Terbutaline neb", "化痰（J + B）；可加 3% NaCl 霧化"],
+        ["p", "拍痰 CPT 每天 ≥2 次", "吸藥 / 拍痰後評估抽痰"]
+      ] },
+    { "name": "兒童肋膜積水 / 膿胸", "hint": "肺炎 + 積水", "en": "Pediatric parapneumonic effusion, empyema",
+      "orders": [
+        ["x", "Chest echo（M21-051-Z）", "代碼：M21-051-Z｜☎8241｜先聯絡胸腔科 CR"],
+        ["x", "Thoracentesis（可 echo-guided）", "小孩 18G、嬰兒 21G｜積水 5–6 肋間腋中線、氣 2–3 肋間鎖骨中線｜術後 CXR"],
+        ["l", "Pleural fluid：pH（ABG 方式）、routine、Gram、rapid Ag、sugar、LDH、TP、cytology、culture（細菌、病毒、黴菌、TB）", "量不夠先送 culture + Gram"],
+        ["p", "膿、pH <7.0–7.2、glucose <40 或 Gram(+) → chest tube + 抗生素 5–10 天；分隔 → urokinase 或胸腔鏡", "仍不好 → decortication"],
+        ["p", "Chest tube Fr：新生兒 8–12、嬰兒 14–20、1–5 歲 20–24、5–10 歲 24–30、>10 歲 26–32", "拔管：24 hr 無氣泡 → 夾管 12–24 hr → CXR"]
+      ] },
+    { "name": "異物吸入 / 會厭炎", "hint": "突然嗆咳、流口水", "en": "Foreign body aspiration, epiglottitis",
+      "orders": [
+        ["x", "CXR inspiratory / expiratory 或 lateral decubitus", "1–3 歲、多在右主支氣管｜80% 不顯影，看單側空氣滯留"],
+        ["p", "疑異物 → 聯絡胸腔科 CR 安排支氣管鏡", "急開刀項目"],
+        ["p", "會厭炎：發燒 + stridor + 吞嚥困難、流口水；不要壓舌、讓孩子坐著", "Neck lateral：thumb sign"],
+        ["m", "Ceftriaxone 50 mg/kg IV q12h", "適應：會厭炎（Hib）", "會厭炎"]
+      ] },
+    { "name": "兒童過敏性鼻炎 / 流鼻水", "hint": "鼻水、鼻塞", "en": "Pediatric allergic rhinitis, rhinorrhea",
+      "orders": [
+        ["m", "Cetirizine 1 mg/mL：2–6 歲 2.5 mL、>6 歲 5 mL HS–Q12H", ""],
+        ["m", "Levocetirizine：6 月–5 歲 1.25 mg、6–11 歲 2.5 mg、≥12 歲 5 mg HS", ""],
+        ["m", "Cyproheptadine 0.4 mg/mL：BW/4 mL QID", "<3 個月不開（易昏睡）"],
+        ["m", "Mometasone nasal spray 每側 1 puff QD（2–11 歲）、>11 歲 1–2 puff", "≥2 歲"],
+        ["p", "洗鼻液（自費）：Baby spray 68-045-000115、Gentle jet（>6 歲）68-045-000135、Strong jet（>10 歲）68-045-000210", ""]
+      ] },
+    { "name": "兒童咳嗽 / 痰", "hint": "止咳化痰", "en": "Pediatric cough and mucolytics",
+      "orders": [
+        ["m", "Ambroxol 3 mg/mL：<2 歲 2.5 mL BID、2–6 歲 2.5 mL TID、6–12 歲 5 mL BID–TID", ""],
+        ["m", "Dextromethorphan（Medicon）syrup BW/8 mL QID", "幼童盡量避免（<2 歲少用）", "大孩"],
+        ["p", "勿 Robitussin + Secorine 合用（可 Secorine + Periactin）", ""]
+      ] }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "no": "44", "slug": "peds-gi", "title": "兒科：腸胃 / 肝膽", "en": "Pediatric gastroenterology and hepatology", "icon": "🍼",
+  "items": [
+    { "name": "兒童急性腸胃炎", "hint": "吐、拉、脫水", "en": "Pediatric acute gastroenteritis",
+      "orders": [
+        ["l", "CBC/DC、electrolytes、BUN、Cr、sugar、CRP、Blood culture", ""],
+        ["l", "Stool routine、rotavirus Ag（L72-918）、norovirus RNA（L72-911）、stool culture（Salmonella、Shigella、Campylobacter）", ""],
+        ["l", "C. difficile culture + toxin（L72-690）", "適應：有腸胃道病史", "特定"],
+        ["m", "Multi-electrolyte No.2 或 No.3，1.2–1.5× 維持量", "嚴重吐瀉、無灌水禁忌"],
+        ["m", "Oral rehydration solution", "輕中度可口服補充", "可喝"],
+        ["m", "Smectite：<1 歲 ⅓ 包、1–2 歲 ⅔ 包、>2 歲 1 包 TID", "與其他藥隔 1.5 hr"],
+        ["p", "病毒性 NPO 6 hr 再試吃；細菌性嚴重 NPO ≥12 hr", "NPO：持續吐膽汁 / 大量咖啡渣或鮮血、腹脹 + 劇痛、無法排除急腹症、意識不清"],
+        ["x", "KUB", "疑細菌性腸炎；疑 toxic megacolon q12h 追", "依情況"]
+      ] },
+    { "name": "細菌性腸胃炎：何時給抗生素", "hint": "Salmonella 等", "en": "Antibiotics for bacterial gastroenteritis in children",
+      "orders": [
+        ["p", "適應：腸外侵犯（菌血症、關節炎、骨髓炎、腦膜炎）、免疫低下（含 ≤12 月，尤其 ≤3 月）、嚴重（嚴重腹瀉、高燒或持續燒）、重大腸道疾病（Hirschsprung、IBD）、併發症（toxic megacolon、急腹症）", ""],
+        ["m", "Ceftriaxone 25–50 mg/kg IV q12h（50–100 mg/kg/day）", ""]
+      ] },
+    { "name": "兒童嘔吐", "hint": "先排除外科與非腸胃原因", "en": "Pediatric vomiting differential and antiemetics",
+      "orders": [
+        ["p", "腸胃：AGE、腸套疊、闌尾炎、腸扭轉、沾黏、便秘、異物", "非腸胃：心衰 / 心肌炎 / 休克、DKA、咳後吐、IICP / 腦膜炎"],
+        ["m", "Domperidone 0.25 mg/kg PO TID", ""],
+        ["m", "Metoclopramide 0.1 mg/kg IV/IM（max TID）", "<5 歲盡量不用｜EPS → diphenhydramine 1 mg/kg", "大孩"],
+        ["m", "Prochlorperazine 0.1 mg/kg PO QID", "<2 歲少用", "大孩"]
+      ] },
+    { "name": "兒童急腹症", "hint": "腸套疊、闌尾炎、扭轉", "en": "Pediatric acute abdomen, intussusception, appendicitis",
+      "orders": [
+        ["x", "Abdominal echo for multiple organs（M32-063）", "代碼：M32-063｜☎8240｜註明診斷與目的"],
+        ["x", "Fluoroscopic reduction of intussusception", "☎8399｜復位成功後 NPO 0–6 hr", "腸套疊"],
+        ["m", "Ceftriaxone + Metronidazole", "適應：闌尾炎（照會小兒外科）", "闌尾炎"],
+        ["x", "Meckel scan（N73-034）", "血便疑 Meckel 憩室", "Meckel"],
+        ["p", "腸扭轉、嵌頓疝氣、復位失敗 → 小兒外科；開過刀想沾黏性腸阻塞", ""]
+      ] },
+    { "name": "兒童便秘 / 脹氣", "hint": "", "en": "Pediatric constipation and bloating",
+      "orders": [
+        ["m", "Fleet enema 5 mL/kg（max 118 mL）", "禁忌：腎臟病人（急性磷酸鹽腎病變）"],
+        ["m", "Bisacodyl supp：0–10 歲 ½ 顆、>10 歲或 >20 kg 1 顆", ""],
+        ["m", "Lactulose 1.5–3 mL/kg/day QD–BID（max 60 mL）", ""],
+        ["m", "Magnesium oxide 250 mg：6–12 歲 ½ 成人量、3–6 歲 ¼", ""],
+        ["m", "Simethicone 0.1 mL/kg TID–QID", "脹氣", "脹氣"],
+        ["p", "肛管：兒童 Fr 14–22（5–7.5 cm）、嬰兒 Fr 12（2.5–4 cm）", "先看 KUB、先肛診｜近期肛門手術（PSARP、pull-through）禁用", "減壓"]
+      ] },
+    { "name": "兒童肝功能異常 / 黃疸", "hint": "ALT 高、膽汁滯留", "en": "Pediatric abnormal liver function, cholestasis",
+      "orders": [
+        ["l", "ALT、AST、T/D-bil、albumin、sugar、ALP、rGT、PT、aPTT、NH3", "範本 Liver function test"],
+        ["l", "Anti-HAV IgM、HBsAg、anti-HBc IgM、anti-HCV、CMV IgM/IgG、EBV-VCA IgM/IgG", "HBsAg(+) → HBeAg / anti-HBe｜考慮治療 → HBV DNA（M23-078）｜CMV urine shell vial（L72-902）｜EBV EA / NA 是 NPC 評估，勿開"],
+        ["x", "Abdominal echo（M32-063，NPO 4 hr）", "☎8240"],
+        ["l", "Ceruloplasmin（L72-225）、24 hr urine copper（L72-345，檢體改 U）", "Wilson｜50–100 → penicillamine challenge 500 mg Q12H ×2 + 留尿；眼科看 K-F ring", "Wilson"],
+        ["l", "Autoimmune liver profile（M25-158）、ANA、smooth muscle Ab（L72-255）、IgG", "自體免疫肝炎", "AIH"],
+        ["m", "Ursodeoxycholic acid 10–30 mg/kg/day（max 600 mg）", "膽汁滯留", "膽汁滯留"],
+        ["m", "Vitamin K1 0.1 mg/kg IV over 15–30 min ×3 天", "PT 延長", "PT 長"]
+      ] },
+    { "name": "兒童膽道感染", "hint": "膽道閉鎖 / 總膽管囊腫術後", "en": "Pediatric cholangitis after biliary surgery",
+      "orders": [
+        ["p", "曾做膽道手術（biliary atresia、choledochal cyst）發燒要想到", ""],
+        ["m", "Ceftriaxone ± Metronidazole", "依嚴重度"]
+      ] },
+    { "name": "兒童上消化道出血", "hint": "吐血、黑便", "en": "Pediatric upper GI bleeding",
+      "orders": [
+        ["m", "Esomeprazole 1 mg/kg IV QD–Q12H", "IV 加入 NS 100 mL >30 min"],
+        ["m", "Famotidine 0.25–0.5 mg/kg IV q12h（max 40 mg/day）", "", "替代"],
+        ["x", "Panendoscopy（M32-203）", "需腸胃科會診｜midnight NPO｜>12 歲麻醉自費（M23-120-Z）"],
+        ["p", "矯正血小板、凝血；類固醇、IICP、壓力性潰瘍常見", ""]
+      ] },
+    { "name": "兒童內視鏡 / 大腸鏡準備", "hint": "需腸胃科會診", "en": "Pediatric endoscopy and colonoscopy preparation",
+      "orders": [
+        ["x", "Colonfiberscopy（M32-207）", "前 1–3 天低渣、當天清流質、midnight NPO｜息肉切除改 M32-221"],
+        ["m", "PEG 3350 bowel prep（自費）", "瀉劑與總醫師確認；或 Mg citrate（健保：6–12 歲 100–150 mL、<6 歲 2–4 mL/kg）"],
+        ["m", "Fleet enema 5–10 mL/kg（max 118 mL）前晚 10PM + 當天 8AM", ""],
+        ["p", ">12 歲麻醉自費：上 M23-120-Z、下 M23-121-Z、上 + 下 M23-122T-Z", "CP、智能障礙、自閉症無法配合或治療性處置免自費｜<12 歲 / 自費麻醉 → 中重度鎮靜同意書"]
+      ] },
+    { "name": "肝切片 / 直腸抽吸切片", "hint": "", "en": "Pediatric liver biopsy and rectal suction biopsy",
+      "orders": [
+        ["x", "Liver biopsy（M32-028）", "前驗 CBC/DC、PT、aPTT｜NPO 6 hr｜病理 P71-035"],
+        ["m", "Midazolam + Ketamine（± Lidocaine 1% 局麻）", "鎮靜"],
+        ["p", "切片後：BP Q8H ×1 天、完全清醒才進食、右側臥 + 沙袋（小小孩 1 kg、大孩 2 kg）6 hr、臥床 1 天", ""],
+        ["x", "Rectal suction biopsy（M32-029）", "距肛 5 cm、3 cm 左右各一共 4 塊｜病理 P71-402 ×1 + P71-002 ×2｜當天 CM NPO", "Hirschsprung"]
+      ] },
+    { "name": "兒童腹水", "hint": "抽腹水", "en": "Pediatric ascites tapping",
+      "orders": [
+        ["l", "Serum + ascites 各一套：TP、albumin、sugar、LDH", ""],
+        ["l", "Ascites routine、cytology、Gram、culture（aerobic、anaerobic、TB）", ""],
+        ["l", "乳白 → TG；綠色 → T-bil；穿孔 / 胰臟炎 → amylase、lipase", "依外觀"]
+      ] },
+    { "name": "兒童 TPN", "hint": "靜脈營養", "en": "Pediatric parenteral nutrition",
+      "orders": [
+        ["p", "醫囑寫 g/kg/day + mL/hr；周邊 AA ≤1 g/kg/day、central ≤3 g/kg/day", "AA 2.5：1 g = 40 mL｜Ped standard AA 4.0：1 g = 25 mL｜AA 5：1 g = 20 mL"],
+        ["p", "SMOF lipid 20%：1 g = 5 mL，max 0.15 g/kg/hr（0.75 mL/kg/hr）", ""]
+      ] },
+    { "name": "紫質症 / 24 hr pH monitor", "hint": "不明腹痛、逆流", "en": "Porphyria screening, 24-hour pH impedance monitoring",
+      "orders": [
+        ["l", "Urine porphyrin（L72-709）+ coproporphyrin（L72-711）spot", "陽性 → 24 hr urine ALA（L72-411）+ PBG（L72-413）鋁箔包；再陽性 → HMBS gene（L72-688）", "紫質症"],
+        ["x", "24 hr pH impedance monitor（M32-222）", "先電聯會診總醫師｜停制酸劑、促進蠕動劑 ≥3 天", "逆流"]
+      ] }
+  ]
+}

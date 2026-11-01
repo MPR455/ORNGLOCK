@@ -56,6 +56,18 @@
       { "label": "Hb 低", "chapter": "anemia" },
       { "label": "INR / 凝血", "chapter": "coagulopathy" }
     ] },
+    { "title": "👶 兒科", "tiles": [
+      { "label": "基本醫囑 / 劑量", "chapter": "peds-basics" },
+      { "label": "發燒 / 感染", "chapter": "peds-infection" },
+      { "label": "呼吸 / 喘", "chapter": "peds-respiratory" },
+      { "label": "抽搐 / 神經", "chapter": "peds-neuro" },
+      { "label": "腸胃 / 肝膽", "chapter": "peds-gi" },
+      { "label": "新生兒 / 嬰兒室", "chapter": "peds-newborn" },
+      { "label": "血液腫瘤", "chapter": "peds-hemeonc" },
+      { "label": "過敏 / 免疫 / 風濕", "chapter": "peds-allergy" },
+      { "label": "內分泌 / 糖尿病", "chapter": "peds-endocrine" },
+      { "label": "檢查代碼 / 分機", "chapter": "peds-exams" }
+    ] },
     { "title": "💊 要開藥", "tiles": [
       { "label": "止痛", "chapter": "analgesia" },
       { "label": "睡不著 / 鎮靜", "chapter": "sedatives" },

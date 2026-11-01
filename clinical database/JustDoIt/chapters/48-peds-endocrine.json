@@ -1,0 +1,38 @@
+{
+  "no": "48", "slug": "peds-endocrine", "title": "兒科：內分泌 / 糖尿病", "en": "Pediatric endocrinology and diabetes", "icon": "🧬",
+  "items": [
+    { "name": "新診斷第一型糖尿病", "hint": "", "en": "New-onset pediatric diabetes",
+      "orders": [
+        ["l", "C-peptide（L72-497）、HbA1c（L72-317）、insulin Ab（N73-143）、anti-TPO（L72-260）、thyroglobulin Ab（L72-263）、DM lipid（L72-428）、amylase、lipase", "未打胰島素前可驗 insulin｜打胰島素 1 個月內驗 insulin Ab"],
+        ["l", "GAD Ab（L72-295）、IA2 Ab（L72-296）、ZnT8（L72-179）、adiponectin（L72-431）、leptin（L72-433）", "自費", "自費"],
+        ["p", "DM diet（依幾大卡、幾份主餐點心）、F/S ×5（三餐前、睡前、2AM）、BW QD", ""],
+        ["m", "Insulin aspart sliding scale（範本 degludec / aspart）", ""],
+        ["m", "Glucagon（低血糖處理醫囑範本；7L 常備）", "有打胰島素一定要開"],
+        ["p", "照會：衛教師、社工（電話聯絡）；營養師、視網膜科（開單）", "糖尿病衛教師 ☎8232｜團體衛教週一到五 13:30 病理大樓 12F"],
+        ["p", "發燒 → 完成 septic work-up，依 focus 給經驗性抗生素", "高血糖影響免疫"],
+        ["p", "出院：胰島素空針 4–5 支/天、glucagon + 1 mL 空針、住院用的 insulin 再加一支、出院胰島素指引印給家屬", ""]
+      ] },
+    { "name": "DKA 上病房後", "hint": "PICU 轉出", "en": "Pediatric DKA follow-up on the ward",
+      "orders": [
+        ["l", "Blood gas、electrolyte、blood ketone", "確認最後一次已正常，未正常隔天追"],
+        ["p", "PICU 用 two-bag system；上病房改 SC insulin + 低血糖醫囑", ""]
+      ] },
+    { "name": "兒童低血糖", "hint": "F/S <70", "en": "Pediatric hypoglycemia treatment",
+      "orders": [
+        ["m", "10% Glucose（D10W）2 mL/kg slow IV", "15 分鐘後複測"],
+        ["m", "Glucagon", "無 IV 時"],
+        ["p", "清醒能吃：口服含糖飲料", ""]
+      ] },
+    { "name": "性早熟：LHRH test", "hint": "住院隔天 9:00", "en": "Precocious puberty, GnRH (LHRH) stimulation test",
+      "orders": [
+        ["p", "Gonadorelin 2.5 mcg/kg IV（max 100 mcg；>20 kg 直接 100 mcg；最小單位 5 mcg）", "兩天一夜｜同意書｜結果寫在 on duty note"],
+        ["p", "PE 記錄 Tanner stage；女生記初經與 LMP", "診斷 E301 / R6259"]
+      ] },
+    { "name": "身材矮小：刺激測驗", "hint": "三天兩夜", "en": "Short stature, growth hormone stimulation tests",
+      "orders": [
+        ["m", "Regular insulin IV：−1 min F/S >63 → 0.15 U/kg；46.8–63 → 0.1 U/kg；疑腦下垂體低能 0.1 U/kg", "最小單位 0.5 U｜F/S <46.8 不給 insulin，口服含糖飲料繼續抽 30–120 min"],
+        ["p", "TRH 7 mcg/kg（max 500 mcg）；<10 歲無第二性徵只做 insulin / TRH（刪 LHRH 部分）", ""],
+        ["m", "Clonidine 0.15 mg/m2 PO（75 mcg/tab ≈ 2 × BSA 顆，最小 ¼ 顆）", "第三天另開一筆｜BSA = √(身高 × 體重 / 3600)"]
+      ] }
+  ]
+}

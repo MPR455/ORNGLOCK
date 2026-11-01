@@ -1,0 +1,72 @@
+{
+  "no": "47", "slug": "peds-allergy", "title": "兒科：過敏 / 免疫 / 風濕", "en": "Pediatric allergy, immunology and rheumatology", "icon": "🤧",
+  "items": [
+    { "name": "兒童 Anaphylaxis", "hint": "", "en": "Pediatric anaphylaxis",
+      "orders": [
+        ["m", "Epinephrine 1:1000 0.01 mL/kg IM 大腿外側（max 0.5 mL），q5–15 min 可重複 2–3 次", "速查：<10 kg 0.01 mg/kg、10–25 kg 0.15 mg、25–50 kg 0.3 mg、>50 kg 0.3–0.5 mg（一定 IM）"],
+        ["m", "Normal saline 10–20 mL/kg", "低血壓"],
+        ["m", "Diphenhydramine 1 mg/kg IV", "輔助（不取代 epinephrine）"],
+        ["m", "Methylprednisolone 1 mg/kg IV", "實證弱", "輔助"],
+        ["p", "反覆或高風險：EpiPen 0.15 mg（15–30 kg）、0.3 mg（≥30 kg）", ""]
+      ] },
+    { "name": "兒童蕁麻疹", "hint": "", "en": "Pediatric urticaria",
+      "orders": [
+        ["m", "Cyproheptadine 0.4 mg/mL：BW/4 mL TID–QID", ""],
+        ["m", "Cetirizine：2–6 歲 2.5 mg、>6 歲 5 mg HS–Q12H", ""],
+        ["m", "Ketotifen 0.05 mg/kg BID（6 月–3 歲）；成人 1 mg BID", "可加用"],
+        ["m", "Methylprednisolone 0.5–1 mg/kg/day IV q6h + Diphenhydramine 1 mg/kg IV q6h", "嚴重", "嚴重"]
+      ] },
+    { "name": "川崎氏症", "hint": "燒 ≥5 天 + 黏膜皮膚", "en": "Kawasaki disease, IVIG",
+      "orders": [
+        ["l", "CBC/DC、CRP、ESR、albumin、AST、ALT、U/A", "白血球高、血小板高、膿尿、低白蛋白"],
+        ["x", "Echocardiography（註明身高、體重、年紀）", "冠狀動脈｜☎8529｜chloral hydrate 0.6 mL/kg"],
+        ["m", "IVIG 2 g/kg（3 g/50 mL/vial，取整數）", "範本 4A800 → IVIG order｜前 30 min 測試 5 mL，其餘 11.5 hr 給完：rate = (總 mL − 5) / 11.5"],
+        ["m", "Aspirin 40–50 mg/kg/day QID → 退燒 2 天後 3–5 mg/kg/day QD ×2 個月", "中劑量或低劑量可 SDM（開 order-SDM 選 Kawasaki）"]
+      ] },
+    { "name": "異位性皮膚炎", "hint": "濕疹、濕敷", "en": "Atopic dermatitis in children",
+      "orders": [
+        ["m", "Hydrocortisone cream（臉）→ Mometasone cream（身體）", "強度由輕到重；頭皮可用 clobetasol shampoo"],
+        ["m", "Clobetasol", "頭皮", "頭皮"],
+        ["p", "濕敷：入院立即開藥、約下班前時間（範本 Atopic dermatitis score - Daily order）", "大孩 6 吋彈繃 84-072-150040｜醫藥級乳液自費（愛妥麗、加納軟膏）"],
+        ["p", "評 EASI / SCORAD；重度難治 → 生物製劑（主治決定）", ""]
+      ] },
+    { "name": "SLE / JIA 類固醇脈衝", "hint": "Methylprednisolone pulse", "en": "Methylprednisolone pulse therapy for SLE or JIA",
+      "orders": [
+        ["m", "Methylprednisolone 10–30 mg/kg IV QD ×3 天（max 1 g）", "範本：本科 → Methylprednisolone → Admission order｜開抽血單、自備藥、SLEDAI，告知總醫師"],
+        ["p", "監測 BP、HR、視力模糊、潮紅、口苦", "BP 明顯變化 → 速率減半，15 分未回 → 停；q15min BP；寫 duty note、電話通知 fellow"],
+        ["m", "Nifedipine 舌下 stat", "適應：高血壓危象（同時 hold methylprednisolone）", "高血壓危象"],
+        ["p", ">500 mg 快速 IV 有心血管崩潰報告；打完可能疲倦嗜睡", ""]
+      ] },
+    { "name": "Endoxan（cyclophosphamide）脈衝", "hint": "SLE / JIA", "en": "Cyclophosphamide pulse therapy",
+      "orders": [
+        ["m", "Cyclophosphamide 0.5 g/m2（第 1 次）→ 0.75 → 1 g/m2", "白天執行（小夜、假日先開醫囑領藥）｜ANC <1500、granulocyte <1000 或 WBC <2000 不加量｜JIA 固定 0.5 g/m2 + methylprednisolone 30 mg/kg 一劑"],
+        ["p", "Hydration 後 IVF 改回維持量", "避免腦水腫、肺水腫"],
+        ["m", "Furosemide", "適應：SIADH（少尿、尿 Na / osmo 上升、頭暈、意識改變），並通知 fellow", "SIADH"],
+        ["p", "出院 10–14 天回診，急單 WBC + U/A", "副作用：噁吐、出血性膀胱炎、nadir 10–14 天、掉髮、不孕"],
+        ["p", "MMF 250 mg 與 Myfortic 180 mg 自費，不要開錯", ""]
+      ] },
+    { "name": "原發性免疫缺乏：規則 IVIG", "hint": "", "en": "Primary immunodeficiency IVIG",
+      "orders": [
+        ["m", "IVIG（依過去劑型 3 g 或 5 g/vial）", "劑型錯誤可能 anaphylaxis｜看住院單有無新增抽血或劑量調整"],
+        ["l", "CBC/DC、IgG、study 血（綠頭滿管）", ""],
+        ["l", "基本免疫篩檢：L72-266 / 267 / 272（T + B + NK）+ IgG / IgA / IgM / IgE", "", "新病人"],
+        ["p", "出院在住院通知單寫下次計畫（例：IVIG 3 g ×5 瓶、抽 CBC/DC、IgG）", ""]
+      ] },
+    { "name": "過敏原 / 肺功能檢查", "hint": "", "en": "Allergy testing and pulmonary function tests",
+      "orders": [
+        ["l", "健保 A + C：Total IgE（M32-327）+ ECP（M25-133-Z）", "病歷要記載過敏疾病｜IgE、eosinophil（L72-062）或 ECP 高才可加 B1 / B2"],
+        ["l", "B1 MAST（M25-130-Z，35 項）或 B2 CAP（M25-131-Z）", "", "升高時"],
+        ["l", "自費 D：Food I / II / III（M32-332/333/334）、Pet & mold（M32-339）、Insect & drug（M32-338）", "印出檢驗單", "自費"],
+        ["x", "Vitalography（M32-053）、bronchodilator test（M32-317，停一次吸藥）、methacholine（M32-315）、exhaled NO（M32-321）", "L 棟 B1 氣喘中心 ☎8770"]
+      ] },
+    { "name": "風濕免疫檢驗 / 關節抽吸", "hint": "", "en": "Pediatric rheumatology labs and joint aspiration",
+      "orders": [
+        ["l", "C3 / C4（L72-217/219）、ANA（L72-245）、anti-dsDNA（L72-247）、RNP/Sm（M25-212-Z）、SSA/SSB（M25-213-Z）、ENA（M25-218-Z）、ANCA（M25-223-Z）", ""],
+        ["l", "aCL IgG / IgM（M25-216-Z / 216A-Z）、LA（M26-094）、β2GP1（M25-137-Z）、anti-CCP（M25-139-Z）、HLA-B27（M72-665）、myositis（M25-156）", ""],
+        ["x", "Joint echo（S46-201-Z）/ 抽吸注射（S46-200-Z）、nailfold capillaroscopy（M25-219-Z）", "開單不入排程，需約 fellow"],
+        ["l", "Synovial fluid（M25-063-Z 小兒科）analysis L72-759、sugar AC、Gram、AFB、TB culture、TP、aerobic culture", "", "抽吸"],
+        ["m", "Lidocaine 1% 5 mL + Heparin lock flush 100 U/mL", "關節抽吸用", "抽吸"],
+        ["l", "腎切片前：PFA closure time、PT、aPTT", "依兒腎範本、視情況會診腎臟科", "腎切片"]
+      ] }
+  ]
+}

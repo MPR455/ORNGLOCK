@@ -1,0 +1,54 @@
+{
+  "no": "49", "slug": "peds-exams", "title": "兒科：檢查代碼 / 分機", "en": "Pediatric exam codes and phone extensions", "icon": "📇",
+  "items": [
+    { "name": "兒科影像 / 超音波", "hint": "開單一律註明 indication", "en": "Pediatric imaging and ultrasound codes",
+      "orders": [
+        ["x", "Abdominal echo for multiple organs（M32-063）", "☎8240｜肝膽胰 NPO 4 hr、子宮卵巢脹尿｜2 年內同 indication → Echo follow M23-032-Z｜頸、腋、臍、腹股溝、睪丸 → soft tissue echo S46-202-Z3"],
+        ["x", "Ped nephrosonography（M32-064）", "☎8528"],
+        ["x", "Color flow mapping with 2D-echo Doppler", "☎8529｜chloral hydrate BW × 0.6 mL｜Kawasaki 註明身高體重"],
+        ["x", "EKG（M32-071）", ""],
+        ["x", "Chest echo（M21-051-Z）", "☎8241"],
+        ["x", "Brain MRI with / without contrast", "☎8400｜chloral hydrate 1 mL/kg 備用"],
+        ["x", "CT（顯影需 Cr + NPO 4 hr）", "復健 CT ☎3789、急診 CT ☎2568、兒童 CT ☎8404"],
+        ["x", "UGI / LGI series、VCUG、腸套疊復位", "☎8399"],
+        ["x", "DMSA（N73-041 + SPECT N73-006）、bone scan（N73-060）、gallium（N73-061B）、Meckel scan（N73-034）", "核醫"],
+        ["l", "Blood smear interpretation（M32-504）", ""]
+      ] },
+    { "name": "兒童神經檢查", "hint": "", "en": "Pediatric neurophysiology codes",
+      "orders": [
+        ["x", "EEG sleep（M29-018-Z）/ awake + sleep（M29-029-Z）", "☎8526/8525 電話告知技術員"],
+        ["x", "Neonatal neurosonography（M32-061，前囟未關）/ TCCS（M29-088-Z，已關）", "☎8525｜看腦壓註明 r/o IICP"],
+        ["x", "24 hr EEG monitor（M32-111，開兩張）", "住 7L01｜☎8526/8525"],
+        ["x", "NCV / EMG：開 P（portable）", "☎2295 約時間｜F-wave M29-042、MNCV 手 M29-036 / 腳 M29-037、SNCV 手 M29-046 / 腳 M29-047 / 兩者 M29-058、EMG 手 M29-032 / 腳 M29-033 / 臉 M29-031、H-reflex M29-043、blink M29-041、RST M29-044、SSEP 手 M29-026 / 腳 M29-027｜EMG / SSEP 很痛，≥11–12 歲"],
+        ["x", "VEP（M29-028-Z）、BSR（M32-170）、muscle echo（M32-103）", ""],
+        ["x", "尿路動力學（S44-101 ~ S44-104）", ""]
+      ] },
+    { "name": "兒童腸胃檢查", "hint": "需腸胃科會診", "en": "Pediatric GI procedure codes",
+      "orders": [
+        ["x", "Panendoscopy（M32-203）、Colonoscopy（M32-207）", ">12 歲自費麻醉：M23-120-Z / M23-121-Z / M23-122T-Z"],
+        ["x", "Polypectomy（M32-221 / 胃鏡 M23-005-Z）、EVL（M32-212）、balloon dilation（M32-214）、EIS（M32-210）、止血（S43-050-Z）、異物（M32-202）、ND tube（M32-203）", ""],
+        ["x", "Liver biopsy（M32-028）、rectal suction biopsy（M32-029）、24 hr pH（M32-222）、FMT（M32-822 自費）", ""],
+        ["l", "C13 urea breath test（L72-475）、fibroscan（M23-029-Z 自費）", ""]
+      ] },
+    { "name": "新生兒 / 嬰兒室代碼", "hint": "", "en": "Newborn screening and nursery codes",
+      "orders": [
+        ["l", "Newborn screening（M32-020；無身分證 M32-019）、聽力（無身分證 M32-018）", ""],
+        ["x", "自費：腦 M32-061、腹 M32-063、腎 M32-037、脊髓 M32-103、髖 S46-235-Z、心超 M22-051-ZT、heel IgE M32-224、耳聾基因 L72-664", "一律點範本勾自費"],
+        ["p", "照光 1 台 JOD301、2 台 D919-030；接觸隔離 JOD406", ""]
+      ] },
+    { "name": "病房 / 單位分機", "hint": "", "en": "Pediatric ward and unit phone extensions",
+      "orders": [
+        ["p", "幫忙 on IV：PICU（BW >10 kg）", "☎8500/8501"],
+        ["p", "幫忙 on IV：NICU（<10 kg、無傳染病）", "3L1 ☎8503/8504｜3L2 ☎8508/8509｜5L1 ☎8511/8512｜5L2 ☎8515/8516"],
+        ["p", "6L 血液腫瘤病房", "護理站 ☎8519/8520｜化療室 ☎8196｜抹片室 ☎8195｜BMT room ☎2302/2303"],
+        ["p", "6F 化療藥局", "☎2915"],
+        ["p", "血庫", "☎2538/2548"],
+        ["p", "Cell marker（血清免疫）/ HLA、STR（分生組）", "Cell marker ☎8365#365｜HLA / STR ☎8360#360"],
+        ["p", "染色體 / 癌症分子診斷", "染色體 ☎2355｜癌症分子診斷實驗室 ☎5672/5673"],
+        ["p", "氣喘中心（L 棟 B1）", "☎8770"],
+        ["p", "CV 血流（PAOD / DVT duplex）", "CV1 ☎2366｜CV2 ☎2443"],
+        ["p", "兒童內分泌 / 遺傳", "糖尿病衛教 ☎8232｜遺傳諮詢 ☎8544｜染色體實驗室 ☎8249｜分子生化遺傳 ☎8915/8916｜甲狀腺 echo ☎2427"],
+        ["p", "兒童藥局", "☎8303"]
+      ] }
+  ]
+}
