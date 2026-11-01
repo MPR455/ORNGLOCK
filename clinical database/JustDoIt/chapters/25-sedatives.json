@@ -11,6 +11,7 @@
         ["m", "Zolpidem 10 mg ½ 錠（5 mg）PO HS（男性 5–10 mg）", "短期 ≤4 週；不要太晚吃"],
         ["m", "Zopiclone 7.5 mg ½ 錠（3.75 mg）PO HS", "適應：維持型失眠（易醒）｜禁忌：譫妄、呼吸抑制風險（COPD、OSA、併 opioid）", "替代"],
         ["m", "Trazodone 25–50 mg PO HS（50 mg 錠）", "老人較少跌倒、依賴", "老人"],
+        ["m", "Quetiapine 12.5–25 mg PO HS", "適應：失眠合併譫妄風險，或本身有精神科病史｜非單純失眠第一線（證據弱）｜禁忌：Parkinson / Lewy body、QT 延長｜注意：姿勢性低血壓、跌倒", "譫妄風險 / 精神科"],
         ["p", "老人避免 BZD、Z-drug、diphenhydramine", "譫妄、跌倒、骨折"],
         ["p", "避免與 opioid、gabapentinoid 併用", "呼吸抑制"],
         ["m", "Lemborexant 5 mg PO HS", "食慾素拮抗劑，老人替代、少依賴", "老人"],
