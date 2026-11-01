@@ -1,0 +1,202 @@
+[
+  {
+    "id": "flank-pain", "name": "腰側痛 / 腎區痛", "en": "Flank pain", "regions": ["flank", "back"],
+    "aliases": ["腰痛", "腎臟痛", "側腹痛", "flank pain", "renal colic", "CVA tenderness", "kidney stone"],
+    "first": {
+      "flags": [">50 歲第一次「腎結石」→ 先排除 AAA 破裂", "發燒 + 阻塞（感染性水腎 = 泌尿科急症）", "單一腎、AKI、無尿", "低血壓"],
+      "pe": ["CVA 叩痛", "腹部搏動性腫塊、股動脈脈搏", "陣發坐立不安（結石） vs 不敢動（腹膜炎）", "皮膚：帶狀皰疹", "睪丸 / 骨盆檢查"],
+      "scores": ["STONE score", "qSOFA"],
+      "orders": [["abdominal-pain", "腎絞痛 / 結石"]]
+    },
+    "groups": [
+      { "title": "🚨 危急", "tone": "urgent", "dx": [
+        { "name": "腹主動脈瘤破裂", "en": "Ruptured AAA", "clues": "老人男性、抽菸；腰痛 + 低血壓 + 血尿可有", "pe": ["搏動性腫塊"], "orders": [["abdominal-pain", "疑腹主動脈瘤破裂"]] },
+        { "name": "感染性阻塞性腎盂腎炎", "en": "Infected obstructed kidney", "clues": "結石 + 發燒 → 需緊急引流（PCN / DJ）", "pe": ["CVA 叩痛、發燒、低血壓"], "scores": ["qSOFA"], "orders": [["hematuria", "血尿 + 腰痛發燒"], ["oliguria", "泌尿道阻塞"]] },
+        { "name": "腎梗塞 / 腎靜脈栓塞", "en": "Renal infarction, renal vein thrombosis", "clues": "AF、心內膜炎；LDH 高、血尿", "pe": ["心律"], "orders": [["tachycardia", "心房顫動：抗凝"]] },
+        { "name": "後腹腔出血", "en": "Retroperitoneal hemorrhage", "clues": "抗凝、股動脈穿刺後", "pe": ["Grey Turner sign、Hb 下降"], "orders": [["coagulopathy", "Heparin / LMWH 出血"], ["hypotension-shock", "出血性休克"]] }
+      ] },
+      { "title": "🫘 腎 / 泌尿", "dx": [
+        { "name": "腎結石 / 輸尿管結石", "en": "Urolithiasis", "clues": "陣發劇痛放射至鼠蹊、血尿、噁心", "pe": ["CVA 叩痛、坐立不安"], "scores": ["STONE score"], "orders": [["abdominal-pain", "腎絞痛 / 結石"], ["hematuria", "腎絞痛止痛"]] },
+        { "name": "急性腎盂腎炎", "en": "Acute pyelonephritis", "clues": "發燒、寒顫、腰痛、膀胱炎症狀", "pe": ["CVA 叩痛"], "orders": [["abdominal-pain", "腎盂腎炎"], ["antibiotics", "腎盂腎炎 / 複雜性 UTI"]] },
+        { "name": "腎周膿瘍", "en": "Perinephric abscess", "clues": "治療 72 hr 仍發燒、糖尿病", "pe": ["持續 CVA 叩痛"], "orders": [["antibiotics", "腎盂腎炎 / 複雜性 UTI"]] }
+      ] },
+      { "title": "🦴 其他", "dx": [
+        { "name": "肌肉骨骼 / 肋骨骨折", "en": "Musculoskeletal pain", "clues": "姿勢、扭傷、咳嗽", "pe": ["局部壓痛"], "orders": [["analgesia", "肌肉痠痛 / 局部痛"]] },
+        { "name": "帶狀皰疹", "en": "Herpes zoster", "clues": "單側帶狀燒灼痛", "pe": ["皮節水泡"], "orders": [["rash-allergy", "帶狀皰疹"]] },
+        { "name": "膽道 / 胰臟 / 闌尾（盲腸後）", "en": "Biliary, pancreatic or retrocecal appendix", "clues": "轉移痛", "pe": ["Murphy、Psoas"], "orders": [["abdominal-pain", "腹痛：第一輪"]] },
+        { "name": "下肺炎 / 肺栓塞", "en": "Lower lobe pneumonia, PE", "clues": "咳嗽、喘", "pe": ["肺音"], "orders": [["dyspnea", "社區型肺炎 (CAP)"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "hematuria", "name": "血尿 / 尿液顏色異常", "en": "Hematuria, discolored urine", "regions": ["suprapubic", "flank"],
+    "aliases": ["尿有血", "紅色尿", "茶色尿", "可樂色尿", "hematuria", "red urine", "dark urine", "myoglobinuria"],
+    "first": {
+      "flags": ["血塊滯留（解不出 + 下腹痛）", "茶色尿 + 肌肉痛（橫紋肌溶解）", "血尿 + 腎功能惡化 + 高血壓 / 水腫（RPGN）", "血尿 + 咳血（肺腎症候群）", "抗凝劑"],
+      "pe": ["確認真血尿：試紙陽性但鏡檢無 RBC → 肌紅素 / 血紅素", "恥骨上膨隆、導尿管位置", "CVA 叩痛", "BP、水腫", "肌肉壓痛", "皮膚紫斑（血管炎）、出血傾向"],
+      "scores": ["AUA microhematuria risk stratification"],
+      "orders": [["hematuria", "試紙血尿：確認"]]
+    },
+    "groups": [
+      { "title": "🚨 危急", "tone": "urgent", "dx": [
+        { "name": "血塊滯留", "en": "Clot retention", "clues": "肉眼血尿 + 尿不出", "pe": ["膀胱膨隆"], "orders": [["hematuria", "肉眼血尿"]] },
+        { "name": "橫紋肌溶解", "en": "Rhabdomyolysis", "clues": "試紙血陽性、鏡檢無 RBC；CK 高", "pe": ["肌肉壓痛、腔室症候群"], "orders": [["hematuria", "橫紋肌溶解"], ["oliguria", "橫紋肌溶解"]] },
+        { "name": "急進性腎絲球腎炎", "en": "Rapidly progressive glomerulonephritis", "clues": "變形 RBC、RBC cast、蛋白尿、Cr 上升", "pe": ["BP、水腫、紫斑"], "orders": [["hematuria", "疑腎絲球腎炎"]] },
+        { "name": "血管內溶血", "en": "Intravascular hemolysis", "clues": "輸血反應、G6PD、TTP", "pe": ["黃疸、蒼白"], "scores": ["PLASMIC score"], "orders": [["rash-allergy", "輸血反應"], ["anemia", "疑 TTP"]] },
+        { "name": "感染性阻塞", "en": "Infected obstruction", "clues": "血尿 + 腰痛 + 發燒", "pe": ["CVA 叩痛"], "orders": [["hematuria", "血尿 + 腰痛發燒"]] }
+      ] },
+      { "title": "🫘 泌尿道", "dx": [
+        { "name": "泌尿道感染 / CAUTI", "en": "UTI, CAUTI", "clues": "頻尿、解尿痛、導尿管", "pe": ["恥骨上壓痛"], "orders": [["hematuria", "導尿管相關感染 (CAUTI)"], ["antibiotics", "膀胱炎（單純）"]] },
+        { "name": "結石", "en": "Urolithiasis", "clues": "腰痛", "pe": ["CVA 叩痛"], "orders": [["abdominal-pain", "腎絞痛 / 結石"]] },
+        { "name": "導尿外傷", "en": "Catheter trauma", "clues": "放置或拉扯導尿管後", "pe": ["尿道口"], "orders": [["hematuria", "外傷 / 導尿後血尿"]] },
+        { "name": "泌尿道腫瘤", "en": "Urothelial or renal cancer", "clues": ">35 歲、抽菸、無痛肉眼血尿、cyclophosphamide", "pe": ["—"], "scores": ["AUA risk stratification"], "orders": [["hematuria", "肉眼血尿"]] },
+        { "name": "出血性膀胱炎", "en": "Hemorrhagic cystitis", "clues": "cyclophosphamide、放療、BK virus（移植）", "pe": ["—"], "orders": [["hematuria", "肉眼血尿"]] }
+      ] },
+      { "title": "💊 全身", "dx": [
+        { "name": "抗凝相關", "en": "Anticoagulant-associated", "clues": "INR 過高仍要找潛在病灶", "pe": ["—"], "orders": [["hematuria", "抗凝劑使用者血尿"]] },
+        { "name": "腎病症候群 / 腎炎", "en": "Nephrotic or nephritic syndrome", "clues": "水腫、泡泡尿", "pe": ["水腫"], "orders": [["hematuria", "腎病症候群住院"]] },
+        { "name": "假性血尿", "en": "Pseudohematuria", "clues": "rifampin、甜菜、月經、紫尿袋症候群", "pe": ["鏡檢"], "orders": [["hematuria", "試紙血尿：確認"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "oliguria", "name": "尿少 / 解不出尿 / AKI", "en": "Oliguria, urinary retention, AKI", "regions": ["suprapubic", "systemic"],
+    "aliases": ["尿量少", "沒尿", "無尿", "解不出來", "腎功能變差", "Cr 上升", "oliguria", "anuria", "AKI", "urinary retention", "creatinine rise"],
+    "first": {
+      "flags": ["高血鉀、肺水腫、嚴重酸中毒、尿毒症狀 → 緊急透析（AEIOU）", "突然無尿 → 先排除導尿管阻塞 / 尿滯留", "休克"],
+      "pe": ["先沖 / 換導尿管、膀胱超音波（PVR）", "容積狀態：JVP、肺音、水腫、皮膚、姿勢性血壓", "腹內壓（腹腔腔室症候群）", "皮疹（AIN）、肌肉壓痛、網狀青斑（膽固醇栓塞）", "藥物清單：NSAID、ACEI/ARB、顯影劑、aminoglycoside、vancomycin"],
+      "scores": ["KDIGO AKI stage", "FENa / FEUrea", "Mehran score（顯影劑腎病）"],
+      "orders": [["oliguria", "少尿 / AKI：第一輪"]]
+    },
+    "groups": [
+      { "title": "🚨 緊急", "tone": "urgent", "dx": [
+        { "name": "緊急透析適應症", "en": "Emergent dialysis indications", "clues": "AEIOU：Acidosis、Electrolytes（K）、Intoxication、Overload、Uremia", "pe": ["心包摩擦音、asterixis、肺水腫"], "scores": ["KDIGO stage 3"], "orders": [["oliguria", "緊急透析評估"], ["potassium", "高血鉀 K ≥6.0"]] },
+        { "name": "敗血症相關 AKI", "en": "Sepsis-associated AKI", "clues": "感染 + 低血壓", "pe": ["灌流"], "scores": ["SOFA"], "orders": [["oliguria", "敗血症 + AKI"]] },
+        { "name": "腫瘤溶解 / 橫紋肌溶解", "en": "TLS, rhabdomyolysis", "clues": "化療後、K / P / 尿酸高、Ca 低；CK 高", "pe": ["肌肉"], "scores": ["Cairo–Bishop criteria（TLS）"], "orders": [["oliguria", "腫瘤溶解症候群"], ["oliguria", "橫紋肌溶解"]] }
+      ] },
+      { "title": "⬆️ 腎前性", "dx": [
+        { "name": "低血容", "en": "Hypovolemia", "clues": "進食差、嘔吐腹瀉、過度利尿；FENa <1%", "pe": ["黏膜乾、姿勢性低血壓"], "scores": ["FENa", "FEUrea（用利尿劑時）"], "orders": [["oliguria", "容積不足：補液"], ["fluids", "低血壓：首輪輸液"]] },
+        { "name": "心腎症候群", "en": "Cardiorenal syndrome", "clues": "心衰竭、鬱血", "pe": ["JVP、水腫"], "orders": [["fluids", "體液過多：利尿"]] },
+        { "name": "肝腎症候群", "en": "Hepatorenal syndrome", "clues": "肝硬化 + 腹水、排除其他原因", "pe": ["腹水、黃疸"], "orders": [["oliguria", "肝硬化 + AKI"]] }
+      ] },
+      { "title": "🫘 腎性", "dx": [
+        { "name": "急性腎小管壞死", "en": "Acute tubular necrosis", "clues": "休克後、顯影劑、毒性藥物；muddy brown cast", "pe": ["—"], "orders": [["oliguria", "顯影劑腎病變預防"]] },
+        { "name": "急性間質性腎炎", "en": "Acute interstitial nephritis", "clues": "β-lactam、PPI、NSAID；發燒、皮疹、嗜酸性球", "pe": ["皮疹"], "orders": [["oliguria", "少尿 / AKI：第一輪"]] },
+        { "name": "腎絲球腎炎", "en": "Glomerulonephritis", "clues": "血尿、蛋白尿、高血壓", "pe": ["水腫"], "orders": [["hematuria", "疑腎絲球腎炎"]] }
+      ] },
+      { "title": "⬇️ 腎後性", "dx": [
+        { "name": "急性尿滯留", "en": "Acute urinary retention", "clues": "攝護腺、抗膽鹼、opioid、術後", "pe": ["PVR >300 mL"], "scores": ["PVR"], "orders": [["oliguria", "急性尿滯留"]] },
+        { "name": "雙側輸尿管阻塞 / 水腎", "en": "Bilateral obstruction, hydronephrosis", "clues": "骨盆腔腫瘤、後腹腔纖維化", "pe": ["—"], "orders": [["oliguria", "泌尿道阻塞"]] },
+        { "name": "導尿管阻塞", "en": "Blocked catheter", "clues": "血塊、扭折", "pe": ["沖導尿管"], "orders": [["hematuria", "肉眼血尿"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "polyuria", "name": "尿多 / 口渴", "en": "Polyuria, polydipsia", "regions": ["suprapubic", "systemic"],
+    "aliases": ["尿很多", "一直尿", "口很渴", "polyuria", "polydipsia", "diabetes insipidus"],
+    "first": {
+      "flags": ["高血鈉 + 意識改變", "高血糖 + 脫水（HHS）", "腦部術後 / 外傷（中樞尿崩）"],
+      "pe": ["容積狀態、意識", "嚴格 I/O、每日體重"],
+      "scores": ["尿滲透壓 / 尿 Na（溶質 vs 水利尿）"],
+      "orders": [["polyuria", "多尿：第一輪"]]
+    },
+    "groups": [
+      { "title": "💧 鑑別", "dx": [
+        { "name": "高血糖滲透性利尿 / HHS", "en": "Osmotic diuresis, HHS", "clues": "血糖很高", "pe": ["脫水"], "orders": [["polyuria", "高血糖滲透性利尿 / HHS"], ["glucose", "HHS"]] },
+        { "name": "中樞性尿崩症", "en": "Central diabetes insipidus", "clues": "腦部術後、外傷；大量稀尿、高血鈉", "pe": ["—"], "orders": [["polyuria", "中樞性尿崩症 (CDI)"]] },
+        { "name": "腎性尿崩 / 高血鈣 / 低血鉀", "en": "Nephrogenic DI", "clues": "lithium、高鈣、低鉀", "pe": ["—"], "orders": [["polyuria", "高血鈣多尿"], ["polyuria", "多尿合併高血鈉"]] },
+        { "name": "阻塞解除後利尿 / 利尿劑", "en": "Post-obstructive diuresis, diuretics", "clues": "放導尿管後", "pe": ["—"], "orders": [["polyuria", "阻塞解除後利尿"], ["polyuria", "利尿劑過度利尿"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "dysuria", "name": "解尿痛 / 頻尿", "en": "Dysuria, frequency", "regions": ["suprapubic", "pelvis"],
+    "aliases": ["尿尿痛", "頻尿", "急尿", "尿道痛", "dysuria", "frequency", "urgency", "UTI"],
+    "first": {
+      "flags": ["發燒、腰痛（上泌尿道）", "男性（視為複雜性 UTI）、懷孕", "導尿管", "陰道 / 尿道分泌物（性傳染病）"],
+      "pe": ["恥骨上壓痛、CVA 叩痛", "男性：攝護腺（輕觸）、睪丸副睪", "女性：外陰、分泌物"],
+      "scores": ["qSOFA"],
+      "orders": [["antibiotics", "膀胱炎（單純）"]]
+    },
+    "groups": [
+      { "title": "🦠 感染", "dx": [
+        { "name": "單純性膀胱炎", "en": "Uncomplicated cystitis", "clues": "非孕女性、無發燒", "pe": ["恥骨上壓痛"], "orders": [["antibiotics", "膀胱炎（單純）"]] },
+        { "name": "複雜性 UTI / 腎盂腎炎", "en": "Complicated UTI, pyelonephritis", "clues": "男性、發燒、結構異常、導尿管", "pe": ["CVA 叩痛"], "orders": [["antibiotics", "腎盂腎炎 / 複雜性 UTI"]] },
+        { "name": "CAUTI", "en": "Catheter-associated UTI", "clues": "導尿管 + 發燒（無症狀菌尿不治療）", "pe": ["—"], "orders": [["hematuria", "導尿管相關感染 (CAUTI)"]] },
+        { "name": "急性攝護腺炎 / 副睪炎", "en": "Prostatitis, epididymitis", "clues": "男性會陰痛、睪丸痛", "pe": ["攝護腺壓痛、Prehn sign"], "orders": [["antibiotics", "腎盂腎炎 / 複雜性 UTI"]] },
+        { "name": "念珠菌感染 / 性傳染病", "en": "Candidiasis, STI", "clues": "糖尿病、SGLT2i、抗生素；分泌物", "pe": ["外陰紅腫、白色分泌物"], "orders": [["rash-allergy", "黴菌 / 念珠菌皮膚感染"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "scrotal-pain", "name": "陰囊痛 / 睪丸痛", "en": "Scrotal or testicular pain", "regions": ["pelvis"],
+    "aliases": ["睪丸痛", "蛋蛋痛", "陰囊腫", "scrotal pain", "testicular pain", "torsion", "epididymitis", "Fournier"],
+    "first": {
+      "flags": ["突發劇痛 + 嘔吐 → 扭轉，6 hr 內手術救睪丸", "會陰紅腫黑、捻髮音、全身中毒（Fournier gangrene）", "腹股溝腫塊推不回（絞扼疝氣）"],
+      "pe": ["睪丸位置（高位、橫位）、cremasteric reflex", "Prehn sign（抬高緩解 → 副睪炎；不可靠）", "透光試驗（水囊）", "會陰皮膚、捻髮音", "腹股溝疝氣"],
+      "scores": ["TWIST score（≥5 高風險扭轉）", "LRINEC（壞死性筋膜炎）"],
+      "orders": [["abdominal-pain", "睪丸扭轉"]]
+    },
+    "groups": [
+      { "title": "🚨 外科急症", "tone": "urgent", "dx": [
+        { "name": "睪丸扭轉", "en": "Testicular torsion", "clues": "青少年最多、突發、嘔吐", "pe": ["高位橫位、cremasteric 消失"], "scores": ["TWIST score"], "orders": [["abdominal-pain", "睪丸扭轉"]] },
+        { "name": "Fournier 壞疽", "en": "Fournier gangrene", "clues": "糖尿病、SGLT2i；疼痛超過外觀", "pe": ["捻髮音、皮膚變色"], "scores": ["LRINEC"], "orders": [["rash-allergy", "壞死性筋膜炎"], ["antibiotics", "壞死性筋膜炎"]] },
+        { "name": "絞扼性腹股溝疝氣", "en": "Incarcerated inguinal hernia", "clues": "腫塊推不回、嘔吐", "pe": ["腹股溝"], "orders": [["abdominal-pain", "小腸阻塞"]] }
+      ] },
+      { "title": "🩺 其他", "dx": [
+        { "name": "副睪炎 / 睪丸炎", "en": "Epididymo-orchitis", "clues": "漸進、發燒、尿路症狀；腮腺炎", "pe": ["副睪腫痛"], "orders": [["antibiotics", "腎盂腎炎 / 複雜性 UTI"]] },
+        { "name": "腎結石轉移痛", "en": "Referred ureteric colic", "clues": "腰痛、血尿", "pe": ["睪丸正常"], "orders": [["abdominal-pain", "腎絞痛 / 結石"]] },
+        { "name": "陰囊水腫 / 腫瘤", "en": "Hydrocele, testicular tumor", "clues": "無痛腫大", "pe": ["透光試驗、硬塊"], "orders": [["exams", "影像 / 核醫"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "back-pain", "name": "上背痛 / 胸背痛", "en": "Upper back or thoracic pain", "regions": ["back"],
+    "aliases": ["背痛", "胸背痛", "肩胛痛", "back pain", "thoracic back pain", "interscapular pain"],
+    "first": {
+      "flags": ["撕裂樣、突發最痛（主動脈剝離）", "胸背痛 + ECG 異常（MI）", "發燒 + 背痛（脊椎感染）", "癌症病史 + 夜間痛（轉移）", "神經學缺損、感覺平面"],
+      "pe": ["雙臂血壓、脈搏不對稱", "脊椎叩痛、肋骨壓痛", "神經學：感覺平面、下肢肌力、反射", "肺音", "皮疹（帶狀皰疹）"],
+      "scores": ["ADD-RS", "HEART score"],
+      "orders": [["chest-pain", "胸痛：第一輪"]]
+    },
+    "groups": [
+      { "title": "🚨 危急", "tone": "urgent", "dx": [
+        { "name": "主動脈剝離", "en": "Aortic dissection", "clues": "肩胛間撕裂痛", "pe": ["血壓差、AR 雜音"], "scores": ["ADD-RS"], "orders": [["chest-pain", "疑主動脈剝離"]] },
+        { "name": "急性冠心症", "en": "ACS", "clues": "背痛 + 冒汗", "pe": ["ECG"], "scores": ["HEART score"], "orders": [["chest-pain", "疑 ACS：初始藥物"]] },
+        { "name": "肺栓塞", "en": "Pulmonary embolism", "clues": "肋膜痛、喘", "pe": ["DVT"], "scores": ["Wells (PE)"], "orders": [["dyspnea", "疑肺栓塞"]] },
+        { "name": "脊髓壓迫 / 硬膜外膿瘍", "en": "Cord compression, epidural abscess", "clues": "癌症、發燒、神經學缺損", "pe": ["感覺平面"], "orders": [["limb-pain", "疑脊髓壓迫 (MSCC)"], ["limb-pain", "疑脊椎感染 / 硬膜外膿瘍"]] }
+      ] },
+      { "title": "🩺 其他", "dx": [
+        { "name": "胰臟炎 / 膽道 / 潰瘍穿孔", "en": "Pancreatitis, biliary, posterior ulcer", "clues": "上腹痛穿到背", "pe": ["上腹壓痛"], "orders": [["abdominal-pain", "急性胰臟炎"]] },
+        { "name": "肺炎 / 肋膜炎 / 氣胸", "en": "Pneumonia, pleurisy, pneumothorax", "clues": "呼吸時痛", "pe": ["肺音"], "orders": [["dyspnea", "社區型肺炎 (CAP)"], ["chest-pain", "穩定氣胸"]] },
+        { "name": "壓迫性骨折 / 肌肉", "en": "Vertebral compression fracture, muscle strain", "clues": "骨質疏鬆、類固醇", "pe": ["脊椎叩痛"], "orders": [["analgesia", "肌肉痠痛 / 局部痛"]] },
+        { "name": "帶狀皰疹", "en": "Herpes zoster", "clues": "單側", "pe": ["皮疹"], "orders": [["rash-allergy", "帶狀皰疹"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "low-back-pain", "name": "下背痛 / 腰椎痛", "en": "Low back pain", "regions": ["lowback"],
+    "aliases": ["腰酸", "閃到腰", "坐骨神經痛", "low back pain", "LBP", "sciatica", "lumbago", "cauda equina"],
+    "first": {
+      "flags": ["紅旗：發燒、癌症病史、體重減輕、免疫低下 / IVDU、外傷 / 骨鬆、夜間或休息痛、>50 歲新發", "馬尾症候群：尿滯留 / 失禁、鞍區麻木、雙側下肢無力", "腹部搏動 + 低血壓（AAA）"],
+      "pe": ["脊椎叩痛、活動度", "直腿抬高（SLR）、crossed SLR", "下肢肌力、感覺（L4 / L5 / S1）、反射", "鞍區感覺、肛門張力、PVR", "腹部搏動性腫塊、股動脈", "髖關節（FABER）"],
+      "scores": ["STarT Back tool", "Oswestry Disability Index", "PVR（>200 mL 疑馬尾）"],
+      "orders": [["analgesia", "肌肉痠痛 / 局部痛"]]
+    },
+    "groups": [
+      { "title": "🚨 紅旗", "tone": "urgent", "dx": [
+        { "name": "馬尾症候群", "en": "Cauda equina syndrome", "clues": "尿滯留最敏感、鞍區麻木、雙側坐骨神經痛", "pe": ["鞍區感覺、肛門張力、PVR"], "scores": ["PVR"], "orders": [["limb-pain", "疑脊髓壓迫 (MSCC)"], ["oliguria", "急性尿滯留"]] },
+        { "name": "脊椎感染 / 硬膜外膿瘍", "en": "Spinal epidural abscess, spondylodiscitis", "clues": "發燒（可無）、菌血症、透析、糖尿病、IVDU", "pe": ["脊椎叩痛、神經學"], "orders": [["limb-pain", "疑脊椎感染 / 硬膜外膿瘍"]] },
+        { "name": "惡性脊髓壓迫 / 骨轉移", "en": "Malignant spinal cord compression", "clues": "肺、乳、攝護腺、腎、骨髓瘤；夜間痛", "pe": ["感覺平面"], "orders": [["limb-pain", "疑脊髓壓迫 (MSCC)"]] },
+        { "name": "腹主動脈瘤", "en": "Abdominal aortic aneurysm", "clues": "老人男性；背痛 + 低血壓", "pe": ["搏動性腫塊"], "orders": [["abdominal-pain", "疑腹主動脈瘤破裂"]] },
+        { "name": "壓迫性骨折", "en": "Vertebral compression fracture", "clues": "骨鬆、類固醇、小外傷", "pe": ["叩痛"], "orders": [["analgesia", "中重度痛：強效 opioid"]] }
+      ] },
+      { "title": "🦴 機械性 / 其他", "dx": [
+        { "name": "肌肉拉傷", "en": "Lumbar strain", "clues": "搬重物後、無神經學症狀", "pe": ["肌肉壓痛"], "orders": [["analgesia", "肌肉痠痛 / 局部痛"]] },
+        { "name": "椎間盤突出 / 神經根病變", "en": "Disc herniation, radiculopathy", "clues": "痛放射到膝以下", "pe": ["SLR 陽性、皮節"], "orders": [["analgesia", "神經痛"]] },
+        { "name": "腎結石 / 腎盂腎炎", "en": "Renal colic, pyelonephritis", "clues": "腰側為主", "pe": ["CVA 叩痛"], "orders": [["abdominal-pain", "腎絞痛 / 結石"]] },
+        { "name": "後腹腔出血 / 腰肌膿瘍", "en": "Retroperitoneal bleed, psoas abscess", "clues": "抗凝；發燒 + 髖屈曲", "pe": ["Psoas sign"], "orders": [["coagulopathy", "Heparin / LMWH 出血"]] }
+      ] }
+    ]
+  }
+]

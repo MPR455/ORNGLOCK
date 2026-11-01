@@ -1,0 +1,86 @@
+[
+  {
+    "id": "leg-swelling", "name": "腳腫 / 水腫", "en": "Leg swelling, edema", "regions": ["leg"],
+    "aliases": ["腳腫", "水腫", "單腳腫", "雙腳腫", "小腿腫", "leg swelling", "edema", "oedema", "DVT", "calf swelling"],
+    "first": {
+      "flags": ["單側 + 突發 → DVT（同時有喘 → PE）", "紅腫熱痛 + 疼痛超過外觀 + 全身中毒（壞死性筋膜炎）", "腫脹 + 劇痛 + 被動伸展痛（腔室症候群）", "極度腫脹 + 發紫 + 脈搏弱（phlegmasia）"],
+      "pe": ["單側 vs 雙側；測小腿周長（脛骨粗隆下 10 cm，差 >3 cm）", "凹陷性 vs 非凹陷（淋巴、黏液水腫）", "皮膚：紅、熱、邊界、水泡、捻髮音", "遠端脈搏、微血管回填、ABI", "JVP、肺囉音、腹水、肝腫大（全身原因）", "Baker cyst（膝後）"],
+      "scores": ["Wells (DVT)", "Caprini / Padua（VTE 風險）", "LRINEC", "ABI（周邊動脈）"],
+      "orders": [["limb-pain", "肢體痛 / 腫：第一輪"]]
+    },
+    "groups": [
+      { "title": "🚨 單側 · 不能漏", "tone": "urgent", "dx": [
+        { "name": "深部靜脈栓塞 DVT", "en": "Deep vein thrombosis", "clues": "術後、臥床、癌症、懷孕、CVC；整條腿腫", "pe": ["小腿周長差、沿靜脈壓痛", "Homans sign 不可靠"], "scores": ["Wells (DVT)", "Caprini / Padua"], "orders": [["limb-pain", "疑 DVT"], ["limb-pain", "DVT 確診：抗凝"]] },
+        { "name": "Phlegmasia cerulea dolens", "en": "Phlegmasia cerulea dolens", "clues": "大範圍 DVT → 動脈灌流受影響", "pe": ["發紫、劇痛、脈搏弱"], "orders": [["limb-pain", "Phlegmasia cerulea dolens"]] },
+        { "name": "壞死性筋膜炎", "en": "Necrotizing fasciitis", "clues": "疼痛超過外觀、快速擴散、糖尿病、肝硬化、海水", "pe": ["捻髮音、水泡、皮膚麻、灰黑"], "scores": ["LRINEC（≥6 疑）"], "orders": [["limb-pain", "壞死性筋膜炎"]] },
+        { "name": "腔室症候群", "en": "Compartment syndrome", "clues": "骨折、壓砸傷、長時間壓迫、抗凝出血", "pe": ["被動伸展劇痛、腔室緊繃（脈搏消失是晚期）"], "orders": [["limb-pain", "腔室症候群"]] }
+      ] },
+      { "title": "🦵 單側 · 其他", "dx": [
+        { "name": "蜂窩性組織炎", "en": "Cellulitis", "clues": "紅、熱、痛、邊界不清；香港腳是入口；通常單側", "pe": ["標記紅腫範圍、趾縫"], "orders": [["limb-pain", "蜂窩性組織炎"], ["antibiotics", "蜂窩性組織炎（非化膿）"]] },
+        { "name": "Baker cyst 破裂", "en": "Ruptured Baker cyst", "clues": "膝關節炎、小腿突然腫痛", "pe": ["膝後腫塊、腳踝瘀青（crescent sign）"], "orders": [["limb-pain", "疑 DVT"]] },
+        { "name": "表淺性血栓靜脈炎", "en": "Superficial thrombophlebitis", "clues": "靜脈曲張、IV 處；可觸及條索", "pe": ["條索狀壓痛"], "orders": [["limb-pain", "表淺性血栓靜脈炎"], ["fluids", "輸液外滲 / 靜脈炎"]] },
+        { "name": "痛風 / 化膿性關節炎", "en": "Gout, septic arthritis", "clues": "關節紅腫", "pe": ["關節積液"], "orders": [["limb-pain", "急性痛風"], ["limb-pain", "急性單關節炎（疑感染）"]] },
+        { "name": "糖尿病足感染", "en": "Diabetic foot infection", "clues": "潰瘍、異味", "pe": ["probe-to-bone"], "scores": ["IWGDF / IDSA classification", "Wagner grade"], "orders": [["wounds", "糖尿病足感染"]] }
+      ] },
+      { "title": "🦵🦵 雙側 · 全身原因", "dx": [
+        { "name": "心衰竭", "en": "Heart failure", "clues": "喘、端坐呼吸、體重增加", "pe": ["JVP、S3、囉音"], "scores": ["NYHA", "Framingham criteria"], "orders": [["dyspnea", "急性失代償性心衰竭"], ["fluids", "體液過多：利尿"]] },
+        { "name": "腎病症候群 / 腎衰竭", "en": "Nephrotic syndrome, renal failure", "clues": "泡泡尿、眼皮腫", "pe": ["眼瞼水腫"], "orders": [["hematuria", "腎病症候群住院"]] },
+        { "name": "肝硬化 / 低白蛋白", "en": "Cirrhosis, hypoalbuminemia", "clues": "腹水、營養差", "pe": ["腹水、黃疸"], "orders": [["fluids", "Albumin 適應症"]] },
+        { "name": "藥物", "en": "Drug-induced edema", "clues": "amlodipine（CCB）、類固醇、NSAID、pioglitazone、gabapentin", "pe": ["—"], "orders": [["fluids", "體液過多：利尿"]] },
+        { "name": "輸液過多", "en": "Fluid overload", "clues": "I/O 正平衡", "pe": ["體重"], "orders": [["fluids", "體液過多：利尿"]] },
+        { "name": "甲狀腺低下（黏液水腫）", "en": "Hypothyroidism", "clues": "非凹陷、怕冷、心搏過緩", "pe": ["非凹陷水腫、反射遲緩"], "orders": [["endocrine", "黏液水腫昏迷"]] },
+        { "name": "靜脈功能不全 / 淋巴水腫", "en": "Venous insufficiency, lymphedema", "clues": "慢性、色素沉著；癌症術後", "pe": ["Stemmer sign（淋巴）"], "orders": [["limb-pain", "肢體痛 / 腫：第一輪"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "limb-pain", "name": "手腳痛 / 冰冷 / 發白", "en": "Acute limb pain, cold limb", "regions": ["leg", "arm"],
+    "aliases": ["手痛", "腳痛", "腳冰", "腳發白", "跛行", "肢體缺血", "limb pain", "cold leg", "acute limb ischemia", "claudication", "6P"],
+    "first": {
+      "flags": ["6P：Pain、Pallor、Pulseless、Poikilothermia、Paresthesia、Paralysis → 急性肢體缺血", "腔室症候群：被動伸展劇痛", "外傷 + 變形（骨折、脫臼）", "發燒 + 局部腫痛（感染）"],
+      "pe": ["雙側比較：顏色、溫度、微血管回填", "脈搏：股、膕、足背、脛後（Doppler）", "感覺與運動（缺血嚴重度）", "腔室張力、被動伸展", "關節：積液、活動度", "皮膚：紅腫、傷口、捻髮音"],
+      "scores": ["Rutherford classification（急性肢體缺血 I / IIa / IIb / III）", "ABI", "Ottawa ankle / knee rules", "LRINEC"],
+      "orders": [["limb-pain", "肢體痛 / 腫：第一輪"]]
+    },
+    "groups": [
+      { "title": "🚨 救肢體", "tone": "urgent", "dx": [
+        { "name": "急性肢體缺血", "en": "Acute limb ischemia", "clues": "AF（栓塞）或 PAD（血栓）；突發冰冷蒼白無脈", "pe": ["6P、Doppler"], "scores": ["Rutherford classification"], "orders": [["limb-pain", "急性肢體缺血"]] },
+        { "name": "腔室症候群", "en": "Compartment syndrome", "clues": "骨折、壓砸、再灌流後", "pe": ["被動伸展痛"], "orders": [["limb-pain", "腔室症候群"], ["wounds", "腔室症候群"]] },
+        { "name": "壞死性筋膜炎", "en": "Necrotizing fasciitis", "clues": "疼痛超過外觀", "pe": ["捻髮音"], "scores": ["LRINEC"], "orders": [["limb-pain", "壞死性筋膜炎"]] },
+        { "name": "主動脈剝離延伸", "en": "Aortic dissection with limb ischemia", "clues": "胸背痛 + 單側脈搏消失", "pe": ["雙臂 / 雙腿血壓"], "scores": ["ADD-RS"], "orders": [["chest-pain", "疑主動脈剝離"]] }
+      ] },
+      { "title": "🩺 其他", "dx": [
+        { "name": "DVT", "en": "Deep vein thrombosis", "clues": "腫 + 痛", "pe": ["周長"], "scores": ["Wells (DVT)"], "orders": [["limb-pain", "疑 DVT"]] },
+        { "name": "跌倒骨折 / 髖部骨折", "en": "Fracture after fall", "clues": "老人跌倒後不能走、腿短縮外旋", "pe": ["短縮外旋、壓痛"], "scores": ["Ottawa ankle / knee rules"], "orders": [["wounds", "病房跌倒"]] },
+        { "name": "橫紋肌溶解 / 肌炎", "en": "Rhabdomyolysis, myositis", "clues": "statin、長時間躺地、抽搐", "pe": ["肌肉壓痛"], "orders": [["oliguria", "橫紋肌溶解"]] },
+        { "name": "神經痛 / 坐骨神經痛", "en": "Neuropathic pain, sciatica", "clues": "燒灼、電擊感", "pe": ["SLR、感覺"], "orders": [["analgesia", "神經痛"]] },
+        { "name": "IV 外滲", "en": "IV extravasation", "clues": "點滴處腫痛", "pe": ["注射部位"], "orders": [["fluids", "輸液外滲 / 靜脈炎"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "joint-pain", "name": "關節紅腫痛", "en": "Joint pain, swelling", "regions": ["leg", "arm"],
+    "aliases": ["關節痛", "膝蓋腫", "痛風", "關節炎", "joint pain", "arthritis", "monoarthritis", "gout", "septic joint", "podagra"],
+    "first": {
+      "flags": ["單一關節紅腫熱痛 + 發燒 → 當化膿性關節炎直到抽液排除", "人工關節", "免疫低下、菌血症、IVDU"],
+      "pe": ["關節 vs 關節周圍（滑囊炎、蜂窩性組織炎）：主動 + 被動活動都痛 → 關節內", "積液、紅、熱、活動度", "痛風石、皮膚、指甲（乾癬）", "其他關節（多關節）、脊椎、眼、尿道（反應性）"],
+      "scores": ["ACR/EULAR gout classification", "Kocher criteria（兒童髖）", "關節液分析：WBC >50,000 疑化膿"],
+      "orders": [["limb-pain", "急性單關節炎（疑感染）"]]
+    },
+    "groups": [
+      { "title": "🚨 化膿 · 不能漏", "tone": "urgent", "dx": [
+        { "name": "化膿性關節炎", "en": "Septic arthritis", "clues": "最常膝；痛到不能動、發燒（可無）", "pe": ["積液、全範圍活動痛"], "orders": [["limb-pain", "急性單關節炎（疑感染）"], ["antibiotics", "化膿性關節炎"]] },
+        { "name": "淋菌性關節炎", "en": "Disseminated gonococcal infection", "clues": "年輕、遊走性關節痛、腱鞘炎、膿疱疹", "pe": ["手腕腱鞘、皮疹"], "orders": [["antibiotics", "化膿性關節炎"]] }
+      ] },
+      { "title": "💎 結晶", "dx": [
+        { "name": "急性痛風", "en": "Acute gout", "clues": "大腳趾（podagra）、夜間突發、利尿劑、手術後、酒精", "pe": ["紅腫發亮、痛風石"], "scores": ["ACR/EULAR gout criteria", "Janssens diagnostic rule"], "orders": [["limb-pain", "急性痛風"]] },
+        { "name": "假性痛風 CPPD", "en": "Pseudogout", "clues": "老人膝 / 手腕、住院中發作", "pe": ["X 光軟骨鈣化"], "orders": [["limb-pain", "急性痛風"]] }
+      ] },
+      { "title": "🩺 其他", "dx": [
+        { "name": "蜂窩性組織炎 / 滑囊炎", "en": "Cellulitis, bursitis", "clues": "關節活動度保留", "pe": ["局部表淺腫"], "orders": [["limb-pain", "蜂窩性組織炎"]] },
+        { "name": "血友病 / 抗凝關節內出血", "en": "Hemarthrosis", "clues": "外傷、凝血異常", "pe": ["緊繃積液"], "orders": [["coagulopathy", "凝血檢驗異常：判讀"]] },
+        { "name": "反應性 / 類風濕 / 病毒性關節炎", "en": "Reactive, rheumatoid or viral arthritis", "clues": "多關節、近期腸道或泌尿感染", "pe": ["多關節、結膜炎"], "orders": [["exams", "風濕免疫檢驗"]] }
+      ] }
+    ]
+  }
+]

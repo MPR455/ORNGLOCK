@@ -10,10 +10,11 @@ const ROOT = fileURLToPath(new URL('../', import.meta.url));
 const STATIC = new Map([
   ['/', 'index.html'], ['/index.html', 'index.html'], ['/styles.css', 'styles.css'], ['/app.js', 'app.js'], ['/sections.mjs', 'sections.mjs'], ['/config.js', 'config.js'],
   ['/directory.css', 'directory.css'], ['/directory.mjs', 'directory.mjs'], ['/directory-data.mjs', 'directory-data.mjs'],
-  ...['handoff.css', 'handoff.mjs', 'handoff-model.mjs', 'handoff-import.mjs', 'handoff-editor.mjs', 'oncall.css', 'oncall.mjs'].map(file => [`/${file}`, file]),
+  ...['handoff.css', 'handoff.mjs', 'handoff-model.mjs', 'handoff-import.mjs', 'handoff-editor.mjs', 'oncall.css', 'oncall.mjs', 'ddx.css', 'ddx.mjs'].map(file => [`/${file}`, file]),
   ...['study.css', 'study.mjs', 'study-core.mjs', 'study-frame.mjs', 'study-images.mjs'].map(file => [`/${file}`, file]),
   ...['jszip.min.js', 'sql-wasm.js', 'sql-wasm.wasm', 'JSZip-LICENSE.md', 'sql.js-LICENSE.txt'].map(file => [`/vendor/study/${file}`, `vendor/study/${file}`]),
   [`/${encodeURI('clinical database/JustDoIt/justdoit-data.mjs')}`, 'clinical database/JustDoIt/justdoit-data.mjs'],
+  [`/${encodeURI('clinical database/DDx/ddx-data.mjs')}`, 'clinical database/DDx/ddx-data.mjs'],
   ['/assets/ornglock.png', 'assets/ornglock.png'], ['/assets/ornglock-symbol.png', 'assets/ornglock-symbol.png'],
   ['/assets/cgmh-oph.svg', 'assets/cgmh-oph.svg'], ['/assets/cgmh-em.svg', 'assets/cgmh-em.svg'],
   ...['assets/faq-first-time.png', 'assets/faq-logo.png', 'assets/faq-vpn.png', 'assets/faq-google-api.png', 'assets/faq-shortcut.png', 'assets/faq-mobile-shortcut.png'].map(file => [`/${file}`, file]),

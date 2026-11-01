@@ -1,0 +1,168 @@
+[
+  {
+    "id": "red-eye", "name": "眼睛紅 / 眼睛痛", "en": "Red eye, eye pain", "regions": ["eye"],
+    "aliases": ["紅眼", "眼痛", "眼睛刺痛", "怕光", "分泌物", "red eye", "eye pain", "photophobia", "conjunctivitis"],
+    "first": {
+      "flags": ["視力下降", "劇痛、嘔吐、看燈有光暈（急性青光眼）", "怕光 + 睫狀充血（角膜炎、虹膜炎）", "化學物質噴到 → 先沖洗再問", "隱形眼鏡配戴者", "眼內手術 / 注射後（眼內炎）", "眼球突出、眼球轉動痛、發燒（眼眶蜂窩性組織炎）"],
+      "pe": ["視力（每眼分開，戴眼鏡或 pinhole）", "充血型態：結膜（周邊重）vs 睫狀（角膜緣重）", "瞳孔大小、光反射、RAPD", "角膜透明度、fluorescein 染色（擦傷、樹枝狀潰瘍）", "前房：積膿（hypopyon）、積血（hyphema）", "眼壓（觸診或眼壓計）", "眼球運動與疼痛、眼瞼腫脹、突眼", "分泌物性質：水樣（病毒）、黏稠膿（細菌）、牽絲（過敏）"],
+      "scores": ["Visual acuity（Snellen / 數指 / 手動 / 光覺）", "Roper-Hall / Dua classification（化學灼傷）"],
+      "orders": [["eye", "眼睛紅 / 痛 / 看不清：第一輪"]]
+    },
+    "groups": [
+      { "title": "🚨 威脅視力 · 今天要眼科", "tone": "urgent", "dx": [
+        { "name": "化學性眼灼傷", "en": "Chemical eye injury", "clues": "鹼比酸更嚴重；立即大量沖洗到 pH 7", "pe": ["沖洗後測 pH、角膜緣缺血（變白）", "翻眼瞼找殘留顆粒"], "scores": ["Roper-Hall / Dua classification"], "orders": [["eye", "化學性眼灼傷"]] },
+        { "name": "急性閉角型青光眼", "en": "Acute angle-closure glaucoma", "clues": "單眼劇痛、頭痛、嘔吐、視力模糊、光暈", "pe": ["瞳孔中度散大固定、角膜霧、淺前房、眼壓高"], "orders": [["eye", "急性閉角型青光眼"]] },
+        { "name": "細菌性角膜炎 / 角膜潰瘍", "en": "Bacterial keratitis, corneal ulcer", "clues": "隱形眼鏡、外傷；痛、怕光、白色浸潤", "pe": ["角膜白點、fluorescein 染色、hypopyon"], "orders": [["eye", "細菌性角膜炎 / 角膜潰瘍"]] },
+        { "name": "黴菌性角膜炎", "en": "Fungal keratitis", "clues": "植物刮傷、農業工作；羽毛狀邊緣、衛星病灶", "pe": ["羽狀浸潤、衛星病灶"], "orders": [["eye", "黴菌性角膜炎"]] },
+        { "name": "單純疱疹角膜炎", "en": "HSV keratitis", "clues": "樹枝狀潰瘍、角膜感覺下降；勿給類固醇", "pe": ["fluorescein：樹枝狀（dendrite）"], "orders": [["eye", "單純疱疹角膜炎"]] },
+        { "name": "帶狀疱疹眼病 HZO", "en": "Herpes zoster ophthalmicus", "clues": "V1 分布水泡；鼻尖水泡（Hutchinson sign）", "pe": ["角膜染色、前房反應、眼壓"], "orders": [["eye", "帶狀疱疹眼病 (HZO)"]] },
+        { "name": "眼內炎", "en": "Endophthalmitis", "clues": "白內障手術、玻璃體注射後數天；菌血症（內因性）", "pe": ["視力驟降、hypopyon、玻璃體混濁"], "orders": [["eye", "眼內炎"]] },
+        { "name": "前葡萄膜炎 / 虹膜炎", "en": "Anterior uveitis, iritis", "clues": "怕光、睫狀充血、瞳孔小；僵直性脊椎炎、IBD、類肉瘤", "pe": ["小而不規則瞳孔、consensual photophobia", "前房 cell / flare（裂隙燈）"], "orders": [["eye", "前葡萄膜炎 / 虹膜炎"]] },
+        { "name": "眼眶蜂窩性組織炎", "en": "Orbital cellulitis", "clues": "眼瞼紅腫 + 眼球轉動痛 / 受限、突眼、視力下降 → 眼眶（非眶隔前）", "pe": ["眼球運動、突眼、RAPD、視力"], "scores": ["Chandler classification"], "orders": [["eye", "眼眶周圍 / 眼眶蜂窩性組織炎"]] },
+        { "name": "前房出血 Hyphema", "en": "Hyphema", "clues": "鈍傷後；抗凝劑、鐮刀型貧血", "pe": ["前房血液分層、眼壓"], "orders": [["eye", "前房出血 (Hyphema)"]] }
+      ] },
+      { "title": "👁️ 常見 · 多可隔天門診", "dx": [
+        { "name": "細菌性結膜炎", "en": "Bacterial conjunctivitis", "clues": "黏稠膿分泌物、早上眼皮黏住；視力正常", "pe": ["結膜充血、角膜清", "大量膿 + 快速 → 淋菌（急）"], "orders": [["eye", "細菌性結膜炎"]] },
+        { "name": "病毒性結膜炎", "en": "Viral conjunctivitis", "clues": "水樣分泌、先一眼後兩眼、感冒、耳前淋巴結", "pe": ["耳前淋巴結、濾泡"], "orders": [["eye", "細菌性結膜炎"]] },
+        { "name": "過敏性結膜炎", "en": "Allergic conjunctivitis", "clues": "雙眼癢、牽絲分泌物、過敏史", "pe": ["乳突、眼瞼水腫"], "orders": [["eye", "過敏性結膜炎"]] },
+        { "name": "角膜擦傷 / 異物", "en": "Corneal abrasion, foreign body", "clues": "異物感、流淚；外傷或隱形眼鏡", "pe": ["fluorescein 染色、翻上眼瞼找異物"], "orders": [["eye", "角膜擦傷 / 異物"]] },
+        { "name": "結膜下出血", "en": "Subconjunctival hemorrhage", "clues": "無痛、視力正常、邊界清楚；咳嗽、高血壓、抗凝", "pe": ["BP；反覆發生查凝血"], "orders": [["coagulopathy", "凝血檢驗異常：判讀"]] },
+        { "name": "ICU 暴露性角膜病變", "en": "Exposure keratopathy", "clues": "鎮靜、插管、眼閉不全", "pe": ["閉眼不全、下方角膜染色"], "orders": [["eye", "ICU 眼閉不全 / 暴露性角膜病變"]] },
+        { "name": "鞏膜炎 / 上鞏膜炎", "en": "Scleritis, episcleritis", "clues": "鞏膜炎深部劇痛、夜間痛醒（RA、血管炎）；上鞏膜炎輕微", "pe": ["phenylephrine 點眼後充血消退 → 上鞏膜炎"], "orders": [["eye", "眼睛紅 / 痛 / 看不清：第一輪"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "vision-loss", "name": "視力模糊 / 看不見", "en": "Blurred or lost vision", "regions": ["eye"],
+    "aliases": ["看不清楚", "突然看不見", "視力下降", "黑影", "閃光", "視野缺損", "vision loss", "blurred vision", "amaurosis", "floaters", "visual field"],
+    "first": {
+      "flags": ["突發無痛單眼全盲 → CRAO（眼睛的中風）", ">50 歲 + 頭痛 / 咀嚼痛 → GCA", "閃光 + 飛蚊 + 窗簾遮蓋 → 視網膜剝離", "雙眼同側視野缺損 → 腦中風", "合併疼痛 → 青光眼、角膜、葡萄膜、視神經炎"],
+      "pe": ["視力：每眼分開、pinhole 改善 → 屈光問題", "RAPD（swinging flashlight）", "對照法視野（單眼 vs 雙眼同側）", "眼底：cherry-red spot、視神經水腫、出血", "眼壓", "神經學：其他中風症狀"],
+      "scores": ["Visual acuity", "Amsler grid（黃斑部）", "BE-FAST（E = Eyes）", "2022 ACR/EULAR GCA criteria"],
+      "orders": [["eye", "突發無痛視力喪失"]]
+    },
+    "groups": [
+      { "title": "🚨 無痛 · 急", "tone": "urgent", "dx": [
+        { "name": "視網膜中央動脈阻塞 CRAO", "en": "Central retinal artery occlusion", "clues": "突發無痛、單眼嚴重視力喪失；同中風處理（找栓子來源）", "pe": ["RAPD、cherry-red spot、視網膜蒼白"], "scores": ["NIHSS"], "orders": [["eye", "突發無痛視力喪失"], ["altered-consciousness", "急性中風住院醫囑"]] },
+        { "name": "巨細胞動脈炎 GCA（AION）", "en": "Giant cell arteritis, arteritic AION", "clues": ">50 歲、頭痛、頭皮壓痛、咀嚼跛行；另一眼數天內可能失明", "pe": ["顳動脈、蒼白水腫視神經盤、RAPD"], "scores": ["2022 ACR/EULAR GCA criteria"], "orders": [["headache", "疑顳動脈炎 (GCA)"]] },
+        { "name": "視網膜剝離", "en": "Retinal detachment", "clues": "閃光、大量飛蚊、窗簾樣陰影由周邊遮過來；高度近視、白內障術後", "pe": ["視野缺損、散瞳眼底"], "orders": [["eye", "突發無痛視力喪失"]] },
+        { "name": "玻璃體出血", "en": "Vitreous hemorrhage", "clues": "糖尿病視網膜病變、紅色雲霧", "pe": ["紅光反射減弱"], "orders": [["eye", "突發無痛視力喪失"]] },
+        { "name": "枕葉中風 / 一過性黑矇", "en": "Occipital stroke, amaurosis fugax", "clues": "雙眼同側偏盲；或單眼短暫黑矇（頸動脈）", "pe": ["視野（雙眼同側）、頸動脈雜音"], "scores": ["ABCD2", "NIHSS"], "orders": [["altered-consciousness", "疑急性中風：溶栓"]] },
+        { "name": "PRES / 高血壓急症", "en": "PRES, hypertensive retinopathy", "clues": "高血壓、頭痛、抽搐", "pe": ["BP、眼底火焰狀出血"], "orders": [["hypertension", "高血壓腦病變 / PRES"]] }
+      ] },
+      { "title": "😣 疼痛 · 急", "dx": [
+        { "name": "急性閉角型青光眼", "en": "Acute angle-closure glaucoma", "clues": "痛 + 嘔吐 + 光暈", "pe": ["眼壓、瞳孔中度散大"], "orders": [["eye", "急性閉角型青光眼"]] },
+        { "name": "視神經炎", "en": "Optic neuritis", "clues": "年輕女性、眼球轉動痛、色覺下降；MS", "pe": ["RAPD、紅色飽和度下降"], "orders": [["exams", "神經科檢查"]] },
+        { "name": "角膜炎 / 眼內炎 / 葡萄膜炎", "en": "Keratitis, endophthalmitis, uveitis", "clues": "紅眼 + 痛 + 視力下降", "pe": ["角膜、前房"], "orders": [["eye", "細菌性角膜炎 / 角膜潰瘍"], ["eye", "眼內炎"], ["eye", "前葡萄膜炎 / 虹膜炎"]] }
+      ] },
+      { "title": "🐢 漸進 / 全身因素", "dx": [
+        { "name": "血糖波動 / 藥物", "en": "Glucose fluctuation, drugs", "clues": "高血糖使水晶體腫脹；抗膽鹼藥散瞳", "pe": ["pinhole 改善"], "orders": [["glucose", "住院高血糖"]] },
+        { "name": "白內障 / 黃斑部病變", "en": "Cataract, macular degeneration", "clues": "漸進；直線變彎（黃斑）", "pe": ["紅光反射、Amsler grid"], "scores": ["Amsler grid"], "orders": [["eye", "眼睛紅 / 痛 / 看不清：第一輪"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "diplopia", "name": "複視 / 眼皮下垂", "en": "Diplopia, ptosis", "regions": ["eye", "head"],
+    "aliases": ["疊影", "看到兩個", "眼皮垂", "double vision", "ptosis", "third nerve palsy"],
+    "first": {
+      "flags": ["瞳孔放大的第三對腦神經麻痺 → 疑動脈瘤（PComm）", "合併頭痛、意識改變、其他腦幹症狀", "合併吞嚥、呼吸無力（MG、botulism、GBS Miller Fisher）"],
+      "pe": ["遮一眼複視消失？→ 雙眼性（神經肌肉）；不消失 → 單眼性（眼睛本身）", "九方位眼球運動、cover test", "瞳孔大小與反應、眼瞼下垂", "疲勞性：持續上視 60 秒、冰敷測試", "其他腦神經、小腦、反射"],
+      "scores": ["NIHSS", "MG-ADL", "FVC / NIF"],
+      "orders": [["exams", "神經科檢查"]]
+    },
+    "groups": [
+      { "title": "🚨 危急", "tone": "urgent", "dx": [
+        { "name": "動脈瘤壓迫第三對腦神經", "en": "Aneurysmal third nerve palsy", "clues": "眼瞼下垂 + 眼球往外下 + 瞳孔放大、頭痛", "pe": ["瞳孔是否受影響"], "orders": [["headache", "疑 SAH（雷擊樣頭痛）"]] },
+        { "name": "腦幹中風", "en": "Brainstem stroke", "clues": "合併眩暈、構音、肢體症狀", "pe": ["腦神經、小腦"], "scores": ["NIHSS"], "orders": [["altered-consciousness", "疑急性中風：溶栓"]] },
+        { "name": "重症肌無力", "en": "Myasthenia gravis", "clues": "傍晚加重、波動；可進展到呼吸衰竭", "pe": ["上視疲勞測試、冰敷測試"], "scores": ["MG-ADL", "FVC / NIF"], "orders": [["dyspnea", "神經肌肉無力：呼吸評估"]] },
+        { "name": "Wernicke 腦病變", "en": "Wernicke encephalopathy", "clues": "眼肌麻痺 + 步態不穩 + 混亂", "pe": ["眼振、外直肌麻痺"], "orders": [["altered-consciousness", "疑 Wernicke / 營養不良"]] },
+        { "name": "顱內壓上升（第六對神經）", "en": "Raised ICP, sixth nerve palsy", "clues": "頭痛、嘔吐、水平複視", "pe": ["外展受限、papilledema"], "orders": [["headache", "顱內壓上升"]] }
+      ] },
+      { "title": "🩺 其他", "dx": [
+        { "name": "微血管缺血性腦神經麻痺", "en": "Microvascular cranial nerve palsy", "clues": "糖尿病、高血壓；瞳孔通常不受影響，3 個月內恢復", "pe": ["瞳孔正常"], "orders": [["glucose", "住院高血糖"]] },
+        { "name": "甲狀腺眼病 / 眼眶病灶", "en": "Thyroid eye disease, orbital lesion", "clues": "突眼、眼瞼退縮", "pe": ["突眼、眼瞼遲滯"], "scores": ["Clinical Activity Score（TED）"], "orders": [["endocrine", "內分泌急症：第一輪"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "sore-throat", "name": "喉嚨痛 / 吞嚥痛", "en": "Sore throat, odynophagia", "regions": ["ent", "neck"],
+    "aliases": ["喉嚨痛", "吞不下", "聲音沙啞", "流口水", "咽喉痛", "sore throat", "pharyngitis", "dysphagia", "stridor", "hoarseness", "drooling"],
+    "first": {
+      "flags": ["呼吸道危險 4D：Drooling、Dysphagia、Distress、Dysphonia（悶住聲）", "喘鳴 stridor、tripod 姿勢", "張口困難 trismus、頸部腫脹、懸雍垂偏移", "頸部僵硬、胸痛（縱膈炎）", "免疫低下、化療"],
+      "pe": ["呼吸道：喘鳴、SpO2、能否躺平", "口咽：扁桃腺滲出、懸雍垂偏移、口腔底腫（Ludwig）、念珠菌", "張口度、頸部淋巴結、頸部壓痛", "皮疹、脾腫大（EBV）", "插管後喉嚨痛：聲音、喉頭水腫"],
+      "scores": ["Centor / McIsaac score", "FeverPAIN score"],
+      "orders": [["uri-symptoms", "喉嚨痛 / 咳嗽：第一輪"]]
+    },
+    "groups": [
+      { "title": "🚨 呼吸道危險", "tone": "urgent", "dx": [
+        { "name": "會厭炎 / 上呼吸道阻塞", "en": "Epiglottitis, upper airway obstruction", "clues": "喉嚨很痛但口咽看起來正常、流口水、悶聲、喘鳴；勿強壓舌", "pe": ["坐著前傾、喘鳴、不要刺激"], "orders": [["uri-symptoms", "上呼吸道阻塞 / 會厭炎"]] },
+        { "name": "深頸部感染（扁桃腺周圍膿瘍、Ludwig angina）", "en": "Deep neck infection, peritonsillar abscess, Ludwig angina", "clues": "張口困難、懸雍垂偏移、熱馬鈴薯聲；口腔底 / 下頷腫硬", "pe": ["懸雍垂偏移、口腔底抬高、頸部腫"], "orders": [["uri-symptoms", "深頸部感染"]] },
+        { "name": "血管性水腫 / Anaphylaxis", "en": "Angioedema, anaphylaxis", "clues": "唇舌腫、ACEI、新藥、蕁麻疹", "pe": ["舌、懸雍垂水腫、喘鳴、低血壓"], "orders": [["rash-allergy", "ACEI 血管性水腫"], ["dyspnea", "Anaphylaxis"]] },
+        { "name": "異物哽塞", "en": "Foreign body", "clues": "吃東西時突然；魚刺", "pe": ["無法說話 → Heimlich"], "orders": [["dyspnea", "異物哽塞"], ["gi-symptoms", "異物吞食"]] },
+        { "name": "急性冠心症（轉移痛）", "en": "Referred ACS pain", "clues": "喉頭緊、用力時發生、冒汗", "pe": ["口咽正常"], "scores": ["HEART score"], "orders": [["chest-pain", "胸痛：第一輪"]] }
+      ] },
+      { "title": "🦠 感染", "dx": [
+        { "name": "細菌性咽炎（A 群鏈球菌）", "en": "Group A strep pharyngitis", "clues": "發燒、扁桃腺滲出、前頸淋巴結痛、沒咳嗽", "pe": ["扁桃腺滲出、前頸淋巴結"], "scores": ["Centor / McIsaac", "FeverPAIN"], "orders": [["uri-symptoms", "喉嚨痛（細菌性）"]] },
+        { "name": "病毒性咽炎 / 流感 / COVID", "en": "Viral pharyngitis, influenza, COVID-19", "clues": "咳嗽、鼻水、結膜炎、肌肉痛", "pe": ["—"], "orders": [["uri-symptoms", "流感"], ["antibiotics", "COVID-19"]] },
+        { "name": "口腔念珠菌 / 食道念珠菌", "en": "Oral or esophageal candidiasis", "clues": "類固醇吸入、抗生素、免疫低下；吞嚥痛", "pe": ["白色可刮除斑塊"], "orders": [["uri-symptoms", "口腔念珠菌（鵝口瘡）"]] },
+        { "name": "傳染性單核球增多症 EBV", "en": "Infectious mononucleosis", "clues": "年輕人、後頸淋巴結、疲倦、脾腫大", "pe": ["後頸淋巴結、脾"], "orders": [["exams", "感染科檢驗"]] }
+      ] },
+      { "title": "🩹 其他", "dx": [
+        { "name": "插管後喉嚨痛 / 口腔潰瘍 / 黏膜炎", "en": "Post-extubation sore throat, mucositis", "clues": "拔管後、化療放療", "pe": ["喘鳴（喉頭水腫）"], "orders": [["uri-symptoms", "口腔潰瘍 / 插管後喉嚨痛"]] },
+        { "name": "胃食道逆流", "en": "GERD, laryngopharyngeal reflux", "clues": "早上喉嚨卡、火燒心、平躺加重", "pe": ["—"], "orders": [["abdominal-pain", "上消化道潰瘍 / 上腹痛"]] },
+        { "name": "甲狀腺炎", "en": "Subacute thyroiditis", "clues": "前頸痛放射到耳朵、心悸", "pe": ["甲狀腺壓痛"], "orders": [["endocrine", "甲狀腺風暴"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "epistaxis", "name": "流鼻血", "en": "Epistaxis", "regions": ["ent"],
+    "aliases": ["鼻出血", "鼻血", "nosebleed", "epistaxis"],
+    "first": {
+      "flags": ["持續 >20 分、兩側、從後面流到喉嚨（後鼻孔出血）", "抗凝劑 / 抗血小板、血小板低", "生命徵象不穩、Hb 下降", "反覆單側 + 鼻塞（腫瘤，鼻咽癌）"],
+      "pe": ["坐姿前傾、捏鼻翼 10–15 分後再看", "前鼻鏡：Kiesselbach plexus 出血點", "口咽後壁是否有血流下", "BP、出血跡象（瘀斑、牙齦）"],
+      "scores": ["HAS-BLED（抗凝病人）"],
+      "orders": [["uri-symptoms", "鼻出血"]]
+    },
+    "groups": [
+      { "title": "🩸 出血原因", "tone": "urgent", "dx": [
+        { "name": "抗凝劑 / 抗血小板相關", "en": "Anticoagulant-associated epistaxis", "clues": "warfarin INR 高、DOAC、DAPT", "pe": ["其他出血點"], "orders": [["uri-symptoms", "鼻出血 + 抗凝"], ["coagulopathy", "Warfarin 非大出血"]] },
+        { "name": "凝血異常 / 血小板低", "en": "Coagulopathy, thrombocytopenia", "clues": "肝病、化療、DIC、ITP、血友病", "pe": ["瘀點、瘀斑"], "orders": [["coagulopathy", "凝血檢驗異常：判讀"], ["coagulopathy", "血小板低病人照護"]] },
+        { "name": "後鼻孔出血", "en": "Posterior epistaxis", "clues": "老人、高血壓、兩側、流到喉嚨", "pe": ["前鼻鏡看不到出血點"], "orders": [["uri-symptoms", "鼻出血"]] }
+      ] },
+      { "title": "👃 局部原因", "dx": [
+        { "name": "前鼻孔出血（Kiesselbach）", "en": "Anterior epistaxis", "clues": "乾燥、挖鼻、鼻胃管 / 氧氣鼻導管、上呼吸道感染", "pe": ["鼻中隔前下方出血點"], "orders": [["uri-symptoms", "鼻出血"]] },
+        { "name": "高血壓", "en": "Hypertension", "clues": "常是結果而非原因；疼痛焦慮", "pe": ["BP"], "orders": [["hypertension", "血壓高：先確認"]] },
+        { "name": "腫瘤（鼻咽癌）", "en": "Nasopharyngeal carcinoma", "clues": "反覆單側、鼻塞、頸部淋巴結、耳悶", "pe": ["頸部淋巴結"], "orders": [["uri-symptoms", "鼻出血"]] },
+        { "name": "遺傳性出血性微血管擴張 HHT", "en": "Hereditary hemorrhagic telangiectasia", "clues": "家族史、唇舌微血管擴張", "pe": ["唇、舌、指尖微血管擴張"], "scores": ["Curaçao criteria"], "orders": [["uri-symptoms", "鼻出血"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "neck-pain", "name": "頸痛 / 頸部僵硬 / 頸部腫", "en": "Neck pain, stiffness, swelling", "regions": ["neck"],
+    "aliases": ["脖子痛", "脖子硬", "頸部腫", "落枕", "neck pain", "neck stiffness", "meningism", "neck swelling", "neck mass"],
+    "first": {
+      "flags": ["發燒 + 頸僵 + 頭痛（腦膜炎）", "突發頸痛 + 頭痛 + 神經學症狀（頸動脈 / 椎動脈剝離）", "外傷後（頸椎骨折）", "上肢無力麻木、大小便異常（頸髓）", "頸部快速腫大 + 吞嚥 / 呼吸困難"],
+      "pe": ["頸部活動度：被動前屈受限（腦膜） vs 全方向（肌肉）", "Kernig / Brudzinski、jolt accentuation", "頸椎叩痛、上肢神經學（皮節、反射、Hoffmann）", "Spurling test（神經根）", "頸部腫塊：甲狀腺、淋巴結、深頸感染、皮下氣腫", "Horner syndrome（頸動脈剝離）"],
+      "scores": ["NEXUS criteria", "Canadian C-spine Rule"],
+      "orders": [["headache", "頭痛：第一輪"]]
+    },
+    "groups": [
+      { "title": "🚨 危急", "tone": "urgent", "dx": [
+        { "name": "腦膜炎", "en": "Meningitis", "clues": "發燒、頭痛、頸僵、意識改變", "pe": ["被動前屈受限、Kernig、Brudzinski"], "scores": ["qSOFA"], "orders": [["headache", "疑細菌性腦膜炎"]] },
+        { "name": "蜘蛛膜下腔出血", "en": "Subarachnoid hemorrhage", "clues": "雷擊樣頭痛後頸僵", "pe": ["頸僵"], "scores": ["Ottawa SAH Rule"], "orders": [["headache", "疑 SAH（雷擊樣頭痛）"]] },
+        { "name": "頸動脈 / 椎動脈剝離", "en": "Cervical artery dissection", "clues": "推拿、外傷、劇烈轉頭後；頸痛 + 頭痛 + Horner 或後循環中風", "pe": ["Horner、神經學"], "scores": ["NIHSS"], "orders": [["altered-consciousness", "急性中風住院醫囑"]] },
+        { "name": "深頸部感染 / 咽後膿瘍", "en": "Deep neck infection, retropharyngeal abscess", "clues": "發燒、吞嚥痛、頸部腫、張口困難", "pe": ["頸部腫脹、捻髮音"], "orders": [["uri-symptoms", "深頸部感染"]] },
+        { "name": "頸椎骨折 / 頸髓損傷", "en": "Cervical spine injury", "clues": "跌倒（老人低能量即可）、類風濕、僵直性脊椎炎", "pe": ["中線壓痛、神經學"], "scores": ["NEXUS", "Canadian C-spine Rule"], "orders": [["wounds", "病房跌倒"]] },
+        { "name": "脊椎感染 / 硬膜外膿瘍", "en": "Spinal epidural abscess", "clues": "發燒 + 頸背痛 + 神經學缺損；菌血症、IVDU、透析", "pe": ["脊椎叩痛"], "orders": [["limb-pain", "疑脊椎感染 / 硬膜外膿瘍"]] },
+        { "name": "急性冠心症轉移痛", "en": "Referred ACS pain", "clues": "下頷 / 頸部緊、用力時", "pe": ["—"], "scores": ["HEART score"], "orders": [["chest-pain", "胸痛：第一輪"]] }
+      ] },
+      { "title": "🦴 肌肉骨骼 / 其他", "dx": [
+        { "name": "肌肉拉傷 / 落枕", "en": "Muscle strain", "clues": "姿勢不良、沒神經學症狀", "pe": ["肌肉壓痛、神經學正常"], "orders": [["analgesia", "肌肉痠痛 / 局部痛"]] },
+        { "name": "頸神經根病變", "en": "Cervical radiculopathy", "clues": "痛放射到手臂、麻", "pe": ["Spurling test、皮節分布、反射"], "orders": [["analgesia", "神經痛"]] },
+        { "name": "甲狀腺炎 / 甲狀腺腫", "en": "Thyroiditis, goiter", "clues": "前頸痛或腫、甲亢症狀", "pe": ["甲狀腺觸診"], "scores": ["Burch–Wartofsky Point Scale（疑甲狀腺風暴）"], "orders": [["endocrine", "甲狀腺風暴"]] },
+        { "name": "淋巴結腫大", "en": "Lymphadenopathy", "clues": "感染、結核、淋巴瘤、轉移", "pe": ["大小、硬度、可動性、其他部位淋巴結"], "orders": [["antibiotics", "疑肺結核"], ["exams", "血液科檢查"]] },
+        { "name": "藥物急性肌張力不全", "en": "Acute dystonia", "clues": "metoclopramide、haloperidol 後斜頸", "pe": ["斜頸、眼球上吊"], "orders": [["gi-symptoms", "止吐"]] }
+      ] }
+    ]
+  }
+]

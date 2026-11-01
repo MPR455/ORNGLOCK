@@ -1,0 +1,235 @@
+[
+  {
+    "id": "headache", "name": "頭痛", "en": "Headache", "regions": ["head"],
+    "aliases": ["頭很痛", "頭脹", "雷擊頭痛", "偏頭痛", "thunderclap", "cephalgia", "migraine", "head pain"],
+    "first": {
+      "flags": ["SNOOP4：全身症狀 / 發燒、神經學缺損、突發雷擊樣（1 分鐘內達最痛）、>50 歲新發、型態改變、姿勢性、Valsalva 誘發、懷孕 / 產後", "抗凝劑、外傷、癌症、免疫低下", "眼紅痛、視力模糊 → 急性青光眼 / GCA", "意識改變、抽搐、頸部僵硬"],
+      "pe": ["生命徵象：BP（高血壓急症）、體溫", "GCS + 完整神經學：瞳孔、視野、眼球運動、顏面、肌力、pronator drift、小腦、步態", "頸部僵硬、Kernig / Brudzinski、jolt accentuation", "眼底鏡：papilledema、視網膜出血", "顳動脈觸診（壓痛、脈搏減弱）、頭皮壓痛", "眼睛：結膜充血、角膜霧、瞳孔中度散大固定"],
+      "scores": ["Ottawa SAH Rule（清醒、1 hr 內達高峰的非外傷頭痛）", "GCS", "NIHSS（有局部缺損）", "Canadian CT Head Rule（有外傷）"],
+      "orders": [["headache", "頭痛：第一輪"]]
+    },
+    "groups": [
+      { "title": "🚨 危急 · 不能漏", "tone": "urgent", "dx": [
+        { "name": "蜘蛛膜下腔出血 SAH", "en": "Subarachnoid hemorrhage", "clues": "雷擊樣、一生最痛、用力 / 性行為時發作；可伴頸僵、嘔吐、短暫意識喪失", "pe": ["頸部僵硬（數小時後才明顯）", "GCS、局部缺損、第三對腦神經麻痺（PComm 動脈瘤：瞳孔放大）"], "scores": ["Ottawa SAH Rule", "Hunt and Hess / WFNS grade", "modified Fisher grade（CT）"], "orders": [["headache", "疑 SAH（雷擊樣頭痛）"], ["hypertension", "蜘蛛膜下腔出血 (SAH) 血壓"]] },
+        { "name": "細菌性腦膜炎", "en": "Bacterial meningitis", "clues": "發燒、頭痛、頸僵、意識改變（四項常有 ≥2）；紫斑想 meningococcus", "pe": ["頸僵、Kernig、Brudzinski、jolt accentuation", "皮膚瘀點 / 紫斑", "有局部缺損、乳頭水腫、GCS ≤10 → LP 前先 CT"], "scores": ["qSOFA / SOFA", "GCS"], "orders": [["headache", "疑細菌性腦膜炎"], ["antibiotics", "細菌性腦膜炎"]] },
+        { "name": "病毒性腦炎（HSV）", "en": "Viral encephalitis, HSV", "clues": "發燒 + 行為改變、失語、抽搐、嗅幻覺（顳葉）", "pe": ["定向、語言、記憶", "抽搐、局部神經學缺損"], "scores": ["GCS", "4AT / CAM（急性混亂）"], "orders": [["headache", "疑病毒性腦炎"]] },
+        { "name": "顱內出血", "en": "Intracerebral hemorrhage", "clues": "突發頭痛 + 嘔吐 + 局部缺損；抗凝劑、高血壓、外傷、老人", "pe": ["NIHSS", "瞳孔大小與光反射（腦疝）", "Cushing triad：高血壓 + 心搏過緩 + 呼吸不規則"], "scores": ["GCS", "NIHSS", "ICH score"], "orders": [["headache", "顱內出血 + 抗凝逆轉"], ["hypertension", "腦出血血壓"]] },
+        { "name": "顱內壓上升（腫瘤、膿瘍、水腦）", "en": "Raised ICP, mass lesion, brain abscess", "clues": "清晨頭痛、平躺或咳嗽加劇、噴射性嘔吐、視力模糊；癌症或免疫低下", "pe": ["眼底 papilledema", "第六對腦神經麻痺（假性定位）", "Cushing triad"], "scores": ["GCS"], "orders": [["headache", "顱內壓上升"], ["headache", "疑腦膿瘍"]] },
+        { "name": "高血壓急症 / PRES", "en": "Hypertensive emergency, PRES", "clues": "BP 常 >180/120 + 頭痛、視力模糊、抽搐、意識改變", "pe": ["雙臂血壓", "眼底：火焰狀出血、棉絮斑、papilledema", "神經學、肺水腫、胸痛（器官損傷）"], "scores": ["GCS"], "orders": [["headache", "高血壓急症 + 頭痛"], ["hypertension", "高血壓腦病變 / PRES"]] },
+        { "name": "巨細胞動脈炎 GCA", "en": "Giant cell arteritis", "clues": ">50 歲新頭痛、頭皮壓痛、咀嚼跛行、短暫視力模糊 / 複視、PMR 症狀", "pe": ["顳動脈壓痛、硬結、脈搏消失", "視力、RAPD、眼底（蒼白水腫視神經盤）"], "scores": ["2022 ACR/EULAR GCA classification criteria"], "orders": [["headache", "疑顳動脈炎 (GCA)"]] },
+        { "name": "急性閉角型青光眼", "en": "Acute angle-closure glaucoma", "clues": "眼痛 + 頭痛 + 嘔吐 + 視力模糊、看燈有光暈；暗處或散瞳後", "pe": ["睫狀充血、角膜霧、瞳孔中度散大固定", "觸診眼球硬、眼壓（常 >40 mmHg）"], "orders": [["headache", "急性閉角型青光眼"], ["eye", "急性閉角型青光眼"]] },
+        { "name": "一氧化碳中毒", "en": "Carbon monoxide poisoning", "clues": "同住多人頭痛、頭暈、噁心；冬天、燒炭、熱水器", "pe": ["SpO2 可能假性正常（需 co-oximetry COHb）", "意識、神經學"], "scores": ["GCS"], "orders": [["poisoning", "一氧化碳中毒"]] },
+        { "name": "子癇前症 / 產後頭痛", "en": "Preeclampsia, postpartum headache", "clues": "懷孕 >20 週或產後 6 週內，高血壓、視力異常、右上腹痛", "pe": ["BP、深部肌腱反射亢進 / clonus", "水腫、右上腹壓痛"], "orders": [["headache", "孕產婦頭痛 / 子癇前症"], ["hypertension", "子癇前症嚴重高血壓"]] },
+        { "name": "頭部外傷 / 慢性硬膜下出血", "en": "Head injury, chronic subdural hematoma", "clues": "跌倒、抗凝劑、老人、酒精；慢性 SDH 可在數週後才頭痛或意識變差", "pe": ["頭皮血腫、Battle sign、raccoon eyes、耳鼻流 CSF", "GCS 變化"], "scores": ["Canadian CT Head Rule", "GCS"], "orders": [["headache", "頭部外傷：要不要 CT"], ["wounds", "病房跌倒"]] }
+      ] },
+      { "title": "🧠 原發性頭痛", "dx": [
+        { "name": "偏頭痛", "en": "Migraine", "clues": "單側搏動性、4–72 hr、噁心、怕光怕吵，可有視覺前兆；活動加劇", "pe": ["神經學應正常（典型前兆除外）"], "scores": ["ICHD-3 診斷準則", "POUND mnemonic", "MIDAS / HIT-6（失能程度）"], "orders": [["headache", "偏頭痛急性發作"]] },
+        { "name": "緊縮型頭痛", "en": "Tension-type headache", "clues": "雙側壓迫或緊箍感、輕中度、不因活動加劇、無噁心", "pe": ["頸肩肌肉壓痛、神經學正常"], "scores": ["ICHD-3"], "orders": [["headache", "緊縮型頭痛"]] },
+        { "name": "叢集性頭痛", "en": "Cluster headache", "clues": "單側眼眶劇痛 15–180 分，同側流淚、流鼻水、眼瞼下垂，坐立不安", "pe": ["發作時同側 Horner（ptosis、miosis）、結膜充血"], "scores": ["ICHD-3"], "orders": [["headache", "叢集性頭痛"]] }
+      ] },
+      { "title": "💊 其他次發性", "dx": [
+        { "name": "腰椎穿刺後頭痛", "en": "Post-dural puncture headache", "clues": "LP / 硬膜外麻醉後 5 天內，坐起 15 分內加劇、躺平緩解", "pe": ["比較坐臥前後", "穿刺處感染跡象"], "orders": [["headache", "腰椎穿刺後頭痛"]] },
+        { "name": "藥物過度使用 / 咖啡因戒斷", "en": "Medication overuse, caffeine withdrawal", "clues": "止痛藥每月 ≥10–15 天；住院 NPO 突然停咖啡", "pe": ["神經學正常"], "orders": [["analgesia", "一般止痛（多模式）"]] },
+        { "name": "頭面部帶狀皰疹", "en": "Herpes zoster", "clues": "單側燒灼刺痛，皮疹可晚 2–3 天出現", "pe": ["沿皮節水泡", "Hutchinson sign（鼻尖水泡）→ 眼睛受侵犯機率高"], "orders": [["headache", "頭面部帶狀皰疹"], ["eye", "帶狀疱疹眼病 (HZO)"]] },
+        { "name": "急性鼻竇炎", "en": "Acute sinusitis", "clues": "鼻塞、膿性鼻涕、低頭時臉頰 / 額頭痛，>10 天或症狀雙峰", "pe": ["上頷竇 / 額竇叩痛、鼻腔膿涕"], "orders": [["uri-symptoms", "急性細菌性鼻竇炎"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "dizziness", "name": "頭暈 / 眩暈", "en": "Dizziness, vertigo", "regions": ["head", "ent"],
+    "aliases": ["頭昏", "天旋地轉", "暈", "站不穩", "vertigo", "lightheaded", "giddiness", "unsteady"],
+    "first": {
+      "flags": ["新發神經學症狀：複視、構音障礙、吞嚥困難、單側無力麻木、無法走路（5D + ataxia）", "突發劇烈頭痛 / 頸痛（椎動脈剝離）", "胸痛、心悸、昏厥（心因性）", "突發聽力喪失"],
+      "pe": ["先分型：眩暈（旋轉）、近昏厥（快暈倒）、平衡失調、非特異頭昏", "姿勢性生命徵象：臥 → 站 1 與 3 分鐘", "HINTS（持續性眩暈且有眼振時才適用）：Head Impulse、Nystagmus、Test of Skew", "Dix–Hallpike（後半規管）、supine roll test（水平半規管）", "小腦：finger-to-nose、heel-to-shin、truncal ataxia、步態、Romberg", "耳鏡、粗測聽力、Rinne / Weber"],
+      "scores": ["HINTS / HINTS-plus（加聽力）", "TiTrATE 方法（Timing、Triggers）", "ABCD2（暫時性症狀疑 TIA）", "NIHSS（有缺損；但後循環中風 NIHSS 常低）"],
+      "orders": [["dizziness-syncope", "急性持續頭暈 (AVS)"]]
+    },
+    "groups": [
+      { "title": "🚨 危急 · 不能漏", "tone": "urgent", "dx": [
+        { "name": "後循環中風 / 小腦梗塞或出血", "en": "Posterior circulation stroke, cerebellar stroke", "clues": "持續眩暈 + 無法站走；HINTS 呈中樞型（head impulse 正常、方向改變眼振、skew）", "pe": ["HINTS", "truncal ataxia（坐不穩）", "腦神經：複視、構音、吞嚥、Horner"], "scores": ["HINTS", "NIHSS", "ABCD2"], "orders": [["altered-consciousness", "疑急性中風：溶栓"], ["altered-consciousness", "急性中風住院醫囑"]] },
+        { "name": "心律不整 / 心因性近昏厥", "en": "Arrhythmia, cardiac presyncope", "clues": "快要暈倒感、心悸、運動時發作、心臟病史", "pe": ["心律、心雜音（AS）、ECG 監測"], "scores": ["Canadian Syncope Risk Score"], "orders": [["dizziness-syncope", "昏厥：基本評估"], ["tachycardia", "心搏過速：第一輪"], ["bradycardia", "心搏過緩：第一輪"]] },
+        { "name": "低血糖", "en": "Hypoglycemia", "clues": "糖尿病用藥、冒冷汗、手抖、意識變差", "pe": ["finger-stick glucose"], "orders": [["glucose", "低血糖（清醒能吞）"]] },
+        { "name": "出血 / 貧血 / 低血容", "en": "Bleeding, anemia, hypovolemia", "clues": "黑便、嘔吐腹瀉、利尿劑、進食差；站起來才暈", "pe": ["姿勢性生命徵象", "結膜蒼白、直腸指診（黑便）"], "orders": [["anemia", "Hb 明顯下降：找出血"], ["dizziness-syncope", "姿勢性低血壓"]] }
+      ] },
+      { "title": "👂 周邊前庭", "dx": [
+        { "name": "良性陣發性姿勢性眩暈 BPPV", "en": "BPPV", "clues": "翻身、躺下、抬頭誘發，<1 分鐘，反覆發作", "pe": ["Dix–Hallpike：上跳扭轉眼振（後半規管）", "supine roll test：水平眼振（水平半規管）"], "scores": ["Dix–Hallpike", "supine roll test"], "orders": [["dizziness-syncope", "BPPV"]] },
+        { "name": "前庭神經炎", "en": "Vestibular neuritis", "clues": "持續數天眩暈、噁心，近期感冒；聽力正常", "pe": ["HINTS 周邊型：head impulse 有矯正跳動、單向水平眼振、無 skew", "可扶著走"], "scores": ["HINTS"], "orders": [["dizziness-syncope", "前庭神經炎"]] },
+        { "name": "梅尼爾氏症 / 迷路炎", "en": "Ménière disease, labyrinthitis", "clues": "眩暈 + 耳鳴 + 耳脹 + 聽力下降（梅尼爾：20 分–12 hr 反覆）", "pe": ["耳鏡、Rinne / Weber（感音性）", "突發聽力喪失要排除 AICA 中風"], "scores": ["HINTS-plus"], "orders": [["dizziness-syncope", "急性持續頭暈 (AVS)"]] }
+      ] },
+      { "title": "💊 全身 / 其他", "dx": [
+        { "name": "姿勢性低血壓", "en": "Orthostatic hypotension", "clues": "站起 3 分內暈；降壓藥、利尿劑、α-blocker、自律神經病變", "pe": ["臥 → 站 SBP 下降 ≥20 或 DBP ≥10 mmHg"], "scores": ["Orthostatic vital signs"], "orders": [["dizziness-syncope", "姿勢性低血壓"]] },
+        { "name": "藥物副作用", "en": "Medication adverse effect", "clues": "新增 BZD、抗組織胺、抗癲癇藥、opioid、aminoglycoside", "pe": ["眼振、步態（藥物中毒）"], "scores": ["Beers criteria（老人）"], "orders": [["sedatives", "過度鎮靜"]] },
+        { "name": "電解質 / 內分泌", "en": "Electrolyte or endocrine disorder", "clues": "低鈉、低血糖、甲狀腺、腎上腺功能不足", "pe": ["脫水、意識、色素沉著"], "orders": [["sodium", "鈉異常：第一輪"], ["endocrine", "內分泌急症：第一輪"]] },
+        { "name": "焦慮 / 過度換氣", "en": "Anxiety, hyperventilation", "clues": "嘴唇手指麻、胸悶、呼吸急促；排除器質性後才診斷", "pe": ["呼吸速率、手足抽搐（Trousseau）"], "scores": ["GAD-7", "Nijmegen Questionnaire"], "orders": [["dyspnea", "過度換氣"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "syncope", "name": "昏厥", "en": "Syncope", "regions": ["head", "systemic"],
+    "aliases": ["暈倒", "昏倒", "失去意識", "黑矇", "faint", "passed out", "collapse", "TLOC", "LOC"],
+    "first": {
+      "flags": ["運動中或平躺時昏厥、沒有前驅症狀", "心悸、胸痛、喘、劇烈頭痛 / 背痛", "心衰竭、結構性心臟病、ECG 異常、猝死家族史", "跌倒受傷、抗凝劑", "持續低血壓、出血跡象"],
+      "pe": ["雙臂血壓、姿勢性生命徵象", "心音：AS 收縮期雜音、HCM（Valsalva 增強）", "神經學檢查（排除抽搐、中風）、舌咬傷（側邊）", "直腸指診（黑便）", "外傷檢查：頭、髖、脊椎"],
+      "scores": ["Canadian Syncope Risk Score", "San Francisco Syncope Rule（CHESS）", "EGSYS score（心因性可能）", "Calgary Syncope Seizure Score（昏厥 vs 抽搐）"],
+      "orders": [["dizziness-syncope", "昏厥：基本評估"]]
+    },
+    "groups": [
+      { "title": "🚨 心因性 · 不能漏", "tone": "urgent", "dx": [
+        { "name": "心律不整（VT、高度 AV block、SSS）", "en": "Arrhythmia", "clues": "無前驅、平躺或運動中、心悸；ECG：QT 延長、Brugada、WPW、傳導阻滯", "pe": ["心律、連續心電監測"], "scores": ["Canadian Syncope Risk Score"], "orders": [["bradycardia", "高度 / 三度 AV block"], ["tachycardia", "穩定寬 QRS（疑 VT）"], ["tachycardia", "Torsades de pointes"]] },
+        { "name": "急性冠心症", "en": "Acute coronary syndrome", "clues": "昏厥 + 胸痛 / 冒汗", "pe": ["心衰竭徵象"], "scores": ["HEART score"], "orders": [["dizziness-syncope", "昏厥 + 胸痛（疑 ACS）"]] },
+        { "name": "主動脈剝離", "en": "Aortic dissection", "clues": "撕裂樣胸背痛 + 昏厥（可能心包填塞）", "pe": ["雙臂血壓差 >20 mmHg、脈搏不對稱、AR 雜音、神經學缺損"], "scores": ["ADD-RS（Aortic Dissection Detection Risk Score）"], "orders": [["dizziness-syncope", "昏厥 + 撕裂痛（疑主動脈剝離）"]] },
+        { "name": "肺栓塞", "en": "Pulmonary embolism", "clues": "昏厥 + 喘、心搏過速、低血氧；最近手術、臥床、癌症", "pe": ["頸靜脈怒張、單側腳腫"], "scores": ["Wells (PE)", "PERC", "sPESI"], "orders": [["dizziness-syncope", "昏厥 + 喘（疑 PE）"]] },
+        { "name": "嚴重主動脈瓣狹窄 / HCM", "en": "Aortic stenosis, hypertrophic cardiomyopathy", "clues": "運動時昏厥、心雜音", "pe": ["收縮期噴射性雜音、S2 減弱、脈搏慢升（AS）", "Valsalva 雜音增強（HCM）"], "orders": [["exams", "心臟科檢查"]] },
+        { "name": "出血性低血容", "en": "Hemorrhage", "clues": "黑便、吐血、腹痛（AAA、子宮外孕）", "pe": ["姿勢性生命徵象、蒼白、直腸指診"], "scores": ["Shock index"], "orders": [["gi-bleeding", "消化道出血：第一輪"], ["abdominal-pain", "疑腹主動脈瘤破裂"], ["abdominal-pain", "異位妊娠"]] }
+      ] },
+      { "title": "💤 反射性 / 姿勢性", "dx": [
+        { "name": "血管迷走神經性昏厥", "en": "Vasovagal syncope", "clues": "久站、疼痛、看到血、悶熱誘發；前驅冒汗、噁心、眼前發黑，很快恢復", "pe": ["恢復後神經學正常"], "scores": ["Calgary Syncope Score（vasovagal）"], "orders": [["dizziness-syncope", "昏厥：基本評估"]] },
+        { "name": "情境性昏厥", "en": "Situational syncope", "clues": "排尿、排便、咳嗽、吞嚥時", "pe": ["—"], "orders": [["dizziness-syncope", "昏厥：基本評估"]] },
+        { "name": "頸動脈竇過敏", "en": "Carotid sinus hypersensitivity", "clues": "老人轉頭、緊領口、刮鬍子時", "pe": ["頸動脈竇按摩（先聽診排除雜音，需監測）"], "orders": [["exams", "心臟科檢查"]] },
+        { "name": "姿勢性低血壓", "en": "Orthostatic hypotension", "clues": "站起時；脫水、降壓藥、Parkinson、糖尿病自律神經病變", "pe": ["臥 → 站 SBP ↓≥20 / DBP ↓≥10"], "scores": ["Orthostatic vital signs"], "orders": [["dizziness-syncope", "姿勢性低血壓"]] }
+      ] },
+      { "title": "🔁 像昏厥但不是", "dx": [
+        { "name": "癲癇發作", "en": "Seizure", "clues": "側邊舌咬傷、發作後混亂 >數分鐘、尿失禁、頭轉向一側、抽動 >15 秒", "pe": ["舌側咬傷、發作後神經學"], "scores": ["Calgary Syncope Seizure Score"], "orders": [["seizure", "昏厥 vs 癲癇"]] },
+        { "name": "低血糖", "en": "Hypoglycemia", "clues": "糖尿病藥物、進食差", "pe": ["finger-stick glucose"], "orders": [["glucose", "低血糖（意識不清 / NPO）"]] },
+        { "name": "TIA / 椎基底動脈缺血", "en": "TIA, vertebrobasilar insufficiency", "clues": "單純意識喪失很少是 TIA；需合併後循環症狀", "pe": ["神經學"], "scores": ["ABCD2"], "orders": [["altered-consciousness", "急性中風住院醫囑"]] },
+        { "name": "跌倒後受傷", "en": "Injury after fall", "clues": "老人、抗凝劑", "pe": ["頭、髖、脊椎"], "scores": ["Canadian CT Head Rule", "Morse Fall Scale"], "orders": [["dizziness-syncope", "昏厥後跌倒受傷"], ["wounds", "病房跌倒"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "ams", "name": "意識改變 / 譫妄", "en": "Altered mental status, delirium", "regions": ["head", "systemic"],
+    "aliases": ["意識不清", "叫不醒", "嗜睡", "昏迷", "混亂", "胡言亂語", "譫妄", "AMS", "confusion", "delirium", "coma", "drowsy", "lethargy"],
+    "first": {
+      "flags": ["GCS ≤8 → 呼吸道", "新發局部缺損 → 疑中風（看 last known well）", "發燒 + 頸僵", "低血糖（先測！）", "瞳孔不等大、Cushing triad", "SpO2 低、CO2 滯留"],
+      "pe": ["ABC、生命徵象、finger-stick glucose", "GCS（E/V/M 分開記錄）、瞳孔大小與光反射", "局部神經學缺損、腦幹反射、肌張力、clonus", "頸部僵硬", "toxidrome：瞳孔、皮膚乾濕、腸音、體溫", "肝病徵象（黃疸、asterixis）、尿毒、甲狀腺", "頭部外傷、針孔、藥物貼片"],
+      "scores": ["GCS", "FOUR score（插管病人）", "4AT / CAM / CAM-ICU（譫妄）", "RASS（鎮靜程度）", "NIHSS"],
+      "orders": [["altered-consciousness", "意識改變：第一輪"]]
+    },
+    "groups": [
+      { "title": "🚨 先處理可逆 · 不能漏", "tone": "urgent", "dx": [
+        { "name": "低血糖", "en": "Hypoglycemia", "clues": "胰島素 / sulfonylurea、進食差、敗血症、肝衰竭", "pe": ["finger-stick glucose"], "orders": [["altered-consciousness", "低血糖"], ["glucose", "低血糖（意識不清 / NPO）"]] },
+        { "name": "缺氧 / 高碳酸", "en": "Hypoxemia, hypercapnia", "clues": "COPD 給太多氧、opioid、肺炎", "pe": ["SpO2、呼吸速率、asterixis"], "orders": [["acid-base", "呼吸性酸中毒"], ["dyspnea", "喘：第一輪"]] },
+        { "name": "急性中風", "en": "Acute stroke", "clues": "突發局部缺損；確認 last known well（溶栓 ≤4.5 hr、取栓 ≤24 hr）", "pe": ["NIHSS、凝視偏向、半側忽略", "BE-FAST"], "scores": ["NIHSS", "BE-FAST", "ABCD2"], "orders": [["altered-consciousness", "疑急性中風：溶栓"]] },
+        { "name": "顱內壓上升 / 腦疝", "en": "Raised ICP, herniation", "clues": "頭痛嘔吐後意識下降、瞳孔不等大", "pe": ["瞳孔、Cushing triad、去皮質 / 去大腦姿勢"], "scores": ["GCS"], "orders": [["altered-consciousness", "顱內壓上升 / 腦疝"]] },
+        { "name": "腦膜炎 / 腦炎", "en": "Meningitis, encephalitis", "clues": "發燒 + 頭痛 + 頸僵 / 行為改變", "pe": ["頸僵、Kernig、紫斑"], "scores": ["qSOFA"], "orders": [["altered-consciousness", "疑細菌性腦膜炎"], ["headache", "疑病毒性腦炎"]] },
+        { "name": "非痙攣性癲癇重積 NCSE", "en": "Nonconvulsive status epilepticus", "clues": "抽搐後沒醒、眼皮或嘴角細微抽動、波動性意識", "pe": ["凝視、眼球震顫樣抽動、自動症"], "orders": [["altered-consciousness", "非痙攣性癲癇重積 (NCSE)"], ["seizure", "抽完沒醒"]] },
+        { "name": "敗血症", "en": "Sepsis", "clues": "老人感染常只表現意識改變", "pe": ["感染源：肺、尿、皮膚、導管、腹部"], "scores": ["qSOFA", "SOFA", "NEWS2"], "orders": [["fever", "敗血症 / 敗血性休克"]] }
+      ] },
+      { "title": "💊 藥物 / 中毒 / 戒斷", "dx": [
+        { "name": "Opioid 過量", "en": "Opioid overdose", "clues": "針尖瞳孔 + 呼吸慢；腎功能變差時累積", "pe": ["瞳孔、呼吸速率、貼片"], "scores": ["POSS（Pasero Opioid-induced Sedation Scale）"], "orders": [["altered-consciousness", "疑鴉片類過量"]] },
+        { "name": "Benzodiazepine / 鎮靜藥過量", "en": "Benzodiazepine overdose", "clues": "嗜睡、呼吸抑制，瞳孔正常", "pe": ["RASS"], "scores": ["RASS"], "orders": [["altered-consciousness", "疑 Benzodiazepine 過量"], ["sedatives", "過度鎮靜"]] },
+        { "name": "酒精戒斷 / 譫妄震顫", "en": "Alcohol withdrawal, delirium tremens", "clues": "停酒 6–96 hr：顫抖、冒汗、心搏過速、幻覺", "pe": ["顫抖、出汗、自律神經亢進"], "scores": ["CIWA-Ar", "PAWSS（預測嚴重戒斷）"], "orders": [["altered-consciousness", "酒精戒斷"], ["sedatives", "酒精戒斷"]] },
+        { "name": "Wernicke 腦病變", "en": "Wernicke encephalopathy", "clues": "酗酒、營養不良、妊娠劇吐、減重手術；三聯症常不完整", "pe": ["眼振、眼肌麻痺、步態不穩"], "scores": ["Caine criteria"], "orders": [["altered-consciousness", "疑 Wernicke / 營養不良"]] },
+        { "name": "抗膽鹼 / Serotonin / NMS", "en": "Anticholinergic, serotonin syndrome, NMS", "clues": "新藥物；發燒 + 肌肉僵硬 / clonus", "pe": ["瞳孔、皮膚乾或濕、腸音、clonus（serotonin）、鉛管樣僵硬（NMS）"], "scores": ["Hunter Serotonin Toxicity Criteria"], "orders": [["poisoning", "抗膽鹼中毒"], ["agitation", "疑 Serotonin syndrome"], ["agitation", "疑 NMS"]] },
+        { "name": "不明中毒", "en": "Unknown ingestion", "clues": "藥袋、空瓶、農藥味", "pe": ["toxidrome 判讀"], "orders": [["poisoning", "中毒：第一輪"]] }
+      ] },
+      { "title": "🧪 代謝 / 器官衰竭", "dx": [
+        { "name": "肝性腦病變", "en": "Hepatic encephalopathy", "clues": "肝硬化 + 便秘、出血、感染、鎮靜藥誘發", "pe": ["asterixis、黃疸、腹水、蜘蛛痣"], "scores": ["West Haven criteria", "Child-Pugh", "MELD"], "orders": [["altered-consciousness", "肝性腦病變"]] },
+        { "name": "尿毒性腦病變", "en": "Uremic encephalopathy", "clues": "BUN 高、未透析", "pe": ["asterixis、心包摩擦音"], "orders": [["altered-consciousness", "尿毒性腦病變"], ["oliguria", "緊急透析評估"]] },
+        { "name": "低 / 高血鈉", "en": "Hyponatremia, hypernatremia", "clues": "Na <120 或快速變化；抽搐", "pe": ["容積狀態"], "orders": [["altered-consciousness", "嚴重低血鈉（有症狀）"], ["sodium", "高血鈉"]] },
+        { "name": "高血鈣 / 低血鈣", "en": "Hypercalcemia, hypocalcemia", "clues": "癌症、副甲狀腺；低鈣 → tetany", "pe": ["Chvostek、Trousseau（低鈣）"], "orders": [["calcium", "高血鈣"], ["altered-consciousness", "嚴重低血鈣"]] },
+        { "name": "DKA / HHS", "en": "DKA, HHS", "clues": "高血糖、脫水、Kussmaul 呼吸", "pe": ["脫水、酮味"], "orders": [["glucose", "DKA"], ["glucose", "HHS"]] },
+        { "name": "黏液水腫昏迷 / 腎上腺危象", "en": "Myxedema coma, adrenal crisis", "clues": "低體溫 + 心搏過緩；類固醇突然停用 + 低血壓", "pe": ["低體溫、反射遲緩、色素沉著"], "orders": [["endocrine", "黏液水腫昏迷"], ["endocrine", "腎上腺危象"]] }
+      ] },
+      { "title": "🌀 譫妄（住院常見）", "dx": [
+        { "name": "住院譫妄", "en": "Hospital delirium", "clues": "急性起病、注意力不集中、夜間惡化；找原因：感染、藥物、尿滯留、便秘、疼痛、缺睡", "pe": ["注意力測試（倒數月份）", "膀胱超音波（尿滯留）、糞便嵌塞"], "scores": ["4AT", "CAM / CAM-ICU", "RASS", "Delirium Observation Screening Scale"], "orders": [["agitation", "躁動：先找可逆原因"], ["agitation", "譫妄需要藥物控制"], ["oliguria", "急性尿滯留"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "seizure", "name": "抽搐", "en": "Seizure", "regions": ["head"],
+    "aliases": ["癲癇", "抽筋", "痙攣", "發作", "convulsion", "fit", "status epilepticus"],
+    "first": {
+      "flags": ["抽 ≥5 分鐘或兩次之間未清醒 = 癲癇重積", "第一次抽搐、局部發作、發燒、頭痛", "懷孕 / 產後（子癇）", "抗凝劑、外傷", "抽完一直沒醒（NCSE）"],
+      "pe": ["呼吸道、側躺、SpO2、finger-stick glucose", "計時！記錄型態（局部起始、眼睛偏向）", "發作後：GCS、Todd paralysis、瞳孔、舌側咬傷", "頸僵、發燒、皮疹", "外傷：頭、肩關節脫臼（後脫位）、脊椎"],
+      "scores": ["GCS", "Calgary Syncope Seizure Score（昏厥 vs 抽搐）", "STESS（Status Epilepticus Severity Score）"],
+      "orders": [["seizure", "癲癇重積：0–5 分"], ["seizure", "癲癇重積：第一線 (≥5 分)"]]
+    },
+    "groups": [
+      { "title": "🚨 可逆誘因 · 先排除", "tone": "urgent", "dx": [
+        { "name": "低血糖", "en": "Hypoglycemia", "clues": "糖尿病藥物", "pe": ["finger-stick glucose"], "orders": [["seizure", "抽搐合併低血糖"]] },
+        { "name": "低血鈉", "en": "Hyponatremia", "clues": "Na <120 或急性下降", "pe": ["容積狀態"], "orders": [["seizure", "抽搐合併低血鈉"]] },
+        { "name": "低血鈣 / 低血鎂", "en": "Hypocalcemia, hypomagnesemia", "clues": "甲狀腺 / 副甲狀腺術後、PPI、酗酒", "pe": ["Chvostek、Trousseau"], "orders": [["seizure", "抽搐合併低血鈣"], ["magnesium", "低血鎂（重度 / 有症狀）"]] },
+        { "name": "子癇", "en": "Eclampsia", "clues": "懷孕 >20 週或產後，高血壓", "pe": ["BP、反射亢進"], "orders": [["seizure", "子癇"]] },
+        { "name": "中樞感染", "en": "CNS infection", "clues": "發燒、頭痛、頸僵、意識改變", "pe": ["頸僵、皮疹"], "orders": [["altered-consciousness", "疑細菌性腦膜炎"], ["headache", "疑病毒性腦炎"]] },
+        { "name": "中風 / 顱內出血 / 腫瘤", "en": "Stroke, ICH, tumor", "clues": "局部起始、抽完有局部缺損持續", "pe": ["NIHSS、Todd paralysis（<48 hr 恢復）"], "scores": ["NIHSS"], "orders": [["seizure", "新發作 / 頻繁抽搐：檢查"]] },
+        { "name": "酒精 / 藥物戒斷", "en": "Alcohol or drug withdrawal", "clues": "停酒 6–48 hr；BZD 突然停", "pe": ["顫抖、出汗"], "scores": ["CIWA-Ar"], "orders": [["seizure", "酒精戒斷癲癇"]] },
+        { "name": "藥物中毒 / 降低閾值", "en": "Drug toxicity", "clues": "tramadol、bupropion、imipenem / cefepime（腎差）、TCA、isoniazid、theophylline", "pe": ["toxidrome"], "orders": [["poisoning", "中毒：第一輪"]] }
+      ] },
+      { "title": "🧠 癲癇本身", "dx": [
+        { "name": "癲癇重積", "en": "Status epilepticus", "clues": "≥5 分鐘：BZD；≥20 分：第二線；≥40 分：麻醉藥", "pe": ["計時、氣道、體溫"], "scores": ["STESS", "EMSE"], "orders": [["seizure", "癲癇重積：第一線 (≥5 分)"], ["seizure", "癲癇重積：第二線 (≥20 分)"], ["seizure", "難治型重積 (≥40 分)"]] },
+        { "name": "已知癲癇：藥物濃度低 / 漏服", "en": "Breakthrough seizure, subtherapeutic AED", "clues": "NPO、漏藥、藥物交互作用（valproate + carbapenem）", "pe": ["—"], "orders": [["seizure", "新發作 / 頻繁抽搐：檢查"]] },
+        { "name": "非痙攣性重積", "en": "NCSE", "clues": "抽完 >30–60 分仍沒醒", "pe": ["細微抽動、眼球偏向"], "orders": [["seizure", "抽完沒醒"]] }
+      ] },
+      { "title": "🔁 像抽搐但不是", "dx": [
+        { "name": "昏厥伴肌陣攣", "en": "Convulsive syncope", "clues": "前驅冒汗、抽動 <15 秒、很快清醒", "pe": ["姿勢性生命徵象"], "scores": ["Calgary Syncope Seizure Score"], "orders": [["seizure", "昏厥 vs 癲癇"]] },
+        { "name": "心因性非癲癇發作 PNES", "en": "Psychogenic nonepileptic seizure", "clues": "閉眼抵抗、骨盆推送、左右擺頭、時好時壞、持續很久", "pe": ["閉眼抵抗開眼、手掉落測試"], "orders": [["seizure", "新發作 / 頻繁抽搐：檢查"]] },
+        { "name": "高熱 / 寒顫 / 肌陣攣", "en": "Rigors, myoclonus", "clues": "寒顫意識清楚；尿毒 / 藥物肌陣攣", "pe": ["意識、asterixis"], "orders": [["fever", "新發燒：第一輪"]] },
+        { "name": "抽搐後併發症", "en": "Post-seizure complications", "clues": "外傷、吸入性肺炎、橫紋肌溶解", "pe": ["外傷、肺音、肌肉壓痛"], "orders": [["seizure", "抽搐後外傷 / 橫紋肌溶解"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "focal-deficit", "name": "單側無力 / 麻木 / 口齒不清", "en": "Focal neurological deficit, stroke symptoms", "regions": ["head", "arm", "leg"],
+    "aliases": ["中風", "半邊無力", "嘴歪", "講話不清楚", "失語", "手腳無力", "stroke", "CVA", "hemiparesis", "aphasia", "dysarthria", "facial droop", "TIA", "BE-FAST"],
+    "first": {
+      "flags": ["Last known well 時間 → 決定溶栓 ≤4.5 hr、取栓 ≤24 hr", "抗凝劑使用、最近手術或出血", "意識下降、劇烈頭痛、嘔吐（出血）", "血糖！（低血糖可模擬中風）"],
+      "pe": ["BE-FAST：Balance、Eyes、Face、Arm、Speech、Time", "NIHSS 完整評估", "凝視偏向、視野缺損、半側忽略", "顏面：上半臉是否保留（中樞 vs Bell's palsy）", "雙臂血壓、心律（AF）、頸動脈雜音"],
+      "scores": ["NIHSS", "BE-FAST", "ABCD2（TIA 已恢復）", "mRS（病前功能）", "GCS"],
+      "orders": [["altered-consciousness", "疑急性中風：溶栓"]]
+    },
+    "groups": [
+      { "title": "🚨 中風 · 時間就是大腦", "tone": "urgent", "dx": [
+        { "name": "急性缺血性中風", "en": "Acute ischemic stroke", "clues": "突發局部缺損；AF、高血壓、糖尿病、抽菸", "pe": ["NIHSS", "大血管阻塞徵象：凝視偏向、失語、忽略"], "scores": ["NIHSS", "ASPECTS（CT）", "RACE（LVO 篩檢）"], "orders": [["altered-consciousness", "疑急性中風：溶栓"], ["altered-consciousness", "急性中風住院醫囑"], ["hypertension", "缺血性中風血壓"]] },
+        { "name": "腦出血", "en": "Intracerebral hemorrhage", "clues": "頭痛、嘔吐、意識下降、高血壓、抗凝劑", "pe": ["NIHSS、瞳孔"], "scores": ["ICH score", "GCS"], "orders": [["headache", "顱內出血 + 抗凝逆轉"], ["hypertension", "腦出血血壓"]] },
+        { "name": "TIA", "en": "Transient ischemic attack", "clues": "症狀完全恢復（多 <1 hr）；短期中風風險高", "pe": ["神經學、頸動脈雜音、心律"], "scores": ["ABCD2", "ABCD2-I"], "orders": [["altered-consciousness", "中風抗血小板"]] },
+        { "name": "中風惡化 / 溶栓後併發症", "en": "Stroke in evolution, post-tPA complications", "clues": "NIHSS 增加 ≥4、溶栓後頭痛嘔吐或舌腫", "pe": ["NIHSS 重評、口舌腫脹"], "scores": ["NIHSS"], "orders": [["altered-consciousness", "中風惡化（stroke in evolution）"], ["altered-consciousness", "溶栓後顱內出血"], ["altered-consciousness", "溶栓後血管性水腫"]] },
+        { "name": "主動脈剝離合併中風", "en": "Aortic dissection with stroke", "clues": "胸背痛 + 神經學缺損 → 溶栓前要想到", "pe": ["雙臂血壓差、脈搏不對稱"], "scores": ["ADD-RS"], "orders": [["chest-pain", "疑主動脈剝離"]] }
+      ] },
+      { "title": "🎭 中風模擬", "dx": [
+        { "name": "低血糖", "en": "Hypoglycemia", "clues": "最常見的可逆模擬", "pe": ["finger-stick glucose"], "orders": [["glucose", "低血糖（意識不清 / NPO）"]] },
+        { "name": "抽搐後 Todd paralysis", "en": "Todd paralysis", "clues": "有抽搐、無力 <48 hr 內恢復", "pe": ["舌咬傷"], "orders": [["seizure", "新發作 / 頻繁抽搐：檢查"]] },
+        { "name": "Bell's palsy", "en": "Bell palsy", "clues": "只有臉、上半臉（額頭）也無力 → 周邊型", "pe": ["抬眉、閉眼、耳朵水泡（Ramsay Hunt）"], "scores": ["House–Brackmann grade"], "orders": [["rash-allergy", "帶狀皰疹"]] },
+        { "name": "偏頭痛前兆 / 偏癱型偏頭痛", "en": "Migraine with aura", "clues": "症狀逐漸擴散（march）、之後頭痛", "pe": ["神經學"], "orders": [["headache", "偏頭痛急性發作"]] },
+        { "name": "顱內占位 / 硬膜下出血", "en": "Mass lesion, subdural hematoma", "clues": "漸進、跌倒、抗凝", "pe": ["眼底、頭部外傷"], "orders": [["headache", "顱內壓上升"], ["headache", "頭部外傷：要不要 CT"]] },
+        { "name": "感染 / 代謝使舊中風症狀再現", "en": "Recrudescence of old stroke", "clues": "發燒、低鈉時舊缺損暫時變明顯", "pe": ["感染源"], "orders": [["fever", "新發燒：第一輪"]] }
+      ] },
+      { "title": "🦴 周邊 / 脊髓", "dx": [
+        { "name": "脊髓壓迫", "en": "Spinal cord compression", "clues": "雙側、感覺平面、大小便失禁、背痛、癌症病史", "pe": ["感覺平面、肛門張力、saddle anesthesia、反射"], "scores": ["ASIA impairment scale"], "orders": [["limb-pain", "疑脊髓壓迫 (MSCC)"]] },
+        { "name": "周邊神經壓迫（橈神經、腓神經）", "en": "Compression neuropathy", "clues": "睡醒手腕下垂或足下垂；感覺分布符合單一神經", "pe": ["分辨單一神經 vs 中樞分布"], "orders": [["exams", "神經科檢查"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "weakness", "name": "全身無力 / 雙腳無力", "en": "Generalized or bilateral weakness", "regions": ["systemic", "leg", "arm"],
+    "aliases": ["沒力", "軟腳", "走不動", "疲倦", "癱", "weakness", "fatigue", "paraparesis", "can't walk", "GBS", "myasthenia"],
+    "first": {
+      "flags": ["呼吸肌無力：說話斷續、咳不出、SpO2 未必低 → 測 FVC / NIF", "吞嚥困難、複視、眼瞼下垂（MG、botulism）", "感覺平面、大小便異常（脊髓）", "K 嚴重異常 → ECG"],
+      "pe": ["先分：真的肌力無力 vs 疲倦 / 呼吸喘 / 疼痛", "MRC 肌力分級：近端 vs 遠端、對稱 vs 不對稱", "反射：消失（GBS、低鉀）vs 亢進（脊髓、上運動神經元）", "感覺平面、肛門張力、saddle anesthesia", "疲勞性：持續上視 60 秒眼瞼下垂（MG）、冰敷測試", "單次呼吸數數（single-breath count）"],
+      "scores": ["MRC sum score", "FVC / NIF「20/30/40 rule」（<20 mL/kg、NIF > −30、MEP <40 → 考慮插管）", "Hughes GBS disability scale", "EGRIS（GBS 呼吸衰竭風險）", "QMG / MG-ADL"],
+      "orders": [["dyspnea", "神經肌肉無力：呼吸評估"]]
+    },
+    "groups": [
+      { "title": "🚨 危急 · 不能漏", "tone": "urgent", "dx": [
+        { "name": "Guillain–Barré 症候群", "en": "Guillain–Barré syndrome", "clues": "上行性對稱無力、反射消失，數天到 4 週惡化；最近腹瀉 / 感冒", "pe": ["反射、自律神經不穩（BP、心律）", "FVC 追蹤"], "scores": ["EGRIS", "Hughes disability scale", "MRC sum score"], "orders": [["dyspnea", "神經肌肉無力：呼吸評估"], ["exams", "神經科檢查"]] },
+        { "name": "重症肌無力危象", "en": "Myasthenic crisis", "clues": "疲勞性無力、眼瞼下垂、複視、吞嚥困難；感染或藥物（aminoglycoside、FQ、magnesium）誘發", "pe": ["上視測試、冰敷測試、頸部屈肌力量"], "scores": ["FVC / NIF", "MG-ADL"], "orders": [["dyspnea", "神經肌肉無力：呼吸評估"]] },
+        { "name": "脊髓壓迫 / 硬膜外膿瘍", "en": "Spinal cord compression, epidural abscess", "clues": "背痛 + 雙下肢無力 + 感覺平面 + 大小便異常；癌症、發燒、IVDU", "pe": ["感覺平面、肛門張力、反射亢進或休克期消失", "脊椎叩痛"], "scores": ["ASIA scale"], "orders": [["limb-pain", "疑脊髓壓迫 (MSCC)"], ["limb-pain", "疑脊椎感染 / 硬膜外膿瘍"]] },
+        { "name": "低血鉀 / 高血鉀", "en": "Hypokalemia, hyperkalemia", "clues": "低鉀週期性麻痺（甲亢）、利尿劑、腹瀉；高鉀 → 上行性無力", "pe": ["反射、ECG"], "orders": [["potassium", "低血鉀"], ["potassium", "高血鉀 K ≥6.0"]] },
+        { "name": "中風（雙側 / 腦幹）", "en": "Brainstem stroke", "clues": "突發、合併腦神經症狀", "pe": ["NIHSS、腦神經"], "scores": ["NIHSS"], "orders": [["altered-consciousness", "疑急性中風：溶栓"]] }
+      ] },
+      { "title": "🧪 代謝 / 內分泌 / 肌肉", "dx": [
+        { "name": "低血磷 / 低血鎂 / 高血鈣", "en": "Hypophosphatemia, hypomagnesemia, hypercalcemia", "clues": "再餵食、酗酒、癌症", "pe": ["—"], "orders": [["phosphate", "低血磷"], ["magnesium", "低血鎂（重度 / 有症狀）"], ["calcium", "高血鈣"]] },
+        { "name": "橫紋肌溶解 / 肌炎", "en": "Rhabdomyolysis, myositis", "clues": "肌肉痛、茶色尿、statin、長時間躺地", "pe": ["近端肌肉壓痛、皮膚（dermatomyositis 疹）"], "orders": [["oliguria", "橫紋肌溶解"]] },
+        { "name": "甲狀腺 / 腎上腺", "en": "Thyroid or adrenal disorder", "clues": "甲亢週期性麻痺、腎上腺功能不足（類固醇停藥）", "pe": ["甲狀腺腫、心搏過速、色素沉著、低血壓"], "orders": [["endocrine", "內分泌急症：第一輪"]] },
+        { "name": "ICU 後肌無力", "en": "ICU-acquired weakness", "clues": "長期插管、敗血症、類固醇 + 肌肉鬆弛劑", "pe": ["對稱、近端、反射減弱"], "scores": ["MRC sum score <48"], "orders": [["exams", "神經科檢查"]] }
+      ] },
+      { "title": "🌡️ 全身性「沒力」", "dx": [
+        { "name": "感染 / 敗血症", "en": "Infection, sepsis", "clues": "老人常只說沒力", "pe": ["感染源"], "scores": ["qSOFA", "NEWS2"], "orders": [["fever", "新發燒：第一輪"]] },
+        { "name": "貧血 / 出血", "en": "Anemia, bleeding", "clues": "蒼白、黑便、喘", "pe": ["結膜、直腸指診"], "orders": [["anemia", "Hb 明顯下降：找出血"]] },
+        { "name": "低血糖 / 高血糖", "en": "Glucose disorder", "clues": "糖尿病", "pe": ["finger-stick glucose"], "orders": [["glucose", "血糖異常：第一輪"]] },
+        { "name": "藥物（鎮靜、降壓、β-blocker）", "en": "Medication effect", "clues": "新藥或劑量增加", "pe": ["姿勢性生命徵象"], "orders": [["sedatives", "過度鎮靜"]] },
+        { "name": "憂鬱 / 衰弱", "en": "Depression, frailty", "clues": "排除器質性後", "pe": ["步態、握力"], "scores": ["PHQ-9", "Clinical Frailty Scale"], "orders": [["sedatives", "睡不著要安眠藥"]] }
+      ] }
+    ]
+  }
+]

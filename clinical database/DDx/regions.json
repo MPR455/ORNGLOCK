@@ -1,0 +1,22 @@
+[
+  { "id": "head", "name": "頭部", "en": "Head", "icon": "🧠" },
+  { "id": "eye", "name": "眼睛", "en": "Eye", "icon": "👁️" },
+  { "id": "ent", "name": "耳鼻喉 / 臉", "en": "ENT, face", "icon": "👃" },
+  { "id": "neck", "name": "頸部", "en": "Neck", "icon": "🦒" },
+  { "id": "chest", "name": "胸部", "en": "Chest", "icon": "🫁" },
+  { "id": "ruq", "name": "右上腹", "en": "Right upper quadrant (RUQ)", "icon": "📍" },
+  { "id": "epigastric", "name": "上腹 / 心窩", "en": "Epigastrium", "icon": "📍" },
+  { "id": "luq", "name": "左上腹", "en": "Left upper quadrant (LUQ)", "icon": "📍" },
+  { "id": "umbilical", "name": "肚臍周圍 / 全腹", "en": "Periumbilical, diffuse abdomen", "icon": "📍" },
+  { "id": "rlq", "name": "右下腹", "en": "Right lower quadrant (RLQ)", "icon": "📍" },
+  { "id": "suprapubic", "name": "下腹 / 恥骨上", "en": "Suprapubic, hypogastrium", "icon": "📍" },
+  { "id": "llq", "name": "左下腹", "en": "Left lower quadrant (LLQ)", "icon": "📍" },
+  { "id": "pelvis", "name": "骨盆 / 會陰", "en": "Pelvis, groin, genitals", "icon": "🩲" },
+  { "id": "arm", "name": "上肢", "en": "Upper limb", "icon": "💪" },
+  { "id": "leg", "name": "下肢", "en": "Lower limb", "icon": "🦵" },
+  { "id": "back", "name": "上背", "en": "Upper back", "icon": "🔙" },
+  { "id": "flank", "name": "腰側 / 腎區", "en": "Flank, costovertebral angle", "icon": "🫘" },
+  { "id": "lowback", "name": "下背 / 腰椎", "en": "Low back, lumbar spine", "icon": "🦴" },
+  { "id": "skin", "name": "皮膚", "en": "Skin", "icon": "🩹" },
+  { "id": "systemic", "name": "全身 / 生命徵象", "en": "Systemic, vital signs", "icon": "🌡️" }
+]

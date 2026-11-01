@@ -1,0 +1,66 @@
+/* 鑑別診斷 tab: body figure + categorized differential. Reuses the order tab's kiosk classes (oc-*) from oncall.css. */
+#tab-ddx{--oc-m:#c8102e;--dd-pe:#2e7d32;--dd-score:#1f6fb2;max-width:1280px;margin:0 auto;padding-bottom:96px}
+#tab-ddx *{border-radius:0}
+#tab-ddx button{font-family:inherit;cursor:pointer}
+#tab-ddx button:focus-visible,#tab-ddx input:focus-visible,#tab-ddx .dd-zone:focus-visible{outline:4px solid var(--acc);outline-offset:2px}
+#tab-ddx .oc-search input{border:0;padding:0;min-height:58px;font-size:20px;background:transparent;color:var(--ink);outline:none}
+.dd-layout{display:grid;grid-template-columns:300px minmax(0,1fr);gap:22px;align-items:start}
+.dd-figure{position:sticky;top:calc(var(--site-header-height,54px) + 84px);display:flex;flex-direction:column;align-items:center;gap:8px;padding:12px;border:3px solid var(--ink);background:var(--card)}
+.dd-side{display:flex;width:100%}
+.dd-side-btn{flex:1;min-height:48px;border:3px solid var(--ink);background:var(--card);color:var(--ink);font-size:18px;font-weight:800}
+.dd-side-btn+.dd-side-btn{border-left:0}
+.dd-side-btn[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.dd-body{width:100%;max-width:250px;height:auto;display:block;overflow:visible}
+.dd-zone{fill:var(--card);stroke:var(--ink);stroke-width:2.5;stroke-linejoin:round;cursor:pointer;transition:fill .12s}
+.dd-zone:hover{fill:var(--chip)}
+.dd-zone.on{fill:var(--acc)}
+.dd-zone:focus{outline:none}
+.dd-zone:focus-visible{stroke:var(--acc);stroke-width:4}
+.dd-lr{font-size:13px;font-weight:900;fill:var(--sub)}
+.dd-hover{margin:0;min-height:26px;font-size:19px;font-weight:800;color:var(--ink)}
+.dd-region-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;width:100%}
+.dd-region-chips .oc-chip{flex:1 1 120px}
+#tab-ddx .oc-chip.on{background:var(--ink);color:var(--bg)}
+.dd-body-panel{min-width:0}
+.dd-tile-en{display:block;margin-top:2px;font-size:14px;font-weight:700;color:var(--sub)}
+.dd-regions{margin:4px 0 10px}
+.dd-first{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;margin:10px 0 6px}
+.dd-first-block{padding:12px 14px;border:3px solid var(--line);border-top:8px solid var(--ink);background:var(--card)}
+.dd-first-block h3{margin:0 0 6px;font-size:19px;font-weight:900}
+.dd-list{margin:0;padding-left:20px;font-size:17px;line-height:1.5}
+.dd-list li+li{margin-top:3px}
+.dd-flags li::marker{color:var(--oc-m)}
+.dd-group{margin-top:20px}
+.dd-group h2{margin:0 0 8px;padding:8px 12px;font-size:20px;font-weight:900;color:var(--bg);background:var(--ink)}
+.dd-urgent h2{background:var(--oc-m);color:#fff}
+.dd-dx{display:flex;gap:6px;margin-bottom:6px}
+.dd-dx-main{flex:1;display:flex;flex-direction:column;gap:5px;min-width:0;padding:12px 16px;border:3px solid var(--line);border-left:10px solid var(--ink);background:var(--card);color:var(--ink)}
+.dd-urgent .dd-dx-main{border-left-color:var(--oc-m)}
+.dd-dx-name{font-size:21px;font-weight:800;line-height:1.3;overflow-wrap:anywhere}
+.dd-dx-clues{font-size:17px;line-height:1.5;color:var(--ink)}
+.dd-dx.dd-focus .dd-dx-main{border-color:var(--acc);box-shadow:0 0 0 4px var(--chip)}
+.dd-why{flex:0 0 68px}
+.dd-orders{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+.dd-order{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:4px 12px 4px 4px;border:2px solid var(--ink);background:var(--chip);color:var(--ink);font-size:16px;font-weight:700;text-align:left;line-height:1.3}
+.dd-order:hover{background:var(--ink);color:var(--bg)}
+.dd-order-tag{flex:0 0 auto;padding:3px 7px;background:var(--oc-m);color:#fff;font-size:13px;font-weight:900;letter-spacing:.04em}
+.dd-order-pop{border-color:var(--bg);background:transparent;color:var(--bg)}
+.dd-order-pop:hover{background:var(--bg);color:var(--ink)}
+.dd-pop-title{font-size:19px !important;letter-spacing:0 !important;opacity:1 !important}
+.dd-pop-orders{display:flex;flex-direction:column;gap:6px}
+#tab-ddx .oc-pop strong:not(.dd-pop-title){margin-top:4px}
+.dd-note{margin:22px 0 0;font-size:14px;color:var(--sub)}
+body.theme-black #tab-ddx .dd-zone.on{fill:#ffd21f}
+@media(max-width:860px){
+  .dd-layout{grid-template-columns:1fr;gap:12px}
+  .dd-figure{position:static;padding:10px}
+  .dd-body{max-width:170px}
+  .dd-layout.dd-reading .dd-figure{display:none}
+}
+@media(max-width:680px){
+  #tab-ddx .oc-search input{font-size:18px;min-height:56px}
+  .dd-dx-name{font-size:19px}
+  .dd-dx-clues,.dd-list{font-size:16px}
+  .dd-why{flex-basis:58px}
+  .dd-first{grid-template-columns:1fr}
+}

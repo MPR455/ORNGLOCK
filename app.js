@@ -1,7 +1,8 @@
 import { extractAdmissionSections } from './sections.mjs';
 import { initDirectory, refreshDirectoryLayout } from './directory.mjs';
 import { initHandoff } from './handoff.mjs';
-import { initOncall } from './oncall.mjs';
+import { initOncall, openOrderItem } from './oncall.mjs';
+import { initDdx } from './ddx.mjs';
 import { initStudy } from './study.mjs';
 
 const $ = id => document.getElementById(id);
@@ -9,6 +10,8 @@ const TABS = [
   { id: 'directory', icon: '☎️', label: 'Directory', short: 'Directory' },
   { id: 'handoff', icon: '📝', label: '交班單', short: '交班單' },
   { id: 'oncall', icon: '🍟', label: 'order', short: 'order' },
+  // Off the phone bottom bar (already full); reachable from "All" on mobile.
+  { id: 'ddx', icon: '🧍', label: 'differential diagnosis', short: 'DDx', mobilePrimary: false },
   { id: 'notes', icon: '🤖', label: '病歷', short: '病歷' },
   { id: 'faq', icon: '❓', label: 'FAQ 腫麼用', short: 'FAQ 腫麼用' },
   { id: 'study', icon: '📚', label: 'Study', short: 'Study' },
@@ -258,4 +261,6 @@ $('download-output').addEventListener('click', () => {
 });
 handoff = initHandoff({ endpoint, getKey: () => state.apiKey, openKeySettings, copyText, toast });
 study = initStudy({ toast });
-buildNavigation(); initDirectory({ closeMenu }); initOncall({ copyText, toast }); updateInputs(); loadNoteTemplates(); connect();
+// Differential diagnosis links open the matching order-tab condition.
+const openOrder = (slug, name) => { showTab('oncall'); return openOrderItem(slug, name); };
+buildNavigation(); initDirectory({ closeMenu }); initOncall({ copyText, toast }); initDdx({ toast, openOrder }); updateInputs(); loadNoteTemplates(); connect();

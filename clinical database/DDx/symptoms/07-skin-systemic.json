@@ -1,0 +1,192 @@
+[
+  {
+    "id": "rash", "name": "皮疹 / 癢 / 蕁麻疹", "en": "Rash, pruritus, urticaria", "regions": ["skin"],
+    "aliases": ["起疹子", "紅疹", "過敏", "很癢", "水泡", "蕁麻疹", "rash", "urticaria", "hives", "itch", "pruritus", "blister", "drug eruption"],
+    "first": {
+      "flags": ["發燒 + 皮疹 + 不適（SJS/TEN、DRESS、腦膜炎雙球菌、TSS）", "黏膜受侵犯（口、眼、生殖器）、Nikolsky sign 陽性", "不褪色紫斑 + 發燒", "喘、喘鳴、低血壓（anaphylaxis）", "疼痛超過外觀"],
+      "pe": ["型態：斑、丘疹、水泡、膿疱、紫斑、靶狀", "壓了會不會褪色（玻片壓診）", "分布：皮節（帶狀皰疹）、間擦處、四肢末端（掌心腳底）", "黏膜：口腔、結膜、生殖器", "Nikolsky sign、受侵犯體表面積 BSA", "淋巴結、肝脾、發燒"],
+      "scores": ["SCORTEN（SJS / TEN 死亡率）", "RegiSCAR（DRESS）", "ALDEN（SJS/TEN 藥物因果）", "Naranjo（藥物不良反應因果）", "UAS7（蕁麻疹活性）"],
+      "orders": [["rash-allergy", "皮疹：第一輪"]]
+    },
+    "groups": [
+      { "title": "🚨 嚴重皮膚反應 / 危急", "tone": "urgent", "dx": [
+        { "name": "Anaphylaxis", "en": "Anaphylaxis", "clues": "蕁麻疹 + 呼吸 / 循環 / 腸胃症狀", "pe": ["喘鳴、BP"], "scores": ["WAO criteria"], "orders": [["rash-allergy", "Anaphylaxis"]] },
+        { "name": "SJS / TEN", "en": "Stevens–Johnson syndrome, toxic epidermal necrolysis", "clues": "用藥 4–28 天（allopurinol、carbamazepine、phenytoin、sulfa、lamotrigine）、黏膜糜爛、皮膚痛", "pe": ["Nikolsky、黏膜、BSA 剝離"], "scores": ["SCORTEN", "ALDEN"], "orders": [["rash-allergy", "疑 SJS / TEN"]] },
+        { "name": "DRESS", "en": "DRESS", "clues": "用藥 2–8 週、發燒、臉腫、嗜酸性球、肝腎受損", "pe": ["臉部水腫、淋巴結"], "scores": ["RegiSCAR"], "orders": [["rash-allergy", "疑 DRESS"]] },
+        { "name": "腦膜炎雙球菌血症 / 猛爆性紫斑", "en": "Meningococcemia, purpura fulminans", "clues": "發燒 + 不褪色紫斑快速擴大", "pe": ["玻片壓不褪色、休克"], "orders": [["rash-allergy", "不褪色紫斑（疑腦膜炎雙球菌）"]] },
+        { "name": "壞死性筋膜炎", "en": "Necrotizing fasciitis", "clues": "疼痛超過外觀、水泡、灰黑", "pe": ["捻髮音"], "scores": ["LRINEC"], "orders": [["rash-allergy", "壞死性筋膜炎"]] },
+        { "name": "血管性水腫", "en": "Angioedema", "clues": "ACEI、遺傳性；唇舌腫、無蕁麻疹", "pe": ["呼吸道"], "orders": [["rash-allergy", "ACEI 血管性水腫"]] },
+        { "name": "輸血反應", "en": "Transfusion reaction", "clues": "輸血中蕁麻疹、發燒、喘", "pe": ["停止輸血、生命徵象"], "orders": [["rash-allergy", "輸血反應"]] }
+      ] },
+      { "title": "💊 藥物 / 過敏", "dx": [
+        { "name": "蕁麻疹 / 藥物疹", "en": "Urticaria, morbilliform drug eruption", "clues": "膨疹 <24 hr 消；麻疹樣藥疹用藥 1–2 週", "pe": ["膨疹、無黏膜"], "scores": ["Naranjo", "UAS7"], "orders": [["rash-allergy", "蕁麻疹"]] },
+        { "name": "Vancomycin 輸注反應", "en": "Vancomycin infusion reaction", "clues": "輸注太快：上身潮紅、癢", "pe": ["上身紅"], "orders": [["rash-allergy", "Vancomycin 輸注反應"]] },
+        { "name": "接觸性皮膚炎 / 濕疹", "en": "Contact dermatitis, eczema", "clues": "貼布、消毒液處", "pe": ["邊界符合接觸物"], "orders": [["rash-allergy", "接觸性皮膚炎 / 濕疹"]] },
+        { "name": "HIT", "en": "Heparin-induced thrombocytopenia", "clues": "heparin 5–10 天後血小板掉 >50%、注射處皮膚壞死、血栓", "pe": ["注射處、血栓"], "scores": ["4Ts score"], "orders": [["rash-allergy", "疑 HIT"], ["coagulopathy", "疑 HIT"]] }
+      ] },
+      { "title": "🦠 感染", "dx": [
+        { "name": "帶狀皰疹", "en": "Herpes zoster", "clues": "單側皮節水泡；播散型 → 空氣隔離", "pe": ["皮節、眼睛"], "orders": [["rash-allergy", "帶狀皰疹"]] },
+        { "name": "蜂窩性組織炎", "en": "Cellulitis", "clues": "紅腫熱痛", "pe": ["範圍標記"], "orders": [["rash-allergy", "蜂窩性組織炎"]] },
+        { "name": "念珠菌 / 黴菌", "en": "Candidiasis, tinea", "clues": "間擦處、衛星病灶", "pe": ["衛星丘疹"], "orders": [["rash-allergy", "黴菌 / 念珠菌皮膚感染"]] },
+        { "name": "疥瘡", "en": "Scabies", "clues": "夜間癢、指縫、群聚（安養院）", "pe": ["指縫隧道"], "orders": [["antibiotics", "疥瘡"]] },
+        { "name": "病毒疹 / 腸病毒", "en": "Viral exanthem", "clues": "發燒後全身疹；手足口", "pe": ["口腔、手掌腳底"], "orders": [["peds-infection", "腸病毒"]] }
+      ] },
+      { "title": "🧴 其他 / 照護相關", "dx": [
+        { "name": "老人乾癢 / 無疹搔癢", "en": "Xerosis, pruritus without rash", "clues": "冬天、洗太多；無疹搔癢要查肝腎、甲狀腺、鐵、淋巴瘤", "pe": ["乾燥脫屑、抓痕"], "orders": [["rash-allergy", "皮膚癢（無疹 / 老人乾癢）"]] },
+        { "name": "尿布疹 / 失禁性皮膚炎", "en": "Incontinence-associated dermatitis", "clues": "臥床、失禁", "pe": ["會陰紅"], "scores": ["Braden scale（壓傷風險）"], "orders": [["rash-allergy", "尿布疹 / 會陰濕疹"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "bleeding-tendency", "name": "瘀青 / 紫斑 / 出血不止", "en": "Bruising, purpura, bleeding tendency", "regions": ["skin", "systemic"],
+    "aliases": ["瘀青", "紫斑", "出血點", "牙齦出血", "傷口一直流血", "bruising", "purpura", "petechiae", "bleeding", "coagulopathy", "thrombocytopenia"],
+    "first": {
+      "flags": ["神經學症狀（顱內出血）", "血小板低 + 溶血 + 腎 / 神經（TTP）", "敗血症 + 多處出血（DIC）", "heparin 使用後血小板下降（HIT → 反而栓塞）"],
+      "pe": ["瘀點（血小板）vs 大片瘀斑 / 關節血腫（凝血因子）", "黏膜出血、眼底出血", "脾腫大、淋巴結、肝病徵象", "注射處 / 管路滲血（DIC）"],
+      "scores": ["4Ts score（HIT）", "PLASMIC score（TTP）", "ISTH DIC score", "HAS-BLED", "ISTH-BAT（出血評估工具）"],
+      "orders": [["coagulopathy", "凝血檢驗異常：判讀"]]
+    },
+    "groups": [
+      { "title": "🚨 危急", "tone": "urgent", "dx": [
+        { "name": "TTP", "en": "Thrombotic thrombocytopenic purpura", "clues": "血小板低 + MAHA（schistocyte）± 腎、神經、發燒", "pe": ["紫斑、神經學"], "scores": ["PLASMIC score"], "orders": [["coagulopathy", "疑 TTP"]] },
+        { "name": "DIC", "en": "Disseminated intravascular coagulation", "clues": "敗血症、癌症、產科、外傷", "pe": ["多處滲血"], "scores": ["ISTH DIC score"], "orders": [["coagulopathy", "DIC"]] },
+        { "name": "HIT", "en": "Heparin-induced thrombocytopenia", "clues": "heparin 後 5–10 天血小板降 >50%", "pe": ["血栓徵象"], "scores": ["4Ts score"], "orders": [["coagulopathy", "疑 HIT"]] },
+        { "name": "抗凝劑大出血", "en": "Major bleeding on anticoagulants", "clues": "warfarin、DOAC、heparin", "pe": ["出血部位、Hb"], "orders": [["coagulopathy", "Warfarin 大出血"], ["coagulopathy", "Xa 抑制劑出血"], ["coagulopathy", "Dabigatran 出血"], ["coagulopathy", "Heparin / LMWH 出血"]] }
+      ] },
+      { "title": "🩸 其他原因", "dx": [
+        { "name": "維生素 K 缺乏 / 肝病", "en": "Vitamin K deficiency, liver disease", "clues": "長期 NPO、抗生素、營養差", "pe": ["肝病徵象"], "orders": [["coagulopathy", "維生素 K 缺乏"]] },
+        { "name": "尿毒性血小板功能異常", "en": "Uremic platelet dysfunction", "clues": "腎衰竭、血小板數正常", "pe": ["—"], "orders": [["coagulopathy", "尿毒出血"]] },
+        { "name": "ITP / 化療 / 骨髓疾病", "en": "ITP, chemotherapy, marrow failure", "clues": "單獨血小板低或三系低下", "pe": ["脾腫大"], "orders": [["coagulopathy", "血小板低病人照護"], ["exams", "血液科檢查"]] },
+        { "name": "老人性紫斑 / 類固醇", "en": "Senile purpura", "clues": "手背前臂、皮膚薄", "pe": ["—"], "orders": [["coagulopathy", "凝血檢驗異常：判讀"]] },
+        { "name": "處置前凝血矯正", "en": "Pre-procedure correction", "clues": "要做 CVC、LP、切片", "pe": ["—"], "orders": [["coagulopathy", "處置前補充"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "fever", "name": "發燒", "en": "Fever", "regions": ["systemic"],
+    "aliases": ["發燒", "燒", "畏寒", "寒顫", "體溫高", "fever", "pyrexia", "febrile", "rigors", "sepsis", "hyperthermia"],
+    "first": {
+      "flags": ["低血壓、意識改變、呼吸急促（敗血症）", "嗜中性球低下（化療後）→ 1 hr 內抗生素", "頸僵、紫斑", "≥41°C 或合併肌肉僵硬（NMS、惡性高熱、serotonin、熱中暑）", "新裝置、術後、人工瓣膜"],
+      "pe": ["從頭到腳找源頭：肺音、腹部、CVA、皮膚 / 褥瘡、傷口", "所有管路：CVC、Port-A、導尿管、引流管、氣切", "心雜音、指甲下出血、Janeway / Osler（心內膜炎）", "關節、小腿（DVT）", "口腔、鼻竇、肛周（嗜中性球低下勿肛診）", "頸僵、意識"],
+      "scores": ["qSOFA", "SOFA", "NEWS2", "MASCC / CISNE（嗜中性球低下發燒）", "Modified Duke criteria（心內膜炎）", "Pitt bacteremia score"],
+      "orders": [["fever", "新發燒：第一輪"], ["antibiotics", "開抗生素前：檢查清單"]]
+    },
+    "groups": [
+      { "title": "🚨 危急", "tone": "urgent", "dx": [
+        { "name": "敗血症 / 敗血性休克", "en": "Sepsis, septic shock", "clues": "感染 + 器官功能障礙；乳酸 ≥2、需升壓劑", "pe": ["灌流、尿量、意識"], "scores": ["qSOFA", "SOFA", "NEWS2"], "orders": [["fever", "敗血症 / 敗血性休克"], ["antibiotics", "不明來源敗血症 / 休克"]] },
+        { "name": "嗜中性球低下發燒", "en": "Febrile neutropenia", "clues": "ANC <500 + T ≥38.3 或 ≥38.0 持續 1 hr", "pe": ["口腔黏膜炎、肛周、導管"], "scores": ["MASCC", "CISNE"], "orders": [["fever", "嗜中性球低下發燒"], ["antibiotics", "嗜中性球低下發燒"]] },
+        { "name": "細菌性腦膜炎", "en": "Bacterial meningitis", "clues": "頭痛、頸僵、意識改變", "pe": ["頸僵、紫斑"], "orders": [["fever", "疑細菌性腦膜炎"]] },
+        { "name": "感染性心內膜炎", "en": "Infective endocarditis", "clues": "人工瓣膜、IVDU、透析；持續菌血症、栓塞", "pe": ["新雜音、Janeway、Osler、Roth spots、指甲下出血"], "scores": ["Modified Duke criteria（2023 ISCVID）"], "orders": [["antibiotics", "疑心內膜炎（經驗性）"], ["antibiotics", "金黃色葡萄球菌菌血症"]] },
+        { "name": "壞死性軟組織感染", "en": "Necrotizing soft tissue infection", "clues": "疼痛超過外觀", "pe": ["捻髮音"], "scores": ["LRINEC"], "orders": [["wounds", "壞死性軟組織感染"]] },
+        { "name": "高熱症候群", "en": "Hyperthermia syndromes", "clues": "惡性高熱（麻醉後）、NMS（抗精神病藥）、serotonin、甲狀腺風暴、熱中暑", "pe": ["肌肉僵硬、clonus、意識"], "scores": ["Hunter criteria", "Burch–Wartofsky"], "orders": [["fever", "Malignant hyperthermia"], ["agitation", "疑 NMS"], ["endocrine", "甲狀腺風暴"]] }
+      ] },
+      { "title": "🦠 常見感染源", "dx": [
+        { "name": "肺炎（CAP / HAP / 吸入）", "en": "Pneumonia", "clues": "咳嗽、痰、喘、新浸潤", "pe": ["局部囉音"], "scores": ["CURB-65", "PSI"], "orders": [["fever", "社區型肺炎"], ["antibiotics", "院內 / 呼吸器肺炎 (HAP/VAP)"]] },
+        { "name": "泌尿道感染 / CAUTI", "en": "UTI, CAUTI", "clues": "頻尿、腰痛、導尿管", "pe": ["CVA 叩痛"], "orders": [["antibiotics", "腎盂腎炎 / 複雜性 UTI"], ["hematuria", "導尿管相關感染 (CAUTI)"]] },
+        { "name": "導管相關菌血症 CRBSI", "en": "Catheter-related bloodstream infection", "clues": "CVC、Port-A、透析導管；沖管時寒顫", "pe": ["導管出口紅腫膿"], "orders": [["fever", "疑導管相關菌血症 (CRBSI)"]] },
+        { "name": "腹內感染 / 膽道", "en": "Intra-abdominal or biliary infection", "clues": "腹痛、術後、黃疸", "pe": ["腹部壓痛"], "scores": ["Tokyo TG18"], "orders": [["fever", "腹內感染"], ["abdominal-pain", "急性膽管炎"]] },
+        { "name": "皮膚軟組織 / 褥瘡 / 傷口", "en": "Skin, pressure injury, surgical site infection", "clues": "翻身檢查薦骨、腳跟", "pe": ["褥瘡、傷口"], "orders": [["wounds", "術後傷口感染 (SSI)"], ["limb-pain", "蜂窩性組織炎"]] },
+        { "name": "C. difficile", "en": "C. difficile infection", "clues": "抗生素後腹瀉 + 白血球高", "pe": ["腹脹"], "orders": [["fever", "C. difficile"]] },
+        { "name": "化膿性關節炎 / 脊椎感染", "en": "Septic arthritis, vertebral osteomyelitis", "clues": "關節或背痛", "pe": ["關節、脊椎叩痛"], "orders": [["antibiotics", "化膿性關節炎"], ["limb-pain", "疑脊椎感染 / 硬膜外膿瘍"]] },
+        { "name": "流感 / COVID / 肺結核", "en": "Influenza, COVID-19, tuberculosis", "clues": "院內群聚、慢性咳嗽", "pe": ["—"], "orders": [["uri-symptoms", "流感"], ["antibiotics", "COVID-19"], ["antibiotics", "疑肺結核"]] },
+        { "name": "念珠菌血症", "en": "Candidemia", "clues": "TPN、CVC、廣效抗生素、腹部手術；持續發燒", "pe": ["眼底（眼內炎）"], "scores": ["Candida score"], "orders": [["antibiotics", "念珠菌血症"]] }
+      ] },
+      { "title": "🧯 非感染性發燒", "dx": [
+        { "name": "藥物熱", "en": "Drug fever", "clues": "β-lactam、抗癲癇藥、sulfa；人看起來還好、相對心搏過緩", "pe": ["皮疹、嗜酸性球"], "scores": ["Naranjo"], "orders": [["rash-allergy", "皮疹：第一輪"]] },
+        { "name": "DVT / 肺栓塞", "en": "Venous thromboembolism", "clues": "低燒、心搏過速", "pe": ["小腿"], "scores": ["Wells (DVT)", "Wells (PE)"], "orders": [["limb-pain", "疑 DVT"], ["dyspnea", "疑肺栓塞"]] },
+        { "name": "輸血反應", "en": "Transfusion reaction", "clues": "輸血中或後 4 hr", "pe": ["停止輸血"], "orders": [["fever", "輸血中發燒"], ["rash-allergy", "輸血反應"]] },
+        { "name": "術後發炎 / 吸收熱 / 腫瘤熱", "en": "Postoperative inflammation, tumor fever", "clues": "術後 48 hr 內常為非感染；淋巴瘤、腎細胞癌", "pe": ["傷口"], "orders": [["fever", "退燒"]] },
+        { "name": "痛風 / 胰臟炎 / 甲狀腺風暴 / 腎上腺危象", "en": "Gout, pancreatitis, thyroid storm, adrenal crisis", "clues": "其他器官症狀", "pe": ["關節、腹部、甲狀腺"], "orders": [["limb-pain", "急性痛風"], ["endocrine", "內分泌急症：第一輪"]] },
+        { "name": "酒精 / 藥物戒斷", "en": "Withdrawal", "clues": "停酒、停 BZD", "pe": ["顫抖、出汗"], "scores": ["CIWA-Ar"], "orders": [["sedatives", "酒精戒斷"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "hypotension", "name": "血壓低 / 休克", "en": "Hypotension, shock", "regions": ["systemic"],
+    "aliases": ["低血壓", "休克", "BP 低", "血壓掉", "hypotension", "shock", "low blood pressure", "MAP low"],
+    "first": {
+      "flags": ["MAP <65、乳酸 ≥2、尿少、意識改變、皮膚花斑", "先排除量測錯誤（袖帶、A-line 阻尼）", "急速惡化：張力性氣胸、心包填塞、大出血、anaphylaxis"],
+      "pe": ["灌流：微血管回填、皮膚花斑（mottling score）、四肢冷暖", "JVP：低（低血容 / 分布性）vs 高（心因 / 阻塞）", "肺音、心音、雜音", "出血來源：黑便、引流、傷口、腹 / 後腹腔", "皮膚：蕁麻疹、紫斑、感染源", "床邊超音波 RUSH：心臟、IVC、肺、腹部、主動脈"],
+      "scores": ["Shock index（HR / SBP >1）", "Mottling score", "qSOFA / SOFA", "SCAI shock stage（心因性）", "ATLS hemorrhage class"],
+      "orders": [["hypotension-shock", "低血壓：第一輪"], ["fluids", "低血壓：首輪輸液"]]
+    },
+    "groups": [
+      { "title": "🌡️ 分布性", "tone": "urgent", "dx": [
+        { "name": "敗血性休克", "en": "Septic shock", "clues": "感染 + 溫暖四肢（早期）", "pe": ["感染源"], "scores": ["SOFA", "qSOFA"], "orders": [["hypotension-shock", "敗血性休克"]] },
+        { "name": "過敏性休克", "en": "Anaphylactic shock", "clues": "新藥 / 顯影劑 / 輸血後", "pe": ["蕁麻疹、喘鳴"], "orders": [["hypotension-shock", "過敏性休克"]] },
+        { "name": "腎上腺危象", "en": "Adrenal crisis", "clues": "長期類固醇突然停、對升壓劑反應差", "pe": ["色素沉著"], "orders": [["hypotension-shock", "腎上腺危象"]] },
+        { "name": "神經性休克", "en": "Neurogenic shock", "clues": "頸胸脊髓損傷：低血壓 + 心搏過緩、四肢溫暖", "pe": ["神經學平面"], "orders": [["hypotension-shock", "神經性休克"]] }
+      ] },
+      { "title": "🩸 低血容", "dx": [
+        { "name": "出血性休克", "en": "Hemorrhagic shock", "clues": "腸胃道、術後、後腹腔、AAA、子宮外孕", "pe": ["出血來源"], "scores": ["ATLS class", "Shock index"], "orders": [["hypotension-shock", "出血性休克"], ["gi-bleeding", "輸血"]] },
+        { "name": "脫水", "en": "Dehydration", "clues": "嘔吐腹瀉、進食差、DKA / HHS", "pe": ["黏膜、姿勢性"], "orders": [["fluids", "低血壓：首輪輸液"]] }
+      ] },
+      { "title": "❤️ 心因性", "dx": [
+        { "name": "心因性休克", "en": "Cardiogenic shock", "clues": "MI、心衰竭、心肌炎；四肢冷、肺水腫", "pe": ["S3、囉音、JVP 高"], "scores": ["SCAI stage", "Killip class"], "orders": [["hypotension-shock", "心因性休克"]] },
+        { "name": "心律不整", "en": "Arrhythmia", "clues": "太快或太慢", "pe": ["心律"], "orders": [["tachycardia", "不穩定心搏過速"], ["hypotension-shock", "休克 + 心搏過緩"]] },
+        { "name": "β-blocker / CCB 中毒", "en": "Beta-blocker or CCB toxicity", "clues": "低血壓 + 心搏過緩 + 高血糖（CCB）", "pe": ["—"], "orders": [["hypotension-shock", "β-blocker / CCB 中毒"]] }
+      ] },
+      { "title": "🧱 阻塞性", "dx": [
+        { "name": "張力性氣胸", "en": "Tension pneumothorax", "clues": "正壓、處置後", "pe": ["呼吸音消失"], "orders": [["chest-pain", "張力性氣胸"]] },
+        { "name": "心包填塞", "en": "Cardiac tamponade", "clues": "Beck triad", "pe": ["奇脈"], "orders": [["chest-pain", "心包填塞"]] },
+        { "name": "大範圍肺栓塞", "en": "Massive pulmonary embolism", "clues": "低血氧 + RV 擴大", "pe": ["JVP"], "orders": [["chest-pain", "肺栓塞（不穩定）"], ["hypotension-shock", "阻塞性休克"]] }
+      ] },
+      { "title": "💊 藥物", "dx": [
+        { "name": "藥物性低血壓", "en": "Drug-induced hypotension", "clues": "降壓藥、鎮靜（propofol、dexmedetomidine）、opioid、利尿劑、α-blocker", "pe": ["RASS"], "orders": [["hypotension-shock", "藥物呼吸抑制 + 低血壓"], ["sedatives", "過度鎮靜"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "hypertension", "name": "血壓高", "en": "High blood pressure", "regions": ["systemic"],
+    "aliases": ["高血壓", "BP 高", "血壓飆高", "hypertension", "high BP", "hypertensive urgency", "hypertensive emergency"],
+    "first": {
+      "flags": ["有無急性器官損傷：腦（意識、抽搐、局部缺損）、心（胸痛、肺水腫）、主動脈（撕裂痛）、腎（AKI、血尿）、眼（視力）", "懷孕 / 產後", "多數無症狀住院高血壓不需快速降壓"],
+      "pe": ["正確量測：袖帶大小、休息 5 分、雙臂", "疼痛、尿滯留、焦慮、停藥（可逆原因）", "神經學、眼底", "心肺：囉音、S3、雜音", "脈搏不對稱（剝離）"],
+      "scores": ["GCS / NIHSS", "Pain score（NRS / CPOT）"],
+      "orders": [["hypertension", "血壓高：先確認"]]
+    },
+    "groups": [
+      { "title": "🚨 高血壓急症", "tone": "urgent", "dx": [
+        { "name": "主動脈剝離", "en": "Aortic dissection", "clues": "目標 SBP <120、HR <60（20 分鐘內）", "pe": ["血壓差"], "scores": ["ADD-RS"], "orders": [["hypertension", "主動脈剝離 + 高血壓"]] },
+        { "name": "急性肺水腫（SCAPE）", "en": "Flash pulmonary edema", "clues": "突然喘、高血壓", "pe": ["囉音"], "orders": [["hypertension", "急性肺水腫 + 高血壓"]] },
+        { "name": "ACS", "en": "Acute coronary syndrome", "clues": "胸痛", "pe": ["ECG"], "orders": [["hypertension", "ACS + 高血壓"]] },
+        { "name": "腦出血 / SAH / 缺血性中風", "en": "ICH, SAH, ischemic stroke", "clues": "目標依診斷不同（溶栓前 <185/110）", "pe": ["NIHSS"], "scores": ["NIHSS", "GCS"], "orders": [["hypertension", "腦出血血壓"], ["hypertension", "蜘蛛膜下腔出血 (SAH) 血壓"], ["hypertension", "缺血性中風血壓"]] },
+        { "name": "高血壓腦病變 / PRES", "en": "Hypertensive encephalopathy, PRES", "clues": "頭痛、意識改變、抽搐、視力", "pe": ["眼底"], "orders": [["hypertension", "高血壓腦病變 / PRES"]] },
+        { "name": "子癇前症", "en": "Severe preeclampsia", "clues": "≥160/110、懷孕或產後", "pe": ["反射"], "orders": [["hypertension", "子癇前症嚴重高血壓"]] },
+        { "name": "兒茶酚胺過量", "en": "Catecholamine excess", "clues": "cocaine、amphetamine、嗜鉻細胞瘤；勿單用 β-blocker", "pe": ["散瞳、出汗"], "orders": [["hypertension", "兒茶酚胺過量"]] },
+        { "name": "高血壓急症（其他）", "en": "Hypertensive emergency, other", "clues": "AKI、血尿、溶血", "pe": ["—"], "orders": [["hypertension", "高血壓急症（一般）"]] }
+      ] },
+      { "title": "📈 無器官損傷", "dx": [
+        { "name": "嚴重無症狀高血壓", "en": "Severe asymptomatic hypertension", "clues": "慢慢降、恢復口服藥", "pe": ["—"], "orders": [["hypertension", "無器官損傷的嚴重高血壓"]] },
+        { "name": "疼痛 / 尿滯留 / 焦慮 / 戒斷", "en": "Pain, urinary retention, anxiety, withdrawal", "clues": "治療原因而非數字", "pe": ["膀胱超音波、疼痛評分"], "scores": ["NRS / CPOT", "CIWA-Ar"], "orders": [["oliguria", "急性尿滯留"], ["analgesia", "一般止痛（多模式）"]] },
+        { "name": "停藥反彈", "en": "Rebound hypertension", "clues": "clonidine、β-blocker 突然停", "pe": ["心搏過速"], "orders": [["hypertension", "停藥反彈"]] },
+        { "name": "術後高血壓", "en": "Postoperative hypertension", "clues": "疼痛、低體溫、躁動、輸液", "pe": ["—"], "orders": [["hypertension", "術後高血壓"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "bradycardia", "name": "心跳慢", "en": "Bradycardia", "regions": ["systemic", "chest"],
+    "aliases": ["心跳很慢", "HR 低", "脈搏慢", "bradycardia", "heart block", "AV block", "slow pulse"],
+    "first": {
+      "flags": ["不穩定：低血壓、意識改變、胸痛、心衰竭、休克 → atropine / 經皮節律", "高度 AV block（Mobitz II、三度）", "高血鉀", "Cushing reflex（高血壓 + 心搏過緩 + 意識差）"],
+      "pe": ["灌流、意識", "ECG：P 波與 QRS 關係", "藥物：β-blocker、CCB、digoxin、amiodarone、ivabradine、dexmedetomidine", "神經學（顱內壓）", "低體溫、甲狀腺低下"],
+      "scores": ["GCS"],
+      "orders": [["bradycardia", "心搏過緩：第一輪"]]
+    },
+    "groups": [
+      { "title": "🚨 危急", "tone": "urgent", "dx": [
+        { "name": "不穩定心搏過緩", "en": "Unstable bradycardia", "clues": "低灌流", "pe": ["灌流"], "orders": [["bradycardia", "不穩定心搏過緩"]] },
+        { "name": "高度 / 三度 AV block", "en": "High-grade AV block", "clues": "P 與 QRS 無關、寬逸搏", "pe": ["cannon a wave"], "orders": [["bradycardia", "高度 / 三度 AV block"]] },
+        { "name": "下壁 MI", "en": "Inferior MI", "clues": "ST 上升 II、III、aVF", "pe": ["ECG"], "orders": [["bradycardia", "下壁 MI + AV block"]] },
+        { "name": "高血鉀", "en": "Hyperkalemia", "clues": "腎衰竭、ACEI、spironolactone；寬 QRS", "pe": ["ECG：高尖 T"], "orders": [["potassium", "高血鉀 K ≥6.0"]] },
+        { "name": "顱內壓上升", "en": "Raised ICP", "clues": "Cushing reflex", "pe": ["瞳孔"], "orders": [["bradycardia", "疑顱內壓上升"]] }
+      ] },
+      { "title": "🩺 其他", "dx": [
+        { "name": "藥物 / 中毒", "en": "Drug-induced bradycardia", "clues": "β-blocker、CCB、digoxin", "pe": ["—"], "orders": [["bradycardia", "藥物中毒心搏過緩"], ["poisoning", "Digoxin 中毒"]] },
+        { "name": "病竇症候群 / 節律器問題", "en": "Sick sinus syndrome, pacemaker malfunction", "clues": "老人、快慢症候群", "pe": ["節律器"], "orders": [["bradycardia", "節律器病人"]] },
+        { "name": "甲狀腺低下 / 低體溫", "en": "Hypothyroidism, hypothermia", "clues": "怕冷、遲緩", "pe": ["體溫、反射"], "orders": [["endocrine", "黏液水腫昏迷"]] },
+        { "name": "迷走神經 / 睡眠 / 運動員", "en": "Vagal, sleep, athlete", "clues": "無症狀、睡覺時", "pe": ["—"], "orders": [["bradycardia", "心搏過緩：第一輪"]] }
+      ] }
+    ]
+  }
+]

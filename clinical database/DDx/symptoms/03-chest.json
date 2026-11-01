@@ -1,0 +1,146 @@
+[
+  {
+    "id": "chest-pain", "name": "胸痛 / 胸悶", "en": "Chest pain", "regions": ["chest", "back"],
+    "aliases": ["胸口痛", "胸悶", "心絞痛", "壓迫感", "chest pain", "chest tightness", "angina", "ACS", "MI"],
+    "first": {
+      "flags": ["10 分鐘內 12-lead ECG", "撕裂樣、放射到背、雙臂血壓差（剝離）", "喘 + 低血氧 + 心搏過速（PE）", "單側呼吸音消失 + 低血壓（張力性氣胸）", "低血壓、冒冷汗、新雜音", "嘔吐後胸痛 + 皮下氣腫（食道破裂）"],
+      "pe": ["雙臂血壓、四肢脈搏", "心音：新雜音（AR、MR 乳頭肌斷裂）、心包摩擦音、S3", "頸靜脈怒張、Kussmaul sign、奇脈（填塞）", "肺音：單側消失、囉音", "胸壁壓痛（不能單獨排除 ACS）、皮疹（帶狀皰疹）", "腳腫（DVT）、皮下氣腫"],
+      "scores": ["HEART score", "TIMI / GRACE（確診 ACS 後分層）", "EDACS", "Wells (PE) + PERC", "ADD-RS（主動脈剝離）"],
+      "orders": [["chest-pain", "胸痛：第一輪"]]
+    },
+    "groups": [
+      { "title": "🚨 致命六大 · 不能漏", "tone": "urgent", "dx": [
+        { "name": "急性冠心症 ACS / STEMI", "en": "Acute coronary syndrome, STEMI", "clues": "壓迫感、放射到左臂 / 下頷、用力時、冒汗；老人、女性、糖尿病常不典型", "pe": ["S3、新 MR 雜音、肺囉音（Killip）", "Repeat ECG q15–30 min"], "scores": ["HEART score", "TIMI", "GRACE", "Killip class"], "orders": [["chest-pain", "疑 ACS：初始藥物"], ["chest-pain", "STEMI"], ["chest-pain", "NSTE-ACS 極高風險"]] },
+        { "name": "主動脈剝離", "en": "Aortic dissection", "clues": "突發撕裂痛、放射到背、最痛在一開始；高血壓、Marfan", "pe": ["雙臂 SBP 差 >20、脈搏不對稱", "AR 舒張期雜音、神經學缺損"], "scores": ["ADD-RS（≥2 高風險；≤1 + D-dimer 陰性可排除）"], "orders": [["chest-pain", "疑主動脈剝離"], ["hypertension", "主動脈剝離 + 高血壓"]] },
+        { "name": "肺栓塞", "en": "Pulmonary embolism", "clues": "肋膜痛、喘、心搏過速；臥床、術後、癌症、DVT", "pe": ["單側腳腫、JVP、RV heave"], "scores": ["Wells (PE)", "PERC", "Geneva", "sPESI / PESI"], "orders": [["chest-pain", "疑肺栓塞（穩定）"], ["chest-pain", "肺栓塞（不穩定）"]] },
+        { "name": "張力性氣胸", "en": "Tension pneumothorax", "clues": "突發喘 + 低血壓；插管正壓、CVC 放置後", "pe": ["單側呼吸音消失、過度共鳴、氣管偏移（晚期）、頸靜脈怒張"], "orders": [["chest-pain", "張力性氣胸"]] },
+        { "name": "心包填塞", "en": "Cardiac tamponade", "clues": "低血壓 + 頸靜脈怒張 + 心音遙遠（Beck triad）；癌症、尿毒、心臟術後", "pe": ["奇脈 >10 mmHg、心音遙遠"], "orders": [["chest-pain", "心包填塞"]] },
+        { "name": "食道破裂（Boerhaave）", "en": "Esophageal rupture", "clues": "劇烈嘔吐後胸痛、內視鏡後", "pe": ["皮下氣腫、Hamman crunch"], "orders": [["chest-pain", "疑食道/消化道穿孔"]] }
+      ] },
+      { "title": "❤️ 心臟 / 血管（其他）", "dx": [
+        { "name": "心包炎", "en": "Pericarditis", "clues": "尖銳痛、前傾緩解、躺平加劇；病毒感染後", "pe": ["心包摩擦音"], "scores": ["ESC pericarditis criteria（≥2/4）"], "orders": [["chest-pain", "心包炎"]] },
+        { "name": "術後心肌損傷", "en": "Perioperative myocardial injury", "clues": "術後 troponin 升高，常無症狀", "pe": ["—"], "scores": ["RCRI（術前風險）"], "orders": [["chest-pain", "術後心肌損傷 (PMI)"]] },
+        { "name": "心律不整相關胸悶", "en": "Arrhythmia-related chest discomfort", "clues": "AF RVR、SVT 時供需不平衡", "pe": ["心律"], "orders": [["tachycardia", "心搏過速：第一輪"]] },
+        { "name": "高血壓急症", "en": "Hypertensive emergency", "clues": "BP 很高 + 胸痛", "pe": ["雙臂 BP"], "orders": [["hypertension", "ACS + 高血壓"]] }
+      ] },
+      { "title": "🫁 肺部", "dx": [
+        { "name": "氣胸（穩定）", "en": "Pneumothorax", "clues": "瘦高年輕男性、COPD；突發肋膜痛", "pe": ["單側呼吸音減弱"], "orders": [["chest-pain", "穩定氣胸"]] },
+        { "name": "肺炎 / 肋膜炎", "en": "Pneumonia, pleurisy", "clues": "發燒、咳嗽、深吸氣痛", "pe": ["囉音、支氣管呼吸音、肋膜摩擦音"], "scores": ["CURB-65", "PSI"], "orders": [["dyspnea", "社區型肺炎 (CAP)"]] },
+        { "name": "胸水", "en": "Pleural effusion", "clues": "鈍痛、喘", "pe": ["叩診濁音、呼吸音減弱"], "scores": ["Light's criteria"], "orders": [["dyspnea", "胸水"]] }
+      ] },
+      { "title": "🍽️ 腸胃", "dx": [
+        { "name": "胃食道逆流 / 食道痙攣", "en": "GERD, esophageal spasm", "clues": "灼熱、飯後或平躺、酸水；NTG 也可能緩解（不能用來區分）", "pe": ["—"], "orders": [["abdominal-pain", "上消化道潰瘍 / 上腹痛"]] },
+        { "name": "消化性潰瘍 / 膽道 / 胰臟炎", "en": "PUD, biliary colic, pancreatitis", "clues": "上腹痛放射到胸", "pe": ["上腹或右上腹壓痛、Murphy sign"], "orders": [["abdominal-pain", "腹痛：第一輪"]] }
+      ] },
+      { "title": "🦴 胸壁 / 其他", "dx": [
+        { "name": "肋軟骨炎 / 肌肉骨骼", "en": "Costochondritis, musculoskeletal pain", "clues": "按壓重現、姿勢改變痛；仍要先排除 ACS", "pe": ["局部壓痛重現疼痛"], "orders": [["chest-pain", "低風險 / 非心因胸痛"], ["analgesia", "肌肉痠痛 / 局部痛"]] },
+        { "name": "帶狀皰疹", "en": "Herpes zoster", "clues": "單側沿肋間帶狀燒灼痛，皮疹晚出現", "pe": ["皮節水泡"], "orders": [["rash-allergy", "帶狀皰疹"]] },
+        { "name": "焦慮 / 恐慌", "en": "Anxiety, panic attack", "clues": "排除診斷；手麻、過度換氣", "pe": ["—"], "scores": ["GAD-7"], "orders": [["dyspnea", "過度換氣"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "dyspnea", "name": "喘 / 血氧低", "en": "Dyspnea, hypoxemia", "regions": ["chest", "systemic"],
+    "aliases": ["呼吸困難", "喘不過氣", "呼吸急促", "血氧低", "SpO2 低", "desaturation", "shortness of breath", "SOB", "dyspnoea", "hypoxia", "tachypnea", "wheezing", "stridor"],
+    "first": {
+      "flags": ["說話不成句、使用呼吸輔助肌、意識改變、矛盾呼吸", "喘鳴 stridor（上呼吸道）", "SpO2 <90% 給氧不上升", "低血壓 + 喘（PE、張力性氣胸、心因性休克、anaphylaxis）", "CO2 滯留：嗜睡、asterixis"],
+      "pe": ["呼吸速率、SpO2、使用輔助肌、能否講完一句話", "氣管位置、頸靜脈", "肺音：wheeze、crackles、單側消失、stridor", "心音：S3、雜音", "下肢水腫、單側腳腫（DVT）", "皮疹、唇舌腫（過敏）", "ABG / VBG：Type 1 vs Type 2 呼吸衰竭"],
+      "scores": ["NEWS2", "ROX index（HFNC 失敗預測）", "Wells (PE) / PERC", "CURB-65 / PSI", "mMRC dyspnea scale（慢性）", "BLUE protocol（肺超音波）"],
+      "orders": [["dyspnea", "喘：第一輪"], ["dyspnea", "給氧升級"]]
+    },
+    "groups": [
+      { "title": "🚨 立即處理", "tone": "urgent", "dx": [
+        { "name": "Anaphylaxis", "en": "Anaphylaxis", "clues": "接觸過敏原後數分鐘到數小時：蕁麻疹、喘鳴 / wheeze、低血壓、腸胃症狀", "pe": ["皮膚、唇舌、喘鳴、BP"], "scores": ["WAO / NIAID anaphylaxis criteria"], "orders": [["dyspnea", "Anaphylaxis"]] },
+        { "name": "上呼吸道阻塞 / 異物", "en": "Upper airway obstruction, foreign body", "clues": "喘鳴、吃東西嗆到、拔管後", "pe": ["stridor、無法說話"], "orders": [["dyspnea", "異物哽塞"], ["uri-symptoms", "上呼吸道阻塞 / 會厭炎"]] },
+        { "name": "張力性氣胸", "en": "Tension pneumothorax", "clues": "正壓呼吸、CVC 後", "pe": ["單側呼吸音消失、低血壓"], "orders": [["dyspnea", "張力性氣胸"]] },
+        { "name": "肺栓塞", "en": "Pulmonary embolism", "clues": "突發、肺音清但低血氧", "pe": ["DVT 徵象、RV 負荷"], "scores": ["Wells (PE)", "PERC", "sPESI"], "orders": [["dyspnea", "疑肺栓塞"], ["chest-pain", "肺栓塞（不穩定）"]] },
+        { "name": "急性心衰竭 / 肺水腫", "en": "Acute heart failure, pulmonary edema", "clues": "端坐呼吸、夜間陣發性呼吸困難、體重增加、輸液過多", "pe": ["雙側囉音、S3、JVP 上升、下肢水腫"], "scores": ["Killip class", "NYHA class", "Framingham HF criteria"], "orders": [["dyspnea", "急性失代償性心衰竭"], ["hypertension", "急性肺水腫 + 高血壓"]] },
+        { "name": "急性冠心症（喘為主訴）", "en": "ACS presenting with dyspnea", "clues": "老人、糖尿病、女性", "pe": ["ECG"], "scores": ["HEART score"], "orders": [["chest-pain", "胸痛：第一輪"]] },
+        { "name": "藥物呼吸抑制", "en": "Drug-induced respiratory depression", "clues": "opioid、BZD；呼吸慢、嗜睡", "pe": ["呼吸速率 <10、針尖瞳孔"], "scores": ["POSS", "RASS"], "orders": [["dyspnea", "藥物呼吸抑制"]] }
+      ] },
+      { "title": "🫁 肺 / 呼吸道", "dx": [
+        { "name": "氣喘急性發作", "en": "Asthma exacerbation", "clues": "wheeze、胸緊、夜咳；寧靜肺 = 危險", "pe": ["wheeze、說話能力、PEF"], "scores": ["PEF %predicted", "GINA severity"], "orders": [["dyspnea", "氣喘急性發作"]] },
+        { "name": "COPD 急性惡化", "en": "COPD exacerbation", "clues": "痰量增加、痰變膿、更喘；注意 CO2 滯留（目標 SpO2 88–92%）", "pe": ["wheeze、桶狀胸、嘟嘴呼吸"], "scores": ["Anthonisen criteria", "DECAF score", "BAP-65", "CAT / mMRC"], "orders": [["dyspnea", "COPD 急性惡化"]] },
+        { "name": "肺炎（CAP / HAP / VAP / 吸入性）", "en": "Pneumonia", "clues": "發燒、咳嗽、痰、局部囉音；吞嚥困難、意識差 → 吸入", "pe": ["局部囉音、支氣管呼吸音、羊鳴音"], "scores": ["CURB-65", "PSI / PORT", "IDSA/ATS severe CAP criteria", "CPIS（VAP）"], "orders": [["dyspnea", "社區型肺炎 (CAP)"], ["dyspnea", "重症肺炎 / 需涵蓋抗藥菌"], ["dyspnea", "院內肺炎 HAP / VAP"], ["antibiotics", "吸入性肺炎"]] },
+        { "name": "胸水", "en": "Pleural effusion", "clues": "心衰竭、肝硬化、癌症、肺炎旁", "pe": ["叩診濁音、呼吸音減弱"], "scores": ["Light's criteria"], "orders": [["dyspnea", "胸水"]] },
+        { "name": "氣胸（穩定）", "en": "Pneumothorax", "clues": "COPD、處置後", "pe": ["單側呼吸音減弱"], "orders": [["chest-pain", "穩定氣胸"]] },
+        { "name": "痰液阻塞 / 肺塌陷", "en": "Mucus plugging, atelectasis", "clues": "術後、咳不出、插管病人突然 desat", "pe": ["單側呼吸音減弱、氣管偏向患側"], "orders": [["dyspnea", "喘：第一輪"]] },
+        { "name": "ARDS", "en": "ARDS", "clues": "敗血症、胰臟炎、輸血後 1 週內雙側浸潤", "pe": ["雙側囉音"], "scores": ["Berlin definition（P/F ratio）", "Murray Lung Injury Score"], "orders": [["dyspnea", "給氧升級"]] }
+      ] },
+      { "title": "🧪 全身 / 代謝", "dx": [
+        { "name": "敗血症", "en": "Sepsis", "clues": "呼吸急促常是第一個徵兆", "pe": ["感染源"], "scores": ["qSOFA", "SOFA"], "orders": [["fever", "敗血症 / 敗血性休克"]] },
+        { "name": "代謝性酸中毒（Kussmaul）", "en": "Metabolic acidosis", "clues": "DKA、乳酸、尿毒、中毒；深快呼吸、肺音清", "pe": ["酮味、脫水"], "orders": [["acid-base", "高 AG 代謝性酸中毒"], ["glucose", "DKA"]] },
+        { "name": "貧血", "en": "Anemia", "clues": "活動喘、蒼白", "pe": ["結膜蒼白"], "orders": [["anemia", "Hb 明顯下降：找出血"]] },
+        { "name": "輸血相關（TACO / TRALI）", "en": "TACO, TRALI", "clues": "輸血中或 6 hr 內喘", "pe": ["BP（TACO 高、TRALI 低）、囉音"], "orders": [["rash-allergy", "輸血反應"]] },
+        { "name": "神經肌肉無力", "en": "Neuromuscular weakness", "clues": "MG、GBS；淺快呼吸、咳不出", "pe": ["single-breath count、頸屈肌力"], "scores": ["FVC / NIF 20/30/40 rule"], "orders": [["dyspnea", "神經肌肉無力：呼吸評估"]] },
+        { "name": "上腔靜脈症候群", "en": "SVC syndrome", "clues": "臉頸腫、上胸靜脈曲張；肺癌、淋巴瘤", "pe": ["臉部水腫、Pemberton sign"], "orders": [["dyspnea", "上腔靜脈症候群"]] },
+        { "name": "焦慮 / 過度換氣", "en": "Hyperventilation, anxiety", "clues": "排除診斷；手腳嘴唇麻", "pe": ["SpO2 正常"], "scores": ["Nijmegen Questionnaire"], "orders": [["dyspnea", "過度換氣"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "palpitations", "name": "心悸 / 心跳快", "en": "Palpitations, tachycardia", "regions": ["chest", "systemic"],
+    "aliases": ["心跳很快", "心跳不規則", "心臟亂跳", "心悸", "palpitation", "tachycardia", "AF", "AFib", "SVT", "PSVT", "HR high"],
+    "first": {
+      "flags": ["不穩定：低血壓、意識改變、胸痛、急性心衰竭 → 同步電擊", "寬 QRS → 當 VT", "昏厥、運動時心悸、猝死家族史", "快且不規則寬 QRS（預激 AF）：勿給 AV nodal blocker"],
+      "pe": ["脈搏規則性、心尖 vs 橈動脈脈搏（pulse deficit）", "BP、灌流、意識", "甲狀腺腫、顫抖、突眼", "心雜音、心衰竭徵象", "脫水、出血、發燒、疼痛（竇性心搏過速的原因）", "12-lead ECG：QRS 寬窄、規則與否、P 波"],
+      "scores": ["CHA2DS2-VASc（AF 中風風險）", "HAS-BLED（出血風險）", "EHRA symptom score", "Burch–Wartofsky（疑甲狀腺風暴）"],
+      "orders": [["tachycardia", "心搏過速：第一輪"]]
+    },
+    "groups": [
+      { "title": "🚨 不穩定 / 寬 QRS", "tone": "urgent", "dx": [
+        { "name": "不穩定心搏過速", "en": "Unstable tachycardia", "clues": "低血壓、休克、缺血胸痛、急性心衰竭、意識改變", "pe": ["灌流、意識"], "orders": [["tachycardia", "不穩定心搏過速"]] },
+        { "name": "心室頻脈 VT", "en": "Ventricular tachycardia", "clues": "寬 QRS 規則；有心臟病史者 >80% 是 VT", "pe": ["AV dissociation：cannon a wave、S1 強度變化"], "scores": ["Brugada / Vereckei algorithm"], "orders": [["tachycardia", "穩定寬 QRS（疑 VT）"]] },
+        { "name": "Torsades de pointes", "en": "Torsades de pointes", "clues": "QT 延長藥物、低鉀低鎂", "pe": ["—"], "orders": [["tachycardia", "Torsades de pointes"], ["magnesium", "Torsades de pointes"]] },
+        { "name": "預激合併 AF（WPW）", "en": "Pre-excited AF", "clues": "快、不規則、寬 QRS 形狀不一", "pe": ["—"], "orders": [["tachycardia", "預激合併 AF（快寬不規則）"]] }
+      ] },
+      { "title": "💓 窄 QRS 心律不整", "dx": [
+        { "name": "心房顫動 RVR", "en": "Atrial fibrillation with RVR", "clues": "不規則不規則、無 P 波；術後、敗血症、甲亢、酒精", "pe": ["pulse deficit"], "scores": ["CHA2DS2-VASc", "HAS-BLED", "EHRA score"], "orders": [["tachycardia", "心房顫動 RVR（穩定）"], ["tachycardia", "心房顫動：抗凝"]] },
+        { "name": "心房撲動", "en": "Atrial flutter", "clues": "HR 常固定約 150、鋸齒波", "pe": ["—"], "orders": [["tachycardia", "心房撲動"]] },
+        { "name": "PSVT（AVNRT / AVRT）", "en": "PSVT", "clues": "突然開始突然停、規則窄 QRS 150–250", "pe": ["頸部青蛙徵（frog sign）"], "orders": [["tachycardia", "PSVT（規則窄 QRS）"]] },
+        { "name": "多源性心房頻脈 MAT", "en": "Multifocal atrial tachycardia", "clues": "COPD、≥3 種 P 波形態", "pe": ["—"], "orders": [["tachycardia", "MAT"]] },
+        { "name": "PVC / NSVT", "en": "PVC, NSVT", "clues": "漏跳感、咚一下", "pe": ["—"], "orders": [["tachycardia", "PVC / NSVT"]] }
+      ] },
+      { "title": "🔍 竇性心搏過速 · 找原因", "dx": [
+        { "name": "發燒 / 敗血症", "en": "Fever, sepsis", "clues": "體溫每升 1°C HR 約增 10", "pe": ["感染源"], "scores": ["qSOFA", "NEWS2"], "orders": [["fever", "新發燒：第一輪"]] },
+        { "name": "低血容 / 出血", "en": "Hypovolemia, bleeding", "clues": "黑便、引流增加、進食差", "pe": ["姿勢性生命徵象"], "scores": ["Shock index"], "orders": [["anemia", "Hb 明顯下降：找出血"], ["fluids", "低血壓：首輪輸液"]] },
+        { "name": "肺栓塞", "en": "Pulmonary embolism", "clues": "原因不明的持續心搏過速", "pe": ["DVT"], "scores": ["Wells (PE)"], "orders": [["dyspnea", "疑肺栓塞"]] },
+        { "name": "疼痛 / 焦慮 / 戒斷", "en": "Pain, anxiety, withdrawal", "clues": "酒精、BZD、opioid 戒斷", "pe": ["顫抖、出汗"], "scores": ["CIWA-Ar", "COWS"], "orders": [["tachycardia", "竇性心搏過速"], ["sedatives", "酒精戒斷"]] },
+        { "name": "甲狀腺風暴 / 甲亢", "en": "Thyroid storm, thyrotoxicosis", "clues": "發燒、腹瀉、躁動、心衰竭", "pe": ["甲狀腺腫、顫抖、突眼"], "scores": ["Burch–Wartofsky Point Scale"], "orders": [["endocrine", "甲狀腺風暴"]] },
+        { "name": "低血糖 / 藥物（β-agonist、theophylline）", "en": "Hypoglycemia, drugs", "clues": "吸入劑、咖啡因、興奮劑", "pe": ["—"], "orders": [["tachycardia", "竇性心搏過速"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "cough-hemoptysis", "name": "咳嗽 / 咳血", "en": "Cough, hemoptysis", "regions": ["chest"],
+    "aliases": ["咳嗽", "咳痰", "咳血", "痰有血", "cough", "hemoptysis", "sputum", "haemoptysis"],
+    "first": {
+      "flags": ["大量咳血（>100–200 mL / 24 hr 或影響呼吸）→ 患側朝下、呼吸道", "低血氧、呼吸窘迫", "體重減輕、夜間盜汗（TB、癌症）", "抗凝劑"],
+      "pe": ["分辨咳血 vs 吐血 vs 鼻咽出血（顏色、pH、伴隨症狀）", "肺音：局部囉音、wheeze、呼吸音減弱", "杵狀指、淋巴結", "鼻咽口腔檢查", "下肢 DVT 徵象"],
+      "scores": ["CURB-65 / PSI", "Wells (PE)", "隔離評估：TB 篩檢表"],
+      "orders": [["uri-symptoms", "喉嚨痛 / 咳嗽：第一輪"]]
+    },
+    "groups": [
+      { "title": "🚨 咳血 · 不能漏", "tone": "urgent", "dx": [
+        { "name": "肺結核", "en": "Pulmonary tuberculosis", "clues": "慢性咳嗽 >2 週、盜汗、體重減輕、上肺空洞 → 先隔離", "pe": ["上肺囉音"], "orders": [["antibiotics", "疑肺結核"]] },
+        { "name": "肺癌", "en": "Lung cancer", "clues": "抽菸、體重減輕、杵狀指", "pe": ["鎖骨上淋巴結、杵狀指"], "orders": [["exams", "胸腔科檢查"]] },
+        { "name": "肺栓塞", "en": "Pulmonary embolism", "clues": "咳血 + 肋膜痛 + 喘", "pe": ["DVT"], "scores": ["Wells (PE)"], "orders": [["dyspnea", "疑肺栓塞"]] },
+        { "name": "支氣管擴張症", "en": "Bronchiectasis", "clues": "大量膿痰、反覆感染", "pe": ["粗囉音"], "orders": [["exams", "胸腔科檢查"]] },
+        { "name": "凝血異常 / 抗凝", "en": "Coagulopathy", "clues": "INR 高、血小板低", "pe": ["其他出血"], "orders": [["coagulopathy", "凝血檢驗異常：判讀"]] },
+        { "name": "肺泡出血 / 血管炎", "en": "Diffuse alveolar hemorrhage, vasculitis", "clues": "咳血 + 腎功能變差 + 血尿（GPA、anti-GBM）", "pe": ["鞍鼻、皮膚紫斑"], "orders": [["hematuria", "疑腎絲球腎炎"], ["exams", "風濕免疫檢驗"]] }
+      ] },
+      { "title": "🦠 咳嗽 · 感染", "dx": [
+        { "name": "上呼吸道感染 / 流感 / COVID", "en": "URI, influenza, COVID-19", "clues": "鼻水、喉嚨痛、肌肉痛", "pe": ["—"], "orders": [["uri-symptoms", "流感"], ["antibiotics", "COVID-19"], ["uri-symptoms", "咳嗽"]] },
+        { "name": "肺炎", "en": "Pneumonia", "clues": "發燒、膿痰、局部囉音", "pe": ["局部囉音"], "scores": ["CURB-65", "PSI"], "orders": [["dyspnea", "社區型肺炎 (CAP)"]] },
+        { "name": "吸入性肺炎", "en": "Aspiration pneumonia", "clues": "吞嚥困難、進食嗆咳、意識差", "pe": ["右下肺囉音"], "scores": ["床邊吞嚥篩檢（water swallow test）"], "orders": [["antibiotics", "吸入性肺炎"]] },
+        { "name": "PJP", "en": "Pneumocystis pneumonia", "clues": "HIV、長期類固醇、化療；乾咳、活動 desat", "pe": ["肺音常正常"], "orders": [["antibiotics", "PJP（肺囊蟲肺炎）"]] }
+      ] },
+      { "title": "🧩 咳嗽 · 非感染", "dx": [
+        { "name": "COPD / 氣喘", "en": "COPD, asthma", "clues": "wheeze、夜咳", "pe": ["wheeze"], "scores": ["CAT", "ACT（Asthma Control Test）"], "orders": [["dyspnea", "COPD 急性惡化"], ["dyspnea", "氣喘急性發作"]] },
+        { "name": "心衰竭", "en": "Heart failure", "clues": "夜間咳、粉紅泡沫痰", "pe": ["囉音、JVP、水腫"], "orders": [["dyspnea", "急性失代償性心衰竭"]] },
+        { "name": "ACEI 咳嗽", "en": "ACE inhibitor cough", "clues": "乾咳，可在開始用藥數週到數月後", "pe": ["—"], "orders": [["uri-symptoms", "咳嗽"]] },
+        { "name": "鼻涕倒流 / 胃食道逆流", "en": "Upper airway cough syndrome, GERD", "clues": "慢性咳嗽三大原因（加氣喘）", "pe": ["咽後壁鵝卵石樣"], "orders": [["uri-symptoms", "鼻塞流鼻水"]] }
+      ] }
+    ]
+  }
+]

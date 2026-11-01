@@ -248,6 +248,15 @@ function onClick(event) {
   else if (action === 'copy') copyText(trayText());
 }
 
+// Opens a condition by chapter slug and name (links from the differential diagnosis tab).
+export function openOrderItem(slug, name) {
+  const chapter = ONCALL_MENU.findIndex(entry => entry.slug === slug);
+  if (chapter < 0) return false;
+  const item = ONCALL_MENU[chapter].items.findIndex(entry => entry.name === name);
+  go(chapter, item < 0 ? null : item);
+  return item >= 0;
+}
+
 export function initOncall(options = {}) {
   ({ copyText = copyText, toast = toast } = options);
   root = document.getElementById('tab-oncall');

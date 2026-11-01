@@ -1,0 +1,337 @@
+[
+  {
+    "id": "ruq-pain", "name": "右上腹痛", "en": "Right upper quadrant pain", "regions": ["ruq"],
+    "aliases": ["右上腹", "膽", "肝區痛", "RUQ", "RUQ pain", "biliary colic", "cholecystitis"],
+    "first": {
+      "flags": ["Charcot triad（發燒 + 黃疸 + RUQ 痛）→ 膽管炎；加低血壓、意識改變 = Reynolds pentad", "腹膜徵象、休克", "孕婦（HELLP、急性脂肪肝）"],
+      "pe": ["Murphy sign（吸氣時停止）", "肝腫大、肝叩痛、黃疸、asterixis", "腹膜徵象：rebound、guarding、rigidity", "右下肺囉音（右下肺炎）", "皮疹（帶狀皰疹）"],
+      "scores": ["Tokyo Guidelines TG18（膽囊炎 / 膽管炎嚴重度）", "Child-Pugh / MELD", "qSOFA"],
+      "orders": [["abdominal-pain", "腹痛：第一輪"]]
+    },
+    "groups": [
+      { "title": "🚨 危急", "tone": "urgent", "dx": [
+        { "name": "急性膽管炎", "en": "Acute cholangitis", "clues": "發燒 + 黃疸 + 右上腹痛；膽結石、ERCP 後、膽道支架", "pe": ["黃疸、右上腹壓痛、低血壓"], "scores": ["Tokyo TG18 cholangitis grade", "qSOFA"], "orders": [["abdominal-pain", "急性膽管炎"], ["antibiotics", "膽管炎 / 膽囊炎"]] },
+        { "name": "急性膽囊炎", "en": "Acute cholecystitis", "clues": "飯後持續 >6 hr 右上腹痛、發燒；ICU 病人無結石性", "pe": ["Murphy sign", "超音波 Murphy sign"], "scores": ["Tokyo TG18 cholecystitis grade"], "orders": [["abdominal-pain", "急性膽囊炎"]] },
+        { "name": "肝膿瘍", "en": "Liver abscess", "clues": "發燒、右上腹痛；糖尿病（Klebsiella）、眼內炎併發", "pe": ["肝叩痛"], "orders": [["antibiotics", "腹腔內感染（重症 / 院內 / 術後）"]] },
+        { "name": "急性冠心症（下壁）", "en": "Inferior MI", "clues": "上腹或右上腹痛 + 冒汗、噁心", "pe": ["ECG"], "scores": ["HEART score"], "orders": [["chest-pain", "胸痛：第一輪"]] },
+        { "name": "HELLP / 子癇前症", "en": "HELLP syndrome", "clues": "懷孕後期或產後、高血壓、溶血、血小板低", "pe": ["BP、水腫"], "orders": [["hypertension", "子癇前症嚴重高血壓"]] }
+      ] },
+      { "title": "🫀 肝膽", "dx": [
+        { "name": "膽絞痛 / 膽結石", "en": "Biliary colic", "clues": "飯後（油膩）右上腹或上腹痛，<6 hr 緩解", "pe": ["Murphy sign 陰性或輕微"], "orders": [["abdominal-pain", "急性膽囊炎"]] },
+        { "name": "急性肝炎", "en": "Acute hepatitis", "clues": "病毒、酒精、藥物（acetaminophen、抗結核藥）、缺血性肝炎（休克後）", "pe": ["肝腫大壓痛、黃疸"], "scores": ["R ratio（ALT / ALP 型態）", "RUCAM（藥物性肝損傷）", "Maddrey DF / MELD（酒精性肝炎）"], "orders": [["analgesia", "Acetaminophen 過量"], ["exams", "腹部超音波 / 介入"]] },
+        { "name": "鬱血性肝病變 / Budd–Chiari", "en": "Congestive hepatopathy, Budd–Chiari", "clues": "右心衰竭；高凝狀態突發腹水", "pe": ["JVP、肝頸靜脈逆流、腹水"], "orders": [["dyspnea", "急性失代償性心衰竭"]] }
+      ] },
+      { "title": "🔁 其他器官轉移痛", "dx": [
+        { "name": "右下肺炎 / 肋膜炎", "en": "Right lower lobe pneumonia", "clues": "咳嗽、發燒、吸氣痛", "pe": ["右下肺囉音"], "scores": ["CURB-65"], "orders": [["dyspnea", "社區型肺炎 (CAP)"]] },
+        { "name": "消化性潰瘍 / 十二指腸潰瘍", "en": "Duodenal ulcer", "clues": "空腹痛、進食緩解", "pe": ["上腹壓痛"], "orders": [["abdominal-pain", "上消化道潰瘍 / 上腹痛"]] },
+        { "name": "右腎結石 / 腎盂腎炎", "en": "Right renal colic, pyelonephritis", "clues": "腰痛放射、血尿、發燒", "pe": ["CVA 叩痛"], "orders": [["abdominal-pain", "腎絞痛 / 結石"], ["abdominal-pain", "腎盂腎炎"]] },
+        { "name": "帶狀皰疹", "en": "Herpes zoster", "clues": "單側燒灼痛、皮疹晚出", "pe": ["皮節"], "orders": [["rash-allergy", "帶狀皰疹"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "epigastric-pain", "name": "上腹痛 / 心窩痛", "en": "Epigastric pain", "regions": ["epigastric"],
+    "aliases": ["胃痛", "心窩痛", "上腹痛", "胃脹", "火燒心", "epigastric pain", "dyspepsia", "heartburn", "stomach ache"],
+    "first": {
+      "flags": ["上腹痛也要做 ECG（下壁 MI）", "突發劇痛 + 腹部僵硬（穿孔）", "放射到背 + 嘔吐（胰臟炎、AAA、剝離）", "吐血 / 黑便", "休克"],
+      "pe": ["生命徵象、ECG", "腹膜徵象：板狀腹（穿孔）", "肝濁音消失（free air）", "Cullen / Grey Turner sign（出血性胰臟炎）", "搏動性腫塊（AAA）", "直腸指診（黑便）"],
+      "scores": ["HEART score（排除 ACS）", "BISAP / Ranson / modified Marshall（胰臟炎）", "Glasgow-Blatchford（上消化道出血）", "Revised Atlanta classification"],
+      "orders": [["abdominal-pain", "腹痛：第一輪"]]
+    },
+    "groups": [
+      { "title": "🚨 危急", "tone": "urgent", "dx": [
+        { "name": "急性心肌梗塞（下壁）", "en": "Inferior myocardial infarction", "clues": "糖尿病、老人、女性；冒汗、噁心", "pe": ["ECG、troponin"], "scores": ["HEART score"], "orders": [["chest-pain", "胸痛：第一輪"], ["chest-pain", "STEMI"]] },
+        { "name": "消化道穿孔", "en": "Perforated viscus", "clues": "突發劇痛、板狀腹；NSAID、類固醇、潰瘍病史", "pe": ["板狀腹、rebound、肝濁音消失"], "orders": [["abdominal-pain", "疑消化道穿孔"]] },
+        { "name": "急性胰臟炎", "en": "Acute pancreatitis", "clues": "上腹痛放射到背、前傾緩解、嘔吐；酒精、膽結石、高 TG、藥物", "pe": ["上腹壓痛、Cullen / Grey Turner、脫水"], "scores": ["BISAP", "Ranson", "modified Marshall", "SIRS", "Revised Atlanta"], "orders": [["abdominal-pain", "急性胰臟炎"]] },
+        { "name": "腹主動脈瘤破裂 / 主動脈剝離", "en": "Ruptured AAA, aortic dissection", "clues": "老人男性、抽菸、高血壓；腹 / 背痛 + 低血壓", "pe": ["搏動性腫塊、雙臂血壓差、下肢脈搏"], "orders": [["abdominal-pain", "疑腹主動脈瘤破裂"], ["chest-pain", "疑主動脈剝離"]] },
+        { "name": "腸缺血", "en": "Mesenteric ischemia", "clues": "痛與檢查不成比例；AF、血管疾病", "pe": ["早期腹軟、後期腹膜炎"], "orders": [["abdominal-pain", "疑腸缺血"]] },
+        { "name": "上消化道出血", "en": "Upper GI bleeding", "clues": "吐血、咖啡渣、黑便", "pe": ["直腸指診、姿勢性生命徵象"], "scores": ["Glasgow-Blatchford", "AIMS65", "Rockall"], "orders": [["gi-bleeding", "消化道出血：第一輪"]] },
+        { "name": "DKA", "en": "DKA", "clues": "腹痛 + 嘔吐 + 高血糖 + 酸中毒；SGLT2i 可血糖不高", "pe": ["Kussmaul 呼吸、酮味"], "orders": [["glucose", "DKA"], ["glucose", "Euglycemic DKA (SGLT2i)"]] }
+      ] },
+      { "title": "🍽️ 胃 / 食道", "dx": [
+        { "name": "消化性潰瘍", "en": "Peptic ulcer disease", "clues": "飯前或飯後痛、NSAID、H. pylori", "pe": ["上腹壓痛"], "scores": ["Alarm features（ALARMS）"], "orders": [["abdominal-pain", "上消化道潰瘍 / 上腹痛"], ["abdominal-pain", "幽門桿菌除菌"]] },
+        { "name": "胃食道逆流 / 食道炎", "en": "GERD, esophagitis", "clues": "火燒心、酸水、平躺加劇；藥物性食道炎（doxycycline、KCl、bisphosphonate）", "pe": ["—"], "scores": ["GerdQ"], "orders": [["abdominal-pain", "上消化道潰瘍 / 上腹痛"]] },
+        { "name": "急性胃炎 / 功能性消化不良", "en": "Gastritis, functional dyspepsia", "clues": "酒精、NSAID、壓力；排除診斷", "pe": ["—"], "scores": ["Rome IV"], "orders": [["gi-symptoms", "嘔吐：第一輪"]] }
+      ] },
+      { "title": "🔁 其他", "dx": [
+        { "name": "膽道疾病", "en": "Biliary disease", "clues": "上腹痛也常是膽絞痛", "pe": ["Murphy sign"], "orders": [["abdominal-pain", "急性膽囊炎"]] },
+        { "name": "早期闌尾炎", "en": "Early appendicitis", "clues": "肚臍 / 上腹痛 → 數小時後轉右下腹", "pe": ["右下腹壓痛（後期）"], "scores": ["Alvarado score"], "orders": [["abdominal-pain", "闌尾炎"]] },
+        { "name": "心包炎 / 下肺炎", "en": "Pericarditis, lower lobe pneumonia", "clues": "姿勢性胸痛、咳嗽", "pe": ["摩擦音、囉音"], "orders": [["chest-pain", "心包炎"]] },
+        { "name": "腎上腺危象", "en": "Adrenal crisis", "clues": "類固醇停用、低血壓、低鈉高鉀、腹痛嘔吐", "pe": ["低血壓、色素沉著"], "orders": [["abdominal-pain", "疑腎上腺危象"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "luq-pain", "name": "左上腹痛", "en": "Left upper quadrant pain", "regions": ["luq"],
+    "aliases": ["左上腹", "脾", "LUQ", "LUQ pain", "splenic"],
+    "first": {
+      "flags": ["外傷後 + 左肩痛（Kehr sign）→ 脾破裂", "低血壓", "上腹痛放射到背"],
+      "pe": ["脾腫大（Castell sign、Traube 區叩診）", "Kehr sign", "左下肺音", "左 CVA 叩痛", "ECG（心臟轉移痛）"],
+      "scores": ["BISAP（胰臟炎）", "HEART score"],
+      "orders": [["abdominal-pain", "腹痛：第一輪"]]
+    },
+    "groups": [
+      { "title": "🚨 危急", "tone": "urgent", "dx": [
+        { "name": "脾破裂 / 脾梗塞", "en": "Splenic rupture, splenic infarct", "clues": "外傷、EBV 脾腫大、心內膜炎 / AF 栓塞", "pe": ["Kehr sign、腹膜徵象、低血壓"], "orders": [["hypotension-shock", "出血性休克"], ["antibiotics", "疑心內膜炎（經驗性）"]] },
+        { "name": "急性冠心症", "en": "ACS", "clues": "上腹痛 + 冒汗", "pe": ["ECG"], "scores": ["HEART score"], "orders": [["chest-pain", "胸痛：第一輪"]] },
+        { "name": "急性胰臟炎（胰尾）", "en": "Acute pancreatitis", "clues": "放射到背、嘔吐", "pe": ["上腹壓痛"], "scores": ["BISAP"], "orders": [["abdominal-pain", "急性胰臟炎"]] }
+      ] },
+      { "title": "🩺 其他", "dx": [
+        { "name": "胃潰瘍 / 胃炎", "en": "Gastric ulcer, gastritis", "clues": "NSAID、飯後痛", "pe": ["上腹壓痛"], "orders": [["abdominal-pain", "上消化道潰瘍 / 上腹痛"]] },
+        { "name": "左下肺炎 / 肋膜炎 / 肺栓塞", "en": "Left lower lobe pneumonia, PE", "clues": "咳嗽、喘、肋膜痛", "pe": ["左下肺囉音"], "scores": ["CURB-65", "Wells (PE)"], "orders": [["dyspnea", "社區型肺炎 (CAP)"], ["dyspnea", "疑肺栓塞"]] },
+        { "name": "左腎結石 / 腎盂腎炎 / 腎梗塞", "en": "Left renal colic, pyelonephritis, renal infarct", "clues": "腰痛、血尿；AF 病人想腎梗塞（LDH 高）", "pe": ["CVA 叩痛"], "orders": [["abdominal-pain", "腎絞痛 / 結石"], ["abdominal-pain", "腎盂腎炎"]] },
+        { "name": "大腸脾彎曲處脹氣 / 便秘", "en": "Splenic flexure gas, constipation", "clues": "脹、排氣後緩解", "pe": ["鼓音"], "orders": [["gi-symptoms", "脹氣"], ["gi-symptoms", "便秘"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "periumbilical-pain", "name": "肚臍周圍痛 / 整個肚子痛", "en": "Periumbilical or diffuse abdominal pain", "regions": ["umbilical"],
+    "aliases": ["肚子痛", "全腹痛", "肚臍痛", "腹痛", "abdominal pain", "diffuse abdominal pain", "periumbilical", "acute abdomen", "peritonitis"],
+    "first": {
+      "flags": ["痛與檢查不成比例（腸缺血）", "腹膜炎：僵硬、反彈痛、不敢動", "休克、搏動性腫塊（AAA）", "嘔吐 + 不排氣排便 + 腹脹（阻塞）", "老人、免疫低下、類固醇：症狀可很輕"],
+      "pe": ["視診：腹脹、疤痕（沾黏）、疝氣（腹股溝、臍、切口）", "聽診：腸音亢進（早期阻塞）或消失（ileus、腹膜炎）", "叩診：鼓音、移動性濁音", "觸診：由不痛處開始；guarding、rebound、rigidity", "直腸指診、骨盆檢查（女性）", "搏動性腫塊、股動脈脈搏"],
+      "scores": ["Alvarado / AIR score（闌尾炎）", "qSOFA", "Shock index", "WSES / Mannheim Peritonitis Index"],
+      "orders": [["abdominal-pain", "腹痛：第一輪"], ["abdominal-pain", "腹痛合併休克"]]
+    },
+    "groups": [
+      { "title": "🚨 外科急症 · 不能漏", "tone": "urgent", "dx": [
+        { "name": "腸缺血", "en": "Acute mesenteric ischemia", "clues": "劇痛但腹部軟、AF、心衰竭、低灌流；乳酸上升是晚期", "pe": ["痛與檢查不成比例"], "orders": [["abdominal-pain", "疑腸缺血"]] },
+        { "name": "腹主動脈瘤破裂", "en": "Ruptured AAA", "clues": "腹痛 + 背痛 + 低血壓；常被誤認腎結石", "pe": ["搏動性腫塊、下肢脈搏"], "orders": [["abdominal-pain", "疑腹主動脈瘤破裂"]] },
+        { "name": "消化道穿孔", "en": "GI perforation", "clues": "突發、板狀腹", "pe": ["rigidity、肝濁音消失"], "orders": [["abdominal-pain", "疑消化道穿孔"]] },
+        { "name": "小腸阻塞 / 絞扼性疝氣", "en": "Small bowel obstruction, incarcerated hernia", "clues": "腹部手術史、嘔吐、不排氣；持續痛 + 發燒 → 絞扼", "pe": ["腹脹、高音調腸音、疝氣檢查"], "orders": [["abdominal-pain", "小腸阻塞"]] },
+        { "name": "早期闌尾炎", "en": "Early appendicitis", "clues": "肚臍痛 → 轉移到右下腹、食慾差", "pe": ["McBurney 壓痛（後期）"], "scores": ["Alvarado score", "AIR score"], "orders": [["abdominal-pain", "闌尾炎"]] },
+        { "name": "腹內感染 / 腹膜炎", "en": "Peritonitis, intra-abdominal infection", "clues": "術後、腹膜透析、腹水（SBP）", "pe": ["rebound、guarding"], "scores": ["qSOFA"], "orders": [["fever", "腹內感染"], ["abdominal-pain", "SBP（肝硬化腹水）"]] }
+      ] },
+      { "title": "🧪 內科原因", "dx": [
+        { "name": "DKA", "en": "DKA", "clues": "腹痛嘔吐 + 高血糖 / 酮酸", "pe": ["Kussmaul、脫水"], "orders": [["glucose", "DKA"]] },
+        { "name": "腎上腺危象", "en": "Adrenal crisis", "clues": "類固醇停用、低血壓", "pe": ["低血壓"], "orders": [["abdominal-pain", "疑腎上腺危象"]] },
+        { "name": "高血鈣 / 紫質症 / 鉛中毒", "en": "Hypercalcemia, porphyria", "clues": "便秘、意識改變；反覆劇烈腹痛 + 神經精神症狀", "pe": ["—"], "orders": [["calcium", "高血鈣"]] },
+        { "name": "急性腸胃炎", "en": "Acute gastroenteritis", "clues": "嘔吐 + 腹瀉、群聚；腹痛 > 腹瀉時要小心別的診斷", "pe": ["彌漫性輕壓痛、腸音增加"], "orders": [["gi-symptoms", "腹瀉：第一輪"]] },
+        { "name": "C. difficile 大腸炎", "en": "C. difficile colitis", "clues": "抗生素使用後腹瀉、腹痛、白血球高", "pe": ["腹脹、壓痛（毒性巨結腸）"], "orders": [["gi-symptoms", "C. difficile 感染"], ["gi-symptoms", "猛爆型 CDI"]] },
+        { "name": "便秘 / 糞便嵌塞", "en": "Constipation, fecal impaction", "clues": "opioid、臥床、老人", "pe": ["直腸指診"], "scores": ["Bristol Stool Chart"], "orders": [["gi-symptoms", "便秘"], ["gi-symptoms", "Opioid 便秘"]] },
+        { "name": "急性尿滯留", "en": "Acute urinary retention", "clues": "下腹脹痛、譫妄老人", "pe": ["恥骨上膨隆、膀胱超音波"], "orders": [["oliguria", "急性尿滯留"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "rlq-pain", "name": "右下腹痛", "en": "Right lower quadrant pain", "regions": ["rlq"],
+    "aliases": ["右下腹", "盲腸", "闌尾", "RLQ", "RLQ pain", "appendicitis", "McBurney"],
+    "first": {
+      "flags": ["育齡女性：先驗孕（子宮外孕）", "突發 + 嘔吐 + 附屬器腫塊（卵巢扭轉）", "男性要檢查睪丸（扭轉轉移痛）", "腹膜炎、休克"],
+      "pe": ["McBurney point 壓痛、Rovsing sign", "Psoas sign（盲腸後闌尾）、Obturator sign（骨盆闌尾）", "咳嗽 / 跳躍痛（腹膜刺激）", "骨盆檢查：子宮頸舉痛、附屬器壓痛", "睪丸、腹股溝疝氣", "CVA 叩痛"],
+      "scores": ["Alvarado score", "AIR score（Appendicitis Inflammatory Response）", "Adult Appendicitis Score", "STONE score（腎結石）"],
+      "orders": [["abdominal-pain", "腹痛：第一輪"]]
+    },
+    "groups": [
+      { "title": "🚨 外科急症", "tone": "urgent", "dx": [
+        { "name": "急性闌尾炎", "en": "Acute appendicitis", "clues": "肚臍痛轉移到右下腹、食慾差、發燒；老人孕婦不典型", "pe": ["McBurney、Rovsing、Psoas、Obturator"], "scores": ["Alvarado", "AIR score", "Adult Appendicitis Score"], "orders": [["abdominal-pain", "闌尾炎"]] },
+        { "name": "子宮外孕", "en": "Ectopic pregnancy", "clues": "月經延遲、陰道出血、腹痛；破裂 → 休克", "pe": ["附屬器壓痛、子宮頸舉痛、腹膜徵象"], "orders": [["abdominal-pain", "異位妊娠"]] },
+        { "name": "卵巢扭轉", "en": "Ovarian torsion", "clues": "突發單側劇痛 + 嘔吐；卵巢腫瘤、排卵刺激", "pe": ["附屬器腫塊壓痛"], "orders": [["abdominal-pain", "卵巢扭轉"]] },
+        { "name": "睪丸扭轉（轉移痛）", "en": "Testicular torsion", "clues": "年輕男性下腹痛要看睪丸", "pe": ["睪丸高位、橫位、cremasteric reflex 消失"], "scores": ["TWIST score"], "orders": [["abdominal-pain", "睪丸扭轉"]] },
+        { "name": "絞扼性腹股溝疝氣", "en": "Incarcerated inguinal hernia", "clues": "腹股溝腫塊推不回去", "pe": ["腹股溝檢查"], "orders": [["abdominal-pain", "小腸阻塞"]] }
+      ] },
+      { "title": "🩺 其他", "dx": [
+        { "name": "右側腎結石 / 腎盂腎炎", "en": "Right ureteric colic, pyelonephritis", "clues": "陣發劇痛放射到鼠蹊、血尿", "pe": ["CVA 叩痛"], "scores": ["STONE score"], "orders": [["abdominal-pain", "腎絞痛 / 結石"], ["abdominal-pain", "腎盂腎炎"]] },
+        { "name": "骨盆腔發炎 PID / 輸卵管卵巢膿瘍", "en": "PID, tubo-ovarian abscess", "clues": "發燒、陰道分泌物、性活躍", "pe": ["子宮頸舉痛、附屬器壓痛"], "orders": [["antibiotics", "腹腔內感染（社區型、低風險）"]] },
+        { "name": "盲腸憩室炎 / 迴盲部炎（Crohn、TB、typhlitis）", "en": "Cecal diverticulitis, ileitis, typhlitis", "clues": "亞洲人右側憩室常見；嗜中性球低下 → typhlitis", "pe": ["右下腹壓痛"], "orders": [["abdominal-pain", "憩室炎"], ["fever", "嗜中性球低下發燒"]] },
+        { "name": "腸繫膜淋巴腺炎 / 腸胃炎", "en": "Mesenteric adenitis, gastroenteritis", "clues": "年輕人、上呼吸道感染後", "pe": ["—"], "orders": [["gi-symptoms", "腹瀉：第一輪"]] },
+        { "name": "腰肌膿瘍 / 腹直肌血腫", "en": "Psoas abscess, rectus sheath hematoma", "clues": "抗凝劑 + 咳嗽後（血腫）；發燒、髖屈曲痛（膿瘍）", "pe": ["Carnett sign（抬頭痛更甚 → 腹壁）", "Psoas sign"], "orders": [["coagulopathy", "Heparin / LMWH 出血"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "llq-pain", "name": "左下腹痛", "en": "Left lower quadrant pain", "regions": ["llq"],
+    "aliases": ["左下腹", "憩室", "LLQ", "LLQ pain", "diverticulitis", "sigmoid"],
+    "first": {
+      "flags": ["育齡女性先驗孕", "發燒 + 腹膜徵象（憩室穿孔）", "血便 + 腹痛（缺血性腸炎）", "休克"],
+      "pe": ["左下腹壓痛、腫塊", "腹膜徵象", "直腸指診（血便、腫塊）", "骨盆檢查、睪丸、腹股溝疝氣", "CVA 叩痛"],
+      "scores": ["Hinchey classification（憩室炎 CT）", "qSOFA"],
+      "orders": [["abdominal-pain", "腹痛：第一輪"]]
+    },
+    "groups": [
+      { "title": "🚨 危急", "tone": "urgent", "dx": [
+        { "name": "複雜性憩室炎（膿瘍 / 穿孔）", "en": "Complicated diverticulitis", "clues": "發燒、左下腹痛、腹膜炎", "pe": ["左下腹腫塊、rebound"], "scores": ["Hinchey classification"], "orders": [["abdominal-pain", "憩室炎"], ["antibiotics", "腹腔內感染（重症 / 院內 / 術後）"]] },
+        { "name": "缺血性大腸炎", "en": "Ischemic colitis", "clues": "老人、低血壓或血管疾病後腹痛 + 血便", "pe": ["左側壓痛"], "orders": [["abdominal-pain", "疑腸缺血"], ["gi-bleeding", "下消化道出血"]] },
+        { "name": "乙狀結腸扭轉 / 大腸阻塞", "en": "Sigmoid volvulus, large bowel obstruction", "clues": "老人、臥床、便秘；腹部極度脹大", "pe": ["腹脹、鼓音"], "orders": [["abdominal-pain", "小腸阻塞"]] },
+        { "name": "子宮外孕 / 卵巢扭轉 / 睪丸扭轉", "en": "Ectopic pregnancy, ovarian or testicular torsion", "clues": "同右下腹的婦泌急症", "pe": ["骨盆 / 睪丸檢查"], "scores": ["TWIST score"], "orders": [["abdominal-pain", "異位妊娠"], ["abdominal-pain", "卵巢扭轉"], ["abdominal-pain", "睪丸扭轉"]] }
+      ] },
+      { "title": "🩺 其他", "dx": [
+        { "name": "單純憩室炎", "en": "Uncomplicated diverticulitis", "clues": "西方人常見左側；低燒、左下腹壓痛", "pe": ["局部壓痛"], "orders": [["abdominal-pain", "憩室炎"], ["antibiotics", "腹腔內感染（社區型、低風險）"]] },
+        { "name": "便秘 / 糞便嵌塞", "en": "Constipation", "clues": "排便減少、硬便", "pe": ["直腸指診"], "scores": ["Bristol Stool Chart", "Rome IV"], "orders": [["gi-symptoms", "便秘"]] },
+        { "name": "左側腎結石 / 腎盂腎炎", "en": "Left ureteric colic", "clues": "陣發劇痛、血尿", "pe": ["CVA 叩痛"], "scores": ["STONE score"], "orders": [["abdominal-pain", "腎絞痛 / 結石"]] },
+        { "name": "感染性 / 發炎性大腸炎", "en": "Infectious or inflammatory colitis", "clues": "腹瀉、血便、裏急後重；IBD", "pe": ["—"], "scores": ["Truelove and Witts（UC 嚴重度）"], "orders": [["gi-symptoms", "腹瀉：第一輪"], ["gi-symptoms", "C. difficile 感染"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "suprapubic-pain", "name": "下腹痛 / 恥骨上痛", "en": "Suprapubic or lower abdominal pain", "regions": ["suprapubic", "pelvis"],
+    "aliases": ["下腹痛", "膀胱痛", "骨盆痛", "suprapubic pain", "pelvic pain", "lower abdominal pain", "hypogastric"],
+    "first": {
+      "flags": ["育齡女性先驗孕", "無法排尿 + 恥骨上膨隆（尿滯留）", "發燒 + 腰痛（上泌尿道）", "孕婦腹痛 / 出血"],
+      "pe": ["恥骨上膨隆、膀胱叩診 / 超音波（PVR）", "骨盆檢查、睪丸 / 攝護腺（直腸指診：前列腺壓痛）", "CVA 叩痛", "腹股溝疝氣"],
+      "scores": ["Post-void residual（PVR）", "IPSS（攝護腺症狀）"],
+      "orders": [["abdominal-pain", "腹痛：第一輪"]]
+    },
+    "groups": [
+      { "title": "🚨 危急", "tone": "urgent", "dx": [
+        { "name": "急性尿滯留", "en": "Acute urinary retention", "clues": "攝護腺肥大、抗膽鹼藥、opioid、術後、脊髓問題", "pe": ["膀胱膨隆、PVR >300 mL", "會陰感覺、肛門張力（馬尾）"], "scores": ["PVR"], "orders": [["oliguria", "急性尿滯留"]] },
+        { "name": "子宮外孕 / 卵巢扭轉", "en": "Ectopic pregnancy, ovarian torsion", "clues": "育齡女性", "pe": ["骨盆檢查"], "orders": [["abdominal-pain", "異位妊娠"], ["abdominal-pain", "卵巢扭轉"]] },
+        { "name": "睪丸扭轉", "en": "Testicular torsion", "clues": "下腹痛 + 睪丸痛", "pe": ["睪丸、cremasteric reflex"], "scores": ["TWIST score"], "orders": [["abdominal-pain", "睪丸扭轉"]] },
+        { "name": "腹內感染 / 骨盆腔膿瘍", "en": "Pelvic abscess", "clues": "術後、憩室、PID", "pe": ["直腸指診壓痛、腫塊"], "orders": [["fever", "腹內感染"]] }
+      ] },
+      { "title": "🚻 泌尿", "dx": [
+        { "name": "膀胱炎", "en": "Cystitis", "clues": "頻尿、急尿、解尿痛，無發燒", "pe": ["恥骨上壓痛"], "orders": [["antibiotics", "膀胱炎（單純）"]] },
+        { "name": "急性攝護腺炎", "en": "Acute prostatitis", "clues": "男性、發燒、會陰痛、解尿困難", "pe": ["直腸指診：攝護腺腫痛（輕觸，不按摩）"], "orders": [["antibiotics", "腎盂腎炎 / 複雜性 UTI"]] },
+        { "name": "導尿管相關感染 / 血塊阻塞", "en": "CAUTI, clot retention", "clues": "放置導尿管、血尿", "pe": ["導尿管引流"], "orders": [["hematuria", "導尿管相關感染 (CAUTI)"], ["hematuria", "肉眼血尿"]] },
+        { "name": "遠端輸尿管結石", "en": "Distal ureteric stone", "clues": "陣痛放射到外生殖器", "pe": ["CVA 叩痛"], "orders": [["abdominal-pain", "腎絞痛 / 結石"]] }
+      ] },
+      { "title": "♀️ 婦科 / 其他", "dx": [
+        { "name": "骨盆腔發炎 PID", "en": "Pelvic inflammatory disease", "clues": "發燒、分泌物、性活躍", "pe": ["子宮頸舉痛、附屬器壓痛"], "orders": [["antibiotics", "腹腔內感染（社區型、低風險）"]] },
+        { "name": "經痛 / 子宮內膜異位 / 卵巢囊腫破裂", "en": "Dysmenorrhea, endometriosis, ruptured cyst", "clues": "月經週期相關", "pe": ["骨盆檢查"], "orders": [["analgesia", "一般止痛（多模式）"]] },
+        { "name": "便秘 / 大腸炎", "en": "Constipation, colitis", "clues": "排便習慣改變", "pe": ["直腸指診"], "orders": [["gi-symptoms", "便秘"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "nausea-vomiting", "name": "噁心 / 嘔吐", "en": "Nausea, vomiting", "regions": ["epigastric", "umbilical"],
+    "aliases": ["想吐", "吐", "嘔吐", "反胃", "nausea", "vomiting", "emesis", "N/V"],
+    "first": {
+      "flags": ["膽汁 / 糞臭嘔吐 + 腹脹（阻塞）", "頭痛、神經學症狀（顱內壓、小腦中風）", "吐血 / 咖啡渣", "胸痛、冒汗（MI）", "嚴重脫水、意識改變", "懷孕"],
+      "pe": ["脫水：黏膜、皮膚彈性、姿勢性生命徵象", "腹部：腹脹、腸音、疝氣、疤痕", "神經學、眼底（papilledema）、眼振", "眼睛：急性青光眼", "嘔吐物性質：膽汁、血、未消化食物（胃出口阻塞）"],
+      "scores": ["Clinical Dehydration Scale", "PUQE score（妊娠嘔吐）", "Apfel score（術後噁心嘔吐 PONV 風險）"],
+      "orders": [["gi-symptoms", "嘔吐：第一輪"], ["gi-symptoms", "止吐"]]
+    },
+    "groups": [
+      { "title": "🚨 不能只給止吐", "tone": "urgent", "dx": [
+        { "name": "腸阻塞", "en": "Bowel obstruction", "clues": "腹脹、不排氣、手術史", "pe": ["腹脹、高音調腸音"], "orders": [["abdominal-pain", "小腸阻塞"]] },
+        { "name": "顱內壓上升 / 小腦中風", "en": "Raised ICP, cerebellar stroke", "clues": "頭痛、眩暈、步態不穩", "pe": ["papilledema、眼振、ataxia"], "scores": ["HINTS", "GCS"], "orders": [["headache", "顱內壓上升"], ["dizziness-syncope", "急性持續頭暈 (AVS)"]] },
+        { "name": "急性心肌梗塞", "en": "Myocardial infarction", "clues": "糖尿病、老人", "pe": ["ECG"], "orders": [["chest-pain", "胸痛：第一輪"]] },
+        { "name": "DKA / HHS", "en": "DKA, HHS", "clues": "高血糖、多尿、腹痛", "pe": ["Kussmaul、脫水"], "orders": [["glucose", "DKA"]] },
+        { "name": "急性胰臟炎 / 膽道 / 腸缺血", "en": "Pancreatitis, biliary disease, ischemia", "clues": "合併腹痛", "pe": ["腹部壓痛"], "orders": [["abdominal-pain", "急性胰臟炎"], ["abdominal-pain", "急性膽管炎"]] },
+        { "name": "急性青光眼", "en": "Acute angle-closure glaucoma", "clues": "眼痛 + 頭痛 + 嘔吐", "pe": ["眼壓、瞳孔"], "orders": [["eye", "急性閉角型青光眼"]] },
+        { "name": "腎上腺危象", "en": "Adrenal crisis", "clues": "類固醇病史、低血壓", "pe": ["—"], "orders": [["endocrine", "腎上腺危象"]] }
+      ] },
+      { "title": "💊 藥物 / 代謝", "dx": [
+        { "name": "藥物副作用", "en": "Drug-induced nausea", "clues": "opioid、化療、抗生素、metformin、GLP-1 RA、digoxin 中毒", "pe": ["—"], "orders": [["gi-symptoms", "化療噁心嘔吐 (突破性)"], ["poisoning", "Digoxin 中毒"]] },
+        { "name": "尿毒 / 高血鈣 / 低血鈉", "en": "Uremia, hypercalcemia, hyponatremia", "clues": "腎衰竭、癌症", "pe": ["—"], "orders": [["oliguria", "緊急透析評估"], ["calcium", "高血鈣"], ["sodium", "鈉異常：第一輪"]] },
+        { "name": "懷孕 / 妊娠劇吐", "en": "Pregnancy, hyperemesis gravidarum", "clues": "育齡女性先驗孕；注意 Wernicke", "pe": ["脫水"], "scores": ["PUQE score"], "orders": [["altered-consciousness", "疑 Wernicke / 營養不良"]] }
+      ] },
+      { "title": "🦠 腸胃", "dx": [
+        { "name": "急性腸胃炎 / 食物中毒", "en": "Gastroenteritis, food poisoning", "clues": "同餐多人、腹瀉、短潛伏期（金黃色葡萄球菌、Bacillus cereus）", "pe": ["脫水"], "orders": [["gi-symptoms", "腹瀉：第一輪"]] },
+        { "name": "胃輕癱 / 胃出口阻塞", "en": "Gastroparesis, gastric outlet obstruction", "clues": "糖尿病、吐未消化食物、飽脹", "pe": ["振水音 succussion splash"], "orders": [["gi-symptoms", "止吐"]] },
+        { "name": "前庭性", "en": "Vestibular nausea", "clues": "合併眩暈", "pe": ["HINTS、Dix–Hallpike"], "scores": ["HINTS"], "orders": [["dizziness-syncope", "BPPV"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "diarrhea", "name": "腹瀉", "en": "Diarrhea", "regions": ["umbilical", "llq"],
+    "aliases": ["拉肚子", "水瀉", "血便腹瀉", "diarrhea", "diarrhoea", "loose stool", "CDI"],
+    "first": {
+      "flags": ["脫水、低血壓、AKI", "發燒 + 血便（侵襲性菌）", "最近抗生素 / 住院 > 3 天（C. difficile）", "腹脹 + 腹瀉突然減少（毒性巨結腸）", "免疫低下、嗜中性球低下", "老人、腹痛 > 腹瀉（腸缺血）"],
+      "pe": ["脫水評估、姿勢性生命徵象", "腹部壓痛、腹脹、腸音", "直腸指診（糞便嵌塞溢流性腹瀉！）", "糞便：水樣 / 血 / 黏液 / 油脂"],
+      "scores": ["Bristol Stool Chart", "IDSA C. difficile severity（WBC ≥15k 或 Cr >1.5）", "Clinical Dehydration Scale"],
+      "orders": [["gi-symptoms", "腹瀉：第一輪"]]
+    },
+    "groups": [
+      { "title": "🚨 危急 / 住院常見", "tone": "urgent", "dx": [
+        { "name": "C. difficile 感染", "en": "C. difficile infection", "clues": "抗生素、PPI、住院；≥3 次稀便 / 24 hr", "pe": ["腹脹、壓痛"], "scores": ["IDSA severity criteria"], "orders": [["gi-symptoms", "C. difficile 感染"], ["gi-symptoms", "猛爆型 CDI"]] },
+        { "name": "缺血性腸炎", "en": "Ischemic colitis", "clues": "老人、低血壓後、血便", "pe": ["左側腹壓痛"], "orders": [["abdominal-pain", "疑腸缺血"]] },
+        { "name": "嗜中性球低下腸炎", "en": "Neutropenic enterocolitis", "clues": "化療後、發燒、右下腹痛", "pe": ["右下腹壓痛"], "orders": [["fever", "嗜中性球低下發燒"]] },
+        { "name": "敗血症 / 脫水性休克", "en": "Sepsis, hypovolemic shock", "clues": "大量水瀉（霍亂樣）、老人", "pe": ["灌流、尿量"], "scores": ["qSOFA", "Shock index"], "orders": [["fluids", "低血壓：首輪輸液"]] }
+      ] },
+      { "title": "🦠 感染性", "dx": [
+        { "name": "病毒性腸胃炎", "en": "Viral gastroenteritis", "clues": "諾羅、輪狀；嘔吐明顯、群聚、自限", "pe": ["脫水"], "orders": [["gi-symptoms", "腹瀉：第一輪"], ["gi-symptoms", "止瀉劑"]] },
+        { "name": "細菌性 / 侵襲性腸炎", "en": "Bacterial dysentery", "clues": "發燒、血便、裏急後重（Salmonella、Shigella、Campylobacter）", "pe": ["下腹壓痛"], "orders": [["gi-symptoms", "腹瀉：第一輪"]] }
+      ] },
+      { "title": "💊 非感染性", "dx": [
+        { "name": "藥物性 / 管灌", "en": "Drug- or feeding-induced diarrhea", "clues": "瀉劑、magnesium、metformin、colchicine、抗生素、高滲透壓管灌", "pe": ["—"], "orders": [["gi-symptoms", "止瀉劑"]] },
+        { "name": "糞便嵌塞溢流", "en": "Overflow diarrhea", "clues": "老人、臥床、opioid；少量頻繁水便", "pe": ["直腸指診硬便"], "orders": [["gi-symptoms", "便秘"]] },
+        { "name": "發炎性腸病 IBD", "en": "Inflammatory bowel disease", "clues": "慢性血便、體重減輕", "pe": ["—"], "scores": ["Truelove and Witts", "Mayo score"], "orders": [["exams", "內視鏡（腸胃科）"]] },
+        { "name": "甲亢 / 類癌 / 吸收不良", "en": "Hyperthyroidism, malabsorption", "clues": "慢性、體重減輕、油便", "pe": ["甲狀腺"], "orders": [["exams", "新陳代謝 / 內分泌檢驗"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "gi-bleeding", "name": "吐血 / 黑便 / 血便", "en": "GI bleeding", "regions": ["epigastric", "umbilical", "pelvis"],
+    "aliases": ["吐血", "咖啡渣", "黑便", "解血便", "便血", "血便", "hematemesis", "melena", "hematochezia", "UGIB", "LGIB", "GI bleed"],
+    "first": {
+      "flags": ["休克指數 >1、姿勢性低血壓", "大量鮮血便 + 不穩定 → 也可能是上消化道大出血", "肝硬化（靜脈曲張）", "抗凝 / 抗血小板", "持續吐血、意識差 → 保護呼吸道"],
+      "pe": ["生命徵象、Shock index、灌流", "直腸指診：黑便、鮮血、痔瘡、腫塊", "肝硬化徵象：腹水、蜘蛛痣、黃疸、脾腫大", "上腹壓痛、腹膜徵象（穿孔）", "鼻咽口腔（吞入的血）"],
+      "scores": ["Glasgow-Blatchford Score（≤1 可門診）", "AIMS65", "pre / post-endoscopy Rockall", "Oakland score（下消化道）", "Child-Pugh / MELD（靜脈曲張）", "Forrest classification（內視鏡）"],
+      "orders": [["gi-bleeding", "消化道出血：第一輪"], ["gi-bleeding", "輸血"]]
+    },
+    "groups": [
+      { "title": "🔺 上消化道（黑便 / 吐血）", "tone": "urgent", "dx": [
+        { "name": "消化性潰瘍出血", "en": "Peptic ulcer bleeding", "clues": "NSAID、aspirin、H. pylori、壓力性潰瘍（ICU）", "pe": ["上腹壓痛"], "scores": ["Glasgow-Blatchford", "Rockall", "Forrest classification"], "orders": [["gi-bleeding", "上消化道出血（非靜脈曲張）"]] },
+        { "name": "食道 / 胃靜脈曲張出血", "en": "Variceal bleeding", "clues": "肝硬化、大量鮮紅吐血", "pe": ["腹水、脾腫大、蜘蛛痣"], "scores": ["Child-Pugh", "MELD"], "orders": [["gi-bleeding", "靜脈曲張出血"]] },
+        { "name": "Mallory–Weiss tear", "en": "Mallory–Weiss tear", "clues": "劇烈嘔吐後吐血", "pe": ["—"], "orders": [["gi-bleeding", "上消化道出血（非靜脈曲張）"]] },
+        { "name": "食道炎 / 腫瘤 / Dieulafoy", "en": "Esophagitis, malignancy, Dieulafoy lesion", "clues": "吞嚥困難、體重減輕", "pe": ["—"], "orders": [["exams", "內視鏡（腸胃科）"]] }
+      ] },
+      { "title": "🔻 下消化道（血便）", "dx": [
+        { "name": "憩室出血", "en": "Diverticular bleeding", "clues": "無痛大量鮮血便、老人", "pe": ["—"], "scores": ["Oakland score"], "orders": [["gi-bleeding", "下消化道出血"]] },
+        { "name": "缺血性大腸炎", "en": "Ischemic colitis", "clues": "腹痛 + 血便", "pe": ["腹部壓痛"], "orders": [["abdominal-pain", "疑腸缺血"]] },
+        { "name": "痔瘡 / 肛裂", "en": "Hemorrhoids, anal fissure", "clues": "便後滴鮮血、衛生紙有血", "pe": ["肛門視診、直腸指診"], "orders": [["gi-symptoms", "痔瘡"]] },
+        { "name": "大腸癌 / 息肉切除後出血", "en": "Colorectal cancer, post-polypectomy bleeding", "clues": "體重減輕、排便習慣改變；切除後 1–2 週", "pe": ["直腸指診"], "orders": [["gi-bleeding", "下消化道出血"]] },
+        { "name": "感染性 / 發炎性大腸炎", "en": "Infectious or inflammatory colitis", "clues": "腹瀉、發燒", "pe": ["—"], "orders": [["gi-symptoms", "腹瀉：第一輪"]] }
+      ] },
+      { "title": "💊 加重因素", "dx": [
+        { "name": "Warfarin 相關", "en": "Warfarin-associated bleeding", "clues": "INR 高", "pe": ["—"], "orders": [["gi-bleeding", "Warfarin + 嚴重出血"], ["coagulopathy", "Warfarin 大出血"]] },
+        { "name": "DOAC 相關", "en": "DOAC-associated bleeding", "clues": "最後一劑時間、腎功能", "pe": ["—"], "orders": [["gi-bleeding", "DOAC + 嚴重出血"]] },
+        { "name": "血小板低 / 尿毒", "en": "Thrombocytopenia, uremic platelet dysfunction", "clues": "化療、肝病、透析", "pe": ["瘀點"], "orders": [["coagulopathy", "血小板低病人照護"], ["coagulopathy", "尿毒出血"]] },
+        { "name": "假性黑便", "en": "Pseudo-melena", "clues": "鐵劑、鉍劑、活性碳 → 黑但潛血陰性", "pe": ["糞便潛血"], "orders": [["anemia", "缺鐵性貧血"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "jaundice", "name": "黃疸", "en": "Jaundice", "regions": ["ruq", "skin"],
+    "aliases": ["皮膚黃", "眼睛黃", "膽紅素高", "jaundice", "icterus", "hyperbilirubinemia", "bilirubin"],
+    "first": {
+      "flags": ["發燒 + 右上腹痛（膽管炎）", "意識改變 + INR 上升（急性肝衰竭）", "溶血：Hb 快速下降、茶色尿", "acetaminophen 過量"],
+      "pe": ["鞏膜黃（膽紅素 >2.5–3 mg/dL）", "肝脾腫大、Courvoisier sign（無痛可觸膽囊 → 胰頭癌）", "慢性肝病徵象：蜘蛛痣、手掌紅斑、腹水、男性女乳", "asterixis、意識（肝性腦病變）", "抓痕（膽汁淤積癢）"],
+      "scores": ["R ratio（肝細胞型 / 膽汁淤積型）", "MELD / Child-Pugh", "West Haven criteria", "King's College criteria（急性肝衰竭）"],
+      "orders": [["exams", "腹部超音波 / 介入"]]
+    },
+    "groups": [
+      { "title": "🚨 危急", "tone": "urgent", "dx": [
+        { "name": "急性膽管炎", "en": "Acute cholangitis", "clues": "Charcot triad", "pe": ["右上腹壓痛、發燒"], "scores": ["Tokyo TG18"], "orders": [["abdominal-pain", "急性膽管炎"]] },
+        { "name": "急性肝衰竭", "en": "Acute liver failure", "clues": "黃疸 + INR ≥1.5 + 腦病變，無慢性肝病", "pe": ["意識、asterixis"], "scores": ["King's College criteria", "West Haven"], "orders": [["analgesia", "Acetaminophen 過量"], ["altered-consciousness", "肝性腦病變"]] },
+        { "name": "溶血 / TTP", "en": "Hemolysis, TTP", "clues": "間接膽紅素高、LDH 高、haptoglobin 低；血小板低 + 腎 + 神經", "pe": ["蒼白、紫斑"], "scores": ["PLASMIC score"], "orders": [["anemia", "疑 TTP"]] }
+      ] },
+      { "title": "🫀 肝細胞型", "dx": [
+        { "name": "病毒性 / 酒精性 / 藥物性肝炎", "en": "Viral, alcoholic or drug-induced hepatitis", "clues": "ALT 高為主；抗結核藥、amoxicillin-clavulanate、statin", "pe": ["肝壓痛"], "scores": ["RUCAM", "Maddrey DF"], "orders": [["exams", "感染科檢驗"]] },
+        { "name": "缺血性肝炎", "en": "Ischemic hepatitis", "clues": "休克後 ALT 數千、快速下降", "pe": ["—"], "orders": [["hypotension-shock", "低血壓：第一輪"]] },
+        { "name": "肝硬化失代償", "en": "Decompensated cirrhosis", "clues": "腹水、出血、感染、腦病變", "pe": ["慢性肝病徵象"], "scores": ["MELD", "Child-Pugh"], "orders": [["abdominal-pain", "SBP（肝硬化腹水）"]] }
+      ] },
+      { "title": "🟡 膽汁淤積 / 阻塞型", "dx": [
+        { "name": "總膽管結石", "en": "Choledocholithiasis", "clues": "陣發右上腹痛、ALP / GGT 高", "pe": ["—"], "scores": ["ASGE choledocholithiasis risk"], "orders": [["abdominal-pain", "急性膽管炎"], ["exams", "內視鏡（腸胃科）"]] },
+        { "name": "胰頭癌 / 膽管癌", "en": "Pancreatic head or bile duct cancer", "clues": "無痛性黃疸、體重減輕", "pe": ["Courvoisier sign"], "orders": [["exams", "腹部超音波 / 介入"]] },
+        { "name": "敗血症 / TPN / 藥物膽汁淤積", "en": "Sepsis-, TPN- or drug-related cholestasis", "clues": "ICU 常見", "pe": ["—"], "orders": [["fever", "新發燒：第一輪"]] },
+        { "name": "Gilbert 症候群", "en": "Gilbert syndrome", "clues": "禁食或生病時輕度間接膽紅素上升，其他正常", "pe": ["—"], "orders": [["exams", "腹部超音波 / 介入"]] }
+      ] }
+    ]
+  },
+  {
+    "id": "distension", "name": "腹脹 / 便秘 / 腹水", "en": "Abdominal distension, constipation, ascites", "regions": ["umbilical"],
+    "aliases": ["肚子脹", "脹氣", "大便解不出", "便秘", "腹水", "bloating", "distension", "constipation", "ascites", "ileus"],
+    "first": {
+      "flags": ["嘔吐 + 不排氣 + 腹痛（阻塞）", "腹膜徵象", "發燒 + 腹水（SBP）", "盲腸 >12 cm（Ogilvie 穿孔風險）"],
+      "pe": ["5F：Fat、Fluid、Flatus、Feces、Fetus", "移動性濁音、fluid wave（腹水）", "鼓音、腸音", "疝氣、手術疤痕", "直腸指診（嵌塞、腫瘤）"],
+      "scores": ["Bristol Stool Chart", "Rome IV constipation criteria", "SAAG（腹水分析）", "Child-Pugh"],
+      "orders": [["gi-symptoms", "脹氣"]]
+    },
+    "groups": [
+      { "title": "🚨 危急", "tone": "urgent", "dx": [
+        { "name": "腸阻塞 / 扭轉", "en": "Bowel obstruction, volvulus", "clues": "絞痛、嘔吐、不排氣", "pe": ["高音調腸音、腹脹"], "orders": [["abdominal-pain", "小腸阻塞"]] },
+        { "name": "急性結腸假性阻塞（Ogilvie）", "en": "Acute colonic pseudo-obstruction", "clues": "術後、臥床、opioid、電解質異常", "pe": ["顯著腹脹、輕壓痛"], "orders": [["gi-symptoms", "脹氣"]] },
+        { "name": "自發性細菌性腹膜炎 SBP", "en": "Spontaneous bacterial peritonitis", "clues": "肝硬化腹水 + 發燒、腹痛、腦病變惡化", "pe": ["腹部壓痛（可很輕）"], "orders": [["abdominal-pain", "SBP（肝硬化腹水）"]] },
+        { "name": "毒性巨結腸", "en": "Toxic megacolon", "clues": "CDI / UC + 腹脹 + 全身中毒", "pe": ["腹脹、壓痛"], "orders": [["gi-symptoms", "猛爆型 CDI"]] }
+      ] },
+      { "title": "🩺 其他", "dx": [
+        { "name": "麻痺性腸阻塞 ileus", "en": "Paralytic ileus", "clues": "術後、低鉀、opioid、感染", "pe": ["腸音減少"], "orders": [["potassium", "低血鉀"], ["gi-symptoms", "Opioid 便秘"]] },
+        { "name": "便秘 / 糞便嵌塞", "en": "Constipation, fecal impaction", "clues": "opioid、臥床、脫水、高血鈣、甲狀腺低下", "pe": ["直腸指診"], "scores": ["Bristol Stool Chart"], "orders": [["gi-symptoms", "便秘"], ["gi-symptoms", "Opioid 便秘"]] },
+        { "name": "大量腹水", "en": "Tense ascites", "clues": "肝硬化、心衰竭、癌症；呼吸受壓", "pe": ["移動性濁音"], "scores": ["SAAG"], "orders": [["abdominal-pain", "大量腹水放液"]] },
+        { "name": "尿滯留", "en": "Urinary retention", "clues": "下腹膨隆", "pe": ["膀胱超音波"], "orders": [["oliguria", "急性尿滯留"]] }
+      ] }
+    ]
+  }
+]
