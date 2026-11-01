@@ -128,7 +128,7 @@
         { "name": "尿毒性腦病變", "en": "Uremic encephalopathy", "clues": "BUN 高、未透析", "pe": ["asterixis、心包摩擦音"], "orders": [["altered-consciousness", "尿毒性腦病變"], ["oliguria", "緊急透析評估"]] },
         { "name": "低 / 高血鈉", "en": "Hyponatremia, hypernatremia", "clues": "Na <120 或快速變化；抽搐", "pe": ["容積狀態"], "orders": [["altered-consciousness", "嚴重低血鈉（有症狀）"], ["sodium", "高血鈉"]] },
         { "name": "高血鈣 / 低血鈣", "en": "Hypercalcemia, hypocalcemia", "clues": "癌症、副甲狀腺；低鈣 → tetany", "pe": ["Chvostek、Trousseau（低鈣）"], "orders": [["calcium", "高血鈣"], ["altered-consciousness", "嚴重低血鈣"]] },
-        { "name": "DKA / HHS", "en": "DKA, HHS", "clues": "高血糖、脫水、Kussmaul 呼吸", "pe": ["脫水、酮味"], "orders": [["hyperglycemia", "DKA"], ["hyperglycemia", "HHS"]] },
+        { "name": "DKA / HHS", "en": "DKA, HHS", "clues": "高血糖、脫水、Kussmaul 呼吸", "pe": ["脫水、酮味"], "orders": [["glucose", "DKA"], ["glucose", "HHS"]] },
         { "name": "黏液水腫昏迷 / 腎上腺危象", "en": "Myxedema coma, adrenal crisis", "clues": "低體溫 + 心搏過緩；類固醇突然停用 + 低血壓", "pe": ["低體溫、反射遲緩、色素沉著"], "orders": [["endocrine", "黏液水腫昏迷"], ["endocrine", "腎上腺危象"]] }
       ] },
       { "title": "🌀 譫妄（住院常見）", "dx": [

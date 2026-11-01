@@ -13,8 +13,7 @@
         ["m", "Insulin aspart AC 胰島素敏感（瘦、老人、CKD、第一型、NPO）：150–199 1 U、200–249 2、250–299 3、300–349 4、≥350 5 U", "", "敏感"],
         ["m", "Insulin aspart AC 胰島素阻抗（肥胖、類固醇、感染、TDD >80 U）：150–199 3 U、200–249 6、250–299 9、300–349 12、≥350 15 U", "", "阻抗"],
         ["m", "HS 矯正：250–299 0–2 U、300–349 2–4 U、≥350 4–6 U", "睡前減量避免夜間低血糖", "HS"],
-        ["m", "Regular insulin（Actrapid）SC 同量表 q6h", "適應：NPO 或連續管灌（RI 傳統用於 sliding scale）", "NPO / 管灌"],
-        ["p", "口服 / 針劑降血糖藥、胰島素種類 → 見「高血糖」", ""]
+        ["m", "Regular insulin（Actrapid）SC 同量表 q6h", "適應：NPO 或連續管灌（RI 傳統用於 sliding scale）", "NPO / 管灌"]
       ] },
     { "name": "低血糖（清醒能吞）", "hint": "BS <72", "en": "Hypoglycemia (awake, can swallow)",
       "orders": [
@@ -50,6 +49,40 @@
         ["l", "HbA1c", "目的：區分長期糖尿病 vs 壓力性高血糖，規劃出院用藥"],
         ["p", "第一型糖尿病 basal 永不停（NPO 也要）", ""],
         ["p", "胰島素醫囑規則", "初住院避免預混型（NovoMix）→ 院內低血糖｜Lispro / Aspart 註明 AC｜筆型胰島素要加開針頭（處置，註明數量）｜當天 PM 劑量要改，16:00 前告知 duty nurse"]
+      ] },
+    { "name": "本院胰島素種類", "hint": "開哪一支", "en": "Insulin types available",
+      "orders": [
+        ["p", "速效（AC 0–15 min）：aspart（NovoRapid）、lispro（Humalog）、glulisine（Apidra）", "短效：Regular（Actrapid，餐前 30 min；IV 用這支）"],
+        ["p", "中效：NPH（Insulatard）", "類固醇高血糖早上一劑"],
+        ["p", "長效：glargine（Lantus 100 U、Toujeo 300 U）、detemir（Levemir）、degludec（Tresiba）", "basal；第一型 NPO 也不能停"],
+        ["p", "預混：NovoMix 30 / 50、Humalog Mix25 / 50、Ryzodeg、Mixtard 30；Soliqua（glargine + lixisenatide）", "初住院避免預混 → 院內低血糖"]
+      ] },
+    { "name": "降血糖藥（OHA / GLP-1）", "hint": "降多少、會不會低血糖", "en": "Oral antidiabetic drugs, OHA, GLP-1, HbA1c reduction, hypoglycemia risk",
+      "orders": [
+        ["p", "單用不會低血糖：metformin、DPP-4i、SGLT2i、pioglitazone、acarbose、GLP-1 RA｜會低血糖：sulfonylurea、glinide、insulin", "HbA1c 每降 1% ≈ 平均血糖降約 29 mg/dL（eAG = 28.7 × HbA1c − 46.7）"],
+        ["p", "加新藥時 HbA1c 已接近目標：SU 減半或停、insulin 減 10–20%", "低血糖多來自 SU / insulin 疊加，不是新加的藥本身"],
+        ["m", "Metformin 500 mg PO BID（隨餐）→ 每週加量，max 2000–2550 mg/day", "HbA1c ↓1.0–1.5%（平均血糖約 ↓30–45）｜低血糖：單用幾乎不會｜第一線｜禁忌：eGFR <30（30–45 不新開、max 1000 mg/day）、休克 / 缺氧、肝衰竭、酗酒｜顯影劑 eGFR <45 或 AKI 停 48 hr｜XR 500 mg QD 腸胃較少", "低血糖 低"],
+        ["m", "Linagliptin 5 mg PO QD", "HbA1c ↓0.5–0.8%（約 ↓15–25）｜低血糖：單用不會｜不用腎調，住院最安全的口服藥", "低血糖 低"],
+        ["m", "Sitagliptin 100 mg PO QD", "HbA1c ↓0.5–0.8%（約 ↓15–25）｜低血糖：單用不會｜eGFR 30–45 → 50 mg、<30 → 25 mg（本院 100 mg 錠，可用 Janumet 50 劑型）｜不與 GLP-1 RA 併用", "低血糖 低"],
+        ["m", "Empagliflozin 10 mg PO QD（可 25 mg）", "HbA1c ↓0.5–0.8%（約 ↓15–25；eGFR <45 降糖效果小）｜低血糖：單用不會｜適應：心衰竭、CKD、ASCVD｜禁忌：第一型、DKA 病史、脫水、反覆泌尿生殖道感染｜急性病 / NPO / 術前 3 天停（euglycemic DKA）", "低血糖 低"],
+        ["m", "Dapagliflozin 10 mg PO QD", "HbA1c ↓0.5–0.8%（約 ↓15–25）｜低血糖：單用不會｜同 empagliflozin（HF / CKD 也可用）", "低血糖 低"],
+        ["m", "Pioglitazone 15–30 mg PO QD（30 mg 錠）", "HbA1c ↓0.5–1.4%（約 ↓15–40），6–12 週才達最大效果｜低血糖：單用不會｜禁忌：心衰竭、水腫、膀胱癌、骨折風險", "低血糖 低"],
+        ["m", "Acarbose 50 mg PO TID（第一口飯一起吃）", "HbA1c ↓0.5–0.8%（約 ↓15–25），主要降飯後血糖｜低血糖：單用不會｜合併 SU / insulin 低血糖只能用純葡萄糖治療｜副作用：脹氣", "低血糖 低"],
+        ["m", "Dulaglutide 0.75 mg SC 每週 → 1.5 mg", "HbA1c ↓1.0–1.5%（約 ↓30–45）｜低血糖：單用不會｜適應：ASCVD、肥胖｜禁忌：胰臟炎病史、MTC / MEN2、嚴重胃輕癱｜術前停 1 週", "低血糖 低"],
+        ["m", "Semaglutide SC 0.25 mg 每週 ×4 → 0.5 → 1 mg（口服 Rybelsus 3 → 7 → 14 mg QD）", "HbA1c ↓1.0–1.8%（約 ↓30–50；口服 ↓1.0–1.4）｜低血糖：單用不會｜口服：早上空腹、≤120 mL 水、30 min 後再進食｜其他：tirzepatide ↓2.0–2.4%", "低血糖 低"],
+        ["m", "Gliclazide MR 30–120 mg PO QAM（30 / 60 mg 錠）", "HbA1c ↓1.0–1.5%（約 ↓30–45），幾小時內就有效｜低血糖：會，SU 中較低｜CKD 較安全的 SU｜禁忌：吃不好、NPO", "低血糖 中"],
+        ["m", "Glimepiride 1–4 mg PO QAM（2 mg 錠，max 8 mg）", "HbA1c ↓1.0–1.5%（約 ↓30–45）｜低血糖：高，可延長 24–72 hr｜老人、eGFR <30 避免｜從 1 mg（½ 錠）開始", "低血糖 高"],
+        ["m", "Glipizide 2.5–10 mg PO QD–BID（5 mg 錠，max 20 mg）", "HbA1c ↓1.0–1.5%（約 ↓30–45）｜低血糖：會｜肝代謝，CKD 可用｜從 2.5 mg 開始", "低血糖 高"],
+        ["m", "Repaglinide 0.5–1 mg PO AC（1 mg 錠）", "HbA1c ↓0.5–1.5%（約 ↓15–45）｜低血糖：會（比 SU 短）｜沒吃那餐就不吃｜CKD 可用｜不與 gemfibrozil 併用", "低血糖 中"],
+        ["p", "避免 glibenclamide（老人、CKD 長時間低血糖）；SU 引起低血糖要觀察 24–48 hr", ""],
+        ["p", "住院：急性病、NPO、要打顯影劑或開刀 → 多數停用改胰島素", "穩定、會吃、預計短住院可續用（尤其 DPP-4i）"]
+      ] },
+    { "name": "出院降血糖藥怎麼選", "hint": "", "en": "Choosing diabetes medication at discharge",
+      "orders": [
+        ["p", "ASCVD、心衰竭、CKD → SGLT2i 或 GLP-1 RA（不論 HbA1c）", ""],
+        ["p", "HbA1c >10% 或高血糖症狀 / 體重減輕 → 胰島素", ""],
+        ["p", "老人、低血糖風險 → DPP-4i；避免 SU（尤其 glibenclamide）", ""],
+        ["p", "出院前確認：會打針、血糖機、低血糖衛教、回診", ""]
       ] },
     { "name": "類固醇高血糖", "hint": "", "en": "Steroid-induced hyperglycemia",
       "orders": [

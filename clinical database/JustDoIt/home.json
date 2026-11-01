@@ -25,8 +25,7 @@
       { "label": "喘 / 血氧低", "chapter": "dyspnea" },
       { "label": "意識改變", "chapter": "altered-consciousness" },
       { "label": "尿少", "chapter": "oliguria" },
-      { "label": "尿多", "chapter": "polyuria" },
-      { "label": "高血糖", "chapter": "hyperglycemia" }
+      { "label": "尿多", "chapter": "polyuria" }
     ] },
     { "title": "🤒 症狀", "tiles": [
       { "label": "胸痛", "chapter": "chest-pain" },

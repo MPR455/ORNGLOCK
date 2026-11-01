@@ -46,7 +46,7 @@
         { "name": "腹主動脈瘤破裂 / 主動脈剝離", "en": "Ruptured AAA, aortic dissection", "clues": "老人男性、抽菸、高血壓；腹 / 背痛 + 低血壓", "pe": ["搏動性腫塊、雙臂血壓差、下肢脈搏"], "orders": [["abdominal-pain", "疑腹主動脈瘤破裂"], ["chest-pain", "疑主動脈剝離"]] },
         { "name": "腸缺血", "en": "Mesenteric ischemia", "clues": "痛與檢查不成比例；AF、血管疾病", "pe": ["早期腹軟、後期腹膜炎"], "orders": [["abdominal-pain", "疑腸缺血"]] },
         { "name": "上消化道出血", "en": "Upper GI bleeding", "clues": "吐血、咖啡渣、黑便", "pe": ["直腸指診、姿勢性生命徵象"], "scores": ["Glasgow-Blatchford", "AIMS65", "Rockall"], "orders": [["gi-bleeding", "消化道出血：第一輪"]] },
-        { "name": "DKA", "en": "DKA", "clues": "腹痛 + 嘔吐 + 高血糖 + 酸中毒；SGLT2i 可血糖不高", "pe": ["Kussmaul 呼吸、酮味"], "orders": [["hyperglycemia", "DKA"], ["hyperglycemia", "Euglycemic DKA (SGLT2i)"]] }
+        { "name": "DKA", "en": "DKA", "clues": "腹痛 + 嘔吐 + 高血糖 + 酸中毒；SGLT2i 可血糖不高", "pe": ["Kussmaul 呼吸、酮味"], "orders": [["glucose", "DKA"], ["glucose", "Euglycemic DKA (SGLT2i)"]] }
       ] },
       { "title": "🍽️ 胃 / 食道", "dx": [
         { "name": "消化性潰瘍", "en": "Peptic ulcer disease", "clues": "飯前或飯後痛、NSAID、H. pylori", "pe": ["上腹壓痛"], "scores": ["Alarm features（ALARMS）"], "orders": [["abdominal-pain", "上消化道潰瘍 / 上腹痛"], ["abdominal-pain", "幽門桿菌除菌"]] },
@@ -103,7 +103,7 @@
         { "name": "腹內感染 / 腹膜炎", "en": "Peritonitis, intra-abdominal infection", "clues": "術後、腹膜透析、腹水（SBP）", "pe": ["rebound、guarding"], "scores": ["qSOFA"], "orders": [["fever", "腹內感染"], ["abdominal-pain", "SBP（肝硬化腹水）"]] }
       ] },
       { "title": "🧪 內科原因", "dx": [
-        { "name": "DKA", "en": "DKA", "clues": "腹痛嘔吐 + 高血糖 / 酮酸", "pe": ["Kussmaul、脫水"], "orders": [["hyperglycemia", "DKA"]] },
+        { "name": "DKA", "en": "DKA", "clues": "腹痛嘔吐 + 高血糖 / 酮酸", "pe": ["Kussmaul、脫水"], "orders": [["glucose", "DKA"]] },
         { "name": "腎上腺危象", "en": "Adrenal crisis", "clues": "類固醇停用、低血壓", "pe": ["低血壓"], "orders": [["abdominal-pain", "疑腎上腺危象"]] },
         { "name": "高血鈣 / 紫質症 / 鉛中毒", "en": "Hypercalcemia, porphyria", "clues": "便秘、意識改變；反覆劇烈腹痛 + 神經精神症狀", "pe": ["—"], "orders": [["calcium", "高血鈣"]] },
         { "name": "急性腸胃炎", "en": "Acute gastroenteritis", "clues": "嘔吐 + 腹瀉、群聚；腹痛 > 腹瀉時要小心別的診斷", "pe": ["彌漫性輕壓痛、腸音增加"], "orders": [["gi-symptoms", "腹瀉：第一輪"]] },
@@ -206,7 +206,7 @@
         { "name": "腸阻塞", "en": "Bowel obstruction", "clues": "腹脹、不排氣、手術史", "pe": ["腹脹、高音調腸音"], "orders": [["abdominal-pain", "小腸阻塞"]] },
         { "name": "顱內壓上升 / 小腦中風", "en": "Raised ICP, cerebellar stroke", "clues": "頭痛、眩暈、步態不穩", "pe": ["papilledema、眼振、ataxia"], "scores": ["HINTS", "GCS"], "orders": [["headache", "顱內壓上升"], ["dizziness-syncope", "急性持續頭暈 (AVS)"]] },
         { "name": "急性心肌梗塞", "en": "Myocardial infarction", "clues": "糖尿病、老人", "pe": ["ECG"], "orders": [["chest-pain", "胸痛：第一輪"]] },
-        { "name": "DKA / HHS", "en": "DKA, HHS", "clues": "高血糖、多尿、腹痛", "pe": ["Kussmaul、脫水"], "orders": [["hyperglycemia", "DKA"]] },
+        { "name": "DKA / HHS", "en": "DKA, HHS", "clues": "高血糖、多尿、腹痛", "pe": ["Kussmaul、脫水"], "orders": [["glucose", "DKA"]] },
         { "name": "急性胰臟炎 / 膽道 / 腸缺血", "en": "Pancreatitis, biliary disease, ischemia", "clues": "合併腹痛", "pe": ["腹部壓痛"], "orders": [["abdominal-pain", "急性胰臟炎"], ["abdominal-pain", "急性膽管炎"]] },
         { "name": "急性青光眼", "en": "Acute angle-closure glaucoma", "clues": "眼痛 + 頭痛 + 嘔吐", "pe": ["眼壓、瞳孔"], "orders": [["eye", "急性閉角型青光眼"]] },
         { "name": "腎上腺危象", "en": "Adrenal crisis", "clues": "類固醇病史、低血壓", "pe": ["—"], "orders": [["endocrine", "腎上腺危象"]] }
