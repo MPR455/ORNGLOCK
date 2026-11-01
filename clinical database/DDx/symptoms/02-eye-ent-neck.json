@@ -56,7 +56,7 @@
         { "name": "角膜炎 / 眼內炎 / 葡萄膜炎", "en": "Keratitis, endophthalmitis, uveitis", "clues": "紅眼 + 痛 + 視力下降", "pe": ["角膜、前房"], "orders": [["eye", "細菌性角膜炎 / 角膜潰瘍"], ["eye", "眼內炎"], ["eye", "前葡萄膜炎 / 虹膜炎"]] }
       ] },
       { "title": "🐢 漸進 / 全身因素", "dx": [
-        { "name": "血糖波動 / 藥物", "en": "Glucose fluctuation, drugs", "clues": "高血糖使水晶體腫脹；抗膽鹼藥散瞳", "pe": ["pinhole 改善"], "orders": [["glucose", "住院高血糖"]] },
+        { "name": "血糖波動 / 藥物", "en": "Glucose fluctuation, drugs", "clues": "高血糖使水晶體腫脹；抗膽鹼藥散瞳", "pe": ["pinhole 改善"], "orders": [["hyperglycemia", "住院高血糖"]] },
         { "name": "白內障 / 黃斑部病變", "en": "Cataract, macular degeneration", "clues": "漸進；直線變彎（黃斑）", "pe": ["紅光反射、Amsler grid"], "scores": ["Amsler grid"], "orders": [["eye", "眼睛紅 / 痛 / 看不清：第一輪"]] }
       ] }
     ]
@@ -79,7 +79,7 @@
         { "name": "顱內壓上升（第六對神經）", "en": "Raised ICP, sixth nerve palsy", "clues": "頭痛、嘔吐、水平複視", "pe": ["外展受限、papilledema"], "orders": [["headache", "顱內壓上升"]] }
       ] },
       { "title": "🩺 其他", "dx": [
-        { "name": "微血管缺血性腦神經麻痺", "en": "Microvascular cranial nerve palsy", "clues": "糖尿病、高血壓；瞳孔通常不受影響，3 個月內恢復", "pe": ["瞳孔正常"], "orders": [["glucose", "住院高血糖"]] },
+        { "name": "微血管缺血性腦神經麻痺", "en": "Microvascular cranial nerve palsy", "clues": "糖尿病、高血壓；瞳孔通常不受影響，3 個月內恢復", "pe": ["瞳孔正常"], "orders": [["hyperglycemia", "住院高血糖"]] },
         { "name": "甲狀腺眼病 / 眼眶病灶", "en": "Thyroid eye disease, orbital lesion", "clues": "突眼、眼瞼退縮", "pe": ["突眼、眼瞼遲滯"], "scores": ["Clinical Activity Score（TED）"], "orders": [["endocrine", "內分泌急症：第一輪"]] }
       ] }
     ]

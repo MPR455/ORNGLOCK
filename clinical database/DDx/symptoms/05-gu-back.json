@@ -102,7 +102,7 @@
     },
     "groups": [
       { "title": "💧 鑑別", "dx": [
-        { "name": "高血糖滲透性利尿 / HHS", "en": "Osmotic diuresis, HHS", "clues": "血糖很高", "pe": ["脫水"], "orders": [["polyuria", "高血糖滲透性利尿 / HHS"], ["glucose", "HHS"]] },
+        { "name": "高血糖滲透性利尿 / HHS", "en": "Osmotic diuresis, HHS", "clues": "血糖很高", "pe": ["脫水"], "orders": [["polyuria", "高血糖滲透性利尿 / HHS"], ["hyperglycemia", "HHS"]] },
         { "name": "中樞性尿崩症", "en": "Central diabetes insipidus", "clues": "腦部術後、外傷；大量稀尿、高血鈉", "pe": ["—"], "orders": [["polyuria", "中樞性尿崩症 (CDI)"]] },
         { "name": "腎性尿崩 / 高血鈣 / 低血鉀", "en": "Nephrogenic DI", "clues": "lithium、高鈣、低鉀", "pe": ["—"], "orders": [["polyuria", "高血鈣多尿"], ["polyuria", "多尿合併高血鈉"]] },
         { "name": "阻塞解除後利尿 / 利尿劑", "en": "Post-obstructive diuresis, diuretics", "clues": "放導尿管後", "pe": ["—"], "orders": [["polyuria", "阻塞解除後利尿"], ["polyuria", "利尿劑過度利尿"]] }

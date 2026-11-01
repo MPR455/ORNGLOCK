@@ -69,7 +69,7 @@
       ] },
       { "title": "🧪 全身 / 代謝", "dx": [
         { "name": "敗血症", "en": "Sepsis", "clues": "呼吸急促常是第一個徵兆", "pe": ["感染源"], "scores": ["qSOFA", "SOFA"], "orders": [["fever", "敗血症 / 敗血性休克"]] },
-        { "name": "代謝性酸中毒（Kussmaul）", "en": "Metabolic acidosis", "clues": "DKA、乳酸、尿毒、中毒；深快呼吸、肺音清", "pe": ["酮味、脫水"], "orders": [["acid-base", "高 AG 代謝性酸中毒"], ["glucose", "DKA"]] },
+        { "name": "代謝性酸中毒（Kussmaul）", "en": "Metabolic acidosis", "clues": "DKA、乳酸、尿毒、中毒；深快呼吸、肺音清", "pe": ["酮味、脫水"], "orders": [["acid-base", "高 AG 代謝性酸中毒"], ["hyperglycemia", "DKA"]] },
         { "name": "貧血", "en": "Anemia", "clues": "活動喘、蒼白", "pe": ["結膜蒼白"], "orders": [["anemia", "Hb 明顯下降：找出血"]] },
         { "name": "輸血相關（TACO / TRALI）", "en": "TACO, TRALI", "clues": "輸血中或 6 hr 內喘", "pe": ["BP（TACO 高、TRALI 低）、囉音"], "orders": [["rash-allergy", "輸血反應"]] },
         { "name": "神經肌肉無力", "en": "Neuromuscular weakness", "clues": "MG、GBS；淺快呼吸、咳不出", "pe": ["single-breath count、頸屈肌力"], "scores": ["FVC / NIF 20/30/40 rule"], "orders": [["dyspnea", "神經肌肉無力：呼吸評估"]] },
