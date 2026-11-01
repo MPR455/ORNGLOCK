@@ -9,7 +9,11 @@
         ["p", "檢視：insulin / SU 劑量、進食量、類固醇、腎功能、感染", "最常見：吃少了藥沒減"],
         ["m", "Dextrose powder 15–20 g 溶水 PO", "適應：BS <70 清醒能吞", "BS <70 能吃"],
         ["m", "50% Glucose 20 mL ×2 amp IV push（BS <40：×4 amp）", "適應：BS <70 不能吃 / 意識差", "BS <70 不能吃"],
-        ["m", "Actrapid SC 依 sliding scale", "適應：BS >180 持續｜禁忌：不能單用；DKA 要 IV", "BS >180"],
+        ["m", "Insulin aspart（NovoRapid）AC 一般敏感度：BS <150 0 U、150–199 2 U、200–249 4 U、250–299 6 U、300–349 8 U、≥350 10 U", "多數病人用這欄｜有在吃：用速效（aspart / lispro / glulisine）比 RI 好", "BS ≥150"],
+        ["m", "Insulin aspart AC 胰島素敏感（瘦、老人、CKD、第一型、NPO）：150–199 1 U、200–249 2、250–299 3、300–349 4、≥350 5 U", "", "敏感"],
+        ["m", "Insulin aspart AC 胰島素阻抗（肥胖、類固醇、感染、TDD >80 U）：150–199 3 U、200–249 6、250–299 9、300–349 12、≥350 15 U", "", "阻抗"],
+        ["m", "HS 矯正：250–299 0–2 U、300–349 2–4 U、≥350 4–6 U", "睡前減量避免夜間低血糖", "HS"],
+        ["m", "Regular insulin（Actrapid）SC 同量表 q6h", "適應：NPO 或連續管灌（RI 傳統用於 sliding scale）", "NPO / 管灌"],
         ["p", "口服 / 針劑降血糖藥、胰島素種類 → 見「高血糖」", ""]
       ] },
     { "name": "低血糖（清醒能吞）", "hint": "BS <72", "en": "Hypoglycemia (awake, can swallow)",

@@ -7,7 +7,11 @@
         ["l", "Blood ketone、VBG（pH、HCO3）", "排除：DKA（含 SGLT2i 的 euglycemic DKA）", "BS >250 或不舒服"],
         ["l", "Na、K、BUN/Cr、serum osmolality", "排除：HHS（osm >320）", "BS >600"],
         ["p", "找原因：感染、類固醇、漏打 / 減量胰島素、含糖點滴 / TPN / 管灌、疼痛壓力", "先確認有沒有在吃、是不是 NPO"],
-        ["m", "Insulin aspart（NovoRapid）SC 依矯正量表", "適應：AC BS ≥150｜禁忌：DKA / HHS 要 IV insulin｜量表見下一項"],
+        ["m", "Insulin aspart（NovoRapid）AC 一般敏感度：BS <150 0 U、150–199 2 U、200–249 4 U、250–299 6 U、300–349 8 U、≥350 10 U", "多數病人用這欄｜有在吃：用速效（aspart / lispro / glulisine）比 RI 好"],
+        ["m", "Insulin aspart AC 胰島素敏感（瘦、老人、CKD、第一型、NPO）：150–199 1 U、200–249 2、250–299 3、300–349 4、≥350 5 U", "", "敏感"],
+        ["m", "Insulin aspart AC 胰島素阻抗（肥胖、類固醇、感染、TDD >80 U）：150–199 3 U、200–249 6、250–299 9、300–349 12、≥350 15 U", "", "阻抗"],
+        ["m", "HS 矯正：250–299 0–2 U、300–349 2–4 U、≥350 4–6 U", "睡前減量避免夜間低血糖", "HS"],
+        ["m", "Regular insulin（Actrapid）SC 同量表 q6h", "適應：NPO 或連續管灌（RI 傳統用於 sliding scale）", "NPO / 管灌"],
         ["l", "HbA1c", "目的：區分長期糖尿病 vs 壓力性高血糖、規劃出院藥", "未驗過"],
         ["p", "目標：一般病房 100–180、ICU 140–180", ""]
       ] },
