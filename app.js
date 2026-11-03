@@ -4,6 +4,7 @@ import { initHandoff } from './handoff.mjs';
 import { initOncall, openOrderItem } from './oncall.mjs';
 import { initDdx } from './ddx.mjs';
 import { initStudy } from './study.mjs';
+import { initManuals } from './manuals.mjs';
 
 const $ = id => document.getElementById(id);
 const TABS = [
@@ -15,12 +16,13 @@ const TABS = [
   { id: 'notes', icon: '🤖', label: '病歷', short: '病歷' },
   { id: 'faq', icon: '❓', label: 'FAQ 腫麼用', short: 'FAQ 腫麼用' },
   { id: 'study', icon: '📚', label: 'Study', short: 'Study' },
+  { id: 'manuals', icon: '📁', label: '各科工作手冊', short: '各科工作手冊', mobilePrimary: false },
   { id: 'key', icon: '⚿', label: 'API key', short: 'API key' }
 ];
 const TITLES = { admission: 'Admission note', consult: 'Consult request', summary: 'Treatment summary', support: 'Anti/O2/IV' };
 const state = { tab: 'notes', apiKey: '', ready: false, sharedAvailable: false, active: null, lastAction: null, model: '', maxChars: 100000, generatedAction: null, startedAt: 0 };
 const noteTemplates = new Map();
-let handoff, study;
+let handoff, study, manuals;
 let sheetOpener, elapsedTimer, toastTimer;
 
 function tabButton(tab, className = '', iconClass = '') {
@@ -75,6 +77,8 @@ function showTab(id, focus = false) {
   if (id === 'handoff') handoff?.refresh();
   if (id === 'study') study?.refresh();
   else study?.exitFocus();
+  if (id === 'manuals') { manuals ??= initManuals({ toast }); manuals.refresh(); }
+  else manuals?.deactivate();
   if (focus) $(`tab-${id}`).focus({ preventScroll: true });
 }
 
