@@ -1,4 +1,4 @@
-// Copied from CGMH_ER; observation and emergency categories are excluded.
+// Copied from CGMH_ER; the emergency department category is excluded.
 export const DIRECTORY_DATA = {
   "transfers": [
     "24032143",
@@ -540,6 +540,123 @@ export const DIRECTORY_DATA = {
         }
       ],
       "tone": "teal"
+    },
+    {
+      "id": "directory-section-observation",
+      "name": "觀察室",
+      "description": "",
+      "groups": [
+        {
+          "name": "",
+          "contacts": [
+            {
+              "id": "directory-contact-0-114",
+              "name": "第一觀察室",
+              "numbers": [
+                "#311",
+                "#312"
+              ]
+            },
+            {
+              "id": "directory-contact-0-115",
+              "name": "第二觀察室 (前)",
+              "numbers": [
+                "#323"
+              ]
+            },
+            {
+              "id": "directory-contact-0-116",
+              "name": "第二觀察室 (後)",
+              "numbers": [
+                "#321"
+              ]
+            },
+            {
+              "id": "directory-contact-0-117",
+              "name": "第三觀察室 (前)",
+              "numbers": [
+                "#332"
+              ]
+            },
+            {
+              "id": "directory-contact-0-118",
+              "name": "第三觀察室 (後)",
+              "numbers": [
+                "24033527"
+              ]
+            },
+            {
+              "id": "directory-contact-0-119",
+              "name": "第九觀察室",
+              "numbers": [
+                "24033526"
+              ]
+            },
+            {
+              "id": "directory-contact-0-120",
+              "name": "第五觀察室",
+              "numbers": [
+                "#336"
+              ]
+            },
+            {
+              "id": "directory-contact-0-121",
+              "name": "第六觀察室 (前)",
+              "numbers": [
+                "#381"
+              ]
+            },
+            {
+              "id": "directory-contact-0-122",
+              "name": "第六觀察室 (後)",
+              "numbers": [
+                "#382"
+              ]
+            },
+            {
+              "id": "directory-contact-0-123",
+              "name": "第七八觀察室 (L07)",
+              "numbers": [
+                "#385"
+              ]
+            },
+            {
+              "id": "directory-contact-0-124",
+              "name": "第七八觀察室 (L08)",
+              "numbers": [
+                "#386"
+              ]
+            },
+            {
+              "id": "directory-contact-0-125",
+              "name": "第10觀察室",
+              "numbers": [
+                "#343"
+              ]
+            },
+            {
+              "id": "directory-contact-0-126",
+              "name": "第12觀察室",
+              "numbers": [
+                "#322",
+                "24033528"
+              ]
+            },
+            {
+              "id": "directory-contact-0-127",
+              "name": "注射室",
+              "numbers": [
+                "#325"
+              ]
+            }
+          ],
+          "notes": [],
+          "id": "directory-section-0-group-4",
+          "tone": "violet"
+        }
+      ],
+      "tone": "violet",
+      "dialViaEmergency": true
     },
     {
       "id": "directory-section-2",
