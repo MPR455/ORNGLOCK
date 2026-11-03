@@ -7,7 +7,7 @@ import { studyCatalog } from './study-catalog.mjs';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const dist = resolve(root, 'dist');
 const files = ['index.html', 'styles.css', 'directory.css', 'app.js', 'sections.mjs', 'directory.mjs', 'directory-data.mjs', 'assets/ornglock.png', 'assets/ornglock-symbol.png', 'assets/cgmh-oph.svg', 'assets/cgmh-em.svg'];
-files.push('assets/faq-first-time.png', 'assets/faq-logo.png', 'assets/faq-vpn.png', 'assets/faq-google-api.png', 'assets/faq-shortcut.png', 'assets/faq-mobile-shortcut.png');
+files.push('assets/faq-first-time.webp', 'assets/faq-logo.webp', 'assets/faq-vpn.webp', 'assets/faq-google-api.webp', 'assets/faq-shortcut.webp', 'assets/faq-mobile-shortcut.webp', 'assets/Printsetting.webp');
 files.push('PE example/Admission normal PE.txt', 'PE example/Admission ROS.txt', 'PE example/Progress normal PE.txt');
 files.push('handoff.css', 'handoff-model.mjs', 'handoff-import.mjs', 'handoff-editor.mjs', 'handoff.mjs');
 files.push('oncall.css', 'oncall.mjs', 'clinical database/JustDoIt/justdoit-data.mjs');
@@ -53,7 +53,7 @@ for (const file of ['styles.css', 'directory.css', 'handoff.css', 'oncall.css', 
 await writeFile(indexPath, html);
 await writeFile(resolve(dist, '.nojekyll'), '');
 // Public output is deliberately allowlisted: master prompts and backend source stay private.
-for (const file of [...files.filter(file => !/\.(png|wasm)$/.test(file)), 'config.js']) {
+for (const file of [...files.filter(file => !/\.(png|webp|wasm)$/.test(file)), 'config.js']) {
   const contents = await readFile(resolve(dist, file), 'utf8');
   if (/MASTER PROMPT:|AQ\.[A-Za-z0-9_-]{25,}|AIza[A-Za-z0-9_-]{25,}/.test(contents)) throw new Error(`Private material found in public output: ${file}`);
 }
