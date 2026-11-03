@@ -66,6 +66,13 @@ export const DIRECTORY_DATA = {
               ]
             },
             {
+              "id": "directory-contact-5-39",
+              "name": "復健MRI",
+              "numbers": [
+                "24038400"
+              ]
+            },
+            {
               "id": "directory-contact-5-8",
               "name": "復健 2F Angio四檢",
               "numbers": [
