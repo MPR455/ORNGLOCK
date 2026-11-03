@@ -214,7 +214,7 @@ export function initHandoff({ endpoint, getKey, openKeySettings, copyText, toast
   }
   function openImport() {
     const modal = dialog('匯入病人名單'); modal.element.classList.add('handoff-dialog-wide');
-    const description = node('p', 'small', '支援急診 / 病房 CSV、病房文字及先前下載的交班單 TXT。先預覽，再套用；既有病人不會因為未列在新檔案而被刪除。');
+    const description = node('p', 'small', '支援急診 / 病房 CSV、病房文字及先前下載的交班單 TXT。依病歷號配對，姓名不同也可更新床號、年齡及性別。先預覽，再套用；既有病人不會因為未列在新檔案而被刪除。');
     const upload = labelInput('上傳 CSV / TXT', '', 'file'); upload.input.accept = '.csv,.txt,.tsv,text/plain,text/csv';
     const paste = labelInput('或貼上名單', '', 'textarea'); paste.input.rows = 10; paste.input.placeholder = '貼上含欄位標題的名單，或病歷號:… 姓名:… 年齡:… 床號 入院日期:…';
     const formatWrap = node('label', 'handoff-field', '格式'), format = node('select'); for (const [value, title] of [['auto', '自動辨識'], ['csv', 'CSV'], ['tsv', 'Tab 分隔表格'], ['ward', '病房文字'], ['txt', '交班單 TXT']]) { const option = node('option', '', title); option.value = value; format.append(option); } formatWrap.append(format);

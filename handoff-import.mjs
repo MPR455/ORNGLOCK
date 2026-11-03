@@ -33,7 +33,7 @@ export function parseDelimited(source, delimiter = ',') {
 }
 const headerKey = text => text.replace(/^\uFEFF/, '').normalize('NFKC').replace(/[\s:：_-]/g, '').toLowerCase();
 const aliases = {
-  bed: ['床號', '床位', 'bed', 'bedno'], mrn: ['病歷號', '病歷號碼', 'mrn', 'chartno'], name: ['姓名', '中文姓名', 'name', 'patientname'],
+  bed: ['床號', '床位', '房號', 'bed', 'bedno'], mrn: ['病歷號', '病歷號碼', 'mrn', 'chartno'], name: ['姓名', '中文姓名', 'name', 'patientname'],
   age: ['年齡', 'age'], sex: ['性別', 'sex', 'gender'], codeStatus: ['dnr', 'codestatus', 'dnrstatus'], quickRemark: ['備註', '快速註記', 'remark', 'quickremark'], diagnosis: ['入觀診斷', '診斷', 'diagnosis'], admissionDate: ['入院日期', 'admissiondate']
 };
 function csvPatients(text, delimiter, mapping) {
@@ -69,15 +69,25 @@ function wardPatients(source) {
   if (headerCount !== patients.length) throw new Error('部分病房標頭無法辨識，請修正後再匯入，避免藥物接到錯誤病人。');
   return { patients, warnings: [], format: '病房文字' };
 }
+const ageNumber = String.raw`\d+(?:\.\d+)?`;
+const agePart = String.raw`${ageNumber}\s*(?:years?|months?|days?|歲|個月|月|天|[ymd])`;
+const ageValue = String.raw`(?:年齡待補|>${ageNumber}|${agePart}(?:\s*${agePart})*|${ageNumber})`;
+const demographics = String.raw`(${ageValue})(?:\s*(男|女|male|female|M|F)(?=\s|$))?(?:\s+(.*))?`;
+const ageHeader = new RegExp(`^${demographics}$`, 'i');
+const namedAgeHeader = new RegExp(`^(.+?)\\s+${demographics}$`, 'i');
 export function parsePatientHeader(text) {
   const [identity, ...remark] = text.split(/[｜|]/);
-  const match = /^(\S+)\s+(\S+)\s+(.+?)\s+(年齡待補|\d+(?:\.\d+)?(?:\s*(?:歲|[YyMmDd]|月|天|years?|months?|days?))?|>\d+)(?:\s+(.*))?$/.exec(identity.trim());
-  if (!match) throw new Error('交班單身分列無法辨識。格式需為：床號 病歷號 姓名 年齡。');
+  const match = /^(\S+)\s+(\S+)(?:\s+(.*))?$/.exec(identity.trim());
+  if (!match) throw new Error('交班單身分列無法辨識。格式需為：床號 病歷號，後方可加姓名、年齡及性別。');
   const clean = (value, unknown) => value === unknown ? '' : value;
-  let sex = '', codeStatus = match[5]?.trim() || '';
-  const sexMatch = /^(男|女|M|F|male|female)(?:\s+|$)/i.exec(codeStatus);
-  if (sexMatch) { sex = sexMatch[1]; codeStatus = codeStatus.slice(sexMatch[0].length); }
-  return { bed: clean(match[1], '床號待補'), mrn: clean(match[2], '病歷號待補'), name: clean(match[3], '姓名待補'), age: clean(match[4], '年齡待補'), sex, codeStatus, quickRemark: remark.join('｜').trim(), sourceKind: /^LO\d/i.test(match[1]) ? 'ER' : 'ward' };
+  const rest = match[3]?.trim() || '', ageOnly = ageHeader.exec(rest), named = ageOnly ? null : namedAgeHeader.exec(rest);
+  let name = named?.[1] || (ageOnly ? '' : rest);
+  let [age = '', sex = '', codeStatus = ''] = ageOnly ? ageOnly.slice(1) : named ? named.slice(2) : [];
+  if (!ageOnly && !named) {
+    const sexOnly = /^(?:(.*?)\s+)?(男|女|male|female|M|F)(?:\s+(.*))?$/i.exec(rest);
+    if (sexOnly) { name = sexOnly[1] || ''; sex = sexOnly[2]; codeStatus = sexOnly[3] || ''; }
+  }
+  return { bed: clean(match[1], '床號待補'), mrn: clean(match[2], '病歷號待補'), name: clean(name, '姓名待補'), age: clean(age, '年齡待補'), sex, codeStatus, quickRemark: remark.join('｜').trim(), sourceKind: /^LO\d/i.test(match[1]) ? 'ER' : 'ward' };
 }
 export function parseFullNote(text) {
   const cleaned = text.replace(/^\uFEFF/, '').replace(/\r\n?/g, '\n').replace(new RegExp(`^${DIVIDER}\\n`), '');
@@ -100,7 +110,7 @@ export function parsePatients(text, { format = 'auto', mapping } = {}) {
 }
 const aiBed = value => /^(?:床號待補|[A-Za-z]*[-.]?\d[\w+.-]*)$/.test(value);
 function aiHeader(raw) {
-  const text = raw.normalize('NFKC').replace(/^\s*#{1,6}\s+/, '').replace(/[【】]/g, ' ').replace(/\*\*/g, '').replace(/(\s\d{1,3})([MF])(?=\s|$)/gi, '$1 $2').replace(/\s+/g, ' ').trim();
+  const text = raw.normalize('NFKC').replace(/^\s*#{1,6}\s+/, '').replace(/[【】]/g, ' ').replace(/\*\*/g, '').replace(/(\s\d{1,3})([MF])(?=\s|$)/g, '$1 $2').replace(/\s+/g, ' ').trim();
   const [bed, mrn] = text.split(' ');
   if (!aiBed(bed) || !/^(?:病歷號待補|\d{4,}|[A-Za-z]+[\w-]*\d[\w-]*)$/.test(mrn || '')) return null;
   let data;
@@ -178,17 +188,16 @@ export function reconcile(existing, incoming) {
   const staged = [...existing]; const plans = [];
   for (const candidate of incoming) {
     const mrnMatches = candidate.mrn ? staged.filter(p => p.mrn === candidate.mrn) : [];
-    const nameMatches = candidate.name ? staged.filter(p => p.name && sameName(p.name, candidate.name)) : [];
+    // A supplied MRN is authoritative. Names only help fill records whose MRN is missing.
+    const nameMatches = candidate.name ? staged.filter(p => p.name && sameName(p.name, candidate.name) && (!candidate.mrn || !p.mrn)) : [];
     let match = null, reason = '', conflict = false;
     if (mrnMatches.length > 1) { conflict = true; reason = '病歷號有多筆既存資料'; }
     else if (mrnMatches.length === 1) {
       match = mrnMatches[0];
-      if (candidate.name && match.name && !sameName(candidate.name, match.name)) { conflict = true; reason = '病歷號相同但姓名不同'; }
       if (candidate.admissionDate && match.admissionDate && candidate.admissionDate !== match.admissionDate) { conflict = true; reason = '可能是不同住院事件'; }
-    } else if (nameMatches.length > 1) { conflict = true; reason = '姓名重複，無法安全配對'; }
+    } else if (nameMatches.length > 1 && !candidate.mrn) { conflict = true; reason = '缺少病歷號且姓名重複，無法配對'; }
     else if (nameMatches.length === 1) {
       match = nameMatches[0];
-      if (candidate.mrn && match.mrn && candidate.mrn !== match.mrn) { conflict = true; reason = '姓名相同但病歷號不同'; }
     }
     if (match && plans.some(plan => plan.targetId === match.id || plan.incoming.id === match.id)) { conflict = true; reason = '同批匯入重複病人，請只保留一列'; }
     let kind = conflict ? 'conflict' : match ? 'update' : 'add';

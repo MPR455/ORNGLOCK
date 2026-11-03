@@ -72,6 +72,21 @@ test('AI conversion allows a missing MRN or missing name when the other identity
   }
 });
 
+test('AI lists retain pediatric ages and re-import by MRN when the name and sex label change', () => {
+  for (const age of ['3y2m', '3y 2m', '6m']) {
+    const existing = createPatient({ bed: 'LO601', mrn: '00001234', name: '陳𠮷', age: '3', sex: '女', body: '[P]:\n# original task {pending}' });
+    const converted = exportPatients([createPatient({ bed: 'L13A1322B', mrn: existing.mrn, name: '陳?', age, sex: 'F', body: '[P]:\n- incoming task' })]);
+    const parsed = parseAIList(converted).patients;
+    assert.equal(parsed[0].name, '陳?'); assert.equal(parsed[0].age, age); assert.equal(parsed[0].sex, 'F');
+    const store = new HandoffStore(); store.patients = [existing]; store.activeId = existing.id;
+    const plans = reconcile(store.patients, parsed); assert.equal(plans[0].kind, 'update');
+    applyPlans(store, plans);
+    assert.equal(store.patients.length, 1); assert.equal(store.activeId, existing.id);
+    assert.equal(existing.bed, 'L13A1322B'); assert.equal(existing.age, age); assert.equal(existing.sex, 'F');
+    assert.match(bodyText(existing), /original task \{pending\}/); assert.doesNotMatch(bodyText(existing), /incoming task/);
+  }
+});
+
 test('whole-list action works without a selected patient using the handoff key and a backend-only prompt', async () => {
   for (const apiKey of [undefined, 'personal-key']) {
     let captured;

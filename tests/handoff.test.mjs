@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { createPatient, HandoffStore, fromPortable, cellsOf, linesFromCells, parsePortable, serializeBody, highlight, replaceText, bodyText, completeTask, tasksOf, pendingCount, blocksOf, moveBlock, exportPatients, insertObjective, DIVIDER, sortPatients, patientHeader, currentOnly, shiftDate, taiwanDate, locationOf } from '../handoff-model.mjs';
-import { parsePatients, parseDelimited, decodeFile, reconcile, applyPlans, parseFullNote } from '../handoff-import.mjs';
+import { parsePatients, parsePatientHeader, parseDelimited, decodeFile, reconcile, applyPlans, parseFullNote } from '../handoff-import.mjs';
 import { handleApi, createMemoryGuard } from '../server/api.mjs';
 import { ACTIONS, HANDOFF_ACTIONS } from '../server/actions.mjs';
 import { normalizeExams } from '../handoff-model.mjs';
@@ -51,11 +51,57 @@ test('safe upsert changes bed/header and keeps note, quick remark and absent pat
   assert.match(patientHeader(a), /^L13A1302A/); assert.equal(a.quickRemark, '!stay'); assert.equal(pendingCount(a), 1); assert.equal(store.patients.length, 2);
   assert.equal(reconcile(store.patients, [make({ bed: a.bed })])[0].kind, 'same');
 });
-test('unique name supports missing MRN; same name differing MRNs and duplicate names conflict', () => {
+test('MRN matching permits name changes and keeps different MRNs separate', () => {
   const a = make(); assert.equal(reconcile([a], [make({ mrn: '', bed: 'LO602' })])[0].targetId, a.id);
-  assert.equal(reconcile([a], [make({ mrn: '00008888' })])[0].kind, 'conflict');
+  const differentMRN = reconcile([a], [make({ mrn: '00008888' })])[0];
+  assert.equal(differentMRN.kind, 'add'); assert.equal(differentMRN.targetId, undefined);
+  const changedName = reconcile([a], [make({ name: '示範乙' })])[0];
+  assert.equal(changedName.kind, 'update'); assert.equal(changedName.targetId, a.id); assert.equal(changedName.choice, 'apply');
   assert.equal(reconcile([a, make({ mrn: '00009999' })], [make({ mrn: '' })])[0].kind, 'conflict');
-  assert.equal(reconcile([a], [make({ name: '示範乙' })])[0].kind, 'conflict');
+  assert.equal(reconcile([a, make({ name: '示範乙' })], [make()])[0].kind, 'conflict');
+  const unidentified = make({ mrn: '' });
+  assert.equal(reconcile([unidentified], [make()])[0].targetId, unidentified.id);
+  assert.equal(reconcile([unidentified, make({ mrn: '' })], [make()])[0].kind, 'add');
+});
+
+test('downloaded TXT round-trips compound ages and supplied Chinese or English sex labels', () => {
+  for (const [age, sex] of [['3y2m', 'F'], ['3Y2M', 'M'], ['3y 2m', 'female'], ['3 years 2 months', 'F'], ['3歲2月', '女'], ['3歲 2個月', '男'], ['6m', 'F'], ['28d', 'M'], ['>90', '女'], ['2.5', 'male'], ['', 'F']]) {
+    const patient = make({ name: '陳𠮷 Sample', age, sex, codeStatus: 'DNR2', quickRemark: 'original remark' });
+    const imported = parsePatients(exportPatients([patient])).patients[0];
+    assert.equal(imported.age, age); assert.equal(imported.sex, sex); assert.equal(imported.name, patient.name);
+    assert.equal(imported.codeStatus, 'DNR2'); assert.equal(imported.quickRemark, patient.quickRemark);
+  }
+  const compact = parsePatientHeader('LO601 00001234 示範甲 3y2mF DNR1');
+  assert.equal(compact.age, '3y2m'); assert.equal(compact.sex, 'F'); assert.equal(compact.codeStatus, 'DNR1');
+});
+
+test('TXT identity rows allow MRN and bed without a name or age', () => {
+  for (const tail of ['', ' 3y2m F', ' 年齡待補 女', ' F']) {
+    const parsed = parsePatients(`${DIVIDER}\nLO601 00001234${tail}\n\n[P]:\n- supplied task`).patients[0];
+    assert.equal(parsed.mrn, '00001234'); assert.equal(parsed.bed, 'LO601'); assert.equal(parsed.name, '');
+    assert.match(bodyText(parsed), /supplied task/);
+    if (tail.includes('3y2m')) assert.equal(parsed.age, '3y2m');
+  }
+});
+
+test('re-import updates bed, age and sex by MRN despite a changed or omitted name, preserving notes and undo', () => {
+  const sourceNotes = '[P]:\n# /original task/ {pending}\n\n[Medication]\n- original drug';
+  const txt = exportPatients([make({ bed: 'L13A1322B', name: '陳?', age: '3y2m', sex: 'F', body: '[P]:\n- incoming note' })]);
+  for (const source of [txt, '床號,病歷號,姓名,年齡,性別\nL13A1322B,00001234,陳?,3y2m,F', '房號,病歷號,年齡,性別\nL13A1322B,00001234,3y2m,F', `${DIVIDER}\nL13A1322B 00001234 3y2m F\n\n[P]:\n- incoming note`]) {
+    const store = new HandoffStore(), patient = make({ name: '陳𠮷', age: '3', sex: '女', quickRemark: '! retain remark', body: sourceNotes });
+    const before = structuredClone(patient); store.patients = [patient]; store.activeId = patient.id;
+    const plans = reconcile(store.patients, parsePatients(source).patients);
+    assert.equal(plans[0].kind, 'update'); assert.equal(plans[0].targetId, patient.id); assert.equal(plans[0].choice, 'apply');
+    applyPlans(store, plans);
+    assert.equal(store.patients.length, 1); assert.equal(store.activeId, patient.id); assert.equal(patient.mrn, '00001234');
+    assert.equal(patient.bed, 'L13A1322B'); assert.equal(patient.age, '3y2m'); assert.equal(patient.sex, 'F');
+    assert.equal(patient.name, plans[0].incoming.name || before.name); assert.equal(patient.quickRemark, before.quickRemark);
+    assert.deepEqual(patient.lines, before.lines); assert.equal(pendingCount(patient), 1);
+    assert.match(exportPatients(store.patients), /L13A1322B 00001234 .* 3y2m F/);
+    store.undo();
+    assert.ok(store.patients[0].noteRevision > before.noteRevision);
+    assert.deepEqual({ ...store.patients[0], noteRevision: before.noteRevision }, before);
+  }
 });
 test('bed reuse creates a new patient and does not transfer prior notes; repeated source row conflicts', () => {
   const a = make({ body: '[P]:\n- existing' }), b = make({ name: '示範乙', mrn: '00008888' });
