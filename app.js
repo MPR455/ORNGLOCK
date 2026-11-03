@@ -86,14 +86,14 @@ function closeMenu() { $('menu-dd').classList.remove('open'); $('site-menu-trigg
 function openSheet() {
   if (innerWidth > 860 || !$('mobile-tabs-layer').hidden) return;
   closeMenu(); sheetOpener = document.activeElement; $('mobile-tabs-layer').hidden = false; $('mobile-tabs-layer').classList.add('open'); document.body.classList.add('mobile-tabs-open');
-  document.querySelectorAll('header,main,#mobile-bottom-nav,#menu-dd').forEach(element => { element.inert = true; });
+  document.querySelectorAll('header,main,#mobile-bottom-nav,#menu-dd,#forum-float').forEach(element => { element.inert = true; });
   $('mobile-tabs-trigger').setAttribute('aria-expanded', 'true'); $('mobile-more-tab').setAttribute('aria-expanded', 'true');
   ($('mobile-tab-grid').querySelector('.active') || document.querySelector('.mobile-sheet-close')).focus();
 }
 function closeSheet(restore = true) {
   if ($('mobile-tabs-layer').hidden) return;
   $('mobile-tabs-layer').hidden = true; $('mobile-tabs-layer').classList.remove('open'); document.body.classList.remove('mobile-tabs-open');
-  document.querySelectorAll('header,main,#mobile-bottom-nav,#menu-dd').forEach(element => { element.inert = false; });
+  document.querySelectorAll('header,main,#mobile-bottom-nav,#menu-dd,#forum-float').forEach(element => { element.inert = false; });
   $('mobile-tabs-trigger').setAttribute('aria-expanded', 'false'); $('mobile-more-tab').setAttribute('aria-expanded', 'false');
   if (restore && sheetOpener?.isConnected) sheetOpener.focus();
   sheetOpener = null;

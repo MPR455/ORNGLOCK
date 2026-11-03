@@ -1,0 +1,13 @@
+.forum-float{position:fixed;right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));z-index:180;display:flex;align-items:stretch;max-width:calc(100vw - 24px);border:1px solid #ed8303;border-radius:14px;background:#171717;color:#ffac47;box-shadow:0 5px 20px #0003;user-select:none;touch-action:none}
+.forum-float-link{display:flex;align-items:center;gap:8px;min-height:46px;padding:10px 12px;color:inherit;font-size:14px;font-weight:700;line-height:1.2;text-decoration:none;white-space:nowrap;border-radius:13px 0 0 13px}
+.forum-float-link svg{width:20px;height:20px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.forum-float-external{font-size:12px;font-weight:500;opacity:.8}
+.forum-float-handle{display:flex;align-items:center;justify-content:center;min-width:36px;min-height:46px;padding:0 8px;border:0;border-left:1px solid #ed830340;border-radius:0 13px 13px 0;background:transparent;color:#ffac47;font:inherit;cursor:grab;touch-action:none}
+.forum-float-handle svg{width:12px;height:20px;fill:currentColor;opacity:.7}
+.forum-float-link:hover,.forum-float-handle:hover{background:#ed83031a;color:#ffc078}
+.forum-float-link:focus-visible,.forum-float-handle:focus-visible{outline:3px solid #ffac47;outline-offset:3px}
+.forum-float.is-dragging,.forum-float.is-dragging *{cursor:grabbing}
+.forum-float.is-dragging{box-shadow:0 8px 26px #0005}
+@media(max-width:860px){.forum-float{bottom:calc(var(--site-header-height,54px) + env(safe-area-inset-bottom) + 12px)}}
+@media(max-width:860px) and (any-hover:hover) and (any-pointer:fine){.forum-float{bottom:12px}}
+@media print{.forum-float{display:none!important}}

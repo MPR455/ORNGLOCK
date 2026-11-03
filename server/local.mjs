@@ -12,6 +12,7 @@ const ROOT = fileURLToPath(new URL('../', import.meta.url));
 const STATIC = new Map([
   ['/', 'index.html'], ['/index.html', 'index.html'], ['/styles.css', 'styles.css'], ['/app.js', 'app.js'], ['/sections.mjs', 'sections.mjs'], ['/config.js', 'config.js'],
   ['/directory.css', 'directory.css'], ['/directory.mjs', 'directory.mjs'], ['/directory-data.mjs', 'directory-data.mjs'],
+  ['/forum-button.css', 'forum-button.css'], ['/forum-button.mjs', 'forum-button.mjs'],
   ...['handoff.css', 'handoff.mjs', 'handoff-model.mjs', 'handoff-import.mjs', 'handoff-editor.mjs', 'oncall.css', 'oncall.mjs', 'ddx.css', 'ddx.mjs'].map(file => [`/${file}`, file]),
   ...['study.css', 'study.mjs', 'study-core.mjs', 'study-frame.mjs', 'study-images.mjs'].map(file => [`/${file}`, file]),
   ...['manuals.css', 'manuals.mjs', ...await manualsAssets(ROOT)].map(file => [`/${file}`, file]),
