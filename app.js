@@ -8,15 +8,15 @@ import { initManuals } from './manuals.mjs';
 
 const $ = id => document.getElementById(id);
 const TABS = [
-  { id: 'directory', icon: '☎️', label: 'Directory', short: 'Directory' },
+  { id: 'directory', icon: '☎️', label: '電話', short: '電話' },
   { id: 'handoff', icon: '📝', label: '交班單', short: '交班單' },
-  { id: 'oncall', icon: '🍟', label: 'Order', short: 'Order' },
+  { id: 'oncall', icon: '🍟', label: '醫藥囑', short: '醫藥囑' },
   // Off the phone bottom bar (already full); reachable from "All" on mobile.
   { id: 'ddx', icon: '🧍', label: 'DDx', short: 'DDx', mobilePrimary: false },
   { id: 'notes', icon: '🤖', label: '病歷', short: '病歷' },
   { id: 'faq', icon: '❓', label: 'FAQ 腫麼用', short: 'FAQ 腫麼用' },
-  { id: 'study', icon: '📚', label: 'Study', short: 'Study' },
-  { id: 'manuals', icon: '📁', label: '各科工作手冊', short: '各科工作手冊', mobilePrimary: false },
+  { id: 'study', icon: '📚', label: '學習', short: '學習' },
+  { id: 'manuals', icon: '📁', label: '工作手冊', short: '工作手冊', mobilePrimary: false },
   { id: 'key', icon: '⚿', label: 'API key', short: 'API key' }
 ];
 const TITLES = { admission: 'Admission note', consult: 'Consult request', summary: 'Treatment summary', support: 'Anti/O2/IV' };
