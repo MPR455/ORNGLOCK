@@ -13,6 +13,8 @@ const STATIC = new Map([
   ['/', 'index.html'], ['/index.html', 'index.html'], ['/styles.css', 'styles.css'], ['/app.js', 'app.js'], ['/sections.mjs', 'sections.mjs'], ['/config.js', 'config.js'],
   ['/directory.css', 'directory.css'], ['/directory.mjs', 'directory.mjs'], ['/directory-data.mjs', 'directory-data.mjs'],
   ['/forum-button.css', 'forum-button.css'], ['/forum-button.mjs', 'forum-button.mjs'],
+  ['/webapp.js', 'webapp.js'], ['/manifest.webmanifest', 'manifest.webmanifest'], ['/forum/', 'forum/index.html'], ['/forum/index.html', 'forum/index.html'], ['/forum/manifest.webmanifest', 'forum/manifest.webmanifest'],
+  ...['ornglock', 'forum'].flatMap(name => [180, 192, 512].map(size => [`/assets/icons/${name}-${size}.png`, `assets/icons/${name}-${size}.png`])),
   ...['handoff.css', 'handoff.mjs', 'handoff-model.mjs', 'handoff-import.mjs', 'handoff-editor.mjs', 'oncall.css', 'oncall.mjs', 'ddx.css', 'ddx.mjs'].map(file => [`/${file}`, file]),
   ...['study.css', 'study.mjs', 'study-core.mjs', 'study-frame.mjs', 'study-images.mjs'].map(file => [`/${file}`, file]),
   ...['manuals.css', 'manuals.mjs', ...await manualsAssets(ROOT)].map(file => [`/${file}`, file]),
@@ -24,7 +26,7 @@ const STATIC = new Map([
   ...['assets/faq-first-time.webp', 'assets/faq-logo.webp', 'assets/faq-vpn.webp', 'assets/faq-google-api.webp', 'assets/faq-shortcut.webp', 'assets/faq-mobile-shortcut.webp', 'assets/Printsetting.webp'].map(file => [`/${file}`, file]),
   ...['PE example/Admission normal PE.txt', 'PE example/Admission ROS.txt', 'PE example/Progress normal PE.txt'].map(file => [`/${encodeURI(file)}`, file])
 ]);
-const MIME = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.mjs': 'text/javascript; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png', '.webp': 'image/webp', '.gif': 'image/gif', '.txt': 'text/plain; charset=utf-8', '.json': 'application/json; charset=utf-8', '.wasm': 'application/wasm', '.pdf': 'application/pdf', '.apkg': 'application/octet-stream' };
+const MIME = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.mjs': 'text/javascript; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png', '.webp': 'image/webp', '.gif': 'image/gif', '.txt': 'text/plain; charset=utf-8', '.json': 'application/json; charset=utf-8', '.wasm': 'application/wasm', '.pdf': 'application/pdf', '.apkg': 'application/octet-stream', '.webmanifest': 'application/manifest+json' };
 const CSP = "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; media-src 'self' blob: data:; font-src 'self' blob: data:; worker-src 'self' blob:; connect-src 'self' https:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'";
 
 export async function startLocal({ port = 8787, host = '127.0.0.1', sharedKey = '', handoffSharedKey = '', model = DEFAULT_MODEL, allowedOrigins = [], guard, fetch: providerFetch, prompts: configuredPrompts } = {}) {

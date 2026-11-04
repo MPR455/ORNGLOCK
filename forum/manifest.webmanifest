@@ -1,0 +1,17 @@
+{
+  "id": "./",
+  "name": "ORNGLOCK 論壇/使用者回饋",
+  "short_name": "論壇/回饋",
+  "description": "ORNGLOCK 論壇與使用者回饋",
+  "lang": "zh-Hant",
+  "start_url": "./?launch=1",
+  "scope": "./",
+  "display": "minimal-ui",
+  "background_color": "#ffffff",
+  "theme_color": "#111111",
+  "icons": [
+    { "src": "../assets/icons/forum-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "../assets/icons/forum-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "../assets/icons/forum-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

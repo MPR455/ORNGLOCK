@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-launch-url="https://ornglock.666forum.com/">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="referrer" content="no-referrer">
+  <title>論壇/使用者回饋 | ORNGLOCK</title>
+  <link rel="icon" href="../assets/icons/forum-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="../assets/icons/forum-180.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#111111">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="論壇/回饋">
+  <script src="../webapp.js"></script>
+  <style>
+    :root{--bg:#f4f6f9;--card:#fff;--ink:#1c2733;--sub:#5b6b7c;--line:#dde4ec;--acc:#111}
+    @media(prefers-color-scheme:dark){:root{--bg:#0f1720;--card:#1a2632;--ink:#e6edf3;--sub:#a8bccc;--line:#2c3d4d;--acc:#e6edf3}}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100dvh;display:grid;place-items:center;padding:24px 16px;background:var(--bg);color:var(--ink);font-family:"Segoe UI","Noto Sans TC",system-ui,sans-serif}
+    main{width:100%;max-width:380px;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px 20px}
+    main>img{width:96px;height:96px;border-radius:22px;border:1px solid var(--line)}
+    h1{margin:14px 0 6px;font-size:22px}
+    p{margin:0 0 20px;color:var(--sub);font-size:14px;line-height:1.6}
+    .btn{display:block;width:100%;padding:13px 16px;border-radius:10px;border:1px solid var(--acc);background:var(--acc);color:var(--card);font-family:inherit;font-size:15px;font-weight:600;line-height:1.2;text-decoration:none;cursor:pointer}
+    .btn.sec{margin-top:10px;background:transparent;color:var(--ink);border-color:var(--line)}
+    .back{display:inline-block;margin-top:18px;color:var(--sub);font-size:13px}
+    .webapp-help{max-width:min(360px,calc(100vw - 32px));border:1px solid var(--line);border-radius:14px;padding:20px;background:var(--card);color:var(--ink);text-align:left}
+    .webapp-help::backdrop{background:rgba(0,0,0,.45)}
+    .webapp-help h2{margin:0 0 10px;font-size:18px}
+    .webapp-help ol{margin:0 0 16px;padding-left:22px;line-height:1.9}
+    .webapp-help [data-for]{display:none}
+    .webapp-help[data-platform=ios] [data-for=ios],.webapp-help[data-platform=android] [data-for=android]{display:block}
+  </style>
+</head>
+<body>
+  <main>
+    <img src="../assets/icons/forum-192.png" alt="" width="96" height="96">
+    <h1>論壇/使用者回饋</h1>
+    <p>把論壇存到手機主畫面，之後點圖示就能直接開啟論壇。</p>
+    <button class="btn" type="button" data-install>存到手機主畫面</button>
+    <a class="btn sec" href="https://ornglock.666forum.com/" rel="noopener noreferrer">直接前往論壇 ↗</a>
+    <a class="back" href="../">← 回到 ORNGLOCK</a>
+  </main>
+  <dialog class="webapp-help" id="webapp-help" aria-labelledby="webapp-help-title">
+    <h2 id="webapp-help-title">加入主畫面</h2>
+    <ol data-for="ios"><li>用 Safari 開啟本頁</li><li>點下方的「分享」按鈕</li><li>選「加入主畫面」，再按「新增」</li></ol>
+    <ol data-for="android"><li>用 Chrome 開啟本頁</li><li>點右上角「⋮」</li><li>選「加到主畫面」或「安裝應用程式」</li></ol>
+    <button class="btn" type="button" data-close-dialog>知道了</button>
+  </dialog>
+</body>
+</html>

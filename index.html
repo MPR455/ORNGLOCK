@@ -7,7 +7,12 @@
   <meta name="referrer" content="no-referrer">
   <title>ORNGLOCK</title>
   <link rel="icon" href="assets/ornglock-symbol.png?v=93d310a25514" type="image/png">
-  <link rel="apple-touch-icon" href="assets/ornglock-symbol.png?v=93d310a25514">
+  <link rel="apple-touch-icon" href="assets/icons/ornglock-180.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#eb8303">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="ORNGLOCK">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="directory.css">
   <link rel="stylesheet" href="forum-button.css">
@@ -17,6 +22,7 @@
   <link rel="stylesheet" href="study.css">
   <link rel="stylesheet" href="manuals.css">
   <script src="config.js" defer></script>
+  <script src="webapp.js" defer></script>
   <script src="app.js" type="module"></script>
   <script src="forum-button.mjs" type="module"></script>
 </head>
@@ -143,6 +149,10 @@
               <h1 id="faq-title" lang="en">Welcome to Project ORNGLOCK VER 26.11-beta 2</h1>
               <p>Contact: 林揚修 <a href="mailto:cubeetor@gmail.com">cubeetor@gmail.com</a></p>
             </div>
+          </div>
+          <div class="webapp-actions" role="group" aria-label="加入手機主畫面">
+            <button class="webapp-button" type="button" data-install><img src="assets/icons/ornglock-192.png" alt="" width="40" height="40"><span><strong>ORNGLOCK</strong><small>存到手機主畫面</small></span></button>
+            <a class="webapp-button" href="forum/"><img src="assets/icons/forum-192.png" alt="" width="40" height="40"><span><strong>論壇/使用者回饋</strong><small>存到手機主畫面</small></span></a>
           </div>
         </div>
 
@@ -311,6 +321,13 @@
     </button>
     <span class="sr-only" id="forum-float-help">拖曳可移動位置，也可使用方向鍵調整，按 Home 或連按兩下移動把手可還原右下角位置。</span>
   </div>
+  <dialog class="webapp-help" id="webapp-help" aria-labelledby="webapp-help-title" lang="zh-Hant">
+    <h2 id="webapp-help-title">加入主畫面</h2>
+    <ol data-for="ios"><li>用 Safari 開啟本頁</li><li>點下方的「分享」按鈕</li><li>選「加入主畫面」，再按「新增」</li></ol>
+    <ol data-for="android"><li>用 Chrome 開啟本頁</li><li>點右上角「⋮」</li><li>選「加到主畫面」或「安裝應用程式」</li></ol>
+    <p data-for="installed">你已經在 ORNGLOCK App 裡了。</p>
+    <button class="btn" type="button" data-close-dialog>知道了</button>
+  </dialog>
   <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
   <noscript><p class="card">Please enable JavaScript to use ORNGLOCK.</p></noscript>
 </body>

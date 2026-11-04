@@ -1,0 +1,17 @@
+{
+  "id": "./",
+  "name": "ORNGLOCK",
+  "short_name": "ORNGLOCK",
+  "description": "A focused writing workspace for organizing notes, drafting structured documents, and reviewing text.",
+  "lang": "zh-Hant",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#eb8303",
+  "icons": [
+    { "src": "assets/icons/ornglock-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/ornglock-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/ornglock-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

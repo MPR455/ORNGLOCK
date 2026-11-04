@@ -9,6 +9,7 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 const dist = resolve(root, 'dist');
 const files = ['index.html', 'styles.css', 'directory.css', 'app.js', 'sections.mjs', 'directory.mjs', 'directory-data.mjs', 'assets/ornglock.png', 'assets/ornglock-symbol.png', 'assets/cgmh-oph.svg', 'assets/cgmh-em.svg'];
 files.push('forum-button.css', 'forum-button.mjs');
+files.push('webapp.js', 'manifest.webmanifest', 'forum/index.html', 'forum/manifest.webmanifest', ...['ornglock', 'forum'].flatMap(name => [180, 192, 512].map(size => `assets/icons/${name}-${size}.png`)));
 files.push('assets/faq-first-time.webp', 'assets/faq-logo.webp', 'assets/faq-vpn.webp', 'assets/faq-google-api.webp', 'assets/faq-shortcut.webp', 'assets/faq-mobile-shortcut.webp', 'assets/Printsetting.webp');
 files.push('PE example/Admission normal PE.txt', 'PE example/Admission ROS.txt', 'PE example/Progress normal PE.txt');
 files.push('handoff.css', 'handoff-model.mjs', 'handoff-import.mjs', 'handoff-editor.mjs', 'handoff.mjs');
@@ -63,8 +64,10 @@ for (const [file, dependencies] of [['directory.mjs', ['directory-data.mjs']], [
 }
 const indexPath = resolve(dist, 'index.html');
 let html = await readFile(indexPath, 'utf8');
-for (const file of ['styles.css', 'directory.css', 'handoff.css', 'oncall.css', 'ddx.css', 'study.css', 'manuals.css', 'forum-button.css', 'forum-button.mjs', 'config.js', 'app.js']) html = html.replace(`"${file}"`, `"${file}?v=${await revision(file)}"`);
+for (const file of ['styles.css', 'directory.css', 'handoff.css', 'oncall.css', 'ddx.css', 'study.css', 'manuals.css', 'forum-button.css', 'forum-button.mjs', 'config.js', 'webapp.js', 'app.js']) html = html.replace(`"${file}"`, `"${file}?v=${await revision(file)}"`);
 await writeFile(indexPath, html);
+const forumPath = resolve(dist, 'forum/index.html');
+await writeFile(forumPath, (await readFile(forumPath, 'utf8')).replace('"../webapp.js"', `"../webapp.js?v=${await revision('webapp.js')}"`));
 await writeFile(resolve(dist, '.nojekyll'), '');
 // Public output is deliberately allowlisted: master prompts and backend source stay private.
 for (const file of [...files.filter(file => !/\.(png|webp|gif|wasm|bcmap|ttf|pfb|icc)$/.test(file)), 'config.js']) {
