@@ -10,7 +10,7 @@ const dist = resolve(root, 'dist');
 const files = ['index.html', 'styles.css', 'directory.css', 'app.js', 'sections.mjs', 'directory.mjs', 'directory-data.mjs', 'assets/ornglock.png', 'assets/ornglock-symbol.png', 'assets/cgmh-oph.svg', 'assets/cgmh-em.svg'];
 files.push('forum-button.css', 'forum-button.mjs');
 files.push('webapp.js', 'manifest.webmanifest', 'forum/index.html', 'forum/manifest.webmanifest', ...['ornglock', 'forum'].flatMap(name => [180, 192, 512].map(size => `assets/icons/${name}-${size}.png`)));
-files.push('assets/faq-first-time.webp', 'assets/faq-logo.webp', 'assets/faq-vpn.webp', 'assets/faq-google-api.webp', 'assets/faq-shortcut.webp', 'assets/faq-mobile-shortcut.webp', 'assets/Printsetting.webp');
+files.push('assets/faq-first-time.webp', 'assets/faq-logo.webp', 'assets/faq-qrcode.webp', 'assets/faq-manual-vpn.webp', 'assets/faq-vpn.webp', 'assets/faq-google-api.webp', 'assets/faq-shortcut.webp', 'assets/faq-mobile-shortcut.webp', 'assets/Printsetting.webp');
 files.push('PE example/Admission normal PE.txt', 'PE example/Admission ROS.txt', 'PE example/Progress normal PE.txt');
 files.push('handoff.css', 'handoff-model.mjs', 'handoff-import.mjs', 'handoff-editor.mjs', 'handoff.mjs');
 files.push('oncall.css', 'oncall.mjs', 'clinical database/JustDoIt/justdoit-data.mjs');

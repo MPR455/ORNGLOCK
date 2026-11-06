@@ -23,7 +23,7 @@ const STATIC = new Map([
   [`/${encodeURI('clinical database/DDx/ddx-data.mjs')}`, 'clinical database/DDx/ddx-data.mjs'],
   ['/assets/ornglock.png', 'assets/ornglock.png'], ['/assets/ornglock-symbol.png', 'assets/ornglock-symbol.png'],
   ['/assets/cgmh-oph.svg', 'assets/cgmh-oph.svg'], ['/assets/cgmh-em.svg', 'assets/cgmh-em.svg'],
-  ...['assets/faq-first-time.webp', 'assets/faq-logo.webp', 'assets/faq-vpn.webp', 'assets/faq-google-api.webp', 'assets/faq-shortcut.webp', 'assets/faq-mobile-shortcut.webp', 'assets/Printsetting.webp'].map(file => [`/${file}`, file]),
+  ...['assets/faq-first-time.webp', 'assets/faq-logo.webp', 'assets/faq-qrcode.webp', 'assets/faq-manual-vpn.webp', 'assets/faq-vpn.webp', 'assets/faq-google-api.webp', 'assets/faq-shortcut.webp', 'assets/faq-mobile-shortcut.webp', 'assets/Printsetting.webp'].map(file => [`/${file}`, file]),
   ...['PE example/Admission normal PE.txt', 'PE example/Admission ROS.txt', 'PE example/Progress normal PE.txt'].map(file => [`/${encodeURI(file)}`, file])
 ]);
 const MIME = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.mjs': 'text/javascript; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png', '.webp': 'image/webp', '.gif': 'image/gif', '.txt': 'text/plain; charset=utf-8', '.json': 'application/json; charset=utf-8', '.wasm': 'application/wasm', '.pdf': 'application/pdf', '.apkg': 'application/octet-stream', '.webmanifest': 'application/manifest+json' };

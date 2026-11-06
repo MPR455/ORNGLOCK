@@ -122,6 +122,7 @@ main{padding-top:18px}
 .faq-intro>img{display:block;height:auto;max-width:100%;margin:0 auto}
 .faq-first-time{width:560px;border-radius:6px}
 .faq-intro>.faq-logo{width:600px;margin-top:24px;margin-bottom:18px}
+.faq-intro>.faq-qrcode{width:240px;margin-bottom:24px}
 .faq-welcome{overflow:hidden;font-family:"Courier New",monospace;text-align:center;color:var(--ink)}
 .faq-welcome::before,.faq-welcome::after{content:"████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████" / "";display:block;overflow:hidden;white-space:nowrap;font-size:16px;line-height:1}
 .faq-welcome-content{position:relative;padding:18px 28px;overflow:hidden}
@@ -149,6 +150,9 @@ main{padding-top:18px}
 .faq-figure a{display:block;width:fit-content;max-width:100%;margin:0 auto}
 .faq-figure img{display:block;max-width:100%;height:auto;border:1px solid var(--line);border-radius:6px}
 .faq-page a{text-underline-offset:3px}
+.faq-page .faq-download-button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 18px;border:1px solid var(--acc);border-radius:6px;background:var(--chip);color:var(--chipink);font-weight:700;text-decoration:none}
+.faq-page .faq-download-button:hover{border-color:var(--acc2);box-shadow:0 0 0 1px var(--acc2)}
+.faq-page .faq-download-button:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
 @media(max-width:680px){.faq-page{padding:18px 15px;font-size:14px;line-height:1.85}.faq-welcome-content{padding:14px 22px}.faq-welcome p{font-size:12px}.faq-section{margin-top:22px;padding-top:22px}.faq-section h2{font-size:19px}.faq-section h3{font-size:16px}.faq-disclaimer{padding:13px 14px}.faq-intro>.faq-logo{margin-top:18px}.faq-figure{margin:20px 0}}
 .connection-pill{flex:0 0 auto;display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--card);color:var(--sub);border-radius:6px;padding:8px 10px;font-size:12px;cursor:pointer;min-height:35px}
 .connection-pill.connected{color:var(--ok)}
